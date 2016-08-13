@@ -1,12 +1,42 @@
-#Big Problem
-1. No sound into headphone.
+#Big Problem (Todo List)
+1. No sound into headphone through SSH
 
-#Convenience
-1. windows move and split (ctrl+win+left/right)
 
-2. Freemind in ubuntu
+# Ubuntu - Installation Guide
 
-3. vim
+
+## Ubuntu Settings
+
+### 1. Caps Lock key change to additional CTRL
+```
+sudo apt-get install gnome-tweak-tool
+```
+open gnome-tweak-tool, typing, caps behavior -> make as an additional ctrl keys.
+
+### 2. change default shell
+```
+chsh -s /bin/bash
+```
+
+### 3. window move and resize
+```
+wmctrl -d #show desktop
+wmctrl -l #list all the windows
+wmctrl -i -a <win-id>  #ignore other workspace; activate windows id
+```
+Ubuntu Workspace Move: Ctrl+Alt+Arrow
+
+### 4. Key-Shortcuts
+Win Switch to Neighbor Workspace: super + arrow
+Win Move to other Workspace: None
+Workspace Switch : ctrl + number
+Workspace Switch to Neighbor: ctrl + alt + arrow
+
+
+
+## Core Software Installation
+
+### 1. vim
 Compile Problem
 ```
 checking for tgetent()... configure: error
@@ -23,7 +53,8 @@ sudo apt-get upgrade vim
 
 install kvim
 
-3. Quick SSH Connect(store password and session)
+
+### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
 
 ```
@@ -40,14 +71,15 @@ __Tips__: SSH copy files between local machine and server - use scp
 scp /path/to/file username@host:path/to/destination
 scp username@host:/path/to/file path/to/destination
 ```
-3.1 Remote GUI program shown in Ubuntu
+
+2.1 Remote GUI program shown in Ubuntu
 Really compatible and easy to implement
 ```
 ssh -X username@host
 ```
 Put into ~/Linux/bin/serverconnect.sh and chmod 750 serverconnect.sh
 
-3.2 SVN Alternatives
+2.2 SVN Alternatives
 TortoiseSVN is only for windows
 
 Tortoise SVN Alternatives - just use svn
@@ -63,27 +95,31 @@ svn update --set-depth infinity Group\ discussion           #infinity, immediate
 ```
 Ref<http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-with-subversion>
 
-3.3 Other tools
+### 3. Other tools
 PDF Reader-> evince
 Microsoft Office -> Libreoffice
 dropbox
 TortoiseSVN -> SVN (<http://svnbook.red-bean.com/en/1.4/svn.ref.svn.html>)
 
+### 4. Freemind in ubuntu
 
-3.4 Caps Lock key change to additional CTRL
+### 5. Quick Github Repo commit
 ```
-sudo apt-get install gnome-tweak-tool
+git status  #check package status
+git add
+git commit
+git push
+git pull    #update packages
 ```
-open gnome-tweak-tool, typing, caps behavior -> make as an additional ctrl keys.
 
-4. Quick Github Repo commit
-
-5. package install guide:
+### 6. package install guide:
+```
 apt-cache show package          //description of package
 apt-cache search package          //a short summary of all the texlive
 apt-get install xxx
+```
 
-6. texlive choose and install
+### 7. texlive choose and install
 sudo apt-get install texlive-latex-base
 Better Choice
 ```
@@ -92,30 +128,17 @@ sudo apt-get install texlive-latex-extra --no-install-recommends            #for
 ```
 tips, pdf open tools - evince; this pdfware is quite simple but powerful. Annotation and highlight is in the left side with a tiny icon.
 
-8. Navigation
+### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
 
-9. change default shell
-```
-chsh -s /bin/bash
-```
-10. window move and resize
-
-```
-wmctrl -d #show desktop
-wmctrl -l #list all the windows
-wmctrl -i -a <win-id>  #ignore other workspace; activate windows id
-```
-Ubuntu Workspace Move: Ctrl+Alt+Arrow
-
-11. Temperature Monitor
+### 9. Temperature Monitor
 ```
 sudo apt-get install lm-sensors
 sudo sensors-detect
 #sudo service kmod start
 sensors
 ```
-12. Account in Ubuntu
+### 10. Account in Ubuntu
 Add
 ```
 sudo adduser newuser #example newuser-> silly
@@ -126,7 +149,7 @@ sudo userdel newuser #example newuser-> silly
 sudo rm -rf /home/newuser
 ```
 
-13. connectable computer (-)
+### 11. connectable computer (-)
 ```
 sudo iptables -L
 ```
@@ -139,11 +162,12 @@ ssh -v localhost            #check locally
 ifconfig : inet addr:
 ssh username@localhost -p 2222  # silly sillyisafatpig
 
-14. Thunderbird
-
+### 12. Thunderbird
 addon google calendar
 school-settings :
 server-settings incoming IMAP outlook.office365.com port:993 ssl/tls
                 outgoing smtp outlook.office365.com port:587 starttls
 
-15. Dropbox
+### 13. Dropbox
+
+
