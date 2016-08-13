@@ -1,6 +1,19 @@
 #Big Problem (Todo List)
-1. No sound into headphone through SSH
+1. No sound into headphone through SSH (ssh self problem)
 
+2. Windows Ctrl - wmctrl (deeply understand)
+
+3. npm study (javascript etc, not in hurry)
+
+4. Research Environment Get Familiar
+
+5. svn **problem** cant commit in ubuntu...!!!
+
+6. Ubuntu Dictionary (like lingoes in Windows)
+
+7. Chinese input in ubuntu
+
+8. freemind in ubuntu
 
 # Ubuntu - Installation Guide
 
@@ -93,13 +106,31 @@ sudo apt-get install subversion
 svn checkout --depth immediates ssh+svn://xuanqi@young.ece.ust.hk/home/svn_repository SVN           #only download the first folders names
 svn update --set-depth infinity Group\ discussion           #infinity, immediates, empty
 ```
+```
+svn ls          #check svn-repo's files
+svn add xxx_files
+svn ci -m "COMMIT MEssage"      # otherwise, will be ignored
+```
+```
+svn status -v xxx_files         #check file status
+svn status -u xxx-files         # check updates
+```
+
+Bug Fix >> Status against revision
+
+**problem** cant commit in ubuntu...
+
 Ref<http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-with-subversion>
+<http://www.linuxfromscratch.org/blfs/edguide/chapter03.html>
+<http://stackoverflow.com/questions/20273160/when-doing-a-subversion-commit-this-line-and-those-below-will-be-ignored>
+<http://beerpla.net/2008/07/23/how-to-check-if-the-local-svn-revision-is-up-to-date/>
 
 ### 3. Other tools
 PDF Reader-> evince
 Microsoft Office -> Libreoffice
 dropbox
 TortoiseSVN -> SVN (<http://svnbook.red-bean.com/en/1.4/svn.ref.svn.html>)
+
 
 ### 4. Freemind in ubuntu
 
@@ -170,4 +201,20 @@ server-settings incoming IMAP outlook.office365.com port:993 ssl/tls
 
 ### 13. Dropbox
 
+### 14. Wechat
+```
+npm install -g node-wechat-terminal
+wechat-terminal
+\h
 
+node problem solution: sudo ln -s /usr/bin/nodejs /usr/bin/node
+```
+Because Debian renames node to node.js
+
+<https://www.npmjs.com/package/node-wechat-terminal>
+
+## 15. Evince Use Guide
+Create own custom shortcuts
+Enable /desktop/gnome/interface/can_change_accels flag in gconf
+
+<https://help.gnome.org/users/evince/stable/shortcuts.html.en>
