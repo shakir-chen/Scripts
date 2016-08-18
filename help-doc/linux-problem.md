@@ -31,6 +31,12 @@ sudo apt-get install gnome-tweak-tool
 ```
 open gnome-tweak-tool, typing, caps behavior -> make as an additional ctrl keys.
 
+```
+setxkbmap -option caps:ctrl_modifier
+```
+<http://askubuntu.com/questions/53038/how-do-i-remap-the-caps-lock-key>
+
+
 ### 2. change default shell
 ```
 chsh -s /bin/bash
@@ -267,8 +273,8 @@ Enable /desktop/gnome/interface/can_change_accels flag in gconf
 
 ## 16. Sogou Pingyin Installation
 ```
-sudo apt-get install fcit
-install sogoupinyin_xxxx.deb
+sudo apt-get install fcitx
+sudo dpkg --install sogoupinyin_xxxx.deb
 fcitx-autostart
 ```
 
