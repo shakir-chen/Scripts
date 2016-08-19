@@ -1,6 +1,5 @@
 #Big Problem (Todo List)
 
-
 #Problem History
 1st-16th Aug
 1. No sound into headphone through SSH (ssh self problem)
@@ -26,8 +25,106 @@ ubuntu :
 i) printscreen
 ii) custom : shift+printscreen
 
-# Ubuntu - Installation Guide
+# Program Develop in Linux
+## Environment
+python - ipython
+bash - shell
+IDE Tools - Netbeans, Eclipse
 
+## Make
+make
+cmake
+
+## Debug
+gdb
+pyclewn
+
+## Search
+### file name search
+find
+locate
+### file content search
+grep
+sed
+awk
+### sort
+sort
+xarg
+
+## Modify
+
+### Diff two files
+```
+vimdiff file1 file2 or vim -d file1 file2
+commands in vimdiff
+dp  diffput:
+do  diffget
+]c
+[c
+```
+<http://vi.stackexchange.com/questions/625/how-do-i-use-vim-as-a-diff-tool>
+
+## Print
+echo
+cat
+wc
+tail        #print last 10 files of a file by default
+less        #view huge log files
+logsave     #record terminal/program output, add time stamp comparing with tee
+whereis
+whatis
+which
+uname       #display important info of system
+date        #show date
+
+## OS Resource
+```
+top
+ps
+df      #Storage Info
+kill    #kill process
+watch   #
+lsof    #list open files, figure out which processs use a certain file, or display all the files for a single process
+strace  #trace all system calls that a program makes to the linux kernal, see when a program opens closes, reads, writes, access files
+mount   #mount a file system
+```
+
+## Type conversion
+od      #dump files in octal and other formats
+iconv   #character code convert, example, utf8 to latin-1
+
+## Network
+nc      #netcat for tcp/ip swish army knife
+ping
+
+## Database
+mysql
+## Help
+cheat   #usage info of command, simply form of man command
+### cheat Installation
+```
+requirement: python,pip,git
+pip install docopt pygments
+git clone https://github.com/chrisallenlane/cheat.git
+cd cheat
+python setup.py install
+cheat -v
+export EDITOR=/usr/bin/nano     #modify in .bashrc
+```
+
+##bash recommendation utilities
+
+<http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner>
+
+## Language Recommendation
+java for real desktop applications
+python for quick and dirty things
+c and c++ for efficiency
+
+
+
+
+# Ubuntu - Installation Guide
 ## Ubuntu Settings
 
 ### 1. Caps Lock key change to additional CTRL
@@ -151,9 +248,6 @@ cscope: search source code of the programming language C (useless) - find defini
 
 cmake
 <http://stackoverflow.com/questions/17228/what-tools-do-you-use-to-develop-c-applications-on-linux>
-
-
-
 
 ### 10. SourceCode Understanding Workflow
 
@@ -438,7 +532,6 @@ function define {
     dict "$1"
 }
 ```
-
 GUI
 sudo apt-get install goldendict
 
