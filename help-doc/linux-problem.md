@@ -282,7 +282,7 @@ cd ~
 mkdir .ssh
 chmod 700 .ssh
 ssh-keygen     #enter keyfile:rsa_id  next phrase:psw
-ssh-copy-id -i user@host
+ssh-copy-id -i myrsaid.pub user@host
 ssh user@host
 ```
 
