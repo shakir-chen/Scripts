@@ -1,31 +1,26 @@
 #Big Problem (Todo List)
-
-
-#Problem History
-1st-16th Aug
 1. No sound into headphone through SSH (ssh self problem)
 
 2. Windows Ctrl - wmctrl (deeply understand)
 
-3. npm study (javascript etc, long-term)
+3. npm study (javascript etc, not in hurry)
 
-4. Research Environment Get Familiar (done, ssh+svn+latex)
-5. svn **problem** cant commit in ubuntu...!!! (done,update in the end)
+4. Research Environment Get Familiar
+
+!! 5. svn **problem** cant commit in ubuntu...!!!
+
 6. Ubuntu Dictionary (like lingoes in Windows)
--golden
-7. Chinese input in ubuntu (done, fcitx+sogou,logout)
+
+!! 7. Chinese input in ubuntu (restart)
+
 8. freemind in ubuntu (done)
-9. paste and copy in/out terminal (done, alternatives)
+
+9. paste and copy in/out terminal (alternatives)
 Way 1
 ```
 --gnome terminal use ctrl-shift-c for copy and ctrl-shift-v for paste
 vim insert
 ```
-10. Screen Snap
-ubuntu :
-i) printscreen
-ii) custom : shift+printscreen
-
 # Ubuntu - Installation Guide
 
 ## Ubuntu Settings
@@ -41,6 +36,7 @@ setxkbmap -option caps:ctrl_modifier
 ```
 <http://askubuntu.com/questions/53038/how-do-i-remap-the-caps-lock-key>
 
+
 ### 2. change default shell
 ```
 chsh -s /bin/bash
@@ -51,17 +47,8 @@ chsh -s /bin/bash
 wmctrl -d #show desktop
 wmctrl -l #list all the windows
 wmctrl -i -a <win-id>  #ignore other workspace; activate windows id
-wmctrl -r :ACTIVE: -e 0,2000,100,1000,400
 ```
-windows resolution information
-```
-xwininfo
-SCREEN_WIDTH=$(xwininfo -root | awk '$1=="Width:" {print $2}')
-SCREEN_HEIGHT=$(xwininfo -root | awk '$1=="Height:" {print $2}')
-```
-<http://unix.stackexchange.com/questions/53150/how-do-i-resize-the-active-window-to-50-with-wmctrl>
 Ubuntu Workspace Move: Ctrl+Alt+Arrow
-
 
 ### 4. Key-Shortcuts
 Win Switch to Neighbor Workspace: super + arrow
@@ -69,96 +56,11 @@ Win Move to other Workspace: None
 Workspace Switch : ctrl + number
 Workspace Switch to Neighbor: ctrl + alt + arrow
 
-terminal
-```
-Navigation
-Ctrl + A ;Beginining or Home Key
-Ctrl + E ;End or End Key
-Alt + F  ;Move cursor forward one word on the current line
-Alt + B  ;Move cursor backward one word on the current line
-
-Edit
---Delete
-Ctrl + K ;Clear all after line
-Ctrl + U ;Clear all before line
-Ctrl + W ;Delete the word before the cursor
-
-Ctrl + L ;Clear all the pane
-Ctrl + H ;Delete one character, backspace
---Swap
-Ctrl + T ;Swap the last two characters before the cursor
-Esc + T  ;Swap the last two words before the cursor
-
-Ctrl + R ;Search
-Ctrl + C ;kill whatever your are running
-Ctrl + D ;Exit the current shell
-
-Ctrl + Z ;Puts whatever you are running into a suspended background process. fg restores it.
-
-Tab      ;Auto-complete files and folder names
-```
-
-<http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/>
-<http://www.makeuseof.com/tag/save-time-linux-terminal-20-shortcuts/>
-
-```
-cd -        #cd last file
-!cd         #! + command, excute last that type command
-cd !$       # !$ means last parameter
-xxx && xxx  # && combinator for two commands
-```
-<http://lifehacker.com/5743814/become-a-command-line-ninja-with-these-time-saving-shortcuts>
 
 ### 5. deb file install and remove
+
 sudo dpkg -i xxx.deb
 sudo dpkg -r xxx
-
-
-### 6. Searching Technique in Linux - grep, awk and sed
-
-File Search
-```
-locate -b PN-J.png
-locate -S
-```
-
-```
-find -name "*.PNG"
-```
-
-```
-#change suffix name to small case
-$ find . -name '*.*' -exec sh -c 'a=$(echo "$0" | sed -r "s/([^.]*)\$/\L\1/"); [ "$a" != "$0" ] && mv "$0" "$a" ' {} \;
-```
-<https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps>
-<https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps>
-
-
-### 7. Debug in Linux - gdb + vim + pyclewn
-pyclewn
-
-gdb
-
-Others Recomendation:
-
-valgrind: build dynamic analysis tools - memory managemment and threading bugs
-<http://valgrind.org/>
-strace: monitor interactions between processes and the Linux kernel (useful)
-objdump -d inspect the machine code, for performance sensitive loops
-oprofile, hotspots in optimized code
-
-cscope: search source code of the programming language C (useless) - find definitions to jump around
-
-cmake
-<http://stackoverflow.com/questions/17228/what-tools-do-you-use-to-develop-c-applications-on-linux>
-
-
-
-
-### 10. SourceCode Understanding Workflow
-
-Software Recomendation in linux
-<https://wiki.installgentoo.com/index.php/List_of_recommended_GNU/Linux_software>
 
 ## Core Software Installation
 
@@ -176,9 +78,9 @@ the best way in ubuntu to install vim:
 ```
 sudo apt-get upgrade vim
 ```
+
 install kvim
 
-vim tool recommendation: <http://vimawesome.com/>
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
@@ -251,8 +153,6 @@ Microsoft Office -> Libreoffice
 dropbox
 TortoiseSVN -> SVN (<http://svnbook.red-bean.com/en/1.4/svn.ref.svn.html>)
 
-
-
 ### 4. Freemind in ubuntu
 install linux binary 2.6MB <http://freemind.sourceforge.net/wiki/index.php/Download>
 alias mindopen="~/Software/freemind/freeMind.sh"
@@ -278,25 +178,12 @@ apt-get install xxx
 
 ### 7. texlive choose and install
 sudo apt-get install texlive-latex-base
-
 Better Choice
 ```
 sudo apt-get install texlive
 sudo apt-get install texlive-latex-extra --no-install-recommends            #for a smaller extra package
 ```
-Latex error: psboxit.sty not found
-Listing not work
-```
-mkdir /usr/share/texlive/texmf-dist/tex/latex/psboxit
-wget -O psboxit.sty https://www.ctan.org/tex-archive/macros/latex209/contrib/misc/psboxit.sty
-sudo mktexlsr #or: sudo texhash
-
-apt-cache search psboxit    # no result
-apt-cache show texlive-latex-extra | grep psboxit    # no result
-```
-
 tips, pdf open tools - evince; this pdfware is quite simple but powerful. Annotation and highlight is in the left side with a tiny icon.
-
 
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
@@ -383,64 +270,10 @@ Enable /desktop/gnome/interface/can_change_accels flag in gconf
 <https://help.gnome.org/users/evince/stable/shortcuts.html.en>
 
 ## 16. Sogou Pingyin Installation
-Language Input Two Ways: i) ibus ii) fcitx
-
 ```
-sudo apt-get install fcit
-install sogoupinyin_xxxx.deb
+sudo apt-get install fcitx
+sudo dpkg --install sogoupinyin_xxxx.deb
 fcitx-autostart
 ```
-iibus
-no other chinese option in text entry<http://askubuntu.com/questions/455682/14-04-chinese-ibus-input-no-options>
-```
-choose input source chinese pinyin
-sudo apt-get install ibus-pinyin
-ibus-setup
-```
-English Input hidden Problem
-```
-choose keyboad input method
-keyboad settings
-tick out use show hidden words(ctrl+alt+h)
-```
 
-Experience Conclusion:
-1. Install Sogou Pinyin for linux (deb)
-2. language support: keyboard input system - fcitx (no need to make chinese effect)
-3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
-
-Settings: input method Global Config - Trigger Input Method (Ctrl + Tab) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
-
-<http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
-
-### 17. dictionary
-dcit + goldendict
-Commandline Interface: dict
-```
-#Installation
-sudo apt-get install dict
-sudo apt-get install dictd          #install dictionary framework
-sudo apt-get install dict-gcid      #English dictionary database
-sudo apt-get install dict-wn        #English dictionary database
-sudo apt-get install dict-devil     #English dictionary database
-sudo apt-get install dict-moby-treasures        #English moby treasures
-#Usage
-dict -d wn "dictionary"
-dict "dictionary"                   #thesaurus
-#workaround to include phoneme mnemonics
-sudo apt-get install espeak
-vim ~/.bashrc
-add in bashrc
-function define {
-    # espeak for the pronunciation audible output and phonetic alphabet string
-    echo "Phoneme mnemonics: $(espeak -ven-uk-rp -x -s 120 "$1" 2> /dev/null)"
-    # dict - the client for the dictionary server
-    dict "$1"
-}
-```
-
-GUI
-sudo apt-get install goldendict
-
-<http://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages>
 
