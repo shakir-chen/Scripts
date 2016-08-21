@@ -166,6 +166,14 @@ SCREEN_HEIGHT=$(xwininfo -root | awk '$1=="Height:" {print $2}')
 <http://unix.stackexchange.com/questions/53150/how-do-i-resize-the-active-window-to-50-with-wmctrl>
 Ubuntu Workspace Move: Ctrl+Alt+Arrow
 
+wmctrl has some fatal bug with not exact position of windows move.
+
+xdotool
+```
+xdotool selectwindow    #get windows id, decimal
+wmctrl -l               #get window id, hex
+```
+
 
 ### 4. Key-Shortcuts
 Win Switch to Neighbor Workspace: super + arrow
