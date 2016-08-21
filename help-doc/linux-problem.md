@@ -293,6 +293,11 @@ install kvim
 
 vim tool recommendation: <http://vimawesome.com/>
 
+Problem: vim exit will show "Thanks for flying vim"
+```
+let &titleold=substitute(getcwd(), $HOME, "~", "")  #in vim, add in the .vimrc
+```
+
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
 
