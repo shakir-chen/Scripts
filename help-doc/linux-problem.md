@@ -148,8 +148,15 @@ chsh -s /bin/bash
 wmctrl -d #show desktop
 wmctrl -l #list all the windows
 wmctrl -i -a <win-id>  #ignore other workspace; activate windows id
-wmctrl -r :ACTIVE: -e 0,2000,100,1000,400
+wmctrl -r :ACTIVE: -e 0,2000,100,1000,400           #-r specifies a target windows, -e resizes and moves
 ```
+-a activate the window
+-b add move or toggle up
+-c close
+-d list all desktops
+-e resize and move a window that has been specified with a -r action
+-g change the geometry w,h
+
 windows resolution information
 ```
 xwininfo
@@ -222,11 +229,15 @@ locate -S
 ```
 find -name "*.PNG"
 ```
-
 ```
-#change suffix name to small case
+ #change suffix name to small case
 $ find . -name '*.*' -exec sh -c 'a=$(echo "$0" | sed -r "s/([^.]*)\$/\L\1/"); [ "$a" != "$0" ] && mv "$0" "$a" ' {} \;
 ```
+basic regular expressions $.*[\]^, need to put backslash
+in a nutshell, for sed 's/.../.../', $.*/[\]^
+
+Ref:<http://unix.stackexchange.com/questions/32907/what-characters-do-i-need-to-escape-when-using-sed-in-a-sh-script>
+
 <https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps>
 <https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps>
 
@@ -334,10 +345,13 @@ svn update
 ```
 like windows after commit, update first and maybe wait for some seconds to see the changes)
 
+echo $?     #echo erros
+
 Ref<http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-with-subversion>
 <http://www.linuxfromscratch.org/blfs/edguide/chapter03.html>
 <http://stackoverflow.com/questions/20273160/when-doing-a-subversion-commit-this-line-and-those-below-will-be-ignored>
 <http://beerpla.net/2008/07/23/how-to-check-if-the-local-svn-revision-is-up-to-date/>
+
 
 ### 3. Other tools
 PDF Reader-> evince
@@ -536,4 +550,10 @@ GUI
 sudo apt-get install goldendict
 
 <http://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages>
+
+
+### 18. Message Box
+zenity
+
+notify-send 'hello' 'message'
 
