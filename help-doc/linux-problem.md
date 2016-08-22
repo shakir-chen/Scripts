@@ -1,4 +1,9 @@
 #Big Problem (Todo List)
+1. GDB how to debug and watch line by line ? (snap serial)
+2. GDB debug python
+
+Understand Makefile better
+
 
 #Problem History
 1st-16th Aug
