@@ -3,7 +3,7 @@
 2. GDB debug python
 
 Understand Makefile better
-
+lab-ip-address:143,89.135.225
 
 #Problem History
 1st-16th Aug
@@ -393,6 +393,19 @@ git add
 git commit
 git push
 git pull    #update packages
+```
+
++ withdraw old file in github
+```
+git checkout XXX-discasrd-file
+```
+<http://stackoverflow.com/questions/4318161/can-git-pull-all-update-all-my-local-branches>
+
++ merge
+
+Basic Branch and Merging Concept Here<https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
+```
+git checkout XXX-discasrd-file
 ```
 
 ### 6. package install guide:
