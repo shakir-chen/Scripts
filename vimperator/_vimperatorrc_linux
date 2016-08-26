@@ -1,0 +1,26 @@
+"3.12.0 (created: 2016/02/28 22:07:56)
+
+noremap j 10j
+noremap k 10k
+
+"au Fullscreen .* :set guioptions+=s
+source! "~/_vimperatorrc.local"
+
+set gui=none
+" vim: set ft=vimperator:
+
+"=======zotero========
+"抓取页面的命令是
+"map <C-1> :js ZoteroPane.addItemFromPage()<CR>
+noremap pp :js ZoteroPane.addItemFromPage();<CR>
+noremap ss <C-S-s>
+noremap zz <C-S-z>
+noremap nn :set gui=none<CR>
+"打开便签窗口的命令是
+;map <C-2> :js ZoteroPane.openNoteWindow()<CR>
+
+"把选中内容抓取为便签的命令是
+;map <C-3> :js ZoteroPane.newNote(false,false,getBrowserSelection(),gLastValidURLStr)<CR>
+
+
+"map <z> :js Zotero_Browser.scrapeThisPage()<CR>

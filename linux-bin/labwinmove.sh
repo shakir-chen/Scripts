@@ -65,6 +65,12 @@ then
     Y=$(( $RELATIVEHEIGHT + $TASKBARHEIGHT ))   #257 #52
     W=$(( $SCREEN1_WIDTH / 2 ))
     H=$(( $SCREEN1_HEIGHT - $TASKBARHEIGHT ))
+elif [ "$1" = "12" ]
+then
+    X=0
+    Y=$(( $RELATIVEHEIGHT + $TASKBARHEIGHT ))   #257 #52
+    W=$SCREEN1_WIDTH
+    H=$(( $SCREEN1_HEIGHT - $TASKBARHEIGHT ))
 elif [ "$1" = "3" ]
 then
     # moving to the top half of Screen2:
@@ -79,6 +85,12 @@ then
     Y=$(( ($SCREEN2_HEIGHT + $TASKBARHEIGHT) / 2 ))
     W=$SCREEN2_WIDTH
     H=$(( ($SCREEN2_HEIGHT - $TASKBARHEIGHT) / 2 ))
+elif [ "$1" = "34" ]
+then
+    X=1920
+    Y=$(( $TASKBARHEIGHT ))   #52
+    W=$SCREEN2_WIDTH
+    H=$(( ($SCREEN2_HEIGHT - $TASKBARHEIGHT) ))
 fi
 
 echo $X $Y $W $H
@@ -92,10 +104,22 @@ echo $2
 if [ "$2" = "" ]
 then
     echo "here"
+    wmctrl -r :ACTIVE: -b remove,maximized_vert,maximized_horz
     wmctrl -r :ACTIVE: -e 0,$X,$Y,$W,$H
+
+    if [[ "$1" = "12" || "$1" = "34" ]]
+    then
+        wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz
+    fi
 else
     echo "here2"
+    wmctrl -xr $2 -b remove,maximized_vert,maximized_horz
     wmctrl -xr $2 -e 0,$X,$Y,$W,$H
+
+    if [[ "$1" = "12" || "$1" = "34" ]]
+    then
+        wmctrl -xr $2 -b toggle,maximized_vert,maximized_horz
+    fi
 fi
 
 #wmctrl -r $2 -b remove,maximized_vert,maximized_horz && wmctrl -r $2 -e 0,$X,$Y,$W,$H

@@ -376,6 +376,7 @@ PDF Reader-> evince
 Microsoft Office -> Libreoffice
 dropbox
 TortoiseSVN -> SVN (<http://svnbook.red-bean.com/en/1.4/svn.ref.svn.html>)
+mobi reader -> calibre
 
 
 
@@ -582,9 +583,13 @@ sudo apt-get install goldendict
 
 <http://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages>
 
-
 ### 18. Message Box
 zenity
 
 notify-send 'hello' 'message'
+
+### 19. Zotero
+Follow my own instruction guide.
+Use Dropbox for Syncronization
+
 

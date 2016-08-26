@@ -166,7 +166,8 @@ alias pdf="evince"
 
 # program open in ubuntu
 alias open="xdg-open"
-
+# Zotero
+alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"
 
 #xqexit() {
 #    exit
@@ -210,6 +211,8 @@ function define {
 alias xqautorun="./compile"
 
 #terminal windows control
+alias wmctrlamax="wmctrl -r :ACTIVE: -b toggle,maximized_horz,maximized_vert" #window move control active
+alias wmctrla="wmctrl -r :ACTIVE: -b " #window move control active
 alias wmctrlae="wmctrl -r :ACTIVE: -e " #window move control active
 alias wmctrlat="wmctrl -r :ACTIVE: -b toggle," #window move control active
 alias wmctrlar="wmctrl -r :ACTIVE: -b remove," #window move control active
