@@ -1,6 +1,7 @@
 #Big Problem (Todo List)
 1. GDB how to debug and watch line by line ? (snap serial)
 2. GDB debug python
+3. Debug Tools, how vim can do better than IDE tools?
 
 Understand Makefile better
 lab-ip-address:143,89.135.225
@@ -309,7 +310,26 @@ CtrlP       ,p  or ,f
 vim-easymotion  ,,+w jump   ,,+fe find'e' and jump to that position
 Youcompletme    ,gd jump to declaration place
 multiple-cursor ctrl+m begin to select ; ctrl + p  up cease ; ctrl +x skip; esc
+
 <http://www.wklken.me/posts/2013/06/11/linux-my-vim.html#_6>
+
+Tips:
+1. Go to definitions using g
+```
+gd go to local declaration ;    gD go to global declaration
+g* search for the word under the cursor(like *, g* on 'rain' will find rainbow)
+g# same as g*,but in backward direction
+gg first line
+G  bottom line
+gf go to the file
+g] go to a tag
+```
+
+<http://vim.wikia.com/wiki/Go_to_definition_using_g>
+
+Best Reference: Vim Command Wiki
+
+
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
@@ -449,6 +469,12 @@ tips, pdf open tools - evince; this pdfware is quite simple but powerful. Annota
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
 
+tips:
+1. .tmux.conf and .tmux file
+2. rename session
+ctrl+B,: -> rename-session [-t current-name] [new-name]
+if no name, just rename-session new-name
+example: Jade Profiling Snap-Proj
 ### 9. Temperature Monitor
 ```
 sudo apt-get install lm-sensors
@@ -479,6 +505,22 @@ ssh -v localhost            #check locally
 
 ifconfig : inet addr:
 ssh username@localhost -p 2222  # silly sillyisafatpig
+
+
+Personal Homepage - ftp
+```
+ftp ihome.ust.hk
+help
+help glob
+lcd /home/user/directoryname    #set local files
+get file                        #get file from server
+mget *.xls                      #get several files, for folder, you need to build a empty folder first
+put file                        #upload file
+mput *.xls
+exit                            #close ftp
+```
+https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
+
 
 ### 12. Thunderbird
 addon google calendar
@@ -600,4 +642,15 @@ notify-send 'hello' 'message'
 Follow my own instruction guide.
 Use Dropbox for Syncronization
 
+### 20. Visio Alternatives(Only Win)
+Diagram - yEd , Dia Diagram
+inkscape - use svg as its native file format            + openclipart(additional clip art graphics)
+Libreoffice-draw (not so good)
+
+
+Ask Question in Academia - <http://academia.stackexchange.com/questions/1095/software-to-draw-illustrative-figures-in-papers>
+OmniGraffle(Mac,not free) > Xfig ; Tikz/PGF nice flexible diagrams
+Inkscape
+
+Final Decision : use inkscape and try to become a deep user
 
