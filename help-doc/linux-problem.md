@@ -5,6 +5,7 @@
 Understand Makefile better
 lab-ip-address:143,89.135.225
 
+
 #Problem History
 1st-16th Aug
 1. No sound into headphone through SSH (ssh self problem)
@@ -302,6 +303,13 @@ Problem: vim exit will show "Thanks for flying vim"
 ```
 let &titleold=substitute(getcwd(), $HOME, "~", "")  #in vim, add in the .vimrc
 ```
+PlugIn Deep Study
+Tagbar      <F9>
+CtrlP       ,p  or ,f
+vim-easymotion  ,,+w jump   ,,+fe find'e' and jump to that position
+Youcompletme    ,gd jump to declaration place
+multiple-cursor ctrl+m begin to select ; ctrl + p  up cease ; ctrl +x skip; esc
+<http://www.wklken.me/posts/2013/06/11/linux-my-vim.html#_6>
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
