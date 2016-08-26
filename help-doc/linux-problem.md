@@ -654,3 +654,8 @@ Inkscape
 
 Final Decision : use inkscape and try to become a deep user
 
+### 20. Web Development
+Firefox : vimperator gf - switch to source code vision
+          ctrl+shift+c  - inspect element
+
+

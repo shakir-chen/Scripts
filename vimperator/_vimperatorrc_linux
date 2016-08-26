@@ -17,10 +17,17 @@ noremap ss <C-S-s>
 noremap zz <C-S-z>
 noremap nn :set gui=none<CR>
 "打开便签窗口的命令是
-;map <C-2> :js ZoteroPane.openNoteWindow()<CR>
+"map <C-2> :js ZoteroPane.openNoteWindow()<CR>
 
 "把选中内容抓取为便签的命令是
-;map <C-3> :js ZoteroPane.newNote(false,false,getBrowserSelection(),gLastValidURLStr)<CR>
-
+"map <C-3> :js ZoteroPane.newNote(false,false,getBrowserSelection(),gLastValidURLStr)<CR>
 
 "map <z> :js Zotero_Browser.scrapeThisPage()<CR>
+
+"========web develop====
+noremap gc :emenu Tools.Web Developer.Browser Console<CR>       "ctrl +shift +c and ctrl+shift+i for the browser default
+command! bc -description "Open the browser console" :emenu Tools.Web Developer.Browser Console<CR>
+noremap gd <C-S-i>
+command! dev -description "Toggle developer tools" :normal <C-S-i>
+"http://superuser.com/questions/901524/how-can-i-show-and-hide-the-developer-tools-with-vimperator-in-firefox
+

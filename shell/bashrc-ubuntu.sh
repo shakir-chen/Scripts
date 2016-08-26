@@ -218,6 +218,16 @@ alias wmctrlat="wmctrl -r :ACTIVE: -b toggle," #window move control active
 alias wmctrlar="wmctrl -r :ACTIVE: -b remove," #window move control active
 alias wmctrls="wmctrl -r :SELECT: -e " #window move control select
 
+#git
+alias gitcd="cd ~/Study/Scripts && git status"
+alias gits="git status"
+alias gita="git add"
+alias gitpull="git pull"
+alias gitpush="git push origin master"
+alias gitco="git commit -m"
+
+
 #Gnome Terminal Title Change
 #PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 PROMPT_COMMAND='echo -ne "\033]0;TERM-${USER}@${HOSTNAME}: ${PWD}\007"'
+
