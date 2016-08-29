@@ -288,6 +288,45 @@ sudo apt-get install gparted
 ```
 <http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
 
+### 12. Remove Ugly Tabs in Ubuntu Terminal
+
+Two Ways
+1. directly change system configuration
+```
+>sudo vim /usr/share/themes/Ambiance/gtk-3.0/apps/gnome-terminal.css
+# change in the end
+TerminalNotebook.notebook tab .button {
+background-color: transparent;
+padding: 0px;     /*modify here, tab Padding Width*/
+}
+```
+2. under ~/.config
+```
+>vim ~/.config/gtk-3.0/gtk.css
+
+@define-color bg-grey #222;
+@define-color active-grey #333;
+@define-color border-grey #555;
+
+TerminalWindow .notebook {
+    border: 0;
+    padding: 0;
+    color: #eee;
+    background-color: shade(@active-grey, 1);
+}
+
+TerminalWindow .notebook tab:active {
+    border: 1px solid @border-grey;
+    background-color: shade(@active-grey, 1);
+}
+TerminalWindow .notebook tab {
+    background-color: shade(@bg-grey, 1);
+}
+```
+<https://ubuntu4questions.wordpress.com/2015/01/18/remove-ugly-fat-bazel-from-gnome-terminal-with-multiple-tabs/>
+<http://askubuntu.com/questions/221291/remove-ugly-fat-bazel-from-gnome-terminal-with-multiple-tabs>
+
+
 ## Core Software Installation
 
 ### 1. vim

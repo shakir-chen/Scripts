@@ -1,0 +1,25 @@
+@define-color bg-grey #222;
+@define-color active-grey #333;
+@define-color border-grey #555;
+
+@define-color solarized_text #839496;
+@define-color solarized_terminal_bg #002B36;
+
+TerminalWindow .notebook {
+  border: 0;
+  padding: 0;
+  /* color: #eee; */
+  color: @solarized_text;
+  background-color: shade(@active-grey, 1);
+  /* background-color: transparent; */
+}
+
+TerminalWindow .notebook tab:active {
+  border: 1px solid @border-grey;
+  background-color: shade(@solarized_terminal_bg, 1);
+}
+
+TerminalWindow .notebook tab {
+  background-color: transparent;
+  /* color: #eee; */
+}

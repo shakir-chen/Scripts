@@ -185,7 +185,7 @@ alias tmuxlw="tmux list-windows"
 alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
-alias tmuxa="tmux attach"               #attach to the first one
+alias tmuxa="tmux attach -t "               #attach to the first one
 
 # svn
 alias svnupimm="svn update --set-depth immediates "
