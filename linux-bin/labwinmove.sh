@@ -103,7 +103,7 @@ echo $X $Y $W $H
 echo $2
 if [ "$2" = "" ]
 then
-    echo "here"
+    echo "labwinmove - terminal"
     wmctrl -r :ACTIVE: -b remove,maximized_vert,maximized_horz
     wmctrl -r :ACTIVE: -e 0,$X,$Y,$W,$H
 
@@ -112,7 +112,7 @@ then
         wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz
     fi
 else
-    echo "here2"
+    echo "labwinmove - program"
     wmctrl -xr $2 -b remove,maximized_vert,maximized_horz
     wmctrl -xr $2 -e 0,$X,$Y,$W,$H
 

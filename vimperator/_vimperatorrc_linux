@@ -25,9 +25,9 @@ noremap nn :set gui=none<CR>
 "map <z> :js Zotero_Browser.scrapeThisPage()<CR>
 
 "========web develop====
-noremap gc :emenu Tools.Web Developer.Browser Console<CR>       "ctrl +shift +c and ctrl+shift+i for the browser default
+nnoremap gc :emenu Tools.Web Developer.Browser Console<CR>       "ctrl +shift +c and ctrl+shift+i for the browser default
 command! bc -description "Open the browser console" :emenu Tools.Web Developer.Browser Console<CR>
-noremap gd <C-S-i>
+nnoremap gd <C-S-i>
 command! dev -description "Toggle developer tools" :normal <C-S-i>
 "http://superuser.com/questions/901524/how-can-i-show-and-hide-the-developer-tools-with-vimperator-in-firefox
 

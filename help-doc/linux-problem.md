@@ -280,6 +280,14 @@ cmake
 Software Recomendation in linux
 <https://wiki.installgentoo.com/index.php/List_of_recommended_GNU/Linux_software>
 
+### 11. Dual System Partition Size Rearrangement
+
+Try at Personal PC before
+```
+sudo apt-get install gparted
+```
+<http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
+
 ## Core Software Installation
 
 ### 1. vim
@@ -552,14 +560,11 @@ sudo apt-get install python-docutils-dev
 ```
 Succeed
 
-
-
 ### 14. Wechat
 ```
 npm install -g node-wechat-terminal
 wechat-terminal
 \h
-
 node problem solution: sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 Because Debian renames node to node.js
@@ -642,6 +647,28 @@ notify-send 'hello' 'message'
 Follow my own instruction guide.
 Use Dropbox for Syncronization
 
+Better Bibtex-plugins - with vim support
+Download .xpi and install to Zotero add-ons <https://github.com/retorquere/zotero-better-bibtex/releases/tag/1.6.72>
+
+1. external curl solution
+```
+>vim cite
+>curl -s http://localhost:23119/better-bibtex/cayw?format=citet
+>:q
+chmod u+x cite
+mv cite ~/Linux/bin
+
+>vim ~/.vimrc
+nnoremap zz :r!cite<CR>
+```
+in vim, I can excute :r!cite or just zz in normal mode
+
+2.
+
+Ref:MIT <http://libguides.mit.edu/c.php?g=176000&p=1159208>
+
+
+
 ### 20. Visio Alternatives(Only Win)
 Diagram - yEd , Dia Diagram
 inkscape - use svg as its native file format            + openclipart(additional clip art graphics)
@@ -654,8 +681,23 @@ Inkscape
 
 Final Decision : use inkscape and try to become a deep user
 
-### 20. Web Development
+### 21. Web Development
 Firefox : vimperator gf - switch to source code vision
           ctrl+shift+c  - inspect element
 
+### 22. Emacs
+
+emacs : without suffix is the GTK+ version
+emacs-nox : without X server support
+emacs-lucid : emacs with a Lucid user interface == lloks like old emacs, not use GTK+
+
+```
+sudo apt-get install emacs24        #113 MB
+emacs -nw           #emacs no-windows-system
+```
+```
+Exit : C-x C-c
+```
+
+<http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
 
