@@ -769,5 +769,3 @@ I'd like to use Franz, more useful.
 sudo dpkg -i xxx.deb
 sudo apt-get -f install     #if meet some error, dpkg -i to install deb package will not install dependency automatically
 ```
->>>>>>> 9ab9168cbaa8e0b03e6cd571a3fa94f7ab09e2da:help-doc/linux-problem.md
-
