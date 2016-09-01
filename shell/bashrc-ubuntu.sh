@@ -227,7 +227,33 @@ alias gitpush="git push origin master"
 alias gitco="git commit -m"
 
 
+#Franz
+alias franz="~/Software/Franz/Franz &"
+
+
 #Gnome Terminal Title Change
 #PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-PROMPT_COMMAND='echo -ne "\033]0;TERM-${USER}@${HOSTNAME}: ${PWD}\007"'
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+
+
+function set-tab-title() {
+  if [[ -z "$ORIG" ]]; then
+      ORIG=$PS1
+  fi
+  TITLE="\[\e]2;$*\a\]"
+  # PS1=${ORIG}${TITLE}
+  PS1=${ORIG}${TITLE}
+
+  # PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
+  # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+
+}
+
+# function set-tab-title() {
+  # if [[ -z "$ORIG" ]]; then
+      # ORIG=$PS1
+    # fi
+  # TITLE="\[\e]2;$*\a\]"
+  # PS1=${ORIG}${TITLE}
+# }
 
