@@ -323,6 +323,13 @@ TerminalWindow .notebook tab {
 <https://ubuntu4questions.wordpress.com/2015/01/18/remove-ugly-fat-bazel-from-gnome-terminal-with-multiple-tabs/>
 <http://askubuntu.com/questions/221291/remove-ugly-fat-bazel-from-gnome-terminal-with-multiple-tabs>
 
+### Ubuntu Office Print
+IPP Device URI: https://eems04.ee.ust.hk/printers/esl080/.printer
+Make and Model: HP LaserJet 9050 Postscript (recommended)
+
+Failed, don't know the reason   - Could send an Email to the ITSC
+<http://itsc.ust.hk/kb/article.php?id=567>
+
 
 ## Core Software Installation
 
@@ -769,3 +776,4 @@ I'd like to use Franz, more useful.
 sudo dpkg -i xxx.deb
 sudo apt-get -f install     #if meet some error, dpkg -i to install deb package will not install dependency automatically
 ```
+
