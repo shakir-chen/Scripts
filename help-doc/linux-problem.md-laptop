@@ -128,9 +128,6 @@ java for real desktop applications
 python for quick and dirty things
 c and c++ for efficiency
 
-
-
-
 # Ubuntu - Installation Guide
 ## Ubuntu Settings
 
@@ -725,7 +722,6 @@ Firefox : vimperator gf - switch to source code vision
           ctrl+shift+c  - inspect element
 
 ### 22. Emacs
-
 emacs : without suffix is the GTK+ version
 emacs-nox : without X server support
 emacs-lucid : emacs with a Lucid user interface == lloks like old emacs, not use GTK+
@@ -739,4 +735,31 @@ Exit : C-x C-c
 ```
 
 <http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
+
+
+### 23. wine - Windows Software Support
+installation
+```
+sudo dpkg --add-architecture i386       #enable 32bit
+sudo add-apt-repository ppa:wine/wine-builds
+sudo apt-get update         #BUG-GPG error
+sudo apt-get install --install-recommends winehq-devel
+```
+GPG error
+```
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo apt-get update
+sudo apt-get install y-ppa manager
+y-ppa-manager   -> advanced -> try to import all missing GPG keys and click ok
+```
+<http://askubuntu.com/questions/13065/how-do-i-fix-the-gpg-error-no-pubkey>
+Not so good to use Wine to install Win-Software like Wechat and lingoes, but they can be used.
+
+
+<https://wiki.winehq.org/Ubuntu>
+
+Another way: install Electronic Wechat on Linux or Franz
+I'd like to use Franz, more useful.
+
+<https://www.linuxbabe.com/desktop-linux/install-wechat-linux>
 
