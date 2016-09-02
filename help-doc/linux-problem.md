@@ -6,7 +6,6 @@
 Understand Makefile better
 lab-ip-address:143,89.135.225
 
-
 #Problem History
 1st-16th Aug
 1. No sound into headphone through SSH (ssh self problem)
@@ -329,6 +328,9 @@ Make and Model: HP LaserJet 9050 Postscript (recommended)
 
 Failed, don't know the reason   - Could send an Email to the ITSC
 <http://itsc.ust.hk/kb/article.php?id=567>
+
+### File Browser - Connect to server
+ssh://username@hostpath
 
 
 ## Core Software Installation
@@ -771,6 +773,7 @@ I'd like to use Franz, more useful.
 
 <https://www.linuxbabe.com/desktop-linux/install-wechat-linux>
 =======
+
 ### 23. Netease Cloud Music
 ```
 sudo dpkg -i xxx.deb

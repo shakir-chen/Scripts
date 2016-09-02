@@ -230,6 +230,8 @@ alias gitco="git commit -m"
 #Franz
 alias franz="~/Software/Franz/Franz &"
 
+#Foxit Reader
+alias foxit="~/Linux/opt/foxitsoftware/foxitreader/FoxitReader"
 
 #Gnome Terminal Title Change
 #PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
