@@ -51,16 +51,16 @@ export LD_LIBRARY_PATH=/home/rafael/softwares/llvm/libcpp/lib:${LD_LIBRARY_PATH}
 export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
 
 # added by git Xuanqi
-
 export PATH=/home/xuanqi/Linux/bin:${PATH}
+export PATH=/home/xuanqi/Study/Script/linux-bin:${PATH}
 export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 
-
+# Qemu in Passion -xuanqi
+export PKG_CONFIG_PATH=/home/xuanqi/Software/Qemu/dependent_library/lib/pkgconfig/
 
 #PS1='$ '
-
 
 #PS1='\[\033[33m\]\w\[\033[36m\]\[\033[0m\]$]]]'
 
@@ -73,7 +73,10 @@ PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
 
 # grep
 #alias grep --color=auto
-alias gp="grep -r "
+alias gp="grep -r --color=auto"
+alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
+alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
+alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
 
 # ls
 alias l.="ls -d .* --color=tty"
@@ -94,7 +97,7 @@ alias ftn="gfortran"
 alias py="python"
 
 # pdf reader
-alias pdf="acroread"
+alias pdf="acroread" #evince ill
 
 #xqexit() {
 #    exit
@@ -111,3 +114,20 @@ alias tmuxlw="tmux list-windows"
 alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"
 alias tmuxsv="tmux splitw -v"
+alias tmuxa="tmux attach-session -t"
+
+#svn
+alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
+alias svnupimm="svn up --set-depth immediates"      #update
+alias svnupinf="svn up --set-depth infinity"
+alias svnupemp="svn up --set-depth empty"
+#exclude, files
+
+#xqconf
+alias xqconf="./configure -prefix=/home/xuanqi/Linux"
+
+#ssh functions
+function scpxq {
+   scp $1 xuanqi@$2.ece.ust.hk:$3
+}
+
