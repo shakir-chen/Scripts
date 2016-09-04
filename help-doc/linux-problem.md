@@ -559,6 +559,17 @@ ssh -v localhost            #check locally
 ifconfig : inet addr:
 ssh username@localhost -p 2222  # silly sillyisafatpig
 
+git on server - git-upload-pack command not found problem
+```
+>cd /etc/ssh/sshd_config
+PermitUserEnvironment yes
+>/etc/init.d/sshd restart
+
+Test on local-PC
+>sshd username@hostserver "which git-upload-pack"
+```
+<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
+Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
 
 Personal Homepage - ftp
 ```
@@ -573,6 +584,7 @@ mput *.xls
 exit                            #close ftp
 ```
 https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
+
 
 
 ### 12. Thunderbird
@@ -779,4 +791,7 @@ I'd like to use Franz, more useful.
 sudo dpkg -i xxx.deb
 sudo apt-get -f install     #if meet some error, dpkg -i to install deb package will not install dependency automatically
 ```
+### 24. PDF Tool Introduction
+pdf split - pdftk
+or just use evince print to the documents
 
