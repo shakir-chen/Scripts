@@ -49,9 +49,8 @@ git log --pretty=oneline    #changes the log outputs to format,  full,short,full
 git grep "foo()"
 ```
 
+
 ##Branch
-
-
 ```
 git checkout -b iss53   #swtich to a new version shorthand for  git branch iss53  && git checkout iss53
 vim XXX                 #Make some change
