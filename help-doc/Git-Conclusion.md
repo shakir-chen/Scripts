@@ -70,7 +70,6 @@ Still Much to learn
 
 <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
-
 ##Undo
 Can't always undo some of these undos!!
 May lose some work Here.
