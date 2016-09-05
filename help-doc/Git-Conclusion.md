@@ -109,6 +109,11 @@ git tag -a v1.2 9fceb02                     #9fceb02 is part of checksum, tag la
 git push origin v1.5                        #transfer tags to remote servers
 git checkout -b [branchname] [tagname]      #put a version with specific name by creating a new branch, carefully
 ```
+
+## Problem Solution
+fatal: Unable to find remote helper for 'https'
+
+
 ##Reference
 Good Summary<https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell>
 <https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control>

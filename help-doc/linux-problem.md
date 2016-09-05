@@ -560,14 +560,17 @@ ifconfig : inet addr:
 ssh username@localhost -p 2222  # silly sillyisafatpig
 
 git on server - git-upload-pack command not found problem
+
 ```
 >cd /etc/ssh/sshd_config
 PermitUserEnvironment yes
 >/etc/init.d/sshd restart
 
 Test on local-PC
->sshd username@hostserver "which git-upload-pack"
+>ssh username@hostserver "which git-upload-pack"
 ```
+
+
 <http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
 Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
 
