@@ -1,4 +1,11 @@
-##
+
+## Watch Variables
+```
+p xxx       #print variables
+```
+
+
+
 ## Running Program Backward
 ```
 reverse-next
