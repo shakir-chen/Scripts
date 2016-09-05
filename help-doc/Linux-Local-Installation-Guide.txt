@@ -2,7 +2,7 @@ Git
 $ make configure
 $ ./configure --prefix=/home/xuanqi/Linux/
 $ make all doc
-# make install install=doc install-html
+$ make install install=doc install-html
 
 Solarized Terminal
 $ git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git

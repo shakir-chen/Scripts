@@ -229,6 +229,9 @@ alias gita="git add"
 alias gitpull="git pull"
 alias gitpush="git push origin master"
 alias gitco="git commit -m"
+alias gitsb="git show-branch"       #show branch message
+
+alias sourcebashrc="source ~/.bashrc"       #show branch message
 
 
 #Franz
