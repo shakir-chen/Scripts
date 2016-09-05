@@ -130,4 +130,11 @@ alias xqconf="./configure -prefix=/home/xuanqi/Linux"
 function scpxq {
    scp $1 xuanqi@$2.ece.ust.hk:$3
 }
+#git
+alias gitcd="cd ~/Study/Scripts && git status"
+alias gits="git status"
+alias gita="git add"
+alias gitpull="git pull"
+alias gitpush="git push origin master"
+alias gitco="git commit -m"
 

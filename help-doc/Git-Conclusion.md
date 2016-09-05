@@ -49,7 +49,10 @@ git log --pretty=oneline    #changes the log outputs to format,  full,short,full
 git grep "foo()"
 ```
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8875660d89fd8fdbee4a0ba30e96b32d9b9be590
 ##Branch
 ```
 git checkout -b iss53   #swtich to a new version shorthand for  git branch iss53  && git checkout iss53
@@ -67,7 +70,13 @@ git merge hotfix        #git simply move pointer Master to pointer hotfix, which
 ```
 Still Much to learn
 
+show branch info
+```
+git show-branch
+```
+
 <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
+
 
 ##Undo
 Can't always undo some of these undos!!

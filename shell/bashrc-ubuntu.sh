@@ -141,6 +141,9 @@ PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
 # grep
 #alias grep --color=auto
 alias gp="grep -r "
+alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
+alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
+alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
 
 # ls
 alias l.="ls -d .* --color=tty"
@@ -188,6 +191,7 @@ alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach -t "               #attach to the first one
 
 # svn
+alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
