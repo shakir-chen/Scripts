@@ -333,6 +333,14 @@ Failed, don't know the reason   - Could send an Email to the ITSC
 ssh://username@hostpath
 
 
+### compress and uncompress
+```
+zip Filename.zip  File1, File2, File3
+zip -r Folder.zip  Folder1, Foler2, Folder3
+tar -xzvf filename.tar.gz
+tar -czvf filename.tar.gz Files
+```
+
 ## Core Software Installation
 
 ### 1. vim
