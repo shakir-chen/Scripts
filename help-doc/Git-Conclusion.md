@@ -50,8 +50,6 @@ git grep "foo()"
 ```
 
 ##Branch
-
-
 ```
 git checkout -b iss53   #swtich to a new version shorthand for  git branch iss53  && git checkout iss53
 vim XXX                 #Make some change
@@ -68,7 +66,13 @@ git merge hotfix        #git simply move pointer Master to pointer hotfix, which
 ```
 Still Much to learn
 
+show branch info
+```
+git show-branch
+```
+
 <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
+
 
 ##Undo
 Can't always undo some of these undos!!
