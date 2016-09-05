@@ -136,5 +136,6 @@ alias gits="git status"
 alias gita="git add"
 alias gitpull="git pull"
 alias gitpush="git push origin master"
-alias gitco="git commit -m"
+alias gitcm="git commit -m"
+alias gitco="git checkout"
 
