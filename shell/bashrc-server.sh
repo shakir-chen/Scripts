@@ -138,7 +138,10 @@ alias gitpull="git pull"
 alias gitpush="git push origin master"
 alias gitcm="git commit -m"
 alias gitco="git checkout"
+<<<<<<< HEAD
 alias gitsb="git show-branch"
 alias sourcebashrc="source ~/.bashrc"
 
+=======
+>>>>>>> 3322df823d3f4bbd8effd4ca557eed7c5a7e2c74
 
