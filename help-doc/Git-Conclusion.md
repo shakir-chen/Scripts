@@ -49,10 +49,7 @@ git log --pretty=oneline    #changes the log outputs to format,  full,short,full
 git grep "foo()"
 ```
 
-<<<<<<< HEAD
-
 =======
->>>>>>> 8875660d89fd8fdbee4a0ba30e96b32d9b9be590
 ##Branch
 ```
 git checkout -b iss53   #swtich to a new version shorthand for  git branch iss53  && git checkout iss53
@@ -118,6 +115,17 @@ git tag -a v1.2 9fceb02                     #9fceb02 is part of checksum, tag la
 git push origin v1.5                        #transfer tags to remote servers
 git checkout -b [branchname] [tagname]      #put a version with specific name by creating a new branch, carefully
 ```
+
+## Git Push without username, password
+```
+ssh-keygen -t rsa
+copy rsa content to Github
+git remote set-url origin git+ssh://git@github.com/username/reponame.git    #reset your URL insted of https://github.com/username/reponame.git
+git remote show origin  #check
+```
+<http://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid>
+
+
 
 ## Problem Solution
 fatal: Unable to find remote helper for 'https'
