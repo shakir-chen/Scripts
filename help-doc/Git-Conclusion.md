@@ -9,6 +9,7 @@ Major Difference between : Git thinks about its data.
 Git Basics <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>
 
 
+
 ##Create a new repository
 ```
 echo "# Windows-Move-and-Switch" >> README.md
@@ -49,7 +50,6 @@ git log --pretty=oneline    #changes the log outputs to format,  full,short,full
 git grep "foo()"
 ```
 
-=======
 ##Branch
 ```
 git checkout -b iss53   #swtich to a new version shorthand for  git branch iss53  && git checkout iss53
@@ -125,12 +125,25 @@ git remote show origin  #check
 ```
 <http://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid>
 
-
-
 ## Problem Solution
+git clone ssh://username@hostname:~path/to/git/repository/XXX.git
 fatal: Unable to find remote helper for 'https'
+upload-pack-command-not-found
+'''
+in /etc/ssh/sshd_config add:
+PermitUserEnvironment yes
+
+in .ssh/ directory
+env > .ssh/environment #dump envronment to .ssh/enviroment:
+'''
+<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
+
+
+
+
 
 
 ##Reference
 Good Summary<https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell>
 <https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control>
+
