@@ -127,6 +127,13 @@ java for real desktop applications
 python for quick and dirty things
 c and c++ for efficiency
 
+## Batch Rename Under Linux
+
+```
+for f in *.png; do mv "$f" "${f#image}"; done       #image0001.png to 0001.png
+
+```
+
 # Ubuntu - Installation Guide
 ## Ubuntu Settings
 
@@ -537,6 +544,7 @@ ctrl+B,: -> rename-session [-t current-name] [new-name]
 if no name, just rename-session new-name
 example: Jade Profiling Snap-Proj
 3. Error-nested TMUX, unset $TMUX : solutions - unset TMUX
+4. rearrange panes: ctrl-b + space or ctrl-b +meta+1-5
 ### 9. Temperature Monitor
 ```
 sudo apt-get install lm-sensors

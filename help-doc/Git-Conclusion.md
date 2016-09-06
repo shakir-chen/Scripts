@@ -83,6 +83,10 @@ git commit --amend          #want to commit as the formal commit with same infos
 git reset HEAD <Files>      #unstage a staged files
 git checkout -- <Files>     #unmodify a modified file, dangerous command
 ```
+```
+git reset --hard    #back to the commit stage
+gti clean -f        #clean all untrack files
+```
 Anything that is committed in Git can almost always be recovered. Even in Branches, use --amend commit can be recovered.
 
 ##Working with Remote
