@@ -811,3 +811,10 @@ sudo apt-get -f install     #if meet some error, dpkg -i to install deb package 
 pdf split - pdftk
 or just use evince print to the documents
 
+#=====================================
+# bash bug summary
+#=====================================
+
+## 1. Bad Substitute Error
+bash xxx.sh instead of sh xxx.sh
+
