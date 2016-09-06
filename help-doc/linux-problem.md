@@ -536,6 +536,7 @@ tips:
 ctrl+B,: -> rename-session [-t current-name] [new-name]
 if no name, just rename-session new-name
 example: Jade Profiling Snap-Proj
+3. Error-nested TMUX, unset $TMUX : solutions - unset TMUX
 ### 9. Temperature Monitor
 ```
 sudo apt-get install lm-sensors
