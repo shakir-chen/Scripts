@@ -459,7 +459,6 @@ Ref<http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-with-
 <http://stackoverflow.com/questions/20273160/when-doing-a-subversion-commit-this-line-and-those-below-will-be-ignored>
 <http://beerpla.net/2008/07/23/how-to-check-if-the-local-svn-revision-is-up-to-date/>
 
-
 ### 3. Other tools
 PDF Reader-> evince
 Microsoft Office -> Libreoffice
@@ -467,14 +466,11 @@ dropbox
 TortoiseSVN -> SVN (<http://svnbook.red-bean.com/en/1.4/svn.ref.svn.html>)
 mobi reader -> calibre
 
-
-
 ### 4. Freemind in ubuntu
 install linux binary 2.6MB <http://freemind.sourceforge.net/wiki/index.php/Download>
 alias mindopen="~/Software/freemind/freeMind.sh"
 
 Java Virtual Machine Issue; apt-get install openjdk-8-jre
-
 
 ### 5. Quick Github Repo commit
 ```
