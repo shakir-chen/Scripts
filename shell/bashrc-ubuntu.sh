@@ -256,7 +256,6 @@ function set-tab-title() {
 
   # PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
   # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-
 }
 
 # function set-tab-title() {
