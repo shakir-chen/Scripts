@@ -55,9 +55,6 @@ setenv PCRE_CFLAGS /home/xuanqi/Linux/include/pcre
 liblzma
 $ git clone https://github.com/vinzenz/liblzma.git
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 MPICH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
