@@ -10,7 +10,7 @@ elif [ "$1" = "zhehui" ]
 then
     servername="zhehui@rostam.ece.ust.hk"
 else
-    servername="xuanqi@"$1".ece.ust.hk"
+    servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fantasy sunlight
 fi
 
 ssh -X $servername
