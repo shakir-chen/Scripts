@@ -177,7 +177,6 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"
 #    exit
 #}
 
-
 # tmux      --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
 alias tmuxks="tmux kill-session -t "    #kill session
