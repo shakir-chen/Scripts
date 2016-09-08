@@ -1,0 +1,13 @@
+# NeoSmart NeoGrub Bootloader Configuration File
+#
+# This is the NeoGrub configuration file, and should be located at C:\NST\menu.lst
+# Please see the EasyBCD Documentation for information on how to create/modify entries:
+# http://neosmart.net/wiki/display/EBCD/
+
+title Install Ubuntu 16.04 LTS
+
+root (hd1,0)
+
+kernel (hd1,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04-desktop-amd64.iso ro quiet splash
+
+initrd (hd1,0)/initrd.lz
