@@ -137,6 +137,26 @@ for f in *.png; do mv "$f" "${f#image}"; done       #image0001.png to 0001.png
 # Ubuntu - Installation Guide
 ## Ubuntu Settings
 
+### 0. Ubuntu - UST Computer Install
+1. Windows EasyBCD
+New NeroGrub Entry
+```
+title Install Ubuntu 16.04 LTS
+
+root (hd1,0)
+
+kernel (hd1,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04-desktop-amd64.iso ro quiet splash
+
+initrd (hd1,0)/initrd.lz
+```
+U-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
+C-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
+
+<http://www.cnblogs.com/yzmb/p/ubuntu.html>
+
+Others - Recommendation
+<http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
+
 ### 1. Caps Lock key change to additional CTRL
 ```
 sudo apt-get install gnome-tweak-tool
@@ -564,16 +584,18 @@ sudo rm -rf /home/newuser
 sudo iptables -L
 ```
 sudo apt-get openssh-server
-check ps -A |grep sshd      #check sshd runs or not
+ps -A |grep sshd            #check sshd runs or not
 ssh -v localhost            #check locally
 
 <https://help.ubuntu.com/lts/serverguide/openssh-server.html>
 
-ifconfig : inet addr:
+ifconfig : inet addr:       # Get IP Address
+
+
 ssh username@localhost -p 2222  # silly sillyisafatpig
 
-git on server - git-upload-pack command not found problem
 
+git on server - git-upload-pack command not found problem
 ```
 >cd /etc/ssh/sshd_config
 PermitUserEnvironment yes
@@ -582,8 +604,6 @@ PermitUserEnvironment yes
 Test on local-PC
 >ssh username@hostserver "which git-upload-pack"
 ```
-
-
 <http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
 Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
 
@@ -817,4 +837,5 @@ or just use evince print to the documents
 
 ## 1. Bad Substitute Error
 bash xxx.sh instead of sh xxx.sh
+
 
