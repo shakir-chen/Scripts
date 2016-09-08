@@ -586,8 +586,13 @@ sudo iptables -L
 sudo apt-get openssh-server
 ps -A |grep sshd            #check sshd runs or not
 ssh -v localhost            #check locally
-
+sudo service ssh restart    #restart
 <https://help.ubuntu.com/lts/serverguide/openssh-server.html>
+
+Error: Connection Time Out
+nc -v -z 127.0.0.1 2222     #network connection test localhost:2222
+sudo /etc/init.d/ssh restart
+
 
 ifconfig : inet addr:       # Get IP Address
 
