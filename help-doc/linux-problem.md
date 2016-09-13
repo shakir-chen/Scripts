@@ -267,12 +267,21 @@ locate -S
 ```
 find -name "*.PNG"
 ```
+
+
 ```
  #change suffix name to small case
 $ find . -name '*.*' -exec sh -c 'a=$(echo "$0" | sed -r "s/([^.]*)\$/\L\1/"); [ "$a" != "$0" ] && mv "$0" "$a" ' {} \;
 ```
+
+```
 basic regular expressions $.*[\]^, need to put backslash
 in a nutshell, for sed 's/.../.../', $.*/[\]^
+```
+
+awk : pattern scanning and processing language          (input and processing)
+sed : stream editor for filtering and transforming text (more delete and replace specific reglex)
+
 
 Ref:<http://unix.stackexchange.com/questions/32907/what-characters-do-i-need-to-escape-when-using-sed-in-a-sh-script>
 
