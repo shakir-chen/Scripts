@@ -320,6 +320,9 @@ sudo apt-get install gparted
 ```
 <http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
 
+LVM - Logical Volume Management : More Advanced than traditional method of partition
+<https://wiki.ubuntu.com/Lvm>
+
 ### 12. Remove Ugly Tabs in Ubuntu Terminal
 
 Two Ways
@@ -841,6 +844,10 @@ sudo apt-get -f install     #if meet some error, dpkg -i to install deb package 
 ### 24. PDF Tool Introduction
 pdf split - pdftk
 or just use evince print to the documents
+
+### 25. Xilinx ISE Installation
+http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html
+
 
 #=====================================
 # bash bug summary
