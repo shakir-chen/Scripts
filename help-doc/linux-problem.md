@@ -774,13 +774,10 @@ in vim, I can excute :r!cite or just zz in normal mode
 
 Ref:MIT <http://libguides.mit.edu/c.php?g=176000&p=1159208>
 
-
-
 ### 20. Visio Alternatives(Only Win)
 Diagram - yEd , Dia Diagram
-inkscape - use svg as its native file format            + openclipart(additional clip art graphics)
+inkscape - use svg as its native file format            + openclipart(additional clip art graphics)         (how to rotate canvas? --wrong question, ask how to change page orientation instead, File-Document properties )
 Libreoffice-draw (not so good)
-
 
 Ask Question in Academia - <http://academia.stackexchange.com/questions/1095/software-to-draw-illustrative-figures-in-papers>
 OmniGraffle(Mac,not free) > Xfig ; Tikz/PGF nice flexible diagrams
