@@ -600,7 +600,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1467993865489" ID="ID_251432383" MODIFIED="1473081524682" POSITION="right" TEXT="Debugger">
+<node CREATED="1467993865489" FOLDED="true" ID="ID_251432383" MODIFIED="1474120933130" POSITION="right" TEXT="Debugger">
 <node CREATED="1467993870125" ID="ID_765526582" LINK="http://easwy.com/blog/archives/advanced-vim-skills-vim-gdb-vimgdb/" MODIFIED="1467993897449" TEXT="Tutorial"/>
 <node CREATED="1468065093686" ID="ID_90110481" MODIFIED="1468065098865" TEXT="clewn">
 <node CREATED="1468065101274" ID="ID_336809554" LINK="http://clewn.sourceforge.net/install.html" MODIFIED="1468065122190" TEXT="Requirement">

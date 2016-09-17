@@ -322,6 +322,7 @@ sudo apt-get install gparted
 
 LVM - Logical Volume Management : More Advanced than traditional method of partition
 <https://wiki.ubuntu.com/Lvm>
+<http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/>
 
 ### 12. Remove Ugly Tabs in Ubuntu Terminal
 
@@ -847,6 +848,10 @@ or just use evince print to the documents
 
 ### 25. Xilinx ISE Installation
 http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html
+
+### 26. VNC Viewer
+login to the server
+vncviewer 143.89.44.164:3 or vncviewer rostam:3
 
 
 #=====================================
