@@ -320,9 +320,18 @@ sudo apt-get install gparted
 ```
 <http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
 
+Volume Groups
+Physical Volumes
 LVM - Logical Volume Management : More Advanced than traditional method of partition
+
 <https://wiki.ubuntu.com/Lvm>
 <http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/>
+
+Delete
+```
+umount /dev/foo/bar
+lvremove /dev/foo/bar
+```
 
 ### 12. Remove Ugly Tabs in Ubuntu Terminal
 
