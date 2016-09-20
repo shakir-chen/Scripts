@@ -157,6 +157,13 @@ C-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
 Others - Recommendation
 <http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
 
+Windows RUFU Installation:
+<http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
+Linux Startup disk creator
+<http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu>
+
+
+
 ### 1. Caps Lock key change to additional CTRL
 ```
 sudo apt-get install gnome-tweak-tool
