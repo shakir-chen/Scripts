@@ -861,6 +861,13 @@ login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
 
 
+### 27. mount and umount
+```
+fdisk -l
+mount -t ntfs /dev/sda2 /mnt/OS
+umount /mnt/OS
+```
+
 #=====================================
 # bash bug summary
 #=====================================
