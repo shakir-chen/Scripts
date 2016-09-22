@@ -157,6 +157,13 @@ C-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
 Others - Recommendation
 <http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
 
+Windows RUFU Installation:
+<http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
+Linux Startup disk creator
+<http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu>
+
+
+
 ### 1. Caps Lock key change to additional CTRL
 ```
 sudo apt-get install gnome-tweak-tool
@@ -862,6 +869,13 @@ http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
 
+
+### 27. mount and umount
+```
+fdisk -l
+mount -t ntfs /dev/sda2 /mnt/OS
+umount /mnt/OS
+```
 
 #=====================================
 # bash bug summary
