@@ -166,7 +166,7 @@ alias py="python"
 # pdf reader
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
-function pdfopen {
+function evince() {
     evince $1 &
 }
 
@@ -266,6 +266,15 @@ function gitln(){
     ln -s ~/Study/Scripts/linux-bin/$1 .
     echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath"
     echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath" >> ~/Study/Scripts/linux-bin/ubuntu-setup.sh
+}
+
+#Move and Create a link in script directory
+function dropboxln(){
+    filefullpath=$(readlink -f $1)
+    mv --backup=t $1 ~/Dropbox/Linux/notes/
+    ln -s ~/Dropbox/Linux/notes/$1 .
+    echo "ln -s ~/Dropbox/Linux/notes/$1 $filefullpath"
+    echo "ln -s ~/Dropbox/Linux/notes/$1 $filefullpath" >> ~/Dropbox/Linux/ubuntu-setup.sh
 }
 
 # function set-tab-title() {
