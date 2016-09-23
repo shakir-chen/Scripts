@@ -69,6 +69,7 @@ export PKG_CONFIG_PATH=/home/xuanqi/Software/Qemu/dependent_library/lib/pkgconfi
 #PS1='${RED}\H:\W${WHITE}$ '
 
 #PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
+
 PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
 LS_COLORS="no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;32:*.cmd=00;32:*.exe=00;32:*.com=00;32:*.btm=00;32:*.bat=00;32:*.sh=00;32:*.csh=00;32:*.tar=00;31:*.tgz=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.zip=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.bz=00;31:*.tz=00;31:*.rpm=00;31:*.cpio=00;31:*.jpg=00;35:*.gif=00;35:*.bmp=00;35:*.xbm=00;35:*.xpm=00;35:*.png=00;35:*.tif=00;35:"
 
@@ -78,6 +79,9 @@ alias gp="grep -r --color=auto"
 alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
 alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
 alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
+alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
+alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
+alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 
 # ls
 alias l.="ls -d .* --color=tty"
@@ -106,6 +110,7 @@ alias pdf="acroread" #evince ill
 #}
 
 # tmux      --man tmux
+# unset $TMUX
 alias tmuxsource="tmux start-server \; source ~/.tmux.conf"
 alias tmuxks="tmux kill-session -t "
 alias tmuxkw="tmux kill-session -w "
