@@ -184,7 +184,7 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"
 alias logout="gnome-session-quit"
 
 #real vncviewer
-alias vncviwer="./Software/VNCViewer/vncviewer"
+alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
 alias vncgeom="vncserver -geometry 1080x990"
 alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
