@@ -109,10 +109,12 @@ alias pdf="acroread" #evince ill
 alias logout="gnome-session-quit"
 
 #real vncviewer
-alias vncviwer="./Software/VNCViewer/vncviewer"
-alias vncgeom="vncserver -geometry 1080x990"
+alias vncviwer="cd ~/Software/VNCViewer && ./vncviewer"
+alias vncgeom="vncserver -geometry 1920x1080"
 alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
+alias vncclean="rm *.pid *.log"
+alias vncdeepkill="cd /tmp/.X11-unix/"
 
 # tmux      --man tmux
 alias tmuxsource="tmux start-server \; source ~/.tmux.conf"
