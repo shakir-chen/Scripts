@@ -199,7 +199,7 @@ alias tmuxlw="tmux list-windows"
 alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
-alias tmuxa="tmux attach -t "               #attach to the first one
+alias tmuxa="tmux attach-session -t "               #attach to the first one
 
 # svn
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
