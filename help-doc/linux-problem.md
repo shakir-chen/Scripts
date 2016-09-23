@@ -26,6 +26,7 @@ Way 1
 --gnome terminal use ctrl-shift-c for copy and ctrl-shift-v for paste
 vim insert
 ```
+
 10. Screen Snap
 ubuntu :
 i) printscreen
@@ -174,6 +175,8 @@ open gnome-tweak-tool, typing, caps behavior -> make as an additional ctrl keys.
 setxkbmap -option caps:ctrl_modifier
 ```
 <http://askubuntu.com/questions/53038/how-do-i-remap-the-caps-lock-key>
+
+Alt Disable: Keyboard Shortcut - Launchers - Keytoshow Hud -disable
 
 ### 2. change default shell
 ```
