@@ -549,6 +549,10 @@ Basic Branch and Merging Concept Here<https://git-scm.com/book/en/v2/Git-Branchi
 ```
 git checkout XXX-discasrd-file
 ```
+gitssh build
+1. add .ssh/id_rsa.pub to github
+2. Verification :>ssh -T git@github.com
+<https://help.github.com/articles/testing-your-ssh-connection/>
 
 ### 6. package install guide:
 ```
