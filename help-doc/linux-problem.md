@@ -726,13 +726,20 @@ tick out use show hidden words(ctrl+alt+h)
 ```
 
 Experience Conclusion:
+0. Install Languae Support - use fcitx
 1. Install Sogou Pinyin for linux (deb)
 2. language support: keyboard input system - fcitx (no need to make chinese effect)
-3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
+logout
+Maybe no need: 3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
 
 Settings: input method Global Config - Trigger Input Method (Ctrl + Space) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
+Fcitx-> Global Config -> Trigger Input Method: super+space
 
 <http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
+<http://www.cnblogs.com/youxia/p/linux009.html>
+Error:
+No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
+A:  sudo apt-get -f install.  No use, just ignore this.
 
 ### 17. dictionary
 dcit + goldendict
@@ -772,6 +779,11 @@ notify-send 'hello' 'message'
 ### 19. Zotero
 Follow my own instruction guide.
 Use Dropbox for Syncronization
+
+Profile:
+1. General - tick out - take snapshots when creating item from web pages
+2. Sync - tickout Sync full-text content
+3. Advanced-Files and Folders - ~/Dorpbox/Paper
 
 Better Bibtex-plugins - with vim support
 Download .xpi and install to Zotero add-ons <https://github.com/retorquere/zotero-better-bibtex/releases/tag/1.6.72>
