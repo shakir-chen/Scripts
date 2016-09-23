@@ -556,7 +556,6 @@ apt-cache show package          //description of package
 apt-cache search package          //a short summary of all the texlive
 apt-get install xxx
 ```
-
 ### 7. texlive choose and install
 sudo apt-get install texlive-latex-base
 
@@ -708,7 +707,7 @@ Enable /desktop/gnome/interface/can_change_accels flag in gconf
 Language Input Two Ways: i) ibus ii) fcitx
 
 ```
-sudo apt-get install fcit
+sudo apt-get install fcitx
 install sogoupinyin_xxxx.deb
 fcitx-autostart
 ```
@@ -731,7 +730,7 @@ Experience Conclusion:
 2. language support: keyboard input system - fcitx (no need to make chinese effect)
 3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
 
-Settings: input method Global Config - Trigger Input Method (Ctrl + Tab) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
+Settings: input method Global Config - Trigger Input Method (Ctrl + Space) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
 
 <http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
 
