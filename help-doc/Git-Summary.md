@@ -126,6 +126,7 @@ ssh-keygen -t rsa
 copy rsa content to Github
 git remote set-url origin git+ssh://git@github.com/username/reponame.git    #reset your URL insted of https://github.com/username/reponame.git
 git remote show origin  #check
+ssh -T git@github.com   #check ssh connection situation
 ```
 <http://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid>
 
