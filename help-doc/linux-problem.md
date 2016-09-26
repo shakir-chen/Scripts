@@ -6,6 +6,24 @@
 Understand Makefile better
 lab-ip-address:143,89.135.225
 
+#git server
+```
+$ git clone --bare my_project my_project.git
+```
+
+
+git on server - git-upload-pack command not found problem
+```
+>cd /etc/ssh/sshd_config
+PermitUserEnvironment yes
+>/etc/init.d/sshd restart
+
+Test on local-PC
+>ssh username@hostserver "which git-upload-pack"
+```
+<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
+Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
+
 #Problem History
 1st-16th Aug
 1. No sound into headphone through SSH (ssh self problem)

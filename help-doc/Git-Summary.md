@@ -130,6 +130,7 @@ ssh -T git@github.com   #check ssh connection situation
 ```
 <http://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid>
 
+
 ## Problem Solution
 git clone ssh://username@hostname:~path/to/git/repository/XXX.git
 fatal: Unable to find remote helper for 'https'
