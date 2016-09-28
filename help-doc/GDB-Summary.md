@@ -38,6 +38,19 @@ stop for certain kinds of program events, such as C++ exceptions or the loading 
 ```
 p xxx       #print variables
 ```
+Better Print instead of address and ugly value
+
+Pretty Print
+
+
+```
+array[] = {100,200,300};
+$print array            #print the first value in array
+$print/x array@3        #print all 3 values in hex
+```
+
+Ref <http://stackoverflow.com/questions/427589/inspecting-standard-container-stdmap-contents-with-gdb>
+
 
 ## Running Program Backward
 ```

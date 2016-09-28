@@ -120,10 +120,10 @@ fi
 #export PATH=/home/rafael/softwares/valgrind/valgrind/bin:${PATH}
 #export LD_LIBRARY_PATH=/home/rafael/softwares/anaconda/lib:${LD_LIBRARY_PATH}
 # added by git Xuanqi
-export PATH=/home/shakir/Linux/bin:${PATH}
-export PATH=/home/shakir/Study/Scripts/linux-bin:${PATH}
-export LD_LIBRARY_PATH=/home/shakir/Linux/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/home/shakir/Linux/lib64:${LD_LIBRARY_PATH}
+export PATH=/home/xuanqi/Linux/bin:${PATH}
+export PATH=/home/xuanqi/Study/Scripts/linux-bin:${PATH}
+export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 # cheat add
 export EDITOR=/usr/bin/nano
@@ -166,7 +166,7 @@ alias py="python"
 # pdf reader
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
-function pdfopen {
+function evince() {
     evince $1 &
 }
 
@@ -180,6 +180,15 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"
 #    exit
 #}
 
+#logout
+alias logout="gnome-session-quit"
+
+#real vncviewer
+alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
+alias vncgeom="vncserver -geometry 1080x990"
+alias vnckill="vncserver kill :"
+alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
+
 # tmux      --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
 alias tmuxks="tmux kill-session -t "    #kill session
@@ -190,7 +199,7 @@ alias tmuxlw="tmux list-windows"
 alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
-alias tmuxa="tmux attach -t "               #attach to the first one
+alias tmuxa="tmux attach-session -t "               #attach to the first one
 
 # svn
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
@@ -255,9 +264,26 @@ function set-tab-title() {
   TITLE="\[\e]2;$*\a\]"
   # PS1=${ORIG}${TITLE}
   PS1=${ORIG}${TITLE}
-
   # PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
   # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+}
+
+#Move and Create a link in script directory
+function gitln(){
+    filefullpath=$(readlink -f $1)
+    mv --backup=t $1 ~/Study/Scripts/linux-bin/
+    ln -s ~/Study/Scripts/linux-bin/$1 .
+    echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath"
+    echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath" >> ~/Study/Scripts/linux-bin/ubuntu-setup.sh
+}
+
+#Move and Create a link in script directory
+function dropboxln(){
+    filefullpath=$(readlink -f $1)
+    mv --backup=t $1 ~/Dropbox/Linux/notes/
+    ln -s ~/Dropbox/Linux/notes/$1 .
+    echo "ln -s ~/Dropbox/Linux/notes/$1 $filefullpath"
+    echo "ln -s ~/Dropbox/Linux/notes/$1 $filefullpath" >> ~/Dropbox/Linux/ubuntu-setup.sh
 }
 
 # function set-tab-title() {

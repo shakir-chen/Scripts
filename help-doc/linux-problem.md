@@ -6,6 +6,24 @@
 Understand Makefile better
 lab-ip-address:143,89.135.225
 
+#git server
+```
+$ git clone --bare my_project my_project.git
+```
+
+
+git on server - git-upload-pack command not found problem
+```
+>cd /etc/ssh/sshd_config
+PermitUserEnvironment yes
+>/etc/init.d/sshd restart
+
+Test on local-PC
+>ssh username@hostserver "which git-upload-pack"
+```
+<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
+Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
+
 #Problem History
 1st-16th Aug
 1. No sound into headphone through SSH (ssh self problem)
@@ -26,6 +44,7 @@ Way 1
 --gnome terminal use ctrl-shift-c for copy and ctrl-shift-v for paste
 vim insert
 ```
+
 10. Screen Snap
 ubuntu :
 i) printscreen
@@ -157,6 +176,13 @@ C-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
 Others - Recommendation
 <http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
 
+Windows RUFU Installation:
+<http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
+Linux Startup disk creator
+<http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu>
+
+
+
 ### 1. Caps Lock key change to additional CTRL
 ```
 sudo apt-get install gnome-tweak-tool
@@ -167,6 +193,8 @@ open gnome-tweak-tool, typing, caps behavior -> make as an additional ctrl keys.
 setxkbmap -option caps:ctrl_modifier
 ```
 <http://askubuntu.com/questions/53038/how-do-i-remap-the-caps-lock-key>
+
+Alt Disable: Keyboard Shortcut - Launchers - Keytoshow Hud -disable
 
 ### 2. change default shell
 ```
@@ -320,9 +348,18 @@ sudo apt-get install gparted
 ```
 <http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
 
+Volume Groups
+Physical Volumes
 LVM - Logical Volume Management : More Advanced than traditional method of partition
+
 <https://wiki.ubuntu.com/Lvm>
 <http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/>
+
+Delete
+```
+umount /dev/foo/bar
+lvremove /dev/foo/bar
+```
 
 ### 12. Remove Ugly Tabs in Ubuntu Terminal
 
@@ -430,7 +467,28 @@ g] go to a tag
 
 Best Reference: Vim Command Wiki
 
+Gramma/Language Check
+LanguageTool => work for plain text
+<http://tex.stackexchange.com/questions/6333/grammar-checking-tool-for-use-with-latex>
+LanguageTool
+1. Download:vim-plugin
+<http://www.vim.org/scripts/script.php?script_id=3223>
+2. download languagetool
+Test LanguageTool from command line
+command-line:
+java -jar languagetool.jar
+java -jar languagetool-commandline.jar -l xx <filename>
 
+3. specify the location of the file languagetool-commandline.jar in your $HOME/.vimrc file.
+Example:
+  let g:languagetool_jar='$HOME/languagetool/languagetool-standalone/target/LanguageTool-3.3-SNAPSHOT/LanguageTool-3.3-SNAPSHOT/languagetool-commandline.jar'
+4. Usage
+:LanguageToolCheck
+:lopen      #open the location-list window
+:lne        #jump to next error
+
+aspell (not update for long time)
+aspell -t -c file.tex
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
@@ -533,6 +591,10 @@ Basic Branch and Merging Concept Here<https://git-scm.com/book/en/v2/Git-Branchi
 ```
 git checkout XXX-discasrd-file
 ```
+gitssh build
+1. add .ssh/id_rsa.pub to github
+2. Verification :>ssh -T git@github.com
+<https://help.github.com/articles/testing-your-ssh-connection/>
 
 ### 6. package install guide:
 ```
@@ -540,7 +602,6 @@ apt-cache show package          //description of package
 apt-cache search package          //a short summary of all the texlive
 apt-get install xxx
 ```
-
 ### 7. texlive choose and install
 sudo apt-get install texlive-latex-base
 
@@ -692,7 +753,7 @@ Enable /desktop/gnome/interface/can_change_accels flag in gconf
 Language Input Two Ways: i) ibus ii) fcitx
 
 ```
-sudo apt-get install fcit
+sudo apt-get install fcitx
 install sogoupinyin_xxxx.deb
 fcitx-autostart
 ```
@@ -711,13 +772,20 @@ tick out use show hidden words(ctrl+alt+h)
 ```
 
 Experience Conclusion:
+0. Install Languae Support - use fcitx
 1. Install Sogou Pinyin for linux (deb)
 2. language support: keyboard input system - fcitx (no need to make chinese effect)
-3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
+logout
+Maybe no need: 3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
 
-Settings: input method Global Config - Trigger Input Method (Ctrl + Tab) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
+Settings: input method Global Config - Trigger Input Method (Ctrl + Space) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
+Fcitx-> Global Config -> Trigger Input Method: super+space
 
 <http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
+<http://www.cnblogs.com/youxia/p/linux009.html>
+Error:
+No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
+A:  sudo apt-get -f install.  No use, just ignore this.
 
 ### 17. dictionary
 dcit + goldendict
@@ -757,6 +825,11 @@ notify-send 'hello' 'message'
 ### 19. Zotero
 Follow my own instruction guide.
 Use Dropbox for Syncronization
+
+Profile:
+1. General - tick out - take snapshots when creating item from web pages
+2. Sync - tickout Sync full-text content
+3. Advanced-Files and Folders - ~/Dorpbox/Paper
 
 Better Bibtex-plugins - with vim support
 Download .xpi and install to Zotero add-ons <https://github.com/retorquere/zotero-better-bibtex/releases/tag/1.6.72>
@@ -853,6 +926,13 @@ http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
 
+
+### 27. mount and umount
+```
+fdisk -l
+mount -t ntfs /dev/sda2 /mnt/OS
+umount /mnt/OS
+```
 
 #=====================================
 # bash bug summary
