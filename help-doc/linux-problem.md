@@ -467,7 +467,28 @@ g] go to a tag
 
 Best Reference: Vim Command Wiki
 
+Gramma/Language Check
+LanguageTool => work for plain text
+<http://tex.stackexchange.com/questions/6333/grammar-checking-tool-for-use-with-latex>
+LanguageTool
+1. Download:vim-plugin
+<http://www.vim.org/scripts/script.php?script_id=3223>
+2. download languagetool
+Test LanguageTool from command line
+command-line:
+java -jar languagetool.jar
+java -jar languagetool-commandline.jar -l xx <filename>
 
+3. specify the location of the file languagetool-commandline.jar in your $HOME/.vimrc file.
+Example:
+  let g:languagetool_jar='$HOME/languagetool/languagetool-standalone/target/LanguageTool-3.3-SNAPSHOT/LanguageTool-3.3-SNAPSHOT/languagetool-commandline.jar'
+4. Usage
+:LanguageToolCheck
+:lopen      #open the location-list window
+:lne        #jump to next error
+
+aspell (not update for long time)
+aspell -t -c file.tex
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server

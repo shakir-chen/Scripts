@@ -8,8 +8,6 @@ Distributed Version Control System (DVCS): client don't just check out, but full
 Major Difference between : Git thinks about its data.
 Git Basics <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>
 
-
-
 ##Create a new repository
 ```
 echo "# Windows-Move-and-Switch" >> README.md
@@ -85,7 +83,7 @@ git checkout -- <Files>     #unmodify a modified file, dangerous command
 ```
 ```
 git reset --hard    #back to the commit stage
-gti clean -f        #clean all untrack files
+git clean -f        #clean all untrack files
 ```
 Anything that is committed in Git can almost always be recovered. Even in Branches, use --amend commit can be recovered.
 
@@ -129,6 +127,23 @@ git remote show origin  #check
 ssh -T git@github.com   #check ssh connection situation
 ```
 <http://stackoverflow.com/questions/8588768/git-push-username-password-how-to-avoid>
+
+#git server
+```
+$ git clone --bare my_project my_project.git
+```
+
+git on server - git-upload-pack command not found problem
+```
+>cd /etc/ssh/sshd_config
+PermitUserEnvironment yes
+>/etc/init.d/sshd restart
+
+Test on local-PC
+>ssh username@hostserver "which git-upload-pack"
+```
+<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
+Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
 
 
 ## Problem Solution
