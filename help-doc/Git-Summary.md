@@ -131,7 +131,9 @@ ssh -T git@github.com   #check ssh connection situation
 #git server
 ```
 $ git clone --bare my_project my_project.git
+$ git remote add origin ~/Research/Benchmark-Tools.git          #To set the remote
 ```
+
 
 git on server - git-upload-pack command not found problem
 ```
