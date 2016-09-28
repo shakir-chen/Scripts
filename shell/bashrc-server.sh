@@ -75,6 +75,7 @@ LS_COLORS="no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;
 
 # grep
 #alias grep --color=auto
+# alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
 alias gp="grep -r --color=auto"
 alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
 alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
