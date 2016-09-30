@@ -530,6 +530,7 @@ sudo apt-get install subversion
 svn checkout --depth immediates ssh+svn://xuanqi@young.ece.ust.hk/home/svn_repository SVN           #only download the first folders names
 svn update --set-depth infinity Group\ discussion           #infinity, immediates, empty
 ```
+
 ```
 svn ls          #check svn-repo's files
 svn add xxx_files
