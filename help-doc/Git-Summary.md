@@ -1,4 +1,28 @@
 #GitHub Users Guide
+
+## Index
+untracked - unmodified - modified - staged
+                   ---edit->   --stage->
+    <---remove---  <-------commit-------
+    ----------------add---------------->
+
+Git Basic
+    Log:    Record Commit Information
+    Undo:   
+    Compare:
+    Tag:
+
+Branch
+Git Server
+Distributed Git
+
+Initial Unmodified State
+
+        edit        stage           commit              add
+git     modify      git add/rm      git commit -m       git add
+svn     modify      svn add/rm      svn commit -m       svn add
+
+
 ## Background
 simply copy in time-stampe sequency: Easily to forget the directory
 Local Version Control System: - RCS
@@ -96,7 +120,7 @@ git remote add <shortname> <url>        #adding remote repository
 #### Update or fetch a Rep
 ```
 git pull
-git fetch [remotename]          #get date from remote projects
+git fetch [remotename]                  #get date from remote projects
 git push [remote-name] [branch-name]    #origin master
 ```
 #### Inspect a remote
