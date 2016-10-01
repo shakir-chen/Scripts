@@ -72,6 +72,7 @@ Checked out revision 341.
 svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade-Zhehui-Xuanqi Jade-SVN
 <http://svnbook.red-bean.com/en/1.7/svn.branchmerge.using.html>
 
+## Merge
 1. trunk Merge to Branch
 ```
 cd calc/branch
@@ -92,10 +93,36 @@ svn commit -m "Merge my-calc-branch back into trunk"
 ```
 3. Merge info
 ```
+cd my-calc-branch
+svn propget svn:mergeinfo .
 svn mergeinfo ^/calc/trunk
+svn propget svn:mergeinfo --recursive -v
+```
+4. Undoing Changes
+```
+svn merge -c -303 ^/calc/trunk          # reverse mergeing r303 to r302
+svn status
+svn diff
+svn commit -m "undoing change comitted in r303"
+```
+
+The first step is to define exactly which item you're trying to resurrect. Here's a useful metaphor: you can think of every object in the repository as existing in a sort of two-dimensional coordinate system. The first coordinate is a particular revision tree, and the second coordinate is a path within that tree. So every version of your file or directory is defined by a specific coordinate pair. (Remember the “peg revision” syntax—foo.c@224—mentioned back in the section called “Peg and Operative Revisions”.)
+
+```
+cd parent-dir
+svn log -v
+svn copy ^/calc/trunk/real.c@807 ./real.c
+svn status
+svn commit -m "Resurrected real.c from revision 807, /calc/trunk/real.c."
+
+svn cat ^/calc/trunk/real.c@807 > ./real.c
+svn add real.c
+svn commit -m "Re-created real.c from revision 807."
 ```
 
 <http://svnbook.red-bean.com/en/1.7/svn.branchmerge.basicmerging.html>
+
+
 
 ## Checkout
 ```
