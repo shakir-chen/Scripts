@@ -9,6 +9,9 @@ source! "~/_vimperatorrc.local"
 set gui=none
 " vim: set ft=vimperator:
 
+"=======Reader========
+noremap rr <C-A-r>
+
 "=======zotero========
 "抓取页面的命令是
 "map <C-1> :js ZoteroPane.addItemFromPage()<CR>
