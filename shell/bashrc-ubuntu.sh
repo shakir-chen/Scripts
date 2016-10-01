@@ -256,7 +256,6 @@ alias foxit="~/Linux/opt/foxitsoftware/foxitreader/FoxitReader"
 #PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 
-
 function set-tab-title() {
   if [[ -z "$ORIG" ]]; then
       ORIG=$PS1
@@ -266,6 +265,26 @@ function set-tab-title() {
   PS1=${ORIG}${TITLE}
   # PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
   # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+}
+
+function connect() {
+    if [[ -z "$ORIG" ]]; then
+      ORIG=$PS1
+    fi
+    TITLE="\[\e]2;$1\a\]"
+    PS1=${ORIG}${TITLE}
+
+    if [ "$1" = "lab" ]
+    then
+        echo "here"
+        servername="shakir@143.89.135.225 -p 2222"
+    elif [ "$1" = "zhehui" ]
+    then
+        servername="zhehui@rostam.ece.ust.hk"
+    else
+        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fanta
+    fi
+    ssh -X $servername
 }
 
 #Move and Create a link in script directory
