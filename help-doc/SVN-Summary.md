@@ -82,7 +82,9 @@ svn status              #modify, those file in modified stage
 # build, test, ...
 svn commit -m "Merged last trunk changes to my-calc-branch"
 ```
+
 2. Branch Merge to trunk (Reintegrating)
+
 ```
 cd calc/trunk
 pwd

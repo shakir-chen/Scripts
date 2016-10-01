@@ -151,6 +151,7 @@ alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/s
 alias svnupimm="svn up --set-depth immediates"      #update
 alias svnupinf="svn up --set-depth infinity"
 alias svnupemp="svn up --set-depth empty"
+alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE"
 #exclude, files
 
 #xqconf
