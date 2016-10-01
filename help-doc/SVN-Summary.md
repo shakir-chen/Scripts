@@ -43,8 +43,6 @@ svn     svn copy        co or cd (bad)  svn commit          svn merge ^/calc/tru
 git     git log
 svn     svn log -v XXX
 
-
-
 Git-svn
 <https://git-scm.com/docs/git-svn>
 
@@ -53,6 +51,7 @@ Git-svn
 svn status
 Diff: svn diff "/path/filename"
 
+svn log -v -l 4 # svn log -v --limit 4
 ## Update
 svn update --set-depth immediates / infinity / empty
 
