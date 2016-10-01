@@ -17,11 +17,11 @@ untracked - unmodified - modified - staged
 
 Git Basic
     Log:    Record Commit Information
-    Undo:   1. undo-commit 2. undo-stage 3. undo-edit, undo-stage
+    Undo:   Remember nearly-all can getback: 1. undo-commit 2. undo-stage 3. undo-edit, undo-stage
     Compare:
     Tag:
 
-Branch
+Branch : 1.create; 2.switch; 3.merge
 Git Server
 Distributed Git
 
@@ -30,10 +30,23 @@ Initial Unmodified State
         edit        undo-edit       stage       undo-stage      commit          undo commit         add
 git     modify      git checkout -- git add/rm  git reset HEAD  git commit -m   git commit --amend  git add
 svn     modify                      svn add/rm                  svn commit -m                       svn add
-        diff-edit       diff-stage              diff-unod
-git     git diff --     git diff --cached --
-svn
 
+        diff-edit       diff-stage              diff-unmod
+git     git diff --     git diff --cached --
+svn     svn revert . -R                         svn diff -c 9238
+
+        branch-create   branch-switch   branch-commit       branch-merge
+git     git checkout -b git checkout    git commit -a -m    git merge branchname
+svn     svn copy        co or cd (bad)  svn commit          svn merge ^/calc/trunk
+
+        log             
+git     git log
+svn     svn log -v XXX
+
+
+
+Git-svn
+<https://git-scm.com/docs/git-svn>
 
 
 ## Info
@@ -59,8 +72,30 @@ Checked out revision 341.
 svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade-Zhehui-Xuanqi Jade-SVN
 <http://svnbook.red-bean.com/en/1.7/svn.branchmerge.using.html>
 
-1. Merge to trunk
+1. trunk Merge to Branch
+```
+cd calc/branch
+pwd                     #determine in branch
+svn merge ^/calc/trunk
+svn status              #modify, those file in modified stage
+# build, test, ...
+svn commit -m "Merged last trunk changes to my-calc-branch"
+```
+2. Branch Merge to trunk (Reintegrating)
+```
+cd calc/trunk
+pwd
+svn update
+svn merge --reintegrate ^/calc/branches/my-calc-branch
+# build test verify
+svn commit -m "Merge my-calc-branch back into trunk"
+```
+3. Merge info
+```
+svn mergeinfo ^/calc/trunk
+```
 
+<http://svnbook.red-bean.com/en/1.7/svn.branchmerge.basicmerging.html>
 
 ## Checkout
 ```
