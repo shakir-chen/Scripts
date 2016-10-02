@@ -141,3 +141,16 @@ svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force        #delete
 ## Commit to repo
 svn commit -m "message" "/path"
 
+
+## Git-SVN
+Git with a SVN repo
+
+<http://www.janosgyerik.com/practical-tips-for-using-git-with-large-subversion-repositories/>
+
+## Some Useful SVN Tricks
+1. Who Changed this line of code ? Who should I Contact?
+$ svn annotate FILE
+$ svn blame FILE
+$ svn praise FILE
+
+<https://gcc.gnu.org/wiki/SvnTricks>
