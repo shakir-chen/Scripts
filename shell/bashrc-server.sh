@@ -152,6 +152,7 @@ alias svnupimm="svn up --set-depth immediates"      #update
 alias svnupinf="svn up --set-depth infinity"
 alias svnupemp="svn up --set-depth empty"
 alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE"
+alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
 #exclude, files
 
 #xqconf
