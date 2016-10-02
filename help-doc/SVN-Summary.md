@@ -29,11 +29,11 @@ Initial Unmodified State
 
         edit        undo-edit       stage       undo-stage      commit          undo commit         add
 git     modify      git checkout -- git add/rm  git reset HEAD  git commit -m   git commit --amend  git add
-svn     modify                      svn add/rm                  svn commit -m                       svn add
+svn     modify      svn revert . -R svn add/rm                  svn commit -m                       svn add
 
         diff-edit       diff-stage              diff-unmod
 git     git diff --     git diff --cached --
-svn     svn revert . -R                         svn diff -c 9238
+svn                                             svn diff -c 9238
 
         branch-create   branch-switch   branch-commit       branch-merge
 git     git checkout -b git checkout    git commit -a -m    git merge branchname
