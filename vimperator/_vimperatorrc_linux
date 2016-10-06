@@ -18,6 +18,8 @@ noremap rr <C-A-r>
 noremap pp :js ZoteroPane.addItemFromPage();<CR>
 noremap ss <C-S-s>
 noremap zz <C-S-z>
+noremap rr :!zotero;<CR>        "exist some errors
+
 noremap nn :set gui=none<CR>
 "打开便签窗口的命令是
 "map <C-2> :js ZoteroPane.openNoteWindow()<CR>

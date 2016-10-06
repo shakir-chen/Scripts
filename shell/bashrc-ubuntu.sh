@@ -138,6 +138,10 @@ export EDITOR=/usr/bin/nano
 #PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
 PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
 LS_COLORS="no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;32:*.cmd=00;32:*.exe=00;32:*.com=00;32:*.btm=00;32:*.bat=00;32:*.sh=00;32:*.csh=00;32:*.tar=00;31:*.tgz=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.zip=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.bz=00;31:*.tz=00;31:*.rpm=00;31:*.cpio=00;31:*.jpg=00;35:*.gif=00;35:*.bmp=00;35:*.xbm=00;35:*.xpm=00;35:*.png=00;35:*.tif=00;35:"
+
+#LICENSE FILE SET
+export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
+
 # grep
 #alias grep --color=auto
 alias gp="grep -r "
@@ -150,6 +154,9 @@ alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
 alias vim="vi"
+function vimbin(){
+    vim $(which $1)
+}
 
 # clear
 alias cl="clear"
@@ -173,7 +180,7 @@ function evince() {
 # program open in ubuntu
 alias open="xdg-open"
 # Zotero
-alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"
+# alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
