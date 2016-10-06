@@ -175,6 +175,8 @@ alias open="xdg-open"
 # Zotero
 alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"
 
+#Set Caps to Control Key
+alias setcaps="setxkbmap -option caps:ctrl_modifier"
 #xqexit() {
 #    exit
 #    exit
