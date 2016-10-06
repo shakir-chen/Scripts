@@ -154,6 +154,9 @@ alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
 alias vim="vi"
+function vimbin(){
+    vim $(which $1)
+}
 
 # clear
 alias cl="clear"
@@ -177,7 +180,7 @@ function evince() {
 # program open in ubuntu
 alias open="xdg-open"
 # Zotero
-alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"
+# alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 
 #xqexit() {
 #    exit

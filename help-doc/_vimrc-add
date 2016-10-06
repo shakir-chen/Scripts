@@ -1,0 +1,8 @@
+"==========================================
+" Xuanqi
+"==========================================
+nnoremap zz :r!cite<CR>
+nnoremap zi :r!zotero<CR>
+let &titleold=substitute(getcwd(), $HOME, "~", ")
+let g:languagetool_jar='$HOME/Software/LanguageTool-3.4/languagetool-commandline.jar'")"
+

@@ -4,6 +4,7 @@
 3. Debug Tools, how vim can do better than IDE tools?
 
 4. ?? How to only move files without directory to a new folder ?
+5. ?? Optimize Firefox Zotero and Somehow Integrate it with Betterbibtex??
 
 Understand Makefile better
 lab-ip-address:143,89.135.225
