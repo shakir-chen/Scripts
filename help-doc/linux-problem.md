@@ -950,7 +950,18 @@ vim ~/.bashrc
 export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 ```
 
+Install Xilinx USB Cable
+cd /<Install Path>/Xilinx/<Version Number>/ISE_DS/common/bin/lin64/digilent
+sudo ./install_digilent.sh
+<http://elinux.org/Install_Xilinx_USB_cable_drivers_for_Ubuntu>
 
+No Use here due to install windrvr6 => not support for newest Ubuntu Kernel even I change its name
+
+linux_common.h:28:4: error: #error "This kernel is too recent: not supported by this file"
+ #  error "This kernel is too recent: not supported by this file"
+
+<http://www.xilinx.com/support/answers/22648.html>
+not supported: from <http://www.xilinx.com/support/answers/29310.html>
 ### 26. VNC Viewer
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
