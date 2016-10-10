@@ -174,9 +174,9 @@ alias py="python"
 # pdf reader
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
-function evince() {
-    evince $1 &
-}
+# function evince() {
+    # evince $1 &
+# }
 
 # program open in ubuntu
 alias open="xdg-open"
