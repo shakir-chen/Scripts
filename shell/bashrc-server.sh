@@ -153,6 +153,8 @@ alias svnupinf="svn up --set-depth infinity"
 alias svnupemp="svn up --set-depth empty"
 alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE"
 alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
+alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
+alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force" #delete
 #exclude, files
 function svnclone() {
     if [[ $1 == "ls" ]]
@@ -189,3 +191,10 @@ alias gitcm="git commit -m"
 alias gitco="git checkout"
 alias gitsb="git show-branch"
 alias sourcebashrc="source ~/.bashrc"
+
+function griphub(){
+    grip -b --user="shakir-chen" --quiet $1 localhost:3700
+}
+alias gripquick="grip -b --quiet"
+
+
