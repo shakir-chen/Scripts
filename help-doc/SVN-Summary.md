@@ -153,4 +153,7 @@ $ svn annotate FILE
 $ svn blame FILE
 $ svn praise FILE
 
+2. Watch Directroy
+svn list svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository -R | egrep "/$"
+
 <https://gcc.gnu.org/wiki/SvnTricks>
