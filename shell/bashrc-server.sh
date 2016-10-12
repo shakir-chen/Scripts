@@ -154,6 +154,23 @@ alias svnupemp="svn up --set-depth empty"
 alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE"
 alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
 #exclude, files
+function svnclone() {
+    if [[ $1 == "ls" ]]
+    then
+        svn ls svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/$2
+    fi
+    if [[ "$1" == "co" ]]
+    then
+        if [[ ! "$2" == "" ]]
+        then
+            echo "svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/$2"
+            svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/$2
+        fi
+    fi
+}
+
+
+
 
 #xqconf
 alias xqconf="./configure -prefix=/home/xuanqi/Linux"
