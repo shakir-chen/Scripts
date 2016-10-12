@@ -218,6 +218,15 @@ alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/s
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
+alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
+alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
+function svnsubmit(){
+    cp $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
+    cd ~/Research/svn/Discussion/Xuanqi\ Chen/
+    svn add Xuanqi_ResearchDairy.pdf
+    svn commit -m "ResearchDairy-Refresh"
+    svn update
+}
 #files
 
 #svn ls
@@ -323,6 +332,10 @@ function griphub(){
 }
 alias gripquick="grip -b --quiet"
 
+function scppassion(){
+    scp $1 xuanqi@passion.ece.ust.hk:~/$2
+}
+
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
       # ORIG=$PS1
@@ -330,7 +343,6 @@ alias gripquick="grip -b --quiet"
   # TITLE="\[\e]2;$*\a\]"
   # PS1=${ORIG}${TITLE}
 # }
-
 
 # Xilinx-ISE
 alias isesource="source /opt/Xilinx/14.7/ISE_DS/settings64.sh"
