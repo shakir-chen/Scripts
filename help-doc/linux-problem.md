@@ -3,6 +3,9 @@
 2. GDB debug python
 3. Debug Tools, how vim can do better than IDE tools?
 
+4. ?? How to only move files without directory to a new folder ?
+5. ?? Optimize Firefox Zotero and Somehow Integrate it with Betterbibtex??
+
 Understand Makefile better
 lab-ip-address:143,89.135.225
 
@@ -921,8 +924,44 @@ pdf split - pdftk
 or just use evince print to the documents
 
 ### 25. Xilinx ISE Installation
-http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html
+<http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html>
+```
+tar -xvzf Xilinx_ISE_DS_14.7_1015_1-1.tar
+sudo ./xsetup
 
+# finish installation from the IDE Prompt
+
+cd .../14.4/ISE_DS
+chmod u+x *.csh *.sh
+/path_to_the_installation_dir/14.4/ISE_DS/settings64.sh         #Set IDE Environment
+
+#run Xilinx Tool
+/path_to_the_installation_dir/14.4/ISE_DS/ISE/bin/lin64/ise
+/path_to_the_installation_dir/14.4/ISE_DS/ISE/bin/lin64/coregen
+/path_to_the_installation_dir/14.4/ISE_DS/EDK/bin/lin64/xps
+/path_to_the_installation_dir/14.4/ISE_DS/EDK/bin/lin64/xsdk
+```
+
+<http://stackoverflow.com/questions/15119734/how-to-launch-xilinx-ise-web-pack-under-ubuntu>
+Key - 2100@eems05.ece.ust.hk
+KeySettings
+```
+vim ~/.bashrc
+export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
+```
+
+Install Xilinx USB Cable
+cd /<Install Path>/Xilinx/<Version Number>/ISE_DS/common/bin/lin64/digilent
+sudo ./install_digilent.sh
+<http://elinux.org/Install_Xilinx_USB_cable_drivers_for_Ubuntu>
+
+No Use here due to install windrvr6 => not support for newest Ubuntu Kernel even I change its name
+
+linux_common.h:28:4: error: #error "This kernel is too recent: not supported by this file"
+ #  error "This kernel is too recent: not supported by this file"
+
+<http://www.xilinx.com/support/answers/22648.html>
+not supported: from <http://www.xilinx.com/support/answers/29310.html>
 ### 26. VNC Viewer
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3

@@ -1,0 +1,3 @@
+#!/bin/bash
+#2>/dev/null means suppress error messages          ==> TODO no use, ??
+~/Software/Zotero/Zotero_linux-x86_64/zotero & #2>/dev/null

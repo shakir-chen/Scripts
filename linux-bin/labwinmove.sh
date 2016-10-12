@@ -106,9 +106,11 @@ then
     echo "labwinmove - terminal"
     wmctrl -r :ACTIVE: -b remove,maximized_vert,maximized_horz
     wmctrl -r :ACTIVE: -e 0,$X,$Y,$W,$H
+    echo "wmctrl -r :ACTIVE: -e 0,$X,$Y,$W,$H"
 
     if [[ "$1" = "12" || "$1" = "34" ]]
     then
+        echo "wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz"
         wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz
     fi
 else

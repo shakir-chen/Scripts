@@ -1,8 +1,6 @@
 # SVN Summary
-
 It's easy to learn svn with git conception.
 <https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository>
-
 
 untracked - unmodified - modified - staged
                    ---edit-> ----stage->
@@ -39,13 +37,12 @@ svn                                             svn diff -c 9238
 git     git checkout -b git checkout    git commit -a -m    git merge branchname
 svn     svn copy        co or cd (bad)  svn commit          svn merge ^/calc/trunk
 
-        log             
+        log
 git     git log
 svn     svn log -v XXX
 
 Git-svn
 <https://git-scm.com/docs/git-svn>
-
 
 ## Info
 svn status

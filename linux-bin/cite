@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ ! -n $(ps -ef | grep zotero | grep -v "grep") ]]
+then
+    # echo "Zotero Exist"
+# else
+    # echo "Zotero Init"
+    ~/Software/Zotero/Zotero_linux-x86_64/zotero & #2>/dev/null
+fi
+curl -s http://localhost:23119/better-bibtex/cayw?format=citet
