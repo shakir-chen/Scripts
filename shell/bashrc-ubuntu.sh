@@ -126,7 +126,7 @@ export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 # cheat add
-export EDITOR=/usr/bin/nano
+export EDITOR=/usr/bin/vim
 
 #PS1='$ '
 #PS1='\[\033[33m\]\w\[\033[36m\]\[\033[0m\]$]]]'
@@ -158,6 +158,8 @@ alias vim="vi"
 function vimbin(){
     vim $(which $1)
 }
+alias vimplan="vim ~/plan.txt"
+alias vimbashrc="vim ~/.bashrc"
 
 # clear
 alias cl="clear"
@@ -223,6 +225,7 @@ alias svnupemp="svn update --set-depth empty "
 #freemind
 alias mindopen="~/Software/freemind/freemind.sh"
 
+alias cattab="cat -e -t -v" #Makefile check tab and space
 
 #dict
 function define {
@@ -315,6 +318,11 @@ function dropboxln(){
     echo "ln -s ~/Dropbox/Linux/notes/$1 $filefullpath" >> ~/Dropbox/Linux/ubuntu-setup.sh
 }
 
+function griphub(){
+    grip -b --user="shakir-chen" --quiet $1 localhost:3700
+}
+alias gripquick="grip -b --quiet"
+
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
       # ORIG=$PS1
@@ -322,6 +330,7 @@ function dropboxln(){
   # TITLE="\[\e]2;$*\a\]"
   # PS1=${ORIG}${TITLE}
 # }
+
 
 # Xilinx-ISE
 alias isesource="source /opt/Xilinx/14.7/ISE_DS/settings64.sh"

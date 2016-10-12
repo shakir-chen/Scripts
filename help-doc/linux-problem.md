@@ -137,13 +137,13 @@ git clone https://github.com/chrisallenlane/cheat.git
 cd cheat
 python setup.py install
 cheat -v
-export EDITOR=/usr/bin/nano     #modify in .bashrc
+export EDITOR=/usr/bin/vim #modify in .bashrc
+cheat -e find       #add more personal information in ./cheat find
 ```
 
 ##bash recommendation utilities
 
-<http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner>
-
+<http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner> 
 ## Language Recommendation
 java for real desktop applications
 python for quick and dirty things
@@ -973,6 +973,14 @@ fdisk -l
 mount -t ntfs /dev/sda2 /mnt/OS
 umount /mnt/OS
 ```
+
+iso
+sudo mount -t iso9660 -o ro,exec cpu2006-1.2.iso /mnt
+sudo umount /mnt
+
+### 28. girp filename.md
+
+pip install grip
 
 #=====================================
 # bash bug summary
