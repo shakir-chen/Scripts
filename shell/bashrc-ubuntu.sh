@@ -220,11 +220,12 @@ alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
+
 function svnsubmit(){
-    cp $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
+    cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
     cd ~/Research/svn/Discussion/Xuanqi\ Chen/
-    svn add Xuanqi_ResearchDairy.pdf
-    svn commit -m "ResearchDairy-Refresh"
+    svn add $1
+    svn commit -m "Submit $1 Refresh"
     svn update
 }
 #files
