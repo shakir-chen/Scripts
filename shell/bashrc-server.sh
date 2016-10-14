@@ -102,6 +102,8 @@ alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
 alias vi="vim"
 
+alias vimbashrc="vim ~/.bashrc"
+
 # clear
 alias cl="clear"
 
