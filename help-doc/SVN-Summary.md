@@ -25,9 +25,9 @@ Distributed Git
 
 Initial Unmodified State
 
-        edit        undo-edit       stage       undo-stage      commit          undo commit         add
-git     modify      git checkout -- git add/rm  git reset HEAD  git commit -m   git commit --amend  git add
-svn     modify      svn revert . -R svn add/rm                  svn commit -m                       svn add
+        edit        undo-edit       stage       undo-stage              commit          undo commit         add
+git     modify      git checkout -- git add/rm  git reset HEAD          git commit -m   git commit --amend  git add
+svn     modify      svn revert . -R svn add/rm                          svn commit -m                       svn add
 
         diff-edit       diff-stage              diff-unmod
 git     git diff --     git diff --cached --
@@ -120,8 +120,6 @@ svn commit -m "Re-created real.c from revision 807."
 
 <http://svnbook.red-bean.com/en/1.7/svn.branchmerge.basicmerging.html>
 
-
-
 ## Checkout
 ```
 svn co --depth immediate svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn
@@ -134,10 +132,8 @@ add all files unversioned
 svn add --force * --auto-props --parents --depth infinity -q            #add
 svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force        #delete
 
-
 ## Commit to repo
 svn commit -m "message" "/path"
-
 
 ## Git-SVN
 Git with a SVN repo
@@ -154,3 +150,7 @@ $ svn praise FILE
 svn list svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository -R | egrep "/$"
 
 <https://gcc.gnu.org/wiki/SvnTricks>
+
+
+## Big Lessons !!!
+"svn rm --keep-local ." ===> this just rm all local file !!!!

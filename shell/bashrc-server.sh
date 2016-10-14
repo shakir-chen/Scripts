@@ -156,6 +156,7 @@ alias svnupemp="svn up --set-depth empty"
 alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE"
 alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
+alias svnrefreshquestion="svn st | grep '^?' | awk '{print $2}' | xargs svn add" #add
 alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force" #delete
 #exclude, files
 function svnclone() {
