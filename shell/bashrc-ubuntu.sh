@@ -327,6 +327,7 @@ function dropboxln(){
     echo "ln -s ~/Dropbox/Linux/notes/$1 $filefullpath"
     echo "ln -s ~/Dropbox/Linux/notes/$1 $filefullpath" >> ~/Dropbox/Linux/ubuntu-setup.sh
 }
+alias mvbak="mv --backup=t"
 
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
