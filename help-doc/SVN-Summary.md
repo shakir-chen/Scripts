@@ -151,6 +151,5 @@ svn list svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository -R | egrep "/$"
 
 <https://gcc.gnu.org/wiki/SvnTricks>
 
-
 ## Big Lessons !!!
 "svn rm --keep-local ." ===> this just rm all local file !!!!
