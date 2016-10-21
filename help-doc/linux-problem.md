@@ -5,6 +5,7 @@
 
 4. ?? How to only move files without directory to a new folder ?
 5. ?? Optimize Firefox Zotero and Somehow Integrate it with Betterbibtex??
+6. ?? how to batch modify file name in the command line(awk,grep,sed)?   e.g. qemu-snap/ qemu-stream ??
 
 Understand Makefile better
 lab-ip-address:143,89.135.225
