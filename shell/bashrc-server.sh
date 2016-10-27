@@ -176,9 +176,6 @@ function svnclone() {
     fi
 }
 
-
-
-
 #xqconf
 alias xqconf="./configure -prefix=/home/xuanqi/Linux"
 
@@ -202,4 +199,10 @@ function griphub(){
 }
 alias gripquick="grip -b --quiet"
 
-
+#cd Frequent Path
+alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
+alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
+alias cdqemu="cd ~/Software/Qemu"
+alias cdjade="cd ~/Research/Jade"
+alias cdspec="cd ~/Research/Benchmark/SPEC"
+alias cdgit="cd ~/Study/Scripts"
