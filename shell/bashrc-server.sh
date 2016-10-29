@@ -48,6 +48,9 @@ export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/local/home/rafael/softwares/llvm/libcxx-3.6.2.src/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/home/rafael/softwares/llvm/libcpp/lib:${LD_LIBRARY_PATH}
 
+export PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/bin:${PATH}
+export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/lib/gcc/arm-none-linux-gnueabi/4.5.1:${LD_LIBRARY_PATH}
+
 export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
 
 # added by git Xuanqi
@@ -176,9 +179,6 @@ function svnclone() {
     fi
 }
 
-
-
-
 #xqconf
 alias xqconf="./configure -prefix=/home/xuanqi/Linux"
 
@@ -202,4 +202,16 @@ function griphub(){
 }
 alias gripquick="grip -b --quiet"
 
+#cd Frequent Path
+alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
+alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
+alias cdqemu="cd ~/Software/Qemu"
+alias cdjade="cd ~/Research/Jade"
+alias cdspec="cd ~/Research/Benchmark/SPEC"
+alias cdgit="cd ~/Study/Scripts"
 
+
+function cpcosmic() {
+    cp $1 ~/Benchmark/COSMIC-generation-flow/qemu/
+    cd ~/Benchmark/COSMIC-generation-flow/qemu/
+}
