@@ -157,9 +157,10 @@ alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/
 alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
 alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade_Memory"
 alias svnjadesg="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel"
+alias svnjadesgproc="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel/processor"
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 alias svnrefreshquestion="svn st | grep '^?' | awk '{print $2}' | xargs svn add" #add
-alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force" #delete
+alias svnrefreshdel="svn st | grep '!' | awk '{print $2}' | xargs svn delete --force" #delete
 #exclude, files
 function svnclone() {
     if [[ $1 == "ls" ]]
