@@ -232,6 +232,9 @@ function svnsubmit(){
 
 #svn ls
 
+# cd
+alias cddairy="cd ~/Research/Dairy/latex"
+
 #freemind
 alias mindopen="~/Software/freemind/freemind.sh"
 
@@ -358,3 +361,5 @@ alias cdspec="cd /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt d
 alias specinstall="./install.sh -d /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt directory
 alias specbuild="runspec --config=Xuanqi-linux64.cfg --action=build --tune=base"
 alias specrun=" runspec --config=Xuanqi-linux64.cfg --size=test --noreportable --tune=base --iterations=1"
+
+
