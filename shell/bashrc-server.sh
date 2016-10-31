@@ -107,6 +107,10 @@ alias vi="vim"
 
 alias vimbashrc="vim ~/.bashrc"
 
+# tar
+alias tarc="tar -cvzf"
+alias tarx="tar -xvzf"
+
 # clear
 alias cl="clear"
 
