@@ -1000,21 +1000,23 @@ wget $(xclip -o)        #get the Newest URL Infortmation
 3. URL Information Extraction
 
 ```
-xclip -selection clipboard -t image/png -o > "`date '+%Y-%m-%d_%T'`.png"
+xclip -selection clipboard -t image/png -o > "`date '+%Y-%m-%d_%T'`.png"            #Could not use Image URL
+wget Image_URL      #Only Useful Mouse Copy
 ```
 Target not find Error: You must input the correct image type at once
+
 
 4. Inspec Firefox Pictures
 Vimperator :
 ```
-;yId            #;y select picture in a new tab, I copy, d close
+;Iyd            #;I select picture in a new tab, y copy, d close
 ;c              # open menu tab to select copy
 ```
-
-
 <http://superuser.com/questions/11173/copy-image-location-in-vimperator>
+imageextender.js for .vimperator/plugin would be better. ;m find images, ;M save Image
 
 
+<https://vimpr.github.io/plugins-en.html>
 
 #=====================================
 # bash bug summary

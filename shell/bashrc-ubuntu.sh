@@ -192,6 +192,26 @@ alias setcaps="setxkbmap -option caps:ctrl_modifier"
 #    exit
 #}
 
+function wgetm() {
+    # if [[ "$2"=="" ]]
+    # then
+        # wget $1
+    # else
+        # wget $2 -O $1
+    # fi
+    URL=$(xclip -o)
+    echo $URL
+    if [[ ! "$URL" == "" ]]
+    then
+        if [[ "$1" == "" ]]
+        then
+            wget $URL
+        else
+            wget $URL -O $1
+        fi
+    fi
+}
+
 #logout
 alias logout="gnome-session-quit"
 
