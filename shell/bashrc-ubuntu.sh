@@ -120,10 +120,10 @@ fi
 #export PATH=/home/rafael/softwares/valgrind/valgrind/bin:${PATH}
 #export LD_LIBRARY_PATH=/home/rafael/softwares/anaconda/lib:${LD_LIBRARY_PATH}
 # added by git Xuanqi
-export PATH=/home/xuanqi/Linux/bin:${PATH}
-export PATH=/home/xuanqi/Study/Scripts/linux-bin:${PATH}
-export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib64:${LD_LIBRARY_PATH}
+export PATH=~/Linux/bin:${PATH}
+export PATH=~/Study/Scripts/linux-bin:${PATH}
+export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 # cheat add
 export EDITOR=/usr/bin/vim
