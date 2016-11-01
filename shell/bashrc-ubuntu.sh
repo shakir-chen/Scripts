@@ -353,3 +353,8 @@ alias isecoregen="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/coregen &"
 alias isexps="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/xps &"
 alias isexsdk="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/xsdk &"
 
+# SPEC
+alias cdspec="cd /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt directory
+alias specinstall="./install.sh -d /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt directory
+alias specbuild="runspec --config=Xuanqi-linux64.cfg --action=build --tune=base"
+alias specrun=" runspec --config=Xuanqi-linux64.cfg --size=test --noreportable --tune=base --iterations=1"
