@@ -980,8 +980,41 @@ sudo mount -t iso9660 -o ro,exec cpu2006-1.2.iso /mnt
 sudo umount /mnt
 
 ### 28. girp filename.md
-
 pip install grip
+
+### 29. Automatcially Save When Copy Image to VIM
+1. command-line: get a URL inforamtion
+wget http://virtualization.com/wp-content/uploads/2008/03/virtualization-kvm-ubuntu.png     #wget + URL
+Local File?? Clipboard File??
+
+2. URL Information Extraction
+clipboard : xsel, xclip
+```
+ls -al | xclip
+xclip filename.txt
+xclip -o
+wget $(xclip -o)        #get the Newest URL Infortmation
+```
+<https://www.howtoforge.com/command-line-copy-and-paste-with-xclip-debian-ubuntu>
+
+3. URL Information Extraction
+
+```
+xclip -selection clipboard -t image/png -o > "`date '+%Y-%m-%d_%T'`.png"
+```
+Target not find Error: You must input the correct image type at once
+
+4. Inspec Firefox Pictures
+Vimperator :
+```
+;yId            #;y select picture in a new tab, I copy, d close
+;c              # open menu tab to select copy
+```
+
+
+<http://superuser.com/questions/11173/copy-image-location-in-vimperator>
+
+
 
 #=====================================
 # bash bug summary
