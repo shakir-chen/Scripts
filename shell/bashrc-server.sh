@@ -131,6 +131,35 @@ alias pdf="acroread" #evince ill
 #    exit
 #}
 
+# ssh
+alias sshpassion="ssh-server passion"
+alias sshrostam="ssh-server rostam"
+alias sshmagic="ssh-server magic"
+alias sshyoung="ssh-server young"
+alias sshiron="ssh-server iron"
+
+function ssh-server() {
+    echo $1
+
+    if [ "$1" = "lab" ]
+    then
+        echo "here"
+        servername="shakir@143.89.135.225 -p 2222"
+    elif [ "$1" = "zhehui" ]
+    then
+        servername="zhehui@rostam.ece.ust.hk"
+    else
+        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
+    fi
+
+    ssh -X $servername
+}
+
+function scppassion(){
+    scp $1 xuanqi@passion.ece.ust.hk:~/$2
+}
+
+
 #logout
 alias logout="gnome-session-quit"
 
@@ -203,6 +232,7 @@ alias gitco="git checkout"
 alias gitsb="git show-branch"
 alias sourcebashrc="source ~/.bashrc"
 
+# grip
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
 }

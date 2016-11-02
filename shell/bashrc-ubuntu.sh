@@ -145,10 +145,14 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 
 # grep
 #alias grep --color=auto
+alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
 alias gp="grep -r "
 alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
 alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
 alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
+alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
+alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
+alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 
 # ls
 alias l.="ls -d .* --color=tty"
@@ -160,6 +164,10 @@ function vimbin(){
 }
 alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
+
+# tar
+alias tarc="tar -cvzf"
+alias tarx="tar -xvzf"
 
 # clear
 alias cl="clear"
@@ -211,6 +219,54 @@ function wgetm() {
         fi
     fi
 }
+
+# ssh
+alias sshpassion="ssh-server passion"
+alias sshrostam="ssh-server rostam"
+alias sshmagic="ssh-server magic"
+alias sshyoung="ssh-server young"
+alias sshiron="ssh-server iron"
+
+function ssh-server() {
+    echo $1
+
+    if [ "$1" = "lab" ]
+    then
+        echo "here"
+        servername="shakir@143.89.135.225 -p 2222"
+    elif [ "$1" = "zhehui" ]
+    then
+        servername="zhehui@rostam.ece.ust.hk"
+    else
+        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
+    fi
+
+    ssh -X $servername
+}
+
+function scppassion(){
+    scp $1 xuanqi@passion.ece.ust.hk:~/$2
+}
+
+# function connect() {
+    # if [[ -z "$ORIG" ]]; then
+      # ORIG=$PS1
+    # fi
+    # TITLE="\[\e]2;$1\a\]"
+    # PS1=${ORIG}${TITLE}
+
+    # if [ "$1" = "lab" ]
+    # then
+        # echo "here"
+        # servername="shakir@143.89.135.225 -p 2222"
+    # elif [ "$1" = "zhehui" ]
+    # then
+        # servername="zhehui@rostam.ece.ust.hk"
+    # else
+        # servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fanta
+    # fi
+    # ssh -X $servername
+# }
 
 #logout
 alias logout="gnome-session-quit"
@@ -288,7 +344,6 @@ alias gitpush="git push origin master"
 alias gitcm="git commit -m"
 alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
-
 alias sourcebashrc="source ~/.bashrc"       #show branch message
 
 
@@ -313,26 +368,6 @@ function set-tab-title() {
   # PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 }
 
-function connect() {
-    if [[ -z "$ORIG" ]]; then
-      ORIG=$PS1
-    fi
-    TITLE="\[\e]2;$1\a\]"
-    PS1=${ORIG}${TITLE}
-
-    if [ "$1" = "lab" ]
-    then
-        echo "here"
-        servername="shakir@143.89.135.225 -p 2222"
-    elif [ "$1" = "zhehui" ]
-    then
-        servername="zhehui@rostam.ece.ust.hk"
-    else
-        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fanta
-    fi
-    ssh -X $servername
-}
-
 #Move and Create a link in script directory
 function gitln(){
     filefullpath=$(readlink -f $1)
@@ -352,14 +387,19 @@ function dropboxln(){
 }
 alias mvbak="mv --backup=t"
 
+# grip
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
 }
 alias gripquick="grip -b --quiet"
 
-function scppassion(){
-    scp $1 xuanqi@passion.ece.ust.hk:~/$2
-}
+#cd Frequent Path
+alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
+alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
+alias cdqemu="cd ~/Software/Qemu"
+alias cdjade="cd ~/Research/Jade"
+alias cdspec="cd ~/Research/Benchmark/SPEC"
+alias cdgit="cd ~/Study/Scripts"
 
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
