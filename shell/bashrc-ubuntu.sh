@@ -201,22 +201,27 @@ alias setcaps="setxkbmap -option caps:ctrl_modifier"
 #}
 
 function wgetm() {
-    # if [[ "$2"=="" ]]
-    # then
-        # wget $1
-    # else
-        # wget $2 -O $1
-    # fi
     URL=$(xclip -o)
     echo $URL
     if [[ ! "$URL" == "" ]]
     then
         if [[ "$1" == "" ]]
         then
-            wget $URL
+            NAME="temp"
         else
-            wget $URL -O $1
+            NAME=$1
         fi
+        wget $URL -O "temp"
+        TYPE=$(file temp | grep -oP "^\w+: \K\w+")
+        echo "Filetype: $TYPE"
+        case $TYPE in
+            "PNG")
+                mv -v --back=t "temp" $NAME".png";;         # -v enable verbose output
+            "JPEG" | "JPG")
+                mv -v --back=t "temp" $NAME".jpg";;
+            *)
+                echo "not detect type";;
+        esac
     fi
 }
 
