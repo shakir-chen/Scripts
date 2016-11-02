@@ -400,6 +400,7 @@ alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Research/Jade"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Study/Scripts"
+alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
