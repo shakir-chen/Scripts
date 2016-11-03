@@ -458,13 +458,21 @@ multiple-cursor ctrl+m begin to select ; ctrl + p  up cease ; ctrl +x skip; esc
 Tips:
 1. Go to definitions using g
 ```
-gd go to local declaration ;    gD go to global declaration
-g* search for the word under the cursor(like *, g* on 'rain' will find rainbow)
-g# same as g*,but in backward direction
-gg first line
-G  bottom line
-gf go to the file
-g] go to a tag
+gd  go to local declaration ;    gD go to global declaration
+g*  search for the word under the cursor(like *, g* on 'rain' will find rainbow)
+g#  same as g*,but in backward direction
+gg  first line
+G   bottom line
+gf  go to the file
+g]  go to a tag
+,zz call togglefold function and fold all
+zm  fold the function area
+zr  unfold the function area
+\   search result(use CtrlSF) and show in the left pane
+,q  :q      #, map to <leader> key(\)
+,y  copy selected area to clipboard
+:register see the register
+"ay copy to register a
 ```
 
 <http://vim.wikia.com/wiki/Go_to_definition_using_g>
@@ -493,6 +501,9 @@ Example:
 
 aspell (not update for long time)
 aspell -t -c file.tex
+
+Execute selected text as vim commands ==> :@"   try: echo @"
+<http://stackoverflow.com/questions/4268532/vim-how-to-execute-selected-text-as-vim-commands>
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server

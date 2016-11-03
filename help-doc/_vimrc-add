@@ -3,6 +3,8 @@
 "==========================================
 nnoremap zz :r!cite<CR>
 nnoremap zi :r!zotero<CR>
+nnoremap mww :r!wgetm -t @"<CR>
+nnoremap mss :r!xclipsave -t @"<CR>
 let &titleold=substitute(getcwd(), $HOME, "~", ")
 let g:languagetool_jar='$HOME/Software/LanguageTool-3.4/languagetool-commandline.jar'")"
 

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+case $# in
+    "0") savefile="./temp.png";;
+    "1") filename=$1
+         savefile="./"$filename".png";;
+    "2")
+        filename=$2
+        case $1 in
+            "-r")   savefile=$DAIRY_PATH/$filename".png";;     #path+filename
+            "-d")   savefile=$DOWNLOAD_PATH/$filename".png";;     #path+filename
+            "-t")   savefile=$TEMPSAVE_PATH/$filename".png";;     #path+filename
+            "*")    savefile="./"$filename".png";;     #path+filename
+        esac ;;
+    "*") echo "Error: Too Many Vars";;
+esac
+xclip -selection clipboard -t image/png -o > $savefile

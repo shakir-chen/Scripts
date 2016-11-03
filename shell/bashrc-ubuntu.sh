@@ -403,6 +403,8 @@ alias specinstall="./install.sh -d /home/xuanqi/Research/Benchmark/SPEC"        
 alias specbuild="runspec --config=Xuanqi-linux64.cfg --action=build --tune=base"
 alias specrun=" runspec --config=Xuanqi-linux64.cfg --size=test --noreportable --tune=base --iterations=1"
 
+#xclip
+alias xclipscreenshot="xclip -selection clipboard -t image/png -o >"
 #wget
 export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
