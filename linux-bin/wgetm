@@ -5,30 +5,33 @@ URL=$(xclip -o)
 # echo $URL
 if [[ ! "$URL" == "" ]]
 then
-    if [[ "$#" == "0" ]]
-    then
-        NAME="temp"
-    fi
-
+    # echo "test"
+    # if [[ "$#" == "0" ]]
+    # then
+        # read -p "filename = ??  "  NAME
+        # # NAME="temp"
+    # fi
     case $# in
         "0")
-            NAME="temp"
+            read -p "filename = ??  "  NAME
+            # NAME="temp"
             wget_path=".";;
         "1")
-            if [[ "$1" == "-*" ]]
-            then
-                NAME="temp"
-                case $1 in
-                    "-d") wget_path=$DOWNLOAD_PATH;;
-                    "-r") wget_path=$DAIRY_PATH;;
-                    "-t") wget_path=$TEMPSAVE_PATH;;
-                    "*") wget_path="."
-                          echo "Input Directory Error";;
-                esac
-            else
-                NAME="$1"
-                wget_path="."
-            fi ;;
+            echo "test here"
+            case $1 in
+                "-d") wget_path=$DOWNLOAD_PATH
+                    read -p "filename = ??  "  NAME
+                    ;;
+                "-r") wget_path=$DAIRY_PATH
+                    read -p "filename = ??  "  NAME
+                    ;;
+                "-t") wget_path=$TEMPSAVE_PATH
+                    read -p "filename = ??  "  NAME
+                    ;;
+                "*")  NAME="$1"
+                      wget_path="." ;;
+            esac;;
+            # echo $NAME;;
         "2")
             NAME="$2"
             case $1 in

@@ -505,6 +505,9 @@ aspell -t -c file.tex
 Execute selected text as vim commands ==> :@"   try: echo @"
 <http://stackoverflow.com/questions/4268532/vim-how-to-execute-selected-text-as-vim-commands>
 
+Best Vimscripts Tutorials
+<http://learnvimscriptthehardway.stevelosh.com/chapters/49.html>
+
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
 
