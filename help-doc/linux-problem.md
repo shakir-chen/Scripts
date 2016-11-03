@@ -1015,8 +1015,25 @@ Vimperator :
 <http://superuser.com/questions/11173/copy-image-location-in-vimperator>
 imageextender.js for .vimperator/plugin would be better. ;m find images, ;M save Image
 
-
 <https://vimpr.github.io/plugins-en.html>
+
+====
+Another Three Application Environment
+1. screenshot and add
+    use copy
+    ```
+    xclip -selection clipboard -t image/png -o > "`date '+%Y-%m-%d_%T'`.png"            #always png type
+    ```
+    use save
+    ```
+    cp file $TEMPSAVE_PATH
+    ```
+2. clipboard picutre add
+    xclip -selection clipboard -t image/png -o > "`date '+%Y-%m-%d_%T'`.png"
+
+3. local file picture copy and move
+    cp file $TEMPSAVE_PATH
+
 
 #=====================================
 # bash bug summary
