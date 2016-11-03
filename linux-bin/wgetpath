@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ ! (-d $1 || -d $2) ]]; then
+    echo "No Such Directory"
+    return -1
+fi
+case $# in
+    "0") echo "Error: Nothing Input"    ;;
+    "1") TEMPSAVE_PATH=$1
+        echo "TEMPSAVE_PATH="$TEMPSAVE_PATH ;;
+    "2")
+        case $1 in
+            "-r")   DAIRY_PATH=$2
+                echo "DAIRY_PATH="$DAIRY_PATH;;
+            "*")    TEMPSAVE_PATH=$2;;
+        esac ;;
+    "*") echo "Error: Too Many Vars";;
+esac

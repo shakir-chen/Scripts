@@ -20,7 +20,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.  shopt -s checkwinsize 
+# update the values of LINES and COLUMNS.  shopt -s checkwinsize
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
@@ -199,31 +199,6 @@ alias setcaps="setxkbmap -option caps:ctrl_modifier"
 #    exit
 #    exit
 #}
-
-function wgetm() {
-    URL=$(xclip -o)
-    echo $URL
-    if [[ ! "$URL" == "" ]]
-    then
-        if [[ "$1" == "" ]]
-        then
-            NAME="temp"
-        else
-            NAME=$1
-        fi
-        wget $URL -O "temp"
-        TYPE=$(file temp | grep -oP "^\w+: \K\w+")
-        echo "Filetype: $TYPE"
-        case $TYPE in
-            "PNG")
-                mv -v --back=t "temp" $NAME".png";;         # -v enable verbose output
-            "JPEG" | "JPG")
-                mv -v --back=t "temp" $NAME".jpg";;
-            *)
-                echo "not detect type";;
-        esac
-    fi
-}
 
 # ssh
 alias sshpassion="ssh-server passion"
@@ -428,4 +403,85 @@ alias specinstall="./install.sh -d /home/xuanqi/Research/Benchmark/SPEC"        
 alias specbuild="runspec --config=Xuanqi-linux64.cfg --action=build --tune=base"
 alias specrun=" runspec --config=Xuanqi-linux64.cfg --size=test --noreportable --tune=base --iterations=1"
 
+#wget
+export DOWNLOAD_PATH=~/Downloads
+export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
+export TEMPSAVE_PATH=~/Downloads
 
+# DOWNLOAD_PATH=~/Downloads
+# DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
+# TEMPSAVE_PATH=~/Downloads
+
+# function wgetpath() {
+    # if [[ ! (-d $1 || -d $2) ]]; then
+        # echo "No Such Directory"
+        # return -1
+    # fi
+    # case $# in
+        # "0") echo "Error: Nothing Input"    ;;
+        # "1") TEMPSAVE_PATH=$1
+            # echo "TEMPSAVE_PATH="$TEMPSAVE_PATH ;;
+        # "2")
+            # case $1 in
+                # "-r")   DAIRY_PATH=$2
+                    # echo "DAIRY_PATH="$DAIRY_PATH;;
+                # "*")    TEMPSAVE_PATH=$2;;
+            # esac ;;
+        # "*") echo "Error: Too Many Vars";;
+    # esac
+# }
+
+# function wgetm() {
+    # #wgetm -d filename  -- -r dairy, -d download, default is $(pwd)
+    # URL=$(xclip -o)
+    # echo $URL
+    # if [[ ! "$URL" == "" ]]
+    # then
+        # if [[ "$#" == "0" ]]
+        # then
+            # NAME="temp"
+        # fi
+        # case $# in
+            # "0")
+                # NAME="temp"
+                # wget_path=".";;
+            # "1")
+                # if [[ "$1" == "-*" ]]
+                # then
+                    # NAME="temp"
+                    # case $1 in
+                        # "-d") wget_path=$DOWNLOAD_PATH;;
+                        # "-r") wget_path=$DAIRY_PATH;;
+                        # "-t") wget_path=$TEMPSAVE_PATH;;
+                        # "*") wget_path="."
+                              # echo "Input Directory Error";;
+                    # esac
+                # else
+                    # NAME="$1"
+                    # wget_path="."
+                # fi ;;
+            # "2")
+                # NAME="$2"
+                # case $1 in
+                    # "-d") wget_path=$DOWNLOAD_PATH;;
+                    # "-r") wget_path=$DAIRY_PATH;;
+                    # "-t") wget_path=$TEMPSAVE_PATH;;
+                    # "*") wget_path="."
+                          # echo "Input Directory Error";;
+               # esac ;;
+            # *)
+               # echo "Input Type Error: should be less than 3 vars";;
+        # esac
+        # wget $URL -O "temp"
+        # TYPE=$(file temp | grep -oP "^\w+: \K\w+")
+        # echo "Filetype: $TYPE"
+        # case $TYPE in
+            # "PNG")
+                # mv -v --back=t "temp" $wget_path/$NAME".png";;         # -v enable verbose output
+            # "JPEG" | "JPG")
+                # mv -v --back=t "temp" $wget_path/$NAME".jpg";;
+            # *)
+                # echo "not detect type";;
+        # esac
+    # fi
+# }

@@ -1,0 +1,64 @@
+#!/bin/bash
+
+#wgetm -d filename  -- -r dairy, -d download, default is $(pwd)
+URL=$(xclip -o)
+# echo $URL
+if [[ ! "$URL" == "" ]]
+then
+    if [[ "$#" == "0" ]]
+    then
+        NAME="temp"
+    fi
+
+    case $# in
+        "0")
+            NAME="temp"
+            wget_path=".";;
+        "1")
+            if [[ "$1" == "-*" ]]
+            then
+                NAME="temp"
+                case $1 in
+                    "-d") wget_path=$DOWNLOAD_PATH;;
+                    "-r") wget_path=$DAIRY_PATH;;
+                    "-t") wget_path=$TEMPSAVE_PATH;;
+                    "*") wget_path="."
+                          echo "Input Directory Error";;
+                esac
+            else
+                NAME="$1"
+                wget_path="."
+            fi ;;
+        "2")
+            NAME="$2"
+            case $1 in
+                "-d") wget_path=$DOWNLOAD_PATH;;
+                "-r") wget_path=$DAIRY_PATH;;
+                "-t") wget_path=$TEMPSAVE_PATH;;
+                "*") wget_path="."
+                      echo "Input Directory Error";;
+           esac ;;
+        *)
+           echo "Input Type Error: should be less than 3 vars";;
+    esac
+
+    # wget $URL -O "temp"
+    wget --quiet $URL -O  "temp"
+    TYPE=$(file temp | grep -oP "^\w+: \K\w+")
+    # echo "Filetype: $TYPE"
+    # echo "$wget_path"
+
+    case $TYPE in
+        "PNG" | "png")
+            # mv -v --back=t "temp" $wget_path/$NAME".png";;         # -v enable verbose output
+            mv --back=t "temp" $wget_path/$NAME".png"               # -v enable verbose output
+            echo $NAME".png"   ;;
+        "JPEG" | "JPG" | "jpeg" | "jpg")                            #Any case ignore method?
+            # mv -v --back=t "temp" $wget_path/$NAME".jpg"
+            mv --back=t "temp" $wget_path/$NAME".jpg"
+            echo $NAME".jpg"   ;;
+        *)
+            echo "not detect type";;
+    esac
+fi
+
