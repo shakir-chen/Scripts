@@ -180,6 +180,7 @@ alias ftn="gfortran"
 
 # python
 alias py="python"
+alias py3.5="python3.5"
 
 # pdf reader
 #alias pdf="acroread"       #centos
