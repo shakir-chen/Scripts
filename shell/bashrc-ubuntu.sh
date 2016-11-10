@@ -83,7 +83,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+source ~/.helprc
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -162,8 +164,11 @@ alias vim="vi"
 function vimbin(){
     vim $(which $1)
 }
+
 alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
+alias vimhelprc="vim ~/.helprc"
+alias vimproblem="vim ~/linux-problem.md"
 
 # tar
 alias tarc="tar -cvzf"
@@ -382,7 +387,7 @@ alias cdjade="cd ~/Research/Jade"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Study/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
-
+alias cdblog="cd ~/Documents/Blog/"
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
       # ORIG=$PS1
@@ -410,6 +415,37 @@ alias xclipscreenshot="xclip -selection clipboard -t image/png -o >"
 export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
+
+# #help-doc
+# function helpterm() {
+    # echo "Navigation"
+    # echo "Ctrl + A ;Beginining or Home Key"
+    # echo "Ctrl + E ;End or End Key"
+    # echo "Alt + F  ;Move cursor forward one word on the current line"
+    # echo "Alt + B  ;Move cursor backward one word on the current line"
+    # echo ""
+    # echo "Edit"
+    # echo "--Delete"
+    # echo "Ctrl + K ;Clear all after line"
+    # echo "Ctrl + U ;Clear all before line"
+    # echo "Ctrl + W ;Delete the word before the cursor"
+    # echo ""
+    # echo "Ctrl + L ;Clear all the pane"
+    # echo "Ctrl + H ;Delete one character, backspace"
+    # echo "--Swap"
+    # echo "Ctrl + T ;Swap the last two characters before the cursor"
+    # echo "Esc + T  ;Swap the last two words before the cursor"
+    # echo ""
+    # echo "Ctrl + R ;Search"
+    # echo "Ctrl + C ;kill whatever your are running"
+    # echo "Ctrl + D ;Exit the current shell"
+    # echo ""
+    # echo "Ctrl + Z ;Puts whatever you are running into a suspended background process. fg restores it."
+    # echo ""
+    # echo "Tab      ;Auto-complete files and folder names"
+
+
+# }
 
 # DOWNLOAD_PATH=~/Downloads
 # DAIRY_PATH=~/Dropbox/Linux/Dairy/latex

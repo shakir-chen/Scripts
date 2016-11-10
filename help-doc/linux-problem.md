@@ -1031,6 +1031,11 @@ imageextender.js for .vimperator/plugin would be better. ;m find images, ;M save
 
 <https://vimpr.github.io/plugins-en.html>
 
+### 30. fbi : Terminal Way to show picture
+sudo apt-get install fbi
+sudo fbi -T 2 filename.png          # show picture in ppty terminal 2
+
+
 ====
 Another Three Application Environment
 1. screenshot and add
