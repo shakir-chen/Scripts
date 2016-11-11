@@ -836,6 +836,22 @@ sudo apt-get install goldendict
 
 <http://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages>
 
+GoldenDict -- Recommendation
+stardict
+<http://kdr2.com/resource/stardict.html>
+<http://download.huzheng.org/babylon/bidirectional/>
+terminal version - scdv
+```
+sudo apt-get install scdv
+sudo tar -xvjf stardict-xfardic-gnu-linux-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
+```
+<https://flossstuff.wordpress.com/2012/01/23/sdcv-command-line-based-dictionary-for-linux/>
+
+Sometimes due to the long definition of a particular word text scrolls down too fast for you
+to read, advanced users can set SDCV_PAGER environment variable to /usr/bin/less. Now, less
+will be used to display to the dictionary’s article. You may consider adding this to your
+.bashrc file. Check out manpage for sdcv for more information.
+
 ### 18. Message Box
 zenity
 
@@ -1035,7 +1051,10 @@ imageextender.js for .vimperator/plugin would be better. ;m find images, ;M save
 sudo apt-get install fbi
 sudo fbi -T 2 filename.png          # show picture in ppty terminal 2
 
+### 31. pdb
+py3.5 -m pdb filename.py            # this will support name complete
 
+### 31. pdb
 ====
 Another Three Application Environment
 1. screenshot and add

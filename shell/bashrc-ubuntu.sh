@@ -303,11 +303,13 @@ alias mindopen="~/Software/freemind/freemind.sh"
 alias cattab="cat -e -t -v" #Makefile check tab and space
 
 #dict
+export SDCV_PAGER=/usr/bin/less
 function define {
 # espeak for the pronunciation audible output and phone alphabet string
     echo "Phoneme mnemonics: $(espeak -ven-uk-rp -x -s 120 "$1" 2> /dev/null)"
 # dict - the client for the dictionary server
-    dict $1
+    # dict $1
+    sdcv $1
 }
 
 #self-defined program compile command
