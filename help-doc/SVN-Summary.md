@@ -68,6 +68,20 @@ Checked out revision 341.
 svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade-Zhehui-Xuanqi Jade-SVN
 <http://svnbook.red-bean.com/en/1.7/svn.branchmerge.using.html>
 
+
+```
+$ svn copy http://svn.example.com/repos/calc/trunk \
+           http://svn.example.com/repos/calc/branches/my-calc-branch \
+        -m "Creating a private branch of /calc/trunk."
+
+svn copy svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel \
+         svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-sg-SPEC \
+         -m "Creating a private branch of /sg-SPEC."
+
+svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade-Memory
+```
+
+
 ## Merge
 1. trunk Merge to Branch
 ```

@@ -334,7 +334,6 @@ alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
 
-
 #Franz
 alias franz="~/Software/Franz/Franz &"
 
