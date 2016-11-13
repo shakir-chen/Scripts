@@ -194,6 +194,7 @@ alias svncosmic="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Us
 alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
 alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade_Memory"
 alias svnjadesg="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel"
+alias svnjadesgspec="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-sg-SPEC"
 alias svnjadesgproc="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel/processor"
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 alias svnrefreshquestion="svn st | grep '^?' | awk '{print $2}' | xargs svn add" #add
