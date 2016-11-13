@@ -1,0 +1,3 @@
+set args -d ./architectures/arc/singlecore.arc -w ./architectures/net/singlecore.txt -i ./applications/spec/astar-sg_x86_64.sam -g ./applications/spec/spec.map -O ./workspace/x86_msi_mosi_cmp_directory/result/astar.txt -n FILE_SPECIFIED | tee astar-report.txt
+exec-file ./workspace/x86_msi_mosi_cmp_directory/bin/jade.exec
+

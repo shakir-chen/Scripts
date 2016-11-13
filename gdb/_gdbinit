@@ -1,0 +1,4 @@
+# add-auto-load-safe-path /local/home/xuanqi/Research/Jade/Jade-Xuanqi/.gdbinit
+add-auto-load-safe-path /local/home/xuanqi/.gdbinit_master
+add-auto-load-safe-path /local/home/xuanqi/Research/Jade/Jade-SVN/JADE/.gdbinit
+add-auto-load-safe-path /local/home/xuanqi/Research/Jade/JADE-sg-SPEC/.gdbinit
