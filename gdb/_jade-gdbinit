@@ -1,3 +1,15 @@
-set args -d ./architectures/arc/singlecore.arc -w ./architectures/net/singlecore.txt -i ./applications/spec/astar-sg_x86_64.sam -g ./applications/spec/spec.map -O ./workspace/x86_msi_mosi_cmp_directory/result/astar.txt -n FILE_SPECIFIED | tee astar-report.txt
-exec-file ./workspace/x86_msi_mosi_cmp_directory/bin/jade.exec
+# Attention : CFLAGS += -ggdb or CFLAGS += -g
+
+# spec
+# set args -d ./architectures/arc/singlecore.arc -w ./architectures/net/singlecore.txt -i ./applications/spec/astar-sg_x86_64.sam -g ./applications/spec/spec.map -O ./workspace/x86_msi_mosi_cmp_directory/result/astar.txt -n FILE_SPECIFIED | tee astar-report.txt
+set args -d ./architectures/arc/singlecore.arc -w ./architectures/net/singlecore.txt -i ./applications/spec/astar-sg_x86_64.sam -g ./applications/spec/spec.map -O ./workspace/x86_msi_mosi_cmp_directory/result/astar.txt -n FILE_SPECIFIED
+
+# snap-sg
+# don't use any output sentence!!!!
+# set args -d ./architectures/arc/mesh_4x8.arc -w ./architectures/net/mesh_4x8.txt -i ./applications/app/snap-sg.sam -g ./applications/map/snap-sg_mesh_4x8.map -O ./workspace/x86_msi_mosi_cmp_directory/result/snap-sg_mesh_4x8.txt -n FILE_SPECIFIED | tee snap-sg_mesh_4x8-report.txt
+set args -d ./architectures/arc/mesh_4x8.arc -w ./architectures/net/mesh_4x8.txt -i ./applications/app/snap-sg.sam -g ./applications/map/snap-sg_mesh_4x8.map -O ./workspace/x86_msi_mosi_cmp_directory/result/snap-sg_mesh_4x8.txt -n FILE_SPECIFIED
+file ./workspace/x86_msi_mosi_cmp_directory/bin/jade.exec
+# exec-file ./workspace/x86_msi_mosi_cmp_directory/bin/jade.exec
+
+break main
 
