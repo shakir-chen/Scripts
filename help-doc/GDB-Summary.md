@@ -59,3 +59,13 @@ reverse-step
 reverse-continue
 ```
 But it needs environment-support
+
+## Add Interaction
+gdb -tui
+using ELK as a dashboard for honeypots
+<https://www.vanimpe.eu/2014/12/>   - So beautiful
+<https://www.elastic.co/products/kibana>
+
+## Good Example - GDB Python Optimization
+Output Message  /   Source      /   Asssembly     /     Threads     /       Stack           /       Registers       /       Expressions     /       Memory  / History
+<https://github.com/cyrus-and/gdb-dashboard>

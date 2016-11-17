@@ -508,6 +508,19 @@ Execute selected text as vim commands ==> :@"   try: echo @"
 Best Vimscripts Tutorials
 <http://learnvimscriptthehardway.stevelosh.com/chapters/49.html>
 
+5. Ctags usage
+ctags *.c *.h        # make tags for every c,h type files in workspace, result will be saved in tags file
+ctags -R -f ./.git/tags .       # Recursive in the current folder, except .git folder
+vim Ctrl+], at certain part will go to the k
+    :tag or :ta => function_name
+    :tselect or :ts => show the list
+    :tnext or :tn -> next tag in that list
+    :tprev or :tp
+    :tf or :tfirst
+    :tl or :tlast
+<https://andrew.stwrt.ca/posts/vim-ctags/>
+
+
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
 

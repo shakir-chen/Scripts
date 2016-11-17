@@ -127,6 +127,8 @@ export PATH=~/Study/Scripts/linux-bin:${PATH}
 export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
+export BOOST_ROOT=~/Software/boost/include
 # cheat add
 export EDITOR=/usr/bin/vim
 
