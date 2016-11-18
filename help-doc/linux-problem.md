@@ -520,6 +520,15 @@ vim Ctrl+], at certain part will go to the k
     :tl or :tlast
 <https://andrew.stwrt.ca/posts/vim-ctags/>
 
+6. mark usage (vim contains)
+help m      # in help motion text
+m<a-zA-Z> : set a mark in current line
+g'<a..>   : jump to maker a
+'<a..>    : jump to maker a
+
+7. plugin help general => ?
+
+
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
@@ -913,6 +922,20 @@ Final Decision : use inkscape and try to become a deep user
 ### 21. Web Development
 Firefox : vimperator gf - switch to source code vision
           ctrl+shift+c  - inspect element
+CANCEL Ctrl-H for history   ==> delete
+       Ctrl-B for bookmarks ==> left
+       Ctrl-F for find      ==> right
+       integerate them with terminal shortcuts
+
+use keyconfig plugin
+<http://forums.mozillazine.org/viewtopic.php?t=72994>
+<http://kb.mozillazine.org/Keyconfig_extension>
+<http://kb.mozillazine.org/Keyconfig_extension:_Thunderbird>
+
+Big News: Muttators for Thunderbird = Vimperator for Firefox
+Muttator => <http://www.vimperator.org/muttator>,download and Thunderbird install it from file
+Muttator CheatSheat=> <https://gist.github.com/kartoch/5955822>
+tips: gt goto newtab; gi goto inbox; w watch the structure;
 
 ### 22. Emacs
 emacs : without suffix is the GTK+ version

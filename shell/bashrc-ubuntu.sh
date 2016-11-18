@@ -392,6 +392,7 @@ alias cdgit="cd ~/Study/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0/"
+alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
       # ORIG=$PS1
