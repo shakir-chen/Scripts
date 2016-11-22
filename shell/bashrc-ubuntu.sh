@@ -203,6 +203,8 @@ alias open="xdg-open"
 
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
+alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+
 #xqexit() {
 #    exit
 #    exit

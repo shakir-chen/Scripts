@@ -422,6 +422,24 @@ tar -xzvf filename.tar.gz
 tar -czvf filename.tar.gz Files
 ```
 
+### Split Screen
+Multiple Screen => Ubuntu Multiple Screen
+Screen Split    => gtile
+Terminal Split  => tmux
+Firefox Split   => tile tab / tile view
+
+gTile : (some error)
+```
+git clone https://github.com/lundal/vibou.gTile.git ~/.local/share/gnome-shell/extensions/gTile@vibou       # install in share/gnome-shell/extensions/ folder
+killall -3 gnome-shell  # restart gnome, or use (alt+F2) + r + Enter
+```
+xtile : http://www.giuspen.com/x-tile/#downl
+ERROR:NameError: global name 'appindicator' is not defined
+sudo apt-get install python-appindicator
+xtile-not so good as imagine, even not better then may self moving program
+
+Think Shortcuts Integration with all of them
+
 ## Core Software Installation
 
 ### 1. vim
@@ -989,6 +1007,8 @@ sudo apt-get -f install     #if meet some error, dpkg -i to install deb package 
 ### 24. PDF Tool Introduction
 pdf split - pdftk
 or just use evince print to the documents
+
+Really Wonderful Pdftool : (better than evince) - qpdfview
 
 ### 25. Xilinx ISE Installation
 <http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html>
