@@ -39,7 +39,6 @@ gedit ~/.config/i3/config       # Mod1 Alt; Mod4 Win
 Hacker-Greg Kroah-Hartman
 <https://usesthis.com/interviews/greg.kh/>
 
-
 ### 1. Know and Rotate Screen: xrandr
 ```
 xrandr -q #output parameter infos
@@ -58,6 +57,12 @@ config:
 
 
 terminal -> view not show menu
+
+Error
+1.ssh-copy-id doesn't work
+ssh-add -l: check
+ssh-add .ssh/your-key
+<http://askubuntu.com/questions/786370/ssh-key-forwarding-not-working-under-i3wm>
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note
