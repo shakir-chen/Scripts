@@ -171,6 +171,7 @@ alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
+alias vimmakefile="vim Makefile"
 
 # tar
 alias tarc="tar -cvzf"
@@ -204,6 +205,7 @@ alias open="xdg-open"
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1"
 
 #xqexit() {
 #    exit
