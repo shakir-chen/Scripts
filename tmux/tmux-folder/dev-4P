@@ -1,0 +1,41 @@
+#four parts pane -> server-processor monitor
+#http://stackoverflow.com/questions/19711004/how-to-execute-command-after-opening-new-tmux-session
+
+# selectp -t 0            # select the first (0) pane
+# splitw -h -p 50  'top'  # split it into two halves
+
+# selectp -t 0            # go back to the first pane
+# splitw -v -p 50  'top'  # split it into two halves
+
+# selectp -t 2            # select the new, second (1) pane
+# splitw -v -p 50  'top'  # split it into two halves
+
+# selectp -t 0            # go back to the first pane
+
+# selectp -t 1            # go back to the first pane
+
+# set-option remain-on-exit on  # keep that pane remian and show the result, but "Dead Pane" information will show in the end
+
+rename-session server-top
+
+selectp -t 0            # select the first (0) pane
+splitw -h -p 50  'ssh xuanqi@rostam.ece.ust.hk'  # split it into two halves
+
+selectp -t 0            # go back to the first pane
+splitw -v -p 50  'ssh xuanqi@magic.ece.ust.hk'  # split it into two halves
+
+selectp -t 2            # select the new, second (1) pane
+splitw -v -p 50  'ssh xuanqi@young.ece.ust.hk'  # split it into two halves
+
+selectp -t 4            # select the new, second (1) pane
+splitw -v -p 50  'ssh xuanqi@iron.ece.ust.hk'  # split it into two halves
+
+selectp -t 0            # go back to the first pane
+
+# session=11
+# window=${session}:0
+# pane=${window}:1
+# tmux send-keys -t "$pane" C-z 'top' Enter
+# # tmux select-pane -t "$pane"
+# tmux select-window -t "$window"
+# tmux attach-session -t "$session"

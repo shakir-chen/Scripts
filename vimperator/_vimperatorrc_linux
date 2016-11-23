@@ -9,6 +9,10 @@ source! "~/_vimperatorrc.local"
 set gui=none
 " vim: set ft=vimperator:
 
+
+"=======Set Default Editor========
+:set editor="gnome-terminal --disable-factory -x vim"
+"http://superuser.com/questions/186782/setting-an-external-editor-in-vimperator
 "=======Reader========
 noremap rr <C-A-r>
 

@@ -127,6 +127,8 @@ export PATH=~/Study/Scripts/linux-bin:${PATH}
 export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
+export BOOST_ROOT=~/Software/boost/include
 # cheat add
 export EDITOR=/usr/bin/vim
 
@@ -169,6 +171,7 @@ alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
+alias vimmakefile="vim Makefile"
 
 # tar
 alias tarc="tar -cvzf"
@@ -201,6 +204,9 @@ alias open="xdg-open"
 
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
+alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1"
+
 #xqexit() {
 #    exit
 #    exit
@@ -390,6 +396,7 @@ alias cdgit="cd ~/Study/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0/"
+alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
       # ORIG=$PS1

@@ -422,6 +422,24 @@ tar -xzvf filename.tar.gz
 tar -czvf filename.tar.gz Files
 ```
 
+### Split Screen
+Multiple Screen => Ubuntu Multiple Screen
+Screen Split    => gtile
+Terminal Split  => tmux
+Firefox Split   => tile tab / tile view
+
+gTile : (some error)
+```
+git clone https://github.com/lundal/vibou.gTile.git ~/.local/share/gnome-shell/extensions/gTile@vibou       # install in share/gnome-shell/extensions/ folder
+killall -3 gnome-shell  # restart gnome, or use (alt+F2) + r + Enter
+```
+xtile : http://www.giuspen.com/x-tile/#downl
+ERROR:NameError: global name 'appindicator' is not defined
+sudo apt-get install python-appindicator
+xtile-not so good as imagine, even not better then may self moving program
+
+Think Shortcuts Integration with all of them
+
 ## Core Software Installation
 
 ### 1. vim
@@ -508,6 +526,28 @@ Execute selected text as vim commands ==> :@"   try: echo @"
 Best Vimscripts Tutorials
 <http://learnvimscriptthehardway.stevelosh.com/chapters/49.html>
 
+5. Ctags usage
+ctags *.c *.h        # make tags for every c,h type files in workspace, result will be saved in tags file
+ctags -R -f ./.git/tags .       # Recursive in the current folder, except .git folder
+vim Ctrl+], at certain part will go to the k
+    :tag or :ta => function_name
+    :tselect or :ts => show the list
+    :tnext or :tn -> next tag in that list
+    :tprev or :tp
+    :tf or :tfirst
+    :tl or :tlast
+<https://andrew.stwrt.ca/posts/vim-ctags/>
+
+6. mark usage (vim contains)
+help m      # in help motion text
+m<a-zA-Z> : set a mark in current line
+g'<a..>   : jump to maker a
+'<a..>    : jump to maker a
+
+7. plugin help general => ?
+
+
+
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
 
@@ -515,7 +555,7 @@ Generate a public key locally and send it to server
 cd ~
 mkdir .ssh
 chmod 700 .ssh
-ssh-keygen     #enter keyfile:rsa_id  next phrase:psw
+ssh-keygen     #enter keyfile:rsa_id  next phrase:psw #i3_rsa_id i3rsaid
 ssh-copy-id -i myrsaid.pub user@host
 ssh user@host
 ```
@@ -900,6 +940,20 @@ Final Decision : use inkscape and try to become a deep user
 ### 21. Web Development
 Firefox : vimperator gf - switch to source code vision
           ctrl+shift+c  - inspect element
+CANCEL Ctrl-H for history   ==> delete
+       Ctrl-B for bookmarks ==> left
+       Ctrl-F for find      ==> right
+       integerate them with terminal shortcuts
+
+use keyconfig plugin
+<http://forums.mozillazine.org/viewtopic.php?t=72994>
+<http://kb.mozillazine.org/Keyconfig_extension>
+<http://kb.mozillazine.org/Keyconfig_extension:_Thunderbird>
+
+Big News: Muttators for Thunderbird = Vimperator for Firefox
+Muttator => <http://www.vimperator.org/muttator>,download and Thunderbird install it from file
+Muttator CheatSheat=> <https://gist.github.com/kartoch/5955822>
+tips: gt goto newtab; gi goto inbox; w watch the structure;
 
 ### 22. Emacs
 emacs : without suffix is the GTK+ version
@@ -953,6 +1007,8 @@ sudo apt-get -f install     #if meet some error, dpkg -i to install deb package 
 ### 24. PDF Tool Introduction
 pdf split - pdftk
 or just use evince print to the documents
+
+Really Wonderful Pdftool : (better than evince) - qpdfview
 
 ### 25. Xilinx ISE Installation
 <http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html>
