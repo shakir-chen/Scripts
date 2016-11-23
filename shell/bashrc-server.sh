@@ -88,6 +88,7 @@ function set-tab-title() {
 TITLE="\[\e]2;\H\a\]"
 PS1=${PS1}${TITLE}
 
+
 # grep
 #alias grep --color=auto
 # alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
@@ -131,7 +132,15 @@ alias pdf="acroread" #evince ill
 #    exit
 #}
 
+function sshadd() {
+    eval `ssh-agent -s`
+    echo "hello"
+
+    find ~/.ssh/*_xuanqi -exec ssh-add {} \;
+    # ssh-add .ssh/passion_xuanqi
+}
 # ssh
+
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
 alias sshmagic="ssh-server magic"
@@ -183,6 +192,7 @@ alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"
 alias tmuxsv="tmux splitw -v"
 alias tmuxa="tmux attach-session -t"
+alias unsettmux="unset TMUX"
 
 #svn
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
