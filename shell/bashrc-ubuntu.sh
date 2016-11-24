@@ -212,6 +212,14 @@ alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --out
 #    exit
 #}
 
+function sshadd() {
+    eval `ssh-agent -s`
+    echo "hello"
+
+    find ~/.ssh/i3_rsa_id -exec ssh-add {} \;
+    # ssh-add .ssh/passion_xuanqi
+}
+
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
