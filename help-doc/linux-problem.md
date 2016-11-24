@@ -555,7 +555,7 @@ Generate a public key locally and send it to server
 cd ~
 mkdir .ssh
 chmod 700 .ssh
-ssh-keygen     #enter keyfile:rsa_id  next phrase:psw #i3_rsa_id i3rsaid
+ssh-keygen     #enter keyfile:rsa_id  next phrase:psw #i3_rsa_id i3rsaid #$servername-xuanqi $servernamexuanqi
 ssh-copy-id -i myrsaid.pub user@host
 ssh user@host
 ```

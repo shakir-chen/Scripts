@@ -61,8 +61,10 @@ terminal -> view not show menu
 Error
 1.ssh-copy-id doesn't work
 ssh-add -l: check
+eval `ssh-agent -s`     # solve my long-term error with different server ssh-key
 ssh-add .ssh/your-key
 <http://askubuntu.com/questions/786370/ssh-key-forwarding-not-working-under-i3wm>
+<http://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt>
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note
