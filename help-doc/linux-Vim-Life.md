@@ -91,7 +91,9 @@ mv fontname.ttf /usr/share/fonts/
 fc-cache -f -v
 ```
 Great Example In Github
+git clone https://github.com/jannispinter/i3wm-config.git .i3
 <https://github.com/jannispinter/i3wm-config>
+
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note
