@@ -39,6 +39,12 @@ gedit ~/.config/i3/config       # Mod1 Alt; Mod4 Win
 Hacker-Greg Kroah-Hartman
 <https://usesthis.com/interviews/greg.kh/>
 
+TODO List:
+1. Autolocate Windows in One Place
+2. dmenu
+3. Imporove I3 windows Appearence
+4. Strengthen Area Info, Sometimes I will forget the active window
+
 ### 1. Know and Rotate Screen: xrandr
 ```
 xrandr -q #output parameter infos
@@ -55,7 +61,6 @@ xrandr --output VGA1 --rotate left
 ### 3. Program Appearance Optimization
 config:
 
-
 terminal -> view not show menu
 
 Error
@@ -66,15 +71,39 @@ ssh-add .ssh/your-key
 <http://askubuntu.com/questions/786370/ssh-key-forwarding-not-working-under-i3wm>
 <http://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt>
 
+### 4. Modify TaskBar
+use sudo-apt install // Font Awesome,xorg-xbacklight,setxkbmap seems no need to install
+
+
+i3
+i3status
+concky
+bash
+setxkbmap
+xorg-xbacklight
+Font Awesome
+
+font-install : <http://askubuntu.com/questions/3697/how-do-i-install-fonts>
+```
+apt-get install ttf-fontname
+# if no such font, download
+mv fontname.ttf /usr/share/fonts/
+fc-cache -f -v
+```
+Great Example In Github
+<https://github.com/jannispinter/i3wm-config>
+
 ## V. pdfviewer - Zathura
 Edit - Mark and Note
 :bmark tag-name         #book mark a tag name
+:bdelmark tag-name      #delete book mark
 :blist XXX              #select the bookmakr
 :open filename          #open a filename
 :print                  # print the pdffile
 :wirte                  # save document
-:export                 # export attatchments
+:export                 # export attatchments       !!! really fascinating
 :dump                   # write values, descriptions etc
+:exec                   # run command
 
 d = dual page; s full-width page; a full-height page;
 Navigation : 8G -> goto 8 page; ^o &i move backward and forward through jump-list
@@ -87,12 +116,36 @@ man zathurarc   # learn how to write zathurarc
 <https://pwmt.org/projects/zathura/documentation/>
 Good for navigation, bookmark and search around.
 
+
 _Bad for taking note_
 ?? any solution for that ??
+
+TODO List:
+1. Change Background and Front Color when revert color (done)
+2. Figure out how to add tag or something related in zathura
 
 ## VI. File Manager - vifm
 
 ## VII. Image Viewer - xzgv
+
+## VIII. Research Managermanet - Zotero
+TODO List:
+1. succeed to use firefox zotero with betterbibtex, at least show citation-key
+2. Fast Move in Firefox Zotero, or better plugin with vimperator
+
+<http://justinwiegand.com/blog/?p=103>
+
+### 1. Fantastic with Better Bibtex Drag and Drop
+You can drag and drop citations into your LaTeX/Markdown/Orgmode editor, and it will add
+a proper \cite{citekey}/[@citekey]/[[zotero://select...][@citekey]. The cite command is
+configurable for LaTeX by setting the config option in the Preferences. Do not include
+the leading backslash. This feature requires a one-time setup: go to Zotero preferences,
+tab Export, under Default Output Format, select "Better BibTeX Quick Copy", and choose
+the Quick Copy format under the Citation keys preferences for BBT.]
+<https://github.com/retorquere/zotero-better-bibtex/wiki/Citation-Keys>
+
+Firefox seems could not export bibtex quick copy
+
 
 ## Reference
 <http://stackoverflow.com/questions/779348/vim-movement-on-other-programs>

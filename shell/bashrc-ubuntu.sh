@@ -205,7 +205,7 @@ alias open="xdg-open"
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
-alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1"
+alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 
 #xqexit() {
 #    exit

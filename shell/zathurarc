@@ -1,0 +1,17 @@
+zathura config fille ~/.config/zathura/
+
+
+
+/* set default-bg "#073642" */
+/* set default-fg "#93a1a1" */
+
+set recolor-darkcolor "#93a1a1"
+set recolor-lightcolor "#002b36"
+set recolor true
+
+set default-bg "#073642"
+set default-fg "#93a1a1"
+
+
+/* set recolor_darkcolor #073642 */
+/* set recolor_lightcolor #93a1a1 */

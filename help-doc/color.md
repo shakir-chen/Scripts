@@ -19,6 +19,9 @@ blue      #268bd2 38  139 210   205  82  82  55  -10 -45 4/4     blue        33 
 cyan      #2aa198 42  161 152   175  74  63  60  -35 -05 6/6     cyan        37  #00afaf
 green     #859900 133 153 0     68   100 60  60  -20 65  2/2     green       64  #5f8700
 
+Solarized Color Cheatsheet
+<http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/>
+
 ## gnuplot Color
 default podo classic
 podo is the best
