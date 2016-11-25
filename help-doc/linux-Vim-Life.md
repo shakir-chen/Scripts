@@ -6,7 +6,6 @@
 
 ## III. Thunderbird - muttator
 
-
 ## IV. Window Manager - i3
 wmii move to i3
 <https://blog.kaiserapps.com/why_i_moved_to_i_3_from_wmii/>
@@ -90,10 +89,16 @@ apt-get install ttf-fontname
 mv fontname.ttf /usr/share/fonts/
 fc-cache -f -v
 ```
+
 Great Example In Github
 git clone https://github.com/jannispinter/i3wm-config.git .i3
 <https://github.com/jannispinter/i3wm-config>
 
+### 5. Determine The Class Name
+```
+xprop | grep WM_CLASS   # and then click that processor
+```
+yEd : "sun-awt-X11-XFramePeer", "com-install4j-runtime-launcher-Launcher"
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note

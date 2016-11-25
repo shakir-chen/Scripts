@@ -78,3 +78,30 @@ $ grep -oP '(?<=foo )\w+(?= bar)' test.txt      # match words between foo and ba
     sed -e  # greedy match
     ```
 
+## Rename
+rename -n 's/(\w+)(\.sam)/$1\_x86$2/' *.sam     # -n means test
+
+Double Quote vs Single Quote
+Double Quotes use variable expansion, makes interpret; Single Quote donts;
+```
+my $var1 = 'Hello';
+
+my $var2 = "$var1";
+my $var3 = '$var1';
+
+print $var2;
+print "\n";
+print $var3;
+print "\n";
+
+output:
+Hello
+$var2
+```
+
+
+<http://stackoverflow.com/questions/943795/whats-the-difference-between-single-and-double-quotes-in-perl>
+
+perl regex warning: \1 better written as $1 at (eval 1) line 1
+\1 means match the previous part, $1 means replac
+

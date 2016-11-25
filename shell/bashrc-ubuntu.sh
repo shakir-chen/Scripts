@@ -212,10 +212,20 @@ alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --out
 #    exit
 #}
 
+# function yEd(){
+   # cd ~/Software/yEd
+    # ./yEd
+# }
+alias yEd="cd ~/Software/yEd && ./yEd &"
+# function yEd() {
+    # CURRENTPWD=$(pwd)
+    # cd ~/Software/yEd 
+    # ./yEd
+    # cd $CURRENTPWD
+# }
 function sshadd() {
     eval `ssh-agent -s`
     echo "hello"
-
     find ~/.ssh/i3_rsa_id -exec ssh-add {} \;
     # ssh-add .ssh/passion_xuanqi
 }
@@ -296,6 +306,7 @@ alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
+alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 
 function svnsubmit(){
     cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
@@ -432,6 +443,9 @@ alias xclipscreenshot="xclip -selection clipboard -t image/png -o >"
 export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
+
+#scrot
+alias scrots="scrot -s"
 
 # #help-doc
 # function helpterm() {

@@ -124,7 +124,7 @@ set $WS2 2.code
 set $WS3 3.www
 set $WS4 4.media
 set $WS5 5.misc
-set $WS6 6.irc
+set $WS6 6.bdsl
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -143,10 +143,12 @@ bindsym $mod+0 workspace 10
 # Move to workspace
 assign [instance="terminator|urxvt"] $WS1
 assign [class="Chromium|Firefox"] $WS3
+# assign [class="Chromium|firefox"] $WS3
 assign [class="sublime-text|Atom|jetbrains-android-studio"] $WS2
 assign [class="Gthumb|MPlayer|mpv|Xfburn|Pitivi|Popcorntime|Gmusicbrowser|Ogmrip|Spotify"] $WS4
 assign [class="Thunar|Eclipse|Pinta|Blender|Catfish|Galculator|Codeblocks"] $WS2
-
+assign [class="netease-cloud-music"] $WS5
+assign [class="sun-awt-X11-XFramePeer|com-install4j-runtime-launcher-Launcher"] $WS6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WS1
