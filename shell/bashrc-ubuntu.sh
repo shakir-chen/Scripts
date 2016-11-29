@@ -262,6 +262,12 @@ function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
 
+#ssh functions
+function scpxq {
+   scp $1 xuanqi@$2.ece.ust.hk:$3
+}
+
+
 # function connect() {
     # if [[ -z "$ORIG" ]]; then
       # ORIG=$PS1
@@ -418,8 +424,15 @@ alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Study/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
-alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0/"
+alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
+
+#ls optimize
+alias lst="ls -t"
+alias lstt="ls -t | head -1"
+alias lst3="ls -t | head -3"
+# alias lst3="ls -t | head -3"
+
 # function set-tab-title() {
   # if [[ -z "$ORIG" ]]; then
       # ORIG=$PS1

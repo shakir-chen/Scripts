@@ -1128,6 +1128,7 @@ Another Three Application Environment
 3. local file picture copy and move
     cp file $TEMPSAVE_PATH
 
+### 32. Type - Klavro
 
 #=====================================
 # bash bug summary

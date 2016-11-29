@@ -3,8 +3,21 @@
 ## I. Deep Vim Settings - kvim
 
 ## II. Firefox - vimperator
+ctrl+i: external editor; save and copy all the message back to the blank
 
 ## III. Thunderbird - muttator
+
+Thunderbird: Cheatsheet
+Tab : navigate-gt,g0... close: $:tabc
+Folder: navigate-gi(goto inbox);ctrl-n/N (next -/unread folder); ctrl-p/P(previous...)
+Mail: navigate-hjkl, !(mark),ctrl-s(archieve)
+      r(reply), f(forward)
+In email: i(insert)
+          t (To: blank), s(subject blank), q(quit)
+External Editor: can't use(?)
+<https://andrewbrookins.com/tech/vim-thunderbird-muttator-extension-external-editor-extension/>
+
+<https://gist.github.com/kartoch/5955822>
 
 ## IV. Window Manager - i3
 wmii move to i3
@@ -39,10 +52,10 @@ Hacker-Greg Kroah-Hartman
 <https://usesthis.com/interviews/greg.kh/>
 
 TODO List:
-1. Autolocate Windows in One Place
-2. dmenu
-3. Imporove I3 windows Appearence
-4. Strengthen Area Info, Sometimes I will forget the active window
+1. Autolocate Windows in One Place (done)
+2. dmenu (done, fixed, by export LANG="en_GB.utf8")
+3. Imporove I3 windows Appearence (done, see 4 part)
+4. Strengthen Area Info, Sometimes I will forget the active window (not so important)
 
 ### 1. Know and Rotate Screen: xrandr
 ```
@@ -73,7 +86,6 @@ ssh-add .ssh/your-key
 ### 4. Modify TaskBar
 use sudo-apt install // Font Awesome,xorg-xbacklight,setxkbmap seems no need to install
 
-
 i3
 i3status
 concky
@@ -99,6 +111,20 @@ git clone https://github.com/jannispinter/i3wm-config.git .i3
 xprop | grep WM_CLASS   # and then click that processor
 ```
 yEd : "sun-awt-X11-XFramePeer", "com-install4j-runtime-launcher-Launcher"
+
+### 6. Dmenu no locale support Fixed
+```
+export LANG="en_GB.utf8" # dmenu 
+
+edit /etc/default/locale:
+LANG="en_US"
+LANGUAGE="en_US:en"
+
+edit ~/.pam_environme
+LANG=en_US
+LANGUAGE=en_US
+```
+
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note
