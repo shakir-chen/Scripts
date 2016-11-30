@@ -57,6 +57,7 @@ TODO List:
 3. Imporove I3 windows Appearence (done, see 4 part)
 4. Strengthen Area Info, Sometimes I will forget the active window (not so important)
 
+Printscreen : scrot -s
 ### 1. Know and Rotate Screen: xrandr
 ```
 xrandr -q #output parameter infos
@@ -182,3 +183,4 @@ Firefox seems could not export bibtex quick copy
 
 ## Reference
 <http://stackoverflow.com/questions/779348/vim-movement-on-other-programs>
+<https://wiki.archlinux.org/index.php/List_of_applications/Documents>       #Linux Arch, very comprehensive

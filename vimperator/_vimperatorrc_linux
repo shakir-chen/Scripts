@@ -11,6 +11,7 @@ set gui=none
 
 
 "=======Set Default Editor========
+"ctrl+i
 :set editor="gnome-terminal --disable-factory -x vim"
 "http://superuser.com/questions/186782/setting-an-external-editor-in-vimperator
 "=======Reader========
