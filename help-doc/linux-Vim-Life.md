@@ -1,4 +1,6 @@
 #Linux Vim Life
+Library Install Tool
+synaptic (graphic of apt-get)
 
 ## I. Deep Vim Settings - kvim
 
@@ -160,7 +162,37 @@ TODO List:
 
 ## VI. File Manager - vifm
 
-## VII. Image Viewer - xzgv
+## VII. Image Viewer - feh
+
+Dependency: libimlib2 (installed already)
+
+feh key
+
+Navigation
+n : next
+p : previous
+q : quit
+
+INFO
+d : toggle filename
+o : toggle mouse
+
+i : toggle info
+
+Operation
+m : menu
+s : save
+v : fullscreen
+w : change windwow size
+q/x : quit / close window
+<,> : rotate
+/ : fit the window size
+
+hjkl
+
+
+xzgv (worst)
+
 
 ## VIII. Research Managermanet - Zotero
 TODO List:
