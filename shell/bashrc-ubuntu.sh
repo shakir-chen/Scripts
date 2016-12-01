@@ -81,6 +81,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+# Initial Program
+# xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -178,6 +180,16 @@ alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
 alias vimlife="vim ~/Study/Scripts/help-doc/linux-Vim-Life.md"
 
+# program open in ubuntu
+# alias open="xdg-open"
+function open(){
+    if [[ -d $1 ]]; then
+        echo "This is directory"
+    else
+        xdg-open $1
+    fi
+}
+
 # tar
 alias tarc="tar -cvzf"
 alias tarx="tar -xvzf"
@@ -202,8 +214,6 @@ alias py3.5="python3.5"
     # evince $1 &
 # }
 
-# program open in ubuntu
-alias open="xdg-open"
 # Zotero
 # alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 

@@ -163,6 +163,7 @@ TODO List:
 ## VI. File Manager - vifm
 More Powerful than I thought before.
 Vim-Style KeyBinding
+<https://vifm.info/manual.shtml#Pane%20manipulation>
 
 ## VII. Image Viewer - feh
 Dependency: libimlib2 (installed already)

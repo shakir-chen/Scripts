@@ -32,6 +32,11 @@ new_window pixel 3
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Xuanqi Initial Start ===============
+exec --no-startup-id dropbox start
+exec --no-startup-id xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary
+# ====================================
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
