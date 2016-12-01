@@ -176,6 +176,7 @@ alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
+alias vimlife="vim ~/Study/Scripts/help-doc/linux-Vim-Life.md"
 
 # tar
 alias tarc="tar -cvzf"
@@ -290,6 +291,10 @@ function scpxq {
 
 #logout
 alias logout="gnome-session-quit"
+
+# pwd
+alias pwdxclip="echo -n $(pwd) |xclip -selection clipboard"
+# = pwd | xargs echo -n | xclip -selection clipboard
 
 #real vncviewer
 alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"

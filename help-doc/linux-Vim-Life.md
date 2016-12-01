@@ -161,9 +161,10 @@ TODO List:
 2. Figure out how to add tag or something related in zathura
 
 ## VI. File Manager - vifm
+More Powerful than I thought before.
+Vim-Style KeyBinding
 
 ## VII. Image Viewer - feh
-
 Dependency: libimlib2 (installed already)
 
 feh key
