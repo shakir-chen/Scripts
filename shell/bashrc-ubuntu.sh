@@ -182,12 +182,36 @@ alias vimlife="vim ~/Study/Scripts/help-doc/linux-Vim-Life.md"
 
 # program open in ubuntu
 # alias open="xdg-open"
+alias openfolder="nautilus --browser --no-desktop"
 function open(){
     if [[ -d $1 ]]; then
         echo "This is directory"
+        vifm $1
     else
-        xdg-open $1
+        xdg-open $1 &
     fi
+}
+
+# vicd()
+# {
+    # local dst="$(command vifm --choose-dir -)"
+    # if [ -z "$dst" ]; then
+        # echo 'Directory picking cancelled/failed'
+    # return 1
+    # fi
+    # cd "$dst"
+# }
+
+vifm()
+{
+   if [ -f ~/.vifm/lastdir ]; then
+      rm ~/.vifm/lastdir
+   fi
+   # "command" prevents recursive call
+   command vifm "$@"
+   if [ -f ~/.vifm/lastdir ]; then
+    cd `cat ~/.vifm/lastdir`
+   fi
 }
 
 # tar

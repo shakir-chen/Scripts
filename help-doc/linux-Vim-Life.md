@@ -165,6 +165,35 @@ More Powerful than I thought before.
 Vim-Style KeyBinding
 <https://vifm.info/manual.shtml#Pane%20manipulation>
 
+
+### 1. Exit Vifm and leave in the current folder path
+vifm-0.8
+```
+vicd()
+{
+    local dst="$(command vifm --choose-dir -)"
+    if [ -z "$dst" ]; then
+        echo 'Directory picking cancelled/failed'
+        return 1
+    fi
+    cd "$dst"
+}
+```
+vifm()
+{
+    if [ -f ~/.vifm/lastdir ]; then
+        rm ~/.vifm/lastdir
+    fi
+    # "command" prevents recursive call
+    command vifm "$@"
+    if [ -f ~/.vifm/lastdir ]; then
+        cd `cat ~/.vifm/lastdir`
+    fi
+}
+command! Q :execute '!echo %d > ~/.vifm/lastdir' | quit     #in vifmrc
+
+<http://wiki.vifm.info/index.php?title=How_to_set_shell_working_directory_after_leaving_Vifm>
+
 ## VII. Image Viewer - feh
 Dependency: libimlib2 (installed already)
 
