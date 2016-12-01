@@ -269,6 +269,23 @@ function sshadd() {
     # ssh-add .ssh/passion_xuanqi
 }
 
+# export SSH_CHECK_VALUE=0
+function sshcheck(){
+    licenseinfo=$(ssh-add -l | grep 'no identities')
+    # echo $licenseinfo
+    # if [[ "$licenseinfo" == "" ]];then        # bash
+    if [ -z "$licenseinfo" ];then       #shell
+        echo "SSH License exist"
+        # $SSH_CHECK_VALUE=1
+    else
+    # For it will print "SSH-client no identities" Info
+        echo "No SSH License Add"
+        eval `ssh-agent -s`
+        find ~/.ssh/i3_rsa_id -exec ssh-add {} \;
+        # $SSH_CHECK_VALUE=0
+    fi
+}
+
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
@@ -402,11 +419,16 @@ alias gitcd="cd ~/Study/Scripts && git status"
 alias gits="git status"
 alias gita="git add"
 alias gitpull="git pull"
-alias gitpush="git push origin master"
+# alias gitpush="git push origin master"
 alias gitcm="git commit -m"
 alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
+
+function gitpush(){
+    sshcheck
+    git push origin master
+}
 
 #Franz
 alias franz="~/Software/Franz/Franz &"
