@@ -168,7 +168,7 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
-alias vim="vi"
+# alias vim="vi"
 function vimbin(){
     vim $(which $1)
 }
@@ -179,6 +179,15 @@ alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
 alias vimlife="vim ~/Study/Scripts/help-doc/linux-Vim-Life.md"
+
+alias volumeup="pactl set-sink-volume 1 +10%"
+alias volumedown="pactl set-sink-volume 1 -10%"
+# function vim(){
+    # if [-f $1]
+
+# }
+
+alias xpropwm="xprop | grep WM_CLASS"
 
 # program open in ubuntu
 # alias open="xdg-open"
@@ -272,17 +281,12 @@ function sshadd() {
 # export SSH_CHECK_VALUE=0
 function sshcheck(){
     licenseinfo=$(ssh-add -l | grep 'no identities')
-    # echo $licenseinfo
     # if [[ "$licenseinfo" == "" ]];then        # bash
-    if [ -z "$licenseinfo" ];then       #shell
-        echo "SSH License exist"
-        # $SSH_CHECK_VALUE=1
-    else
+    if [ ! -z "$licenseinfo" ];then       #shell
     # For it will print "SSH-client no identities" Info
-        echo "No SSH License Add"
+        # echo "No SSH License Add"
         eval `ssh-agent -s`
         find ~/.ssh/i3_rsa_id -exec ssh-add {} \;
-        # $SSH_CHECK_VALUE=0
     fi
 }
 
@@ -294,6 +298,7 @@ alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
 
 function ssh-server() {
+    sshcheck
     echo $1
 
     if [ "$1" = "lab" ]
@@ -366,6 +371,7 @@ alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
 
 # svn
+alias svn="sshcheck; svn"
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
@@ -487,6 +493,7 @@ alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
+alias cdcourse="cd ~/Course"
 
 #ls optimize
 alias lst="ls -t"

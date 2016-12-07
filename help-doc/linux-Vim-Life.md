@@ -115,6 +115,7 @@ xprop | grep WM_CLASS   # and then click that processor
 ```
 yEd : "sun-awt-X11-XFramePeer", "com-install4j-runtime-launcher-Launcher"
 
+
 ### 6. Dmenu no locale support Fixed
 ```
 export LANG="en_GB.utf8" # dmenu 
@@ -128,6 +129,21 @@ LANG=en_US
 LANGUAGE=en_US
 ```
 
+### 7. Volume
+alias volumedown="pactl set-sink-volume 1 -10%"
+alias volumeup="pactl set-sink-volume 1 +10%"
+
+### 8. Set Floating Window as default
+xpropwm
+WM_CLASS(STRING) = "file_progress", "Nautilus"
+for_window [class="Nautilus" instance="file_progress"] floating enable
+
+### ==============================
+### Useful Shortcuts
+### ==============================
+mod+space : focus float or not
+mod+shift+space : toggle float
+mod + s/w/e: stack/window side by side/toggle layout
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note

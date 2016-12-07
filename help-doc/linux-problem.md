@@ -1137,4 +1137,8 @@ Another Three Application Environment
 ## 1. Bad Substitute Error
 bash xxx.sh instead of sh xxx.sh
 
+## =====================================
+## Printer Help
+## =====================================
+Cancel a print task: when it comes "load papers in a cassete", press red button (stop and show pause || figure) => press pack and okay button and click yes. Delete unwanted task then.
 

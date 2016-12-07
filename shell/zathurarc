@@ -1,6 +1,8 @@
 zathura config fille ~/.config/zathura/
 
-
+set guioptions .
+set selection-clipboard clipboard
+/* set first-page-column 2 */
 
 /* set default-bg "#073642" */
 /* set default-fg "#93a1a1" */
@@ -12,6 +14,14 @@ set recolor true
 set default-bg "#073642"
 set default-fg "#93a1a1"
 
-
 /* set recolor_darkcolor #073642 */
 /* set recolor_lightcolor #93a1a1 */
+
+map <C-l> focus_inputbar ":blist "
+map <C-b> focus_inputbar ":bmark "
+/* map <C-o> focus_inputbar ":exec evince $FILE" */
+map <C-o> feedkeys ":exec evince $FILE<Return>"
+
+/* toggle_inputbar */
+/* set toggle_statusbar true */
+/* set toggle_inputbar true */
