@@ -89,19 +89,20 @@ ssh-add .ssh/your-key
 ### 4. Modify TaskBar
 use sudo-apt install // Font Awesome,xorg-xbacklight,setxkbmap seems no need to install
 
-i3
-i3status
-concky
-bash
+sudo apt-get install i3
+sudo apt-get install i3status
+sudo apt-get install concky
+sudo apt-get install Font Awesome
+
 setxkbmap
 xorg-xbacklight
-Font Awesome
 
 font-install : <http://askubuntu.com/questions/3697/how-do-i-install-fonts>
+<https://github.com/FortAwesome/Font-Awesome>
 ```
 apt-get install ttf-fontname
 # if no such font, download
-mv fontname.ttf /usr/share/fonts/
+mv fontname.ttf /usr/share/fonts/ # FontAwesome.otf ; fontawesome-webfont.ttf
 fc-cache -f -v
 ```
 
@@ -117,6 +118,7 @@ yEd : "sun-awt-X11-XFramePeer", "com-install4j-runtime-launcher-Launcher"
 
 
 ### 6. Dmenu no locale support Fixed
+test: demu_run
 ```
 export LANG="en_GB.utf8" # dmenu 
 

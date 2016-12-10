@@ -118,6 +118,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if [ "$USER" == "shakir" ] ; then
+    setxkbmap -option caps:ctrl_modifier
+fi
+
 #User Define
 # added by Anaconda 2.2.0 installer
 #export PATH="/home/rafael/softwares/anaconda/bin:${PATH}"
