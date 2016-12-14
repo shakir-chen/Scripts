@@ -1130,6 +1130,9 @@ Another Three Application Environment
 
 ### 32. Type - Klavro
 
+### 33. Yum
+Determine Path that a yum pakcage installed: rpm -ql package-name
+
 #=====================================
 # bash bug summary
 #=====================================
