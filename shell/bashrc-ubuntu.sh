@@ -316,8 +316,10 @@ function ssh-server() {
         servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
     fi
 
-    ssh -X $servername
+    # ssh -X $servername
+    ssh -XfC -c blowfish-cbc $servername # default cypher as blowfish,fast; -X X forwarding; -f puts ssh session into background; C use compression
 }
+#http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html
 
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
