@@ -266,3 +266,5 @@ function cpcosmic() {
 
 #lumerical
 alias lumerical="/opt/lumerical/device/bin/device"
+
+alias nautilus="nautilus --no-desktop&"

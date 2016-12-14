@@ -199,7 +199,7 @@ alias openfolder="nautilus --browser --no-desktop"
 function open(){
     if [[ -d $1 ]]; then
         echo "This is directory"
-        vifm $1
+        vifm $1     #nautilus $1
     else
         xdg-open $1 &
     fi
@@ -440,6 +440,8 @@ function gitpush(){
     git push origin master
 }
 
+#nautilus
+alias nautilus="nautilus --no-desktop&"
 #Franz
 alias franz="~/Software/Franz/Franz &"
 
