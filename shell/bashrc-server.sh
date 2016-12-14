@@ -179,6 +179,7 @@ alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
 alias vncclean="rm *.pid *.log"
 alias vncdeepkill="cd /tmp/.X11-unix/"
+#vncserver #get a vnc account
 
 # tmux      --man tmux
 # unset $TMUX
@@ -262,3 +263,6 @@ function cpcosmic() {
     cp $1 ~/Benchmark/COSMIC-generation-flow/qemu/
     cd ~/Benchmark/COSMIC-generation-flow/qemu/
 }
+
+#lumerical
+alias lumerical="/opt/lumerical/device/bin/device"
