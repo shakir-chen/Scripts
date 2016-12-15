@@ -714,6 +714,14 @@ sudo rm -rf /home/newuser
 
 ### 11. connectable computer (-)
 ```
+sudo apt-get install openssh-server
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.original
+sudo chmod a-w /etc/ssh/sshd_config.original
+vim sshd_config
+    Port 2222 
+    PubkeyAuthentication yes 
+    Banner /etc/issue.net 
+
 sudo iptables -L
 ```
 sudo apt-get openssh-server
