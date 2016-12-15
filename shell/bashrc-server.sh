@@ -268,3 +268,5 @@ function cpcosmic() {
 alias lumerical="/opt/lumerical/device/bin/device"
 
 alias nautilus="nautilus --no-desktop&"
+
+# image - gthumb
