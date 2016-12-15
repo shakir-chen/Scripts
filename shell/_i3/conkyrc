@@ -1,5 +1,4 @@
 # http://conky.sourceforge.net/variables.html
-
     background        no
     out_to_console    yes
     out_to_x          no
@@ -7,33 +6,34 @@
     total_run_times   0
     short_units       yes
     pad_percents      3
-     
+
     override_utf8_locale yes
     if_up_strictness address
-     
+
     TEXT
-	[ 
-	
+	[
+
 	${if_match "${exec cat /tmp/.update_count}" > "0"}
 	        {"full_text": "   ${exec cat /tmp/.update_count} ","color":"\#9C9C9C"},
 	$endif
 
-	${if_up wlp2s0}
-	        {"full_text": "  ${exec ip -6 addr | grep 'inet6 2' | grep 'scope global temporary dynamic' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr wlp2s0}","color": "\#9C9C9C"},
-                {"full_text": "  [${downspeed wlp2s0}] ", "color":"\#9C9C9C"},
-                {"full_text": "  [${upspeed wlp2s0}] ", "color":"\#9C9C9C"},
-	        ${if_match "${wireless_link_qual wlp2s0}" < "35"}
-			${if_match "${wireless_link_qual wlp2s0}" < "25"}
-				${if_match "${wireless_link_qual wlp2s0}" < "15"}
-					{"full_text": "  ${wireless_essid wlp2s0} [${wireless_link_qual wlp2s0}%]","color":"\#FF0000"},
+	${if_up wlp3s0}
+			# {"full_text": "  ${exec ip -6 addr | grep 'inet6 2' | grep 'scope global temporary dynamic' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr wlp3s0}","color": "\#9C9C9C"},
+	        {"full_text": "  ${exec ip -6 addr | grep 'inet6 f' | grep 'scope link' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr wlp3s0}","color": "\#9C9C9C"},
+                {"full_text": "  [${downspeed wlp3s0}] ", "color":"\#9C9C9C"},
+                {"full_text": "  [${upspeed wlp3s0}] ", "color":"\#9C9C9C"},
+	        ${if_match "${wireless_link_qual wlp3s0}" < "35"}
+			${if_match "${wireless_link_qual wlp3s0}" < "25"}
+				${if_match "${wireless_link_qual wlp3s0}" < "15"}
+					{"full_text": "  ${wireless_essid wlp3s0} [${wireless_link_qual wlp3s0}%]","color":"\#FF0000"},
 				$else
-					{"full_text": "  ${wireless_essid wlp2s0} [${wireless_link_qual wlp2s0}%]","color":"\#FFA500"},
+					{"full_text": "  ${wireless_essid wlp3s0} [${wireless_link_qual wlp3s0}%]","color":"\#FFA500"},
 				$endif
 			$else
-				{"full_text": "  ${wireless_essid wlp2s0} [${wireless_link_qual wlp2s0}%]","color":"\#EEEE00"},
-			$endif	
+				{"full_text": "  ${wireless_essid wlp3s0} [${wireless_link_qual wlp3s0}%]","color":"\#EEEE00"},
+			$endif
 		$else
-                	{"full_text": "  ${wireless_essid wlp2s0} [${wireless_link_qual wlp2s0}%]","color":"\#9C9C9C"},
+                	{"full_text": "  ${wireless_essid wlp3s0} [${wireless_link_qual wlp3s0}%]","color":"\#9C9C9C"},
 		$endif
 	$endif
 	${if_up enp3s0f1}
@@ -41,22 +41,22 @@
 		{"full_text": "  [${downspeed enp3s0f1}] ", "color":"\#9C9C9C"},
 		{"full_text": "  [${upspeed enp3s0f1}] ", "color":"\#9C9C9C"},
                 {"full_text": "  enp3s0f1 ","color":"\#9C9C9C"},
-	$endif	
+	$endif
         {"full_text": "  ${exec ~/.i3/cputemp.sh}°C [$cpu%] $freq_g GHz",   "color":
 		${if_match ${exec ~/.i3/cputemp.sh}>65}"\#FF0000"
 		${else}"\#9C9C9C"
-		${endif}}, 
+		${endif}},
         {"full_text": "  [$membar] ", "color":"\#9C9C9C"},
 	{"full_text": "  [${exec ~/.i3/brightness.sh}%] ", "color":"\#9C9C9C"},
-	${if_existing /sys/class/power_supply/BAT0}	
+	${if_existing /sys/class/power_supply/BAT1}
 		${if_match "$battery_percent" < "20"}
-	        	${if_match "$battery_percent" < "10"}
-				{"full_text": "  [$battery_percent%] Verbleibend: $battery_time","color":"\#FF0000"},
-			$else	
-				{"full_text": "  [$battery_percent%] ","color":"\#FFa500"},
-       			$endif 
-		$else 
-			{"full_text": "  [$battery_percent%] ","color":"\#9C9C9C"},
+	        	${if_match "${battery_percent BAT1}" < "10"}
+				{"full_text": "  [${battery_percent BAT1}%] Verbleibend: ${battery_time BAT1}","color":"\#FF0000"},
+			$else
+				{"full_text": "  [${battery_percent BAT1}%] ","color":"\#FFa500"},
+       			$endif
+		$else
+			{"full_text": "  [${battery_percent BAT1}%] ","color":"\#9C9C9C"},
 		$endif
 	$else
 		{"full_text": "  AC only","color":"\#9C9C9C"},
