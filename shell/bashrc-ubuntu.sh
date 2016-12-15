@@ -506,6 +506,7 @@ alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Course"
+alias cdzotero="cd ~/.mozilla/firefox/ltltr2ow.default/zotero"
 
 #ls optimize
 alias lst="ls -t"
