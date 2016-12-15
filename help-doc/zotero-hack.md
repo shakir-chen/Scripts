@@ -25,9 +25,9 @@ Tables
 ...creatorData      author-list
 ...collections      collectionID-Name-key(folders)
 ...fields           fieldID-fieldName(pages,ISBN,publicationTitle)
+
 ...itemAttatchment  itemAttatchment-location
 ...itemNotes        note
-
 ...itemID           tagID
 ...itemType         TypeFields
 ...itemDataValue    abstract
@@ -36,6 +36,5 @@ Tables
 
 ...translatorCache  Translator-Use
 ...fileTypes        image/web
-
 
 
