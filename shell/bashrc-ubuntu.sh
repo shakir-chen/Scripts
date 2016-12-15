@@ -304,6 +304,7 @@ alias sshrostam="ssh-server rostam"
 alias sshmagic="ssh-server magic"
 alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
+alias sshlab="ssh-server lab"
 
 function ssh-server() {
     sshcheck
@@ -312,7 +313,8 @@ function ssh-server() {
     if [ "$1" = "lab" ]
     then
         echo "here"
-        servername="shakir@143.89.135.225 -p 2222"
+        servername="xuanqi@143.89.135.201 -p 2222"
+        # ssh -XfC -c blowfish-cbc $servername
     elif [ "$1" = "zhehui" ]
     then
         servername="zhehui@rostam.ece.ust.hk"
@@ -320,8 +322,8 @@ function ssh-server() {
         servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
     fi
 
-    # ssh -X $servername
-    ssh -XfC -c blowfish-cbc $servername # default cypher as blowfish,fast; -X X forwarding; -f puts ssh session into background; C use compression
+    ssh -X $servername
+    # ssh -XfC -c blowfish-cbc $servername # default cypher as blowfish,fast; -X X forwarding; -f puts ssh session into background; C use compression
 }
 #http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html
 
