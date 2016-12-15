@@ -199,7 +199,7 @@ alias openfolder="nautilus --browser --no-desktop"
 function open(){
     if [[ -d $1 ]]; then
         echo "This is directory"
-        vifm $1
+        vifm $1     #nautilus $1
     else
         xdg-open $1 &
     fi
@@ -282,6 +282,10 @@ function sshadd() {
     # ssh-add .ssh/passion_xuanqi
 }
 
+# apt-get
+alias aptget="sudo apt-get install"
+alias aptcache="apt-cache show"
+
 # export SSH_CHECK_VALUE=0
 function sshcheck(){
     licenseinfo=$(ssh-add -l | grep 'no identities')
@@ -300,6 +304,7 @@ alias sshrostam="ssh-server rostam"
 alias sshmagic="ssh-server magic"
 alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
+alias sshlab="ssh-server lab"
 
 function ssh-server() {
     sshcheck
@@ -308,7 +313,8 @@ function ssh-server() {
     if [ "$1" = "lab" ]
     then
         echo "here"
-        servername="shakir@143.89.135.225 -p 2222"
+        servername="xuanqi@143.89.135.201 -p 2222"
+        # ssh -XfC -c blowfish-cbc $servername
     elif [ "$1" = "zhehui" ]
     then
         servername="zhehui@rostam.ece.ust.hk"
@@ -317,7 +323,9 @@ function ssh-server() {
     fi
 
     ssh -X $servername
+    # ssh -XfC -c blowfish-cbc $servername # default cypher as blowfish,fast; -X X forwarding; -f puts ssh session into background; C use compression
 }
+#http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html
 
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
@@ -428,7 +436,7 @@ alias wmctrls="wmctrl -r :SELECT: -e " #window move control select
 alias gitcd="cd ~/Study/Scripts && git status"
 alias gits="git status"
 alias gita="git add"
-alias gitpull="git pull"
+alias gitpull="sshcheck; git pull"
 # alias gitpush="git push origin master"
 alias gitcm="git commit -m"
 alias gitco="git checkout"
@@ -440,6 +448,8 @@ function gitpush(){
     git push origin master
 }
 
+#nautilus
+alias nautilus="nautilus --no-desktop&"
 #Franz
 alias franz="~/Software/Franz/Franz &"
 
@@ -498,6 +508,7 @@ alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Course"
+alias cdzotero="cd ~/.mozilla/firefox/ltltr2ow.default/zotero"
 
 #ls optimize
 alias lst="ls -t"
