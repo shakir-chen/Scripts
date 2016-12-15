@@ -282,6 +282,10 @@ function sshadd() {
     # ssh-add .ssh/passion_xuanqi
 }
 
+# apt-get
+alias aptget="sudo apt-get install"
+alias aptcache="apt-cache show"
+
 # export SSH_CHECK_VALUE=0
 function sshcheck(){
     licenseinfo=$(ssh-add -l | grep 'no identities')
