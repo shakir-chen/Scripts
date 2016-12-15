@@ -10,6 +10,9 @@
     override_utf8_locale yes
     if_up_strictness address
 
+    use_spacer left
+    pad_percents 2
+
     TEXT
 	[
 
@@ -17,9 +20,10 @@
 	        {"full_text": "   ${exec cat /tmp/.update_count} ","color":"\#9C9C9C"},
 	$endif
 
-	${if_up wlp3s0}
+    ${if_up wlp3s0}
 			# {"full_text": "  ${exec ip -6 addr | grep 'inet6 2' | grep 'scope global temporary dynamic' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr wlp3s0}","color": "\#9C9C9C"},
-	        {"full_text": "  ${exec ip -6 addr | grep 'inet6 f' | grep 'scope link' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr wlp3s0}","color": "\#9C9C9C"},
+
+			# {"full_text": "  ${exec ip -6 addr | grep 'inet6 f' | grep 'scope link' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr wlp3s0}","color": "\#9C9C9C"},
                 {"full_text": "  [${downspeed wlp3s0}] ", "color":"\#9C9C9C"},
                 {"full_text": "  [${upspeed wlp3s0}] ", "color":"\#9C9C9C"},
 	        ${if_match "${wireless_link_qual wlp3s0}" < "35"}
@@ -36,18 +40,20 @@
                 	{"full_text": "  ${wireless_essid wlp3s0} [${wireless_link_qual wlp3s0}%]","color":"\#9C9C9C"},
 		$endif
 	$endif
+
 	${if_up enp3s0f1}
-	        {"full_text": "  ${exec ip -6 addr | grep 'inet6 2' | grep 'scope global temporary dynamic' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr enp3s0f1} ","color": "\#9C9C9C"},
+	    {"full_text": "  ${exec ip -6 addr | grep 'inet6 2' | grep 'scope global temporary dynamic' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr enp3s0f1} ","color": "\#9C9C9C"},
 		{"full_text": "  [${downspeed enp3s0f1}] ", "color":"\#9C9C9C"},
 		{"full_text": "  [${upspeed enp3s0f1}] ", "color":"\#9C9C9C"},
                 {"full_text": "  enp3s0f1 ","color":"\#9C9C9C"},
 	$endif
 	${if_up eno1}
-	        {"full_text": "  ${exec ip -6 addr | grep 'inet6 f' | grep 'scope link' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr eno1} ","color": "\#9C9C9C"},
+		# {"full_text": "  ${exec ip -6 addr | grep 'inet6 f' | grep 'scope link' | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'} / ${addr eno1} ","color": "\#9C9C9C"},
 		{"full_text": "  [${downspeed eno1}] ", "color":"\#9C9C9C"},
 		{"full_text": "  [${upspeed eno1}] ", "color":"\#9C9C9C"},
-                {"full_text": "  eno1","color":"\#9C9C9C"},
+                {"full_text": "  eno1:${addr eno1}","color":"\#9C9C9C"},
 	$endif
+
         {"full_text": "  ${exec ~/.i3/cputemp.sh}°C [$cpu%] $freq_g GHz",   "color":
 		${if_match ${exec ~/.i3/cputemp.sh}>65}"\#FF0000"
 		${else}"\#9C9C9C"
