@@ -448,6 +448,10 @@ function gitpush(){
     git push origin master
 }
 
+#ftp
+alias ftpi="ftp ihome.ust.hk"
+# ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
+
 #nautilus
 alias nautilus="nautilus --no-desktop&"
 #Franz

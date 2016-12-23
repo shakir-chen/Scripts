@@ -735,12 +735,9 @@ Error: Connection Time Out
 nc -v -z 127.0.0.1 2222     #network connection test localhost:2222
 sudo /etc/init.d/ssh restart
 
-
 ifconfig : inet addr:       # Get IP Address
 
-
 ssh username@localhost -p 2222  # silly sillyisafatpig
-
 
 git on server - git-upload-pack command not found problem
 ```
@@ -765,7 +762,9 @@ mget *.xls                      #get several files, for folder, you need to buil
 put file                        #upload file
 mput *.xls
 exit                            #close ftp
+binary                          #if put meets bugs
 ```
+
 https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
 
 
