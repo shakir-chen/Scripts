@@ -62,6 +62,11 @@ export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 
 # Qemu in Passion -xuanqi
 export PKG_CONFIG_PATH=/home/xuanqi/Software/Qemu/dependent_library/lib/pkgconfig/
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
+export PKG_CONFIG_PATH=/lib64:${PKG_CONFIG_PATH}
+export PKG_CONFIG_PATH=/lib:${PKG_CONFIG_PATH}
+export PKG_CONFIG_PATH=/usr/lib64:${PKG_CONFIG_PATH}
+
 
 #PS1='$ '
 
@@ -268,3 +273,5 @@ function cpcosmic() {
 alias lumerical="/opt/lumerical/device/bin/device"
 
 alias nautilus="nautilus --no-desktop&"
+
+# image - gthumb
