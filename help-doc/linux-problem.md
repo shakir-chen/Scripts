@@ -491,6 +491,7 @@ zr  unfold the function area
 ,y  copy selected area to clipboard
 :register see the register
 "ay copy to register a
+,cc/,cu quick comment
 ```
 
 <http://vim.wikia.com/wiki/Go_to_definition_using_g>

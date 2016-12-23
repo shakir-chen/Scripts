@@ -1,4 +1,8 @@
 "3.12.0 (created: 2016/02/28 22:07:56)
+"firefox reload ~/_vimperatorrc : source ~/_vimperatorrc
+"Noremal Mode(n); Visual Mode(v); Insert Mode(i); Command-line Mode(c);
+":help noremap
+
 
 noremap j 10j
 noremap k 10k
@@ -10,6 +14,8 @@ set gui=none
 " vim: set ft=vimperator:
 
 
+noremap nn :set gui=none<CR>
+
 "=======Set Default Editor========
 "ctrl+i
 :set editor="gnome-terminal --disable-factory -x vim"
@@ -17,15 +23,41 @@ set gui=none
 "=======Reader========
 noremap rr <C-A-r>
 
+"=======TileTab========
+"tileTabs.menuActions('new-2vert',null)
+command! tmuxsh :js tileTabs.menuActions('new-2vert',null)
+command! tmuxsv :emenu Tile.New Layout.2 Tabs - Horizontal
+
+"noremap  <> <C-S-Up>
+
+noremap  <C-a-k> <C-S-Up>
+noremap  <C-a-j> <C-S-Down>
+noremap  <C-a-h> <C-S-Left>
+noremap  <C-a-l> <C-S-Right>
+
+noremap  <A-t> <A-C-S-F12>
+
+noremap  <A-k> <A-C-S-Up>
+noremap  <A-j> <A-C-S-Down>
+noremap  <A-h> <A-C-S-Left>
+noremap  <A-l> <A-C-S-Right>
+
+"noremap  <A-l> <A-C-S-F12>
+
+
+"=======Command Line========
+command! sourcerc :source ~/_vimperatorrc
+cmap <C-p> <Up>
+
 "=======zotero========
 "抓取页面的命令是
 "map <C-1> :js ZoteroPane.addItemFromPage()<CR>
 noremap pp :js ZoteroPane.addItemFromPage();<CR>
 noremap ss <C-S-s>
+"or, ZoteroOverlay.toggleDisplay()
 noremap zz <C-S-z>
 noremap rr :!zotero;<CR>        "exist some errors
 
-noremap nn :set gui=none<CR>
 "打开便签窗口的命令是
 "map <C-2> :js ZoteroPane.openNoteWindow()<CR>
 
@@ -33,6 +65,16 @@ noremap nn :set gui=none<CR>
 "map <C-3> :js ZoteroPane.newNote(false,false,getBrowserSelection(),gLastValidURLStr)<CR>
 
 "map <z> :js Zotero_Browser.scrapeThisPage()<CR>
+
+
+"=======Zotero-Zutilo========
+"Really Convenient for Firefox Zotero Operation
+"js operation bellow: key.js
+"<https://github.com/willsALMANJ/Zutilo/blob/d5f26f18072e72e5408481898dcebf6192989699/addon/chrome/content/zutilo/keys.js>
+
+"zotero input, esc cancel
+noremap zi :js ZoteroOverlay.toggleDisplay(true) <CR>
+"Zutilo UI navigation => alt+N next tab; alt+Q add tag; alt+k
 
 "========web develop====
 nnoremap gc :emenu Tools.Web Developer.Browser Console<CR>       "ctrl +shift +c and ctrl+shift+i for the browser default
