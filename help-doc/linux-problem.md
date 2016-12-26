@@ -1141,6 +1141,11 @@ Another Three Application Environment
 ### 33. Yum
 Determine Path that a yum pakcage installed: rpm -ql package-name
 
+### 34. Synergy
+ubuntu 1.6.2
+windows 1.6.2-baidu
+ipad - isyerngyclient (jailbreak, cyber)
+
 #=====================================
 # bash bug summary
 #=====================================

@@ -21,8 +21,8 @@ Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-b
 apt-get install python-lxml
 
 <http://stackoverflow.com/questions/6504810/how-to-install-lxml-on-ubuntu>
-## Blogs
 
+## Blogs
 The Hitchhiker's Guide to Python <http://docs.python-guide.org/en/latest/>
 ----Reading Grate Codes (http://docs.python-guide.org/en/latest/writing/reading/)
 ----Howdoi, Flask,Diamond,Werkzeug,Requests,Tablib
