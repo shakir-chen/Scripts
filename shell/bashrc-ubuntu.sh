@@ -191,6 +191,7 @@ alias volumedown="pactl set-sink-volume 1 -10%"
 
 # }
 
+alias makee="make edit"
 alias xpropwm="xprop | grep WM_CLASS"
 
 # program open in ubuntu
@@ -241,8 +242,9 @@ alias mkd="mkdir"
 alias ftn="gfortran"
 
 # python
-alias py="python"
+alias py="python3.5"
 alias py3.5="python3.5"
+alias py2.7="python2.7"
 
 # pdf reader
 #alias pdf="acroread"       #centos
@@ -268,10 +270,10 @@ alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --out
    # cd ~/Software/yEd
     # ./yEd
 # }
-alias yEd="cd ~/Software/yEd && ./yEd &"
+alias yEd="cd ~/Software/yEd && ./yEd &"            #Program-Flow-Diagram
 # function yEd() {
     # CURRENTPWD=$(pwd)
-    # cd ~/Software/yEd 
+    # cd ~/Software/yEd
     # ./yEd
     # cd $CURRENTPWD
 # }
@@ -409,6 +411,8 @@ alias cddairy="cd ~/Research/Dairy/latex"
 #freemind
 alias mindopen="~/Software/freemind/freemind.sh"
 
+#wings3d
+alias wings3d="~/Software/Wings3D/wings-2.1.5/wings &"
 alias cattab="cat -e -t -v" #Makefile check tab and space
 
 #dict
