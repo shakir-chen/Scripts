@@ -457,7 +457,7 @@ alias ftpi="ftp ihome.ust.hk"
 # ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
 
 #nautilus
-alias nautilus="nautilus --no-desktop&"
+alias nautilus="nautilus --no-desktop"
 #Franz
 alias franz="~/Software/Franz/Franz &"
 

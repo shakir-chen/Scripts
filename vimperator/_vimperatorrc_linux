@@ -16,6 +16,9 @@ set gui=none
 
 noremap nn :set gui=none<CR>
 
+"=======Image========
+";I : select picture in a new tab, y copy, d close
+
 "=======Set Default Editor========
 "ctrl+i
 :set editor="gnome-terminal --disable-factory -x vim"
