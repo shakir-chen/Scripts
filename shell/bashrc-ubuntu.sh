@@ -290,6 +290,9 @@ alias aptcache="apt-cache show"
 
 # export SSH_CHECK_VALUE=0
 function sshcheck(){
+    if [ "$USER" == "shakir" ] ; then
+        return
+    fi
     licenseinfo=$(ssh-add -l | grep 'no identities')
     # if [[ "$licenseinfo" == "" ]];then        # bash
     if [ ! -z "$licenseinfo" ];then       #shell
