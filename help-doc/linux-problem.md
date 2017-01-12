@@ -1160,6 +1160,10 @@ ubuntu 1.6.2
 windows 1.6.2-baidu
 ipad - isyerngyclient (jailbreak, cyber)
 
+
+### 35. Change Default Program
+Select File -> Properties -> Open with -> set as default
+
 #=====================================
 # bash bug summary
 #=====================================
