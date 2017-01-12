@@ -1012,6 +1012,20 @@ I'd like to use Franz, more useful.
 sudo dpkg -i xxx.deb
 sudo apt-get -f install     #if meet some error, dpkg -i to install deb package will not install dependency automatically
 ```
+sudo dpkg -r xxx.deb        # dpkg remove first
+
+dpkg: dependency problems prevent configuration of netease-cloud-music:
+
+netease-cloud-music depends on libqt5x11extras5 (>= 5.1.0); however:
+
+Package libqt5x11extras5 is not installed.
+netease-cloud-music depends on gstreamer1.0-plugins-bad; however:
+Package gstreamer1.0-plugins-bad is not installed.
+netease-cloud-music depends on gstreamer1.0-plugins-ugly; however:
+Package gstreamer1.0-plugins-ugly is not installed.
+netease-cloud-music depends on libqt5libqgtk2; however:
+Package libqt5libqgtk2 is not installed.
+
 ### 24. PDF Tool Introduction
 pdf split - pdftk
 or just use evince print to the documents
