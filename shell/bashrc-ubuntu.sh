@@ -521,6 +521,21 @@ alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Course"
 alias cdzotero="cd ~/.mozilla/firefox/ltltr2ow.default/zotero"
 
+# rm
+function rm(){
+    case $1 in
+        "-f") argnum=2
+            mv ${@:2:10} ~/Trash/Force;;
+        "-rf") argnum=2
+            mv ${@:2:10} ~/Trash/Force;;
+        "-r") argnum=2
+            mv ${@:2:10} ~/Trash/Force;;
+        "-s") /bin/rm ${@:2:10} ;;
+        *) argnum=1
+            mv ${@:1:10} ~/Trash/Normal;;
+    esac
+}
+
 #ls optimize
 alias lst="ls -t"
 alias lstt="ls -t | head -1"
