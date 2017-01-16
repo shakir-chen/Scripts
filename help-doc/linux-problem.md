@@ -1164,6 +1164,10 @@ ipad - isyerngyclient (jailbreak, cyber)
 ### 35. Change Default Program
 Select File -> Properties -> Open with -> set as default
 
+### 36. No sound in PC Ubuntu's Headphone 
+pavucontrol
+
+
 #=====================================
 # bash bug summary
 #=====================================

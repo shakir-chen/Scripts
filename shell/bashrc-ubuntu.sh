@@ -550,6 +550,10 @@ alias lst3="ls -t | head -3"
   # PS1=${ORIG}${TITLE}
 # }
 
+# flux
+alias flux="./Software/flux/xflux -l 114.1 -g 22.3"
+
+
 # Xilinx-ISE
 alias isesource="source /opt/Xilinx/14.7/ISE_DS/settings64.sh"
 alias ise="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise &"
