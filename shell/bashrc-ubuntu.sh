@@ -394,8 +394,10 @@ alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
-alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
-alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
+# alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
+alias svnrefreshdel="svn st | grep '^!' | sed -e 's/!\s\+//' | xargs svn delete --force"       #delete
+# alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
+alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 
 function svnsubmit(){
     cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
@@ -519,7 +521,9 @@ alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Course"
+alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/ltltr2ow.default/zotero"
+
 
 # rm
 function rm(){

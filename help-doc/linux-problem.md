@@ -1164,9 +1164,11 @@ ipad - isyerngyclient (jailbreak, cyber)
 ### 35. Change Default Program
 Select File -> Properties -> Open with -> set as default
 
-### 36. No sound in PC Ubuntu's Headphone 
+### 36. No sound in PC Ubuntu's Headphone
 pavucontrol
 
+### 37. U disk Recovery from install a OS system
+windows: cmd; diskpart; list disk; select disk 1(attention, must select right disk); clean; in disk manager: new volumn
 
 #=====================================
 # bash bug summary
