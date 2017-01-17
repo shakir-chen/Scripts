@@ -837,15 +837,16 @@ choose keyboad input method
 keyboad settings
 tick out use show hidden words(ctrl+alt+h)
 ```
-
 Experience Conclusion:
 0. Install Languae Support - use fcitx
 1. Install Sogou Pinyin for linux (deb)
 2. language support: keyboard input system - fcitx (no need to make chinese effect)
 logout
-Maybe no need: 3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
+3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
 
 Settings: input method Global Config - Trigger Input Method (Ctrl + Space) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
+-> fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
+
 Fcitx-> Global Config -> Trigger Input Method: super+space
 
 <http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
@@ -853,6 +854,9 @@ Fcitx-> Global Config -> Trigger Input Method: super+space
 Error:
 No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
 A:  sudo apt-get -f install.  No use, just ignore this.
+
+if you want to remove unnecssary input
+sudo apt-get remove fcitx-sunpinying
 
 ### 17. dictionary
 dcit + goldendict
@@ -890,6 +894,7 @@ stardict
 <http://download.huzheng.org/babylon/bidirectional/>
 terminal version - scdv
 ```
+sudo mkdir /sur/share/stardict/dic/
 sudo apt-get install scdv
 sudo tar -xvjf stardict-xfardic-gnu-linux-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
 ```
@@ -1025,6 +1030,20 @@ netease-cloud-music depends on gstreamer1.0-plugins-ugly; however:
 Package gstreamer1.0-plugins-ugly is not installed.
 netease-cloud-music depends on libqt5libqgtk2; however:
 Package libqt5libqgtk2 is not installed.
+
+dpkg: dependency problems prevent configuration of netease-cloud-music:
+ netease-cloud-music depends on libqt5x11extras5 (>= 5.1.0); however:
+  Package libqt5x11extras5 is not installed.
+ netease-cloud-music depends on gstreamer1.0-plugins-bad; however:
+  Package gstreamer1.0-plugins-bad is not installed.
+ netease-cloud-music depends on gstreamer1.0-plugins-ugly; however:
+  Package gstreamer1.0-plugins-ugly is not installed.
+ netease-cloud-music depends on libqt5multimedia5-plugins; however:
+  Package libqt5multimedia5-plugins is not installed.
+ netease-cloud-music depends on libqt5multimediawidgets5; however:
+  Package libqt5multimediawidgets5 is not installed.
+ netease-cloud-music depends on libqt5libqgtk2; however:
+  Package libqt5libqgtk2 is not installed.
 
 ### 24. PDF Tool Introduction
 pdf split - pdftk

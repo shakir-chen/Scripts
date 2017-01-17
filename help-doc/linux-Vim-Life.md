@@ -91,7 +91,7 @@ use sudo-apt install // Font Awesome,xorg-xbacklight,setxkbmap seems no need to 
 
 sudo apt-get install i3
 sudo apt-get install i3status
-sudo apt-get install concky
+sudo apt-get install conky
 sudo apt-get install Font Awesome
 
 setxkbmap
@@ -250,6 +250,16 @@ TODO List:
 
 <http://justinwiegand.com/blog/?p=103>
 
+### 0. Basic Settings
+
+--1. Plugin Firefox First
+Zotfile : General Settings - Location of Files = Custom Location: /home/xuanqi/Dropbox/Paper
+Preference: Advanced - Files and Folders - Linked Attachment Base Directory : /home/xuanqi/Dropbox/Paper
+            General : tick out : take snapshots ;
+            Sync : Username+psw ; tickout sync full-text content
+
+--2. Install Zotero
+
 ### 1. Fantastic with Better Bibtex Drag and Drop
 You can drag and drop citations into your LaTeX/Markdown/Orgmode editor, and it will add
 a proper \cite{citekey}/[@citekey]/[[zotero://select...][@citekey]. The cite command is
@@ -260,7 +270,6 @@ the Quick Copy format under the Citation keys preferences for BBT.]
 <https://github.com/retorquere/zotero-better-bibtex/wiki/Citation-Keys>
 
 Firefox seems could not export bibtex quick copy
-
 
 ## Reference
 <http://stackoverflow.com/questions/779348/vim-movement-on-other-programs>
