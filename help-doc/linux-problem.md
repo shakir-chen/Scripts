@@ -1094,7 +1094,6 @@ not supported: from <http://www.xilinx.com/support/answers/29310.html>
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
 
-
 ### 27. mount and umount
 ```
 fdisk -l
@@ -1178,6 +1177,7 @@ Determine Path that a yum pakcage installed: rpm -ql package-name
 ubuntu 1.6.2
 windows 1.6.2-baidu
 ipad - isyerngyclient (jailbreak, cyber)
+air display
 
 
 ### 35. Change Default Program

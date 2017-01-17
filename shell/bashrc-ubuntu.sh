@@ -311,6 +311,11 @@ alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
 
+function sshcopyid(){
+    cd ~/.ssh
+    ssh-copy-id -i i3_rsa_id.pub xuanqi@$1.ece.ust.hk
+}
+
 function ssh-server() {
     sshcheck
     echo $1
@@ -519,10 +524,10 @@ alias cdgit="cd ~/Software/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
-alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
-alias cdcourse="cd ~/Course"
+alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
+alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
-alias cdzotero="cd ~/.mozilla/firefox/ltltr2ow.default/zotero"
+alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 
 
 # rm

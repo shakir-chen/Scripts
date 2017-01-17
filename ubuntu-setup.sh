@@ -1,5 +1,33 @@
 #!/bin/bash
 
+function soft-check(){
+    if [[ $(apt-cache policy $1) == "" ]] ; then
+        echo "----No "$1" Installed -----"
+        sudo apt-get install git
+    else
+        echo "++++"$1" has installed +++++"
+    fi
+}
+
+function pip-check(){
+    if [[ $(ls /usr/local/bin | grep $1) == "" &&
+        $(ls /usr/local/lib/python2.7/dist-packages | grep $1) == "" ]] ; then
+        echo "No Python Package "$1" Installed ====="
+        sudo pip install $1
+    else
+        echo "Python Package "$1" has installed ====="
+    fi
+}
+
+function pip3-check(){
+    if [[ $(ls /usr/local/bin | grep $1) == "" &&
+        $(ls /usr/local/lib/python3.5/dist-packages | grep $1) == "" ]] ; then
+        echo "No Python Package "$1" Installed ====="
+        sudo pip3 install $1
+    else
+        echo "Python Package "$1" has installed ====="
+    fi
+}
 if [[ "$1" == "link" ]]
 then
     echo "make link"
@@ -12,59 +40,82 @@ then
     echo "=========_vimperator========="
     ln -s ~/Software/Scripts/vimperator/_vimperatorrc_linux ~/_vimperatorrc
     echo "=========.tmux========="
-    ln -s ~/Software/Scripts/tmux/tmux-folder ~/.tmux
+    if ! [ -d "~/.tmux" ] ; then
+        ln -s ~/Software/Scripts/tmux/tmux-folder ~/.tmux
+    fi
     ln -s ~/Software/Scripts/tmux/tmux.conf ~/.tmux.conf
     echo "=========Terminal Tab========="
     ln -s ~/Software/Scripts/gtk/gtk.css ~/.config/gtk-3.0/
     echo "=========Zathura========="
-    ln -s ~/Software/Scripts/shell/zathurarc ~/.zathurarc
+    # ln -s ~/Software/Scripts/shell/zathurarc ~/.zathurarc
+    sudo ln -s ~/Software/Scripts/shell/zathurarc /etc/
     echo "=========i3wm========="
-    ln -s ~/Software/Scripts/shell/_i3 ~/.i3
+    if ! [ -d "~/.i3" ] ; then
+        ln -s ~/Software/Scripts/shell/_i3 ~/.i3
+    fi
 fi
 
 
 if [[ "$1" == "dir" ]]
 then
-    echo "make dir"
-    mkdir ~/Linux
-    mkdir ~/Research
-    cd ~/Research/
-    mkdir Jade
-    mkdir OEIL
-    mkdir Benchmark
-    mkdir Paper
+    echo "=========Link Dropbox to Current Folder========="
+    if ! [ -d "~/Documents" ] ; then
+        ln -s ~/Dropbox/Linux/Documents ~/
+    fi
+    if ! [ -d "~/Dairy" ] ; then
+        ln -s ~/Dropbox/Linux/Dairy ~/
+    fi
+    if ! [ -d "~/Music" ] ; then
+        ln -s ~/Dropbox/Linux/Music ~/
+    fi
+    if ! [ -d "~/Research" ] ; then
+        ln -s ~/Dropbox/Linux/Research ~/
+    fi
 fi
 
 if [[ "$1" == "software" ]]
 then
    echo "============Install git==============="
-   sudo apt-get install git
+   soft-check git
    echo "============Install vim==============="
-   sudo apt-get install vim
+   soft-check vim
    echo "============Install tmux==============="
-   sudo apt-get install tmux
-   sudo apt-get install xclip
+   soft-check tmux
+   soft-check xclip
    echo "============Install zathura==============="
-   sudo apt-get install zathura
+   soft-check zathura
 
    echo "============Install i3wm==============="
-   sudo apt-get install i3
-   sudo apt-get install i3status
-   sudo apt-get install conky
-
+   soft-check i3
+   soft-check i3status
+   soft-check conky
 
    echo "============Install Python==============="
-   sudo apt-get install python-dev
-   sudo apt-get install python-pip
-   sudo apt-get install python3-pip
+   soft-check python-dev
+   soft-check python-pip
+   soft-check python3-pip
+
+   echo "============Install Research==============="
+   pip3-check matplotlib
+   pip3-check numpy
+   pip3-check scipy
+   pip3-check ipython
 
    echo "============Install howdoi==============="
-   sudo pip install howdoi
-   echo "============Install howdoi==============="
-   sudo pip install cheat
+   pip-check howdoi
+   echo "============Install cheat==============="
+   pip-check cheat
 
    echo "============Install scdv dictionary==============="
-   sudo apt-get install sdcv
+   soft-check sdcv
+
+   echo "============Install Latex==============="
+   soft-check texlive
+   soft-check texlive-latex-extra
+   echo "============Install Synergy==============="
+   soft-check synergy
+   echo "============Install svn==============="
+   soft-check subversion
 
 fi
 
