@@ -118,10 +118,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ "$USER" == "shakir" ] ; then
-    setxkbmap -option caps:ctrl_modifier
-fi
-
 #User Define
 # added by Anaconda 2.2.0 installer
 #export PATH="/home/rafael/softwares/anaconda/bin:${PATH}"
@@ -129,7 +125,7 @@ fi
 #export LD_LIBRARY_PATH=/home/rafael/softwares/anaconda/lib:${LD_LIBRARY_PATH}
 # added by git Xuanqi
 export PATH=~/Linux/bin:${PATH}
-export PATH=~/Study/Scripts/linux-bin:${PATH}
+export PATH=~/Software/Scripts/linux-bin:${PATH}
 export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
@@ -182,7 +178,7 @@ alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
-alias vimlife="vim ~/Study/Scripts/help-doc/linux-Vim-Life.md"
+alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
 
 alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
@@ -289,26 +285,25 @@ alias aptget="sudo apt-get install"
 alias aptcache="apt-cache show"
 
 # export SSH_CHECK_VALUE=0
-function sshcheck(){
-    if [ "$NAME" == "SHAKIR" ] ; then
-        find ~/.ssh/i3_rsa_id -exec ssh-add {} \
-    fi
-    if [ "$USER" == "shakir" ] && [ "$NAME" != "SHAKIR" ] ; then
-        return
-    fi
-
-    licenseinfo=$(ssh-add -l | grep 'no identities\|Could not')
-
-    # if [[ "$licenseinfo" == "" ]];then        # bash
-
-    if [ ! -z "$licenseinfo" ];then       #shell
-    # For it will print "SSH-client no identities" Info
-        echo "No SSH License Add"
-        eval `ssh-agent -s`
-        find ~/.ssh/i3_rsa_id -exec ssh-add {} \;
-    fi
-
-}
+#function sshcheck(){
+#    if [ "$NAME" == "SHAKIR" ] ; then
+#        find ~/.ssh/i3_rsa_id -exec ssh-add {} \
+#    fi
+#    if [ "$USER" == "shakir" ] && [ "$NAME" != "SHAKIR" ] ; then
+#        return
+#    fi
+#
+#    licenseinfo=$(ssh-add -l | grep 'no identities\|Could not')
+#
+#    # if [[ "$licenseinfo" == "" ]];then        # bash
+#
+#    if [ ! -z "$licenseinfo" ];then       #shell
+#    # For it will print "SSH-client no identities" Info
+#        echo "No SSH License Add"
+#        eval `ssh-agent -s`
+#        find ~/.ssh/i3_rsa_id -exec ssh-add {} \;
+#    fi
+#}
 
 # ssh
 alias sshpassion="ssh-server passion"
@@ -447,7 +442,7 @@ alias wmctrlar="wmctrl -r :ACTIVE: -b remove," #window move control active
 alias wmctrls="wmctrl -r :SELECT: -e " #window move control select
 
 #git
-alias gitcd="cd ~/Study/Scripts && git status"
+alias gitcd="cd ~/Software/Scripts && git status"
 alias gits="git status"
 alias gita="git add"
 alias gitpull="sshcheck; git pull"
@@ -492,10 +487,10 @@ function set-tab-title() {
 #Move and Create a link in script directory
 function gitln(){
     filefullpath=$(readlink -f $1)
-    mv --backup=t $1 ~/Study/Scripts/linux-bin/
-    ln -s ~/Study/Scripts/linux-bin/$1 .
-    echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath"
-    echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath" >> ~/Study/Scripts/linux-bin/ubuntu-setup.sh
+    mv --backup=t $1 ~/Software/Scripts/linux-bin/
+    ln -s ~/Software/Scripts/linux-bin/$1 .
+    echo "ln -s ~/Software/Scripts/linux-bin/$1 $filefullpath"
+    echo "ln -s ~/Software/Scripts/linux-bin/$1 $filefullpath" >> ~/Software/Scripts/linux-bin/ubuntu-setup.sh
 }
 
 #Move and Create a link in script directory
@@ -520,7 +515,7 @@ alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Research/Jade"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
-alias cdgit="cd ~/Study/Scripts"
+alias cdgit="cd ~/Software/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
