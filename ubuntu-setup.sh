@@ -31,6 +31,7 @@ function pip3-check(){
 if [[ "$1" == "link" ]]
 then
     echo "make link"
+
     echo "=========mindmap link========="
     ln -s ~/Software/Scripts/mindmap/IT_Stuffs_new.mm ~/
     echo "=========Linux Problem========="
@@ -53,6 +54,7 @@ then
     if ! [ -d "~/.i3" ] ; then
         ln -s ~/Software/Scripts/shell/_i3 ~/.i3
     fi
+    ln -s ~/Software/Scripts/help-doc/_helprc ~/.helprc
 fi
 
 
@@ -71,6 +73,8 @@ then
     if ! [ -d "~/Research" ] ; then
         ln -s ~/Dropbox/Linux/Research ~/
     fi
+    echo "=========Dropbox File link========="
+    ln -s ~/Dropbox/Linux/notes/plan.txt ~/
 fi
 
 if [[ "$1" == "software" ]]
