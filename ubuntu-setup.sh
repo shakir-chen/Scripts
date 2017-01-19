@@ -3,7 +3,7 @@
 function soft-check(){
     if [[ $(apt-cache policy $1) == "" ]] ; then
         echo "----No "$1" Installed -----"
-        sudo apt-get install git
+        sudo apt-get install $1
     else
         echo "++++"$1" has installed +++++"
     fi
@@ -120,9 +120,26 @@ then
    soft-check synergy
    echo "============Install svn==============="
    soft-check subversion
-
+   echo "============Install scrot==============="
+   soft-check scrot
 fi
 
+if [[ "$1" == "ssh" ]]
+then
+   echo "============Install ssh==============="
+   soft-check openssh-server
+   sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.original
+   sudo chmod a-w /etc/ssh/sshd_config.original
+
+   echo "vim sshd_config"
+   echo "Port 2222"
+   echo "PubkeyAuthentication yes"
+   echo "Banner /etc/issue.net"
+   echo "Wait a Key enter....... ....."
+   read key
+   sudo vim /etc/ssh/sshd_config
+   sudo iptables -L
+fi
 if [[ "$1" == "git" ]]
 then
    cd ~/Software/

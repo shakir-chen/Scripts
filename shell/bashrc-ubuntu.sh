@@ -528,8 +528,14 @@ alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
+# alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
+alias cdpaper="~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
+alias dirsx="dirs | xclip"
 
-
+# mv tmp
+function mvtmp(){
+    mv $1 ~/Dropbox/Linux/tmp
+}
 # rm
 function rm(){
     case $1 in
