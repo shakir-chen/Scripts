@@ -323,7 +323,7 @@ function ssh-server() {
     if [ "$1" = "lab" ]
     then
         echo "here"
-        servername="xuanqi@143.89.135.201 -p 2222"
+        servername="xuanqi@143.89.135.212 -p 2222"
         # ssh -XfC -c blowfish-cbc $servername
     elif [ "$1" = "zhehui" ]
     then
