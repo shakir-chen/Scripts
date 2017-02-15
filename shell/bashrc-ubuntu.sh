@@ -310,6 +310,7 @@ alias sshmagic="ssh-server magic"
 alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
+alias sshstd="ssh-server std"
 
 function sshcopyid(){
     cd ~/.ssh
@@ -328,6 +329,9 @@ function ssh-server() {
     elif [ "$1" = "zhehui" ]
     then
         servername="zhehui@rostam.ece.ust.hk"
+    elif [ "$1" = "std" ]
+    then
+        servername="std01@143.89.131.91"
     else
         servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
     fi
@@ -340,7 +344,9 @@ function ssh-server() {
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
-
+function scpstd(){
+    scp $1 std01@143.89.131.91:~/$2
+}
 #ssh functions
 function scpxq {
    scp $1 xuanqi@$2.ece.ust.hk:$3
@@ -529,7 +535,7 @@ alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
-alias cdpaper="~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
 
 # mv tmp
@@ -591,6 +597,9 @@ export TEMPSAVE_PATH=~/Downloads
 
 #scrot
 alias scrots="scrot -s"
+
+#qmake
+alias qmakep="qmake -project -o"
 
 # #help-doc
 # function helpterm() {

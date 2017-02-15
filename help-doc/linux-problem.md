@@ -1189,6 +1189,55 @@ pavucontrol
 ### 37. U disk Recovery from install a OS system
 windows: cmd; diskpart; list disk; select disk 1(attention, must select right disk); clean; in disk manager: new volumn
 
+### 38. Locally install Vimperator
+
+https://support.mozilla.org/t5/Problems-with-add-ons-plugins-or/Add-on-signing-in-Firefox/ta-p/30262
+
+What are my options if I want to use an unsigned add-on? (advanced users)
+Firefox ESR version 45, as well as the Developer Edition and Nightly versions of Firefox, will allow you to override the setting to enforce the add-on signing requirement by changing the preference xpinstall.signatures.required to false in the Firefox Configuration Editor (about:config page). There are also special unbranded versions of Firefox that allow this override. See the MozillaWiki article, Add-ons/Extension Signing for more information.
+
+Install Unverified Addons
+1. Address Bar => about:config => I accept the risk
+2. xpinstall.signatures.required to false
+
+Windows seems unable to install (just wait firefox verification)
+Ref:<https://support.mozilla.org/t5/Manage-preferences-and-add-ons/Configuration-Editor-for-Firefox/ta-p/35030>
+
+### 39. Qt Install
+wget http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run
+chmod +x qt-opensource-linux-x64-5.7.0.run
+./qt-opensource-linux-x64-5.7.0.run
+
+sudo apt-get install build-essenstial #Install Compiler
+sudo apt-get install libfontconfig1 #Install OpenGL
+sudo apt-get install libglu1-mesa-dev -y
+
+set file assocition with pro files
+```
+//.local/share/applications/Qt-Creator.desktop
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=QtCreator
+Comment=QtCreator
+NoDsiplay=true
+Exec=(Install folder of QT)/Tools/QtCreator/bin/qtcreator %f
+Icon=(Install folder of QT)/5.4/Src/qtdoc/doc/images/landing/icon_QtCreator_78x78px.png
+Name[en_US]=Qt-Creator
+```
+<https://wiki.qt.io/Install_Qt_5_on_Ubuntu>
+Error:
+qmake: No such file or directory
+sudo apt-get install qt4-qmake libqt4-dev
+
+### 40. System Information Show
+Linux Version: uname -or ; lsb_release -irc
+
+### 41. Markdown File Viewer
+grip    # pip install grip
+pandoc # universal type convert
+
 #=====================================
 # bash bug summary
 #=====================================
