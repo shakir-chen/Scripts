@@ -542,6 +542,7 @@ alias dirsx="dirs | xclip"
 function mvtmp(){
     mv $1 ~/Dropbox/Linux/tmp
 }
+
 # rm
 function rm(){
     case $1 in
@@ -573,7 +574,6 @@ alias lst3="ls -t | head -3"
 
 # flux
 alias flux="./Software/flux/xflux -l 114.1 -g 22.3"
-
 
 # Xilinx-ISE
 alias isesource="source /opt/Xilinx/14.7/ISE_DS/settings64.sh"
