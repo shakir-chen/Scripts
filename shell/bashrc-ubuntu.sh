@@ -311,6 +311,7 @@ alias sshmagic="ssh-server magic"
 alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
+alias sshstd="ssh-server std"
 
 function sshcopyid(){
     cd ~/.ssh
@@ -329,6 +330,9 @@ function ssh-server() {
     elif [ "$1" = "zhehui" ]
     then
         servername="zhehui@rostam.ece.ust.hk"
+    elif [ "$1" = "std" ]
+    then
+        servername="std01@143.89.131.91"
     else
         servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
     fi
@@ -341,7 +345,9 @@ function ssh-server() {
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
-
+function scpstd(){
+    scp $1 std01@143.89.131.91:~/$2
+}
 #ssh functions
 function scpxq {
    scp $1 xuanqi@$2.ece.ust.hk:$3
@@ -540,6 +546,7 @@ alias dirsx="dirs | xclip"
 function mvtmp(){
     mv $1 ~/Dropbox/Linux/tmp
 }
+
 # rm
 function rm(){
     case $1 in
@@ -572,7 +579,6 @@ alias lst3="ls -t | head -3"
 # flux
 alias flux="./Software/flux/xflux -l 114.1 -g 22.3"
 
-
 # Xilinx-ISE
 alias isesource="source /opt/Xilinx/14.7/ISE_DS/settings64.sh"
 alias ise="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise &"
@@ -595,6 +601,9 @@ export TEMPSAVE_PATH=~/Downloads
 
 #scrot
 alias scrots="scrot -s"
+
+#qmake
+alias qmakep="qmake -project -o"
 
 # #help-doc
 # function helpterm() {
