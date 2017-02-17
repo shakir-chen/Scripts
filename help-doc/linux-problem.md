@@ -1051,6 +1051,8 @@ or just use evince print to the documents
 
 Really Wonderful Pdftool : (better than evince) - qpdfview
 
+need: pdf-tab/editor/vim-like/firefox enable
+
 ### 25. Xilinx ISE Installation
 <http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html>
 ```
@@ -1196,12 +1198,19 @@ https://support.mozilla.org/t5/Problems-with-add-ons-plugins-or/Add-on-signing-i
 What are my options if I want to use an unsigned add-on? (advanced users)
 Firefox ESR version 45, as well as the Developer Edition and Nightly versions of Firefox, will allow you to override the setting to enforce the add-on signing requirement by changing the preference xpinstall.signatures.required to false in the Firefox Configuration Editor (about:config page). There are also special unbranded versions of Firefox that allow this override. See the MozillaWiki article, Add-ons/Extension Signing for more information.
 
+vimperator update
 Install Unverified Addons
 1. Address Bar => about:config => I accept the risk
 2. xpinstall.signatures.required to false
 
 Windows seems unable to install (just wait firefox verification)
 Ref:<https://support.mozilla.org/t5/Manage-preferences-and-add-ons/Configuration-Editor-for-Firefox/ta-p/35030>
+
+firefox accelarator:
+1. about:config -> browser.cache.disk.enable : false ; browser.cache.memory.enable : true ;
+2. right click to create new perference/integer, browser.cache.memory.capacity 100,000 kB
+3. about:cache
+<http://lifehacker.com/5687850/speed-up-firefox-by-moving-your-cache-to-ram-no-ram-disk-required>
 
 ### 39. Qt Install
 wget http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run
