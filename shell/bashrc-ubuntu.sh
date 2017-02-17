@@ -128,6 +128,7 @@ fi
 # added by git Xuanqi
 export PATH=~/Linux/bin:${PATH}
 export PATH=~/Software/Scripts/linux-bin:${PATH}
+export PATH=~/Software/Franz/:${PATH}
 export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
@@ -425,6 +426,9 @@ function svnsubmit(){
 #files
 
 #svn ls
+
+# shadowsocks
+alias sockset="sslocal -c /etc/shadowsocks.json "
 
 # cd
 alias cddairy="cd ~/Research/Dairy/latex"
