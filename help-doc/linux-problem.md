@@ -1179,7 +1179,6 @@ windows 1.6.2-baidu
 ipad - isyerngyclient (jailbreak, cyber)
 air display
 
-
 ### 35. Change Default Program
 Select File -> Properties -> Open with -> set as default
 
@@ -1200,4 +1199,3 @@ bash xxx.sh instead of sh xxx.sh
 ## Printer Help
 ## =====================================
 Cancel a print task: when it comes "load papers in a cassete", press red button (stop and show pause || figure) => press pack and okay button and click yes. Delete unwanted task then.
-

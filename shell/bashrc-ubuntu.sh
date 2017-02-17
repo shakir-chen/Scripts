@@ -130,6 +130,7 @@ fi
 # added by git Xuanqi
 export PATH=~/Linux/bin:${PATH}
 export PATH=~/Software/Scripts/linux-bin:${PATH}
+export PATH=~/Software/Franz/:${PATH}
 export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
@@ -415,6 +416,9 @@ function svnsubmit(){
 
 #svn ls
 
+# shadowsocks
+alias sockset="sslocal -c /etc/shadowsocks.json "
+
 # cd
 alias cddairy="cd ~/Research/Dairy/latex"
 
@@ -529,7 +533,7 @@ alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
-alias cdpaper="~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
 
 # mv tmp
