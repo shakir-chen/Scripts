@@ -683,6 +683,10 @@ apt-cache show texlive-latex-extra | grep psboxit    # no result
 
 tips, pdf open tools - evince; this pdfware is quite simple but powerful. Annotation and highlight is in the left side with a tiny icon.
 
+Error:
+1. citet (author?)[4] problem
+\usepackage[square,sort,comma,numbers]{natbib}
+\bibliographystyle{plainnat}
 
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
