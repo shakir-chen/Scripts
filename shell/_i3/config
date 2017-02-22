@@ -232,6 +232,7 @@ for_window [class="Thunderbird" instance="Msgcompose"] floating enable
 for_window [class="Thunderbird" instance="Calendar"] floating enable
 
 for_window [class="Zotero" instance="Toplevel"] floating enable move up 400px
+for_window [class="Firefox" instance="Zotero"] floating enable move up 400px
 
 # for_window [class="Thunderbird" window_role="pop-up"] floating enable
 # for_window [window_role="pop-up"] floating enable
