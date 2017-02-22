@@ -87,8 +87,6 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-source ~/.helprc
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -139,12 +137,15 @@ export BOOST_ROOT=~/Software/boost/include
 # cheat add
 export EDITOR=/usr/bin/vim
 
+export PKG_CONFIG_PATH=/usr/bin/
+
 #PS1='$ '
 #PS1='\[\033[33m\]\w\[\033[36m\]\[\033[0m\]$]]]'
 
 #RED='\[\033[0;36m\]]'
 #WHITE='\[\033[1;37m\]]'
 #PS1='${RED}\H:\W${WHITE}$ '
+
 
 #PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
 PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
@@ -157,6 +158,10 @@ stty -ixon  # change ctrl-s to search
 #LICENSE FILE SET
 export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
+
+# Setup Scripts =====
+source ~/.helprc
+# bash Soft-Open.sh       # Setup Programs
 
 # grep
 #alias grep --color=auto

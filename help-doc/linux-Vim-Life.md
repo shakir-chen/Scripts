@@ -116,7 +116,10 @@ xprop | grep WM_CLASS   # and then click that processor
 ```
 yEd : "sun-awt-X11-XFramePeer", "com-install4j-runtime-launcher-Launcher"
 
+for_window [class="Zotero" instance="Toplevel"] floating enable
+for_window [class="Zotero" instance="Toplevel"] floating enable move right 330px, move down 70px
 
+restart i3wm-config: mod+shift+r
 ### 6. Dmenu no locale support Fixed
 test: demu_run
 ```

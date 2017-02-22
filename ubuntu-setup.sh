@@ -88,6 +88,8 @@ then
    soft-check xclip
    echo "============Install zathura==============="
    soft-check zathura
+   soft-check qpdfviewer
+   soft-check qpdf
 
    echo "============Install i3wm==============="
    soft-check i3
