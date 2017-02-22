@@ -255,7 +255,7 @@ alias py2.7="python2.7"
 # }
 
 # Zotero
-# alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
+alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
