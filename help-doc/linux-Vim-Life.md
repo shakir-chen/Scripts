@@ -7,6 +7,8 @@ synaptic (graphic of apt-get)
 ## II. Firefox - vimperator
 ctrl+i: external editor; save and copy all the message back to the blank
 
+search engine: google translator; google scholar search
+
 ## III. Thunderbird - muttator
 
 Thunderbird: Cheatsheet
