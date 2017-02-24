@@ -142,6 +142,12 @@ export EDITOR=/usr/bin/vim #modify in .bashrc
 cheat -e find       #add more personal information in ./cheat find
 ```
 
+sqlite:
+```
+sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
+sudo apt-get install sqlitebrowser
+```
+
 ##bash recommendation utilities
 
 <http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner> 
@@ -681,6 +687,7 @@ apt-cache search psboxit    # no result
 apt-cache show texlive-latex-extra | grep psboxit    # no result
 ```
 
+[htpb]: h here, t top, b bottom, p page
 tips, pdf open tools - evince; this pdfware is quite simple but powerful. Annotation and highlight is in the left side with a tiny icon.
 
 Error:

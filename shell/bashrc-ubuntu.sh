@@ -309,6 +309,9 @@ function sshcheck(){
     fi
 }
 
+# sh
+alias sh="bash"
+
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
