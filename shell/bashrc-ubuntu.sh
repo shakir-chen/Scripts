@@ -260,7 +260,7 @@ alias py2.7="python2.7"
 # }
 
 # Zotero
-# alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
+alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
@@ -309,8 +309,14 @@ function sshcheck(){
     fi
 }
 
+<<<<<<< HEAD
 # sh
 alias sh="bash"
+=======
+# close touchpad
+alias xinputclosetp="xinput list;xinput --disable 12"
+alias xinputopentp="xinput list;xinput --enable 12"
+>>>>>>> 8b5f6fb7bec937f46df8f480a16a809ec2a0ca0e
 
 # ssh
 alias sshpassion="ssh-server passion"
@@ -320,6 +326,7 @@ alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
+alias sshcs="ssh-server cs"
 
 function sshcopyid(){
     cd ~/.ssh
@@ -338,6 +345,9 @@ function ssh-server() {
     elif [ "$1" = "zhehui" ]
     then
         servername="zhehui@rostam.ece.ust.hk"
+    elif [ "$1" = "cs" ]
+    then
+        servername="xchenbr@csl2wk10.cse.ust.hk"
     elif [ "$1" = "std" ]
     then
         servername="std01@143.89.131.91"
