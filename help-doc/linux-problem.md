@@ -1257,6 +1257,18 @@ Linux Version: uname -or ; lsb_release -irc
 grip    # pip install grip
 pandoc # universal type convert
 
+
+### 42. ipython Jupyter
+pip install jupyter
+cd workdir
+ipython notebook #or jupyter notebook
+
+new python3
+
+then you can input command online
+
+
+
 #=====================================
 # bash bug summary
 #=====================================

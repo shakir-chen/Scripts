@@ -309,14 +309,11 @@ function sshcheck(){
     fi
 }
 
-<<<<<<< HEAD
 # sh
 alias sh="bash"
-=======
 # close touchpad
 alias xinputclosetp="xinput list;xinput --disable 12"
 alias xinputopentp="xinput list;xinput --enable 12"
->>>>>>> 8b5f6fb7bec937f46df8f480a16a809ec2a0ca0e
 
 # ssh
 alias sshpassion="ssh-server passion"

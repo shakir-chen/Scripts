@@ -135,6 +135,14 @@ edit ~/.pam_environme
 LANG=en_US
 LANGUAGE=en_US
 ```
+Error: demu_run not login export $PATH in .bashrc or .bash_profile
+If I'm not mistaken, dmenu's environment could be non-interactive (depending on your login method). Try putting the line in ~/.profile.
+```
+vim ~/.profile
+rm ~/.cache/dmenu_run
+```
+
+<https://bbs.archlinux.org/viewtopic.php?id=157187>
 
 ### 7. Volume
 alias volumedown="pactl set-sink-volume 1 -10%"
