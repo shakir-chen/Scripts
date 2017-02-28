@@ -62,6 +62,17 @@ TODO List:
 4. Strengthen Area Info, Sometimes I will forget the active window (not so important)
 
 Printscreen : scrot -s
+
+i3wm useful commands:
+1. i3-input : input, get input
+2. i3-msg : move and workspace switch
+get_workspace
+i3-msg -t get tree # Dump the layout tree
+
+i3-msg 'workspace 6.bdsl; exec zathura'     # open pdf in workspace 6
+i3-msg workspace "6.bdsl"                   # focus workspace 6
+3. i3-nagbar : see XY point
+
 ### 1. Know and Rotate Screen: xrandr
 ```
 xrandr -q #output parameter infos
@@ -256,6 +267,7 @@ hjkl
 xzgv (worst)
 
 
+
 ## VIII. Research Managermanet - Zotero
 TODO List:
 1. succeed to use firefox zotero with betterbibtex, at least show citation-key
@@ -287,3 +299,4 @@ Firefox seems could not export bibtex quick copy
 ## Reference
 <http://stackoverflow.com/questions/779348/vim-movement-on-other-programs>
 <https://wiki.archlinux.org/index.php/List_of_applications/Documents>       #Linux Arch, very comprehensive
+

@@ -1267,7 +1267,17 @@ new python3
 
 then you can input command online
 
+### 43. WPS
+install deb package, for rpm, alien rpm to deb and then install
+dpkg -i xxx.deb
 
+not good as image
+<http://wps-community.org/downloads>
+
+### 44. Suspend
+pm-suspend: system is saved in RAM, power-needed, 3-5s
+pm-hibernate: system is saved in disk, no power, 15-45s
+pm-suspend-hybrid:
 
 #=====================================
 # bash bug summary
