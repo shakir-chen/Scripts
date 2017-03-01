@@ -1279,6 +1279,18 @@ pm-suspend: system is saved in RAM, power-needed, 3-5s
 pm-hibernate: system is saved in disk, no power, 15-45s
 pm-suspend-hybrid:
 
+### 45. PC Info : lshw, i-nex, cpu-g
+lshw
+sudo lshw |less
+sudo lshw -html > mypcinfo.html
+
+i-nex NOT WORK:
+$ sudo add-apt-repository ppa:nemh/gambas3
+$ sudo add-apt-repository ppa:i-nex-development-team/stable
+$ sudo apt-get update
+$ sudo apt-get install i-nex
+<https://www.unixmen.com/install-nex-0-6-2-ubuntu-linux-mint-elementary-os/>
+
 #=====================================
 # bash bug summary
 #=====================================
