@@ -311,9 +311,16 @@ function sshcheck(){
 
 # sh
 alias sh="bash"
-# close touchpad
-alias xinputclosetp="xinput list;xinput --disable 12"
-alias xinputopentp="xinput list;xinput --enable 12"
+# open and close touchpad
+function xinputclosetp(){
+    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    xinput --disable $num
+}
+function xinputopentp(){
+    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    xinput --enable $num
+}
+
 
 # ssh
 alias sshpassion="ssh-server passion"
