@@ -1,4 +1,7 @@
-#Big Problem (Todo List)
+Linux Common Issues
+=====================================
+
+#Big Problem (TODO List)
 1. GDB how to debug and watch line by line ? (snap serial)
 2. GDB debug python
 3. Debug Tools, how vim can do better than IDE tools?
@@ -10,75 +13,66 @@
 Understand Makefile better
 lab-ip-address:143,89.135.225
 
-#git server
-```
-$ git clone --bare my_project my_project.git
-```
-
-
-git on server - git-upload-pack command not found problem
-```
->cd /etc/ssh/sshd_config
-PermitUserEnvironment yes
->/etc/init.d/sshd restart
-
-Test on local-PC
->ssh username@hostserver "which git-upload-pack"
-```
-<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
-Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
-
 #Problem History
 1st-16th Aug
 1. No sound into headphone through SSH (ssh self problem)
-
 2. Windows Ctrl - wmctrl (deeply understand)
-
 3. npm study (javascript etc, long-term)
-
 4. Research Environment Get Familiar (done, ssh+svn+latex)
 5. svn **problem** cant commit in ubuntu...!!! (done,update in the end)
 6. Ubuntu Dictionary (like lingoes in Windows)
--golden
+    -golden
 7. Chinese input in ubuntu (done, fcitx+sogou,logout)
 8. freemind in ubuntu (done)
 9. paste and copy in/out terminal (done, alternatives)
-Way 1
-```
---gnome terminal use ctrl-shift-c for copy and ctrl-shift-v for paste
-vim insert
-```
-
+    Way 1
+    ```
+    --gnome terminal use ctrl-shift-c for copy and ctrl-shift-v for paste
+    vim insert
+    ```
 10. Screen Snap
-ubuntu :
-i) printscreen
-ii) custom : shift+printscreen
+    ubuntu :
+    + printscreen
+    + custom : shift+printscreen
 
-# Program Develop in Linux
+#I. Program Develop in Linux
 ## Environment
+```
 python - ipython
 bash - shell
 IDE Tools - Netbeans, Eclipse
+```
 
 ## Make
+```
 make
 cmake
+```
+
 
 ## Debug
+```
 gdb
 pyclewn
+```
 
 ## Search
 ### file name search
+```
 find
 locate
+```
 ### file content search
+```
 grep
 sed
 awk
+```
 ### sort
+```
 sort
 xarg
+```
 
 ## Modify
 
@@ -94,6 +88,7 @@ do  diffget
 <http://vi.stackexchange.com/questions/625/how-do-i-use-vim-as-a-diff-tool>
 
 ## Print
+```
 echo
 cat
 wc
@@ -105,6 +100,9 @@ whatis
 which
 uname       #display important info of system
 date        #show date
+lshw        #show hardware information
+df -h       #sda sda1 check flash log or not
+```
 
 ## OS Resource
 ```
@@ -119,17 +117,32 @@ mount   #mount a file system
 ```
 
 ## Type conversion
+```
 od      #dump files in octal and other formats
 iconv   #character code convert, example, utf8 to latin-1
+```
 
 ## Network
+```
 nc      #netcat for tcp/ip swish army knife
 ping
+```
 
 ## Database
+```
 mysql
+sqlite-browser      #view sqlite data
+```
+1. sqlite:
+    ```
+    sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
+    sudo apt-get install sqlitebrowser
+    ```
+
 ## Help
+```
 cheat   #usage info of command, simply form of man command
+```
 ### cheat Installation
 ```
 requirement: python,pip,git
@@ -142,56 +155,46 @@ export EDITOR=/usr/bin/vim #modify in .bashrc
 cheat -e find       #add more personal information in ./cheat find
 ```
 
-sqlite:
-```
-sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
-sudo apt-get install sqlitebrowser
-```
-
 ##bash recommendation utilities
 
 <http://www.thegeekstuff.com/2010/11/50-linux-commands/?utm_source=feedburner> 
 ## Language Recommendation
-java for real desktop applications
-python for quick and dirty things
-c and c++ for efficiency
++ python for quick and dirty things
++ c and c++ for efficiency
++ java for real desktop applications
 
 ## Batch Rename Under Linux
-
 ```
 for f in *.png; do mv "$f" "${f#image}"; done       #image0001.png to 0001.png
-
 ```
 
-# Ubuntu - Installation Guide
+#II. Ubuntu - Installation Guide
 ## Ubuntu Settings
-
 ### 0. Ubuntu - UST Computer Install
-1. Windows EasyBCD
-New NeroGrub Entry
-```
-title Install Ubuntu 16.04 LTS
+1. Hardware Installation
+    + Windows EasyBCD
+        New NeroGrub Entry
+    ```
+    title Install Ubuntu 16.04 LTS
+    root (hd1,0)
+    kernel (hd1,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04-desktop-amd64.iso ro quiet splash
+    initrd (hd1,0)/initrd.lz
+    ```
+    U-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
+    C-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
 
-root (hd1,0)
+    <http://www.cnblogs.com/yzmb/p/ubuntu.html>
 
-kernel (hd1,0)/vmlinuz.efi boot=casper iso-scan/filename=/ubuntu-16.04-desktop-amd64.iso ro quiet splash
+2. Better use USB2.0 Flash to install Ubuntu
+    simply make an ubuntu installation usb disk
 
-initrd (hd1,0)/initrd.lz
-```
-U-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
-C-disk : initrd.lz ; vmlinuz.efi ; ubuntu-16.04-desktop-amd64.iso
-
-<http://www.cnblogs.com/yzmb/p/ubuntu.html>
-
-Others - Recommendation
+3. USB DISK maker
++ Others - Recommendation
 <http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
-
-Windows RUFU Installation:
++ Windows RUFU Installation:
 <http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows>
-Linux Startup disk creator
++ Linux Startup disk creator - startup -> disk creator
 <http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu>
-
-
 
 ### 1. Caps Lock key change to additional CTRL
 ```
@@ -212,18 +215,19 @@ chsh -s /bin/bash
 ```
 
 ### 3. window move and resize
+RECOMMEND: i3wm
 ```
 wmctrl -d #show desktop
 wmctrl -l #list all the windows
 wmctrl -i -a <win-id>  #ignore other workspace; activate windows id
 wmctrl -r :ACTIVE: -e 0,2000,100,1000,400           #-r specifies a target windows, -e resizes and moves
 ```
--a activate the window
--b add move or toggle up
--c close
--d list all desktops
--e resize and move a window that has been specified with a -r action
--g change the geometry w,h
++ -a activate the window
++ -b add move or toggle up
++ -c close
++ -d list all desktops
++ -e resize and move a window that has been specified with a -r action
++ -g change the geometry w,h
 
 windows resolution information
 ```
@@ -232,6 +236,7 @@ SCREEN_WIDTH=$(xwininfo -root | awk '$1=="Width:" {print $2}')
 SCREEN_HEIGHT=$(xwininfo -root | awk '$1=="Height:" {print $2}')
 ```
 <http://unix.stackexchange.com/questions/53150/how-do-i-resize-the-active-window-to-50-with-wmctrl>
+
 Ubuntu Workspace Move: Ctrl+Alt+Arrow
 
 wmctrl has some fatal bug with not exact position of windows move.
@@ -244,12 +249,12 @@ wmctrl -l               #get window id, hex
 
 
 ### 4. Key-Shortcuts
-Win Switch to Neighbor Workspace: super + arrow
-Win Move to other Workspace: None
-Workspace Switch : ctrl + number
-Workspace Switch to Neighbor: ctrl + alt + arrow
++ Win Switch to Neighbor Workspace: super + arrow
++ Win Move to other Workspace: None
++ Workspace Switch : ctrl + number
++ Workspace Switch to Neighbor: ctrl + alt + arrow
 
-terminal
+#### terminal
 ```
 Navigation
 Ctrl + A ;Beginining or Home Key
@@ -279,6 +284,7 @@ Tab      ;Auto-complete files and folder names
 ```
 
 <http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/>
+
 <http://www.makeuseof.com/tag/save-time-linux-terminal-20-shortcuts/>
 
 ```
@@ -290,90 +296,88 @@ xxx && xxx  # && combinator for two commands
 <http://lifehacker.com/5743814/become-a-command-line-ninja-with-these-time-saving-shortcuts>
 
 ### 5. deb file install and remove
+```
 sudo dpkg -i xxx.deb
 sudo dpkg -r xxx
-
-
-### 6. Searching Technique in Linux - grep, awk and sed
-
-File Search
-```
-locate -b PN-J.png
-locate -S
-```
-
-```
-find -name "*.PNG"
 ```
 
 
-```
- #change suffix name to small case
-$ find . -name '*.*' -exec sh -c 'a=$(echo "$0" | sed -r "s/([^.]*)\$/\L\1/"); [ "$a" != "$0" ] && mv "$0" "$a" ' {} \;
-```
+### 6. Searching Technique in Linux - find,locate/grep, awk and sed
 
-```
-basic regular expressions $.*[\]^, need to put backslash
-in a nutshell, for sed 's/.../.../', $.*/[\]^
-```
+1. File Search (locate and find)
+    ```
+    locate -b PN-J.png
+    locate -S
+    ```
 
-awk : pattern scanning and processing language          (input and processing)
-sed : stream editor for filtering and transforming text (more delete and replace specific reglex)
+    ```
+    find -name "*.PNG"
+    ```
+
+    ```
+     #change suffix name to small case
+    $ find . -name '*.*' -exec sh -c 'a=$(echo "$0" | sed -r "s/([^.]*)\$/\L\1/"); [ "$a" != "$0" ] && mv "$0" "$a" ' {} \;
+    ```
+
+2. Text Search
+    ```
+    basic regular expressions $.*[\]^, need to put backslash
+    in a nutshell, for sed 's/.../.../', $.*/[\]^
+    ```
+    + awk : pattern scanning and processing language          (input and processing)
+    + sed : stream editor for filtering and transforming text (more delete and replace specific reglex)
 
 
-Ref:<http://unix.stackexchange.com/questions/32907/what-characters-do-i-need-to-escape-when-using-sed-in-a-sh-script>
-
+REF: <http://unix.stackexchange.com/questions/32907/what-characters-do-i-need-to-escape-when-using-sed-in-a-sh-script>
 <https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps>
 <https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps>
 
 
 ### 7. Debug in Linux - gdb + vim + pyclewn
-pyclewn
++ pyclewn
++ gdb
++ valgrind
++ strace
++ obdjump
++ oprofile
++ cscope
++ cmake
 
-gdb
-
-Others Recomendation:
-
-valgrind: build dynamic analysis tools - memory managemment and threading bugs
+1. valgrind: build dynamic analysis tools - memory managemment and threading bugs
 <http://valgrind.org/>
-strace: monitor interactions between processes and the Linux kernel (useful)
-objdump -d inspect the machine code, for performance sensitive loops
-oprofile, hotspots in optimized code
-
-cscope: search source code of the programming language C (useless) - find definitions to jump around
-
-cmake
+2. strace: monitor interactions between processes and the Linux kernel (useful)
+3. objdump -d inspect the machine code, for performance sensitive loops
+4. oprofile, hotspots in optimized code
+5. cscope: search source code of the programming language C (useless) - find definitions to jump around
+6. cmake
 <http://stackoverflow.com/questions/17228/what-tools-do-you-use-to-develop-c-applications-on-linux>
 
 ### 10. SourceCode Understanding Workflow
-
 Software Recomendation in linux
 <https://wiki.installgentoo.com/index.php/List_of_recommended_GNU/Linux_software>
 
 ### 11. Dual System Partition Size Rearrangement
-
 Try at Personal PC before
 ```
 sudo apt-get install gparted
 ```
 <http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
 
-Volume Groups
-Physical Volumes
-LVM - Logical Volume Management : More Advanced than traditional method of partition
++ Volume Groups
++ Physical Volumes
++ LVM - Logical Volume Management : More Advanced than traditional method of partition
 
 <https://wiki.ubuntu.com/Lvm>
 <http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/>
 
-Delete
++ Delete
 ```
 umount /dev/foo/bar
 lvremove /dev/foo/bar
 ```
 
-### 12. Remove Ugly Tabs in Ubuntu Terminal
-
-Two Ways
+### 12. Remove Ugly Tabs Interface in Ubuntu Terminal
+####Two Ways
 1. directly change system configuration
 ```
 >sudo vim /usr/share/themes/Ambiance/gtk-3.0/apps/gnome-terminal.css
@@ -409,18 +413,11 @@ TerminalWindow .notebook tab {
 <https://ubuntu4questions.wordpress.com/2015/01/18/remove-ugly-fat-bazel-from-gnome-terminal-with-multiple-tabs/>
 <http://askubuntu.com/questions/221291/remove-ugly-fat-bazel-from-gnome-terminal-with-multiple-tabs>
 
-### Ubuntu Office Print
-IPP Device URI: https://eems04.ee.ust.hk/printers/esl080/.printer
-Make and Model: HP LaserJet 9050 Postscript (recommended)
 
-Failed, don't know the reason   - Could send an Email to the ITSC
-<http://itsc.ust.hk/kb/article.php?id=567>
-
-### File Browser - Connect to server
+### 13. File Browser - Connect to server
 ssh://username@hostpath
 
-
-### compress and uncompress
+### 14. compress and uncompress
 ```
 zip Filename.zip  File1, File2, File3
 zip -r Folder.zip  Folder1, Foler2, Folder3
@@ -428,11 +425,11 @@ tar -xzvf filename.tar.gz
 tar -czvf filename.tar.gz Files
 ```
 
-### Split Screen
-Multiple Screen => Ubuntu Multiple Screen
-Screen Split    => gtile
-Terminal Split  => tmux
-Firefox Split   => tile tab / tile view
+### 15. Split Screen
++ Multiple Screen => Ubuntu Multiple Screen
++ Screen Split    => gtile
++ Terminal Split  => tmux
++ Firefox Split   => tile tab / tile view
 
 gTile : (some error)
 ```
@@ -446,7 +443,17 @@ xtile-not so good as imagine, even not better then may self moving program
 
 Think Shortcuts Integration with all of them
 
-## Core Software Installation
+## III. Core Software Installation
+| Type | 0 |1 |2 |3 | 4| 5| 6|
+|----|----|----|----|----|----|----|----|
+| GUI | Firefox | Thunderbird | Zotero | Dropbox | Franz | Zathura | Sogou |
+|     | Freemind| Goldendict  | yEd| calmav | | | |
+| Editor | vim | Emacs | Latex | WPS | | | |
+| Develop| gdb | pygwen | cmake | pdb | Qt| Jupyter | |
+| Version | git | svn | | | | |
+| OpenTool | cuda | opencv| caffe| | | | |
+
+<!-- | | | | | | | | | -->
 
 ### 1. vim
 Compile Problem
@@ -479,53 +486,55 @@ multiple-cursor ctrl+m begin to select ; ctrl + p  up cease ; ctrl +x skip; esc
 
 <http://www.wklken.me/posts/2013/06/11/linux-my-vim.html#_6>
 
-Tips:
+#### Tips:
 1. Go to definitions using g
-```
-gd  go to local declaration ;    gD go to global declaration
-g*  search for the word under the cursor(like *, g* on 'rain' will find rainbow)
-g#  same as g*,but in backward direction
-gg  first line
-G   bottom line
-gf  go to the file
-g]  go to a tag
-,zz call togglefold function and fold all
-zm  fold the function area
-zr  unfold the function area
-\   search result(use CtrlSF) and show in the left pane
-,q  :q      #, map to <leader> key(\)
-,y  copy selected area to clipboard
-:register see the register
-"ay copy to register a
-,cc/,cu quick comment
-```
+    ```
+    gd  go to local declaration ;    gD go to global declaration
+    g*  search for the word under the cursor(like *, g* on 'rain' will find rainbow)
+    g#  same as g*,but in backward direction
+    gg  first line
+    G   bottom line
+    gf  go to the file
+    g]  go to a tag
+    ,zz call togglefold function and fold all
+    zm  fold the function area
+    zr  unfold the function area
+    \   search result(use CtrlSF) and show in the left pane
+    ,q  :q      #, map to <leader> key(\)
+    ,y  copy selected area to clipboard
+    :register see the register
+    "ay copy to register a
+    ,cc/,cu quick comment
+    /   search
+    ```
 
-<http://vim.wikia.com/wiki/Go_to_definition_using_g>
+    <http://vim.wikia.com/wiki/Go_to_definition_using_g>
 
-Best Reference: Vim Command Wiki
+    Best Reference: Vim Command Wiki
 
 Gramma/Language Check
 LanguageTool => work for plain text
 <http://tex.stackexchange.com/questions/6333/grammar-checking-tool-for-use-with-latex>
-LanguageTool
+
+#### English - Check Tools
 1. Download:vim-plugin
-<http://www.vim.org/scripts/script.php?script_id=3223>
+    <http://www.vim.org/scripts/script.php?script_id=3223>
 2. download languagetool
-Test LanguageTool from command line
-command-line:
-java -jar languagetool.jar
-java -jar languagetool-commandline.jar -l xx <filename>
+    Test LanguageTool from command line
+    command-line:
+    java -jar languagetool.jar
+    java -jar languagetool-commandline.jar -l xx <filename>
 
 3. specify the location of the file languagetool-commandline.jar in your $HOME/.vimrc file.
-Example:
-  let g:languagetool_jar='$HOME/languagetool/languagetool-standalone/target/LanguageTool-3.3-SNAPSHOT/LanguageTool-3.3-SNAPSHOT/languagetool-commandline.jar'
+    Example:
+      let g:languagetool_jar='$HOME/languagetool/languagetool-standalone/target/LanguageTool-3.3-SNAPSHOT/LanguageTool-3.3-SNAPSHOT/languagetool-commandline.jar'
 4. Usage
-:LanguageToolCheck
-:lopen      #open the location-list window
-:lne        #jump to next error
+    :LanguageToolCheck
+    :lopen      #open the location-list window
+    :lne        #jump to next error
 
-aspell (not update for long time)
-aspell -t -c file.tex
+    aspell (not update for long time)
+    aspell -t -c file.tex
 
 Execute selected text as vim commands ==> :@"   try: echo @"
 <http://stackoverflow.com/questions/4268532/vim-how-to-execute-selected-text-as-vim-commands>
@@ -533,27 +542,27 @@ Execute selected text as vim commands ==> :@"   try: echo @"
 Best Vimscripts Tutorials
 <http://learnvimscriptthehardway.stevelosh.com/chapters/49.html>
 
-5. Ctags usage
-ctags *.c *.h        # make tags for every c,h type files in workspace, result will be saved in tags file
-ctags -R -f ./.git/tags .       # Recursive in the current folder, except .git folder
-vim Ctrl+], at certain part will go to the k
-    :tag or :ta => function_name
-    :tselect or :ts => show the list
-    :tnext or :tn -> next tag in that list
-    :tprev or :tp
-    :tf or :tfirst
-    :tl or :tlast
-<https://andrew.stwrt.ca/posts/vim-ctags/>
+#### Frequent Plugins
+1. Ctags usage
+    + ctags *.c *.h        # make tags for every c,h type files in workspace, result will be saved in tags file
+    + ctags -R -f ./.git/tags .       # Recursive in the current folder, except .git folder
+    + vim Ctrl+], at certain part will go to the k
+    +     :tag or :ta => function_name
+    +     :tselect or :ts => show the list
+    +     :tnext or :tn -> next tag in that list
+    +     :tprev or :tp
+    +     :tf or :tfirst
+    +     :tl or :tlast
+    <https://andrew.stwrt.ca/posts/vim-ctags/>
 
-6. mark usage (vim contains)
-help m      # in help motion text
-m<a-zA-Z> : set a mark in current line
-g'<a..>   : jump to maker a
-'<a..>    : jump to maker a
+2. mark usage (vim contains)
+    + help m      # in help motion text
+    + m<a-zA-Z> : set a mark in current line
+    + g'<a..>   : jump to maker a
+    + '<a..>    : jump to maker a
 
-7. plugin help general => ?
-
-
+3. plugin help general => ?
+    + :PluginStatus
 
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
@@ -566,15 +575,13 @@ ssh-keygen     #enter keyfile:rsa_id  next phrase:psw #i3_rsa_id i3rsaid #$serve
 ssh-copy-id -i myrsaid.pub user@host
 ssh user@host
 ```
-
-
 __Tips__: SSH copy files between local machine and server - use scp
 ```
 scp /path/to/file username@host:path/to/destination
 scp username@host:/path/to/file path/to/destination
 ```
 
-2.1 Remote GUI program shown in Ubuntu
+#### 2.1 Remote GUI program shown in Ubuntu
 Really compatible and easy to implement
 ```
 ssh -X username@host
@@ -618,17 +625,20 @@ like windows after commit, update first and maybe wait for some seconds to see t
 
 echo $?     #echo erros
 
-Ref<http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-with-subversion>
+Ref: <http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-with-subversion>
+
 <http://www.linuxfromscratch.org/blfs/edguide/chapter03.html>
+
 <http://stackoverflow.com/questions/20273160/when-doing-a-subversion-commit-this-line-and-those-below-will-be-ignored>
+
 <http://beerpla.net/2008/07/23/how-to-check-if-the-local-svn-revision-is-up-to-date/>
 
 ### 3. Other tools
-PDF Reader-> evince
-Microsoft Office -> Libreoffice
-dropbox
-TortoiseSVN -> SVN (<http://svnbook.red-bean.com/en/1.4/svn.ref.svn.html>)
-mobi reader -> calibre
++ PDF Reader-> evince
++ Microsoft Office -> Libreoffice
++ dropbox
++ TortoiseSVN -> SVN (<http://svnbook.red-bean.com/en/1.4/svn.ref.svn.html>)
++ mobi reader -> calibre
 
 ### 4. Freemind in ubuntu
 install linux binary 2.6MB <http://freemind.sourceforge.net/wiki/index.php/Download>
@@ -636,7 +646,8 @@ alias mindopen="~/Software/freemind/freeMind.sh"
 
 Java Virtual Machine Issue; apt-get install openjdk-8-jre
 
-### 5. Quick Github Repo commit
+### 5. Git
+Quick Github Repo commit
 ```
 git status  #check package status
 git add
@@ -646,30 +657,60 @@ git pull    #update packages
 ```
 
 + withdraw old file in github
-```
-git checkout XXX-discasrd-file
-```
-<http://stackoverflow.com/questions/4318161/can-git-pull-all-update-all-my-local-branches>
-
+    ```
+    git checkout XXX-discasrd-file
+    ```
+    <http://stackoverflow.com/questions/4318161/can-git-pull-all-update-all-my-local-branches>
 + merge
 
-Basic Branch and Merging Concept Here<https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
-```
-git checkout XXX-discasrd-file
-```
-gitssh build
-1. add .ssh/id_rsa.pub to github
-2. Verification :>ssh -T git@github.com
-<https://help.github.com/articles/testing-your-ssh-connection/>
++ Basic Branch and Merging Concept Here<https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
+    ```
+    git checkout XXX-discasrd-file
+    ```
++ gitssh build
+    1. add .ssh/id_rsa.pub to github
+    2. Verification :>ssh -T git@github.com
+    <https://help.github.com/articles/testing-your-ssh-connection/>
 
-### 6. package install guide:
+#### git server
+```
+$ git clone --bare my_project my_project.git
+```
+
+git on server - git-upload-pack command not found problem
+    ```
+    >cd /etc/ssh/sshd_config
+    PermitUserEnvironment yes
+    >/etc/init.d/sshd restart
+
+    Test on local-PC
+    >ssh username@hostserver "which git-upload-pack"
+    ```
+<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
+Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
+
+git on server - git-upload-pack command not found problem
+```
+>cd /etc/ssh/sshd_config
+PermitUserEnvironment yes
+>/etc/init.d/sshd restart
+
+Test on local-PC
+>ssh username@hostserver "which git-upload-pack"
+```
+<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
+Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
+
+### 6. package install guide
 ```
 apt-cache show package          //description of package
 apt-cache search package          //a short summary of all the texlive
 apt-get install xxx
 ```
 ### 7. texlive choose and install
+```
 sudo apt-get install texlive-latex-base
+```
 
 Better Choice
 ```
@@ -688,24 +729,30 @@ apt-cache show texlive-latex-extra | grep psboxit    # no result
 ```
 
 [htpb]: h here, t top, b bottom, p page
-tips, pdf open tools - evince; this pdfware is quite simple but powerful. Annotation and highlight is in the left side with a tiny icon.
+
++ pdf open tools - zathura: this pdfware is quite simple but powerful.
++ Evince: Annotation and highlight is in the left side with a tiny icon.
 
 Error:
 1. citet (author?)[4] problem
+```tex
 \usepackage[square,sort,comma,numbers]{natbib}
 \bibliographystyle{plainnat}
+```
 
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
 
-tips:
+Tips:
+
 1. .tmux.conf and .tmux file
 2. rename session
-ctrl+B,: -> rename-session [-t current-name] [new-name]
-if no name, just rename-session new-name
-example: Jade Profiling Snap-Proj
+    + ctrl+B,: -> rename-session [-t current-name] [new-name]
+    + if no name, just rename-session new-name
+    + example: Jade Profiling Snap-Proj
 3. Error-nested TMUX, unset $TMUX : solutions - unset TMUX
 4. rearrange panes: ctrl-b + space or ctrl-b +meta+1-5
+
 ### 9. Temperature Monitor
 ```
 sudo apt-get install lm-sensors
@@ -713,56 +760,61 @@ sudo sensors-detect
 #sudo service kmod start
 sensors
 ```
-### 10. Account in Ubuntu
-Add
-```
-sudo adduser newuser #example newuser-> silly
-```
-Delete
-```
-sudo userdel newuser #example newuser-> silly
-sudo rm -rf /home/newuser
-```
 
-### 11. connectable computer (-)
+### 10. Account in Ubuntu
++ Add
+
+    ```
+    sudo adduser newuser #example newuser-> silly
+    ```
++ Delete
+
+    ```
+    sudo userdel newuser #example newuser-> silly
+    sudo rm -rf /home/newuser
+    ```
+
+### 11. connectable computer (ssh + ftp)
+#### ssh
 ```
 sudo apt-get install openssh-server
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.original
 sudo chmod a-w /etc/ssh/sshd_config.original
 vim sshd_config
-    Port 2222 
-    PubkeyAuthentication yes 
-    Banner /etc/issue.net 
+    Port 2222
+    PubkeyAuthentication yes
+    Banner /etc/issue.net
 
 sudo iptables -L
+```
 ```
 sudo apt-get openssh-server
 ps -A |grep sshd            #check sshd runs or not
 ssh -v localhost            #check locally
 sudo service ssh restart    #restart
+```
 <https://help.ubuntu.com/lts/serverguide/openssh-server.html>
 
-Error: Connection Time Out
-nc -v -z 127.0.0.1 2222     #network connection test localhost:2222
-sudo /etc/init.d/ssh restart
+#### Error:
+1. Connection Time Out
+    ```bash
+    nc -v -z 127.0.0.1 2222     #network connection test localhost:2222
+    sudo /etc/init.d/ssh restart
+    ```
+2. Permission Denied
+    + Check password
+    + unlock account
+    ```
+    usermod -U $usernmame
+    ```
+    <http://askubuntu.com/questions/315377/ssh-error-permission-denied-please-try-again>
+    + check ip address
+    ifconfig : inet addr:       # Get IP Address
 
-ifconfig : inet addr:       # Get IP Address
+    ssh username@localhost -p 2222  # silly sillyisafatpig
 
-ssh username@localhost -p 2222  # silly sillyisafatpig
 
-git on server - git-upload-pack command not found problem
-```
->cd /etc/ssh/sshd_config
-PermitUserEnvironment yes
->/etc/init.d/sshd restart
-
-Test on local-PC
->ssh username@hostserver "which git-upload-pack"
-```
-<http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
-Git Guide Setup Guide : <https://git-scm.com/book/en/v1/Git-on-the-Server-Getting-Git-on-a-Server>
-
-Personal Homepage - ftp
+#### Personal Homepage - ftp
 ```
 ftp ihome.ust.hk
 help
@@ -776,102 +828,126 @@ exit                            #close ftp
 binary                          #if put meets bugs
 ```
 
-https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
+<https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/>
+
+### 13. Thunderbird
+1. addon google calendar
+    school-settings :
+    server-settings incoming IMAP outlook.office365.com port:993 ssl/tls
+                    outgoing smtp outlook.office365.com port:587 starttls
+
+2. Muttators
+    + Muttators for Thunderbird = Vimperator for Firefox
+    + Muttator => <http://www.vimperator.org/muttator>,download and Thunderbird install it from file
+    + Muttator CheatSheat=> <https://gist.github.com/kartoch/5955822>
+    + Tips:
+        + gt - goto new tabs
+        + gi - goto inbox
+        + w - watch the structure;
 
 
-
-### 12. Thunderbird
-addon google calendar
-school-settings :
-server-settings incoming IMAP outlook.office365.com port:993 ssl/tls
-                outgoing smtp outlook.office365.com port:587 starttls
-
-### 13. Dropbox
+### 14. Dropbox
 <https://www.dropbox.com/install>
-Use .deb file
-```
-You might want to run 'apt-get -f install' to correct these:
-The following packages have unmet dependencies:
-dropbox : Depends: python-gtk2 (>= 2.12) but it is not going to be installed
-python-gtk2-dev : Depends: python-gtk2 (>= 2.24.0-4ubuntu1) but it is not going to be installed
-Depends: python-gtk2 (< 2.24.0-4ubuntu1.1~) but it is not going to be installed
-Depends: libglib2.0-dev (>= 2.8) but it is not going to be installed
-Depends: libgtk2.0-dev (>= 2.18.0) but it is not going to be installed
-Depends: python-gobject-2-dev (>= 2.21.3) but it is not going to be installed
-Recommends: python-gtk2-doc but it is not going to be installed
-E: Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a solution).>)
-```
-Then better to compile from the source
-```
-No package 'libnautilus-extension' found
-sudo apt-get install libnautilus-extension-dev
-sudo apt-get install python-gtk2-dev
-sudo apt-get install python-docutils-dev
-```
-Succeed
+
+1. Use .deb file
+
+    ```
+    You might want to run 'apt-get -f install' to correct these:
+    The following packages have unmet dependencies:
+    dropbox : Depends: python-gtk2 (>= 2.12) but it is not going to be installed
+    python-gtk2-dev : Depends: python-gtk2 (>= 2.24.0-4ubuntu1) but it is not going to be installed
+    Depends: python-gtk2 (< 2.24.0-4ubuntu1.1~) but it is not going to be installed
+    Depends: libglib2.0-dev (>= 2.8) but it is not going to be installed
+    Depends: libgtk2.0-dev (>= 2.18.0) but it is not going to be installed
+    Depends: python-gobject-2-dev (>= 2.21.3) but it is not going to be installed
+    Recommends: python-gtk2-doc but it is not going to be installed
+    E: Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a solution).>)
+    ```
+2. Then better to compile from the source
+
+    ```
+    No package 'libnautilus-extension' found
+    sudo apt-get install libnautilus-extension-dev
+    sudo apt-get install python-gtk2-dev
+    sudo apt-get install python-docutils-dev
+    ```
 
 ### 14. Wechat
-```
-npm install -g node-wechat-terminal
-wechat-terminal
-\h
-node problem solution: sudo ln -s /usr/bin/nodejs /usr/bin/node
-```
-Because Debian renames node to node.js
+1. terminal wechat (unstable, but interesting)
+    ```
+    npm install -g node-wechat-terminal
+    wechat-terminal
+    \h
+    node problem solution: sudo ln -s /usr/bin/nodejs /usr/bin/node
+    ```
+    Because Debian renames node to node.js
 
-<https://www.npmjs.com/package/node-wechat-terminal>
+    <https://www.npmjs.com/package/node-wechat-terminal>
+
+2. Franz
+    <http://meetfranz.com/>
 
 ## 15. Evince Use Guide
-Create own custom shortcuts
-Enable /desktop/gnome/interface/can_change_accels flag in gconf
++ Create own custom shortcuts
++ Enable /desktop/gnome/interface/can_change_accels flag in gconf
 
 <https://help.gnome.org/users/evince/stable/shortcuts.html.en>
 
 ## 16. Sogou Pingyin Installation
-Language Input Two Ways: i) ibus ii) fcitx
++ Language Input Two Ways
+    1. ibus
+    2. fcitx (recommend)
 
 ```
 sudo apt-get install fcitx
 install sogoupinyin_xxxx.deb
 fcitx-autostart
 ```
+
 iibus
+
 no other chinese option in text entry<http://askubuntu.com/questions/455682/14-04-chinese-ibus-input-no-options>
 ```
 choose input source chinese pinyin
 sudo apt-get install ibus-pinyin
 ibus-setup
 ```
-English Input hidden Problem
++ English Input hidden Problem
 ```
 choose keyboad input method
 keyboad settings
 tick out use show hidden words(ctrl+alt+h)
 ```
-Experience Conclusion:
-0. Install Languae Support - use fcitx
-1. Install Sogou Pinyin for linux (deb)
-2. language support: keyboard input system - fcitx (no need to make chinese effect)
-logout
-3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
++ Experience Conclusion:
+    0. Install Languae Support - use fcitx
+    1. Install Sogou Pinyin for linux (deb)
+    2. language support: keyboard input system - fcitx (no need to make chinese effect)
+        logout
+    3. fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
 
-Settings: input method Global Config - Trigger Input Method (Ctrl + Space) ; Extra key for trigger input method (disabled); Enable Hotkey to scroll between Input Method; Scroll betweeen input Method (Ctrl_shift)
--> fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
++ 2nd Experience:
+Settings:
+    + input method Global Config - Trigger Input Method (Ctrl + Space)
+    + Extra key for trigger input method (disabled)
+    + Enable Hotkey to scroll between Input Method
+    + Scroll betweeen input Method (Ctrl_shift) -> fcitx configure - input method - "+" icon - tick out "Only Show Current Language" - search "Sogou"
 
 Fcitx-> Global Config -> Trigger Input Method: super+space
 
 <http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
 <http://www.cnblogs.com/youxia/p/linux009.html>
-Error:
-No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
-A:  sudo apt-get -f install.  No use, just ignore this.
 
-if you want to remove unnecssary input
-sudo apt-get remove fcitx-sunpinying
+#### Error:
+1. No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
 
-### 17. dictionary
-dcit + goldendict
-Commandline Interface: dict
+    Answer:  sudo apt-get -f install.  No use, just ignore this one.
+
+    if you want to remove unnecssary input
+    sudo apt-get remove fcitx-sunpinying
+
+### 17. dictionary (goldendict)
++ dcit(Terminal) + goldendict (GUI)
++ Commandline Interface: dict
 ```
 #Installation
 sudo apt-get install dict
@@ -894,15 +970,16 @@ function define {
     dict "$1"
 }
 ```
-GUI
-sudo apt-get install goldendict
++ sudo apt-get install goldendict
 
 <http://askubuntu.com/questions/170775/offline-dictionary-with-pronunciation-and-usages>
-
-GoldenDict -- Recommendation
+GoldenDict -- Recommend
 stardict
+
 <http://kdr2.com/resource/stardict.html>
+
 <http://download.huzheng.org/babylon/bidirectional/>
+
 terminal version - scdv
 ```
 sudo mkdir /sur/share/stardict/dic/
@@ -946,43 +1023,44 @@ nnoremap zz :r!cite<CR>
 ```
 in vim, I can excute :r!cite or just zz in normal mode
 
-2.
-
 Ref:MIT <http://libguides.mit.edu/c.php?g=176000&p=1159208>
 
 ### 20. Visio Alternatives(Only Win)
-Diagram - yEd , Dia Diagram
-inkscape - use svg as its native file format            + openclipart(additional clip art graphics)         (how to rotate canvas? --wrong question, ask how to change page orientation instead, File-Document properties )
-Libreoffice-draw (not so good)
++ Diagram - yEd , Dia Diagram
++ inkscape - use svg as its native file format            + openclipart(additional clip art graphics)         (how to rotate canvas? --wrong question, ask how to change page orientation instead, File-Document properties )
++ Libreoffice-draw (not so good)
 
-Ask Question in Academia - <http://academia.stackexchange.com/questions/1095/software-to-draw-illustrative-figures-in-papers>
+Ask Question in Academia
+<http://academia.stackexchange.com/questions/1095/software-to-draw-illustrative-figures-in-papers>
 OmniGraffle(Mac,not free) > Xfig ; Tikz/PGF nice flexible diagrams
 Inkscape
 
-Final Decision : use inkscape and try to become a deep user
+Final Decision : use yEd for quick drag and still use visio
 
-### 21. Web Development
-Firefox : vimperator gf - switch to source code vision
-          ctrl+shift+c  - inspect element
-CANCEL Ctrl-H for history   ==> delete
-       Ctrl-B for bookmarks ==> left
-       Ctrl-F for find      ==> right
-       integerate them with terminal shortcuts
+### 21. Web Development (Firefox)
+Plugins
++ vimperator
+    + debug
+        + gf - switch to source code vision
+        + ctrl+shift+c  - inspect element
+    + ;I : select picture in a new tab, y copy, d close
+    + tips
++ keyconfig: cancel combined key
+    + Ctrl-H for history   ==> delete
+    + Ctrl-B for bookmarks ==> left
+    + Ctrl-F for find      ==> right
+    + integerate them with terminal shortcuts
 
-use keyconfig plugin
 <http://forums.mozillazine.org/viewtopic.php?t=72994>
+
 <http://kb.mozillazine.org/Keyconfig_extension>
+
 <http://kb.mozillazine.org/Keyconfig_extension:_Thunderbird>
 
-Big News: Muttators for Thunderbird = Vimperator for Firefox
-Muttator => <http://www.vimperator.org/muttator>,download and Thunderbird install it from file
-Muttator CheatSheat=> <https://gist.github.com/kartoch/5955822>
-tips: gt goto newtab; gi goto inbox; w watch the structure;
-
 ### 22. Emacs
-emacs : without suffix is the GTK+ version
-emacs-nox : without X server support
-emacs-lucid : emacs with a Lucid user interface == lloks like old emacs, not use GTK+
++ emacs : without suffix is the GTK+ version
++ emacs-nox : without X server support
++ emacs-lucid : emacs with a Lucid user interface == lloks like old emacs, not use GTK+
 
 ```
 sudo apt-get install emacs24        #113 MB
@@ -994,9 +1072,7 @@ Exit : C-x C-c
 
 <http://askubuntu.com/questions/386177/difference-between-emacs-and-emacs-lucid-packages>
 
-<<<<<<< HEAD:help-doc/linux-problem.md-laptop
-
-### 23. wine - Windows Software Support
+### 23. wine - Windows Software Support (not reconmmend)
 installation
 ```
 sudo dpkg --add-architecture i386       #enable 32bit
@@ -1004,7 +1080,8 @@ sudo add-apt-repository ppa:wine/wine-builds
 sudo apt-get update         #BUG-GPG error
 sudo apt-get install --install-recommends winehq-devel
 ```
-GPG error
+
+#### GPG error
 ```
 sudo add-apt-repository ppa:webupd8team/y-ppa-manager
 sudo apt-get update
@@ -1014,14 +1091,12 @@ y-ppa-manager   -> advanced -> try to import all missing GPG keys and click ok
 <http://askubuntu.com/questions/13065/how-do-i-fix-the-gpg-error-no-pubkey>
 Not so good to use Wine to install Win-Software like Wechat and lingoes, but they can be used.
 
-
 <https://wiki.winehq.org/Ubuntu>
 
 Another way: install Electronic Wechat on Linux or Franz
 I'd like to use Franz, more useful.
 
 <https://www.linuxbabe.com/desktop-linux/install-wechat-linux>
-=======
 
 ### 23. Netease Cloud Music
 ```
@@ -1031,9 +1106,8 @@ sudo apt-get -f install     #if meet some error, dpkg -i to install deb package 
 sudo dpkg -r xxx.deb        # dpkg remove first
 
 dpkg: dependency problems prevent configuration of netease-cloud-music:
-
+```
 netease-cloud-music depends on libqt5x11extras5 (>= 5.1.0); however:
-
 Package libqt5x11extras5 is not installed.
 netease-cloud-music depends on gstreamer1.0-plugins-bad; however:
 Package gstreamer1.0-plugins-bad is not installed.
@@ -1041,7 +1115,8 @@ netease-cloud-music depends on gstreamer1.0-plugins-ugly; however:
 Package gstreamer1.0-plugins-ugly is not installed.
 netease-cloud-music depends on libqt5libqgtk2; however:
 Package libqt5libqgtk2 is not installed.
-
+```
+```
 dpkg: dependency problems prevent configuration of netease-cloud-music:
  netease-cloud-music depends on libqt5x11extras5 (>= 5.1.0); however:
   Package libqt5x11extras5 is not installed.
@@ -1055,16 +1130,16 @@ dpkg: dependency problems prevent configuration of netease-cloud-music:
   Package libqt5multimediawidgets5 is not installed.
  netease-cloud-music depends on libqt5libqgtk2; however:
   Package libqt5libqgtk2 is not installed.
+```
 
 ### 24. PDF Tool Introduction
 pdf split - pdftk
 or just use evince print to the documents
 
 Really Wonderful Pdftool : (better than evince) - qpdfview
-
 need: pdf-tab/editor/vim-like/firefox enable
 
-### 25. Xilinx ISE Installation
+### 25. Xilinx ISE Installation (Driver Failed, not recommend)
 <http://www.ohio.edu/people/starzykj/webcad/EE4143/Xilinx-ISE.html>
 ```
 tar -xvzf Xilinx_ISE_DS_14.7_1015_1-1.tar
@@ -1084,7 +1159,9 @@ chmod u+x *.csh *.sh
 ```
 
 <http://stackoverflow.com/questions/15119734/how-to-launch-xilinx-ise-web-pack-under-ubuntu>
+
 Key - 2100@eems05.ece.ust.hk
+
 KeySettings
 ```
 vim ~/.bashrc
@@ -1092,17 +1169,22 @@ export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 ```
 
 Install Xilinx USB Cable
+```
 cd /<Install Path>/Xilinx/<Version Number>/ISE_DS/common/bin/lin64/digilent
 sudo ./install_digilent.sh
+```
 <http://elinux.org/Install_Xilinx_USB_cable_drivers_for_Ubuntu>
 
 No Use here due to install windrvr6 => not support for newest Ubuntu Kernel even I change its name
 
-linux_common.h:28:4: error: #error "This kernel is too recent: not supported by this file"
- #  error "This kernel is too recent: not supported by this file"
+#### Error
 
-<http://www.xilinx.com/support/answers/22648.html>
-not supported: from <http://www.xilinx.com/support/answers/29310.html>
+1. linux_common.h:28:4: error: #error "This kernel is too recent: not supported by this file"
+    error "This kernel is too recent: not supported by this file"
+
+    <http://www.xilinx.com/support/answers/22648.html>
+    ubuntu not supported: from <http://www.xilinx.com/support/answers/29310.html>
+
 ### 26. VNC Viewer
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
@@ -1291,14 +1373,94 @@ $ sudo apt-get update
 $ sudo apt-get install i-nex
 <https://www.unixmen.com/install-nex-0-6-2-ubuntu-linux-mint-elementary-os/>
 
-#=====================================
-# bash bug summary
-#=====================================
+### 46. antivirus program: calmav
+sudo apt-get install clamav
 
-## 1. Bad Substitute Error
+calmscan -v * # current path files
+calmscan -r /       # check all files displaying the name of each file
+calmscan -r -bell -i / # only report infected file
+
+
+Error:
+1. LibClamAV Error: cli_loaddbdir(): No supported database files found in /var/lib/clamav
+sudo freshclam
+2.ERROR: /var/log/clamav/freshclam.log is locked by another process
+ERROR: Problem with internal logger (UpdateLogFile = /var/log/clamav/freshclam.log).
+
+sudo dpkg-reconfigure clamav-freshclam
+
+<http://askubuntu.com/questions/250290/how-do-i-scan-for-viruses-with-clamav>
+### 47. Host Email
+sudo apt-get install mailutils      # and settings
+
+### 48. Github Flavoured Markdown to HTML
+npm install markdown-to-html -g
+
+Errors:
+1. /usr/bin/env: ‘node’: No such file or directory
+sudo ln -s nodejs node
+
+2. seems no colors
+<https://www.npmjs.com/package/markdown-to-html>
+
+II. markdown-styles
+<https://github.com/mixu/markdown-styles>
+
+<https://www.chainsawonatireswing.com/2012/02/01/how-to-highlight-code-on-a-webpage-when-youre-using-markdown-to-create-that-webpage/?from=@>
+
+### 49. Caffe Install
+
+<http://caffe.berkeleyvision.org/installation.html>
+Test:
+<http://christopher5106.github.io/deep/learning/2015/09/04/Deep-learning-tutorial-on-Caffe-Technology.html>
+
+#### ERROR
+1.TIFF4 depency:
+    The only way:
+    ```
+    conda remove libtiff
+    ```
+<https://github.com/Russell91/apollocaffe/issues/11>
+
+2. ipython2 - "import caffe" ImpportError: No module named skimage.io
+    ```
+    pip install scikit-image --upgrade
+    ```
+
+3. ipython3 - "import caffe"
+    ImportError: dynamic module does not define module export function (PyInit__caffe)
+
+    Caffe cannot support python3
+
+4. import caffe error:
+    Intel MKL FATAL ERROR: Cannot load libmkl_avx2.so or libmkl_def.so.
+    ```
+    conda install nomkl numpy scipy scikit-learn numexpr
+    conda remove mkl mkl-service
+    ```
+<https://github.com/BVLC/caffe/issues/3884>
+
+5. import caffe no module named \_caffe
+    ```
+    make pycaffe
+    ```
+
+#IV. Hardware Help
+## 1. Lab Printer Help
+Ubuntu Add Printer:
+Printers -> Add -> Network Printer -> Find Network Printer -> Choose Kyocera FS-2100DN (143.89.135.11) -> Connections( LPD network printer via DNS-SD) -> Forward, Forward -> Ubuntu will choose to use 1st cassete
+### Ubuntu Office Print
+IPP Device URI: https://eems04.ee.ust.hk/printers/esl080/.printer
+Make and Model: HP LaserJet 9050 Postscript (recommended)
+
+Failed, don't know the reason   - Could send an Email to the ITSC
+<http://itsc.ust.hk/kb/article.php?id=567>
+
+### Lab Cancel A Print Task
+Cancel a print task: when it comes "load papers in a cassete", press red button (stop and show pause Filename || figure) => press pack and okay button and click yes. Delete unwanted task then.
+
+#V. Bug
+## 1. Bash: Bad Substitute Error
 bash xxx.sh instead of sh xxx.sh
 
-## =====================================
-## Printer Help
-## =====================================
-Cancel a print task: when it comes "load papers in a cassete", press red button (stop and show pause || figure) => press pack and okay button and click yes. Delete unwanted task then.
+
