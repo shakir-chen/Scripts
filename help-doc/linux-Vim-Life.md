@@ -7,6 +7,8 @@ synaptic (graphic of apt-get)
 ## II. Firefox - vimperator
 ctrl+i: external editor; save and copy all the message back to the blank
 
+search engine: google translator; google scholar search
+
 ## III. Thunderbird - muttator
 
 Thunderbird: Cheatsheet
@@ -60,6 +62,17 @@ TODO List:
 4. Strengthen Area Info, Sometimes I will forget the active window (not so important)
 
 Printscreen : scrot -s
+
+i3wm useful commands:
+1. i3-input : input, get input
+2. i3-msg : move and workspace switch
+get_workspace
+i3-msg -t get tree # Dump the layout tree
+
+i3-msg 'workspace 6.bdsl; exec zathura'     # open pdf in workspace 6
+i3-msg workspace "6.bdsl"                   # focus workspace 6
+3. i3-nagbar : see XY point
+
 ### 1. Know and Rotate Screen: xrandr
 ```
 xrandr -q #output parameter infos
@@ -133,6 +146,14 @@ edit ~/.pam_environme
 LANG=en_US
 LANGUAGE=en_US
 ```
+Error: demu_run not login export $PATH in .bashrc or .bash_profile
+If I'm not mistaken, dmenu's environment could be non-interactive (depending on your login method). Try putting the line in ~/.profile.
+```
+vim ~/.profile
+rm ~/.cache/dmenu_run
+```
+
+<https://bbs.archlinux.org/viewtopic.php?id=157187>
 
 ### 7. Volume
 alias volumedown="pactl set-sink-volume 1 -10%"
@@ -246,6 +267,7 @@ hjkl
 xzgv (worst)
 
 
+
 ## VIII. Research Managermanet - Zotero
 TODO List:
 1. succeed to use firefox zotero with betterbibtex, at least show citation-key
@@ -277,3 +299,4 @@ Firefox seems could not export bibtex quick copy
 ## Reference
 <http://stackoverflow.com/questions/779348/vim-movement-on-other-programs>
 <https://wiki.archlinux.org/index.php/List_of_applications/Documents>       #Linux Arch, very comprehensive
+
