@@ -1,0 +1,69 @@
+===============i3wm====================
+mod+g               split h
+mod+v               split v
+
+mod+s               layout stacking
+mod+w               layout tabbed
+mod+e               layout toggle split
+
+mod+C               reload
+mod+R               restart
+mod+SPACE           toggle floating
+mod+backspace       kill workspace
+===============Vim====================
+gd      go to local declaration
+gD      go to global declaration
+g*      search for the word under the cursor
+g#      same as g*,but in backward direction
+gg      first line
+G       bottom line
+gf      go to the file
+g]      go to a tag
+
+,zz     call togglefold function and fold all
+zm      fold the function area
+zr      unfold the function area
+
+,q      quit
+,w      write
+,y      copy selected area to clipboard
+:register   see the register
+"ay     copy to register a
+
+,cc/,cu quick comment
+
+/   search
+\   search result(use CtrlSF) and show in the left pane
+
+===============Firefox====================
+;I      select a picture
+gf      switch to source code
+ctrl+C  inspect element
+
+==============Terminal=================
+Navigation
+Ctrl + A  Beginining or Home Key
+Ctrl + E  End or End Key
+Alt + F   Move cursor forward one word @ line
+Alt + B   Move cursor backward one word @ line
+
+Edit
+Ctrl + K  Delete all after line
+Ctrl + U  Delete all before line
+Ctrl + W  Delete the word before the cursor
+Ctrl + L  Delete all the pane
+Ctrl + H  Delete one character, backspace
+
+Ctrl + T  Swap the last two characters before cursor
+Esc + T   Swap the last two words before cursor
+
+Ctrl + R  Search
+
+Ctrl + C  kill whatever your are running
+Ctrl + D  Exit the current shell
+
+Ctrl + Z  Puts whatever you are running into a
+          suspended background process
+
+Tab       Auto-complete files and folder names
+

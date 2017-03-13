@@ -632,6 +632,7 @@ export TEMPSAVE_PATH=~/Downloads
 
 #scrot
 alias scrots="scrot -s"
+alias importh="import helper.png"
 
 #qmake
 alias qmakep="qmake -project -o"

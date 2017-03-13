@@ -190,6 +190,9 @@ Transparent window : i3wm-compton
 opacity-rule=["85:class_g='Terminate'"]
 <https://faq.i3wm.org/question/3162/terminal-transparency-in-i3.1.html>
 i3wm-compton<https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1.html>
+compton --config path/to/compton.conf
+<https://wiki.archlinux.org/index.php/Compton>
+
 <https://github.com/chjj/compton>
 
 communication between two different terminals
@@ -204,8 +207,6 @@ echo foo > /dev/pts/4
 htop(interactive process viewer) and urxvt(light terminal)
 tint2(panal,taskbar)
 weechat
-
-
 
 study later
 ```

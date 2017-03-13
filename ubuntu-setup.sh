@@ -58,6 +58,10 @@ then
     if ! [ -d "~/.config/feh" ] ; then
         ln -s ~/Software/Scripts/shell/feh ~/.config/feh
     fi
+    echo "=========Compton========="
+    if ! [ -d "~/.config/compton" ] ; then
+        ln -s ~/Software/Scripts/shell/compton.conf ~/.config/compton.conf
+    fi
 
     ln -s ~/Software/Scripts/help-doc/_helprc ~/.helprc
 fi
@@ -132,7 +136,11 @@ then
 
    echo "============Install feh==============="
    soft-check feh
+
+   echo "============Install compton==============="
+   soft-check compton
 fi
+
 
 if [[ "$1" == "ssh" ]]
 then
