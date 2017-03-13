@@ -998,6 +998,14 @@ zenity
 
 notify-send 'hello' 'message'
 
+ubuntu shortcuts overlay (can't change)
+<http://askubuntu.com/questions/126834/can-i-modify-unity-keyboard-shortcut-overlay>
+
+i3wm : release
+<https://www.reddit.com/r/i3wm/comments/4taxyh/bind_action_to_key_press_and_release/>
+
+<https://mralphaville.wordpress.com/2014/08/13/i3-window-manager/>
+
 ### 19. Zotero
 Follow my own instruction guide.
 Use Dropbox for Syncronization
@@ -1413,6 +1421,9 @@ II. markdown-styles
 <http://caffe.berkeleyvision.org/installation.html>
 Test:
 <http://christopher5106.github.io/deep/learning/2015/09/04/Deep-learning-tutorial-on-Caffe-Technology.html>
+
+### 50. tty
+ctrl+alt+F1~7
 
 #### ERROR
 1.TIFF4 depency:

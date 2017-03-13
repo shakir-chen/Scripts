@@ -171,6 +171,48 @@ mod+space : focus float or not
 mod+shift+space : toggle float
 mod + s/w/e: stack/window side by side/toggle layout
 
+
+### 9. Add weather and email notify to concky
+<http://kumarcode.com/Adding-Weather-and-Gmail-info-to-my-i3-Status/>
+
+america rss only, 10001 is the zip code
+<https://alert.accuweather.com/accualert/index#>
+(done, better application for curl and rss)
+
+### 10. Ubuntu Gnome like Helper
+key: release
+bindcode $mod+25 workspace back_and_forth
+bindsym --release $mod+w workspace back_and_forth
+<https://www.reddit.com/r/i3wm/comments/4taxyh/bind_action_to_key_press_and_release/>
+<https://i3wm.org/docs/userguide.html> keyboard-bindings
+
+Transparent window : i3wm-compton
+opacity-rule=["85:class_g='Terminate'"]
+<https://faq.i3wm.org/question/3162/terminal-transparency-in-i3.1.html>
+i3wm-compton<https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1.html>
+<https://github.com/chjj/compton>
+
+communication between two different terminals
+```
+who     #pts/1
+echo foo > /dev/pts/4
+```
+<http://irenicus09.deviantart.com/art/Gentoo-Linux-i3-wm-617553604>
+<https://github.com/irenicus/dotfiles>
+
+
+htop(interactive process viewer) and urxvt(light terminal)
+tint2(panal,taskbar)
+weechat
+
+
+
+study later
+```
+sudo apt-get install rxvt-unicode-256colors
+```
+<https://github.com/pkkolos/urxvt-scripts>
+
 ## V. pdfviewer - Zathura
 Edit - Mark and Note
 :bmark tag-name         #book mark a tag name
@@ -198,6 +240,7 @@ Good for navigation, bookmark and search around.
 _Bad for taking note_
 ?? any solution for that ??
 
+### 1. Know and Rotate Screen: xrandr
 TODO List:
 1. Change Background and Front Color when revert color (done)
 2. Figure out how to add tag or something related in zathura
