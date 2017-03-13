@@ -375,6 +375,10 @@ function scppassion(){
 function scpstd(){
     scp $1 std01@143.89.131.91:~/$2
 }
+
+function scpcs(){
+    scp $1 xchenbr@csl2wk10.cse.ust.hk:~/$2
+}
 #ssh functions
 function scpxq {
    scp $1 xuanqi@$2.ece.ust.hk:$3
