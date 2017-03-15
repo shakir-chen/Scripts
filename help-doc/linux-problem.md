@@ -1282,6 +1282,60 @@ windows 1.6.2-baidu
 ipad - isyerngyclient (jailbreak, cyber)
 air display
 
+windows: duet display - ipad mac + windows (fully external)
+ubuntu: ipad use vnc, ubuntu and ubuntu use synergy
+<http://www.adityavaidya.com/2015/03/ipad-as-2nd-monitor-now-on-linux.html>
+<https://www.reddit.com/r/Ubuntu/comments/4lqzpq/ipad_as_second_display_on_ubuntu/>
+<http://askubuntu.com/questions/28608/how-do-you-use-an-android-tablet-as-a-second-display>
+
+i3wm with ipad
+<https://rob.salmond.ca/tablet-as-external-monitor-with-i3wm/>
+
+x11vnc
+<http://askubuntu.com/questions/229989/how-to-setup-x11vnc-to-access-with-graphical-login-screen>
+tightvnc is a desktop application, i feel really bad
+ubuntu: vnc4server
+```
+sudo apt install xfce4 xfce4-goodies tightvncserver
+vncserver                   #pwd:fullname
+vncserver -kill:1           #first stop vnc server on 5901(5900+X)
+
+cp ~/.vnc/xstartup ~/.vnc/xstartup.bak
+vim ~/.vnc/xstartup         #automatically create after vncserver
+    #~/.vnc/xstartup
+    #!/bin/bash
+    xrdb $HOME/.Xresources          # X-Desktop GUI read from .Xresources
+    startxfce4 &                    # launch Xfce
+chmod u+x ~/.vnc/xstartup
+vncserver
+ssh -L 5901:127.0.0.1:5901 -N -f -l username server_ip_address #Test from vnc client
+#creating vnc server file
+vim /etc/systemd/system/vncserver@.service
+    #/etc/systemd/system/vncserver@.service 
+    [Unit]
+    Description=Start TightVNC server at startup
+    After=syslog.target network.target
+
+    [Service]
+    Type=forking
+    User=*YOURNAME*
+    PAMName=login
+    PIDFile=/home/*YOURNAME*/.vnc/%H:%i.pid
+    ExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1
+    ExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x800 :%i
+    ExecStop=/usr/bin/vncserver -kill :%i
+
+    [Install]
+    WantedBy=multi-user.target
+sudo systemctl daemon-reload        # system aware new unit file
+sudo systemctl enable vncserver@1.service
+sudo systemctl start vncserver@1
+sudo systemctl status vncserver@1           # check vnc status
+```
+
+<https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-16-04>
+ipad:vnc viewer ()
+
 ### 35. Change Default Program
 Select File -> Properties -> Open with -> set as default
 

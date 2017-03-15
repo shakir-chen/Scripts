@@ -265,6 +265,7 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin fi
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+# alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 
 #xqexit() {
@@ -321,7 +322,8 @@ function xinputopentp(){
     xinput --enable $num
 }
 
-
+# vnc
+alias vncstart="x11vnc -usepw"
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
@@ -331,7 +333,6 @@ alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
 alias sshcs="ssh-server cs"
-
 alias sshdaisy="ssh-server daisy "
 
 function sshcopyid(){
