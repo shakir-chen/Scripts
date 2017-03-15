@@ -516,6 +516,11 @@ Gramma/Language Check
 LanguageTool => work for plain text
 <http://tex.stackexchange.com/questions/6333/grammar-checking-tool-for-use-with-latex>
 
+2. print or
+:hardcopy > file
+:hardcopy > file.pdf
+:Tohtml     # but seem ugly
+
 #### English - Check Tools
 1. Download:vim-plugin
     <http://www.vim.org/scripts/script.php?script_id=3223>

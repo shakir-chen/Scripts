@@ -112,6 +112,7 @@ xorg-xbacklight
 
 font-install : <http://askubuntu.com/questions/3697/how-do-i-install-fonts>
 <https://github.com/FortAwesome/Font-Awesome>
+Font Awesome CheatSheet<http://fontawesome.io/cheatsheet/>
 ```
 apt-get install ttf-fontname
 # if no such font, download

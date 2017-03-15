@@ -1,15 +1,20 @@
+ : ctrl             : del
+⇧ : shift            : ESC
+⇥ : tab             ⇪ : caps
+⌘ : win(cmd)        ⏎ : enter
+⌥ : alt(opt)         : space
 ===============i3wm====================
-mod+g               split h
-mod+v               split v
+⌘  g    split h
+⌘  v    split v
 
-mod+s               layout stacking
-mod+w               layout tabbed
-mod+e               layout toggle split
+⌘  s    layout stacking
+⌘  w    layout tabbed
+⌘  e    layout toggle split
 
-mod+C               reload
-mod+R               restart
-mod+SPACE           toggle floating
-mod+backspace       kill workspace
+⌘  C    reload
+⌘  R    restart
+⌘      toggle floating
+⌘      kill workspace
 ===============Vim====================
 gd      go to local declaration
 gD      go to global declaration
@@ -27,43 +32,71 @@ zr      unfold the function area
 ,q      quit
 ,w      write
 ,y      copy selected area to clipboard
-:register   see the register
 "ay     copy to register a
 
 ,cc/,cu quick comment
 
-/   search
-\   search result(use CtrlSF) and show in the left pane
-
+/     search
+\     search result(use CtrlSF)
 ===============Firefox====================
-;I      select a picture
-gf      switch to source code
-ctrl+C  inspect element
-
+;I    select a picture
+gf    switch to source code
+ C   inspect element
 ==============Terminal=================
 Navigation
-Ctrl + A  Beginining or Home Key
-Ctrl + E  End or End Key
-Alt + F   Move cursor forward one word @ line
-Alt + B   Move cursor backward one word @ line
+ A   Beginining or Home Key
+ E   End or End Key
+⌥ F   Move cursor forward one word @ line
+⌥ B   Move cursor backward one word @ line
 
 Edit
-Ctrl + K  Delete all after line
-Ctrl + U  Delete all before line
-Ctrl + W  Delete the word before the cursor
-Ctrl + L  Delete all the pane
-Ctrl + H  Delete one character, backspace
+ K  Delete all after line
+ U  Delete all before line
+ W  Delete the word before the cursor
+ L  Delete all the pane
+ H  Delete one character, backspace
 
-Ctrl + T  Swap the last two characters before cursor
-Esc + T   Swap the last two words before cursor
+ T  Swap the last two characters before cursor
+ T  Swap the last two words before cursor
 
-Ctrl + R  Search
+ R  Search
 
-Ctrl + C  kill whatever your are running
-Ctrl + D  Exit the current shell
+ C  kill whatever your are running
+ D  Exit the current shell
 
-Ctrl + Z  Puts whatever you are running into a
-          suspended background process
+ Z  Puts whatever you are running into a
+     suspended background process
 
-Tab       Auto-complete files and folder names
+⇥    Auto-complete files and folder names
+==============Zathura=================
+Navigation
+ f  move forward a page
+ b  move backward a page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
