@@ -431,6 +431,9 @@ alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
 
+# synergy
+alias synergysetup="synergy --config ~/_synergy.conf"
+alias ="synergy --config ~/_synergy.conf"
 # svn
 alias svn="sshcheck; svn"
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
