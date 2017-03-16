@@ -576,6 +576,7 @@ alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
 
 # mv tmp
+alias mvscreenshot="mv /tmp/latest-screenshot.png "
 function mvtmp(){
     mv $1 ~/Dropbox/Linux/tmp
 }
