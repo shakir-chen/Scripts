@@ -265,6 +265,7 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin fi
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+# alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 
 #xqexit() {
@@ -321,7 +322,8 @@ function xinputopentp(){
     xinput --enable $num
 }
 
-
+# vnc
+alias vncstart="x11vnc -usepw"
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
@@ -331,7 +333,6 @@ alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
 alias sshcs="ssh-server cs"
-
 alias sshdaisy="ssh-server daisy "
 
 function sshcopyid(){
@@ -417,6 +418,7 @@ alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
 alias vncgeom="vncserver -geometry 1080x990"
 alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
+alias xvnckill="x11vnc -clear-all"
 
 # tmux      --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
@@ -574,6 +576,7 @@ alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
 
 # mv tmp
+alias mvscreenshot="mv /tmp/latest-screenshot.png "
 function mvtmp(){
     mv $1 ~/Dropbox/Linux/tmp
 }
@@ -632,6 +635,7 @@ export TEMPSAVE_PATH=~/Downloads
 
 #scrot
 alias scrots="scrot -s"
+alias importh="import helper.png"
 
 #qmake
 alias qmakep="qmake -project -o"

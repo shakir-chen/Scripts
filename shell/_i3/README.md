@@ -28,3 +28,6 @@ If you are on Arch Linux (or Arch Linux based distributions), you might want to 
 ```
 
 When new package updates become available, the status bar will notify you, showing a shield symbol and the amount of new packages available.
+
+# Font Support
+http://tech.karbassi.com/2009/05/27/command-option-shift-symbols-in-unicode/

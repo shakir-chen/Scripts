@@ -1,0 +1,102 @@
+ : ctrl             : del
+⇧ : shift            : ESC
+⇥ : tab             ⇪ : caps
+⌘ : win(cmd)        ⏎ : enter
+⌥ : alt(opt)         : space
+===============i3wm====================
+⌘  g    split h
+⌘  v    split v
+
+⌘  s    layout stacking
+⌘  w    layout tabbed
+⌘  e    layout toggle split
+
+⌘  C    reload
+⌘  R    restart
+⌘      toggle floating
+⌘      kill workspace
+===============Vim====================
+gd      go to local declaration
+gD      go to global declaration
+g*      search for the word under the cursor
+g#      same as g*,but in backward direction
+gg      first line
+G       bottom line
+gf      go to the file
+g]      go to a tag
+
+,zz     call togglefold function and fold all
+zm      fold the function area
+zr      unfold the function area
+
+,q      quit
+,w      write
+,y      copy selected area to clipboard
+"ay     copy to register a
+
+,cc/,cu quick comment
+
+/     search
+\     search result(use CtrlSF)
+===============Firefox====================
+;I    select a picture
+gf    switch to source code
+ C   inspect element
+==============Terminal=================
+Navigation
+ A   Beginining or Home Key
+ E   End or End Key
+⌥ F   Move cursor forward one word @ line
+⌥ B   Move cursor backward one word @ line
+
+Edit
+ K  Delete all after line
+ U  Delete all before line
+ W  Delete the word before the cursor
+ L  Delete all the pane
+ H  Delete one character, backspace
+
+ T  Swap the last two characters before cursor
+ T  Swap the last two words before cursor
+
+ R  Search
+
+ C  kill whatever your are running
+ D  Exit the current shell
+
+ Z  Puts whatever you are running into a
+     suspended background process
+
+⇥    Auto-complete files and folder names
+==============Zathura=================
+Navigation
+ f  move forward a page
+ b  move backward a page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -73,5 +73,6 @@
 	$else
 		{"full_text": "  AC only","color":"\#9C9C9C"},
 	$endif
-	{"full_text": "  ${time %a %d %b} ${time %H:%M} ", "color":"\#9C9C9C"}
+	{"full_text": "  ${time %a %d %b} ${time %H:%M} ", "color":"\#9C9C9C"},
+    {"full_text": "${exec ~/.i3/hkweather.sh}", "color":"\#9C9C9C"}
 	],
