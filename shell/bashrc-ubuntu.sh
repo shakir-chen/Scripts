@@ -418,6 +418,7 @@ alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
 alias vncgeom="vncserver -geometry 1080x990"
 alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
+alias xvnckill="x11vnc -clear-all"
 
 # tmux      --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"

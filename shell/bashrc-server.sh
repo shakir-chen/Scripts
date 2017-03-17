@@ -231,6 +231,9 @@ function svnclone() {
     fi
 }
 
+alias makee="make edit"
+alias maker="make run"
+
 #xqconf
 alias xqconf="./configure -prefix=/home/xuanqi/Linux"
 
@@ -262,6 +265,7 @@ alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Research/Jade"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Study/Scripts"
+alias cdcourse="cd ~/Study/Course"
 
 
 function cpcosmic() {
