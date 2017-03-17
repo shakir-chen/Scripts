@@ -1484,6 +1484,10 @@ Test:
 ### 50. tty
 ctrl+alt+F1~7
 
+### 51. xrandr
+reset display resolusion
+xrandr -s 1920x1080
+
 #### ERROR
 1.TIFF4 depency:
     The only way:

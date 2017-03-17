@@ -267,6 +267,7 @@ alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
 # alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
+alias xrandrinit="xrandr --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
 
 #xqexit() {
 #    exit
