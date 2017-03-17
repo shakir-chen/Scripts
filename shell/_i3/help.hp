@@ -68,10 +68,16 @@ Edit
      suspended background process
 
 ⇥    Auto-complete files and folder names
+
 ==============Zathura=================
 Navigation
  f  move forward a page
  b  move backward a page
+
+==============Synergy=================
+ [  move to laptop
+ ]  move to lab-PC
+
 
 
 
