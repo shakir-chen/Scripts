@@ -569,6 +569,14 @@ Best Vimscripts Tutorials
 3. plugin help general => ?
     + :PluginStatus
 
+#### VIM Error
+1. -xclipboard not enabled
+sudo apt-get install vim-gtk
+if not succeed
+    which vim, check if it is installed in /usr/bin
+    if vim @ /usr/local/bin/
+        rm it /usr/local/bin/ and /usr/local/share/
+
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
 

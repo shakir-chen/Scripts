@@ -178,7 +178,8 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
-# alias vim="vi"
+
+alias vim="vi"
 function vimbin(){
     vim $(which $1)
 }
@@ -267,12 +268,13 @@ alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
 # alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
-alias xrandrinit="xrandr --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
 
-#xqexit() {
-#    exit
-#    exit
-#}
+alias xrandrinit="xrandr --output VIRTUAL1 --off"
+alias xrandrmod="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
+alias xrandrvir="xrandr --output VIRTUAL1 --mode 808x1080_60.00 --right-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+# vnc
+alias vncstart="x11vnc -usepw"
+alias vncipad="x11vnc -clip 808x1080+1921+0"
 
 # function yEd(){
    # cd ~/Software/yEd
@@ -323,8 +325,6 @@ function xinputopentp(){
     xinput --enable $num
 }
 
-# vnc
-alias vncstart="x11vnc -usepw"
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
