@@ -54,6 +54,15 @@ then
     if ! [ -d "~/.i3" ] ; then
         ln -s ~/Software/Scripts/shell/_i3 ~/.i3
     fi
+    echo "=========feh========="
+    if ! [ -d "~/.config/feh" ] ; then
+        ln -s ~/Software/Scripts/shell/feh ~/.config/feh
+    fi
+    echo "=========Compton========="
+    if ! [ -d "~/.config/compton" ] ; then
+        ln -s ~/Software/Scripts/shell/compton.conf ~/.config/compton.conf
+    fi
+
     ln -s ~/Software/Scripts/help-doc/_helprc ~/.helprc
 fi
 
@@ -124,7 +133,14 @@ then
    soft-check subversion
    echo "============Install scrot==============="
    soft-check scrot
+
+   echo "============Install feh==============="
+   soft-check feh
+
+   echo "============Install compton==============="
+   soft-check compton
 fi
+
 
 if [[ "$1" == "ssh" ]]
 then

@@ -77,6 +77,13 @@ $ grep -oP '(?<=foo )\w+(?= bar)' test.txt      # match words between foo and ba
     grep -o "^\w\+:" file
     sed -e  # greedy match
     ```
+5. grep specific group in regex match
+    ```
+    grep  -oP 'foo \K\w+' test.txt # output strings behind \K
+    grep  -oP 'foo \K\w+(?=bar)' test.txt # output strings between \K and "bar"
+    grep -oP '(?<=foo )\w+(?= bar)' test.txt' # output strings between "foo " and "bar"
+    ```
+<http://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match>
 
 ## Rename
 rename -n 's/(\w+)(\.sam)/$1\_x86$2/' *.sam     # -n means test

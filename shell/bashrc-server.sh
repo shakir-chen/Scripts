@@ -94,6 +94,8 @@ TITLE="\[\e]2;\H\a\]"
 PS1=${PS1}${TITLE}
 
 
+alias dirsx="dirs | xclip"
+
 # grep
 #alias grep --color=auto
 # alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
@@ -112,6 +114,7 @@ alias ls="ls --color=tty"
 alias vi="vim"
 
 alias vimbashrc="vim ~/.bashrc"
+alias vimmakefile="vim Makefile"
 
 # tar
 alias tarc="tar -cvzf"
@@ -231,6 +234,9 @@ function svnclone() {
     fi
 }
 
+alias makee="make edit"
+alias maker="make run"
+
 #xqconf
 alias xqconf="./configure -prefix=/home/xuanqi/Linux"
 
@@ -262,6 +268,7 @@ alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Research/Jade"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Study/Scripts"
+alias cdcourse="cd ~/Study/Course"
 
 
 function cpcosmic() {

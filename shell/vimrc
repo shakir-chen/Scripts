@@ -24,6 +24,7 @@
 "==========================================
 "Xuanqi add
 nnoremap zz :r!cite<CR>
+nnoremap <F7> :set background=light<CR>
 
 " 修改leader键
 let mapleader = ','

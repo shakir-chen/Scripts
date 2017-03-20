@@ -178,7 +178,8 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
-# alias vim="vi"
+
+alias vim="vi"
 function vimbin(){
     vim $(which $1)
 }
@@ -260,17 +261,29 @@ alias py2.7="python2.7"
 # }
 
 # Zotero
-# alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
+alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+# alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 
-#xqexit() {
-#    exit
-#    exit
-#}
+alias xrandrinit="xrandr --output VIRTUAL1 --off"
+alias xrandrmodipad="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
+alias xrandrviripad="xrandr --output VIRTUAL1 --mode 808x1080_60.00 --right-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+# alias xrandrmodipad="xrandr --newmode '1536x2048_60.00' 270.55 1536 1664 1832 2128 2048 2049 2052 2119 -HSync +Vsync"
+# alias xrandrviripad="xrandr --addmode VIRTUAL1 '1536x2048_60.00'; xrandr --output VIRTUAL1 --rotate left --mode 1536x2048_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+alias xrandrmodiphone="xrandr --newmode '752x1334_60.00' 84.85 752 808 888 1024 1334 1335 1338 1381 -HSync +Vsync"
+alias xrandrviriphone="xrandr --output VIRTUAL2 --mode 752x1334_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+# vnc
+alias vncstart="x11vnc -usepw"
+alias vncipad="x11vnc -clip 808x1080+1921+0"
+alias vnciphone="x11vnc -clip 752x1334+0+0"
+# alias vncipad="x11vnc -clip 1536x2048+0+0"
+# alias vncipad="x11vnc -clip 1536x2048+1921+0"
 
 # function yEd(){
    # cd ~/Software/yEd
@@ -309,6 +322,18 @@ function sshcheck(){
     fi
 }
 
+# sh
+alias sh="bash"
+# open and close touchpad
+function xinputclosetp(){
+    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    xinput --disable $num
+}
+function xinputopentp(){
+    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    xinput --enable $num
+}
+
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
@@ -317,6 +342,8 @@ alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
+alias sshcs="ssh-server cs"
+alias sshdaisy="ssh-server daisy "
 
 function sshcopyid(){
     cd ~/.ssh
@@ -335,9 +362,15 @@ function ssh-server() {
     elif [ "$1" = "zhehui" ]
     then
         servername="zhehui@rostam.ece.ust.hk"
+    elif [ "$1" = "cs" ]
+    then
+        servername="xchenbr@csl2wk10.cse.ust.hk"
     elif [ "$1" = "std" ]
     then
         servername="std01@143.89.131.91"
+    elif [ "$1" = "daisy" ]
+    then
+        servername="daisy@143.89.135.219 -p 2222"
     else
         servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
     fi
@@ -352,6 +385,10 @@ function scppassion(){
 }
 function scpstd(){
     scp $1 std01@143.89.131.91:~/$2
+}
+
+function scpcs(){
+    scp $1 xchenbr@csl2wk10.cse.ust.hk:~/$2
 }
 #ssh functions
 function scpxq {
@@ -391,6 +428,7 @@ alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
 alias vncgeom="vncserver -geometry 1080x990"
 alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
+alias xvnckill="x11vnc -clear-all"
 
 # tmux      --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
@@ -404,6 +442,9 @@ alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
 
+# synergy
+alias synergysetup="synergy --config ~/_synergy.conf"
+# alias ="synergy --config ~/_synergy.conf"
 # svn
 alias svn="sshcheck; svn"
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
@@ -548,6 +589,7 @@ alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
 
 # mv tmp
+alias mvscreenshot="mv /tmp/latest-screenshot.png "
 function mvtmp(){
     mv $1 ~/Dropbox/Linux/tmp
 }
@@ -606,6 +648,7 @@ export TEMPSAVE_PATH=~/Downloads
 
 #scrot
 alias scrots="scrot -s"
+alias importh="import helper.png"
 
 #qmake
 alias qmakep="qmake -project -o"

@@ -62,6 +62,17 @@ TODO List:
 4. Strengthen Area Info, Sometimes I will forget the active window (not so important)
 
 Printscreen : scrot -s
+
+i3wm useful commands:
+1. i3-input : input, get input
+2. i3-msg : move and workspace switch
+get_workspace
+i3-msg -t get tree # Dump the layout tree
+
+i3-msg 'workspace 6.bdsl; exec zathura'     # open pdf in workspace 6
+i3-msg workspace "6.bdsl"                   # focus workspace 6
+3. i3-nagbar : see XY point
+
 ### 1. Know and Rotate Screen: xrandr
 ```
 xrandr -q #output parameter infos
@@ -101,6 +112,7 @@ xorg-xbacklight
 
 font-install : <http://askubuntu.com/questions/3697/how-do-i-install-fonts>
 <https://github.com/FortAwesome/Font-Awesome>
+Font Awesome CheatSheet<http://fontawesome.io/cheatsheet/>
 ```
 apt-get install ttf-fontname
 # if no such font, download
@@ -135,6 +147,14 @@ edit ~/.pam_environme
 LANG=en_US
 LANGUAGE=en_US
 ```
+Error: demu_run not login export $PATH in .bashrc or .bash_profile
+If I'm not mistaken, dmenu's environment could be non-interactive (depending on your login method). Try putting the line in ~/.profile.
+```
+vim ~/.profile
+rm ~/.cache/dmenu_run
+```
+
+<https://bbs.archlinux.org/viewtopic.php?id=157187>
 
 ### 7. Volume
 alias volumedown="pactl set-sink-volume 1 -10%"
@@ -151,6 +171,49 @@ for_window [class="Nautilus" instance="file_progress"] floating enable
 mod+space : focus float or not
 mod+shift+space : toggle float
 mod + s/w/e: stack/window side by side/toggle layout
+
+
+### 9. Add weather and email notify to concky
+<http://kumarcode.com/Adding-Weather-and-Gmail-info-to-my-i3-Status/>
+
+america rss only, 10001 is the zip code
+<https://alert.accuweather.com/accualert/index#>
+(done, better application for curl and rss)
+
+### 10. Ubuntu Gnome like Helper
+key: release
+bindcode $mod+25 workspace back_and_forth
+bindsym --release $mod+w workspace back_and_forth
+<https://www.reddit.com/r/i3wm/comments/4taxyh/bind_action_to_key_press_and_release/>
+<https://i3wm.org/docs/userguide.html> keyboard-bindings
+
+Transparent window : i3wm-compton
+opacity-rule=["85:class_g='Terminate'"]
+<https://faq.i3wm.org/question/3162/terminal-transparency-in-i3.1.html>
+i3wm-compton<https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1.html>
+compton --config path/to/compton.conf
+<https://wiki.archlinux.org/index.php/Compton>
+
+<https://github.com/chjj/compton>
+
+communication between two different terminals
+```
+who     #pts/1
+echo foo > /dev/pts/4
+```
+<http://irenicus09.deviantart.com/art/Gentoo-Linux-i3-wm-617553604>
+<https://github.com/irenicus/dotfiles>
+
+
+htop(interactive process viewer) and urxvt(light terminal)
+tint2(panal,taskbar)
+weechat
+
+study later
+```
+sudo apt-get install rxvt-unicode-256colors
+```
+<https://github.com/pkkolos/urxvt-scripts>
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note
@@ -179,6 +242,7 @@ Good for navigation, bookmark and search around.
 _Bad for taking note_
 ?? any solution for that ??
 
+### 1. Know and Rotate Screen: xrandr
 TODO List:
 1. Change Background and Front Color when revert color (done)
 2. Figure out how to add tag or something related in zathura
@@ -248,6 +312,7 @@ hjkl
 xzgv (worst)
 
 
+
 ## VIII. Research Managermanet - Zotero
 TODO List:
 1. succeed to use firefox zotero with betterbibtex, at least show citation-key
@@ -279,3 +344,4 @@ Firefox seems could not export bibtex quick copy
 ## Reference
 <http://stackoverflow.com/questions/779348/vim-movement-on-other-programs>
 <https://wiki.archlinux.org/index.php/List_of_applications/Documents>       #Linux Arch, very comprehensive
+
