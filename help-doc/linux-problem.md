@@ -1502,6 +1502,11 @@ xrandr -s 0
 ### 52. get mouse position
 xdotool getmouselocation
 
+### 53. without git pop-up windows
+unset SSH_ASKPASS
+unset GIT_ASKPASS
+
+
 #### ERROR
 1.TIFF4 depency:
     The only way:
