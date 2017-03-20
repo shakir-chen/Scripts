@@ -178,7 +178,8 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
-# alias vim="vi"
+
+alias vim="vi"
 function vimbin(){
     vim $(which $1)
 }
@@ -268,10 +269,21 @@ alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
 # alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 
-#xqexit() {
-#    exit
-#    exit
-#}
+alias xrandrinit="xrandr --output VIRTUAL1 --off"
+alias xrandrmodipad="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
+alias xrandrviripad="xrandr --output VIRTUAL1 --mode 808x1080_60.00 --right-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+# alias xrandrmodipad="xrandr --newmode '1536x2048_60.00' 270.55 1536 1664 1832 2128 2048 2049 2052 2119 -HSync +Vsync"
+# alias xrandrviripad="xrandr --addmode VIRTUAL1 '1536x2048_60.00'; xrandr --output VIRTUAL1 --rotate left --mode 1536x2048_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+alias xrandrmodiphone="xrandr --newmode '752x1334_60.00' 84.85 752 808 888 1024 1334 1335 1338 1381 -HSync +Vsync"
+alias xrandrviriphone="xrandr --output VIRTUAL2 --mode 752x1334_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+# vnc
+alias vncstart="x11vnc -usepw"
+alias vncipad="x11vnc -clip 808x1080+1921+0"
+alias vnciphone="x11vnc -clip 752x1334+0+0"
+# alias vncipad="x11vnc -clip 1536x2048+0+0"
+# alias vncipad="x11vnc -clip 1536x2048+1921+0"
 
 # function yEd(){
    # cd ~/Software/yEd
@@ -322,8 +334,6 @@ function xinputopentp(){
     xinput --enable $num
 }
 
-# vnc
-alias vncstart="x11vnc -usepw"
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
@@ -432,6 +442,9 @@ alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
 
+# synergy
+alias synergysetup="synergy --config ~/_synergy.conf"
+# alias ="synergy --config ~/_synergy.conf"
 # svn
 alias svn="sshcheck; svn"
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout

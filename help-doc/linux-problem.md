@@ -569,6 +569,14 @@ Best Vimscripts Tutorials
 3. plugin help general => ?
     + :PluginStatus
 
+#### VIM Error
+1. -xclipboard not enabled
+sudo apt-get install vim-gtk
+if not succeed
+    which vim, check if it is installed in /usr/bin
+    if vim @ /usr/local/bin/
+        rm it /usr/local/bin/ and /usr/local/share/
+
 ### 2. Quick SSH Connect(store password and session)
 Generate a public key locally and send it to server
 
@@ -1341,6 +1349,8 @@ sudo systemctl status vncserver@1           # check vnc status
 <https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-16-04>
 ipad:vnc viewer ()
 
+Error : port cannot contact :  10.89.145.70::5901 instead of 10.89.145.70::5902
+
 ### 35. Change Default Program
 Select File -> Properties -> Open with -> set as default
 
@@ -1483,6 +1493,14 @@ Test:
 
 ### 50. tty
 ctrl+alt+F1~7
+
+### 51. xrandr
+reset display resolusion
+xrandr -s 1920x1080
+xrandr -s 0
+
+### 52. get mouse position
+xdotool getmouselocation
 
 #### ERROR
 1.TIFF4 depency:
