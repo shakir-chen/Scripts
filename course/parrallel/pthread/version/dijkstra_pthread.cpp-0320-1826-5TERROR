@@ -215,17 +215,25 @@ void *Thread_dijkstra(void* rank){
         // printf("iter - %d\n",jj);
 #endif
 
-        // condtion barrier - glob_min init
-        pthread_mutex_lock(&mutex);
-        pth_count++;
-        if (pth_count == utils::num_threads){
-            pth_count=0;
-            glob_min_temp = INT_MAX;
-            pthread_cond_broadcast(&cond_var);
-        } else {
-            while(pthread_cond_wait(&cond_var,&mutex) != 0);
-        }
-        pthread_mutex_unlock(&mutex);
+        /* // condtion barrier - glob_min init */
+        // pthread_mutex_lock(&mutex);
+        // pth_count++;
+        // if (pth_count == utils::num_threads){
+          // pth_count=0;
+          // glob_min_temp = INT_MAX;
+          // pthread_cond_broadcast(&cond_var);
+        // } else {
+          // while(pthread_cond_wait(&cond_var,&mutex) != 0);
+        // }
+        // pthread_mutex_unlock(&mutex);
+
+/*         if (my_rank==0) */
+          // glob_min_temp = INT_MAX;
+        // pthread_barrier_wait(&barrier);
+
+        //condtion barrier - get glob_min
+        glob_min_temp = INT_MAX;
+        pthread_barrier_wait(&barrier);
 
         if (loc_min < glob_min_temp){
             glob_min_temp = loc_min;
@@ -234,19 +242,24 @@ void *Thread_dijkstra(void* rank){
         else if ((loc_min == glob_min_temp) && (loc_u < glob_u)){
             glob_u = loc_u;
         }
-        //pthread_barrier_wait(&barrier);
+        pthread_barrier_wait(&barrier);
 
-        pthread_mutex_lock(&mutex);
-        pth_count++;
-        if (pth_count == utils::num_threads){
-            pth_count = 0;
-            glob_min=glob_min_temp;
-            visit[glob_u] = true;
-            pthread_cond_broadcast(&cond_var);
-        } else {
-            while(pthread_cond_wait(&cond_var,&mutex) != 0);
-        }
-        pthread_mutex_unlock(&mutex);
+        glob_min=glob_min_temp;
+        visit[glob_u] = true;
+        pthread_barrier_wait(&barrier);
+
+       /*  pthread_mutex_lock(&mutex); */
+        // pth_count++;
+        // if (pth_count == utils::num_threads){
+            // pth_count = 0;
+            // glob_min=glob_min_temp;
+            // visit[glob_u] = true;
+            // pthread_cond_broadcast(&cond_var);
+        // } else {
+            // while(pthread_cond_wait(&cond_var,&mutex) != 0);
+        // }
+        // pthread_mutex_unlock(&mutex);
+
 
         // refresh table======
         for (ii = pthdata_p[my_rank].head; ii < pthdata_p[my_rank].head+pthdata_p[my_rank].len; ii++) {

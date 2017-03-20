@@ -1,6 +1,6 @@
 CXX=g++
 CXXFLAG= -std=c++11 # C compiler flags
-CXXPP= -DDEBUG		#-DPRED # CXX Preprocessor
+CXXPP= #-DPRED -DDEBUG		#-DPRED # CXX Preprocessor
 LDFLAGS= -lpthread 	# Linker flags, e.g. -L<lib dir> if you have libraries in a nonstandard directory <lib dir>
 LIBS= 				# Libraries to pass to the linker, e.g. -l<library>
 
@@ -28,7 +28,8 @@ run:
 	# mpiexec -n 2 ./$(A_TARGET) ../input/input1.txt
 	# ./dijkstra_pthread -n 2 -i ../input/input1.txt
 	# ./$(A_TARGET) -n 3 -i ../input/input1.txt
-	./$(A_TARGET) -n 4 -i ../input/input2.txt
+	# ./$(A_TARGET) -n 2 -i ~/Research/input/input2.txt
+	./$(A_TARGET) -n 3 -i ~/Research/input/input2.txt
 
 clean:
 	rm $(A_TARGET) *.o output.txt
@@ -45,5 +46,5 @@ input:
 
 check:
 	# cat output.txt
-	# diff output.txt output1.txt
-	vimdiff output.txt output-pred.txt
+	diff output.txt version/output2.txt
+	#vimdiff output.txt output-pred.txt

@@ -26,7 +26,7 @@ clean:
 	rm *.o
 
 run:
-	./$(A_TARGET) ../input/input2.txt
+	./$(A_TARGET) ../../input/input2.txt
 	# ./$(A_TARGET) ../input/input3.txt
 
 edit:
