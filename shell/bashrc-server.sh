@@ -94,6 +94,8 @@ TITLE="\[\e]2;\H\a\]"
 PS1=${PS1}${TITLE}
 
 
+alias dirsx="dirs | xclip"
+
 # grep
 #alias grep --color=auto
 # alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
@@ -112,6 +114,7 @@ alias ls="ls --color=tty"
 alias vi="vim"
 
 alias vimbashrc="vim ~/.bashrc"
+alias vimmakefile="vim Makefile"
 
 # tar
 alias tarc="tar -cvzf"
