@@ -1356,6 +1356,14 @@ Select File -> Properties -> Open with -> set as default
 
 ### 36. No sound in PC Ubuntu's Headphone
 pavucontrol
+<http://askubuntu.com/questions/132440/headphone-jack-not-working>
+
+download oem
+<https://code.launchpad.net/~ubuntu-audio-dev/+archive/ubuntu/alsa-daily/+packages>
+
+pacmd list-sources #see all devices
+<http://askubuntu.com/questions/769593/16-04-headphones-detected-but-not-switched-on-automatically-after-startup>
+finally , use gnome-alsamixer and click autodetect headphone
 
 ### 37. U disk Recovery from install a OS system
 windows: cmd; diskpart; list disk; select disk 1(attention, must select right disk); clean; in disk manager: new volumn
@@ -1506,6 +1514,12 @@ xdotool getmouselocation
 unset SSH_ASKPASS
 unset GIT_ASKPASS
 
+### 54. fast compile latex
+1. pdflatex -draftmode XX.tex
+or pdflatex -interaction=batchmode XX.tex
+2. split and compile partly , includeonly
+<http://tex.stackexchange.com/questions/8791/speeding-up-latex-compilation>
+<http://hilbertastronaut.blogspot.hk/2008/12/making-latex-builds-faster.html>
 
 #### ERROR
 1.TIFF4 depency:
