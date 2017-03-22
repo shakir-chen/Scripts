@@ -1521,6 +1521,13 @@ or pdflatex -interaction=batchmode XX.tex
 <http://tex.stackexchange.com/questions/8791/speeding-up-latex-compilation>
 <http://hilbertastronaut.blogspot.hk/2008/12/making-latex-builds-faster.html>
 
+
+### 55. image operation
+imagemagick is really a cool tools !
+```
+convert +append *.png out.png       # combine, vertically use -append
+```
+
 #### ERROR
 1.TIFF4 depency:
     The only way:

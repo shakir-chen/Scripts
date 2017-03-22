@@ -177,6 +177,10 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 # ls
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
+alias lsf="ls -p --color=tt | grep -v / | tr '\r\n' '\t'"        # list only file, tr translate or delete, tr -d
+alias lshf="ls -pa --color=tty | grep -v /"     # list include hidden file
+alias lsd="ls -p --color=tty | grep /"     # list include hidden file
+alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
 
 alias vim="vi"
@@ -190,6 +194,7 @@ alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
 alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
+alias vimos="vim ~/Software/Scripts/help-doc/OS-learn.md"
 
 alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
