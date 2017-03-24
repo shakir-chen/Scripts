@@ -204,6 +204,7 @@ alias volumedown="pactl set-sink-volume 1 -10%"
 # }
 
 alias makee="make edit"
+alias maker="make run"
 alias xpropwm="xprop | grep WM_CLASS"
 
 # program open in ubuntu

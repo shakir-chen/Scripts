@@ -1528,6 +1528,13 @@ imagemagick is really a cool tools !
 convert +append *.png out.png       # combine, vertically use -append
 ```
 
+### 56. meep
+simple:
+```
+sudo apt-get install libcr-dev mpich2 mpich-doc     #install mpich
+sudo apt-get install meep h5utils                   #meep
+```
+
 #### ERROR
 1.TIFF4 depency:
     The only way:
