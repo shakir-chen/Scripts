@@ -1532,7 +1532,7 @@ convert +append *.png out.png       # combine, vertically use -append
 simple:
 ```
 sudo apt-get install libcr-dev mpich2 mpich-doc     #install mpich
-sudo apt-get install meep h5utils                   #meep
+sudo apt-get install meep-mpich2 h5utils                   #meep
 ```
 
 #### ERROR
