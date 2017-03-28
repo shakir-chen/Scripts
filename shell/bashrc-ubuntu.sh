@@ -350,6 +350,7 @@ alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
 alias sshcs="ssh-server cs"
 alias sshdaisy="ssh-server daisy "
+alias sshfei="ssh-server fei"
 
 function sshcopyid(){
     cd ~/.ssh
@@ -377,6 +378,9 @@ function ssh-server() {
     elif [ "$1" = "daisy" ]
     then
         servername="daisy@143.89.135.219 -p 2222"
+    elif [ "$1" = "fei" ]
+    then
+        servername="cecilia@219.223.173.91 -p 2222"
     else
         servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
     fi
