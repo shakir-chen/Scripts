@@ -799,9 +799,11 @@ vim sshd_config
     Banner /etc/issue.net
 
 sudo iptables -L
+
 ```
+
 ```
-sudo apt-get openssh-server
+sudo apt-get install openssh-server
 ps -A |grep sshd            #check sshd runs or not
 ssh -v localhost            #check locally
 sudo service ssh restart    #restart
@@ -1521,19 +1523,32 @@ or pdflatex -interaction=batchmode XX.tex
 <http://tex.stackexchange.com/questions/8791/speeding-up-latex-compilation>
 <http://hilbertastronaut.blogspot.hk/2008/12/making-latex-builds-faster.html>
 
-
 ### 55. image operation
 imagemagick is really a cool tools !
 ```
 convert +append *.png out.png       # combine, vertically use -append
 ```
+feh, eog is also good
 
-### 56. meep
+### 56. meep - FDTD simulator from MIT
 simple:
 ```
 sudo apt-get install libcr-dev mpich2 mpich-doc     #install mpich
 sudo apt-get install meep-mpich2 h5utils                   #meep
 ```
+
+### 57. change process priority
+niceness or nice value: -20 to 19
+```
+top NI
+ps -o pid,comm,nice -p XXX          # show niceness value
+nice -n 10 apt-get upgrade          # set niceness for apt-get command
+renice 10 -p XXX                    # reset niceness for existing process
+                                    # only root can apply negative nice values
+vim /etc/security/limits.conf
+[username] hard priority 1          # pariticular priority
+```
+<https://www.nixtutor.com/linux/changing-priority-on-linux-processes/>
 
 #### ERROR
 1.TIFF4 depency:
