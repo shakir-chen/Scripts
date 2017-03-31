@@ -4,8 +4,10 @@
 # curl -s http://rss.weather.gov.hk/rss/CurrentWeather.xml | grep "img" | grep -o "pic\w\+.png"
 declare -A arr
 arr["pic76.png"]="Mainly-Cloudy"
-arr["pic62.png"]="Small Rain"
+arr["pic62.png"]="Small-Rain"
 arr["pic60.png"]="Cloudy"
+arr["pic52.png"]="Sunny-Intervals"
+# arr["pic52.png"]=""
 
 # echo ${arr["pic76.png"]}
 
