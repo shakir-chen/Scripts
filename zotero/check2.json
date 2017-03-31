@@ -1,0 +1,45 @@
+[
+	{
+		"id": "http://zotero.org/users/2643828/items/9N4R864J",
+		"type": "paper-conference",
+		"title": "Parka: Thermally Insulated Nanophotonic Interconnects",
+		"container-title": "Proceedings of the 9th International Symposium on Networks-on-Chip",
+		"collection-title": "NOCS '15",
+		"publisher": "ACM",
+		"publisher-place": "New York, NY, USA",
+		"page": "1:1–1:8",
+		"source": "ACM Digital Library",
+		"event-place": "New York, NY, USA",
+		"abstract": "Silicon-photonics are emerging as the prime candidate technology for energy-efficient on-chip interconnects at future process nodes. However, current designs are primarily based on microrings, which are highly sensitive to temperature. As a result, current silicon-photonic interconnect designs expend a significant amount of energy heating the microrings to a designated narrow temperature range, only to have the majority of the thermal energy waste away and dissipate through the heat sink, and in the process of doing so heat up the logic layer, causing significant performance degradation to the cores and inducing thermal emergencies. We propose Parka, a nanophotonic interconnect that encases the photonic die in a thermal insulator that keeps its temperature stable with low energy expenditure, while minimizing the spatial and temporal thermal coupling between logic and silicon-photonic components. Parka reduces the microring energy by 3.8--5.4x and achieves 11--23% speedup on average (34% max) depending on the cooling solution used.",
+		"URL": "http://doi.acm.org/10.1145/2786572.2786597",
+		"DOI": "10.1145/2786572.2786597",
+		"ISBN": "978-1-4503-3396-2",
+		"shortTitle": "Parka",
+		"author": [
+			{
+				"family": "Demir",
+				"given": "Yigit"
+			},
+			{
+				"family": "Hardavellas",
+				"given": "Nikos"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	}
+]

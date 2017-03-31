@@ -1,0 +1,59 @@
+[1]A. B. Ahmed, M. Meyer, Y. Okuyama, and A. B. Abdallah, “Hybrid Photonic NoC Based on Non-Blocking Photonic Switch and Light-Weight Electronic Router,” in 2015 IEEE International Conference on Systems, Man, and Cybernetics (SMC), 2015.
+[2]A. B. Ahmed, Y. Okuyama, and A. B. Abdallah, “Non-blocking electro-optic network-on-chip router for high-throughput and low-power many-core systems,” in 2015 World Congress on Information Technology and Computer Applications Congress (WCITCA), 2015.
+[3]R. Cao et al., “LVS check for photonic integrated circuits: curvilinear feature extraction and validation,” in Proceedings of the 2015 Design, Automation & Test in Europe Conference & Exhibition, 2015.
+[4]R. Cao, J. Ferguson, A. Bakker, T. Korthorst, A. Arriordaz, and I. O’Connor, “Photonic designs with EDA approach: A novel methodology for curve design validation,” in Summer Topicals Meeting Series (SUM), 2015, 2015.
+[5]Z. Cao, R. Proietti, and S. J. B. Yoo, “Hi-LION: Hierarchical Large-Scale Interconnection Optical Network With AWGRs [Invited],” Journal of Optical Communications and Networking, 2015.
+[6]I. Cerutti et al., “Fast scheduling based on iterative parallel wavelength matching for a multi-wavelength ring network-on-chip,” in 2015 International Conference on Optical Network Design and Modeling (ONDM), 2015.
+[7]C. Chen, J. L. Abellán, and A. Joshi, “Managing Laser Power in Silicon-Photonic NoC Through Cache and NoC Reconfiguration,” Computer-Aided Design of Integrated Circuits and Systems, IEEE Transactions on, 2015.
+[8]W. Chen, J. Yu, W. Zhang, L. Jiang, G. Zhang, and Z. Chai, “Parallel Implementation of Dense Optical Flow Computation on Many-Core Processor,” in Algorithms and Architectures for Parallel Processing, G. Wang, A. Zomaya, G. M. Perez, and K. Li, Eds. Springer International Publishing, 2015, pp. 119–132.
+[9]S. V. R. Chittamuru, S. Desai, and S. Pasricha, “Reconfigurable Silicon-Photonic Network with Improved Channel Sharing for Multicore Architectures,” in Proceedings of the 25th Edition on Great Lakes Symposium on VLSI, 2015.
+[10]S. V. R. Chittamuru and S. Pasricha, “Improving crosstalk resilience with wavelength spacing in photonic crossbar-based network-on-chip architectures,” in 2015 IEEE 58th International Midwest Symposium on Circuits and Systems (MWSCAS), 2015.
+[11]D. Dang, B. Patra, R. Mahapatra, and M. Fiers, “Mode-Division-Multiplexed Photonic Router for High Performance Network-on-Chip,” in 2015 28th International Conference on VLSI Design (VLSID), 2015.
+[12]K. N. Dang, M. Meyer, Y. Okuyama, A. B. Abdallah, and X.-T. Tran, “Soft-error resilient 3D Network-on-Chip router,” in 2015 IEEE 7th International Conference on Awareness Science and Technology (iCAST), 2015.
+[13]Y. Demir and N. Hardavellas, “Parka: Thermally Insulated Nanophotonic Interconnects,” in Proceedings of the 9th International Symposium on Networks-on-Chip, 2015.
+[14]Y. Demir and N. Hardavellas, “Towards energy-efficient photonic interconnects,” 2015.
+[15]P. Dong, Y.-K. Chen, T. Gu, L. L. Buhl, D. T. Neilson, and J. H. Sinsky, “Reconfigurable 100 Gb/s Silicon Photonic Network-on-Chip [Invited],” Journal of Optical Communications and Networking, 2015.
+[16]P. Dong et al., “Four-Channel 100-Gb/s per Channel Discrete Multi-Tone Modulation Using Silicon Photonic Integrated Circuits,” 2015.
+[17]P. Dong, “Reconfigurable silicon photonic networks-on-chip,” in Opto-Electronics and Communications Conference (OECC), 2015, 2015.
+[18]P. Dong, “Silicon Photonic Integrated Circuits,” 2015.
+[19]P. Dong, “Silicon photonic integrated circuits for WDM applications,” in 2015 International Conference on Photonics in Switching (PS), 2015.
+[20]S. Faralli, F. Gambini, P. Pintus, I. Cerutti, and N. Andriolli, “Ring versus bus: A BER comparison of photonic integrated networks-on-chip,” in 2015 IEEE Optical Interconnects Conference (OI), 2015.
+[21]S. Faralli et al., “Experimental demonstration of bidirectional transmissions in a photonic integrated network on chip with bus topology,” in 2015 International Conference on Photonics in Switching (PS), 2015.
+[22]D. C. Kilper, “Optical power dynamics in wavelength layer software defined networking,” in Photonic Networks and Devices, 2015.
+[23]A. K. Kodi, B. Neel, and W. C. Brantley, “Power and performance analysis of scalable photonic networks for exascale architecture,” in Green Computing Conference and Sustainable Computing Conference (IGSC), 2015 Sixth International, 2015.
+[24]P. Layec et al., “IDEALIST data plane solutions for elastic optical networks,” in Networks and Communications (EuCNC), 2015 European Conference on, 2015.
+[25]C. Li, P. V. Gratz, and S. Palermo, “Nano-Photonic Networks-on-Chip for Future Chip Multiprocessors,” in More than Moore Technologies for Next Generation Computer Design, R. O. Topaloglu, Ed. Springer New York, 2015, pp. 155–186.
+[26]H. Li, A. Fourmigue, S. Le Beux, X. Letartre, I. O’Connor, and G. Nicolescu, “Thermal aware design method for VCSEL-based on-chip optical interconnect,” in Proceedings of the 2015 Design, Automation & Test in Europe Conference & Exhibition, 2015.
+[27]H. Li, S. Le Beux, G. Nicolescu, and I. O’Connor, “Energy-efficient optical crossbars on chip with multi-layer deposited silicon,” in Design Automation Conference (ASP-DAC), 2015 20th Asia and South Pacific, 2015.
+[28]Z. Li, S. Le Beux, C. Monat, X. Letartre, and I. O’Connor, “Multilevel Modeling Methodology for Reconfigurable Computing Systems Based on Silicon Photonics,” in VLSI (ISVLSI), 2015 IEEE Computer Society Annual Symposium on, 2015.
+[1]P. Liao et al., “Ultradense Silicon Photonic Interface for Optical Interconnection,” Photonics Technology Letters, IEEE, 2015.
+[2]S. Liu et al., “Low Latency Optical Switch for High Performance Computing With Minimized Processor Energy Load [Invited],” Journal of Optical Communications and Networking, 2015.
+[3]F. Lou et al., “Towards a centralized controller for silicon photonic MZI-based interconnects,” in Optical Interconnects Conference (OI), 2015 IEEE, 2015.
+[4]M. C. Meyer, A. B. Ahmed, Y. Okuyama, and A. B. Abdallah, “FTTDOR: Microring Fault-resilient Optical Router for Reliable Optical Network-on-Chip Systems,” in 2015 IEEE 9th International Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC), 2015.
+[5]P. Monti et al., “Green Optical Networks: Power Savings versus Network Performance,” Green Communications: Principles, Concepts and Practice, 2015.
+[6]M. Ortin et al., “Partitioning Strategies of Wavelength-Routed Optical Networks-on-Chip for Laser Power Minimization,” in 2015 Workshop on Exploiting Silicon Photonics for Energy-Efficient High Performance Computing (SiPhotonics), 2015.
+[7]J. Pang, C. Dwyer, and A. R. Lebeck, “More is Less, Less is More: Molecular-Scale Photonic NoC Power Topologies,” in Proceedings of the Twentieth International Conference on Architectural Support for Programming Languages and Operating Systems, 2015.
+[8]J. Pang, C. Dwyer, and A. R. Lebeck, “mNoC: Large Nanophotonic Network-on-Chip Crossbars with Molecular Scale Devices,” J. Emerg. Technol. Comput. Syst., 2015.
+[9]S. Pasricha, “Integrated photonics in future multicore computing,” in Green Computing Conference and Sustainable Computing Conference (IGSC), 2015 Sixth International, 2015.
+[10]P. Pintus, F. Gambini, S. Faralli, F. Di Pasquale, I. Cerutti, and N. Andriolli, “Ring Versus Bus: A Theoretical and Experimental Comparison of Photonic Integrated NoC,” Lightwave Technology, Journal of, 2015.
+[11]C. V. Poulton, P. Dong, and Y.-K. Chen, “Photoresistive Microring Heater with Resonance Control Loop,” 2015.
+[12]C. Qin, B. Guan, R. P. Scott, R. Proietti, N. K. Fontaine, and S. B. Yoo, “Experimental Demonstration of 3D Elastic Optical Networking in Space, Time and Frequency,” in CLEO: Science and Innovations, 2015.
+[13]W. D. Sacher, Y. Huang, G.-Q. Lo, and J. K. S. Poon, “Multilayer Silicon Nitride-on-Silicon Integrated Photonic Platforms and Devices,” Journal of Lightwave Technology, 2015.
+[14]H. Shabani, A. Roohi, A. Reza, M. Reshadi, N. Bagherzadeh, and R. Demara, “Loss-Aware Switch Design and Non-Blocking Detection Algorithm for Intra-Chip Scale Photonic Interconnection Networks,” IEEE Transactions on Computers, 2015.
+[15]M. A. I. Sikder, A. K. Kodi, M. Kennedy, S. Kaya, and A. Louri, “OWN: Optical and Wireless Network-on-Chip for Kilo-core Architectures,” in High-Performance Interconnects (HOTI), 2015 IEEE 23rd Annual Symposium on, 2015.
+[16]C. Sun et al., “Single-chip microprocessor that communicates directly using light,” Nature, 2015.
+[17]S. Sun, A. H. A. Badawy, V. Narayana, T. El-Ghazawi, and V. J. Sorger, “The Case for Hybrid Photonic Plasmonic Interconnects (HyPPIs): Low-Latency Energy-and-Area-Efficient On-Chip Interconnects,” IEEE Photonics Journal, 2015.
+[18]F. Teysseyre, D. Navarro, I. O’Connor, F. Cascio, F. Cenni, and O. Guillaume, “Fast optical simulation from a reduced set of impulse responses using SystemC-AMS,” in Design, Automation Test in Europe Conference Exhibition (DATE), 2015, 2015.
+[19]J. Tsai, Z. Wang, Y. Pan, D. C. Kilper, and L. Pavel, “Stability analysis in a ROADM-based multi-channel quasi-ring optical network,” Optical Fiber Technology, 2015.
+[20]M. T. Wade et al., “Scaling Zero-Change Photonics: An Active Photonics Platform in a 32 nm Microelectronics SOI CMOS Process,” 2015.
+[21]K. Wang, H. Gu, Y. Yang, and K. Wang, “Optical interconnection network for parallel access to multi-rank memory in future computing systems,” Optics Express, 2015.
+[22]X. Wang, H. Gu, Y. Yang, K. Wang, and Q. Hao, “RPNoC: A Ring-Based Packet-Switched Optical Network-on-Chip,” IEEE Photonics Technology Letters, 2015.
+[23]R. Wu et al., “Variation-Aware Adaptive Tuning for Nanophotonic Interconnects,” in Proceedings of the IEEE/ACM International Conference on Computer-Aided Design, 2015.
+[24]Y. Xia et al., “Reconfigurable non-blocking 4-port silicon thermo-optic optical router based on Mach-Zehnder optical switches,” in 2015 IEEE 12th International Conference on Group IV Photonics (GFP), 2015.
+[25]C. Xie et al., “Single-VCSEL 100-Gb/s Short-Reach System Using Discrete Multi-Tone Modulation and Direct Detection,” 2015.
+[26]E. Yaghoubi, M. Reshadi, and M. Hosseinzadeh, “Mach–Zehnder-based optical router design for photonic networks on chip,” Optical Engineering, 2015.
+[27]L. Yang, H. Jia, Y. Zhao, and Q. Chen, “Reconfigurable non-blocking four-port optical router based on microring resonators,” Optics Letters, 2015.
+[28]Y. Yoshida et al., “SDN-Based Network Orchestration of Variable-Capacity Optical Packet Switching Network Over Programmable Flexi-Grid Elastic Optical Path Network,” Journal of Lightwave Technology, 2015.
+[29]K. Zhu, B. Zhang, W. Tan, and H. Gu, “Votex: A non-blocking optical router design for 3D Optical Network on Chip,” in 2015 14th International Conference on Optical Communications and Networks (ICOCN), 2015.
+[30]A. K. K. Ziabari, J. L. Abellán, R. Ubal, C. Chen, A. Joshi, and D. Kaeli, “Leveraging silicon-photonic noc for designing scalable gpus,” in Proceedings of the 29th ACM on International Conference on Supercomputing, 2015.
+
