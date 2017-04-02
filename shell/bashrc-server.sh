@@ -239,7 +239,7 @@ function scpxq {
    scp $1 xuanqi@$2.ece.ust.hk:$3
 }
 #git
-alias gitcd="cd ~/Study/Scripts && git status"
+alias gitcd="cd ~/Software/Scripts && git status"
 alias gits="git status"
 alias gita="git add"
 alias gitpull="git pull"
