@@ -1,0 +1,17 @@
+#four parts pane -> server-processor monitor
+#http://stackoverflow.com/questions/19711004/how-to-execute-command-after-opening-new-tmux-session
+
+splitw -h -p 66
+splitw -h
+
+selectp -t 2
+splitw -v
+
+selectp -t 1
+splitw -v
+
+
+selectp -t 0
+splitw -v
+
+

@@ -383,7 +383,7 @@ function ssh-server() {
     then
         servername="cecilia@219.223.173.91 -p 2222"
     else
-        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
+        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,iron - other four: chirp fantasy sunlight
     fi
 
     ssh -X $servername
@@ -452,6 +452,29 @@ alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
+
+tmuxsk() {
+    cmdarg=${@:2} # all arg, from the second
+    tmux send-keys -t "$1" "$cmdarg" Enter
+}
+
+tmuxskinit() {
+    SERV=(passion young rostam magic iron)
+    NUM=$(($(tmux list-panes | wc -l)-2))   #init-0
+    for ((i=0; i<=$NUM; i++))
+    do
+        tmuxsk $((i+1)) "ssh"${SERV[i]}
+    done
+}
+
+tmuxskall() {
+    NUM=$(($(tmux list-panes | wc -l)-2))   #init-0
+    for ((i=0; i<=$NUM; i++))
+    do
+        tmuxsk $((i+1)) "$@"
+    done
+}
+
 
 # synergy
 alias synergysetup="synergy --config ~/_synergy.conf"
