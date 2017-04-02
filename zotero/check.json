@@ -1,0 +1,48 @@
+[
+	{
+		"id": "http://zotero.org/users/2643828/items/HECSBS8P",
+		"type": "paper-conference",
+		"title": "Photonic designs with EDA approach: A novel methodology for curve design validation",
+		"container-title": "Summer Topicals Meeting Series (SUM), 2015",
+		"page": "29-30",
+		"source": "IEEE Xplore",
+		"event": "Summer Topicals Meeting Series (SUM), 2015",
+		"abstract": "Whereas traditional EDA tools are limited to verifying Manhattan layout designs, we implement a methodology and flow with the existing tools to verify curvilinear layout design features that are crucial to photonic integrated circuit functional validation.",
+		"DOI": "10.1109/PHOSST.2015.7248177",
+		"shortTitle": "Photonic designs with EDA approach",
+		"author": [
+			{
+				"family": "Cao",
+				"given": "Ruping"
+			},
+			{
+				"family": "Ferguson",
+				"given": "J."
+			},
+			{
+				"family": "Bakker",
+				"given": "A."
+			},
+			{
+				"family": "Korthorst",
+				"given": "T."
+			},
+			{
+				"family": "Arriordaz",
+				"given": "A."
+			},
+			{
+				"family": "O'Connor",
+				"given": "I."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					7
+				]
+			]
+		}
+	}
+]

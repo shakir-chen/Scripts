@@ -1,0 +1,151 @@
+/*
+ * This is code skeleton for COMP5112 assignment1
+ * Compile: mpic++ -o mpi_dijkstra mpi_dijkstra.cpp
+ * Run: mpiexec -n <number of processes> mpi_dijkstra <input file>, you will find the output in 'output.txt' file
+ */
+
+
+#include <string>
+#include <cassert>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <algorithm>
+#include "mpi.h"
+
+using std::string;
+using std::cout;
+using std::endl;
+using std::vector;
+
+
+/*
+ * utils is a namespace for utility functions
+ * including I/O (read input file and print results) and one matrix dimension convert(2D->1D) function
+ */
+namespace utils {
+    int N; //number of vertices
+    int *mat; // the adjacency matrix
+
+    /*
+     * convert 2-dimension coordinate to 1-dimension
+     */
+    int convert_dimension_2D_1D(int x, int y) {
+        return x * N + y;
+    }
+
+    int read_file(string filename) {
+        std::ifstream inputf(filename, std::ifstream::in);
+        inputf >> N;
+        assert(N < (1024 * 1024 *
+                    20)); // input matrix should be smaller than 20MB * 20MB (400MB, we don't have two much memory for multi-processors)
+        mat = (int *) malloc(N * N * sizeof(int));
+        for (int i = 0; i < N; i++)
+            for (int j = 0; j < N; j++) {
+                inputf >> mat[convert_dimension_2D_1D(i, j)];
+            }
+
+        return 0;
+    }
+
+    string format_path(int i, int *pred) {
+        string out("");
+        int current_vertex = i;
+        while (current_vertex != 0) {
+            string s = std::to_string(current_vertex);
+            std::reverse(s.begin(), s.end());
+            out = out + s + ">-";
+            current_vertex = pred[current_vertex];
+        }
+        out = out + std::to_string(0);
+        std::reverse(out.begin(), out.end());
+        return out;
+    }
+
+    int print_result(int *dist, int *pred) {
+        std::ofstream outputf("output.txt", std::ofstream::out);
+        outputf << dist[0];
+        for (int i = 1; i < N; i++) {
+            outputf << " " << dist[i];
+        }
+        for (int i = 0; i < N; i++) {
+            outputf << "\n";
+            if (dist[i] >= 1000000) {
+                outputf << "NO PATH";
+            } else {
+                outputf << format_path(i, pred);
+            }
+        }
+        outputf << endl;
+        return 0;
+    }
+}//namespace utils
+// you may add some helper functions here.
+
+
+
+void dijkstra(int my_rank, int N, int p, MPI_Comm comm, int *mat, int *all_dist, int *all_pred) {
+
+    //------your code starts from here------
+    int loc_N; // I need a local copy for N
+    int loc_n; //how many vertices I need to process.
+    int *loc_mat; //local matrix
+    int *loc_dist; //local distance
+    int *loc_pred; //local predecessor
+    bool *loc_visit; //local visit record array
+
+    //step 1: broadcast N
+
+    //step 2: find loc_n
+
+    //step 3: allocate local memory
+
+    //step 4: broadcast matrix mat
+
+    //step 4: dijkstra algorithm
+
+    //step 5: retrieve results back
+    //Hint: use MPI_Gather(or MPI_Gatherv) function
+
+    //step 6: remember to free memory
+
+
+    //------end of your code------
+}
+
+int main(int argc, char **argv) {
+    assert(argc > 1 && "Input file was not found!");
+    string filename = argv[1];
+    assert(utils::read_file(filename) == 0);
+
+    //`all_dist` stores the distances and `all_pred` stores the predecessors
+    int *all_dist;
+    int *all_pred;
+    all_dist = (int *) calloc(utils::N, sizeof(int));
+    all_pred = (int *) calloc(utils::N, sizeof(int));
+
+    //MPI initialization
+    MPI_Init(&argc, &argv);
+    MPI_Comm comm;
+
+    int p;//number of processors
+    int my_rank;//my global rank
+
+    comm = MPI_COMM_WORLD;
+    MPI_Comm_size(comm, &p);
+    MPI_Comm_rank(comm, &my_rank);
+
+    dijkstra(my_rank, utils::N, p, comm, utils::mat, all_dist, all_pred);
+
+    if (my_rank == 0)
+        utils::print_result(all_dist, all_pred);
+    MPI_Finalize();
+
+    free(utils::mat);
+    free(all_dist);
+    free(all_pred);
+
+    return 0;
+}

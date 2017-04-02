@@ -1,0 +1,273 @@
+/*
+ * This is code skeleton for COMP5112 assignment1
+ * Compile: mpic++ -o mpi_dijkstra mpi_dijkstra.cpp
+ * Run: mpiexec -n <number of processes> mpi_dijkstra <input file>, you will find the output in 'output.txt' file
+ */
+
+
+#include <string>
+#include <cassert>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <algorithm>
+#include "mpi.h"
+
+using std::string;
+using std::cout;
+using std::endl;
+using std::vector;
+
+
+/*
+ * utils is a namespace for utility functions
+ * including I/O (read input file and print results) and one matrix dimension convert(2D->1D) function
+ */
+namespace utils {
+    int N; //number of vertices
+    int *mat; // the adjacency matrix
+
+    /*
+     * convert 2-dimension coordinate to 1-dimension
+     */
+    int convert_dimension_2D_1D(int x, int y) {
+        return x * N + y;
+    }
+
+    int read_file(string filename) {
+        std::ifstream inputf(filename, std::ifstream::in);
+        inputf >> N;
+        assert(N < (1024 * 1024 *
+                    20)); // input matrix should be smaller than 20MB * 20MB (400MB, we don't have two much memory for multi-processors)
+        mat = (int *) malloc(N * N * sizeof(int));
+        for (int i = 0; i < N; i++)
+            for (int j = 0; j < N; j++) {
+                inputf >> mat[convert_dimension_2D_1D(i, j)];
+            }
+
+        return 0;
+    }
+
+    string format_path(int i, int *pred) {
+        string out("");
+        int current_vertex = i;
+        while (current_vertex != 0) {
+            string s = std::to_string(current_vertex);
+            std::reverse(s.begin(), s.end());
+            out = out + s + ">-";
+            current_vertex = pred[current_vertex];
+        }
+        out = out + std::to_string(0);
+        std::reverse(out.begin(), out.end());
+        return out;
+    }
+
+    int print_result(int *dist, int *pred) {
+        std::ofstream outputf("output.txt", std::ofstream::out);
+        outputf << dist[0];
+        for (int i = 1; i < N; i++) {
+            outputf << " " << dist[i];
+        }
+        for (int i = 0; i < N; i++) {
+            outputf << "\n";
+            if (dist[i] >= 1000000) {
+                outputf << "NO PATH";
+            } else {
+                outputf << format_path(i, pred);
+            }
+        }
+        outputf << endl;
+        return 0;
+    }
+}//namespace utils
+
+// you may add some helper functions here.
+int find_global_minimum(int my_rank, MPI_Comm comm, int *loc_dist, bool *loc_visit, int loc_n, int *glob_u_p){
+    int loc_min[2] = {INT_MAX,-1};      //min, u , rank
+    int loc_u;
+    int glob_min[2];
+    for (int ii = 0; ii < loc_n; ii++) {
+        if (!loc_visit[ii]) {
+            if (loc_dist[ii] < loc_min[0]) {
+                loc_min[0] = loc_dist[ii];
+                loc_u = ii;
+            }
+        }
+    }
+    loc_min[1]=my_rank;
+
+    //find the lowest value and the position    ; MPI pair
+    MPI_Allreduce(loc_min, glob_min, 1, MPI_2INT, MPI_MINLOC, comm);            //only 2 can pair, ridulous
+#ifdef DEBUG
+    // if (my_rank ==0 )
+        // cout << "\n Minmal Distance " << glob_min[0] << " from PROC " << glob_min[1] << "\n";
+#endif
+    //find the broadcast and valid
+    if (my_rank == glob_min[1])
+        loc_visit[loc_u]=true;
+        *glob_u_p = glob_min[1]*loc_n + loc_u;
+        MPI_Bcast(glob_u_p, 1, MPI_INT, glob_min[1], comm);
+
+    // cout << "PROC "<< my_rank <<":\tglob_u :" << *glob_u_p << "\n";
+    return glob_min[0];     //dist_u
+}
+
+int update_table(int my_rank,int *loc_dist, int *loc_pred, bool *loc_visit, int loc_n, int dist_u,int glob_u){
+    for (int ii = 0; ii < loc_n; ii++) {
+#ifdef DEBUG
+        /* cout<<"PROC "<<my_rank<<"loc_visit "; */
+        // printf(loc_visit[ii]? "True":"False");
+        /* cout << "@" << ii << "\n"; */
+#endif
+        if (!loc_visit[ii]) {
+            int new_dist = dist_u+ utils::mat[utils::convert_dimension_2D_1D(glob_u, my_rank*loc_n +ii)];
+
+#ifdef DEBUG
+                // cout<<"PROC "<<my_rank<<":\tdist "<<loc_dist[ii] << "@"<< ii;
+                // cout<<"\t\tnew_dist "<<new_dist<<"\n";
+#endif
+            if (new_dist < loc_dist[ii]) {
+                loc_dist[ii] = new_dist;
+                loc_pred[ii] = glob_u;
+            }
+        }
+    }
+}
+
+void dijkstra(int my_rank, int N, int p, MPI_Comm comm, int *mat, int *all_dist, int *all_pred) {
+
+    //------your code starts from here------
+    int loc_N; // I need a local copy for N
+    int loc_n; //how many vertices I need to process.
+    int *loc_mat; //local matrix
+    int *loc_dist; //local distance
+    int *loc_pred; //local predecessor
+    bool *loc_visit; //local visit record array
+
+    //step 1: broadcast N
+    MPI_Bcast(&N, 1, MPI_INT, 0, comm);
+    loc_N=N;
+
+    //step 2: find loc_n
+    loc_n=loc_N/p;
+    if (loc_N != loc_n*p){
+        cout << "Error: Matrix_N/process_number is not an integer" ;
+        MPI_Finalize();
+        exit(-1);
+    }
+
+    //step 3: allocate local memory
+    loc_dist=(int *) malloc(loc_n*sizeof(int));
+    loc_pred=(int *) malloc(loc_n*sizeof(int));
+    loc_visit=(bool *) malloc(loc_n*sizeof(bool));
+
+    //step 4: broadcast matrix mat      # xuanqi: scatterv may be better, fails
+    MPI_Bcast(mat, loc_N*loc_N, MPI_INT, 0, comm);
+    loc_mat=mat;
+#ifdef DEBUG
+        printf("Proc %d : ", my_rank);
+        for(int i=0; i<loc_N;i++){
+            for(int j=0; j<loc_N;j++){
+                printf("\t %d", loc_mat[utils::convert_dimension_2D_1D(i, j)]);
+            }
+            printf("\n");
+        }
+#endif
+    // MPI_Barrier(comm);      //? need or not ?
+
+    //step 4: dijkstra algorithm
+    for (int i = 0; i < loc_n; i++) {
+        loc_dist[i] = loc_mat[utils::convert_dimension_2D_1D(0, my_rank*loc_n+i)];
+        loc_pred[i] = 0;
+        loc_visit[i] = false;
+    }
+
+    if (my_rank == 0)
+        loc_visit[0] = true;
+
+    int glob_u;
+
+    for (int i = 1; i < loc_N; i++) {
+#ifdef DEBUG
+        printf("Proc %d : ", my_rank);
+        printf("\nloc_dist/ loc_pred");
+        for(int jj=0; jj<loc_n ; jj++){
+            if (!loc_visit[jj]){
+                printf("\t %d", loc_dist[jj]);
+                printf("/%d", loc_pred[jj]);
+            } else {
+                printf("\t -/-");
+            }
+        }
+        printf("\n");
+#endif
+
+        int u_dist = find_global_minimum(my_rank, comm, loc_dist, loc_visit, loc_n, &glob_u);
+        update_table(my_rank, loc_dist, loc_pred, loc_visit, loc_n,u_dist, glob_u);
+
+        // MPI_Barrier(comm);
+    }
+    // MPI_Finalize();
+    // exit(-1);
+
+
+    //step 5: retrieve results back
+    //Hint: use MPI_Gather(or MPI_Gatherv) function
+    MPI_Gather(loc_dist,loc_n,MPI_INT,all_dist,loc_n,MPI_INT,0,comm);
+    MPI_Gather(loc_pred,loc_n,MPI_INT,all_pred,loc_n,MPI_INT,0,comm);
+    //step 6: remember to free memory
+
+    free(loc_dist);
+    free(loc_pred);
+    free(loc_visit);
+    // free(loc_mat);
+    //------end of your code------
+}
+
+int main(int argc, char **argv) {
+    assert(argc > 1 && "Input file was not found!");
+    string filename = argv[1];
+    assert(utils::read_file(filename) == 0);
+
+
+    //`all_dist` stores the distances and `all_pred` stores the predecessors
+    int *all_dist;
+    int *all_pred;
+    all_dist = (int *) calloc(utils::N, sizeof(int));
+    all_pred = (int *) calloc(utils::N, sizeof(int));
+
+    //MPI initialization
+    MPI_Init(&argc, &argv);
+    MPI_Comm comm;
+    int p;//number of processors
+    int my_rank;//my global rank
+
+    comm = MPI_COMM_WORLD;
+    MPI_Comm_size(comm, &p);
+    MPI_Comm_rank(comm, &my_rank);
+
+#ifdef DEBUG
+    if(my_rank == 0){
+        printf("%d \n", utils::N);
+        for(int i=0; i<utils::N;i++){
+           for(int j=0; j<utils::N;j++)
+               printf("%d ", utils::mat[utils::convert_dimension_2D_1D(i, j)]);
+            printf("\n");
+        }
+    }
+#endif
+
+    dijkstra(my_rank, utils::N, p, comm, utils::mat, all_dist, all_pred);
+
+    if (my_rank == 0)
+        utils::print_result(all_dist, all_pred);
+    MPI_Finalize();
+
+    free(utils::mat);
+    free(all_dist);
+    free(all_pred);
+
+    return 0;
+}

@@ -6,4 +6,5 @@ then
     # echo "Zotero Init"
     ~/Software/Zotero/Zotero_linux-x86_64/zotero & #2>/dev/null
 fi
-curl -s http://localhost:23119/better-bibtex/cayw?format=citet
+# curl -s http://localhost:23119/better-bibtex/cayw?format=citet
+curl -s http://localhost:23119/better-bibtex/cayw?format=cite
