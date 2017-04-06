@@ -351,6 +351,7 @@ alias sshstd="ssh-server std"
 alias sshcs="ssh-server cs"
 alias sshdaisy="ssh-server daisy "
 alias sshfei="ssh-server fei"
+alias sshhpc="ssh-server hpc"
 
 function sshcopyid(){
     cd ~/.ssh
@@ -382,6 +383,9 @@ function ssh-server() {
     elif [ "$1" = "fei" ]
     then
         servername="cecilia@219.223.173.91 -p 2222"
+    elif [ "$1" = "hpc" ]
+    then
+        servername="ztianab@hpc2.ust.hk"            #Name + Year+Date, Name First Character Big Case
     else
         servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,iron - other four: chirp fantasy sunlight
     fi
@@ -618,6 +622,7 @@ alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
+alias cdfdtd="cd ~/Research/FDTD/"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
@@ -686,6 +691,11 @@ alias importh="import helper.png"
 
 #qmake
 alias qmakep="qmake -project -o"
+
+#convert, image process
+alias convertvertapd="convert -append"
+alias converthoriapd="convert +append"
+
 
 # #help-doc
 # function helpterm() {

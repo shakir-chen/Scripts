@@ -521,6 +521,41 @@ LanguageTool => work for plain text
 :hardcopy > file.pdf
 :Tohtml     # but seem ugly
 
+3. Install Plugin using Vundle
+Plugin Management : ~/.vim/vimrc.bundles
++ install vundle (done)
+    ```
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ```
++ update vimrc, or .vim/vimrc.bundles
+    ```
+    " @.vim/vimrc.bundles, gmarik/Vundle.vim is the half part of github.com/gmarik/Vundle.vim
+    Plugin 'gmarik/Vundle.vim
+    ```
++ :PluginStatus, and find an error, then use PluginInstall SchemeMode
+
+<http://www.adamwadeharris.com/how-to-switch-from-vundle-to-vim-plug/>
+
+4. filetype detect
+```
+:set filetype=scheme
+```
+better, auto detect:
+```
+
+```
+autocmd BufRead,BufNewFile *.ctl set filetype=scheme
+```
+
+<https://github.com/rust-lang/rust.vim/issues/46>
+
+5. highlight tools
+```
+autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
+autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|DONE\|XXX\|BUG\|HACK\)')
+```
+
 #### English - Check Tools
 1. Download:vim-plugin
     <http://www.vim.org/scripts/script.php?script_id=3223>
@@ -1549,6 +1584,9 @@ vim /etc/security/limits.conf
 [username] hard priority 1          # pariticular priority
 ```
 <https://www.nixtutor.com/linux/changing-priority-on-linux-processes/>
+
+### 58. guile (scheme, used in MIT MEEP)
+
 
 #### ERROR
 1.TIFF4 depency:
