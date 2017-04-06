@@ -1,5 +1,6 @@
 # added by Anaconda 2.2.0 installer
 # added by git Xuanqi
+<<<<<<< HEAD
 export PATH=/home/ztianab/Linux/bin:${PATH}
 export PATH=/home/ztianab/Study/Scripts/linux-bin:${PATH}
 export LD_LIBRARY_PATH=/home/ztianab/Linux/lib:${LD_LIBRARY_PATH}
@@ -8,6 +9,16 @@ export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 
 # Qemu in Passion -xuanqi
 export PKG_CONFIG_PATH=/home/ztianab/Software/Qemu/dependent_library/lib/pkgconfig/
+=======
+export PATH=/home/xuanqi/Linux/bin:${PATH}
+export PATH=/home/xuanqi/Study/Scripts/linux-bin:${PATH}
+export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib64:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+
+# Qemu in Passion -xuanqi
+export PKG_CONFIG_PATH=/home/xuanqi/Software/Qemu/dependent_library/lib/pkgconfig/
+>>>>>>> 69b58438935e86f8bb8b00506ca613994fe0ec3b
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}
 export PKG_CONFIG_PATH=/lib64:${PKG_CONFIG_PATH}
 export PKG_CONFIG_PATH=/lib:${PKG_CONFIG_PATH}
