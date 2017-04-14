@@ -163,6 +163,7 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
+
 # grep
 #alias grep --color=auto
 alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
@@ -195,6 +196,7 @@ alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
 alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
 alias vimos="vim ~/Software/Scripts/help-doc/OS-learn.md"
+alias vimbus="vim ~/Dropbox/Linux/notes/business.md"
 
 alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
@@ -627,6 +629,10 @@ alias cdfdtd="cd ~/Research/FDTD/"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
 
+# autojump
+. /usr/share/autojump/autojump.sh
+# https://www.thinkingmedia.ca/2014/10/how-to-install-autojump-on-ubuntu-14/
+
 # mv tmp
 alias mvscreenshot="mv /tmp/latest-screenshot.png "
 function mvtmp(){
@@ -684,6 +690,13 @@ alias xclipscreenshot="xclip -selection clipboard -t image/png -o >"
 export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
+
+#wget
+function wgetpdf(){
+    PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
+    echo $PDFNAME
+    wget $PDFNAME
+}
 
 #scrot
 alias scrots="scrot -s"
