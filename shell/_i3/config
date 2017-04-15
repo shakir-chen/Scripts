@@ -204,6 +204,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym --release $mod+p exec --no-startup-id import /tmp/latest-screenshot.png      # print screen
+bindsym $mod+x exec --no-startup-id feh -x ~/.i3/helper.png
+# bindsym $mod+x exec ~/.i3/helper.sh #failed
+
+
 # volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 -- +10% && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -- -10% && killall -SIGUSR1 i3status
@@ -228,7 +233,12 @@ bar {
         }
 }
 
+for_window [class="feh" instance="feh"] floating enable
 for_window [class="Thunderbird" instance="Msgcompose"] floating enable
 for_window [class="Thunderbird" instance="Calendar"] floating enable
+
+for_window [class="Zotero" instance="Toplevel"] floating enable move up 400px
+for_window [class="Firefox" instance="Zotero"] floating enable move up 400px
+
 # for_window [class="Thunderbird" window_role="pop-up"] floating enable
 # for_window [window_role="pop-up"] floating enable

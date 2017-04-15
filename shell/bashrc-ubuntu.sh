@@ -87,8 +87,6 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-source ~/.helprc
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -129,7 +127,8 @@ fi
 #export LD_LIBRARY_PATH=/home/rafael/softwares/anaconda/lib:${LD_LIBRARY_PATH}
 # added by git Xuanqi
 export PATH=~/Linux/bin:${PATH}
-export PATH=~/Study/Scripts/linux-bin:${PATH}
+export PATH=~/Software/Scripts/linux-bin:${PATH}
+export PATH=~/Software/Franz/:${PATH}
 export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
@@ -138,12 +137,15 @@ export BOOST_ROOT=~/Software/boost/include
 # cheat add
 export EDITOR=/usr/bin/vim
 
+export PKG_CONFIG_PATH=/usr/bin/
+
 #PS1='$ '
 #PS1='\[\033[33m\]\w\[\033[36m\]\[\033[0m\]$]]]'
 
 #RED='\[\033[0;36m\]]'
 #WHITE='\[\033[1;37m\]]'
 #PS1='${RED}\H:\W${WHITE}$ '
+
 
 #PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
 PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
@@ -157,6 +159,9 @@ stty -ixon  # change ctrl-s to search
 export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 
+# Setup Scripts =====
+# source ~/.helprc
+# bash Soft-Open.sh       # Setup Programs
 
 # grep
 #alias grep --color=auto
@@ -172,8 +177,13 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 # ls
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
+alias lsf="ls -p --color=tt | grep -v / | tr '\r\n' '\t'"        # list only file, tr translate or delete, tr -d
+alias lshf="ls -pa --color=tty | grep -v /"     # list include hidden file
+alias lsd="ls -p --color=tty | grep /"     # list include hidden file
+alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
-# alias vim="vi"
+
+alias vim="vi"
 function vimbin(){
     vim $(which $1)
 }
@@ -183,7 +193,9 @@ alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
-alias vimlife="vim ~/Study/Scripts/help-doc/linux-Vim-Life.md"
+alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
+alias vimos="vim ~/Software/Scripts/help-doc/OS-learn.md"
+alias vimbus="vim ~/Dropbox/Linux/notes/business.md"
 
 alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
@@ -193,6 +205,7 @@ alias volumedown="pactl set-sink-volume 1 -10%"
 # }
 
 alias makee="make edit"
+alias maker="make run"
 alias xpropwm="xprop | grep WM_CLASS"
 
 # program open in ubuntu
@@ -255,17 +268,29 @@ alias py2.7="python2.7"
 # }
 
 # Zotero
-# alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
+alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 
 #Set Caps to Control Key
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+# alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 
-#xqexit() {
-#    exit
-#    exit
-#}
+alias xrandrinit="xrandr --output VIRTUAL1 --off"
+alias xrandrmodipad="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
+alias xrandrviripad="xrandr --output VIRTUAL1 --mode 808x1080_60.00 --right-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+# alias xrandrmodipad="xrandr --newmode '1536x2048_60.00' 270.55 1536 1664 1832 2128 2048 2049 2052 2119 -HSync +Vsync"
+# alias xrandrviripad="xrandr --addmode VIRTUAL1 '1536x2048_60.00'; xrandr --output VIRTUAL1 --rotate left --mode 1536x2048_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+alias xrandrmodiphone="xrandr --newmode '752x1334_60.00' 84.85 752 808 888 1024 1334 1335 1338 1381 -HSync +Vsync"
+alias xrandrviriphone="xrandr --output VIRTUAL2 --mode 752x1334_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+# vnc
+alias vncstart="x11vnc -usepw"
+alias vncipad="x11vnc -clip 808x1080+1921+0"
+alias vnciphone="x11vnc -clip 752x1334+0+0"
+# alias vncipad="x11vnc -clip 1536x2048+0+0"
+# alias vncipad="x11vnc -clip 1536x2048+1921+0"
 
 # function yEd(){
    # cd ~/Software/yEd
@@ -291,6 +316,9 @@ alias aptcache="apt-cache show"
 
 # export SSH_CHECK_VALUE=0
 function sshcheck(){
+    if [ "$USER" == "shakir" ] ; then
+        return
+    fi
     licenseinfo=$(ssh-add -l | grep 'no identities')
     # if [[ "$licenseinfo" == "" ]];then        # bash
     if [ ! -z "$licenseinfo" ];then       #shell
@@ -301,6 +329,18 @@ function sshcheck(){
     fi
 }
 
+# sh
+alias sh="bash"
+# open and close touchpad
+function xinputclosetp(){
+    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    xinput --disable $num
+}
+function xinputopentp(){
+    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    xinput --enable $num
+}
+
 # ssh
 alias sshpassion="ssh-server passion"
 alias sshrostam="ssh-server rostam"
@@ -308,6 +348,16 @@ alias sshmagic="ssh-server magic"
 alias sshyoung="ssh-server young"
 alias sshiron="ssh-server iron"
 alias sshlab="ssh-server lab"
+alias sshstd="ssh-server std"
+alias sshcs="ssh-server cs"
+alias sshdaisy="ssh-server daisy "
+alias sshfei="ssh-server fei"
+alias sshhpc="ssh-server hpc"
+
+function sshcopyid(){
+    cd ~/.ssh
+    ssh-copy-id -i i3_rsa_id.pub xuanqi@$1.ece.ust.hk
+}
 
 function ssh-server() {
     sshcheck
@@ -316,13 +366,29 @@ function ssh-server() {
     if [ "$1" = "lab" ]
     then
         echo "here"
-        servername="xuanqi@143.89.135.201 -p 2222"
+        # servername="xuanqi@143.89.135.212 -p 2222"
+        servername="xuanqi@143.89.131.95 -p 2222"
         # ssh -XfC -c blowfish-cbc $servername
     elif [ "$1" = "zhehui" ]
     then
         servername="zhehui@rostam.ece.ust.hk"
+    elif [ "$1" = "cs" ]
+    then
+        servername="xchenbr@csl2wk10.cse.ust.hk"
+    elif [ "$1" = "std" ]
+    then
+        servername="std01@143.89.131.91"
+    elif [ "$1" = "daisy" ]
+    then
+        servername="daisy@143.89.135.219 -p 2222"
+    elif [ "$1" = "fei" ]
+    then
+        servername="cecilia@219.223.173.91 -p 2222"
+    elif [ "$1" = "hpc" ]
+    then
+        servername="ztianab@hpc2.ust.hk"            #Name + Year+Date, Name First Character Big Case
     else
-        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
+        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,iron - other four: chirp fantasy sunlight
     fi
 
     ssh -X $servername
@@ -333,7 +399,13 @@ function ssh-server() {
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
+function scpstd(){
+    scp $1 std01@143.89.131.91:~/$2
+}
 
+function scpcs(){
+    scp $1 xchenbr@csl2wk10.cse.ust.hk:~/$2
+}
 #ssh functions
 function scpxq {
    scp $1 xuanqi@$2.ece.ust.hk:$3
@@ -372,6 +444,7 @@ alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
 alias vncgeom="vncserver -geometry 1080x990"
 alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
+alias xvnckill="x11vnc -clear-all"
 
 # tmux      --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
@@ -385,6 +458,32 @@ alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
 
+tmuxsk() {
+    cmdarg=${@:2} # all arg, from the second
+    tmux send-keys -t "$1" "$cmdarg" Enter
+}
+
+tmuxskinit() {
+    SERV=(passion young rostam magic iron)
+    NUM=$(($(tmux list-panes | wc -l)-2))   #init-0
+    for ((i=0; i<=$NUM; i++))
+    do
+        tmuxsk $((i+1)) "ssh"${SERV[i]}
+    done
+}
+
+tmuxskall() {
+    NUM=$(($(tmux list-panes | wc -l)-2))   #init-0
+    for ((i=0; i<=$NUM; i++))
+    do
+        tmuxsk $((i+1)) "$@"
+    done
+}
+
+
+# synergy
+alias synergysetup="synergy --config ~/_synergy.conf"
+# alias ="synergy --config ~/_synergy.conf"
 # svn
 alias svn="sshcheck; svn"
 alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
@@ -392,8 +491,10 @@ alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
-alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
-alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
+# alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
+alias svnrefreshdel="svn st | grep '^!' | sed -e 's/!\s\+//' | xargs svn delete --force"       #delete
+# alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
+alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 
 function svnsubmit(){
     cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
@@ -405,6 +506,9 @@ function svnsubmit(){
 #files
 
 #svn ls
+
+# shadowsocks
+alias sockset="sslocal -c /etc/shadowsocks.json "
 
 # cd
 alias cddairy="cd ~/Research/Dairy/latex"
@@ -438,7 +542,7 @@ alias wmctrlar="wmctrl -r :ACTIVE: -b remove," #window move control active
 alias wmctrls="wmctrl -r :SELECT: -e " #window move control select
 
 #git
-alias gitcd="cd ~/Study/Scripts && git status"
+alias gitcd="cd ~/Software/Scripts && git status"
 alias gits="git status"
 alias gita="git add"
 alias gitpull="sshcheck; git pull"
@@ -458,7 +562,7 @@ alias ftpi="ftp ihome.ust.hk"
 # ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
 
 #nautilus
-alias nautilus="nautilus --no-desktop&"
+alias nautilus="nautilus --no-desktop"
 #Franz
 alias franz="~/Software/Franz/Franz &"
 
@@ -483,10 +587,10 @@ function set-tab-title() {
 #Move and Create a link in script directory
 function gitln(){
     filefullpath=$(readlink -f $1)
-    mv --backup=t $1 ~/Study/Scripts/linux-bin/
-    ln -s ~/Study/Scripts/linux-bin/$1 .
-    echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath"
-    echo "ln -s ~/Study/Scripts/linux-bin/$1 $filefullpath" >> ~/Study/Scripts/linux-bin/ubuntu-setup.sh
+    mv --backup=t $1 ~/Software/Scripts/linux-bin/
+    ln -s ~/Software/Scripts/linux-bin/$1 .
+    echo "ln -s ~/Software/Scripts/linux-bin/$1 $filefullpath"
+    echo "ln -s ~/Software/Scripts/linux-bin/$1 $filefullpath" >> ~/Software/Scripts/linux-bin/ubuntu-setup.sh
 }
 
 #Move and Create a link in script directory
@@ -511,13 +615,43 @@ alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Research/Jade"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
-alias cdgit="cd ~/Study/Scripts"
+alias cdgit="cd ~/Software/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
-alias cdsvn="cd ~/Research/svn/Discussion/Xuanqi\ Chen/"
-alias cdcourse="cd ~/Course"
-alias cdzotero="cd ~/.mozilla/firefox/ltltr2ow.default/zotero"
+alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
+alias cdcourse="cd ~/Dropbox/1_Course"
+alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
+alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
+alias cdfdtd="cd ~/Research/FDTD/"
+# alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
+alias dirsx="dirs | xclip"
+
+# autojump
+. /usr/share/autojump/autojump.sh
+# https://www.thinkingmedia.ca/2014/10/how-to-install-autojump-on-ubuntu-14/
+
+# mv tmp
+alias mvscreenshot="mv /tmp/latest-screenshot.png "
+function mvtmp(){
+    mv $1 ~/Dropbox/Linux/tmp
+}
+
+# rm
+function rm(){
+    case $1 in
+        "-f") argnum=2
+            mv ${@:2:10} ~/Trash/Force;;
+        "-rf") argnum=2
+            mv ${@:2:10} ~/Trash/Force;;
+        "-r") argnum=2
+            mv ${@:2:10} ~/Trash/Force;;
+        "-s") /bin/rm ${@:2:10} ;;
+        *) argnum=1
+            mv ${@:1:10} ~/Trash/Normal;;
+    esac
+}
 
 #ls optimize
 alias lst="ls -t"
@@ -532,6 +666,9 @@ alias lst3="ls -t | head -3"
   # TITLE="\[\e]2;$*\a\]"
   # PS1=${ORIG}${TITLE}
 # }
+
+# flux
+alias flux="./Software/flux/xflux -l 114.1 -g 22.3"
 
 # Xilinx-ISE
 alias isesource="source /opt/Xilinx/14.7/ISE_DS/settings64.sh"
@@ -553,8 +690,24 @@ export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
 
+#wget
+function wgetpdf(){
+    PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
+    echo $PDFNAME
+    wget $PDFNAME
+}
+
 #scrot
 alias scrots="scrot -s"
+alias importh="import helper.png"
+
+#qmake
+alias qmakep="qmake -project -o"
+
+#convert, image process
+alias convertvertapd="convert -append"
+alias converthoriapd="convert +append"
+
 
 # #help-doc
 # function helpterm() {

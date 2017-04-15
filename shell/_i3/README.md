@@ -28,3 +28,31 @@ If you are on Arch Linux (or Arch Linux based distributions), you might want to 
 ```
 
 When new package updates become available, the status bar will notify you, showing a shield symbol and the amount of new packages available.
+
+# Font Support
+http://tech.karbassi.com/2009/05/27/command-option-shift-symbols-in-unicode/
+
+# concky with image support
+failed
+taskbar - icons
+tray -icons
+
+## system tray (postpone)
+
+## Launchers:
+locate firefox.desktop , learn from yEd.desktop, but this will not add to system tray
+application locates at /usr/share/applications ; ~/.local/share/applications
+
+Desktop Icons<http://askubuntu.com/questions/40931/where-are-the-unity-launcher-desktop-files>
+<http://askubuntu.com/questions/575113/ubuntu-14-10-add-and-remove-icons-from-the-system-tray>
+
+# fantastic demons
+<http://daviddavioblue.deviantart.com/art/haxOS-Conky-454353060>
+
+<http://epsi-rns.github.io/desktop/2016/08/01/modularized-i3status-conky-lua-json.html>
+
+Ref:
+<http://conky.sourceforge.net/variables.html>
+i3bar-with concky
+<https://i3wm.org/docs/user-contributed/conky-i3bar.html>
+

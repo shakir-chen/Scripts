@@ -73,5 +73,8 @@
 	$else
 		{"full_text": "  AC only","color":"\#9C9C9C"},
 	$endif
-	{"full_text": "  ${time %a %d %b} ${time %H:%M} ", "color":"\#9C9C9C"}
+	{"full_text": "  ${time %a %d %b} ${time %H:%M} ", "color":"\#9C9C9C"},
+    {"full_text": "${exec ~/.i3/hkweather.sh}", "color":"\#9C9C9C"}
+    # {"image": "${image /home/shakir/.i3/img/pic76.png -p 20,20 -s 200x200}"} # failed, i3bar only support unicode
 	],
+    # ${image ~/.i3/img/pic76.png -p 20,20,-s 80x60 -f 86400}

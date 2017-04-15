@@ -1,9 +1,37 @@
 "3.16.0 (created: 2017/02/01 00:55:15)
 
+<<<<<<< HEAD
 cmap <C-p> <Up>
 command! -description="Open the browser console" bc :emenu Tools.Web Developer.Browser Console<CR>
 command! -description="Toggle developer tools" dev :normal <C-S-i>
 command! sourcerc :source ~/_vimperatorrc
+=======
+
+noremap j 10j
+noremap k 10k
+
+"au Fullscreen .* :set guioptions+=s
+source! "~/_vimperatorrc.local"
+
+set gui=none
+" vim: set ft=vimperator:
+
+
+noremap nn :set gui=none<CR>
+
+"=======Image========
+";I : select picture in a new tab, y copy, d close
+
+"=======Set Default Editor========
+"ctrl+i
+:set editor="gnome-terminal --disable-factory -x vim"
+"http://superuser.com/questions/186782/setting-an-external-editor-in-vimperator
+"=======Reader========
+noremap rr <C-A-r>
+
+"=======TileTab========
+"tileTabs.menuActions('new-2vert',null)
+>>>>>>> db390e8684e90b9e29a14579d4679807fa3fba3e
 command! tmuxsh :js tileTabs.menuActions('new-2vert',null)
 command! tmuxsv :emenu Tile.New Layout.2 Tabs - Horizontal
 map h gT
