@@ -157,6 +157,7 @@ stty -ixon  # change ctrl-s to search
 export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 
+
 # grep
 #alias grep --color=auto
 alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
@@ -663,3 +664,23 @@ alias scrots="scrot -s"
         # esac
     # fi
 # }
+
+#kinetic
+source /opt/ros/kinetic/setup.bash
+export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
+export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
+
+#opencv path
+export PKG_CONFIG_PATH=/usr/local/opencv/2.4.9/lib/pkgconfig:${PKG_CONFIG_PATH}
+export LD_LIBRARY_PATH=/usr/local/opencv/2.4.9/lib:${LD_LIBRARY_PATH}
+
+
+# export ROS_IP=219.223.173.91
+export ROS_IP=localhost
+export ROS_MASTER_URI=http://$ROS_IP:11311/
+
+#gdb
+ulimit -c unlimited
+
+
+
