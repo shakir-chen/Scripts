@@ -160,9 +160,8 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 
 # Setup Scripts =====
-source ~/.helprc
+# source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
-
 
 # grep
 #alias grep --color=auto
@@ -818,3 +817,23 @@ alias converthoriapd="convert +append"
         # esac
     # fi
 # }
+
+#kinetic
+source /opt/ros/kinetic/setup.bash
+export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
+export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
+
+#opencv path
+export PKG_CONFIG_PATH=/usr/local/opencv/2.4.9/lib/pkgconfig:${PKG_CONFIG_PATH}
+export LD_LIBRARY_PATH=/usr/local/opencv/2.4.9/lib:${LD_LIBRARY_PATH}
+
+
+# export ROS_IP=219.223.173.91
+export ROS_IP=localhost
+export ROS_MASTER_URI=http://$ROS_IP:11311/
+
+#gdb
+ulimit -c unlimited
+
+
+

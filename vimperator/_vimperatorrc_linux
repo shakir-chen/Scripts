@@ -1,8 +1,11 @@
-"3.12.0 (created: 2016/02/28 22:07:56)
-"firefox reload ~/_vimperatorrc : source ~/_vimperatorrc
-"Noremal Mode(n); Visual Mode(v); Insert Mode(i); Command-line Mode(c);
-":help noremap
+"3.16.0 (created: 2017/02/01 00:55:15)
 
+<<<<<<< HEAD
+cmap <C-p> <Up>
+command! -description="Open the browser console" bc :emenu Tools.Web Developer.Browser Console<CR>
+command! -description="Toggle developer tools" dev :normal <C-S-i>
+command! sourcerc :source ~/_vimperatorrc
+=======
 
 noremap j 10j
 noremap k 10k
@@ -28,61 +31,31 @@ noremap rr <C-A-r>
 
 "=======TileTab========
 "tileTabs.menuActions('new-2vert',null)
+>>>>>>> db390e8684e90b9e29a14579d4679807fa3fba3e
 command! tmuxsh :js tileTabs.menuActions('new-2vert',null)
 command! tmuxsv :emenu Tile.New Layout.2 Tabs - Horizontal
+map h gT
+map l gt
+nnoremap gc :emenu<Space>Tools.Web<Space>Developer.Browser<Space>Console<Return><Space><Space><Space><Space><Space><Space><Space>"ctrl<Space>+shift<Space>+c<Space>and<Space>ctrl+shift+i<Space>for<Space>the<Space>browser<Space>default
+nnoremap gd <C-S-I>
+noremap j 10j
+noremap k 10k
+noremap nn :set<Space>gui=none<Return>
+noremap <C-A-k> <C-S-Up>
+noremap <C-A-j> <C-S-Down>
+noremap <C-A-h> <C-S-Left>
+noremap <C-A-l> <C-S-Right>
+noremap <A-t> <C-A-S-F12>
+noremap <A-k> <C-A-S-Up>
+noremap <A-j> <C-A-S-Down>
+noremap <A-h> <C-A-S-Left>
+noremap <A-l> <C-A-S-Right>
+noremap pp :js<Space>ZoteroPane.addItemFromPage();<Return>
+noremap ss <C-S-S>
+noremap zz <C-S-Z>
+noremap rr :!zotero;<Return><Space><Space><Space><Space><Space><Space><Space><Space>"exist<Space>some<Space>errors
+noremap zi :js<Space>ZoteroOverlay.toggleDisplay(true)<Space><Return>
+set "editor=gnome-terminal --disable-factory -x vim"
+source! /home/cecilia/_vimperatorrc.local
 
-"noremap  <> <C-S-Up>
-
-noremap  <C-a-k> <C-S-Up>
-noremap  <C-a-j> <C-S-Down>
-noremap  <C-a-h> <C-S-Left>
-noremap  <C-a-l> <C-S-Right>
-
-noremap  <A-t> <A-C-S-F12>
-
-noremap  <A-k> <A-C-S-Up>
-noremap  <A-j> <A-C-S-Down>
-noremap  <A-h> <A-C-S-Left>
-noremap  <A-l> <A-C-S-Right>
-
-"noremap  <A-l> <A-C-S-F12>
-
-
-"=======Command Line========
-command! sourcerc :source ~/_vimperatorrc
-cmap <C-p> <Up>
-
-"=======zotero========
-"抓取页面的命令是
-"map <C-1> :js ZoteroPane.addItemFromPage()<CR>
-noremap pp :js ZoteroPane.addItemFromPage();<CR>
-noremap ss <C-S-s>
-"or, ZoteroOverlay.toggleDisplay()
-noremap zz <C-S-z>
-noremap rr :!zotero;<CR>        "exist some errors
-
-"打开便签窗口的命令是
-"map <C-2> :js ZoteroPane.openNoteWindow()<CR>
-
-"把选中内容抓取为便签的命令是
-"map <C-3> :js ZoteroPane.newNote(false,false,getBrowserSelection(),gLastValidURLStr)<CR>
-
-"map <z> :js Zotero_Browser.scrapeThisPage()<CR>
-
-
-"=======Zotero-Zutilo========
-"Really Convenient for Firefox Zotero Operation
-"js operation bellow: key.js
-"<https://github.com/willsALMANJ/Zutilo/blob/d5f26f18072e72e5408481898dcebf6192989699/addon/chrome/content/zutilo/keys.js>
-
-"zotero input, esc cancel
-noremap zi :js ZoteroOverlay.toggleDisplay(true) <CR>
-"Zutilo UI navigation => alt+N next tab; alt+Q add tag; alt+k
-
-"========web develop====
-nnoremap gc :emenu Tools.Web Developer.Browser Console<CR>       "ctrl +shift +c and ctrl+shift+i for the browser default
-command! bc -description "Open the browser console" :emenu Tools.Web Developer.Browser Console<CR>
-nnoremap gd <C-S-i>
-command! dev -description "Toggle developer tools" :normal <C-S-i>
-"http://superuser.com/questions/901524/how-can-i-show-and-hide-the-developer-tools-with-vimperator-in-firefox
-
+" vim: set ft=vimperator:
