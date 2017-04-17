@@ -1585,6 +1585,45 @@ vim /etc/security/limits.conf
 ```
 <https://www.nixtutor.com/linux/changing-priority-on-linux-processes/>
 
+### 58. opengl
+$ sudo apt-get install build-essential      # install essential build environment
+$ sudo apt-get install libgl1-mesa-dev      # install OpenGL Utilities
+$ sudo apt-get install libglu1-mesa-dev     # install OpenGL Utility Toolkit, enhence opengl windows
+$ sudo apt-get install freeglut3-dev         # if cannot install libglut-dev
+<http://www.linuxidc.com/Linux/2012-05/60771.htm>
+Tutorial
+<https://learnopengl.com/#!Introduction>
+<https://en.wikibooks.org/wiki/OpenGL_Programming>
+
+### 59. Chinese Ubuntu update source
+
+```
+sudo vi /etc/apt/sources.list
+
+    deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+
+    ## test
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse
+
+    # sourcecode
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+
+    ## test sourcecode
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse
+
+    # Canonical 合作伙伴和附加
+    deb http://archive.canonical.com/ubuntu/ xenial partner
+    deb http://extras.ubuntu.com/ubuntu/ xenial main
+
+sudo apt-get update
+```
+
 ### 58. guile (scheme, used in MIT MEEP)
 <https://www.gnu.org/software/guile/download/>
 
