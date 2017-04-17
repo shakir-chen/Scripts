@@ -1585,7 +1585,6 @@ vim /etc/security/limits.conf
 ```
 <https://www.nixtutor.com/linux/changing-priority-on-linux-processes/>
 
-<<<<<<< HEAD
 ### 58. opengl
 $ sudo apt-get install build-essential      # install essential build environment
 $ sudo apt-get install libgl1-mesa-dev      # install OpenGL Utilities
@@ -1625,7 +1624,6 @@ sudo vi /etc/apt/sources.list
 sudo apt-get update
 ```
 
-=======
 ### 58. guile (scheme, used in MIT MEEP)
 <https://www.gnu.org/software/guile/download/>
 
@@ -1695,8 +1693,6 @@ sudo mkdir /media/usb
 sudo mount -t vfat /dev/sdb1 /media/usb
 sudo umount /media/usb or sudo umount /dev/sdb1
 ```
->>>>>>> 9ff8bf79928e31f7b06463d1a64d12f13b2efa4c
-
 
 #### ERROR
 1.TIFF4 depency:
