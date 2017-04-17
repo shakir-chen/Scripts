@@ -1655,7 +1655,6 @@ sudo mount -t vfat /dev/sdb1 /media/usb
 sudo umount /media/usb or sudo umount /dev/sdb1
 ```
 
-
 #### ERROR
 1.TIFF4 depency:
     The only way:
