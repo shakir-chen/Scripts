@@ -1,11 +1,9 @@
 "3.16.0 (created: 2017/02/01 00:55:15)
 
-<<<<<<< HEAD
 cmap <C-p> <Up>
 command! -description="Open the browser console" bc :emenu Tools.Web Developer.Browser Console<CR>
 command! -description="Toggle developer tools" dev :normal <C-S-i>
 command! sourcerc :source ~/_vimperatorrc
-=======
 
 noremap j 10j
 noremap k 10k
@@ -31,15 +29,16 @@ noremap rr <C-A-r>
 
 "=======TileTab========
 "tileTabs.menuActions('new-2vert',null)
->>>>>>> db390e8684e90b9e29a14579d4679807fa3fba3e
+
 command! tmuxsh :js tileTabs.menuActions('new-2vert',null)
 command! tmuxsv :emenu Tile.New Layout.2 Tabs - Horizontal
+
 map h gT
 map l gt
 nnoremap gc :emenu<Space>Tools.Web<Space>Developer.Browser<Space>Console<Return><Space><Space><Space><Space><Space><Space><Space>"ctrl<Space>+shift<Space>+c<Space>and<Space>ctrl+shift+i<Space>for<Space>the<Space>browser<Space>default
 nnoremap gd <C-S-I>
-noremap j 10j
-noremap k 10k
+" noremap j 10j
+" noremap k 10k
 noremap nn :set<Space>gui=none<Return>
 noremap <C-A-k> <C-S-Up>
 noremap <C-A-j> <C-S-Down>

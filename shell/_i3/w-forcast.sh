@@ -8,6 +8,7 @@ arr["pic62.png"]="Small-Rain"
 arr["pic60.png"]="Cloudy"
 arr["pic52.png"]="Sunny-Intervals"
 arr["pic63.png"]="Rain"
+arr["pic51.png"]="Sunny-Period"
 # arr["pic52.png"]=""
 
 # echo ${arr["pic76.png"]}

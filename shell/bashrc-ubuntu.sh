@@ -819,7 +819,7 @@ alias converthoriapd="convert +append"
 # }
 
 #kinetic
-source /opt/ros/kinetic/setup.bash
+# source /opt/ros/kinetic/setup.bash
 export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
 export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
 
@@ -834,6 +834,4 @@ export ROS_MASTER_URI=http://$ROS_IP:11311/
 
 #gdb
 ulimit -c unlimited
-
-
 
