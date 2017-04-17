@@ -1,0 +1,2916 @@
+[
+	{
+		"id": "http://zotero.org/users/2643828/items/2DMTMAAH",
+		"type": "paper-conference",
+		"title": "Towards energy-efficient photonic interconnects",
+		"page": "93680T-93680T-12",
+		"volume": "9368",
+		"source": "Silverchair",
+		"abstract": "Silicon photonics have emerged as a promising solution to meet the growing demand for high-bandwidth, low-latency, and\nenergy-efficient on-chip and off-chip communication in many-core processors. However, current silicon-photonic interconnect\ndesigns for many-core processors waste a significant amount of power because (a) lasers are always on, even during\nperiods of interconnect inactivity, and (b) microring resonators employ heaters which consume a significant amount of\npower just to overcome thermal variations and maintain communication on the photonic links, especially in a 3D-stacked\ndesign. The problem of high laser power consumption is particularly important as lasers typically have very low energy\nefficiency, and photonic interconnects often remain underutilized both in scientific computing (compute-intensive execution\nphases underutilize the interconnect), and in server computing (servers in Google-scale datacenters have a typical utilization\nof less than 30%). We address the high laser power consumption by proposing EcoLaser+, which is a laser control\nscheme that saves energy by predicting the interconnect activity and opportunistically turning the on-chip laser off when\npossible, and also by scaling the width of the communication link based on a runtime prediction of the expected message\nlength. Our laser control scheme can save up to 62 - 92% of the laser energy, and improve the energy efficiency of a manycore\nprocessor with negligible performance penalty. We address the high trimming (heating) power consumption of the\nmicrorings by proposing insulation methods that reduce the impact of localized heating induced by highly-active components\non the 3D-stacked logic die.",
+		"URL": "http://dx.doi.org/10.1117/12.2080496",
+		"DOI": "10.1117/12.2080496",
+		"note": "00003",
+		"author": [
+			{
+				"family": "Demir",
+				"given": "Yigit"
+			},
+			{
+				"family": "Hardavellas",
+				"given": "Nikos"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/2V5R4PPA",
+		"type": "article-journal",
+		"title": "SDN-Based Network Orchestration of Variable-Capacity Optical Packet Switching Network Over Programmable Flexi-Grid Elastic Optical Path Network",
+		"container-title": "Journal of Lightwave Technology",
+		"page": "609-617",
+		"volume": "33",
+		"issue": "3",
+		"source": "www.osapublishing.org",
+		"abstract": "A multidomain and multitechnology optical network orchestration is demonstrated in an international testbed located in Japan, the U.K., and Spain. The application-based network operations architecture is proposed as a carrier software-defined network solution for provisioning end-to-end optical transport services through a multidomain multitechnology network scenario, consisting of a 46–108 Gb/s variable-capacity OpenFlow-capable optical packet switching network and a programmable, flexi-grid elastic optical path network.",
+		"URL": "http://www.osapublishing.org/abstract.cfm?uri=jlt-33-3-609",
+		"note": "00015",
+		"journalAbbreviation": "J. Lightwave Technol., JLT",
+		"language": "EN",
+		"author": [
+			{
+				"family": "Yoshida",
+				"given": "Yuki"
+			},
+			{
+				"family": "Maruta",
+				"given": "Akihiro"
+			},
+			{
+				"family": "Kitayama",
+				"given": "Ken-ichi"
+			},
+			{
+				"family": "Nishihara",
+				"given": "Masato"
+			},
+			{
+				"family": "Tanaka",
+				"given": "Toshiki"
+			},
+			{
+				"family": "Takahara",
+				"given": "Tomoo"
+			},
+			{
+				"family": "Rasmussen",
+				"given": "Jens C."
+			},
+			{
+				"family": "Yoshikane",
+				"given": "Noboru"
+			},
+			{
+				"family": "Tsuritani",
+				"given": "Takehiro"
+			},
+			{
+				"family": "Morita",
+				"given": "Itsuro"
+			},
+			{
+				"family": "Yan",
+				"given": "Shuangyi"
+			},
+			{
+				"family": "Shu",
+				"given": "Yi"
+			},
+			{
+				"family": "Yan",
+				"given": "Yan"
+			},
+			{
+				"family": "Nejabati",
+				"given": "Reza"
+			},
+			{
+				"family": "Zervas",
+				"given": "Georgios"
+			},
+			{
+				"family": "Simeonidou",
+				"given": "Dimitra"
+			},
+			{
+				"family": "Vilalta",
+				"given": "Ricard"
+			},
+			{
+				"family": "Muñoz",
+				"given": "Raül"
+			},
+			{
+				"family": "Casellas",
+				"given": "Ramon"
+			},
+			{
+				"family": "Martínez",
+				"given": "Ricardo"
+			},
+			{
+				"family": "Aguado",
+				"given": "Alejandro"
+			},
+			{
+				"family": "López",
+				"given": "Victor"
+			},
+			{
+				"family": "Marhuenda",
+				"given": "Jaume"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					2,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/3NNARNVD",
+		"type": "article-journal",
+		"title": "Mach–Zehnder-based optical router design for photonic networks on chip",
+		"container-title": "Optical Engineering",
+		"page": "035102-035102",
+		"volume": "54",
+		"issue": "3",
+		"source": "Silverchair",
+		"abstract": "Abstract. \nWe design and simulate six- and seven-port optical routers based on Mach–Zehnder interferometer switches that are suitable for photonic networks-on-chip. The routers are composed of 12 and 22 switching elements as the possible 30 input/output and 42 input/output routing paths are verified at a data transmission rate of 20 Gbps for six- and seven-port optical routers, respectively. We use an OptiSystem simulator to evaluate the proposed optical routers from the aspects of insertion loss, Q-factor and minimum bit error ratio.",
+		"URL": "http://dx.doi.org/10.1117/1.OE.54.3.035102",
+		"DOI": "10.1117/1.OE.54.3.035102",
+		"ISSN": "0091-3286",
+		"note": "00001",
+		"journalAbbreviation": "Opt. Eng",
+		"author": [
+			{
+				"family": "Yaghoubi",
+				"given": "Elham"
+			},
+			{
+				"family": "Reshadi",
+				"given": "Midia"
+			},
+			{
+				"family": "Hosseinzadeh",
+				"given": "Mehdi"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/3ZED6UQW",
+		"type": "article-journal",
+		"title": "Ultradense Silicon Photonic Interface for Optical Interconnection",
+		"container-title": "Photonics Technology Letters, IEEE",
+		"page": "725–728",
+		"volume": "27",
+		"issue": "7",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7006671",
+		"note": "00000",
+		"author": [
+			{
+				"family": "Liao",
+				"given": "Peicheng"
+			},
+			{
+				"family": "Sakib",
+				"given": "Meer"
+			},
+			{
+				"family": "Lou",
+				"given": "Fei"
+			},
+			{
+				"family": "Park",
+				"given": "Jongchul"
+			},
+			{
+				"family": "Wlodawski",
+				"given": "Mitchell"
+			},
+			{
+				"family": "Kopp",
+				"given": "Victor I."
+			},
+			{
+				"family": "Neugroschl",
+				"given": "Dan"
+			},
+			{
+				"family": "Liboiron-Ladouceur",
+				"given": "Odile"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/43TRXQTE",
+		"type": "paper-conference",
+		"title": "Thermal aware design method for VCSEL-based on-chip optical interconnect",
+		"container-title": "Proceedings of the 2015 Design, Automation & Test in Europe Conference & Exhibition",
+		"publisher": "EDA Consortium",
+		"page": "1120–1125",
+		"source": "Google Scholar",
+		"URL": "http://dl.acm.org/citation.cfm?id=2757072",
+		"note": "00006",
+		"author": [
+			{
+				"family": "Li",
+				"given": "Hui"
+			},
+			{
+				"family": "Fourmigue",
+				"given": "Alain"
+			},
+			{
+				"family": "Le Beux",
+				"given": "Sébastien"
+			},
+			{
+				"family": "Letartre",
+				"given": "Xavier"
+			},
+			{
+				"family": "O'Connor",
+				"given": "Ian"
+			},
+			{
+				"family": "Nicolescu",
+				"given": "Gabriela"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/5985B4XF",
+		"type": "paper-conference",
+		"title": "IDEALIST data plane solutions for elastic optical networks",
+		"container-title": "Networks and Communications (EuCNC), 2015 European Conference on",
+		"publisher": "IEEE",
+		"page": "355–359",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7194098",
+		"note": "00000",
+		"author": [
+			{
+				"family": "Layec",
+				"given": "P."
+			},
+			{
+				"family": "Dupas",
+				"given": "A."
+			},
+			{
+				"family": "Nölle",
+				"given": "M."
+			},
+			{
+				"family": "Fischer",
+				"given": "J. K."
+			},
+			{
+				"family": "Schubert",
+				"given": "C."
+			},
+			{
+				"family": "Fabrega",
+				"given": "J. M."
+			},
+			{
+				"family": "Svaluto Moreolo",
+				"given": "M."
+			},
+			{
+				"family": "Sambo",
+				"given": "N."
+			},
+			{
+				"family": "Meloni",
+				"given": "G."
+			},
+			{
+				"family": "Fresi",
+				"given": "F."
+			},
+			{
+				"literal": "others"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/5M7IU6U5",
+		"type": "article-journal",
+		"title": "Single-chip microprocessor that communicates directly using light",
+		"container-title": "Nature",
+		"page": "534-538",
+		"volume": "528",
+		"issue": "7583",
+		"source": "CrossRef",
+		"URL": "http://www.nature.com/doifinder/10.1038/nature16454",
+		"DOI": "10.1038/nature16454",
+		"ISSN": "0028-0836, 1476-4687",
+		"note": "00000",
+		"author": [
+			{
+				"family": "Sun",
+				"given": "Chen"
+			},
+			{
+				"family": "Wade",
+				"given": "Mark T."
+			},
+			{
+				"family": "Lee",
+				"given": "Yunsup"
+			},
+			{
+				"family": "Orcutt",
+				"given": "Jason S."
+			},
+			{
+				"family": "Alloatti",
+				"given": "Luca"
+			},
+			{
+				"family": "Georgas",
+				"given": "Michael S."
+			},
+			{
+				"family": "Waterman",
+				"given": "Andrew S."
+			},
+			{
+				"family": "Shainline",
+				"given": "Jeffrey M."
+			},
+			{
+				"family": "Avizienis",
+				"given": "Rimas R."
+			},
+			{
+				"family": "Lin",
+				"given": "Sen"
+			},
+			{
+				"family": "Moss",
+				"given": "Benjamin R."
+			},
+			{
+				"family": "Kumar",
+				"given": "Rajesh"
+			},
+			{
+				"family": "Pavanello",
+				"given": "Fabio"
+			},
+			{
+				"family": "Atabaki",
+				"given": "Amir H."
+			},
+			{
+				"family": "Cook",
+				"given": "Henry M."
+			},
+			{
+				"family": "Ou",
+				"given": "Albert J."
+			},
+			{
+				"family": "Leu",
+				"given": "Jonathan C."
+			},
+			{
+				"family": "Chen",
+				"given": "Yu-Hsin"
+			},
+			{
+				"family": "Asanović",
+				"given": "Krste"
+			},
+			{
+				"family": "Ram",
+				"given": "Rajeev J."
+			},
+			{
+				"family": "Popović",
+				"given": "Miloš A."
+			},
+			{
+				"family": "Stojanović",
+				"given": "Vladimir M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					12,
+					23
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2015",
+					12,
+					24
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/6X5XA2BX",
+		"type": "paper-conference",
+		"title": "Photoresistive Microring Heater with Resonance Control Loop",
+		"publisher": "OSA",
+		"page": "SM2I.3",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/abstract.cfm?uri=CLEO_SI-2015-SM2I.3",
+		"DOI": "10.1364/CLEO_SI.2015.SM2I.3",
+		"ISBN": "978-1-55752-968-8",
+		"note": "00000",
+		"language": "en",
+		"author": [
+			{
+				"family": "Poulton",
+				"given": "Christopher V."
+			},
+			{
+				"family": "Dong",
+				"given": "Po"
+			},
+			{
+				"family": "Chen",
+				"given": "Young-Kai"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/8BWWDUF5",
+		"type": "paper-conference",
+		"title": "Integrated photonics in future multicore computing",
+		"container-title": "Green Computing Conference and Sustainable Computing Conference (IGSC), 2015 Sixth International",
+		"page": "1-2",
+		"source": "IEEE Xplore",
+		"event": "Green Computing Conference and Sustainable Computing Conference (IGSC), 2015 Sixth International",
+		"abstract": "Integrated silicon photonics represents one of the more promising solutions to overcome the challenge of worsening on-chip communication performance in emerging multicore platforms. This paper highlights recent innovations in architectures, protocols, and techniques to enhance performance, dependability, and power-efficiency for integrated photonics.",
+		"DOI": "10.1109/IGCC.2015.7393724",
+		"author": [
+			{
+				"family": "Pasricha",
+				"given": "S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/9N4R864J",
+		"type": "paper-conference",
+		"title": "Parka: Thermally Insulated Nanophotonic Interconnects",
+		"container-title": "Proceedings of the 9th International Symposium on Networks-on-Chip",
+		"collection-title": "NOCS '15",
+		"publisher": "ACM",
+		"publisher-place": "New York, NY, USA",
+		"page": "1:1–1:8",
+		"source": "ACM Digital Library",
+		"event-place": "New York, NY, USA",
+		"abstract": "Silicon-photonics are emerging as the prime candidate technology for energy-efficient on-chip interconnects at future process nodes. However, current designs are primarily based on microrings, which are highly sensitive to temperature. As a result, current silicon-photonic interconnect designs expend a significant amount of energy heating the microrings to a designated narrow temperature range, only to have the majority of the thermal energy waste away and dissipate through the heat sink, and in the process of doing so heat up the logic layer, causing significant performance degradation to the cores and inducing thermal emergencies. We propose Parka, a nanophotonic interconnect that encases the photonic die in a thermal insulator that keeps its temperature stable with low energy expenditure, while minimizing the spatial and temporal thermal coupling between logic and silicon-photonic components. Parka reduces the microring energy by 3.8--5.4x and achieves 11--23% speedup on average (34% max) depending on the cooling solution used.",
+		"URL": "http://doi.acm.org/10.1145/2786572.2786597",
+		"DOI": "10.1145/2786572.2786597",
+		"ISBN": "978-1-4503-3396-2",
+		"shortTitle": "Parka",
+		"author": [
+			{
+				"family": "Demir",
+				"given": "Yigit"
+			},
+			{
+				"family": "Hardavellas",
+				"given": "Nikos"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/9PGJ97B6",
+		"type": "paper-conference",
+		"title": "Silicon photonic integrated circuits for WDM applications",
+		"container-title": "2015 International Conference on Photonics in Switching (PS)",
+		"page": "25-27",
+		"source": "IEEE Xplore",
+		"event": "2015 International Conference on Photonics in Switching (PS)",
+		"abstract": "We discuss silicon photonic integrated circuits to enable large-capacity wavelength-division multiplexing (WDM) applications. Both the challenges and possible solutions are illustrated with several demonstrated devices.",
+		"DOI": "10.1109/PS.2015.7328941",
+		"author": [
+			{
+				"family": "Dong",
+				"given": "Po"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/9R2ZEVWA",
+		"type": "paper-conference",
+		"title": "Hybrid Photonic NoC Based on Non-Blocking Photonic Switch and Light-Weight Electronic Router",
+		"container-title": "2015 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+		"page": "56-61",
+		"source": "IEEE Xplore",
+		"event": "2015 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+		"abstract": "In conventional hybrid PNoC systems, the end-to end optical data transfer is accompanied with electrical control functions including path-setup, acknowledgment, and tear-down. These functions directly a ect the performance and power characteristics of these circuit-switching based systems. In this paper, we propose a novel hybrid PNoC system, named PHENIC-II. 1 Thanks to the adopted non-blocking photonic switch and light-weight electronic router, PHENIC-II is capable of alleviating the congestion in the electronic control layer which is considered as the main source of latency and power overhead in hybrid PNoC systems. From the performance evaluation, we demonstrate that the proposed system has a better performance and low energy dissipation when compared to the previously proposed systems.",
+		"DOI": "10.1109/SMC.2015.23",
+		"author": [
+			{
+				"family": "Ahmed",
+				"given": "A. Ben"
+			},
+			{
+				"family": "Meyer",
+				"given": "M."
+			},
+			{
+				"family": "Okuyama",
+				"given": "Y."
+			},
+			{
+				"family": "Abdallah",
+				"given": "A. Ben"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					10
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/9U6QRTQU",
+		"type": "paper-conference",
+		"title": "Towards a centralized controller for silicon photonic MZI-based interconnects",
+		"container-title": "Optical Interconnects Conference (OI), 2015 IEEE",
+		"publisher": "IEEE",
+		"page": "146–147",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7115728",
+		"author": [
+			{
+				"family": "Lou",
+				"given": "Fei"
+			},
+			{
+				"family": "Fard",
+				"given": "Monireh Moayedi Pour"
+			},
+			{
+				"family": "Liao",
+				"given": "Peicheng"
+			},
+			{
+				"family": "Shafiq Hai",
+				"given": "Md"
+			},
+			{
+				"family": "Priti",
+				"given": "Rubana"
+			},
+			{
+				"family": "Huangfu",
+				"given": "Yourui"
+			},
+			{
+				"family": "Qiu",
+				"given": "Chen"
+			},
+			{
+				"family": "Hao",
+				"given": "Qinfen"
+			},
+			{
+				"family": "Wei",
+				"given": "Zhulin"
+			},
+			{
+				"family": "Liboiron-Ladouceur",
+				"given": "Odile"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/A7E8W5FE",
+		"type": "paper-conference",
+		"title": "Mode-Division-Multiplexed Photonic Router for High Performance Network-on-Chip",
+		"container-title": "2015 28th International Conference on VLSI Design (VLSID)",
+		"page": "111-116",
+		"source": "IEEE Xplore",
+		"event": "2015 28th International Conference on VLSI Design (VLSID)",
+		"abstract": "The communication bandwidth and power consumption of network-on-chip (NoC) are going to meet their limits soon because of traditional metallic interconnects. Photonic NoC is emerging as a promising alternative to address these bottlenecks. Photonic routers and silicon-waveguides are used to realize switching and communication respectively. In this paper, we propose a non-blocking, low power, and high performance 5×5 photonic router design using silicon microring resonators (MRR). Mode-division-multiplexing (MDM) scheme has been incorporated along with wavelength-division-multiplexing (WDM) and time-division-multiplexing (TDM) in the router to increase the aggregate bandwidth 4× times, making it a suitable candidate for high performance NoC. The technique proposed here is the first of its kind to the best of our knowledge. The MDM based design permits multi-modal (here 2 modes) communication. As compared to a high-performance 45nm electronic router, the proposed router consumes 95% less power. Further the results show 50% less power consumption and 75% less insertion loss when compared to most recently reported photonic router results.",
+		"DOI": "10.1109/VLSID.2015.24",
+		"author": [
+			{
+				"family": "Dang",
+				"given": "D."
+			},
+			{
+				"family": "Patra",
+				"given": "B."
+			},
+			{
+				"family": "Mahapatra",
+				"given": "R."
+			},
+			{
+				"family": "Fiers",
+				"given": "M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/AZMZHU54",
+		"type": "paper-conference",
+		"title": "Multilevel Modeling Methodology for Reconfigurable Computing Systems Based on Silicon Photonics",
+		"container-title": "VLSI (ISVLSI), 2015 IEEE Computer Society Annual Symposium on",
+		"publisher": "IEEE",
+		"page": "561–566",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7309631",
+		"author": [
+			{
+				"family": "Li",
+				"given": "Zhen"
+			},
+			{
+				"family": "Le Beux",
+				"given": "Sebastien"
+			},
+			{
+				"family": "Monat",
+				"given": "Christelle"
+			},
+			{
+				"family": "Letartre",
+				"given": "Xavier"
+			},
+			{
+				"family": "O'Connor",
+				"given": "Ian"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/BMQU7HAI",
+		"type": "article-journal",
+		"title": "Optical interconnection network for parallel access to multi-rank memory in future computing systems",
+		"container-title": "Optics Express",
+		"page": "20480",
+		"volume": "23",
+		"issue": "16",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/abstract.cfm?URI=oe-23-16-20480",
+		"DOI": "10.1364/OE.23.020480",
+		"ISSN": "1094-4087",
+		"language": "en",
+		"author": [
+			{
+				"family": "Wang",
+				"given": "Kang"
+			},
+			{
+				"family": "Gu",
+				"given": "Huaxi"
+			},
+			{
+				"family": "Yang",
+				"given": "Yintang"
+			},
+			{
+				"family": "Wang",
+				"given": "Kun"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					8,
+					10
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/BXQH2BGC",
+		"type": "paper-conference",
+		"title": "FTTDOR: Microring Fault-resilient Optical Router for Reliable Optical Network-on-Chip Systems",
+		"container-title": "2015 IEEE 9th International Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC)",
+		"page": "227-234",
+		"source": "IEEE Xplore",
+		"event": "2015 IEEE 9th International Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC)",
+		"abstract": "Photonic Networks-on-Chip (PNoCs) have been proposed as a disruptive technology solution to the silicon problem showing their great superiority over their electronic counterparts. In these architectures, higher bandwidth can be achieved thanks to the light speed transmissions, and the power required to transmit over a distance is much lower. Despite these advantages, PNoC designs are very complex, and thus are more susceptible to physical defects and short-term malfunctions. Therefore, fault-tolerance has become a primordial requirement for these future generation high-performance systems. In this paper, we present a fault-tolerant optical router, named FTTDOR, with its electrical control module for highly reliable low-power 3D-Networks-on-Chip (PHENIC). It uses minimal redundancy to assure accuracy of the packet transmission even after faulty Microring Resonators (MRs) are detected. The fault-tolerant optical switch is decomposed nonblocking, with minimal MRs, and requires no MRs for straight transmission (East to West, North to South, and Up to Down, as well as their inverses). Simulation results show that the network can maintain 98% and 94% throughput when considering 3% and 20% fault-rates, respectively. These results come with 35% decrease in the number of MRs when compared to the conventional crossbar switch resulting in 32% power reduction.",
+		"DOI": "10.1109/MCSoC.2015.17",
+		"shortTitle": "FTTDOR",
+		"author": [
+			{
+				"family": "Meyer",
+				"given": "M. C."
+			},
+			{
+				"family": "Ahmed",
+				"given": "A. Ben"
+			},
+			{
+				"family": "Okuyama",
+				"given": "Y."
+			},
+			{
+				"family": "Abdallah",
+				"given": "A. Ben"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/CSG7KXAH",
+		"type": "article-journal",
+		"title": "Multilayer Silicon Nitride-on-Silicon Integrated Photonic Platforms and Devices",
+		"container-title": "Journal of Lightwave Technology",
+		"page": "901-910",
+		"volume": "33",
+		"issue": "4",
+		"source": "www.osapublishing.org",
+		"abstract": "We review and present additional results from our work on multilayer silicon nitride (SiN) on silicon-on-insulator (SOI) integrated photonic platforms over the telecommunication wavelength bands near 1550 and 1310 nm. SiN-on-SOI platforms open the possibility for passive optical functionalities implemented in the SiN layer to be combined with active functionalities in the SOI. SiN layers can be integrated onto SOI using a front-end or back-end of line integration process flow. These photonic platforms support low-loss SiN waveguides, low-loss and low-crosstalk waveguide crossings, and low-loss interlayer transitions using adiabatic tapers. Novel ultra-broadband and efficient grating couplers as well as polarization management devices are enabled by the close coupling between the silicon and SiN layers.",
+		"URL": "http://www.osapublishing.org/abstract.cfm?uri=jlt-33-4-901",
+		"journalAbbreviation": "J. Lightwave Technol., JLT",
+		"language": "EN",
+		"author": [
+			{
+				"family": "Sacher",
+				"given": "Wesley D."
+			},
+			{
+				"family": "Huang",
+				"given": "Ying"
+			},
+			{
+				"family": "Lo",
+				"given": "Guo-Qiang"
+			},
+			{
+				"family": "Poon",
+				"given": "Joyce K. S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					2,
+					15
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/DQPWPRFM",
+		"type": "paper-conference",
+		"title": "Silicon Photonic Integrated Circuits",
+		"publisher": "OSA",
+		"page": "AS4B.1",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/abstract.cfm?URI=ACPC-2015-AS4B.1",
+		"DOI": "10.1364/ACPC.2015.AS4B.1",
+		"ISBN": "978-1-943580-06-4",
+		"language": "en",
+		"author": [
+			{
+				"family": "Dong",
+				"given": "Po"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/EFFTHZH8",
+		"type": "paper-conference",
+		"title": "Single-VCSEL 100-Gb/s Short-Reach System Using Discrete Multi-Tone Modulation and Direct Detection",
+		"publisher": "OSA",
+		"page": "Tu2H.2",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/abstract.cfm?uri=OFC-2015-Tu2H.2",
+		"DOI": "10.1364/OFC.2015.Tu2H.2",
+		"ISBN": "978-1-55752-937-4",
+		"language": "en",
+		"author": [
+			{
+				"family": "Xie",
+				"given": "Chongjin"
+			},
+			{
+				"family": "Dong",
+				"given": "Po"
+			},
+			{
+				"family": "Randel",
+				"given": "Sebastian"
+			},
+			{
+				"family": "Pilori",
+				"given": "Dario"
+			},
+			{
+				"family": "Winzer",
+				"given": "Peter J."
+			},
+			{
+				"family": "Spiga",
+				"given": "Silvia"
+			},
+			{
+				"family": "Kögel",
+				"given": "Benjamin"
+			},
+			{
+				"family": "Neumeyr",
+				"given": "Christian"
+			},
+			{
+				"family": "Amann",
+				"given": "Markus"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/F2CMZEDS",
+		"type": "article-journal",
+		"title": "Low Latency Optical Switch for High Performance Computing With Minimized Processor Energy Load [Invited]",
+		"container-title": "Journal of Optical Communications and Networking",
+		"page": "A498–A510",
+		"volume": "7",
+		"issue": "3",
+		"source": "Google Scholar",
+		"URL": "https://www.osapublishing.org/abstract.cfm?uri=jocn-7-3-A498",
+		"author": [
+			{
+				"family": "Liu",
+				"given": "Shiyun"
+			},
+			{
+				"family": "Cheng",
+				"given": "Qixiang"
+			},
+			{
+				"family": "Madarbux",
+				"given": "Muhammad Ridwan"
+			},
+			{
+				"family": "Wonfor",
+				"given": "Adrian"
+			},
+			{
+				"family": "Penty",
+				"given": "Richard V."
+			},
+			{
+				"family": "White",
+				"given": "Ian H."
+			},
+			{
+				"family": "Watts",
+				"given": "Philip M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/FT5H5VXA",
+		"type": "paper-conference",
+		"title": "Reconfigurable silicon photonic networks-on-chip",
+		"container-title": "Opto-Electronics and Communications Conference (OECC), 2015",
+		"page": "1-3",
+		"source": "IEEE Xplore",
+		"event": "Opto-Electronics and Communications Conference (OECC), 2015",
+		"abstract": "We discuss an on-chip multiple-channel electrical-optic-electrical links which are implemented on a large-scale silicon photonic integrated circuit. The optical circuits can also be configurable as an NxN non-blocking switch as well as a broadcasting network.",
+		"DOI": "10.1109/OECC.2015.7340233",
+		"author": [
+			{
+				"family": "Dong",
+				"given": "Po"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/FWMTEFHH",
+		"type": "paper-conference",
+		"title": "LVS check for photonic integrated circuits: curvilinear feature extraction and validation",
+		"container-title": "Proceedings of the 2015 Design, Automation & Test in Europe Conference & Exhibition",
+		"publisher": "EDA Consortium",
+		"page": "1253–1256",
+		"source": "Google Scholar",
+		"URL": "http://dl.acm.org/citation.cfm?id=2757103",
+		"shortTitle": "LVS check for photonic integrated circuits",
+		"author": [
+			{
+				"family": "Cao",
+				"given": "Ruping"
+			},
+			{
+				"family": "Billoudet",
+				"given": "Julien"
+			},
+			{
+				"family": "Ferguson",
+				"given": "John"
+			},
+			{
+				"family": "Couder",
+				"given": "Lionel"
+			},
+			{
+				"family": "Cayo",
+				"given": "John"
+			},
+			{
+				"family": "Arriordaz",
+				"given": "Alexandre"
+			},
+			{
+				"family": "O'Connor",
+				"given": "Ian"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/G396IJRZ",
+		"type": "paper-conference",
+		"title": "More is Less, Less is More: Molecular-Scale Photonic NoC Power Topologies",
+		"container-title": "Proceedings of the Twentieth International Conference on Architectural Support for Programming Languages and Operating Systems",
+		"collection-title": "ASPLOS '15",
+		"publisher": "ACM",
+		"publisher-place": "New York, NY, USA",
+		"page": "283–296",
+		"source": "ACM Digital Library",
+		"event-place": "New York, NY, USA",
+		"abstract": "Molecular-scale Network-on-Chip (mNoC) crossbars use quantum dot LEDs as an on-chip light source, and chromophores to provide optical signal filtering for receivers. An mNoC reduces power consumption or enables scaling to larger crossbars for a reduced energy budget compared to current nanophotonic NoC crossbars. Since communication latency is reduced by using a high-radix crossbar, minimizing power consumption becomes a primary design target. Conventional Single Writer Multiple Reader (SWMR) photonic crossbar designs broadcast all packets, and incur the commensurate required power, even if only two nodes are communicating. This paper introduces power topologies, enabled by unique capabilities of mNoC technology, to reduce overall interconnect power consumption. A power topology corresponds to the logical connectivity provided by a given power mode. Broadcast is one power mode and it consumes the maximum power. Additional power modes consume less power but allow a source to communicate with only a statically defined, potentially non-contiguous, subset of nodes. Overall interconnect power is reduced if the more frequently communicating nodes use modes that consume less power, while less frequently communicating nodes use modes that consume more power. We also investigate thread mapping techniques to fully exploit power topologies. We explore various mNoC power topologies with one, two and four power modes for a radix-256 SWMR mNoC crossbar. Our results show that the combination of power topologies and intelligent thread mapping can reduce total mNoC power by up to 51% on average for a set of 12 SPLASH benchmarks. Furthermore performance is 10% better than conventional resonator-based photonic NoCs and energy is reduced by 72%.",
+		"URL": "http://doi.acm.org/10.1145/2694344.2694377",
+		"DOI": "10.1145/2694344.2694377",
+		"ISBN": "978-1-4503-2835-7",
+		"shortTitle": "More is Less, Less is More",
+		"author": [
+			{
+				"family": "Pang",
+				"given": "Jun"
+			},
+			{
+				"family": "Dwyer",
+				"given": "Chris"
+			},
+			{
+				"family": "Lebeck",
+				"given": "Alvin R."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/GE8NQXW6",
+		"type": "paper-conference",
+		"title": "Reconfigurable non-blocking 4-port silicon thermo-optic optical router based on Mach-Zehnder optical switches",
+		"container-title": "2015 IEEE 12th International Conference on Group IV Photonics (GFP)",
+		"page": "82-83",
+		"source": "IEEE Xplore",
+		"event": "2015 IEEE 12th International Conference on Group IV Photonics (GFP)",
+		"abstract": "We demonstrate a reconfigurable non-blocking 4-port silicon thermo-optic optical router based on Mach-Zehnder optical switches. Each optical link of the router can manipulate 50 wavelength-division-multiplexing channels with the data-rate of 32 Gbps for each channel.",
+		"DOI": "10.1109/Group4.2015.7305958",
+		"author": [
+			{
+				"family": "Xia",
+				"given": "Yuhao"
+			},
+			{
+				"family": "Yang",
+				"given": "Lin"
+			},
+			{
+				"family": "Zhang",
+				"given": "Fanfan"
+			},
+			{
+				"family": "Chen",
+				"given": "Qiaoshan"
+			},
+			{
+				"family": "Ding",
+				"given": "Jianfeng"
+			},
+			{
+				"family": "Zhou",
+				"given": "Ping"
+			},
+			{
+				"family": "Zhang",
+				"given": "Lei"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					8
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/GJMWH7T5",
+		"type": "article-journal",
+		"title": "Reconfigurable non-blocking four-port optical router based on microring resonators",
+		"container-title": "Optics Letters",
+		"page": "1129",
+		"volume": "40",
+		"issue": "6",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/abstract.cfm?URI=ol-40-6-1129",
+		"DOI": "10.1364/OL.40.001129",
+		"ISSN": "0146-9592, 1539-4794",
+		"language": "en",
+		"author": [
+			{
+				"family": "Yang",
+				"given": "Lin"
+			},
+			{
+				"family": "Jia",
+				"given": "Hao"
+			},
+			{
+				"family": "Zhao",
+				"given": "Yunchou"
+			},
+			{
+				"family": "Chen",
+				"given": "Qiaoshan"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					3,
+					15
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/H3DZVRKC",
+		"type": "paper-conference",
+		"title": "Ring versus bus: A BER comparison of photonic integrated networks-on-chip",
+		"container-title": "2015 IEEE Optical Interconnects Conference (OI)",
+		"page": "22-23",
+		"source": "IEEE Xplore",
+		"event": "2015 IEEE Optical Interconnects Conference (OI)",
+		"abstract": "Silicon-photonics bus and ring networks-on-chip are evaluated in terms of transfer function and bit error rates at 10Gb/s, demonstrating that the ring architecture can be effectively used with physical layer performance similar to the bus.",
+		"DOI": "10.1109/OIC.2015.7115668",
+		"shortTitle": "Ring versus bus",
+		"author": [
+			{
+				"family": "Faralli",
+				"given": "S."
+			},
+			{
+				"family": "Gambini",
+				"given": "F."
+			},
+			{
+				"family": "Pintus",
+				"given": "P."
+			},
+			{
+				"family": "Cerutti",
+				"given": "I."
+			},
+			{
+				"family": "Andriolli",
+				"given": "N."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/HAG7UXR4",
+		"type": "chapter",
+		"title": "Nano-Photonic Networks-on-Chip for Future Chip Multiprocessors",
+		"container-title": "More than Moore Technologies for Next Generation Computer Design",
+		"publisher": "Springer New York",
+		"page": "155-186",
+		"source": "link.springer.com",
+		"abstract": "To meet energy-efficient performance demands, the computing industry has moved to parallel computer architectures, such as chip-multi-processors (CMPs), internally interconnected via networks-on-chip (NoC) to meet growing communication needs. Achieving scaling performance as core counts increase to the hundreds in future CMPs, however, will require high performance, yet energy-efficient interconnects. Silicon nanophotonics is a promising replacement for electronic on-chip interconnect due to its high bandwidth and low latency, however, prior techniques have required high static power for the laser and ring thermal tuning. We propose a novel nano-photonic NoC architecture, LumiNOC, optimized for high performance and power-efficiency. This paper makes three primary contributions: a novel, nanophotonic architecture which partitions the network into subnets for better efficiency; a purely photonic, in-band, distributed arbitration scheme; and a channel sharing arrangement utilizing the same waveguides and wavelengths for arbitration as data transmission. In a 64-node NoC under synthetic traffic, LumiNOC enjoys 50 % lower latency at low loads and ∼ 40 % higher throughput per Watt on synthetic traffic, versus other reported photonic NoCs. LumiNOC reduces latencies ∼ 40 % versus an electrical 2D mesh NoCs on the PARSEC shared-memory, multithreaded benchmark suite.",
+		"URL": "http://link.springer.com/chapter/10.1007/978-1-4939-2163-8_7",
+		"ISBN": "978-1-4939-2162-1",
+		"note": "DOI: 10.1007/978-1-4939-2163-8_7",
+		"language": "en",
+		"author": [
+			{
+				"family": "Li",
+				"given": "Cheng"
+			},
+			{
+				"family": "Gratz",
+				"given": "Paul V."
+			},
+			{
+				"family": "Palermo",
+				"given": "Samuel"
+			}
+		],
+		"editor": [
+			{
+				"family": "Topaloglu",
+				"given": "Rasit O."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/HCERS4AN",
+		"type": "article-journal",
+		"title": "Loss-Aware Switch Design and Non-Blocking Detection Algorithm for Intra-Chip Scale Photonic Interconnection Networks",
+		"container-title": "IEEE Transactions on Computers",
+		"page": "1-1",
+		"volume": "PP",
+		"issue": "99",
+		"source": "IEEE Xplore",
+		"abstract": "As the number of on-chip processor cores increases, power-efficient solutions are sought for data communication between cores. The Helix-hnon-blocking photonic switch is developed to improve physical-layer and network performance parameters for a wide range of silicon nano-photonic multicore interconnection topologies. Traffic benchmarks and practical case studies using a cycle-accurate simulation environment indicate significantly reduced insertion loss providing improved bandwidth density and scalability to many core plurality. Improvements in system performance parameters are quantified fornetwork bandwidth, transmission efficiency, and latency in popular photonic internconnection topologies, in comparison to previous switch designs. For instance, utilizing the Helix-h switch in a mesh topology, the bandwidth is increased by 112% compared to the previously highest performing switch design. Execution time and energy efficiency are improved by up to 92% and 99%, respectively, for representative multicore applications. Finally, the technique is generalized to a novel graph-theoretic method for articulating blocking conditions in photonic switches.",
+		"DOI": "10.1109/TC.2015.2458866",
+		"ISSN": "0018-9340",
+		"author": [
+			{
+				"family": "Shabani",
+				"given": "H."
+			},
+			{
+				"family": "Roohi",
+				"given": "A."
+			},
+			{
+				"family": "Reza",
+				"given": "A."
+			},
+			{
+				"family": "Reshadi",
+				"given": "M."
+			},
+			{
+				"family": "Bagherzadeh",
+				"given": "N."
+			},
+			{
+				"family": "Demara",
+				"given": "R."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/HECSBS8P",
+		"type": "paper-conference",
+		"title": "Photonic designs with EDA approach: A novel methodology for curve design validation",
+		"container-title": "Summer Topicals Meeting Series (SUM), 2015",
+		"page": "29-30",
+		"source": "IEEE Xplore",
+		"event": "Summer Topicals Meeting Series (SUM), 2015",
+		"abstract": "Whereas traditional EDA tools are limited to verifying Manhattan layout designs, we implement a methodology and flow with the existing tools to verify curvilinear layout design features that are crucial to photonic integrated circuit functional validation.",
+		"DOI": "10.1109/PHOSST.2015.7248177",
+		"shortTitle": "Photonic designs with EDA approach",
+		"author": [
+			{
+				"family": "Cao",
+				"given": "Ruping"
+			},
+			{
+				"family": "Ferguson",
+				"given": "J."
+			},
+			{
+				"family": "Bakker",
+				"given": "A."
+			},
+			{
+				"family": "Korthorst",
+				"given": "T."
+			},
+			{
+				"family": "Arriordaz",
+				"given": "A."
+			},
+			{
+				"family": "O'Connor",
+				"given": "I."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					7
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/HFDGCZPZ",
+		"type": "paper-conference",
+		"title": "Reconfigurable Silicon-Photonic Network with Improved Channel Sharing for Multicore Architectures",
+		"container-title": "Proceedings of the 25th Edition on Great Lakes Symposium on VLSI",
+		"collection-title": "GLSVLSI '15",
+		"publisher": "ACM",
+		"publisher-place": "New York, NY, USA",
+		"page": "63–68",
+		"source": "ACM Digital Library",
+		"event-place": "New York, NY, USA",
+		"abstract": "On-chip communication is widely considered to be one of the major performance bottlenecks in contemporary chip multiprocessors (CMPs). With recent advances in silicon nanophotonics, photonic-based networks-on-chip (NoCs) are being considered as a viable option for communication in emerging CMPs as they can enable higher bandwidth and lower power dissipation compared to traditional electrical NoCs. In this paper, we present UltraNoC, a novel reconfigurable silicon-photonic NoC architecture that features improved channel sharing and supports dynamic re-prioritization and exchange of bandwidth between clusters of cores running multiple applications, to increase channel utilization and performance. Experimental results show that UltraNoC improves throughput by up to 9.8× while reducing latency by up to 55% and energy-delay product by up to 90% over state-of-the-art solutions.",
+		"URL": "http://doi.acm.org/10.1145/2742060.2742067",
+		"DOI": "10.1145/2742060.2742067",
+		"ISBN": "978-1-4503-3474-7",
+		"author": [
+			{
+				"family": "Chittamuru",
+				"given": "Sai Vineel Reddy"
+			},
+			{
+				"family": "Desai",
+				"given": "Srinivas"
+			},
+			{
+				"family": "Pasricha",
+				"given": "Sudeep"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/I7F94W63",
+		"type": "chapter",
+		"title": "Parallel Implementation of Dense Optical Flow Computation on Many-Core Processor",
+		"container-title": "Algorithms and Architectures for Parallel Processing",
+		"collection-title": "Lecture Notes in Computer Science",
+		"collection-number": "9528",
+		"publisher": "Springer International Publishing",
+		"page": "119-132",
+		"source": "link.springer.com",
+		"abstract": "Computation of optical flow is a fundamental step in computer vision applications. However, due to its high complexity, it is difficult to compute a high-accuracy optical flow field in real time. This paper proposes a parallel computing approach for fast computation of high-accuracy optical flow field. It is specially designed for Tilera, a typical many-core processor with 36 tiles. By efficiently exploiting the advantages of the mesh architecture of Tilera, and by appropriately handling the parallelism inherent in the optical flow computation, the proposed implemention is able to significantly reduce the computation time while keep a low power consumption. Experiment shows that, for a 640×480640×480640 {\\times } 480 image, the computation time is only 0.80 seconds per frame. It is 2.56 times faster than on a typical CPU i3-3240 (3.4GHz), and the power consumption as less as 1/6. Experimental results also show that the proposed parallel approach is highly scalable for variable requirements on computation speeds and power consumptions, since it can flexibly selects a proper number of computing cores.",
+		"URL": "http://link.springer.com/chapter/10.1007/978-3-319-27119-4_9",
+		"ISBN": "978-3-319-27118-7",
+		"note": "DOI: 10.1007/978-3-319-27119-4_9",
+		"language": "en",
+		"author": [
+			{
+				"family": "Chen",
+				"given": "Wenjie"
+			},
+			{
+				"family": "Yu",
+				"given": "Jin"
+			},
+			{
+				"family": "Zhang",
+				"given": "Weihua"
+			},
+			{
+				"family": "Jiang",
+				"given": "Linhua"
+			},
+			{
+				"family": "Zhang",
+				"given": "Guanhua"
+			},
+			{
+				"family": "Chai",
+				"given": "Zhilei"
+			}
+		],
+		"editor": [
+			{
+				"family": "Wang",
+				"given": "Guojun"
+			},
+			{
+				"family": "Zomaya",
+				"given": "Albert"
+			},
+			{
+				"family": "Perez",
+				"given": "Gregorio Martinez"
+			},
+			{
+				"family": "Li",
+				"given": "Kenli"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					11,
+					18
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/IQTA65HG",
+		"type": "article-journal",
+		"title": "Managing Laser Power in Silicon-Photonic NoC Through Cache and NoC Reconfiguration",
+		"container-title": "Computer-Aided Design of Integrated Circuits and Systems, IEEE Transactions on",
+		"page": "972–985",
+		"volume": "34",
+		"issue": "6",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7038140",
+		"author": [
+			{
+				"family": "Chen",
+				"given": "Chao"
+			},
+			{
+				"family": "Abellán",
+				"given": "José L."
+			},
+			{
+				"family": "Joshi",
+				"given": "Ajay"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/JB63KMPM",
+		"type": "paper-conference",
+		"title": "Energy-efficient optical crossbars on chip with multi-layer deposited silicon",
+		"container-title": "Design Automation Conference (ASP-DAC), 2015 20th Asia and South Pacific",
+		"publisher": "IEEE",
+		"page": "148–153",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7058996",
+		"author": [
+			{
+				"family": "Li",
+				"given": "Hui"
+			},
+			{
+				"family": "Le Beux",
+				"given": "Sébastien"
+			},
+			{
+				"family": "Nicolescu",
+				"given": "Gabriela"
+			},
+			{
+				"family": "O'Connor",
+				"given": "Ian"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/JIHMMID5",
+		"type": "paper-conference",
+		"title": "Four-Channel 100-Gb/s per Channel Discrete Multi-Tone Modulation Using Silicon Photonic Integrated Circuits",
+		"publisher": "OSA",
+		"page": "Th5B.4",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/abstract.cfm?uri=OFC-2015-Th5B.4",
+		"DOI": "10.1364/OFC.2015.Th5B.4",
+		"ISBN": "978-1-55752-940-4",
+		"language": "en",
+		"author": [
+			{
+				"family": "Dong",
+				"given": "Po"
+			},
+			{
+				"family": "Lee",
+				"given": "Jeffrey"
+			},
+			{
+				"family": "Chen",
+				"given": "Young-Kai"
+			},
+			{
+				"family": "Buhl",
+				"given": "Lawrence L."
+			},
+			{
+				"family": "Chandrasekhar",
+				"given": "S."
+			},
+			{
+				"family": "Sinsky",
+				"given": "Jeffrey H."
+			},
+			{
+				"family": "Kim",
+				"given": "Kwangwoong"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/JJXPJHS9",
+		"type": "paper-conference",
+		"title": "Scaling Zero-Change Photonics: An Active Photonics Platform in a 32 nm Microelectronics SOI CMOS Process",
+		"publisher": "OSA",
+		"page": "SW4N.1",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/abstract.cfm?uri=CLEO_SI-2015-SW4N.1",
+		"DOI": "10.1364/CLEO_SI.2015.SW4N.1",
+		"ISBN": "978-1-55752-968-8",
+		"shortTitle": "Scaling Zero-Change Photonics",
+		"language": "en",
+		"author": [
+			{
+				"family": "Wade",
+				"given": "Mark T."
+			},
+			{
+				"family": "Pavanello",
+				"given": "Fabio"
+			},
+			{
+				"family": "Orcutt",
+				"given": "Jason"
+			},
+			{
+				"family": "Kumar",
+				"given": "Rajesh"
+			},
+			{
+				"family": "Shainline",
+				"given": "Jeffrey"
+			},
+			{
+				"family": "Stojanovic",
+				"given": "Vladimir"
+			},
+			{
+				"family": "Ram",
+				"given": "Rajeev"
+			},
+			{
+				"family": "Popovic",
+				"given": "Milos"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/M4FDP3ZF",
+		"type": "article-journal",
+		"title": "The Case for Hybrid Photonic Plasmonic Interconnects (HyPPIs): Low-Latency Energy-and-Area-Efficient On-Chip Interconnects",
+		"container-title": "IEEE Photonics Journal",
+		"page": "1-14",
+		"volume": "7",
+		"issue": "6",
+		"source": "IEEE Xplore",
+		"abstract": "Moore's law for traditional electric integrated circuits is facing increasingly more challenges in both physics and economics. Among those challenges is the fact that the bandwidth per compute on the chip is dropping, whereas the energy needed for data movement keeps rising. We benchmark various interconnect technologies, including electrical, photonic, and plasmonic options. We contrast them with hybrid photonic-plasmonic interconnect(s) [HyPPI(s)], where we consider plasmonics for active manipulation devices and photonics for passive propagation integrated circuit elements and further propose another novel hybrid link that utilizes an on-chip laser for intrinsic modulation, thus bypassing electrooptic modulation. Our analysis shows that such hybridization will overcome the shortcomings of both pure photonic and plasmonic links. Furthermore, it shows superiority in a variety of performance parameters such as point-to-point latency, energy efficiency, throughput, energy delay product, crosstalk coupling length, and bit flow density, which is a new metric that we defined to reveal the tradeoff between the footprint and performance. Our proposed HyPPIs show significantly superior performance compared with other links.",
+		"DOI": "10.1109/JPHOT.2015.2496357",
+		"ISSN": "1943-0655",
+		"shortTitle": "The Case for Hybrid Photonic Plasmonic Interconnects (HyPPIs)",
+		"author": [
+			{
+				"family": "Sun",
+				"given": "Shuai"
+			},
+			{
+				"family": "Badawy",
+				"given": "A. H. A."
+			},
+			{
+				"family": "Narayana",
+				"given": "V."
+			},
+			{
+				"family": "El-Ghazawi",
+				"given": "T."
+			},
+			{
+				"family": "Sorger",
+				"given": "V. J."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					12
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/M8E74AQ3",
+		"type": "paper-conference",
+		"title": "Power and performance analysis of scalable photonic networks for exascale architecture",
+		"container-title": "Green Computing Conference and Sustainable Computing Conference (IGSC), 2015 Sixth International",
+		"publisher": "IEEE",
+		"page": "1–8",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7393716",
+		"author": [
+			{
+				"family": "Kodi",
+				"given": "Avinash K."
+			},
+			{
+				"family": "Neel",
+				"given": "Brian"
+			},
+			{
+				"family": "Brantley",
+				"given": "William C."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/MHTGRISW",
+		"type": "article-journal",
+		"title": "Hi-LION: Hierarchical Large-Scale Interconnection Optical Network With AWGRs [Invited]",
+		"container-title": "Journal of Optical Communications and Networking",
+		"page": "A97",
+		"volume": "7",
+		"issue": "1",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/jocn/abstract.cfm?uri=jocn-7-1-A97",
+		"DOI": "10.1364/JOCN.7.000A97",
+		"ISSN": "1943-0620, 1943-0639",
+		"shortTitle": "Hi-LION",
+		"language": "en",
+		"author": [
+			{
+				"family": "Cao",
+				"given": "Zheng"
+			},
+			{
+				"family": "Proietti",
+				"given": "Roberto"
+			},
+			{
+				"family": "Yoo",
+				"given": "S. J. B."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					1,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/MJ7RURX8",
+		"type": "paper-conference",
+		"title": "Votex: A non-blocking optical router design for 3D Optical Network on Chip",
+		"container-title": "2015 14th International Conference on Optical Communications and Networks (ICOCN)",
+		"page": "1-3",
+		"source": "IEEE Xplore",
+		"event": "2015 14th International Conference on Optical Communications and Networks (ICOCN)",
+		"abstract": "Optical Network-on-Chip (ONoC) has attracted much attention from many researchers with the advancement of silicon photonics technology. ONoC combined with 3D integration technology can address some issues of two-dimensional architectures such as long distance and limited scalability. Most routers are with four or five ports, which cannot meet the demand of 3D networks. In this paper, we proposed Votex: a novel non-blocking optical router with seven ports, aiming at satisfying the requirements of 3D ONoC. As a case study, we compared Votex with the previously reported 7×7 crossbar. The result shows that Votex has lower insertion loss and requires less power.",
+		"DOI": "10.1109/ICOCN.2015.7203771",
+		"shortTitle": "Votex",
+		"author": [
+			{
+				"family": "Zhu",
+				"given": "Kexin"
+			},
+			{
+				"family": "Zhang",
+				"given": "Bowen"
+			},
+			{
+				"family": "Tan",
+				"given": "Wei"
+			},
+			{
+				"family": "Gu",
+				"given": "Huaxi"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					7
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/N547C6CM",
+		"type": "article-journal",
+		"title": "Reconfigurable 100 Gb/s Silicon Photonic Network-on-Chip [Invited]",
+		"container-title": "Journal of Optical Communications and Networking",
+		"page": "A37",
+		"volume": "7",
+		"issue": "1",
+		"source": "CrossRef",
+		"URL": "https://www.osapublishing.org/jocn/abstract.cfm?uri=jocn-7-1-A37",
+		"DOI": "10.1364/JOCN.7.000A37",
+		"ISSN": "1943-0620, 1943-0639",
+		"language": "en",
+		"author": [
+			{
+				"family": "Dong",
+				"given": "Po"
+			},
+			{
+				"family": "Chen",
+				"given": "Young-Kai"
+			},
+			{
+				"family": "Gu",
+				"given": "Tingyi"
+			},
+			{
+				"family": "Buhl",
+				"given": "Lawrence L."
+			},
+			{
+				"family": "Neilson",
+				"given": "David T."
+			},
+			{
+				"family": "Sinsky",
+				"given": "Jeffrey H."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					1,
+					1
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/NAV8QH9R",
+		"type": "paper-conference",
+		"title": "Variation-Aware Adaptive Tuning for Nanophotonic Interconnects",
+		"container-title": "Proceedings of the IEEE/ACM International Conference on Computer-Aided Design",
+		"collection-title": "ICCAD '15",
+		"publisher": "IEEE Press",
+		"publisher-place": "Piscataway, NJ, USA",
+		"page": "487–493",
+		"source": "ACM Digital Library",
+		"event-place": "Piscataway, NJ, USA",
+		"abstract": "Short-reach nanophotonic interconnects are promising to solve the communication bottleneck in data centers and chip-level scenarios. However, the nanophotonic interconnects are sensitive to process and thermal variations, especially for the microring structures, resulting in significant variation of an optical link's bit error rate (BER). In this paper, we propose a power-efficient adaptive tuning approach for nanophotonic interconnects to address the variation issues. During the adaptive tuning process, each nanophotonic interconnect is adaptively allocated just enough power to meet the BER requirement. The proposed adaptive tuning approach could reduce the photonic receiver power by 8% - 34% than the worst-case based fixed design while achieving the same BER. Our evaluation results show that the adaptive tuning approach scales well with the process variation, the thermal variation and the number of communication nodes, and can accommodate different types of NoC architectures and lasers.",
+		"URL": "http://dl.acm.org/citation.cfm?id=2840819.2840887",
+		"ISBN": "978-1-4673-8389-9",
+		"author": [
+			{
+				"family": "Wu",
+				"given": "Rui"
+			},
+			{
+				"family": "Chen",
+				"given": "Chin-Hui"
+			},
+			{
+				"family": "Li",
+				"given": "Cheng"
+			},
+			{
+				"family": "Huang",
+				"given": "Tsung-Ching"
+			},
+			{
+				"family": "Lan",
+				"given": "Fan"
+			},
+			{
+				"family": "Zhang",
+				"given": "Chong"
+			},
+			{
+				"family": "Pan",
+				"given": "Yun"
+			},
+			{
+				"family": "Bowers",
+				"given": "John E."
+			},
+			{
+				"family": "Beausoleil",
+				"given": "Raymond G."
+			},
+			{
+				"family": "Cheng",
+				"given": "Kwang-Ting"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/NJEPKRUB",
+		"type": "article-journal",
+		"title": "Stability analysis in a ROADM-based multi-channel quasi-ring optical network",
+		"container-title": "Optical Fiber Technology",
+		"page": "40–50",
+		"volume": "21",
+		"source": "Google Scholar",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S1068520014001072",
+		"author": [
+			{
+				"family": "Tsai",
+				"given": "Jimmy"
+			},
+			{
+				"family": "Wang",
+				"given": "Zheng"
+			},
+			{
+				"family": "Pan",
+				"given": "Yan"
+			},
+			{
+				"family": "Kilper",
+				"given": "Daniel C."
+			},
+			{
+				"family": "Pavel",
+				"given": "Lacra"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/NXR5KHE7",
+		"type": "paper-conference",
+		"title": "Partitioning Strategies of Wavelength-Routed Optical Networks-on-Chip for Laser Power Minimization",
+		"container-title": "2015 Workshop on Exploiting Silicon Photonics for Energy-Efficient High Performance Computing (SiPhotonics)",
+		"page": "17-24",
+		"source": "IEEE Xplore",
+		"event": "2015 Workshop on Exploiting Silicon Photonics for Energy-Efficient High Performance Computing (SiPhotonics)",
+		"abstract": "Many researchers are currently at work to assess the congruent multiples in performance and energy efficiency that should be expected by the photonic integration of multi and many-core processors. However, such processors and their interconnection networks are typically viewed as monolithic resources, which fails to capture the most recent trends in the usage model of these computation-rich devices. In fact, partitioning of computation and communication resources is gaining momentum as a way of enabling application concurrency, and of consolidating software functions with heterogeneous requirements onto the same platform. Optical NoCs have never been embodied in this context. This work bridges this gap and proposes a partitioning technology for wavelength-routed ONoCs, including an algorithm for online allocation of wavelengths, that aims at their maximum reuse across partitions. This way, laser sources that are not inuse at a given point in time can be powered-off, thus mitigating the most significant contribution to static power dissipation in optical NoCs.",
+		"DOI": "10.1109/SiPhotonics.2015.13",
+		"author": [
+			{
+				"family": "Ortin",
+				"given": "M."
+			},
+			{
+				"family": "Ramini",
+				"given": "L."
+			},
+			{
+				"family": "Balboni",
+				"given": "M."
+			},
+			{
+				"family": "Zuolo",
+				"given": "L."
+			},
+			{
+				"family": "Maddalena",
+				"given": "N."
+			},
+			{
+				"family": "Viñals",
+				"given": "V."
+			},
+			{
+				"family": "Bertozzi",
+				"given": "D."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/Q49IA93C",
+		"type": "paper-conference",
+		"title": "Optical power dynamics in wavelength layer software defined networking",
+		"container-title": "Photonic Networks and Devices",
+		"publisher": "Optical Society of America",
+		"page": "NeT2F–2",
+		"source": "Google Scholar",
+		"URL": "https://www.osapublishing.org/abstract.cfm?uri=Networks-2015-NeT2F.2",
+		"author": [
+			{
+				"family": "Kilper",
+				"given": "Daniel C."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/RI39B6MS",
+		"type": "paper-conference",
+		"title": "Experimental Demonstration of 3D Elastic Optical Networking in Space, Time and Frequency",
+		"container-title": "CLEO: Science and Innovations",
+		"publisher": "Optical Society of America",
+		"page": "SF1K–2",
+		"source": "Google Scholar",
+		"URL": "https://www.osapublishing.org/abstract.cfm?uri=cleo_si-2015-SF1K.2",
+		"author": [
+			{
+				"family": "Qin",
+				"given": "Chuan"
+			},
+			{
+				"family": "Guan",
+				"given": "Binbin"
+			},
+			{
+				"family": "Scott",
+				"given": "Ryan P."
+			},
+			{
+				"family": "Proietti",
+				"given": "Roberto"
+			},
+			{
+				"family": "Fontaine",
+				"given": "Nicolas K."
+			},
+			{
+				"family": "Yoo",
+				"given": "SJ Ben"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/SFIWIGC3",
+		"type": "article-journal",
+		"title": "mNoC: Large Nanophotonic Network-on-Chip Crossbars with Molecular Scale Devices",
+		"container-title": "J. Emerg. Technol. Comput. Syst.",
+		"page": "1:1–1:25",
+		"volume": "12",
+		"issue": "1",
+		"source": "ACM Digital Library",
+		"abstract": "Moore's law and the continuity of device scaling have led to an increasing number of cores/nodes on a chip, creating a need for new mechanisms to achieve high-performance and power-efficient Network-on-Chip (NoC). Nanophotonics based NoCs provide for higher bandwidth and more power efficient designs than electronic networks. Present approaches often use an external laser source, ring resonators, and waveguides. However, they still suffer from important limitations: large static power consumption, and limited network scalability. In this article, we explore the use of emerging molecular scale devices to construct nanophotonic networks: Molecular-scale Network-on-Chip (mNoC). We leverage on-chip emitters such as quantum dot LEDs, which provide electrical to optical signal modulation, and chromophores, which provide optical signal filtering for receivers. These devices replace the ring resonators and the external laser source used in contemporary nanophotonic NoCs. They reduce energy consumption or enable scaling to larger crossbars for a reduced energy budget. We present a Single Writer Multiple Reader (SWMR) bus based crossbar mNoC. Our evaluation shows that an mNoC can achieve more than 88% reduction in energy for a 64×64 crossbar compared to similar ring resonator based designs. Additionally, an mNoC can scale to a 256×256 crossbar with an average 10% performance improvement and 54% energy reduction.",
+		"URL": "http://doi.acm.org/10.1145/2700241",
+		"DOI": "10.1145/2700241",
+		"ISSN": "1550-4832",
+		"shortTitle": "mNoC",
+		"author": [
+			{
+				"family": "Pang",
+				"given": "Jun"
+			},
+			{
+				"family": "Dwyer",
+				"given": "Christopher"
+			},
+			{
+				"family": "Lebeck",
+				"given": "Alvin R."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					8
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/T8ZABQH7",
+		"type": "paper-conference",
+		"title": "Non-blocking electro-optic network-on-chip router for high-throughput and low-power many-core systems",
+		"container-title": "2015 World Congress on Information Technology and Computer Applications Congress (WCITCA)",
+		"page": "1-7",
+		"source": "IEEE Xplore",
+		"event": "2015 World Congress on Information Technology and Computer Applications Congress (WCITCA)",
+		"abstract": "Photonic Networks-on-Chip (PNoCs) have been proposed as a promising solution to solve the problems of their electronic counterparts. By offering low latency, ultra-high throughput and low power dissipation, PNoCs have opened a new horizon for future generation of many-core systems. An optical router for routing and flow control functions is the backbone component for these networks. In this paper, we propose a new non-blocking electro-optic router integrated in a mesh-based NoC system (PHENIC)1. When compared to similar non-blocking based architecture, the evaluation results show that the proposed router reduces the End-To-End latency by 40%. In addition, evaluation results show a considerable improvement in terms of energy consumption by up to 44%.",
+		"DOI": "10.1109/WCITCA.2015.7367068",
+		"author": [
+			{
+				"family": "Ahmed",
+				"given": "A. Ben"
+			},
+			{
+				"family": "Okuyama",
+				"given": "Y."
+			},
+			{
+				"family": "Abdallah",
+				"given": "A. Ben"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/TWP7QIFP",
+		"type": "paper-conference",
+		"title": "Fast scheduling based on iterative parallel wavelength matching for a multi-wavelength ring network-on-chip",
+		"container-title": "2015 International Conference on Optical Network Design and Modeling (ONDM)",
+		"page": "180-185",
+		"source": "IEEE Xplore",
+		"event": "2015 International Conference on Optical Network Design and Modeling (ONDM)",
+		"abstract": "In synchronous networks-on-chip (NoC), scheduling of packet transmission is required for achieving high throughput, low latency and good fairness, while avoiding packet collisions. Efficient algorithms exist for rearrangeably non-blocking NoC. However, when realized with integrated optical devices, NoC are typically arranged in topologies that are blocking if a single wavelength is used. Mitigation of the blocking behavior is then achieved by exploiting the wavelength domain, which requires however a novel scheduling paradigm. This paper presents an integrated optical NoC based on a ring topology and realized with multiple resonating microrings (MMR). Scheduling in MMR architecture comprises the conventional matching sub-problem along with wavelength assignment sub-problem, which accounts for the additional constraints due to the wavelength domain. A novel scheduling algorithm based on iSLIP algorithm is proposed for jointly addressing both sub-problems. The iterative Parallel Wavelength Matching (iPWM) algorithm achieves performance similar to a two-step scheduler based on sequential iSLIP and first-fit wavelength assignment, but with a computational complexity lower and independent of the number of wavelengths.",
+		"DOI": "10.1109/ONDM.2015.7127295",
+		"author": [
+			{
+				"family": "Cerutti",
+				"given": "I."
+			},
+			{
+				"family": "Andriolli",
+				"given": "N."
+			},
+			{
+				"family": "Pintus",
+				"given": "P."
+			},
+			{
+				"family": "Faralli",
+				"given": "S."
+			},
+			{
+				"family": "Gambini",
+				"given": "F."
+			},
+			{
+				"family": "Liboiron-Ladouceur",
+				"given": "O."
+			},
+			{
+				"family": "Castoldi",
+				"given": "P."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					5
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/UC938CC5",
+		"type": "paper-conference",
+		"title": "Improving crosstalk resilience with wavelength spacing in photonic crossbar-based network-on-chip architectures",
+		"container-title": "2015 IEEE 58th International Midwest Symposium on Circuits and Systems (MWSCAS)",
+		"page": "1-4",
+		"source": "IEEE Xplore",
+		"event": "2015 IEEE 58th International Midwest Symposium on Circuits and Systems (MWSCAS)",
+		"abstract": "Crosstalk noise can significantly reduce data transfer reliability in emerging photonic network-on-chip (PNoC) architectures. Undesirable mode coupling between photonic signals at microring resonators (MR) is the main cause of crosstalk in photonic waveguides. As emerging PNoC architectures employ dense wavelength division multiplexing (DWDM) with multiple cascaded MRs, these architectures suffer from high crosstalk levels. In this paper, we propose a novel solution to this problem, by increasing the wavelength spacing between adjacent wavelengths in a DWDM waveguide to reduce crosstalk noise. Experimental results on two photonic crossbar architectures (Corona and Firefly) indicate that our approach improves worst-case signal-to-noise ratio (SNR) by up to 51.7%.",
+		"DOI": "10.1109/MWSCAS.2015.7282035",
+		"author": [
+			{
+				"family": "Chittamuru",
+				"given": "S. V. R."
+			},
+			{
+				"family": "Pasricha",
+				"given": "S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					8
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/UEC89KCP",
+		"type": "paper-conference",
+		"title": "Experimental demonstration of bidirectional transmissions in a photonic integrated network on chip with bus topology",
+		"container-title": "2015 International Conference on Photonics in Switching (PS)",
+		"page": "357-359",
+		"source": "IEEE Xplore",
+		"event": "2015 International Conference on Photonics in Switching (PS)",
+		"abstract": "This paper presents a photonic integrated circuit (PIC) for networks on chip (NoC) with a bus topology and demonstrates the feasibility of simultaneous counter-propagating optical transmissions at the same wavelength. Bit error rate measurements indicate that bus is able to support bidirectional transmissions with a penalty below 1.5 dB for a BER of 10-9.",
+		"DOI": "10.1109/PS.2015.7329052",
+		"author": [
+			{
+				"family": "Faralli",
+				"given": "S."
+			},
+			{
+				"family": "Gambini",
+				"given": "F."
+			},
+			{
+				"family": "Pintus",
+				"given": "P."
+			},
+			{
+				"family": "Liboiron-Ladouceur",
+				"given": "O."
+			},
+			{
+				"family": "Castoldi",
+				"given": "P."
+			},
+			{
+				"family": "Andriolli",
+				"given": "N."
+			},
+			{
+				"family": "Cerutti",
+				"given": "I."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/UGZ8IEWE",
+		"type": "article-journal",
+		"title": "RPNoC: A Ring-Based Packet-Switched Optical Network-on-Chip",
+		"container-title": "IEEE Photonics Technology Letters",
+		"page": "423-426",
+		"volume": "27",
+		"issue": "4",
+		"source": "IEEE Xplore",
+		"abstract": "Optical network-on-chip (ONoC) is a promising solution for its high bandwidth and low energy consumption. However, optical circuit switching requires an electrical control network, which leads to network congestion, low network utilization, high latency, and an overhead in energy consumption. In this letter, we propose an architecture called RPNoC based on ring topology using packet switching. A wavelength assignment method and a deadlock-free deterministic routing algorithm are jointly designed, which significantly reduce the maximum number of hops using much fewer optical devices compared with other packet-switched ONoCs. The simulation is carried out for 64-node RPNoC under uniform and realistic traffic pattern. The evaluation results show that it yields higher throughput, lower latency, and lower energy consumption than mesh and ring networks.",
+		"DOI": "10.1109/LPT.2014.2376972",
+		"ISSN": "1041-1135",
+		"shortTitle": "RPNoC",
+		"author": [
+			{
+				"family": "Wang",
+				"given": "X."
+			},
+			{
+				"family": "Gu",
+				"given": "H."
+			},
+			{
+				"family": "Yang",
+				"given": "Y."
+			},
+			{
+				"family": "Wang",
+				"given": "K."
+			},
+			{
+				"family": "Hao",
+				"given": "Q."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/W6799QW2",
+		"type": "paper-conference",
+		"title": "Leveraging silicon-photonic noc for designing scalable gpus",
+		"container-title": "Proceedings of the 29th ACM on International Conference on Supercomputing",
+		"publisher": "ACM",
+		"page": "273–282",
+		"source": "Google Scholar",
+		"URL": "http://dl.acm.org/citation.cfm?id=2751229",
+		"author": [
+			{
+				"family": "Ziabari",
+				"given": "Amir Kavyan Kavyan"
+			},
+			{
+				"family": "Abellán",
+				"given": "José L."
+			},
+			{
+				"family": "Ubal",
+				"given": "Rafael"
+			},
+			{
+				"family": "Chen",
+				"given": "Chao"
+			},
+			{
+				"family": "Joshi",
+				"given": "Ajay"
+			},
+			{
+				"family": "Kaeli",
+				"given": "David"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/WNCD4JFE",
+		"type": "article-journal",
+		"title": "Green Optical Networks: Power Savings versus Network Performance",
+		"container-title": "Green Communications: Principles, Concepts and Practice",
+		"page": "291–308",
+		"source": "Google Scholar",
+		"URL": "http://books.google.com/books?hl=en&lr=&id=kr0sCgAAQBAJ&oi=fnd&pg=PA291&dq=info:6J5otw89kqIJ:scholar.google.com&ots=gBfJPe5I5y&sig=VZUTAk0SL7ec2krKvLLEm8GpVrs",
+		"shortTitle": "Green Optical Networks",
+		"author": [
+			{
+				"family": "Monti",
+				"given": "Paolo"
+			},
+			{
+				"family": "Cavdar",
+				"given": "Cicek"
+			},
+			{
+				"family": "Cerutti",
+				"given": "I."
+			},
+			{
+				"family": "Chen",
+				"given": "J."
+			},
+			{
+				"family": "Mohammad",
+				"given": "Ajmal"
+			},
+			{
+				"family": "Velasco",
+				"given": "L."
+			},
+			{
+				"family": "Wiatr",
+				"given": "P."
+			},
+			{
+				"family": "Wosinska",
+				"given": "Lena"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/X9UVVZJ2",
+		"type": "paper-conference",
+		"title": "Soft-error resilient 3D Network-on-Chip router",
+		"container-title": "2015 IEEE 7th International Conference on Awareness Science and Technology (iCAST)",
+		"page": "84-90",
+		"source": "IEEE Xplore",
+		"event": "2015 IEEE 7th International Conference on Awareness Science and Technology (iCAST)",
+		"abstract": "Three-Dimensional Networks-on-Chips (3D-NoCs) have been proposed as an auspicious solution, merging the high parallelism of the Network-on-Chip (NoC) paradigm with the high-performance and low-power of 3D-ICs. However, as feature sizes and power supply voltages continually decrease, the devices and interconnects have become more vulnerable to transient errors. Transient errors, or soft errors, have severe consequences on chip performance, such as deadlock, data corruption, packet loss and increased packet latency. In this paper, we propose a soft-error resilient 3D-NoC router (SER-3DR) architecture for highly-reliable many-core Systems-on-Chips. The proposed architecture is able to recover from transient errors occurring in different pipeline stages of the SER-3DR.We implemented the architecture in hardware with 45 nm CMOS technology. Evaluation results show that SER-3DR is able to achieve a high level of transient error protection with a latency increase of 18.16%, an additional area cost of 14.98% and a power overhead of 5.90% when compared to the baseline router architecture.",
+		"DOI": "10.1109/ICAwST.2015.7314025",
+		"author": [
+			{
+				"family": "Dang",
+				"given": "K. N."
+			},
+			{
+				"family": "Meyer",
+				"given": "M."
+			},
+			{
+				"family": "Okuyama",
+				"given": "Y."
+			},
+			{
+				"family": "Abdallah",
+				"given": "A. Ben"
+			},
+			{
+				"family": "Tran",
+				"given": "Xuan-Tu"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/Z6ZC648V",
+		"type": "paper-conference",
+		"title": "Fast optical simulation from a reduced set of impulse responses using SystemC-AMS",
+		"container-title": "Design, Automation Test in Europe Conference Exhibition (DATE), 2015",
+		"page": "405-409",
+		"source": "IEEE Xplore",
+		"event": "Design, Automation Test in Europe Conference Exhibition (DATE), 2015",
+		"abstract": "In this paper we propose a methodology to simulate the optical filtering system of a camera module with limited access to proprietary data. The target of the simulation is the virtual prototyping of the overall camera module for a fine tuning of the auto-focus mechanism. For the optical system modeling, the methodology is based on the usage of some point spread functions (PSFs). The use of the full set of PSFs is computationally costly and memory space consuming hence compromising the usability of the optical model in the full system virtual prototyping. To improve the model execution time, PSFs interpolation and free-space propagation techniques are used: they allow reducing the sampling space with minimal impact on the accuracy of the model (sharpness error less than 2%). The total speed-up gain with respect to the standard non-optimized model is provided by two contributors. First, the interpolation technique leads to a speed-up linked to the PSFs number reduction. Second, the caching of computationally intense processes enables speed-up scaling with the number of frames.",
+		"author": [
+			{
+				"family": "Teysseyre",
+				"given": "F."
+			},
+			{
+				"family": "Navarro",
+				"given": "D."
+			},
+			{
+				"family": "O'Connor",
+				"given": "I."
+			},
+			{
+				"family": "Cascio",
+				"given": "F."
+			},
+			{
+				"family": "Cenni",
+				"given": "F."
+			},
+			{
+				"family": "Guillaume",
+				"given": "O."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015",
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/ZSDJGKBK",
+		"type": "article-journal",
+		"title": "Ring Versus Bus: A Theoretical and Experimental Comparison of Photonic Integrated NoC",
+		"container-title": "Lightwave Technology, Journal of",
+		"page": "4870–4877",
+		"volume": "33",
+		"issue": "23",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7296588",
+		"shortTitle": "Ring Versus Bus",
+		"author": [
+			{
+				"family": "Pintus",
+				"given": "Paolo"
+			},
+			{
+				"family": "Gambini",
+				"given": "Fabrizio"
+			},
+			{
+				"family": "Faralli",
+				"given": "Stefano"
+			},
+			{
+				"family": "Di Pasquale",
+				"given": "Fabrizio"
+			},
+			{
+				"family": "Cerutti",
+				"given": "Isabella"
+			},
+			{
+				"family": "Andriolli",
+				"given": "Nicola"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/ZZ4398DP",
+		"type": "paper-conference",
+		"title": "OWN: Optical and Wireless Network-on-Chip for Kilo-core Architectures",
+		"container-title": "High-Performance Interconnects (HOTI), 2015 IEEE 23rd Annual Symposium on",
+		"publisher": "IEEE",
+		"page": "44–51",
+		"source": "Google Scholar",
+		"URL": "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7312666",
+		"shortTitle": "OWN",
+		"author": [
+			{
+				"family": "Sikder",
+				"given": "Md Ashif I."
+			},
+			{
+				"family": "Kodi",
+				"given": "Avinash K."
+			},
+			{
+				"family": "Kennedy",
+				"given": "Matthew"
+			},
+			{
+				"family": "Kaya",
+				"given": "Savas"
+			},
+			{
+				"family": "Louri",
+				"given": "Ahmed"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	}
+]

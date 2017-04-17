@@ -1,0 +1,112 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:link="http://purl.org/rss/1.0/modules/link/">
+    <bib:BookSection rdf:about="urn:isbn:978-3-642-10502-9%20978-3-642-10503-6">
+        <z:itemType>bookSection</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Book>
+                <dcterms:isPartOf>
+                    <bib:Series>
+                        <dc:title>Topics in Applied Physics</dc:title>
+                        <dc:identifier>122</dc:identifier>
+                    </bib:Series>
+                </dcterms:isPartOf>
+                <dc:identifier>ISBN 978-3-642-10502-9 978-3-642-10503-6</dc:identifier>
+                <dc:title>Silicon Photonics III</dc:title>
+            </bib:Book>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Springer Berlin Heidelberg</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dong</foaf:surname>
+                        <foaf:givenname>Po</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Duan</foaf:surname>
+                        <foaf:givenname>Guang-Hua</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chen</foaf:surname>
+                        <foaf:givenname>Young-Kai</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Neilson</foaf:surname>
+                        <foaf:givenname>David T.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pavesi</foaf:surname>
+                        <foaf:givenname>Lorenzo</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lockwood</foaf:surname>
+                        <foaf:givenname>David J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <link:link rdf:resource="#item_1620"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microwaves, RF and Optical Engineering</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Optical and Electronic Materials</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+                <rdf:value>Optics, Optoelectronics, Plasmonics and Optical Devices</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>Po-Dong</dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://link.springer.com/chapter/10.1007/978-3-642-10503-6_14</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>©2016 Springer-Verlag Berlin Heidelberg</dc:rights>
+        <bib:pages>397-420</bib:pages>
+        <dc:date>2016</dc:date>
+        <dc:description>DOI: 10.1007/978-3-642-10503-6_14</dc:description>
+        <dcterms:dateSubmitted>2016-03-04 15:29:51</dcterms:dateSubmitted>
+        <z:libraryCatalog>link.springer.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>In this chapter, we review the technical merits of silicon photonic devices and integrated circuits, which have benefited from high-index-contrast silicon waveguides, a high integration level of various optical functions on the same chip, and mature complementary metal-oxide semiconductor (CMOS) fabrication techniques. These technical merits assure silicon photonics as a disruptive optical technology that will achieve low-cost and compact optical modules for data communications, with applications such as chip-scale optical interconnects, short-reach communications in datacenters and supercomputers, and metro/long-haul optical transmissions. We discuss various applications in these fields, which may benefit from implementation in silicon photonics. In particular, we review silicon photonic circuits for wavelength-division multiplexing (WDM) transmitters, WDM receivers, coherent optical transmitters and coherent receivers, which all require photonic integration to reduce the cost and module size.</dcterms:abstract>
+        <dc:title>Merits and Potential Impact of Silicon Photonics</dc:title>
+    </bib:BookSection>
+    <z:Attachment rdf:about="#item_1620">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="attachments:Dong et al_2016_Merits and Potential Impact of Silicon Photonics.pdf"/>
+        <dc:title>Dong et al_2016_Merits and Potential Impact of Silicon Photonics.pdf</dc:title>
+        <z:linkMode>2</z:linkMode>
+        <link:type>application/pdf</link:type>
+        <dc:description>&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml&quot; id=&quot;title&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;&lt;ul xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;list-style-type: none; padding-left:0px&quot; id=&quot;toc&quot;&gt;&lt;li&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/1&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/2&quot;&gt;14.1 Technical Merits of Silicon Photonic Devices&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:12px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/2&quot;&gt;14.1.1 High-Index-Contrast Silicon Waveguides&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/4&quot;&gt;14.1.2 High Integration Level of Silicon Photonics&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/5&quot;&gt;14.1.3 High Yield and Low Cost by Mature CMOS Fabrication&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/7&quot;&gt;14.2 Applications&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:12px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/7&quot;&gt;14.2.1 Telecommunication Applications&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/10&quot;&gt;14.2.2 DataComm Applications&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/12&quot;&gt;14.2.3 Chip-Scale Interconnects&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:8px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/14&quot;&gt;14.3 Silicon Photonic Integrated Circuits&lt;/a&gt;&lt;ul style=&quot;list-style-type: none; padding-left:12px&quot;&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/14&quot;&gt;14.3.1 WDM Transmitters&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/16&quot;&gt;14.3.2 WDM Receivers&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/17&quot;&gt;14.3.3 Coherent Optical Transmitters&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/18&quot;&gt;14.3.4 Coherent Optical Receivers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/20&quot;&gt;14.4 Conclusion&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;padding-top:4px&quot;&gt;&lt;a href=&quot;zotero://open-pdf/0_X32QNXMQ/21&quot;&gt;References&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</dc:description>
+    </z:Attachment>
+</rdf:RDF>

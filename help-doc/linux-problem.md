@@ -521,6 +521,41 @@ LanguageTool => work for plain text
 :hardcopy > file.pdf
 :Tohtml     # but seem ugly
 
+3. Install Plugin using Vundle
+Plugin Management : ~/.vim/vimrc.bundles
++ install vundle (done)
+    ```
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ```
++ update vimrc, or .vim/vimrc.bundles
+    ```
+    " @.vim/vimrc.bundles, gmarik/Vundle.vim is the half part of github.com/gmarik/Vundle.vim
+    Plugin 'gmarik/Vundle.vim
+    ```
++ :PluginStatus, and find an error, then use PluginInstall SchemeMode
+
+<http://www.adamwadeharris.com/how-to-switch-from-vundle-to-vim-plug/>
+
+4. filetype detect
+```
+:set filetype=scheme
+```
+better, auto detect:
+```
+
+```
+autocmd BufRead,BufNewFile *.ctl set filetype=scheme
+```
+
+<https://github.com/rust-lang/rust.vim/issues/46>
+
+5. highlight tools
+```
+autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
+autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|DONE\|XXX\|BUG\|HACK\)')
+```
+
 #### English - Check Tools
 1. Download:vim-plugin
     <http://www.vim.org/scripts/script.php?script_id=3223>
@@ -1550,6 +1585,7 @@ vim /etc/security/limits.conf
 ```
 <https://www.nixtutor.com/linux/changing-priority-on-linux-processes/>
 
+<<<<<<< HEAD
 ### 58. opengl
 $ sudo apt-get install build-essential      # install essential build environment
 $ sudo apt-get install libgl1-mesa-dev      # install OpenGL Utilities
@@ -1589,6 +1625,77 @@ sudo vi /etc/apt/sources.list
 sudo apt-get update
 ```
 
+=======
+### 58. guile (scheme, used in MIT MEEP)
+<https://www.gnu.org/software/guile/download/>
+
+### 59. Build Tools
++ Autotools
+    - Autoconf (mostly): scans existing tree
+    - Automake : provide short template to determine built-program;
+    - Libtool : very cool tool for simplifying the building and installation of shared libraries
+    - CMAKE
+
++ GNU coding standards
+<http://stackoverflow.com/questions/719057/why-use-build-tools-like-autotools-when-we-can-just-write-our-own-makefiles>
+
+### 60. Develp Tools (pkg-config, locale)
+1. pkg-config
+pkg-config --list-all | grep ltdl       #shows nothing
+
+To see where pkg-config search ===
+pkg-config --variable pc_path pkg-config
+
+```
+pkg-config --cflags --libs x
+cc `pkg-config --cflags --libs x` -o myapp myapp.c
+```
+pkg-config --cflags --libs QtGui #
+
+Deeply understand compile library
+```
+gcc -o output example.c -lGL -lGLU -lglut       # guess GL is a package
+pkg-config --list-all | grep gl         # list gl ...
+
+pkg-config --cflags --libs gl           # cflags,  library
+```
+CFLAGS -I/xx/xx/include, header fine
+library, LDFLAG, libary .so
+<https://people.freedesktop.org/~dbn/pkg-config-guide.html>
+
+ XXX-dev vs. XXX : XXX-dev most often contain the header related to a library's interface
+dpkg -L freeglut3-dev   # show you freeglut3's path
+<http://stackoverflow.com/questions/1157192/what-do-the-dev-packages-in-the-linux-package-repositories-actually-contain>
+
+ A library is only visible to pkg-config if an appropriate configuration file (with extension .pc) is put in the directory /usr/lib/pkgconfig (or some other standard location where pkg-config looks, such as /usr/local/lib/pkgconfig). If the authors (or packagers) of the library did not create such a file, the library will not be seen by pkg-config.
+ Apparently the authors of freeglut3 have not created a .pc file. In Debian and its derivatives (including Ubuntu), the .pc file is usually included with the -dev packacge. This list of freeglut3-dev files does not contain a .pc file, so this library is not visible to pkg-config. Likewise, the file lists for libglu1-mesa-dev and other GL/GLU packages do not include .pc files. 
+
+<https://ubuntuforums.org/showthread.php?t=832003>
+
+then add .pc file will fix the answer
+pc file missing report : <https://gist.github.com/darealshinji/5391d9cbd211193c6a88d95cd55cf1a8>
+
+<https://people.freedesktop.org/~dbn/pkg-config-guide.html>
+
+Question: don't show PKG_CONFIG_PATH
+    pkg-config --variable pc_init pkg-config
+
+pkg-config --variable pc_path pkg-config            # T-T not pc_init
+Finally, pkg-config (version 0.24 or later), but mine is 0.21
+<http://askubuntu.com/questions/210210/pkg-config-path-environment-variable>
+
+
+2. locale
+
+### 61. Mount USB
+```
+df -h           # show filesytem
+lsblk
+sudo mkdir /media/usb
+sudo mount -t vfat /dev/sdb1 /media/usb
+sudo umount /media/usb or sudo umount /dev/sdb1
+```
+>>>>>>> 9ff8bf79928e31f7b06463d1a64d12f13b2efa4c
 
 
 #### ERROR
