@@ -90,6 +90,11 @@ if [[ "$1" == "software" ]]
 then
    echo "============Install git==============="
    soft-check git
+   #  $ make configure
+   #  $ ./configure --prefix=~/Linux
+   #  $ make all doc info
+   #  $ sudo make install install-doc install-html install-info
+
    echo "============Install vim==============="
    soft-check vim
    echo "============Install tmux==============="

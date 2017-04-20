@@ -1,0 +1,141 @@
+[
+	{
+		"id": "http://zotero.org/users/2643828/items/4XX36ACA",
+		"type": "article-journal",
+		"title": "5-port optical router based on Si microring optical switches for photonic networks-on-chip",
+		"container-title": "IEEE Photonics Technology Letters",
+		"page": "1-1",
+		"volume": "PP",
+		"issue": "99",
+		"source": "IEEE Xplore",
+		"abstract": "We demonstrate a 5-port optical router composed of 8 Si microring optical switches tuned by thermo-optic effect. The optical signal-to-noise ratio of the device on the tested routing states is over 11 dB at the working wavelength. 32 Gbps data transmission has been performed on its 20 optical links and 8-channel wavelength division multiplexing data transmission in the wavelength range from 1525 nm to 1565 nm has been implemented to expand its communication capacity. The average energy efficiency of the optical router is 68.2 fJ/bit, and its response time is around 20 μs.",
+		"DOI": "10.1109/LPT.2016.2518869",
+		"ISSN": "1041-1135",
+		"note": "00000",
+		"author": [
+			{
+				"family": "Jia",
+				"given": "H."
+			},
+			{
+				"family": "Zhao",
+				"given": "Y."
+			},
+			{
+				"family": "Zhang",
+				"given": "L."
+			},
+			{
+				"family": "Chen",
+				"given": "Q."
+			},
+			{
+				"family": "Ding",
+				"given": "J."
+			},
+			{
+				"family": "Fu",
+				"given": "X."
+			},
+			{
+				"family": "Yang",
+				"given": "L."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/53EIMDTG",
+		"type": "article-journal",
+		"title": "Energy challenges in optical access and aggregation networks",
+		"container-title": "Phil. Trans. R. Soc. A",
+		"page": "20140435",
+		"volume": "374",
+		"issue": "2062",
+		"source": "Google Scholar",
+		"URL": "http://rsta.royalsocietypublishing.org/content/374/2062/20140435.abstract",
+		"note": "00002",
+		"author": [
+			{
+				"family": "Kilper",
+				"given": "Daniel C."
+			},
+			{
+				"family": "Rastegarfar",
+				"given": "Houman"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016"
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/2643828/items/PQUDBCGV",
+		"type": "paper-conference",
+		"title": "A thermal-Aware Laser Tuning Approach for Silicon Photonic Interconnects",
+		"container-title": "The 2nd International Workshop on Optical/Photonic Interconnects for Computing Systems (OPTICS Workshop)",
+		"publisher-place": "Dresden, Germany",
+		"source": "HAL Archives Ouvertes",
+		"event-place": "Dresden, Germany",
+		"abstract": "Optical interconnect is an emerging technology considered as one of the key solutions for future generation on-chip interconnects. However, silicon photonic devices are highly sensitive to temperature variation. Under a given chip activity, this leads to a lower laser efficiency and a drift of wavelengths of optical devices (on-chip lasers and Microring Resonators (MRs)), which results in a higher Bit Error Ratio (BER). In this paper, for the first time, we propose to tune the laser injection current in order to align the wavelength of the emitted signals with the resonant wavelengths of the MRs. Our approach allows significant improvements of the power consumption with regard to the related approaches.",
+		"URL": "https://hal.archives-ouvertes.fr/hal-01248310",
+		"author": [
+			{
+				"family": "Li",
+				"given": "Hui"
+			},
+			{
+				"family": "Fourmigue",
+				"given": "Alain"
+			},
+			{
+				"family": "Le Beux",
+				"given": "Sébastien"
+			},
+			{
+				"family": "O 'connor",
+				"given": "Ian"
+			},
+			{
+				"family": "Nicolescu",
+				"given": "Gabriela"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					3
+				]
+			]
+		},
+		"accessed": {
+			"date-parts": [
+				[
+					"2016",
+					3,
+					2
+				]
+			]
+		}
+	}
+]

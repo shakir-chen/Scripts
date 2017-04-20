@@ -1,0 +1,69 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:res="http://purl.org/vocab/resourcelist/schema#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:ctag="http://commontag.org/ns#"
+ xmlns:bibo="http://purl.org/ontology/bibo/"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:address="http://schemas.talis.com/2005/address/schema#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <z:UserItem rdf:about="http://zotero.org/users/2643828/items/PQUDBCGV">
+        <res:resource rdf:resource="https://hal.archives-ouvertes.fr/hal-01248310"/>
+        <z:accessDate>2016-03-02 16:59:46</z:accessDate>
+        <z:repository>HAL Archives Ouvertes</z:repository>
+        <ctag:tagged>
+           <ctag:UserTag><ctag:label>Hui-Li</ctag:label></ctag:UserTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:UserTag><ctag:label>nicolescu</ctag:label></ctag:UserTag>
+        </ctag:tagged>
+    </z:UserItem>
+    <bibo:Article rdf:about="https://hal.archives-ouvertes.fr/hal-01248310">
+        <bibo:uri>https://hal.archives-ouvertes.fr/hal-01248310</bibo:uri>
+        <dcterms:abstract>Optical interconnect is an emerging technology considered as one of the key solutions for future generation on-chip interconnects. However, silicon photonic devices are highly sensitive to temperature variation. Under a given chip activity, this leads to a lower laser efficiency and a drift of wavelengths of optical devices (on-chip lasers and Microring Resonators (MRs)), which results in a higher Bit Error Ratio (BER). In this paper, for the first time, we propose to tune the laser injection current in order to align the wavelength of the emitted signals with the resonant wavelengths of the MRs. Our approach allows significant improvements of the power consumption with regard to the related approaches.</dcterms:abstract>
+        <dcterms:title>A thermal-Aware Laser Tuning Approach for Silicon Photonic Interconnects</dcterms:title>
+        <dcterms:creator rdf:nodeID="n19"/>
+        <bibo:authorList>
+            <rdf:Seq>
+                <rdf:li rdf:nodeID="n19"/>
+                <rdf:li rdf:nodeID="n21"/>
+                <rdf:li rdf:nodeID="n22"/>
+                <rdf:li rdf:nodeID="n23"/>
+                <rdf:li rdf:nodeID="n24"/>
+            </rdf:Seq>
+        </bibo:authorList>
+        <dcterms:creator rdf:nodeID="n21"/>
+        <dcterms:creator rdf:nodeID="n22"/>
+        <dcterms:creator rdf:nodeID="n23"/>
+        <dcterms:creator rdf:nodeID="n24"/>
+        <dcterms:isPartOf>
+            <bibo:Proceedings>
+                <dcterms:publisher>
+                    <foaf:Organization>
+                        <address:localityName>Dresden, Germany</address:localityName>
+                    </foaf:Organization>
+                </dcterms:publisher>
+                <dcterms:date>March 2016</dcterms:date>
+                <dcterms:title>The 2nd International Workshop on Optical/Photonic Interconnects for Computing Systems (OPTICS Workshop)</dcterms:title>
+            </bibo:Proceedings>
+        </dcterms:isPartOf>
+    </bibo:Article>
+    <foaf:Person rdf:nodeID="n19">
+       <foaf:givenname>Hui</foaf:givenname><foaf:surname>Li</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n21">
+        <foaf:givenname>Alain</foaf:givenname>
+        <foaf:surname>Fourmigue</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n22">
+        <foaf:givenname>Sébastien</foaf:givenname>
+        <foaf:surname>Le Beux</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n23">
+       <foaf:givenname>Ian</foaf:givenname><foaf:surname>O 'connor</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n24">
+        <foaf:givenname>Gabriela</foaf:givenname>
+        <foaf:surname>Nicolescu</foaf:surname>
+    </foaf:Person>
+</rdf:RDF>

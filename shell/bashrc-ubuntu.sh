@@ -160,7 +160,7 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 
 # Setup Scripts =====
-source ~/.helprc
+# source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
 # grep
@@ -177,6 +177,10 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 # ls
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
+alias lsf="ls -p --color=tt | grep -v / | tr '\r\n' '\t'"        # list only file, tr translate or delete, tr -d
+alias lshf="ls -pa --color=tty | grep -v /"     # list include hidden file
+alias lsd="ls -p --color=tty | grep /"     # list include hidden file
+alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
 
 alias vim="vi"
@@ -190,6 +194,8 @@ alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
 alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
+alias vimos="vim ~/Software/Scripts/help-doc/OS-learn.md"
+alias vimbus="vim ~/Dropbox/Linux/notes/business.md"
 
 alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
@@ -199,6 +205,7 @@ alias volumedown="pactl set-sink-volume 1 -10%"
 # }
 
 alias makee="make edit"
+alias maker="make run"
 alias xpropwm="xprop | grep WM_CLASS"
 
 # program open in ubuntu
@@ -344,6 +351,8 @@ alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
 alias sshcs="ssh-server cs"
 alias sshdaisy="ssh-server daisy "
+alias sshfei="ssh-server fei"
+alias sshhpc="ssh-server hpc"
 
 function sshcopyid(){
     cd ~/.ssh
@@ -357,7 +366,8 @@ function ssh-server() {
     if [ "$1" = "lab" ]
     then
         echo "here"
-        servername="xuanqi@143.89.135.212 -p 2222"
+        # servername="xuanqi@143.89.135.212 -p 2222"
+        servername="xuanqi@143.89.131.95 -p 2222"
         # ssh -XfC -c blowfish-cbc $servername
     elif [ "$1" = "zhehui" ]
     then
@@ -371,8 +381,14 @@ function ssh-server() {
     elif [ "$1" = "daisy" ]
     then
         servername="daisy@143.89.135.219 -p 2222"
+    elif [ "$1" = "fei" ]
+    then
+        servername="cecilia@219.223.173.91 -p 2222"
+    elif [ "$1" = "hpc" ]
+    then
+        servername="ztianab@hpc2.ust.hk"            #Name + Year+Date, Name First Character Big Case
     else
-        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,young - other four: chirp fantasy sunlight
+        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,iron - other four: chirp fantasy sunlight
     fi
 
     ssh -X $servername
@@ -441,6 +457,29 @@ alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
+
+tmuxsk() {
+    cmdarg=${@:2} # all arg, from the second
+    tmux send-keys -t "$1" "$cmdarg" Enter
+}
+
+tmuxskinit() {
+    SERV=(passion young rostam magic iron)
+    NUM=$(($(tmux list-panes | wc -l)-2))   #init-0
+    for ((i=0; i<=$NUM; i++))
+    do
+        tmuxsk $((i+1)) "ssh"${SERV[i]}
+    done
+}
+
+tmuxskall() {
+    NUM=$(($(tmux list-panes | wc -l)-2))   #init-0
+    for ((i=0; i<=$NUM; i++))
+    do
+        tmuxsk $((i+1)) "$@"
+    done
+}
+
 
 # synergy
 alias synergysetup="synergy --config ~/_synergy.conf"
@@ -584,9 +623,14 @@ alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
+alias cdfdtd="cd ~/Research/FDTD/"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 alias dirsx="dirs | xclip"
+
+# autojump
+. /usr/share/autojump/autojump.sh
+# https://www.thinkingmedia.ca/2014/10/how-to-install-autojump-on-ubuntu-14/
 
 # mv tmp
 alias mvscreenshot="mv /tmp/latest-screenshot.png "
@@ -646,12 +690,24 @@ export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
 
+#wget
+function wgetpdf(){
+    PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
+    echo $PDFNAME
+    wget $PDFNAME
+}
+
 #scrot
 alias scrots="scrot -s"
 alias importh="import helper.png"
 
 #qmake
 alias qmakep="qmake -project -o"
+
+#convert, image process
+alias convertvertapd="convert -append"
+alias converthoriapd="convert +append"
+
 
 # #help-doc
 # function helpterm() {
@@ -761,3 +817,21 @@ alias qmakep="qmake -project -o"
         # esac
     # fi
 # }
+
+#kinetic
+# source /opt/ros/kinetic/setup.bash
+export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
+export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
+
+#opencv path
+export PKG_CONFIG_PATH=/usr/local/opencv/2.4.9/lib/pkgconfig:${PKG_CONFIG_PATH}
+export LD_LIBRARY_PATH=/usr/local/opencv/2.4.9/lib:${LD_LIBRARY_PATH}
+
+
+# export ROS_IP=219.223.173.91
+export ROS_IP=localhost
+export ROS_MASTER_URI=http://$ROS_IP:11311/
+
+#gdb
+ulimit -c unlimited
+
