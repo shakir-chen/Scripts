@@ -82,6 +82,7 @@ $ grep -oP '(?<=foo )\w+(?= bar)' test.txt      # match words between foo and ba
     grep  -oP 'foo \K\w+' test.txt # output strings behind \K
     grep  -oP 'foo \K\w+(?=bar)' test.txt # output strings between \K and "bar"
     grep -oP '(?<=foo )\w+(?= bar)' test.txt' # output strings between "foo " and "bar"
+    curl -s http://cs229.stanford.edu/notes/ | grep -oP '(?<=")\S+.pdf(?=")'
     ```
 <http://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match>
 
