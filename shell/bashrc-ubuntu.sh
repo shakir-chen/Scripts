@@ -627,7 +627,13 @@ alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/Research/FT2000/"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
-alias dirsx="dirs | xclip"
+# alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
+function dirsx(){
+    DIR=$(dirs | sed -r 's/\s/\\ /')
+    echo $DIR | xclip
+}
+
+
 
 # autojump
 . /usr/share/autojump/autojump.sh
