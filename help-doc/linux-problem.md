@@ -1694,6 +1694,22 @@ sudo mount -t vfat /dev/sdb1 /media/usb
 sudo umount /media/usb or sudo umount /dev/sdb1
 ```
 
+### 62. Host
+```
+sudo cp ~/Software/Scripts/ip-host/hosts-ipv6 /etc/hosts
+sudo /etc/init.d/ssh restart
+# no inid.d
+service ssh restart         # or restart ssh
+/etc/init.d/sshd $ACTION
+```
+<https://superuser.com/questions/214799/no-etc-init-d-sshd-file-ubuntu-ec2>
+
+### 63. change host
+```
+vim /etc/host/source.list
+```
+
+
 #### ERROR
 1.TIFF4 depency:
     The only way:

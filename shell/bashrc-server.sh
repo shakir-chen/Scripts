@@ -7,51 +7,52 @@
 
 export LD_LIBRARY_PATH=/opt/gcc-4.6.2/lib64
 # NEW EMACS
-export PATH=/home/rafael/softwares/emacs/bin:${PATH}
 
 export PATH=/opt/gcc-4.6.2/bin:${PATH}
 export PATH=/opt/Python-2.7.4/bin:${PATH}
 export PATH=/opt/scons/bin:${PATH}
 export PATH=/opt/swig/bin:${PATH}
-export PATH=/local/home/rafael/softwares/autoconf/bin:${PATH}
-export PATH=/local/home/rafael/softwares/automake/bin:${PATH}
-export PATH=/local/home/rafael/softwares/libtool/bin:${PATH}
-export PATH=${PATH}:/local/home/rafael/softwares/helm-master/bin
-export PATH=${PATH}:/local/home/rafael/softwares/cmake/bin
-#export PATH=/local/home/rafael/softwares/flex/bin:${PATH}
-export PATH=/lcoal/home/rafael/softwares/bison/bin:${PATH}
-export PATH=/local/home/rafael/softwares/libiconv/bin:${PATH}
-export PATH=/local/home/rafael/softwares/doxygen/doxygen-1.8.10/bin:${PATH}
-export PATH=/local/home/rafael/softwares/tar-1.22/bin:${PATH}
-export PATH=/local/home/rafael/softwares/lzip-1.17/bin:${PATH}
-export PATH=/local/home/rafael/softwares/gmp-6.0.0:${PATH}
-export PATH=/local/home/rafael/softwares/gcc/bin:${PATH}
-#export PATH=/local/home/rafael/softwares/gccfloat/gccfloat/bin:${PATH}
-export PATH=/local/home/rafael/softwares/binutils/bin:${PATH}
-export PATH=/local/home/rafael/softwares/ninja/ninja-master:${PATH}
-export PATH=${PATH}:/local/home/rafael/softwares/mercurial-3.5
-export PATH=${PATH}:/local/home/rafael/softwares/global/bin
-export PATH=${PATH}:/local/home/rafael/softwares/bear/Bear-master/bear
-export PATH=/home/rafael/softwares/gdb-7.9/bin:${PATH}
-export PATH=/home/rafael/softwares/swig/bin:${PATH}
-export PATH=/local/home/rafael/softwares/mipsCc/bin:${PATH}
-export PATH=/local/home/rafael/gem5Packages/Alpha_fullsystem/alphaev67-unknown-linux-gnu/bin:${PATH}
-export PATH=/home/rafael/softwares/sparc/opt/crosstool/gcc-3.4.5-glibc-2.3.5/sparc64-unknown-linux-gnu/bin:${PATH}
-export PATH=/local/home/rafael/softwares/graphviz/bin:${PATH}
-export PATH=/local/home/rafael/softwares/dramsim/DRAMSim2-master/bin:${PATH}
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/local/home/rafael/softwares/bear/Bear-master/libear
-export LD_LIBRARY_PATH=/local/home/rafael/softwares/gmp-6.0.0/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/local/home/rafael/softwares/mpfr-3.1.3/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/local/home/rafael/softwares/mpc-1.0.2/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib64:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/local/home/rafael/softwares/llvm/libcxx-3.6.2.src/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/home/rafael/softwares/llvm/libcpp/lib:${LD_LIBRARY_PATH}
 
-export PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/bin:${PATH}
-export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/arm-none-linux-gnueabi/lib:${LD_LIBRARY_PATH}
-# export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/lib/gcc/arm-none-linux-gnueabi/4.5.1/lib:${LD_LIBRARY_PATH}
-export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
+# export PATH=/home/rafael/softwares/emacs/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/autoconf/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/automake/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/libtool/bin:${PATH}
+# export PATH=${PATH}:/local/home/rafael/softwares/helm-master/bin
+# export PATH=${PATH}:/local/home/rafael/softwares/cmake/bin
+# #export PATH=/local/home/rafael/softwares/flex/bin:${PATH}
+# export PATH=/lcoal/home/rafael/softwares/bison/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/libiconv/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/doxygen/doxygen-1.8.10/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/tar-1.22/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/lzip-1.17/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/gmp-6.0.0:${PATH}
+# export PATH=/local/home/rafael/softwares/gcc/bin:${PATH}
+# #export PATH=/local/home/rafael/softwares/gccfloat/gccfloat/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/binutils/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/ninja/ninja-master:${PATH}
+# export PATH=${PATH}:/local/home/rafael/softwares/mercurial-3.5
+# export PATH=${PATH}:/local/home/rafael/softwares/global/bin
+# export PATH=${PATH}:/local/home/rafael/softwares/bear/Bear-master/bear
+# export PATH=/home/rafael/softwares/gdb-7.9/bin:${PATH}
+# export PATH=/home/rafael/softwares/swig/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/mipsCc/bin:${PATH}
+# export PATH=/local/home/rafael/gem5Packages/Alpha_fullsystem/alphaev67-unknown-linux-gnu/bin:${PATH}
+# export PATH=/home/rafael/softwares/sparc/opt/crosstool/gcc-3.4.5-glibc-2.3.5/sparc64-unknown-linux-gnu/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/graphviz/bin:${PATH}
+# export PATH=/local/home/rafael/softwares/dramsim/DRAMSim2-master/bin:${PATH}
+# export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/local/home/rafael/softwares/bear/Bear-master/libear
+# export LD_LIBRARY_PATH=/local/home/rafael/softwares/gmp-6.0.0/lib:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/local/home/rafael/softwares/mpfr-3.1.3/lib:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/local/home/rafael/softwares/mpc-1.0.2/lib:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib64:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/local/home/rafael/softwares/llvm/libcxx-3.6.2.src/lib:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/home/rafael/softwares/llvm/libcpp/lib:${LD_LIBRARY_PATH}
+
+# export PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/bin:${PATH}
+# export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/arm-none-linux-gnueabi/lib:${LD_LIBRARY_PATH}
+# # export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/lib/gcc/arm-none-linux-gnueabi/4.5.1/lib:${LD_LIBRARY_PATH}
+# export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
 
 # added by git Xuanqi
 export PATH=/home/xuanqi/Linux/bin:${PATH}
@@ -67,6 +68,14 @@ export PKG_CONFIG_PATH=/lib64:${PKG_CONFIG_PATH}
 export PKG_CONFIG_PATH=/lib:${PKG_CONFIG_PATH}
 export PKG_CONFIG_PATH=/usr/lib64:${PKG_CONFIG_PATH}
 
+export PKG_CONFIG_PATH=$HOME/Linux/lib64/pkgconfig/:${PKG_CONFIG_PATH}
+export PKG_CONFIG_PATH=$HOME/Linux/lib/pkgconfig/:${PKG_CONFIG_PATH}
+
+alias echopkg="printf '$(pkg-config --variable pc_path pkg-config)\n${PKG_CONFIG_PATH}\n'"
+alias pkg-configgrep="pkg-config --list-all | grep"
+alias pkg-configvarprefix="pkg-config --variable=prefix"
+alias pkg-configvar="pkg-config --variable pc_path pkg-config"
+# export LIBLTDL_PREFIX=/home/xuanqi/Linux/lib/
 
 #PS1='$ '
 
@@ -76,6 +85,18 @@ export PKG_CONFIG_PATH=/usr/lib64:${PKG_CONFIG_PATH}
 #WHITE='\[\033[1;37m\]]'
 #PS1='${RED}\H:\W${WHITE}$ '
 #PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
+
+# Bash Color
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
 PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
 LS_COLORS="no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;32:*.cmd=00;32:*.exe=00;32:*.com=00;32:*.btm=00;32:*.bat=00;32:*.sh=00;32:*.csh=00;32:*.tar=00;31:*.tgz=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.zip=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.bz=00;31:*.tz=00;31:*.rpm=00;31:*.cpio=00;31:*.jpg=00;35:*.gif=00;35:*.bmp=00;35:*.xbm=00;35:*.xpm=00;35:*.png=00;35:*.tif=00;35:"
@@ -111,7 +132,7 @@ alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias ls="ls --color=tty"
-alias vi="vim"
+# alias vi="vim"
 
 alias vimbashrc="vim ~/.bashrc"
 alias vimmakefile="vim Makefile"

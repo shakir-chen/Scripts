@@ -700,8 +700,19 @@ export TEMPSAVE_PATH=~/Downloads
 #wget
 function wgetpdf(){
     PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
-    echo $PDFNAME
-    wget $PDFNAME
+    if [ ! $PDFNAME ]; then
+        PDFNAME=$(curl -s $1 | grep -oP '(?<=")\S+.pdf(?=")')
+        for pdf in $PDFNAME
+        do
+            pdfhttp=$1$pdf
+            echo $pdfhttp
+            wget $pdfhttp
+        done
+
+    else
+        echo $PDFNAME
+        wget $PDFNAME
+    fi
 }
 
 #scrot

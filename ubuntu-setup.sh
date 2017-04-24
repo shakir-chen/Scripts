@@ -203,7 +203,7 @@ then
     echo "============Install Sogou==============="
     cd ~/Software/
     if ! [ -d "Sogou" ] ; then
-        mkdir Sogou
+       mkdir Sogou
        sudo apt-get install fcitx
        firefox http://pinyin.sogou.com/linux/?r=pinyin
        echo "Wait a Key enter....... ....."
