@@ -64,14 +64,12 @@ Python based:
 ## VTK - Imaging (C++ based)
 kitware company
 
+## OpenCV - Computer Vision
+
+## OpenGL - Graphic Library
 
 
 ## Python - Collecting Data
-
-
-
-
-
 
 
 
