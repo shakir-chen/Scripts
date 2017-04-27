@@ -1517,6 +1517,11 @@ sudo apt-get install mailutils      # and settings
 
 ### 48. Github Flavoured Markdown to HTML
 npm install markdown-to-html -g
+```
+github-markdown $mdname -h -s "./css/github.css" > $htmlname     # --flavour 'gfm' has some error
+```
+<https://github.com/cwjohan/markdown-to-html>
+
 
 Errors:
 1. /usr/bin/env: ‘node’: No such file or directory
