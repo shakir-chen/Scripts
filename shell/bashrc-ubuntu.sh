@@ -138,6 +138,13 @@ export BOOST_ROOT=~/Software/boost/include
 export EDITOR=/usr/bin/vim
 
 export PKG_CONFIG_PATH=/usr/bin/
+export PYTHONPATH=/usr/local/lib/python3.5/site-packages/:${PYTHONPATH}
+# export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:${PYTHONPATH}
+# virtualenv and virtualenvwrapper, used for opencv
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+# import sys; sys.path.append('/usr/local/lib/python2.7/site-packages')
 
 #PS1='$ '
 #PS1='\[\033[33m\]\w\[\033[36m\]\[\033[0m\]$]]]'
@@ -192,6 +199,9 @@ alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
 alias vimproblem="vim ~/linux-problem.md"
+alias vimpy="vim ~/Software/Scripts/help-doc/python-sort.md"
+alias vimbuild="vim ~/Software/Scripts/help-doc/build-compile.md"
+alias vimtext="vim ~/Software/Scripts/help-doc/Tips-Text.md"
 alias vimmakefile="vim Makefile"
 alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
 alias vimos="vim ~/Software/Scripts/help-doc/OS-learn.md"
@@ -624,9 +634,16 @@ alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
+alias cdft="cd ~/Research/FT2000/"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
-alias dirsx="dirs | xclip"
+# alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
+function dirsx(){
+    DIR=$(dirs | sed -r 's/\s/\\ /')
+    echo $DIR | xclip
+}
+
+
 
 # autojump
 . /usr/share/autojump/autojump.sh

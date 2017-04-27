@@ -28,3 +28,60 @@ The Hitchhiker's Guide to Python <http://docs.python-guide.org/en/latest/>
 ----Howdoi, Flask,Diamond,Werkzeug,Requests,Tablib
 The Hack<https://thehackerguidetopython.com/>
 
+## Image
+
+### 1. 3D Plane
+```python
+# draw ax+by+cz+d=0
+
+from subprocess import call
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+point  = np.array([0,0,0])
+normal = np.array([1,-2,1])
+# normal = np.array([1,0,0])        # could not draw
+d = -np.sum(point*normal)              # dot product
+# create x,y
+xx, yy = np.meshgrid(range(30), range(30))
+
+# calculate corresponding z
+z = (-normal[0]*xx - normal[1]*yy - d)*1./normal[2]
+
+# plot the surface
+plt3d = plt.figure().gca(projection='3d')
+# plt3d.plot_surface(xx,yy,z, color='yellow')
+
+yy,zz = np.meshgrid(range(30), range(30))
+xx=np.zeros([30,30])
+plt3d.plot_surface(xx,yy,zz, color='yellow')
+# plt.show()
+plt.savefig('testplot.png')
+call(["feh",'testplot.png'])
+```
+
+<http://stackoverflow.com/questions/19410733/how-to-draw-planes-from-a-set-of-linear-equations-in-python>
+
+## Matrix
+reverse a list : array[::-1]
+<http://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python>
+append two lists a,b : a+b (array can't!!)
+                       np.append(n_p[ii][::-1] , p_n[ii])
+
+
+### Error
+
+1. p.show() doesn't show figures
+
+```
+import matplotlib
+matplotlib.matplotlib_fname()       # show matplotrc
+
+import matplotlib.rcsetup as rcsetup
+print(rcsetup.all_backends)     # show GTK, GTKAgg...
+
+sudo vim /usr/local/lib/python3.5/dist-packages/matplotlib/mpl-data/matplotlibrc
+```
+<http://stackoverflow.com/questions/7534453/matplotlib-does-not-show-my-drawings-although-i-call-pyplot-show>
+
