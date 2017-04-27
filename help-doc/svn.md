@@ -52,6 +52,9 @@ svn log -v -l 4 # svn log -v --limit 4
 ## Update
 svn update --set-depth immediates / infinity / empty
 
+this update will also achieve that you can delete the local copy but not from the repository.
+<http://stackoverflow.com/questions/17581744/delete-file-from-the-working-copy-only-but-not-from-the-repository>
+
 ## Branch
 ```
 $ svn copy http://svn.example.com/repos/calc/trunk \
