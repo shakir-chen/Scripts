@@ -170,7 +170,7 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
-# grep
+# grep =======================================================
 #alias grep --color=auto
 alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
 alias gp="grep -r "
@@ -181,7 +181,7 @@ alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
 alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
 alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 
-# ls
+# ls =======================================================
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias lsf="ls -p --color=tt | grep -v / | tr '\r\n' '\t'"        # list only file, tr translate or delete, tr -d
@@ -190,29 +190,45 @@ alias lsd="ls -p --color=tty | grep /"     # list include hidden file
 alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
 
+# vim =======================================================
 alias vim="vi"
-function vimbin(){
-    vim $(which $1)
-}
-
 alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
-alias vimproblem="vim ~/linux-problem.md"
-alias vimpy="vim ~/Software/Scripts/help-doc/python-sort.md"
-alias vimbuild="vim ~/Software/Scripts/help-doc/build-compile.md"
-alias vimtext="vim ~/Software/Scripts/help-doc/Tips-Text.md"
 alias vimmakefile="vim Makefile"
-alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
-alias vimos="vim ~/Software/Scripts/help-doc/OS-learn.md"
 alias vimbus="vim ~/Dropbox/Linux/notes/business.md"
-
+alias vimos="vimfind os"
+alias vimlife="vimfind vim-life"
+alias vimtext="vimfind text-tips"
+alias vimproblem="vimfind linux-problem"
+alias vimpy="vimfind python"
+alias vimbuild="vimfind build-compile"
+alias vimcv="vimfind cv"        # opencv
+function vimfind(){
+    if [ -f ~/Software/Scripts/help-doc/$1.md ]; then
+       vim ~/Software/Scripts/help-doc/$1.md
+    else
+       ls ~/Software/Scripts/help-doc/
+       read -p "file not find, change one?  " read_flag
+       vimfind $read_flag
+    fi
+}
+function vimbin(){
+    vim $(which $1)
+}
+vifm()
+{
+   if [ -f ~/.vifm/lastdir ]; then
+      rm ~/.vifm/lastdir
+   fi
+   # "command" prevents recursive call
+   command vifm "$@"
+   if [ -f ~/.vifm/lastdir ]; then
+    cd `cat ~/.vifm/lastdir`
+   fi
+}
 alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
-# function vim(){
-    # if [-f $1]
-
-# }
 
 alias makee="make edit"
 alias maker="make run"
@@ -239,18 +255,6 @@ function open(){
     # fi
     # cd "$dst"
 # }
-
-vifm()
-{
-   if [ -f ~/.vifm/lastdir ]; then
-      rm ~/.vifm/lastdir
-   fi
-   # "command" prevents recursive call
-   command vifm "$@"
-   if [ -f ~/.vifm/lastdir ]; then
-    cd `cat ~/.vifm/lastdir`
-   fi
-}
 
 # tar
 alias tarc="tar -cvzf"
@@ -456,7 +460,7 @@ alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
 alias xvnckill="x11vnc -clear-all"
 
-# tmux      --man tmux
+# tmux  --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
 alias tmuxks="tmux kill-session -t "    #kill session
 alias tmuxkw="tmux kill-session -w "    #kill window
@@ -634,7 +638,7 @@ alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
-alias cdft="cd ~/Research/FT2000/"
+alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
