@@ -70,13 +70,35 @@ append two lists a,b : a+b (array can't!!)
                        np.append(n_p[ii][::-1] , p_n[ii])
 
 ## Numerical Solver
-ODE(ordinary differential equations): scipy.integrate
+### 1. special-function: scipy.special
+### 2. integration: scipy.integrate 
+1. quad
+2. dblquad
+3. tplquad
+4. nquad
+5. fixed_quad   : gaussian quandrature
+6. romberg      : romberg integration
+7. trapz        : trapezoidal rule
+8. cumtrapz     : trapezoidal rule to cumulatively compute integral
+9. simps        : simpson's rule
+10. romb         : romberg integration
+11. polyint      : analytical polynomial integration
+12. poly1d       : helper function polyint
 
-DFT/FFT
+### 3. ODE(ordinary differential equations): scipy.integrate.odeint
 
-<http://www.physics.nyu.edu/pine/pymanual/html/chap9/chap9_scipy.html>
+### 4. DFT/FFT : fftpack
 
+### 5. Linear algebra
 
+### 6. Non-linear equations
+single equations of single variable -
+brent method - scipy.optimize.brentq(f,a,b)
+
+<http://www.physics.nyu.edu/pine/pymanual/html/chap9/chap9_scipy.html> => Really a good manual
+
+a pair of nonlinear equations
+<http://stackoverflow.com/questions/8739227/how-to-solve-a-pair-of-nonlinear-equations-using-python>
 ### Error
 
 1. p.show() doesn't show figures
