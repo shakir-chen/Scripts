@@ -120,7 +120,7 @@ if [ "$USER" == "shakir" ] ; then
     setxkbmap -option caps:ctrl_modifier
 fi
 
-#User Define
+#User Define XuanqiPath
 # added by Anaconda 2.2.0 installer
 #export PATH="/home/rafael/softwares/anaconda/bin:${PATH}"
 #export PATH=/home/rafael/softwares/valgrind/valgrind/bin:${PATH}
@@ -144,6 +144,10 @@ export PYTHONPATH=/usr/local/lib/python3.5/site-packages/:${PYTHONPATH}
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:${PATH}
+
 # import sys; sys.path.append('/usr/local/lib/python2.7/site-packages')
 
 #PS1='$ '
@@ -202,6 +206,7 @@ alias vimlife="vimfind vim-life"
 alias vimtext="vimfind text-tips"
 alias vimproblem="vimfind linux-problem"
 alias vimpy="vimfind python"
+alias vimjava="vimfind java"
 alias vimbuild="vimfind build-compile"
 alias vimcv="vimfind cv"        # opencv
 function vimfind(){
@@ -213,6 +218,7 @@ function vimfind(){
        vimfind $read_flag
     fi
 }
+
 function vimbin(){
     vim $(which $1)
 }
@@ -528,7 +534,7 @@ alias sockset="sslocal -c /etc/shadowsocks.json "
 alias cddairy="cd ~/Research/Dairy/latex"
 
 #freemind
-alias mindopen="~/Software/freemind/freemind.sh"
+alias mindopen="~/Software/freemind/exec/freemind.sh"
 
 #wings3d
 alias wings3d="~/Software/Wings3D/wings-2.1.5/wings &"

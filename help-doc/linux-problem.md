@@ -298,7 +298,7 @@ xxx && xxx  # && combinator for two commands
 ### 5. deb file install and remove
 ```
 sudo dpkg -i xxx.deb
-sudo dpkg -r xxx
+sudo dpkg -r xxx            # may not exact that name xxx
 ```
 
 
@@ -690,9 +690,45 @@ Ref: <http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-wit
 
 ### 4. Freemind in ubuntu
 install linux binary 2.6MB <http://freemind.sourceforge.net/wiki/index.php/Download>
+
 alias mindopen="~/Software/freemind/freeMind.sh"
 
+wget http://ftp.us.debian.org/debian/pool/main/f/freemind/freemind_0.9.0+dfsg-2_all.deb
+<https://packages.debian.org/wheezy/all/freemind/download/>
+
 Java Virtual Machine Issue; apt-get install openjdk-8-jre
+
+ freemind depends on libjgoodies-forms-java; however:
+  Package libjgoodies-forms-java is not installed.
+ freemind depends on libjibx1.1-java | libjibx-java (>= 1.1); however:
+  Package libjibx1.1-java is not installed.
+  Package libjibx-java is not installed.
+ freemind depends on libjibx1.1-java | libjibx-java (<< 1.2); however:
+  Package libjibx1.1-java is not installed.
+  Package libjibx-java is not installed.
+ freemind depends on simplyhtml (>> 0.13); however:
+  Package simplyhtml is not installed.
+
+Big Issues Now: libjibx1.1 has updated to libjibx1.2 ; but freemind doesn't support libjibx1.2
+Package libjibx1.1-java is not installed.
+
+
+ant dist    # one common see instruction
+<http://jotm.objectweb.org/current/test/doc/tests/node4.html>
+
+/home/xuanqi/Software/freemind/freemind-mmx/freemind/build.xml:101: Unable to find a javac compiler;
+com.sun.tools.javac.Main is not on the classpath.
+Perhaps JAVA_HOME does not point to the JDK.
+It is currently set to "/usr/lib/jvm/java-8-openjdk-amd64/jre"
+
+<http://stackoverflow.com/questions/8400637/unable-to-find-a-javac-compiler>
+jdk
+```
+sudo apt-get install openjdk-8-jdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bink
+```
+<http://stackoverflow.com/questions/14788345/how-to-install-jdk-on-ubuntu-linux>
 
 ### 5. Git
 Quick Github Repo commit
