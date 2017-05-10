@@ -9,6 +9,10 @@ ctrl+i: external editor; save and copy all the message back to the blank
 
 search engine: google translator; google scholar search
 
+Tips: Speedup Firefox
+1. http cache
+2. <https://support.mozilla.org/en-US/questions/1146203>
+
 ## III. Thunderbird - muttator
 
 Thunderbird: Cheatsheet
