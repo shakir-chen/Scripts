@@ -28,6 +28,39 @@ The Hitchhiker's Guide to Python <http://docs.python-guide.org/en/latest/>
 ----Howdoi, Flask,Diamond,Werkzeug,Requests,Tablib
 The Hack<https://thehackerguidetopython.com/>
 
+## Database
+### 1. json - pandas
+#### 10min tutorial
+
+#### add one line
+```
+df = DataFrame(columns=('lib', 'qty1', 'qty2'))
+for i in range(5):
+    df.loc[i] = [randint(-1,1) for n in range(3)]
+print(df)
+```
+
+<!-- http://stackoverflow.com/questions/10715965/add-one-row-in-a-pandas-dataframe -->
+
+### 2. sqlite - pandas
+
+
+## FileIO
+```
+f=[""]*3
+for ii,domain in enumerate(dict):
+    filename=domain+".txt"
+    print(filename)
+    f[ii]=open(filename,'w')        # create a new file in the directory
+
+...
+    f[ii].write(str)
+
+Loop:
+    f[ii].close()
+```
+
+
 ## Image
 
 ### 1. 3D Plane

@@ -512,9 +512,16 @@ alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 # alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
-alias svnrefreshdel="svn st | grep '^!' | sed -e 's/!\s\+//' | xargs svn delete --force"       #delete
 # alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
+function svnrefreshdel(){
+    IFS=$'\n'
+    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    do
+        echo "svn delete" "$file"
+        svn delete $file
+    done
+}
 
 function svnsubmit(){
     cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
@@ -534,7 +541,7 @@ alias sockset="sslocal -c /etc/shadowsocks.json "
 alias cddairy="cd ~/Research/Dairy/latex"
 
 #freemind
-alias mindopen="~/Software/freemind/exec/freemind.sh"
+alias mindopen="~/Software/freemind/exec/freemind.sh &"
 
 #wings3d
 alias wings3d="~/Software/Wings3D/wings-2.1.5/wings &"
