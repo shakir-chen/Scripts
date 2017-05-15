@@ -139,14 +139,20 @@ export EDITOR=/usr/bin/vim
 
 export PKG_CONFIG_PATH=/usr/bin/
 export PYTHONPATH=/usr/local/lib/python3.5/site-packages/:${PYTHONPATH}
+export PYTHON3_EXCUTABLE=/usr/bin/python3.5
+export PYTHON_INCLUDE_DIR=/usr/include/python3.5
+export PYTHON_LIBRARY=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu/libpython3.5.so
+
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:${PYTHONPATH}
 # virtualenv and virtualenvwrapper, used for opencv
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+export OPENCV_TEST_DATA_PATH=~/Software/OpenCV/opencv_extra/testdata
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:${PATH}
+
 
 # import sys; sys.path.append('/usr/local/lib/python2.7/site-packages')
 
