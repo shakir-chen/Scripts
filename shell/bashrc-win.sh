@@ -20,6 +20,7 @@ alias cl="clear" # xuanqi Move
 alias l.="ls -d .*"
 alias ll="ls -al"
 
-alias ls="ls --color=tty --ignore='NTUSER*' --ignore='ntuser*'"  #--ignore='ntuser*' "
+# alias ls="ls --color=tty --ignore='NTUSER*' --ignore='ntuser*'"  #--ignore='ntuser*' "
+alias ls="ls --color=tty" #--ignore='NTUSER*' --ignore='ntuser*'"  #--ignore='ntuser*' "
 
 
