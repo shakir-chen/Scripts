@@ -97,6 +97,13 @@ sed 's/xx/yy' ======>  sed 's/xx/yy/'
 2. sed: -e expression #1, char 30: invalid reference \1 on `s' command's RHS`
 sed -ir 's/"(.+,)"/\\ldquo;\1\\rdquo;/g' bib.html
 
+3. only sed the first o, instead all?
+echo "/home/shakir/Dropbox/Paper/Luo et al_2016_POSTER.pdf" | sed -r 's/o//'
+
+sed -r 's/o//g'         # remember to use global, otherwise, only process the first one
+
+
+
 ## grep
 1. search part of string
     ```
