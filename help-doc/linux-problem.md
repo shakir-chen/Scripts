@@ -1571,6 +1571,13 @@ II. markdown-styles
 
 <https://www.chainsawonatireswing.com/2012/02/01/how-to-highlight-code-on-a-webpage-when-youre-using-markdown-to-create-that-webpage/?from=@>
 
+
+math wiki
+<https://github.com/cben/mathdown/wiki/math-in-markdown>
+
+may be true:
+<https://github.com/goessner/mdmath>
+
 ### 49. Caffe Install
 
 <http://caffe.berkeleyvision.org/installation.html>
