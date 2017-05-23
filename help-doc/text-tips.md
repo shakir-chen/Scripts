@@ -144,6 +144,17 @@ sed -n 'N,/PATTERN/p' FILE.txt          # from line N, search pattern and print
 
 2. search pattern and groups
     print(re.search(r"\d\d\d\d",lines[ii]).group(0))
+    ```
+    >>> m = re.match(r"(\w+) (\w+)", "Isaac Newton, physicist")
+    >>> m.group(0)       # The entire match
+    'Isaac Newton'
+    >>> m.group(1)       # The first parenthesized subgroup.
+    'Isaac'
+    >>> m.group(2)       # The second parenthesized subgroup.
+    'Newton'
+    >>> m.group(1, 2)    # Multiple arguments give us a tuple.
+    ('Isaac', 'Newton')
+    ```
 
 3. sed-like => re.sub
     line_temp=re.sub('<li>|</li>','',lines[ii])

@@ -1,5 +1,7 @@
+GDB
+---
 
-## Index
+# Index
 Running Program Under GDB
 Running programs backwards
 
@@ -25,7 +27,7 @@ Extending gdb
 Command Interpreters
 gdb Text User Interface
 
-## Concepts
+# Concepts
 
 Breakpoints:
 stop execution in a particular place
@@ -34,7 +36,7 @@ stop execution whenever the value of an expression changes, without having to pr
 Catchpoints:
 stop for certain kinds of program events, such as C++ exceptions or the loading of a shared library. Use the catch command to set a catchpoint.
 
-## Watch Variables
+# Watch Variables
 ```
 p xxx       #print variables
 ```
@@ -52,7 +54,7 @@ $print/x array@3        #print all 3 values in hex
 Ref <http://stackoverflow.com/questions/427589/inspecting-standard-container-stdmap-contents-with-gdb>
 
 
-## Running Program Backward
+# Running Program Backward
 ```
 reverse-next
 reverse-step
@@ -60,12 +62,12 @@ reverse-continue
 ```
 But it needs environment-support
 
-## Add Interaction
+# Add Interaction
 gdb -tui
 using ELK as a dashboard for honeypots
 <https://www.vanimpe.eu/2014/12/>   - So beautiful
 <https://www.elastic.co/products/kibana>
 
-## Good Example - GDB Python Optimization
+# Good Example - GDB Python Optimization
 Output Message  /   Source      /   Asssembly     /     Threads     /       Stack           /       Registers       /       Expressions     /       Memory  / History
 <https://github.com/cyrus-and/gdb-dashboard>

@@ -44,6 +44,27 @@ print(df)
 
 ### 2. sqlite - pandas
 
+pandas
+#### select prof["name"][ii] == "Andrew"
+df.loc[df['column_name'] == some_value]
+<http://stackoverflow.com/questions/17071871/select-rows-from-a-dataframe-based-on-values-in-a-column-in-pandas>
+
+#### check NaN elements
+
+pd.isnull(prof["name"][ii]) : type Name: papers, dtype:bool             ====>   dtype bool is not bool type of truth table; which also return index
+```
+101    True
+Name: papers, dtype: bool
+```
+
+profii=int(prof.loc[prof['name']==retname].index.values) # better to use isnull, ii must be int number, instead of dtype-array
+
+<!-- prof["name"][ii].empty -->
+
+
+<http://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o>
+
+
 
 ## FileIO
 ```
@@ -59,6 +80,21 @@ for ii,domain in enumerate(dict):
 Loop:
     f[ii].close()
 ```
+
+## GUI
+Python GUI
+<https://wiki.python.org/moin/GuiProgramming>
+
+tulip
+<http://pythonhosted.org/tulip-python/creatingvisualizations.html>
+
+## Tutorial
++ Tkinter
++ wxPython
++ PyGTK
++ pyQT
+
+<https://josephrex.me/getting-started-with-gui-development-in-python/>
 
 
 ## Image
