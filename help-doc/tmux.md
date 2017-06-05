@@ -62,6 +62,12 @@ ctrl-b b %  # create split window in the inner session
 <https://stackoverflow.com/questions/17920947/how-to-pass-command-keys-to-a-remote-tmux-session-when-you-ssh-from-a-local-tmux>
 <http://stahlke.org/dan/tmux-nested/>
 
+
+Really Impressive: use $SSH_AUTH_SOCK   and  $SSH_CONNECTION
+<https://github.com/bradwright/dotfiles/blob/master/tmux.conf>
+
 # condition
 if-shell "cond" "exe1" "exe2"
 <https://superuser.com/questions/539595/tmux-configuration-conditional-to-os>
+
+
