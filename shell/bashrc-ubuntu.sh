@@ -511,11 +511,11 @@ tmuxskall() {
     done
 }
 
-if test "$SSH_AUTH_SOCK" ; then         # for tmux
-    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
-fi
+# if test "$SSH_AUTH_SOCK" ; then         # for tmux
+    # ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+# fi
 
-synergy
+# synergy
 alias synergysetup="synergy --config ~/_synergy.conf"
 # alias ="synergy --config ~/_synergy.conf"
 # svn

@@ -72,9 +72,10 @@ set -g status-interval 1000
 set -g history-limit 100000
 
 # Ring the bell
-set -g bell-action current
+# set -g bell-action current
 set -g bell-on-alert off
-set -g visual-bell on
+# set -g visual-bell on
+set -g visual-bell off
 
 # Set status bar to be the same as the terminal defaults
 set -g status-bg default
