@@ -47,4 +47,14 @@ set -g status-right-length 60
 set -g status-justify left
 set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R' 
 ```
+
 <https://danielmiessler.com/study/tmux/#gs.1CkwJQ0>
+
+# Nested Tmux with ssh
+
+
+<http://stahlke.org/dan/tmux-nested/>
+
+# condition
+if-shell "cond" "exe1" "exe2"
+<https://superuser.com/questions/539595/tmux-configuration-conditional-to-os>
