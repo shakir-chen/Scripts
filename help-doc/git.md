@@ -109,6 +109,9 @@ Date:   Mon Jun 5 18:47:29 2017 +0800
 $git show -m a628029
 $git show --first-parent a628029
 $git diff a628029^ a628029
+
+$git show -m -1         # the last commit information
+$git show -m -2         # the last 2 commit information
 ```
 
 ##Undo
