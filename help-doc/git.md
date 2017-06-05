@@ -96,6 +96,20 @@ git show-branch
 
 <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
+### Show Merge Info
+```
+$git log
+
+commit a628029cea60f9a45c26e6129967b45d73a2d1fc
+Merge: 609e915 26de355
+Author: shakir-chen <chenxuanqi93@gmail.com>
+Date:   Mon Jun 5 18:47:29 2017 +0800
+
+    Merge branch 'master' of https://github.com/shakir-chen/Scripts
+$git show -m a628029
+$git show --first-parent a628029
+$git diff a628029^ a628029
+```
 
 ##Undo
 Can't always undo some of these undos!!
