@@ -7,6 +7,15 @@ command! sourcerc :source ~/_vimperatorrc
 
 noremap j 10j
 noremap k 10k
+noremap h 10h
+noremap l 10l
+
+map gh gT
+map gl gt
+
+
+" map H gT
+" map L gt
 
 "au Fullscreen .* :set guioptions+=s
 source! "~/_vimperatorrc.local"
@@ -33,8 +42,6 @@ noremap rr <C-A-r>
 command! tmuxsh :js tileTabs.menuActions('new-2vert',null)
 command! tmuxsv :emenu Tile.New Layout.2 Tabs - Horizontal
 
-map h gT
-map l gt
 nnoremap gc :emenu<Space>Tools.Web<Space>Developer.Browser<Space>Console<Return><Space><Space><Space><Space><Space><Space><Space>"ctrl<Space>+shift<Space>+c<Space>and<Space>ctrl+shift+i<Space>for<Space>the<Space>browser<Space>default
 nnoremap gd <C-S-I>
 " noremap j 10j

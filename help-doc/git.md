@@ -8,7 +8,7 @@ untracked - unmodified - modified - staged
 
 Git Basic
     Log:    Record Commit Information
-    Undo:   
+    Undo:
     Compare:
     Tag:
 

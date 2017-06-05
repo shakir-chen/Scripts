@@ -1,3 +1,34 @@
+Shell Programming
+---
+# IF
+```
+if [[ -z $(grep -oP '&ldquo;' $p) ]]
+then
+    echo $p
+fi
+```
+
+# Loop
+
++ for ... in ...
+    ```bash
+    IFS=$'\n'               # IFS: Internal Field Seperator
+    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    do
+        echo "svn delete" "$file"
+        # echo "svn delete $file"
+    done
+    ```
++ while
+    ```
+    # read lins
+    while read p; do
+        echo $p
+    done <peptides.txt
+    ```
+
+
+
 # Conclusion
 1. Variable
 bash varibles are untyped

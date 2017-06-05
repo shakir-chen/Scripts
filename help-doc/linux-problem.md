@@ -298,7 +298,7 @@ xxx && xxx  # && combinator for two commands
 ### 5. deb file install and remove
 ```
 sudo dpkg -i xxx.deb
-sudo dpkg -r xxx
+sudo dpkg -r xxx            # may not exact that name xxx
 ```
 
 
@@ -690,9 +690,45 @@ Ref: <http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-wit
 
 ### 4. Freemind in ubuntu
 install linux binary 2.6MB <http://freemind.sourceforge.net/wiki/index.php/Download>
+
 alias mindopen="~/Software/freemind/freeMind.sh"
 
+wget http://ftp.us.debian.org/debian/pool/main/f/freemind/freemind_0.9.0+dfsg-2_all.deb
+<https://packages.debian.org/wheezy/all/freemind/download/>
+
 Java Virtual Machine Issue; apt-get install openjdk-8-jre
+
+ freemind depends on libjgoodies-forms-java; however:
+  Package libjgoodies-forms-java is not installed.
+ freemind depends on libjibx1.1-java | libjibx-java (>= 1.1); however:
+  Package libjibx1.1-java is not installed.
+  Package libjibx-java is not installed.
+ freemind depends on libjibx1.1-java | libjibx-java (<< 1.2); however:
+  Package libjibx1.1-java is not installed.
+  Package libjibx-java is not installed.
+ freemind depends on simplyhtml (>> 0.13); however:
+  Package simplyhtml is not installed.
+
+Big Issues Now: libjibx1.1 has updated to libjibx1.2 ; but freemind doesn't support libjibx1.2
+Package libjibx1.1-java is not installed.
+
+
+ant dist    # one common see instruction
+<http://jotm.objectweb.org/current/test/doc/tests/node4.html>
+
+/home/xuanqi/Software/freemind/freemind-mmx/freemind/build.xml:101: Unable to find a javac compiler;
+com.sun.tools.javac.Main is not on the classpath.
+Perhaps JAVA_HOME does not point to the JDK.
+It is currently set to "/usr/lib/jvm/java-8-openjdk-amd64/jre"
+
+<http://stackoverflow.com/questions/8400637/unable-to-find-a-javac-compiler>
+jdk
+```
+sudo apt-get install openjdk-8-jdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bink
+```
+<http://stackoverflow.com/questions/14788345/how-to-install-jdk-on-ubuntu-linux>
 
 ### 5. Git
 Quick Github Repo commit
@@ -1517,6 +1553,11 @@ sudo apt-get install mailutils      # and settings
 
 ### 48. Github Flavoured Markdown to HTML
 npm install markdown-to-html -g
+```
+github-markdown $mdname -h -s "./css/github.css" > $htmlname     # --flavour 'gfm' has some error
+```
+<https://github.com/cwjohan/markdown-to-html>
+
 
 Errors:
 1. /usr/bin/env: ‘node’: No such file or directory
@@ -1529,6 +1570,13 @@ II. markdown-styles
 <https://github.com/mixu/markdown-styles>
 
 <https://www.chainsawonatireswing.com/2012/02/01/how-to-highlight-code-on-a-webpage-when-youre-using-markdown-to-create-that-webpage/?from=@>
+
+
+math wiki
+<https://github.com/cben/mathdown/wiki/math-in-markdown>
+
+may be true:
+<https://github.com/goessner/mdmath>
 
 ### 49. Caffe Install
 
@@ -1693,6 +1741,22 @@ sudo mkdir /media/usb
 sudo mount -t vfat /dev/sdb1 /media/usb
 sudo umount /media/usb or sudo umount /dev/sdb1
 ```
+
+### 62. Host
+```
+sudo cp ~/Software/Scripts/ip-host/hosts-ipv6 /etc/hosts
+sudo /etc/init.d/ssh restart
+# no inid.d
+service ssh restart         # or restart ssh
+/etc/init.d/sshd $ACTION
+```
+<https://superuser.com/questions/214799/no-etc-init-d-sshd-file-ubuntu-ec2>
+
+### 63. change host
+```
+vim /etc/host/source.list
+```
+
 
 #### ERROR
 1.TIFF4 depency:
