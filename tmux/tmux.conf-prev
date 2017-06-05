@@ -1,0 +1,132 @@
+#set -g default-terminal "screen-256color-bce"
+#source ~/.solarized/tmux-colors-solarized/tmuxcolors.conf
+
+# load local tmux.conf
+if-shell "test -f ~/.localtmux.conf" 'source ~/.localtmux.conf'
+
+unbind C-b
+set -g prefix C-a
+
+#bind -n M-Left select-pane -L
+#bind -n M-Right select-pane -R
+#bind -n M-Up select-pane -U
+#bind -n M-Down select-pane -D
+
+bind -n M-h select-pane -L
+bind -n M-l select-pane -R
+bind -n M-k select-pane -U
+bind -n M-j select-pane -D
+bind -n C-t new-window
+
+# bind -n M-0 select-window -t :0
+
+# bind -n M-H prev
+# bind -n M-L next
+
+# bind -n M-0 choose-window 0
+# bind -n M-1 choose-window 1
+
+bind -n M-0 \
+    if-shell 'tmux list-window | grep 0:' 'select-window -t :0' 'new-window -t 0'
+    # if-shell 'tmux list-window | grep 0:' 'display-message "true, as expected"' 'display-message "false"'
+    # if-shell "tmux select-window -t :2" 'new-window -t 2' 'select-window -t :2'
+bind -n M-1 \
+    if-shell 'tmux list-window | grep 1:' 'select-window -t :1' 'new-window -t 1'
+bind -n M-2 \
+    if-shell 'tmux list-window | grep 2:' 'select-window -t :2' 'new-window -t 2'
+bind -n M-3 \
+    if-shell 'tmux list-window | grep 3:' 'select-window -t :3' 'new-window -t 3'
+bind -n M-4 \
+    if-shell 'tmux list-window | grep 4:' 'select-window -t :4' 'new-window -t 4'
+bind -n M-5 \
+    if-shell 'tmux list-window | grep 5:' 'select-window -t :5' 'new-window -t 5'
+bind -n M-6 \
+    if-shell 'tmux list-window | grep 6:' 'select-window -t :6' 'new-window -t 6'
+bind -n M-7 \
+    if-shell 'tmux list-window | grep 7:' 'select-window -t :7' 'new-window -t 7'
+bind -n M-8 \
+    if-shell 'tmux list-window | grep 8:' 'select-window -t :8' 'new-window -t 8'
+bind -n M-9 \
+    if-shell 'tmux list-window | grep 9:' 'select-window -t :9' 'new-window -t 9'
+
+# bind -n M-H swap-window -t -1
+# bind -n M-L swap-window -t +1
+
+#activity monitoring
+setw -g monitor-activity on
+set -g visual-activity on
+set -g mouse on
+
+#vi like cursor movement
+set-window-option -g mode-keys vi
+
+bind P paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+bind-key -t vi-copy 'r' rectangle-toggle
+
+#Highlighting Current Window Using Specified Colour
+set-window-option -g window-status-current-bg yellow
+
+#bind initial configuration fils
+bind D source-file ~/.tmux/dev-3P-Horz
+bind F source-file ~/.tmux/dev-3P-Vert
+bind G source-file ~/.tmux/dev-4P
+bind E source-file ~/.tmux/dev-3H2V
+
+#bash
+
+# Count sessions start at 1
+set -g base-index 1
+
+# Rename your terminals
+set -g set-titles on
+set -g set-titles-string '#(whoami)::#h::#(curl ipecho.net/plain;echo)'
+
+# Rename your windows
+set-option -g set-titles-string "#H-#S"
+#
+# set-window-option -g automatic-rename on
+# set-window-option -g automatic-rename-format ""
+set -g window-status-format '#I:#(pwd="#{pane_current_path}"; echo ${pwd####*/})#F'
+set -g window-status-current-format '#I:#(pwd="#{pane_current_path}"; echo ${pwd####*/})#F'
+# set -g window-status-format '#I:#H#F'
+set-option -g status-interval 1
+
+# Status bar customization
+# set -g status-position bottom
+set -g status-position top
+set -g status-attr none         # dim
+set -g status-utf8 on
+set -g status-bg black
+set -g status-fg white
+set -g status-interval 5
+set -g status-left-length 90
+set -g status-right-length 60
+set -g status-left "#[fg=Green]#(whoami)#[fg=white]::#[fg=blue]#(hostname -s)#[fg=white]::#[fg=yellow]#(curl ipecho.net/plain;echo)"
+set -g status-justify left
+set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R'
+
+# set colors
+set-option -g default-terminal "screen-256color"
+
+# change host to red if we're remote
+set -g status-left "#[bg=default]#[fg=magenta]#S "
+if-shell 'test "$SSH_CONNECTION"' 'set -g status-right "#[bg=red]#[fg=black] @#h "' 'set -g status-right ""'
+
+set -g window-status-format "#[bg=default]#[fg=default] #I:#W "
+set -g window-status-current-format "#[bg=cyan]#[fg=black] #I:#W "
+
+set -g set-titles on
+if-shell 'test "$SSH_CONNECTION"' 'set -g set-titles-string "@#h > #W"' 'set -g set-titles-string "#h > #W"'
+
+# To get this to work, put:
+# #!/bin/bash
+# if test "$SSH_AUTH_SOCK" ; then
+#     ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+# fi
+# Into ~/.ssh/rc and make it 700.
+if-shell 'test "$SSH_CONNECTION"' "set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock"
+
+# Reload this file
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
