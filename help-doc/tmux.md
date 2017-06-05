@@ -51,8 +51,15 @@ set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R'
 <https://danielmiessler.com/study/tmux/#gs.1CkwJQ0>
 
 # Nested Tmux with ssh
+```
+bind-key b send-prefix
 
-
+ctrl-b   c  # create new window in the outer session
+ctrl-b b c  # create new window in the inner session
+ctrl-b   %  # create split window in the outer session
+ctrl-b b %  # create split window in the inner session
+```
+<https://stackoverflow.com/questions/17920947/how-to-pass-command-keys-to-a-remote-tmux-session-when-you-ssh-from-a-local-tmux>
 <http://stahlke.org/dan/tmux-nested/>
 
 # condition
