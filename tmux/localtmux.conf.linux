@@ -5,3 +5,6 @@ bind -n M-J select-pane -D
 
 set -g status-position bottom
 bind-key -n C-t new-window
+
+bind -n M-H prev
+bind -n M-L next
