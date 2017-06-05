@@ -1,19 +1,19 @@
 #Python
 
 
-## OS Operation
+## I. OS Operation
 
-##Subprocess
+## II. Subprocess
 ```
 from subprocess import call, popen
 call("ls -l",shell=True)
 ```
 
-## Print format
+## III. Print format
 print '{:20} {:10} {:5}'.format("data_rate_optical","10","Gbps")
 <https://pyformat.info/>
 
-## Howdoi
+## IV. Howdoi
 1. howdoi install
 sudo pip install howdoi
 Error ------
@@ -22,13 +22,14 @@ apt-get install python-lxml
 
 <http://stackoverflow.com/questions/6504810/how-to-install-lxml-on-ubuntu>
 
-## Blogs
+## V. Blogs
 The Hitchhiker's Guide to Python <http://docs.python-guide.org/en/latest/>
 ----Reading Grate Codes (http://docs.python-guide.org/en/latest/writing/reading/)
 ----Howdoi, Flask,Diamond,Werkzeug,Requests,Tablib
 The Hack<https://thehackerguidetopython.com/>
 
-## Database
+
+## VI. Database
 ### 1. json - pandas
 #### 10min tutorial
 
@@ -66,7 +67,7 @@ profii=int(prof.loc[prof['name']==retname].index.values) # better to use isnull,
 
 
 
-## FileIO
+## VII. FileIO
 ```
 f=[""]*3
 for ii,domain in enumerate(dict):
@@ -81,14 +82,14 @@ Loop:
     f[ii].close()
 ```
 
-## GUI
+## VIII. GUI
 Python GUI
 <https://wiki.python.org/moin/GuiProgramming>
 
 tulip
 <http://pythonhosted.org/tulip-python/creatingvisualizations.html>
 
-## Tutorial
+## IX. Tutorial
 + Tkinter
 + wxPython
 + PyGTK
@@ -97,7 +98,7 @@ tulip
 <https://josephrex.me/getting-started-with-gui-development-in-python/>
 
 
-## Image
+## X. Image
 
 ### 1. 3D Plane
 ```python
@@ -132,13 +133,13 @@ call(["feh",'testplot.png'])
 
 <http://stackoverflow.com/questions/19410733/how-to-draw-planes-from-a-set-of-linear-equations-in-python>
 
-## Matrix
+## XI. Matrix
 reverse a list : array[::-1]
 <http://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python>
 append two lists a,b : a+b (array can't!!)
                        np.append(n_p[ii][::-1] , p_n[ii])
 
-## Numerical Solver
+## XII. Numerical Solver
 ### 1. special-function: scipy.special
 ### 2. integration: scipy.integrate 
 1. quad
@@ -168,6 +169,29 @@ brent method - scipy.optimize.brentq(f,a,b)
 
 a pair of nonlinear equations
 <http://stackoverflow.com/questions/8739227/how-to-solve-a-pair-of-nonlinear-equations-using-python>
+
+## XIII. Crawler
+
+### Requests
+
+<http://docs.python-requests.org/en/latest/user/quickstart/>
+BeautifulSoup
+<https://stackoverflow.com/questions/38162090/the-python-requests-module-cannot-detect-certain-html-link-tags>
+### Spider
+
+
+## XV. Data Structure
+```
+Class
+    __init__
+    __repr__        representation of python object, unambiguous
+    __str__
+    __call__
+```
+
+### 1. Tree
+
+
 ### Error
 
 1. p.show() doesn't show figures
@@ -202,3 +226,28 @@ sudo apt-get install python3-tk     # follow the step, don't use pip-install
 ```
 
 <http://stackoverflow.com/questions/22304215/gtk-backend-requires-pygtk-to-be-installed>
+
+2.  python function, pay attention to argument passing (which is not value passing)
+
+    ```
+    myshore=[]
+    nextstate_onboard(myshore,[1,2])        # 1st: myshore=[]
+    nextstate_onboard(myshore,[1,2])        # 2nd: myshore=[1,2]        # very ridiculous
+
+    def nextstate_onboard(shore,comingboat):
+        shore.extend(comingboat)
+        ...
+    ```
+    but here, myshore is a list, which use reference passing here
+
+
+3. SyntaxError: non-default argument follows default argument
+    ```
+    def fun1(a="who is you", b="True", x, y):
+    ...     print a,b,x,y
+    ```
+    solution: change to
+    ```
+    def fun1(x,y,a="who is you", b="True"):
+    ...     print a,b,x,y
+

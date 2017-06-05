@@ -138,6 +138,7 @@ export BOOST_ROOT=~/Software/boost/include
 export EDITOR=/usr/bin/vim
 
 export PKG_CONFIG_PATH=/usr/bin/
+export PKG_CONFIG_PATH=$HOME/Software/Qemu/Qemu-1026/dependent_library/pixman:${PKG_CONFIG_PATH}            # build for Qemu
 export PYTHONPATH=/usr/local/lib/python3.5/site-packages/:${PYTHONPATH}
 export PYTHON3_EXCUTABLE=/usr/bin/python3.5
 export PYTHON_INCLUDE_DIR=/usr/include/python3.5
@@ -152,6 +153,8 @@ export OPENCV_TEST_DATA_PATH=~/Software/OpenCV/opencv_extra/testdata
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:${PATH}
+
+export PATH=~/Software/selenium:${PATH}             # selenium driver geckodriver
 
 
 # import sys; sys.path.append('/usr/local/lib/python2.7/site-packages')
@@ -182,8 +185,8 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 
 # grep =======================================================
 #alias grep --color=auto
-alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
-alias gp="grep -r "
+alias gp="grep -R --exclude-dir=.svn --color=auto" #grep >=2.5.2    R/r: with/without link file
+alias gp="grep -R "
 alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
 alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
 alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
@@ -243,7 +246,9 @@ alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
 
 alias makee="make edit"
+alias makeh="make help"
 alias maker="make run"
+alias maketee="make 2>&1| tee maketee.log"
 alias xpropwm="xprop | grep WM_CLASS"
 
 # program open in ubuntu

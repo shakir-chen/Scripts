@@ -44,7 +44,6 @@ Better Print instead of address and ugly value
 
 Pretty Print
 
-
 ```
 array[] = {100,200,300};
 $print array            #print the first value in array
@@ -71,3 +70,33 @@ using ELK as a dashboard for honeypots
 # Good Example - GDB Python Optimization
 Output Message  /   Source      /   Asssembly     /     Threads     /       Stack           /       Registers       /       Expressions     /       Memory  / History
 <https://github.com/cyrus-and/gdb-dashboard>
+
+
+# Pass arguments
+```
+gdb --args myProg.exe arg1 arg2 ...
+
+gdb myProg.exe
+run arg1 arg2 ...
+```
+
+
+# Step Start
+```
+gdb myProg.exe
+run arg1 arg2 ...
+start
+```
+
+
+# Breakponts
+breakpoint xxx location
+
+out of iterate loop: until
+<https://stackoverflow.com/questions/2200556/how-do-i-get-gdb-to-break-out-of-a-loop>
+
+show breakpoints
+i[nfo] b
+<https://ccrma.stanford.edu/~jos/stkintro/Useful_commands_gdb.html>
+
+use "continue" to breakpoints

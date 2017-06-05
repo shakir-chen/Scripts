@@ -6,6 +6,10 @@ make -f makefile.win
 make -f makefile.nix
 ```
 
+## include header files from GCC search path
+gcc -c -I/home/me/development/skia sample.c
+<https://stackoverflow.com/questions/973146/how-to-include-header-files-in-gcc-search-path>
+
 ## Special Macros
 CC=gcc
 CFLAGS=-I.
@@ -21,12 +25,17 @@ This addition first creates the macro DEPS, which is the set of .h files on whic
 
 $@ : left sides of :
 $^ : right sides of :
-$< : the $< is the first item in the dependencies list => %.c
+$< : the $< is the first item in the dependencies list => %.c           # % means any *
 
 <http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/>
 
+## Built in target name
+.SECONDARY : treated as intermeidate files
+<https://www.gnu.org/software/make/manual/html_node/Special-Targets.html>
 #objdump
 
 ```
 objdump -d *.o  #to see the binary file of *.o
 ```
+
+
