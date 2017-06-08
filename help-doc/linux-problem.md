@@ -712,7 +712,6 @@ Java Virtual Machine Issue; apt-get install openjdk-8-jre
 Big Issues Now: libjibx1.1 has updated to libjibx1.2 ; but freemind doesn't support libjibx1.2
 Package libjibx1.1-java is not installed.
 
-
 ant dist    # one common see instruction
 <http://jotm.objectweb.org/current/test/doc/tests/node4.html>
 
@@ -980,6 +979,8 @@ binary                          #if put meets bugs
 <https://help.gnome.org/users/evince/stable/shortcuts.html.en>
 
 ## 16. Sogou Pingyin Installation
+Alternative : google pinyin (sudo apt-get install fcitx-googlepinyin, im-config)
+
 + Language Input Two Ways
     1. ibus
     2. fcitx (recommend)

@@ -248,8 +248,11 @@ alias volumedown="pactl set-sink-volume 1 -10%"
 alias makee="make edit"
 alias makeh="make help"
 alias maker="make run"
+alias makec="make clean"
 alias maketee="make 2>&1| tee maketee.log"
 alias xpropwm="xprop | grep WM_CLASS"
+
+alias ctagsr="ctags --extra=+f -R ."
 
 # program open in ubuntu
 # alias open="xdg-open"

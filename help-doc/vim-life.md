@@ -3,6 +3,99 @@ Library Install Tool
 synaptic (graphic of apt-get)
 
 ## I. Deep Vim Settings - kvim
+```
+Plugin:
+- YouCompleteMe:                OK              # complete
+- ctrlp-funky:                  OK              #
+- ctrlp.vim:                    OK              # fuzzy file, buffer, mru, tag, etc finder      :ctrlP  ,p      ,f (recent files)
+- vim-multiple-cursors:         OK              # multiple-cursor
+- tagbar:                       OK              # tagbar function       :Tagbar
+- vim-snippets:                 OK
+- ultisnips:                    OK              # automaticall code completion
+
+- nerdtree:                     OK              # tree explorer
+- vim-nerdtree-tabs:            OK
+- nerdcommenter:                OK              # ,cc       ,cu
+
+---------------git----------------
+- vim-gitgutter:                OK              # shows git diff in the gutter (sign column)
+- gundo.vim:                    OK              # git mirror
+- vim-fugitive:                 OK              # git wrapper
+
+- vim-repeat:                   OK              # ., repeat previous command
+
+- ctrlsf.vim:                   OK              # ctrlsf, search and explore        :CtrlSF
+
+- vim-surround:                 OK              # ysiw" Hello=> "Hello" ;   cs"'    "Hello"=> 'Hello'; ds"  "Hello"=> Hello
+
+====Move====
+- vim-easymotion:               OK              # motions on speed: ,,w     ,,fe
+- matchit.zip:                  OK              # % match {}  or ()
+- quick-scope:                  OK
+- vim-quickrun:                 OK
+- vim-tmux-navigator:           OK
+- vim-signature:                OK              # a 53:     add line tag,   mx  -->  toggle x       ;x  --> move to x
+
+====Show====
+----------Color Scheme------------
+- vim-colors-solarized:         OK
+- molokai:                      OK
+
+- vim-textobj-line:             OK
+- vim-textobj-entire:           OK
+- vim-textobj-indent:           OK
+- vim-textobj-user:             OK
+- vim-indent-guides:            OK
+
+- vim-airline:                  OK              # stauts bar/tabline
+- vim-airline-themes:           OK
+
+- rainbow_parentheses.vim:      OK              # [[[[[(())]]]]]
+
+- delimitMate:                  OK              # "" ()  {} [] : autocomplete for ", (, {, [
+- vim-expand-region:            OK              # = -       ????        visual mode
+- vim-ctrlspace:                OK              # space controller
+- Scheme-Mode:                  OK
+
+- vim-easy-align:               OK
+
+--------------Syntax--------------
+- syntastic:                    OK              # syntastic check, highlight by >>
+- python-syntax:                OK
+- vim-isort:                    OK              # python imports
+- vim-python-pep8-indent:       OK
+- javascript-libraries-syntax.vim: OK
+- vim-javascript:               OK
+- yajs.vim:                     OK              # yet another javascript
+- vim-markdown:                 OK
+- Vim-Jinja2-Syntax:            OK
+- closetag.vim:                 OK              # html,xml      closetag </html>
+
+- vim-trailing-whitespace:      OK              # red mark the last invalid space  
+```
+
+normap : <leader>ev          <leader> : ,
+
+Ctag:       quick open header file
+ctags --extra=+f -R .
+<http://vimawesome.com/>
+<http://www.wklken.me/posts/2013/06/11/linux-my-vim.html>
+
+Ctags usage
+ + ctags *.c *.h        # make tags for every c,h type files in workspace, result will be saved in tags file
+ + ctags -R -f ./.git/tags .       # Recursive in the current folder, except .git folder
+ + vim Ctrl+], at certain part will go to the k
+ +     :tag or :ta => function_name
+ +     :tselect or :ts => show the list
+ +     :tnext or :tn -> next tag in that list
+ +     :tprev or :tp
+ +     :tf or :tfirst
+ +     :tl or :tlast
+ <https://andrew.stwrt.ca/posts/vim-ctags/>
+
+vim + Ctags + Ctrlp     :CtrlPTag
+all save in tags
+
 
 ## II. Firefox - vimperator
 ctrl+i: external editor; save and copy all the message back to the blank
