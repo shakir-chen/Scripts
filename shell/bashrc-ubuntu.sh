@@ -674,7 +674,8 @@ alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 function dirsx(){
     DIR=$(dirs | sed -r 's/\s/\\ /')
-    echo $DIR | xclip
+    # echo $DIR | xclip
+    printf "$DIR" | xclip
 }
 
 

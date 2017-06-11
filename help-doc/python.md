@@ -189,11 +189,27 @@ Class
     __call__
 ```
 
+## XIV. Video and Audio
+```
+sudo apt-get install vlc browser-plugin-vlc
+sudo pip3.5 install python-vlc
+```
+
+## XVI. photo or sound record
+microphone sound signal (python bindings)
+<!-- pyaudio -->            # wave
+<https://stackoverflow.com/questions/35344649/reading-input-sound-signal-using-python>
+
+iphone camera to ros node
+<http://riematrix.github.io/iphone-as-ros-camera-node/>
+mini-webcam => stream of videos to WLAN
+on ubuntu create virtual camera:
+
+epoccam (cannot use)
+
 ### 1. Tree
 
-
 ### Error
-
 1. p.show() doesn't show figures
 
 ```
