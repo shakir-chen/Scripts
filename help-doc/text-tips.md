@@ -1,5 +1,8 @@
 #find and remove
 find -name .svn -exec rm -rf {} \;
+```
+find ~/ -type f -name "*.md"
+```
 
 
 #regex

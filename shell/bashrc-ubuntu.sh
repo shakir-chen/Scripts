@@ -246,6 +246,7 @@ alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
 
 alias makee="make edit"
+alias makeo="make open"
 alias makeh="make help"
 alias maker="make run"
 alias makec="make clean"
