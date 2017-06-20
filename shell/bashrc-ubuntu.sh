@@ -202,6 +202,7 @@ alias lshf="ls -pa --color=tty | grep -v /"     # list include hidden file
 alias lsd="ls -p --color=tty | grep /"     # list include hidden file
 alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
+alias lsusbpower="lsusb  -v |egrep '^Bus|MaxPower'"
 
 # vim =======================================================
 alias vim="vi"
@@ -221,8 +222,14 @@ alias vimcv="vimfind cv"        # opencv
 function vimfind(){
     if [ -f ~/Software/Scripts/help-doc/$1.md ]; then
        vim ~/Software/Scripts/help-doc/$1.md
+    elif [ -f ~/Documents/Blog/Homepage/Homepage-V5/blog/md/$1.md ]; then
+        echo "find one"
+       vim ~/Documents/Blog/Homepage/Homepage-V5/blog/md/$1.md
     else
+       echo "-------github---------"
        ls ~/Software/Scripts/help-doc/
+       echo "-------blog---------"
+       ls ~/Documents/Blog/Homepage/Homepage-V5/blog/md
        read -p "file not find, change one?  " read_flag
        vimfind $read_flag
     fi
@@ -296,6 +303,7 @@ alias py3.5="python3.5"
 alias py2.7="python2.7"
 
 # pdf reader
+alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
 # function evince() {
@@ -604,6 +612,7 @@ function gitpush(){
 
 #ftp
 alias ftpi="ftp ihome.ust.hk"
+alias gitftppush="git ftp push"
 # ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
 
 #nautilus
@@ -679,6 +688,9 @@ function dirsx(){
     printf "$DIR" | xclip
 }
 
+alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
+alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
+alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
 
 
 # autojump

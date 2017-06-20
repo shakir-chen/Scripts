@@ -1757,6 +1757,12 @@ service ssh restart         # or restart ssh
 ```
 vim /etc/host/source.list
 ```
+### 64. pdf cropper
+online => search pdf cropper            # very slow and inconvinient
+python tool => pypdf2                   # batch processing, but not interactively
+ubuntu tools => briss                   # java <https://onetransistor.blogspot.hk/2016/01/pdf-crop-linux-software.html>
+
+
 
 
 #### ERROR
