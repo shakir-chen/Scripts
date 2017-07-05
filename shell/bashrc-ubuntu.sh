@@ -97,9 +97,9 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias fehbgfill="feh --bg-fill"
-# alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/hot-air-balloon-valley-sky-99551.jpeg"
-alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/intel-chip-wallpaper.jpg"
+alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/chip/intel-chip-wallpaper.jpg"
 alias fehscreencd="cd ~/Dropbox/Linux/Pictures/wallpaper/"
+alias i3lock="i3lock -i ~/Dropbox/Linux/Pictures/wallpaper/nature/lock/3.png"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
