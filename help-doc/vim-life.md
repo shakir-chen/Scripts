@@ -102,9 +102,16 @@ ctrl+i: external editor; save and copy all the message back to the blank
 
 search engine: google translator; google scholar search
 
+1. firefox addon to go with vimpeartor
+<https://superuser.com/questions/11089/firefox-addons-to-go-with-vimperator>
+hard to implement
+addons of grammarly: <https://app.grammarly.com/>
+
+
 Tips: Speedup Firefox
 1. http cache
 2. <https://support.mozilla.org/en-US/questions/1146203>
+
 
 ## III. Thunderbird - muttator
 
@@ -215,6 +222,7 @@ apt-get install ttf-fontname
 # if no such font, download
 mv fontname.ttf /usr/share/fonts/ # FontAwesome.otf ; fontawesome-webfont.ttf
 fc-cache -f -v
+fc-list | grep "Source"         # check add or not
 ```
 
 Great Example In Github
@@ -311,6 +319,34 @@ study later
 sudo apt-get install rxvt-unicode-256colors
 ```
 <https://github.com/pkkolos/urxvt-scripts>
+
+
+i3wm with (fontawesome)
+
+<https://www.reddit.com/r/unixporn/comments/34e4z4/urxvt_using_glyphs_with_urxvt/>
+
+i3wm background color and image
+```
+xsetroot -solid "#333333"
+feh --bg-scale ~/Dropbox/Linux/Pictures/wallpaper/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg
+```
+<https://wiki.archlinux.org/index.php/Feh#As>
+
+### urxvt with compton
+```
+exec --no-startup-id compton
+~/.config/compton.conf      # opacity-rule = [ "80:class_g = 'URxvt'" ];
+compton -cCGfF -b -i 0.75 --vsync opengl # try compton instead xcompmgr
+```
+
+very nice
+<https://www.reddit.com/r/i3wm/comments/2yytvs/make_terminals_transparent/>
+
+
+## Error
+1. Xresources not loading for urxvt
+xrdb -merge ~/.Xresources
+<https://bbs.archlinux.org/viewtopic.php?id=126530>
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note

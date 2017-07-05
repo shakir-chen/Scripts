@@ -34,11 +34,14 @@ floating_modifier $mod
 
 # Xuanqi Initial Start ===============
 exec --no-startup-id dropbox start
-exec --no-startup-id xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary
+exec --no-startup-id xrandr --output DP1 --rotate left --right-of VGA1; xrandr --output VGA1 --primary
+
+exec --no-startup-id compton &
 # ====================================
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt       # urxvt
 
 # multi-monitor
 bindsym $mod+m         exec xrandr --output HDMI1 --off
@@ -127,13 +130,15 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # assign workspace variables
-set $WS1 1.term
-set $WS2 2.code
-set $WS3 3.www
-set $WS4 4.media
-set $WS5 5.misc
-set $WS6 6.mail
-set $WS7 7.bdsl
+# http://fontawesome.io/cheatsheet/
+set $WS1 1.term 
+set $WS2 2.code 
+set $WS3 3.www 
+set $WS4 4.media 
+set $WS5 5.misc 
+set $WS6 6.mail 
+set $WS7 7.bdsl 
+set $WS8 8.mail 
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -150,7 +155,8 @@ bindsym $mod+0 workspace 10
 
 
 # Move to workspace
-assign [instance="terminator|urxvt"] $WS1
+# assign [instance="terminator|urxvt"] $WS1
+assign [instance="terminator"] $WS1
 assign [class="Chromium|Firefox"] $WS3
 for_window [class="Chromium|Firefox"] focus
 # assign [class="Chromium|firefox"] $WS3

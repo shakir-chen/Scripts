@@ -96,6 +96,11 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias fehbgfill="feh --bg-fill"
+# alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/hot-air-balloon-valley-sky-99551.jpeg"
+alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/intel-chip-wallpaper.jpg"
+alias fehscreencd="cd ~/Dropbox/Linux/Pictures/wallpaper/"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -183,6 +188,9 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
+echo -e "\033[5 q"
+# echo -e "\033[6 q"      # not blink
+
 # grep =======================================================
 #alias grep --color=auto
 alias gp="grep -R --exclude-dir=.svn --color=auto" #grep >=2.5.2    R/r: with/without link file
@@ -203,6 +211,7 @@ alias lsd="ls -p --color=tty | grep /"     # list include hidden file
 alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
 alias lsusbpower="lsusb  -v |egrep '^Bus|MaxPower'"
+alias llmb="ll --block-size=M"
 
 # vim =======================================================
 alias vim="vi"
@@ -540,6 +549,7 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 # alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
 # alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
+alias svngrep="svn ls --depth infinity | grep "
 function svnrefreshdel(){
     IFS=$'\n'
     for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
@@ -657,6 +667,8 @@ function dropboxln(){
 }
 alias mvbak="mv --backup=t"
 
+alias urxvtsource="xrdb -merge ~/.Xresources"
+
 # grip
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
@@ -676,6 +688,7 @@ alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
+alias cdbosem="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSEM/source"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"

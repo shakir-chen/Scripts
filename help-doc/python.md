@@ -133,6 +133,12 @@ call(["feh",'testplot.png'])
 
 <http://stackoverflow.com/questions/19410733/how-to-draw-planes-from-a-set-of-linear-equations-in-python>
 
+Examples
+
+1. Really cool examples
+<https://stackoverflow.com/questions/10917495/matplotlib-imshow-in-3d-plot>
+
+
 ## XI. Matrix
 reverse a list : array[::-1]
 <http://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python>
@@ -178,6 +184,45 @@ a pair of nonlinear equations
 BeautifulSoup
 <https://stackoverflow.com/questions/38162090/the-python-requests-module-cannot-detect-certain-html-link-tags>
 ### Spider
+
+#### 1. Fill input of types and press submit
+
+```
+from BeautifulSoup import BeautifulSoup
+import urllib
+
+post_params = {
+    param1 : val1,
+    param2 : val2,
+    param3 : val3
+        }
+post_args = urllib.urlencode(post_params)
+
+url = 'http://www.website.com/'
+fp = urllib.urlopen(url, post_args)
+soup = BeautifulSoup(fp)
+```
+
+<https://stackoverflow.com/questions/13166395/fill-input-of-type-text-and-press-submit-using-python>
+
+#### 2. Selenium open Firefox with extensions
+
+##### i. Failed: Shows No Such File or Dirctory
+```
+from selenium import webdriver
+
+profile = webdriver.FirefoxProfile()
+profile.add_extension('path_to_extension')
+profile.set_preference("extensions.adblockplus.currentVersion", "2.4")
+
+driver = webdriver.Firefox(firefox_profile=profile)
+```
+<http://www.testingexcellence.com/webdriver-tutorial-open-browser-extensions/>
+<https://stackoverflow.com/questions/27586254/python-selenium-browser-with-extensions>
+
+##### ii.
+
+
 
 
 ## XV. Data Structure
@@ -267,3 +312,9 @@ sudo apt-get install python3-tk     # follow the step, don't use pip-install
     def fun1(x,y,a="who is you", b="True"):
     ...     print a,b,x,y
 
+
+### with-as
+<http://effbot.org/zone/python-with-statement.htm>
+
+
+### yeild
