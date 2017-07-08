@@ -96,6 +96,8 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias fehg="feh --reload 1 -B black -d -N --geometry 500x500 --auto-zoom"
+alias feh="feh -B black -d -N --auto-zoom"
 alias fehbgfill="feh --bg-fill"
 alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/chip/intel-chip-wallpaper.jpg"
 alias fehscreencd="cd ~/Dropbox/Linux/Pictures/wallpaper/"

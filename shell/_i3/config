@@ -255,5 +255,7 @@ for_window [class="Firefox" instance="Zotero"] floating enable move up 400px
 for_window [class="Tk" instance="tk"] floating enable
 for_window [class="Display-im6" instance="display-im6"] floating enable         # image magick
 
+# [class="feh" instance="feh"] 
+
 # for_window [class="Thunderbird" window_role="pop-up"] floating enable
 # for_window [window_role="pop-up"] floating enable

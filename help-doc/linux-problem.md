@@ -1783,6 +1783,9 @@ https://bbs.archlinux.org/viewtopic.php?id=177281
 urxvt underscore problem
 change the fontsize from 14 to 13
 <https://bbs.archlinux.org/viewtopic.php?id=125749>
+urxvt -fc "xft:Font Awesome"
+urxvt -fc "xft:DejaVu Sans Mono:style=Book:antialias=false:size=8"
+urxvt -fc "xft:Microsoft Yahei:style=Book:antialias=false:size=8"
 
 #### ERROR
 1.TIFF4 depency:

@@ -35,8 +35,20 @@ URxvt.allow_bold:           false
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
 ! URxvt*font: xft:Monospace:pixelsize=14
 ! URxvt*boldFont: xft:Monospace:pixelsize=14
-URxvt*font: xft:Monospace:pixelsize=13
-URxvt*boldFont: xft:Monospace:pixelsize=13
+!
+! URxvt*font: xft:Monospace:pixelsize=14
+! URxvt*boldFont: xft:Monospace:pixelsize=14
+
+! URxvt*font: xft:Monospace:pixelsize=14, xft:WenQuanYi:pixelsize=14, xft:FreeSerif:style=Regular, xft:unifont:style=Medium:antialias=false, xft:Font\ Awesome:antialias=true:pixelsize=14
+! urxvt*font: xft:DejaVu Sans Mono:style=Book:antialias=false:size=8, xft:Microsoft YaHei:size=11, xft:FreeSerif:style=Regular, xft:unifont:style=Medium:antialias=false
+! URxvt*font: xft:Monospace:pixelsize=14, xft:Microsoft YaHei:pixelsize=14, xft:FreeSerif:style=Regular, xft:unifont:style=Medium:antialias=false, xft:Font\ Awesome:antialias=true:pixelsize=14
+
+! URxvt*font: xft:Microsoft YaHei:pixelsize=14
+! URxvt*boldFont: xft:Monospace:pixelsize=14
+
+URxvt.font:             xft:DejaVu Sans Mono:pixelsize=15,xft:Microsoft Yahei:pixelsize=15
+URxvt.boldFont:         xft:DejaVu Sans Mono:Bold:pixelsize=15,xft:Microsoft Yahei:Bold:pixelsize=15
+
 
 ! Fix font space
 URxvt*letterSpace: -1

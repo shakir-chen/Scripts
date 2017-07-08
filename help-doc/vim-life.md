@@ -238,6 +238,14 @@ yEd : "sun-awt-X11-XFramePeer", "com-install4j-runtime-launcher-Launcher"
 for_window [class="Zotero" instance="Toplevel"] floating enable
 for_window [class="Zotero" instance="Toplevel"] floating enable move right 330px, move down 70px
 
+move window
+i3-msg move absolute position 0px 0px
+i3-msg move right 330px, move down 70px
+
+i3-msg [class=feh instance=feh] move position 0px 0px
+
+<https://i3wm.org/docs/userguide.html>[6.5 moveing containers]
+
 restart i3wm-config: mod+shift+r
 ### 6. Dmenu no locale support Fixed
 test: demu_run
