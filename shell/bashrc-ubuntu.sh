@@ -671,6 +671,13 @@ alias mvbak="mv --backup=t"
 
 alias urxvtsource="xrdb -merge ~/.Xresources"
 
+# dot & graphvz, dot circo fdp twopi neato
+alias dotshow="dot -Tx11"
+function dotsave(){
+    dot -Tpng $1 > temp.png
+}
+
+
 # grip
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
@@ -678,6 +685,7 @@ function griphub(){
 alias gripquick="grip -b --quiet"
 
 #cd Frequent Path
+alias cdtac="cd ~/Dropbox/1_Course/TAC"
 alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"

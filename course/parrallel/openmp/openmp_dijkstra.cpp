@@ -76,6 +76,7 @@ namespace utils {
         }
         if (filename.length() == 0 || num_threads == 0)
             print_usage();
+
         return 0;
     }
 
