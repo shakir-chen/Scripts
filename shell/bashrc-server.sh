@@ -5,13 +5,13 @@
 
 ############# added by Rafeal ################################################
 
-export LD_LIBRARY_PATH=/opt/gcc-4.6.2/lib64
+# export LD_LIBRARY_PATH=/opt/gcc-4.6.2/lib64
 # NEW EMACS
 
-export PATH=/opt/gcc-4.6.2/bin:${PATH}
-export PATH=/opt/Python-2.7.4/bin:${PATH}
-export PATH=/opt/scons/bin:${PATH}
-export PATH=/opt/swig/bin:${PATH}
+# export PATH=/opt/gcc-4.6.2/bin:${PATH}
+# export PATH=/opt/Python-2.7.4/bin:${PATH}
+# export PATH=/opt/scons/bin:${PATH}
+# export PATH=/opt/swig/bin:${PATH}
 
 # export PATH=/home/rafael/softwares/emacs/bin:${PATH}
 # export PATH=/local/home/rafael/softwares/autoconf/bin:${PATH}
@@ -235,13 +235,23 @@ alias svnupemp="svn up --set-depth empty"
 alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE"
 alias svncosmic="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful%20Resources/Benchmarks/COSMIC-generation-flow"
 alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
-alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade_Memory"
+# alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade_Memory"
+alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE Jade-trunk"
 alias svnjadesg="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel"
 alias svnjadesgspec="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-sg-SPEC"
 alias svnjadesgproc="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel/processor"
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 alias svnrefreshquestion="svn st | grep '^?' | awk '{print $2}' | xargs svn add" #add
-alias svnrefreshdel="svn st | grep '!' | awk '{print $2}' | xargs svn delete --force" #delete
+function svnrefreshdel(){
+    IFS=$'\n'
+    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    do
+        echo "svn delete" "$file"
+        svn delete $file
+    done
+}
+
+
 #exclude, files
 function svnclone() {
     if [[ $1 == "ls" ]]
