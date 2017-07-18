@@ -242,7 +242,16 @@ alias svnjadesgspec="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repositor
 alias svnjadesgproc="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel/processor"
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 alias svnrefreshquestion="svn st | grep '^?' | awk '{print $2}' | xargs svn add" #add
-alias svnrefreshdel="svn st | grep '!' | awk '{print $2}' | xargs svn delete --force" #delete
+function svnrefreshdel(){
+    IFS=$'\n'
+    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    do
+        echo "svn delete" "$file"
+        svn delete $file
+    done
+}
+
+
 #exclude, files
 function svnclone() {
     if [[ $1 == "ls" ]]
