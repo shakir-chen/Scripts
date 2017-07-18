@@ -712,7 +712,6 @@ Java Virtual Machine Issue; apt-get install openjdk-8-jre
 Big Issues Now: libjibx1.1 has updated to libjibx1.2 ; but freemind doesn't support libjibx1.2
 Package libjibx1.1-java is not installed.
 
-
 ant dist    # one common see instruction
 <http://jotm.objectweb.org/current/test/doc/tests/node4.html>
 
@@ -804,7 +803,7 @@ sudo apt-get install texlive-latex-extra --no-install-recommends            #for
 Latex error: psboxit.sty not found
 Listing not work
 ```
-mkdir /usr/share/texlive/texmf-dist/tex/latex/psboxit
+mkdir /usr/share/texlive/texmf-dist/tex/latex/psboxit           # the exact name, like unicode-math
 wget -O psboxit.sty https://www.ctan.org/tex-archive/macros/latex209/contrib/misc/psboxit.sty
 sudo mktexlsr #or: sudo texhash
 
@@ -980,6 +979,8 @@ binary                          #if put meets bugs
 <https://help.gnome.org/users/evince/stable/shortcuts.html.en>
 
 ## 16. Sogou Pingyin Installation
+Alternative : google pinyin (sudo apt-get install fcitx-googlepinyin, im-config)
+
 + Language Input Two Ways
     1. ibus
     2. fcitx (recommend)
@@ -1756,7 +1757,35 @@ service ssh restart         # or restart ssh
 ```
 vim /etc/host/source.list
 ```
+### 64. pdf cropper
+online => search pdf cropper            # very slow and inconvinient
+python tool => pypdf2                   # batch processing, but not interactively
+ubuntu tools => briss                   # java <https://onetransistor.blogspot.hk/2016/01/pdf-crop-linux-software.html>
 
+### 65. install unrar on centos
+yum install unrar, cannot find unrar
+then download .rpm package and unpack it.
+
+really good rpm websit : rpmfind.net
+<ftp://rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/unrar-5.0.3-1.el7.rf.x86_64.rpm>
+
+ref:
+<http://www.linuxquestions.org/questions/linux-newbie-8/how-to-unrar-on-linux-671981/>
+
+## 66. urxvt blink
+just input like bellow, which is set by xterm not urxvt
+```
+echo -e "\033[5 q"]"
+```
+https://bbs.archlinux.org/viewtopic.php?id=177281
+
+
+urxvt underscore problem
+change the fontsize from 14 to 13
+<https://bbs.archlinux.org/viewtopic.php?id=125749>
+urxvt -fc "xft:Font Awesome"
+urxvt -fc "xft:DejaVu Sans Mono:style=Book:antialias=false:size=8"
+urxvt -fc "xft:Microsoft Yahei:style=Book:antialias=false:size=8"
 
 #### ERROR
 1.TIFF4 depency:

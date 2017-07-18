@@ -1,5 +1,14 @@
 Shell Programming
 ---
+# environment
+csh:
+```
+set for this shell
+setenv for all subshell
+```
+
+bash:
+
 # IF
 ```
 if [[ -z $(grep -oP '&ldquo;' $p) ]]

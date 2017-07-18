@@ -3,15 +3,115 @@ Library Install Tool
 synaptic (graphic of apt-get)
 
 ## I. Deep Vim Settings - kvim
+```
+Plugin:
+- YouCompleteMe:                OK              # complete
+- ctrlp-funky:                  OK              #
+- ctrlp.vim:                    OK              # fuzzy file, buffer, mru, tag, etc finder      :ctrlP  ,p      ,f (recent files)
+- vim-multiple-cursors:         OK              # multiple-cursor
+- tagbar:                       OK              # tagbar function       :Tagbar
+- vim-snippets:                 OK
+- ultisnips:                    OK              # automaticall code completion
+
+- nerdtree:                     OK              # tree explorer
+- vim-nerdtree-tabs:            OK
+- nerdcommenter:                OK              # ,cc       ,cu
+
+---------------git----------------
+- vim-gitgutter:                OK              # shows git diff in the gutter (sign column)
+- gundo.vim:                    OK              # git mirror
+- vim-fugitive:                 OK              # git wrapper
+
+- vim-repeat:                   OK              # ., repeat previous command
+
+- ctrlsf.vim:                   OK              # ctrlsf, search and explore        :CtrlSF
+
+- vim-surround:                 OK              # ysiw" Hello=> "Hello" ;   cs"'    "Hello"=> 'Hello'; ds"  "Hello"=> Hello
+
+====Move====
+- vim-easymotion:               OK              # motions on speed: ,,w     ,,fe
+- matchit.zip:                  OK              # % match {}  or ()
+- quick-scope:                  OK
+- vim-quickrun:                 OK
+- vim-tmux-navigator:           OK
+- vim-signature:                OK              # a 53:     add line tag,   mx  -->  toggle x       ;x  --> move to x
+
+====Show====
+----------Color Scheme------------
+- vim-colors-solarized:         OK
+- molokai:                      OK
+
+- vim-textobj-line:             OK
+- vim-textobj-entire:           OK
+- vim-textobj-indent:           OK
+- vim-textobj-user:             OK
+- vim-indent-guides:            OK
+
+- vim-airline:                  OK              # stauts bar/tabline
+- vim-airline-themes:           OK
+
+- rainbow_parentheses.vim:      OK              # [[[[[(())]]]]]
+
+- delimitMate:                  OK              # "" ()  {} [] : autocomplete for ", (, {, [
+- vim-expand-region:            OK              # = -       ????        visual mode
+- vim-ctrlspace:                OK              # space controller
+- Scheme-Mode:                  OK
+
+- vim-easy-align:               OK
+
+--------------Syntax--------------
+- syntastic:                    OK              # syntastic check, highlight by >>
+- python-syntax:                OK
+- vim-isort:                    OK              # python imports
+- vim-python-pep8-indent:       OK
+- javascript-libraries-syntax.vim: OK
+- vim-javascript:               OK
+- yajs.vim:                     OK              # yet another javascript
+- vim-markdown:                 OK
+- Vim-Jinja2-Syntax:            OK
+- closetag.vim:                 OK              # html,xml      closetag </html>
+
+- vim-trailing-whitespace:      OK              # red mark the last invalid space  
+```
+
+normap : <leader>ev          <leader> : ,
+
+Ctag:       quick open header file
+ctags --extra=+f -R .
+<http://vimawesome.com/>
+<http://www.wklken.me/posts/2013/06/11/linux-my-vim.html>
+
+Ctags usage
+ + ctags *.c *.h        # make tags for every c,h type files in workspace, result will be saved in tags file
+ + ctags -R -f ./.git/tags .       # Recursive in the current folder, except .git folder
+ + vim Ctrl+], at certain part will go to the k
+ +     :tag or :ta => function_name
+ +     :tselect or :ts => show the list
+ +     :tnext or :tn -> next tag in that list
+ +     :tprev or :tp
+ +     :tf or :tfirst
+ +     :tl or :tlast
+ <https://andrew.stwrt.ca/posts/vim-ctags/>
+
+vim + Ctags + Ctrlp     :CtrlPTag
+all save in tags
+
 
 ## II. Firefox - vimperator
 ctrl+i: external editor; save and copy all the message back to the blank
 
 search engine: google translator; google scholar search
 
+1. firefox addon to go with vimpeartor
+<https://superuser.com/questions/11089/firefox-addons-to-go-with-vimperator>
+hard to implement
+addons of grammarly: <https://app.grammarly.com/>
+
+
 Tips: Speedup Firefox
 1. http cache
 2. <https://support.mozilla.org/en-US/questions/1146203>
+
 
 ## III. Thunderbird - muttator
 
@@ -122,6 +222,7 @@ apt-get install ttf-fontname
 # if no such font, download
 mv fontname.ttf /usr/share/fonts/ # FontAwesome.otf ; fontawesome-webfont.ttf
 fc-cache -f -v
+fc-list | grep "Source"         # check add or not
 ```
 
 Great Example In Github
@@ -136,6 +237,14 @@ yEd : "sun-awt-X11-XFramePeer", "com-install4j-runtime-launcher-Launcher"
 
 for_window [class="Zotero" instance="Toplevel"] floating enable
 for_window [class="Zotero" instance="Toplevel"] floating enable move right 330px, move down 70px
+
+move window
+i3-msg move absolute position 0px 0px
+i3-msg move right 330px, move down 70px
+
+i3-msg [class=feh instance=feh] move position 0px 0px
+
+<https://i3wm.org/docs/userguide.html>[6.5 moveing containers]
 
 restart i3wm-config: mod+shift+r
 ### 6. Dmenu no locale support Fixed
@@ -218,6 +327,34 @@ study later
 sudo apt-get install rxvt-unicode-256colors
 ```
 <https://github.com/pkkolos/urxvt-scripts>
+
+
+i3wm with (fontawesome)
+
+<https://www.reddit.com/r/unixporn/comments/34e4z4/urxvt_using_glyphs_with_urxvt/>
+
+i3wm background color and image
+```
+xsetroot -solid "#333333"
+feh --bg-scale ~/Dropbox/Linux/Pictures/wallpaper/horsehead-nebula-dark-nebula-constellation-orion-87646.jpeg
+```
+<https://wiki.archlinux.org/index.php/Feh#As>
+
+### urxvt with compton
+```
+exec --no-startup-id compton
+~/.config/compton.conf      # opacity-rule = [ "80:class_g = 'URxvt'" ];
+compton -cCGfF -b -i 0.75 --vsync opengl # try compton instead xcompmgr
+```
+
+very nice
+<https://www.reddit.com/r/i3wm/comments/2yytvs/make_terminals_transparent/>
+
+
+## Error
+1. Xresources not loading for urxvt
+xrdb -merge ~/.Xresources
+<https://bbs.archlinux.org/viewtopic.php?id=126530>
 
 ## V. pdfviewer - Zathura
 Edit - Mark and Note

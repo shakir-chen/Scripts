@@ -26,6 +26,11 @@ set gui=none
 
 noremap nn :set gui=none<CR>
 
+"=======Grammaly========
+
+noremap exg :tabopen https://app.grammarly.com/<CR>        " execute grammaly
+command! exgrammarly :tabopen https://app.grammarly.com/<CR>
+
 "=======Image========
 ";I : select picture in a new tab, y copy, d close
 

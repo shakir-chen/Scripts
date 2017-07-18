@@ -55,6 +55,15 @@ svn update --set-depth immediates / infinity / empty
 this update will also achieve that you can delete the local copy but not from the repository.
 <http://stackoverflow.com/questions/17581744/delete-file-from-the-working-copy-only-but-not-from-the-repository>
 
+1. Issues like "local edit, incoming delete upon update"
+Solutions:
+    svn revert XXX          # change this file to the remote one
+    svn update
+
+
+<https://stackoverflow.com/questions/4317973/how-to-resolve-local-edit-incoming-delete-upon-update-message>
+
+
 ## Branch
 ```
 $ svn copy http://svn.example.com/repos/calc/trunk \
@@ -168,5 +177,14 @@ svn list svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository -R | egrep "/$"
 
 <https://gcc.gnu.org/wiki/SvnTricks>
 
+## Search without upload all
+update first !!!
+svn list --depth infinity | grep <filename>
+svn log -v | less           # find file in history
+
+<https://stackoverflow.com/questions/704901/search-in-svn-repository-for-a-file-name>
+
 ## Big Lessons !!!
 "svn rm --keep-local ." ===> this just rm all local file !!!!
+
+

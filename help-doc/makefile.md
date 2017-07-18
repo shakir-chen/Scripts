@@ -38,4 +38,86 @@ $< : the $< is the first item in the dependencies list => %.c           # % mean
 objdump -d *.o  #to see the binary file of *.o
 ```
 
+### Build
+```bash
+# Rules (explicit rules vs. inference rules)
+output_files : input_files          # dependency lines, when to be rebuilt; target : sources
+    actions                         # shell lines
+```
+
+```bash
+# Link
+Link_Target (qemu-arm): Obj_List (*.o )
+    CC obj_list -o obj_target
+
+# Compile
+Obj_Target (main.o): Source(*.cpp) Header_List(*.h)
+    CC -c source -o obj_target
+
+Obj_Target1, Obj_Target2 : Header_List(*.h)
+```
+
+Macros
+```bash
+# Macros
+Macros = value
+
+# Macro Modifier
+$(name:.obj=.c)                        #  "from=to" macro modifer: replace "from" text in expansion of OBJS with the "to" text
+$(name:modifer[,modifier ...])         # $(SCS,D) ;  D-directory, E-extension, F-filename
+
+$(OBJS, W space +\n)                    # Wstr A B, repalce regex A to regex B
+                                        # @(include file contents), M(member),N(non-member),LC(lower), S(substitute)
+```
+
+Inference Rules
+```bash
+%.obj : %.c
+    $(CC) $(CFLAG) -c $(.SOURCE)        # $@ : left sides of :
+                                        # $^ : right sides of :
+                                        # $< : the $< is the first item in the dependencies list => %.c           # % means any *
+                                        # $* : * match % text in target
+```
+
+
+Special Target
+<https://www.gnu.org/software/make/manual/html_node/Special-Targets.html>
+
+```bash
+all
+.PHONY          # phony(fake) tareget; pros: 1. avoid name conflict; 2. improve performance (all: prog1 prog2   .PHONY:all)
+.SENCONDRY      # dependency files are treated as intermediate files, except they are automaticlly depleted     ; vs. .INTERMIDATE
+```
+
+Function
+<https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html>
+
+```bash
+wildcard
+$(wildcard pattern ..)          # $(wildcard *.c) get all c files
+
+patsubst        # pattern substitute
+
+$(patsubst %.c %.o, $(wildcard *.c))
+
+CONFIG_SOFTMMU := $(if $(filter %-softmmu,$(TARGET_DIRS)),y)
+```
+
+Special
+<https://stackoverflow.com/questions/24777289/what-is-in-makefile>
+```bash
+?=
+?= indicates to set the KDIR variable only if it's not set/doesn't have a value.
+
+KDIR ?= "foo"
+KDIR ?= "bar"
+
+test:
+    echo $(KDIR)
+
+print foo in the end
+```
+<http://www.opussoftware.com/tutorial/TutMakefile.htm>
+<http://makepp.sourceforge.net/1.19/makepp_tutorial.html>
+
 

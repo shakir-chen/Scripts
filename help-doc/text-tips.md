@@ -1,5 +1,8 @@
 #find and remove
 find -name .svn -exec rm -rf {} \;
+```
+find ~/ -type f -name "*.md"
+```
 
 
 #regex
@@ -189,6 +192,17 @@ sed -n 'N,/PATTERN/p' FILE.txt          # from line N, search pattern and print
     curl -s http://cs229.stanford.edu/notes/ | grep -oP '(?<=")\S+.pdf(?=")'
     ```
 <http://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match>
+
+6. grep, but only certain file extensions
+```
+grep -r -i --include \*.h --include \*.cpp CP_Image ~/path[12345] | mailx -s GREP email@domain.com
+grep -r -i --include \*.md
+```
+
+```
+find . -type f -name "*.md"
+```
+
 
 ## Rename
 ```

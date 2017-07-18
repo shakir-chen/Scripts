@@ -96,6 +96,13 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias fehg="feh --reload 1 -B black -d -N --geometry 500x500 --auto-zoom"
+alias feh="feh -B black -d -N --auto-zoom"
+alias fehbgfill="feh --bg-fill"
+alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/chip/intel-chip-wallpaper.jpg"
+alias fehscreencd="cd ~/Dropbox/Linux/Pictures/wallpaper/"
+alias i3lock="i3lock -i ~/Dropbox/Linux/Pictures/wallpaper/nature/lock/3.png"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -183,6 +190,9 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
+echo -e "\033[5 q"
+# echo -e "\033[6 q"      # not blink
+
 # grep =======================================================
 #alias grep --color=auto
 alias gp="grep -R --exclude-dir=.svn --color=auto" #grep >=2.5.2    R/r: with/without link file
@@ -202,6 +212,8 @@ alias lshf="ls -pa --color=tty | grep -v /"     # list include hidden file
 alias lsd="ls -p --color=tty | grep /"     # list include hidden file
 alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
+alias lsusbpower="lsusb  -v |egrep '^Bus|MaxPower'"
+alias llmb="ll --block-size=M"
 
 # vim =======================================================
 alias vim="vi"
@@ -221,8 +233,14 @@ alias vimcv="vimfind cv"        # opencv
 function vimfind(){
     if [ -f ~/Software/Scripts/help-doc/$1.md ]; then
        vim ~/Software/Scripts/help-doc/$1.md
+    elif [ -f ~/Documents/Blog/Homepage/Homepage-V5/blog/md/$1.md ]; then
+        echo "find one"
+       vim ~/Documents/Blog/Homepage/Homepage-V5/blog/md/$1.md
     else
+       echo "-------github---------"
        ls ~/Software/Scripts/help-doc/
+       echo "-------blog---------"
+       ls ~/Documents/Blog/Homepage/Homepage-V5/blog/md
        read -p "file not find, change one?  " read_flag
        vimfind $read_flag
     fi
@@ -246,10 +264,14 @@ alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
 
 alias makee="make edit"
+alias makeo="make open"
 alias makeh="make help"
 alias maker="make run"
+alias makec="make clean"
 alias maketee="make 2>&1| tee maketee.log"
 alias xpropwm="xprop | grep WM_CLASS"
+
+alias ctagsr="ctags --extra=+f -R ."
 
 # program open in ubuntu
 # alias open="xdg-open"
@@ -292,6 +314,7 @@ alias py3.5="python3.5"
 alias py2.7="python2.7"
 
 # pdf reader
+alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
 # function evince() {
@@ -528,6 +551,7 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 # alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
 # alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
+alias svngrep="svn ls --depth infinity | grep "
 function svnrefreshdel(){
     IFS=$'\n'
     for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
@@ -600,6 +624,7 @@ function gitpush(){
 
 #ftp
 alias ftpi="ftp ihome.ust.hk"
+alias gitftppush="git ftp push"
 # ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
 
 #nautilus
@@ -644,6 +669,8 @@ function dropboxln(){
 }
 alias mvbak="mv --backup=t"
 
+alias urxvtsource="xrdb -merge ~/.Xresources"
+
 # grip
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
@@ -663,6 +690,7 @@ alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
+alias cdbosem="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSEM/source"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
@@ -671,9 +699,13 @@ alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 function dirsx(){
     DIR=$(dirs | sed -r 's/\s/\\ /')
-    echo $DIR | xclip
+    # echo $DIR | xclip
+    printf "$DIR" | xclip
 }
 
+alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
+alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
+alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
 
 
 # autojump
