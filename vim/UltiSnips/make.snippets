@@ -5,3 +5,52 @@ endsnippet
 snippet exitxq
 exit # noted by XUANQI
 endsnippet
+
+snippet initpy
+FILE=XXX.py
+
+ts := $(shell /bin/date "+%Y-%m-%d---%H-%M-%S")
+
+all:
+	python3.5 $(FILE)
+
+edit:
+	vim $(FILE)
+
+backup:
+	@echo $(ts)
+	cp $(FILE) version/$(FILE)-$(ts)
+
+timestamp:
+	@echo Timestamp is $(ts)
+	@sleep 10
+	@echo Timestamp is $(ts)
+endsnippet
+
+snippet initmd
+mdname=XXX.md
+htmlname=$(mdname:.md=.html)
+all:
+	@echo "Generate" $(htmlname) "......"
+	pandoc md/${mdname} -t html -s -o ${htmlname} --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --css pandoc.css
+	firefox ${htmlname}
+edit:
+	vim md/${mdname}
+open:
+	firefox ${htmlname}
+
+clean:
+	rm ${htmlname}
+
+distclean:
+	rm *.html
+mdfiles=$(wildcard md/*.md)
+htmlfiles=$(patsubst md/%.md, %.html, $(mdfiles))
+
+%.html:md/%.md
+	@echo $<
+	@pandoc $< -t html -s -o $@ --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --css pandoc.css
+
+rebuild:$(htmlfiles)
+	echo "compile all"
+endsnippet
