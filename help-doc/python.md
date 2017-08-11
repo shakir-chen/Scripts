@@ -65,6 +65,13 @@ profii=int(prof.loc[prof['name']==retname].index.values) # better to use isnull,
 
 <http://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o>
 
+### 3. Perserve Numpy Arrays on disk
+hdf5
+<https://stackoverflow.com/questions/9619199/best-way-to-preserve-numpy-arrays-on-disk>
+
+
+<https://stackoverflow.com/questions/20928136/input-and-output-numpy-arrays-to-h5py>
+
 
 
 ## VII. FileIO

@@ -1,7 +1,0 @@
-#Hexo
-
-## init
-
-## plugin
-
-## funciton

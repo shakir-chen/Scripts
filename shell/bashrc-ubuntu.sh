@@ -203,6 +203,7 @@ alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
 alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
 alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
 alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
+alias gpp="gp 'print' *.py | grep -v '# print'" #grep print
 
 # ls =======================================================
 alias l.="ls -d .* --color=tty"
@@ -295,6 +296,10 @@ function open(){
     # cd "$dst"
 # }
 
+#cheat-github
+alias cheatls="cheat -l"
+alias cheatedit="cheat -e"
+
 # tar
 alias tarc="tar -cvzf"
 alias tarx="tar -xvzf"
@@ -338,6 +343,10 @@ alias xrandrviripad="xrandr --output VIRTUAL1 --mode 808x1080_60.00 --right-of e
 
 alias xrandrmodiphone="xrandr --newmode '752x1334_60.00' 84.85 752 808 888 1024 1334 1335 1338 1381 -HSync +Vsync"
 alias xrandrviriphone="xrandr --output VIRTUAL2 --mode 752x1334_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+alias xrandrdellhori="xrandr --output DP1 --rotate normal"
+# alias xrandrdellvert="xrandr --output DP1 --rotate left"
+alias xrandrdellvert="xrandr --output DP1 --rotate right"
 
 # vnc
 alias vncstart="x11vnc -usepw"
@@ -560,6 +569,10 @@ function svnrefreshdel(){
         svn delete $file
     done
 }
+function svnrefresh(){
+    svn add --force * --auto-props --parents --depth infinity -q
+    svnrefreshdel
+}
 
 function svnsubmit(){
     cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
@@ -705,6 +718,15 @@ alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
+
+function lntemp(){
+    # http://tldp.org/LDP/abs/html/fto.html
+    if [ -h temp ]; then
+        rm temp
+    fi
+    ln -s $1 temp
+}
+
 function dirsx(){
     DIR=$(dirs | sed -r 's/\s/\\ /')
     # echo $DIR | xclip
@@ -730,14 +752,14 @@ function mvtmp(){
 function rm(){
     case $1 in
         "-f") argnum=2
-            mv ${@:2:10} ~/Trash/Force;;
+            mv --backup=t ${@:2:10} ~/Trash/Force;;
         "-rf") argnum=2
-            mv ${@:2:10} ~/Trash/Force;;
+            mv --backup=t ${@:2:10} ~/Trash/Force;;
         "-r") argnum=2
             mv ${@:2:10} ~/Trash/Force;;
         "-s") /bin/rm ${@:2:10} ;;
         *) argnum=1
-            mv ${@:1:10} ~/Trash/Normal;;
+            mv --backup=t ${@:1:10} ~/Trash/Normal;;
     esac
 }
 

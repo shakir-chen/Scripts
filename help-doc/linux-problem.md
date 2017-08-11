@@ -921,6 +921,11 @@ binary                          #if put meets bugs
     server-settings incoming IMAP outlook.office365.com port:993 ssl/tls
                     outgoing smtp outlook.office365.com port:587 starttls
 
+    TAC-settings:
+        eetac@ust.hk password:Jjycjs2014
+        IMAP: cas2013.exchange.ust.hk Port:993 ssl/tls Authentication:normal password
+        SMTP: cas2013.exchange.ust.hk Port:587 STARTTLS  Authentication:normal password
+
 2. Muttators
     + Muttators for Thunderbird = Vimperator for Firefox
     + Muttator => <http://www.vimperator.org/muttator>,download and Thunderbird install it from file
@@ -929,6 +934,13 @@ binary                          #if put meets bugs
         + gt - goto new tabs
         + gi - goto inbox
         + w - watch the structure;
+
+3. Remove:
+    Go to menu: Edit, Account Settings...
+    Select account name on the left
+    Either make any changes here (on the right) or Remove Account from the drop-down menu opened by clicking the Account Actions button at the bottom left
+
+
 
 
 ### 14. Dropbox
@@ -1498,7 +1510,6 @@ Linux Version: uname -or ; lsb_release -irc
 grip    # pip install grip
 pandoc # universal type convert
 
-
 ### 42. ipython Jupyter
 pip install jupyter
 cd workdir
@@ -1786,6 +1797,30 @@ change the fontsize from 14 to 13
 urxvt -fc "xft:Font Awesome"
 urxvt -fc "xft:DejaVu Sans Mono:style=Book:antialias=false:size=8"
 urxvt -fc "xft:Microsoft Yahei:style=Book:antialias=false:size=8"
+
+## 67. Know how much size
+du -sh *
+<http://www.kavoir.com/2009/09/linux-check-how-much-disk-storage-each-directory-takes-up-disk-usage-command-du.html>
+
+## 68. Bluetooth - PC
+```
+bluetoothctl
+
+list
+devices
+trust FC:A8:9A:A3:50:7A
+pair FC:A8:9A:A3:50:7A
+connect FC:A8:9A:A3:50:7A
+
+```
+
+<https://gist.github.com/nickboldt/a38627408d32fcf7c365>
+
+how to setup a Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
+<https://askubuntu.com/questions/779442/how-to-setup-a-cambridge-silicon-radio-ltd-bluetooth-dongle-hci-mode>
+
+<https://askubuntu.com/questions/763939/bluetoothctl-what-is-a-bluetooth-agent>
+
 
 #### ERROR
 1.TIFF4 depency:
