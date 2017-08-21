@@ -215,6 +215,11 @@ alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
 alias lsusbpower="lsusb  -v |egrep '^Bus|MaxPower'"
 alias llmb="ll --block-size=M"
+alias lsmem="sudo dmidecode -t 17"
+alias lsmemsize="cat /proc/meminfo"     # free -m, vmstate, top
+
+alias usbmount="sudo mount /dev/sdb1/ /media/usb"
+alias usbumount="sudo umount /dev/sdb1/"
 
 # vim =======================================================
 alias vim="vi"
@@ -695,7 +700,7 @@ function dotsave(){
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
 }
-alias gripquick="grip -b --quiet"
+alias gripquick="grip -b --quiet"           #markdown as github style
 
 #cd Frequent Path
 alias cdtac="cd ~/Dropbox/1_Course/TAC"
@@ -776,6 +781,11 @@ alias lst3="ls -t | head -3"
   # TITLE="\[\e]2;$*\a\]"
   # PS1=${ORIG}${TITLE}
 # }
+
+# wps(writer) wpp(ppt) et(excel)
+alias wps="wps -style gtk"
+alias wpp="wpp -style gtk"
+alias et="et -style gtk"
 
 # flux
 alias flux="./Software/flux/xflux -l 114.1 -g 22.3"

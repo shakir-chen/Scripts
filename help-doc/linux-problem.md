@@ -1821,6 +1821,12 @@ how to setup a Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
 
 <https://askubuntu.com/questions/763939/bluetoothctl-what-is-a-bluetooth-agent>
 
+## 69. Ctrl+Semicolon(;)
+fictx, clipboard
+an addon in fcitx named Clipboard. To disable it, simply open Fcitx Configuration -> Addon -> Clipboard, then either disable it or change its trigger key. Addon -> Clipboard
+
+urxvt cannot paste long text: use ctrl+alt+v
+
 
 #### ERROR
 1.TIFF4 depency:
