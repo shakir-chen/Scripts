@@ -140,7 +140,11 @@ export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/pulse:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/usr/local/lib/libglfw3.a:${LD_LIBRARY_PATH}
 export BOOST_ROOT=~/Software/boost/include
+# export GLFW_SOURCE_DIR=/home/xuanqi/Downloads/glfw/glfw-3.2.1
+
 # cheat add
 export EDITOR=/usr/bin/vim
 
@@ -172,7 +176,6 @@ export PATH=~/Software/selenium:${PATH}             # selenium driver geckodrive
 #RED='\[\033[0;36m\]]'
 #WHITE='\[\033[1;37m\]]'
 #PS1='${RED}\H:\W${WHITE}$ '
-
 
 #PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
 PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
@@ -300,6 +303,11 @@ function open(){
     # fi
     # cd "$dst"
 # }
+alias ustvpn="/usr/local/pulse/PulseClient.sh -h remote.ust.hk -u xchenbr -r HKUST"
+alias ustvpncheck="/usr/local/pulse/PulseClient.sh -S"
+alias vpn="/usr/local/pulse/PulseClient.sh"
+alias vpnui="/usr/local/pulse/pulseUi"
+alias ustsftp="sftp xchenbr@sftp.student.ust.hk"
 
 #cheat-github
 alias cheatls="cheat -l"
@@ -324,7 +332,7 @@ alias py3.5="python3.5"
 alias py2.7="python2.7"
 
 # pdf reader
-alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos
+alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
 # function evince() {
@@ -411,6 +419,7 @@ function xinputopentp(){
 
 # ssh
 alias sshpassion="ssh-server passion"
+alias sshvirtualdesktop="ssh xchenbr@acf2013.ece.ust.hk"
 alias sshrostam="ssh-server rostam"
 alias sshmagic="ssh-server magic"
 alias sshyoung="ssh-server young"
@@ -495,7 +504,7 @@ function scpxq {
     # then
         # servername="zhehui@rostam.ece.ust.hk"
     # else
-        # servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fanta
+        # servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fantasy
     # fi
     # ssh -X $servername
 # }
@@ -548,6 +557,7 @@ tmuxskall() {
     done
 }
 
+alias xclipwc="xclip -o | wc -w"        # word count
 # if test "$SSH_AUTH_SOCK" ; then         # for tmux
     # ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 # fi
@@ -557,7 +567,9 @@ alias synergysetup="synergy --config ~/_synergy.conf"
 # alias ="synergy --config ~/_synergy.conf"
 # svn
 alias svn="sshcheck; svn"
-alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
+
+# alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
+alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
@@ -566,6 +578,16 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 # alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
+
+function svnrefreshM(){
+    IFS=$'\n'
+    for file in $(svn st | grep '\!M' | sed -e 's/\!M\s\+//')
+    do
+        echo "svn delete" "$file"
+        svn delete $file
+    done
+}
+
 function svnrefreshdel(){
     IFS=$'\n'
     for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
@@ -574,6 +596,7 @@ function svnrefreshdel(){
         svn delete $file
     done
 }
+
 function svnrefresh(){
     svn add --force * --auto-props --parents --depth infinity -q
     svnrefreshdel
@@ -716,12 +739,12 @@ alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
-alias cdbosem="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSEM/source"
+alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
-alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function lntemp(){
@@ -811,17 +834,17 @@ export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
 
 #wget
-function wgetpdf(){
+function wgetpdf(){         # sometimes, the pdfprefix html will be different, then you need to customize the web address, not just $1$pdf
     PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
     if [ ! $PDFNAME ]; then
         PDFNAME=$(curl -s $1 | grep -oP '(?<=")\S+.pdf(?=")')
+        echo $PDFNAME
         for pdf in $PDFNAME
         do
             pdfhttp=$1$pdf
             echo $pdfhttp
             wget $pdfhttp
         done
-
     else
         echo $PDFNAME
         wget $PDFNAME

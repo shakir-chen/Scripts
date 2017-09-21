@@ -1771,7 +1771,7 @@ vim /etc/host/source.list
 ### 64. pdf cropper
 online => search pdf cropper            # very slow and inconvinient
 python tool => pypdf2                   # batch processing, but not interactively
-ubuntu tools => briss                   # java <https://onetransistor.blogspot.hk/2016/01/pdf-crop-linux-software.html>
+ubuntu tools => briss                   # java <https://onetransistor.blogspot.hk/2016/01/pdf-crop-linux-software.html>, pdf-trim, pdf-crop
 
 ### 65. install unrar on centos
 yum install unrar, cannot find unrar
@@ -1827,6 +1827,9 @@ an addon in fcitx named Clipboard. To disable it, simply open Fcitx Configuratio
 
 urxvt cannot paste long text: use ctrl+alt+v
 
+## 70. Harddriver lifetime
+sudo apt-get install smartmontools
+sudo smartctl --all /dev/sda | grep Power_On_Hours
 
 #### ERROR
 1.TIFF4 depency:
