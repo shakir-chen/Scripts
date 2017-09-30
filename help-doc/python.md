@@ -325,3 +325,25 @@ sudo apt-get install python3-tk     # follow the step, don't use pip-install
 
 
 ### yeild
+
+# Math
+## functools.partial
+function package
+
+## scipy.optimize
+
+## scipy.integrate
+
+
+### ERROR =============
+
+1. use matplotlib import pyplot: no _tkinter
+
+matplotlib.use("AGG")
+<https://stackoverflow.com/questions/4930524/how-can-i-set-the-backend-in-matplotlib-in-python>
+.config/matplotlib/matplotlibrc
+<http://matplotlib.org/users/customizing.html#the-matplotlibrc-file>
+
+<https://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server/4935945#4935945>
+
+

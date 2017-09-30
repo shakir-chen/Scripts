@@ -452,6 +452,9 @@ function ssh-server() {
     elif [ "$1" = "cs" ]
     then
         servername="xchenbr@csl2wk10.cse.ust.hk"
+    elif [ "$1" = "cs" ]
+    then
+        servername="xchenbr@acf2013.ece.ust.hk"
     elif [ "$1" = "std" ]
     then
         servername="std01@143.89.131.91"
@@ -569,7 +572,7 @@ alias synergysetup="synergy --config ~/_synergy.conf"
 alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
-alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
+alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository nsvn" # svn on virtual server
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
@@ -611,7 +614,17 @@ function svnsubmit(){
 }
 #files
 
+
 #svn ls
+
+# music ffmpeg
+function ffmpegmp3(){
+    mp3fname=$(echo $1 | sed -r 's/\.\S+/\.mp3/g')
+    echo $mp3fname
+    ffmpeg -i $1 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 $mp3fname
+    # ffmpeg -i $1 -vn -acodec libmp3lame -ac 2 -qscale:a 4 -ar 48000 $mp3fname # variable bitrate
+}
+
 
 # shadowsocks
 alias sockset="sslocal -c /etc/shadowsocks.json "
@@ -718,6 +731,24 @@ function dotsave(){
     dot -Tpng $1 > temp.png
 }
 
+function jpgtrim(){
+for f in *.jpg
+do
+    echo $f
+    convert $file -trim $f
+done
+}
+
+function pdf2jpg(){
+    for f in *.pdf
+    do
+        # echo $f
+        newf=${f/.pdf/.jpg}
+        echo  $f "--->" $newf
+        # convert -density 300 $f $newf     # backgroud will become black
+        convert -density 300 -background white -alpha remove $f $newf
+    done
+}
 
 # grip
 function griphub(){
