@@ -304,10 +304,11 @@ function open(){
     # cd "$dst"
 # }
 alias ustvpn="/usr/local/pulse/PulseClient.sh -h remote.ust.hk -u xchenbr -r HKUST"
-alias ustvpncheck="/usr/local/pulse/PulseClient.sh -S"
+# alias ustvpncheck="/usr/local/pulse/PulseClient.sh -S"
+alias ustvpncheck="ps -ef |grep 'pulseclient'"
 alias vpn="/usr/local/pulse/PulseClient.sh"
 alias vpnui="/usr/local/pulse/pulseUi"
-alias ustsftp="sftp xchenbr@sftp.student.ust.hk"
+alias ustsftp="sftp xchenbr@sftp.student.ust.hk"        # start vpn first
 
 #cheat-github
 alias cheatls="cheat -l"
@@ -333,6 +334,10 @@ alias py2.7="python2.7"
 
 # pdf reader
 alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
+function pdfcut() {
+    pdftk $2 cat $1 output cut-"$1".pdf
+}
+
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
 # function evince() {

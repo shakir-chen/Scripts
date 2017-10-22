@@ -922,9 +922,10 @@ binary                          #if put meets bugs
                     outgoing smtp outlook.office365.com port:587 starttls
 
     TAC-settings:
-        eetac@ust.hk password:Jjycjs2014
+        eetac@ust.hk password:J*j*y*c*j*s*2014
         IMAP: cas2013.exchange.ust.hk Port:993 ssl/tls Authentication:normal password
         SMTP: cas2013.exchange.ust.hk Port:587 STARTTLS  Authentication:normal password
+        web:https://cas2013.exchange.ust.hk
 
 2. Muttators
     + Muttators for Thunderbird = Vimperator for Firefox

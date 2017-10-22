@@ -1,9 +1,10 @@
 "3.16.0 (created: 2017/02/01 00:55:15)
+" Ref:https://github.com/travisjeffery/dotfiles/blob/master/.vimperatorrc
 
 cmap <C-p> <Up>
 command! -description="Open the browser console" bc :emenu Tools.Web Developer.Browser Console<CR>
 command! -description="Toggle developer tools" dev :normal <C-S-i>
-command! sourcerc :source ~/_vimperatorrc
+command! sourcerc :source ~/.vimperatorrc
 
 noremap j 10j
 noremap k 10k
@@ -23,7 +24,6 @@ source! "~/_vimperatorrc.local"
 set gui=none
 " vim: set ft=vimperator:
 
-
 noremap nn :set gui=none<CR>
 
 "=======Grammaly========
@@ -40,6 +40,40 @@ command! exgrammarly :tabopen https://app.grammarly.com/<CR>
 "http://superuser.com/questions/186782/setting-an-external-editor-in-vimperator
 "=======Reader========
 noremap rr <C-A-r>
+
+"=======Wechat HTTP Modify========
+" you can even add new functions which are then available to the :js command
+js <<EOF
+    toggle_element = function (name) {
+        document.getElementById(name).collapsed ^= 1;
+    }
+    wechatopen = function (url) {
+        pos_a=url.search("requrl=");
+        pos_b=url.search("&skey");
+        url=url.slice(pos_a+7,pos_b);
+        url=url.replace(/\%3A/g,":")
+        url=url.replace(/\%2F/g,"/")
+        liberator.echo(url);
+        liberator.open(url);
+    }
+EOF
+
+" https://wx2.qq.com/cgi-bin/mmwebwx-bin/webwxcheckurl?requrl=http://xchenbr.student.ust.hk/blog/house-bill.html&skey=@crypt_2d9884dd_8ab38f3eb6e1bd6066a0076e641de1e2&deviceid=e671062583827535&pass_ticket=undefined&opcode=2&scene=1&username=@86511d13c22558a79b81ad02ffb6eb2ba1afe18706c80148946d919b43440e89
+
+" liberator.echo(url);
+" liberator.open(url);
+
+" liberator.echo("hello world");
+
+" var win = window.open(url, '_blank');
+" win.focus();
+
+" and now use it in mappings (':h key-notation'):
+map <silent> <F8> :js toggle_element('toolbar-menubar')<CR>
+
+command! wechatopen :js wechatopen('')<CR>
+" nnoremap -urls='^http://www\.nicovideo\.jp/watch/' sdf :echo window.location.href<CR>
+nnoremap sdf :js wechatopen(buffer.URL)<CR>
 
 "=======TileTab========
 "tileTabs.menuActions('new-2vert',null)

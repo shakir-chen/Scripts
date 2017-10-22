@@ -217,7 +217,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym --release $mod+p exec --no-startup-id import /tmp/latest-screenshot.png      # print screen
-bindsym $mod+x exec --no-startup-id feh -x ~/.i3/helper.png
+bindsym $mod+x exec --no-startup-id feh -x ~/.i3/
 # bindsym $mod+x exec ~/.i3/helper.sh #failed
 
 # volume
