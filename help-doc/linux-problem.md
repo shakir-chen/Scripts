@@ -1812,7 +1812,6 @@ devices
 trust FC:A8:9A:A3:50:7A
 pair FC:A8:9A:A3:50:7A
 connect FC:A8:9A:A3:50:7A
-
 ```
 
 <https://gist.github.com/nickboldt/a38627408d32fcf7c365>
