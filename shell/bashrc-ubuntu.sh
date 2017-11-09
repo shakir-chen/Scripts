@@ -96,6 +96,13 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias fehg="feh --reload 1 -B black -d -N --geometry 500x500 --auto-zoom"
+alias feh="feh -B black -d -N --auto-zoom"
+alias fehbgfill="feh --bg-fill"
+alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/chip/intel-chip-wallpaper.jpg"
+alias fehscreencd="cd ~/Dropbox/Linux/Pictures/wallpaper/"
+alias i3lock="i3lock -i ~/Dropbox/Linux/Pictures/wallpaper/nature/lock/3.png"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -120,7 +127,7 @@ if [ "$USER" == "shakir" ] ; then
     setxkbmap -option caps:ctrl_modifier
 fi
 
-#User Define
+#User Define XuanqiPath
 # added by Anaconda 2.2.0 installer
 #export PATH="/home/rafael/softwares/anaconda/bin:${PATH}"
 #export PATH=/home/rafael/softwares/valgrind/valgrind/bin:${PATH}
@@ -133,11 +140,35 @@ export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/pulse:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/usr/local/lib/libglfw3.a:${LD_LIBRARY_PATH}
 export BOOST_ROOT=~/Software/boost/include
+# export GLFW_SOURCE_DIR=/home/xuanqi/Downloads/glfw/glfw-3.2.1
+
 # cheat add
 export EDITOR=/usr/bin/vim
 
 export PKG_CONFIG_PATH=/usr/bin/
+export PKG_CONFIG_PATH=$HOME/Software/Qemu/Qemu-1026/dependent_library/pixman:${PKG_CONFIG_PATH}            # build for Qemu
+export PYTHONPATH=/usr/local/lib/python3.5/site-packages/:${PYTHONPATH}
+export PYTHON3_EXCUTABLE=/usr/bin/python3.5
+export PYTHON_INCLUDE_DIR=/usr/include/python3.5
+export PYTHON_LIBRARY=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu/libpython3.5.so
+
+# export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:${PYTHONPATH}
+# virtualenv and virtualenvwrapper, used for opencv
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+export OPENCV_TEST_DATA_PATH=~/Software/OpenCV/opencv_extra/testdata
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:${PATH}
+
+export PATH=~/Software/selenium:${PATH}             # selenium driver geckodriver
+
+
+# import sys; sys.path.append('/usr/local/lib/python2.7/site-packages')
 
 #PS1='$ '
 #PS1='\[\033[33m\]\w\[\033[36m\]\[\033[0m\]$]]]'
@@ -145,7 +176,6 @@ export PKG_CONFIG_PATH=/usr/bin/
 #RED='\[\033[0;36m\]]'
 #WHITE='\[\033[1;37m\]]'
 #PS1='${RED}\H:\W${WHITE}$ '
-
 
 #PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
 PS1="\[\033[1;34m\][\H:\W]$\[\033[0m\] "
@@ -163,18 +193,22 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
-# grep
+echo -e "\033[5 q"
+# echo -e "\033[6 q"      # not blink
+
+# grep =======================================================
 #alias grep --color=auto
-alias gp="grep -r --exclude-dir=.svn --color=auto" #grep >=2.5.2
-alias gp="grep -r "
+alias gp="grep -R --exclude-dir=.svn --color=auto" #grep >=2.5.2    R/r: with/without link file
+alias gp="grep -R "
 alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
 alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
 alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
 alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
 alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
 alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
+alias gpp="gp 'print' *.py | grep -v '# print'" #grep print
 
-# ls
+# ls =======================================================
 alias l.="ls -d .* --color=tty"
 alias ll="ls -l --color=tty"
 alias lsf="ls -p --color=tt | grep -v / | tr '\r\n' '\t'"        # list only file, tr translate or delete, tr -d
@@ -182,31 +216,71 @@ alias lshf="ls -pa --color=tty | grep -v /"     # list include hidden file
 alias lsd="ls -p --color=tty | grep /"     # list include hidden file
 alias lshd="ls -pa --color=tty | grep /"     # list include hidden file
 alias ls="ls --color=tty"
+alias lsusbpower="lsusb  -v |egrep '^Bus|MaxPower'"
+alias llmb="ll --block-size=M"
+alias lsmem="sudo dmidecode -t 17"
+alias lsmemsize="cat /proc/meminfo"     # free -m, vmstate, top
 
+alias usbmount="sudo mount /dev/sdb1/ /media/usb"
+alias usbumount="sudo umount /dev/sdb1/"
+
+# vim =======================================================
 alias vim="vi"
-function vimbin(){
-    vim $(which $1)
-}
-
 alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
-alias vimproblem="vim ~/linux-problem.md"
 alias vimmakefile="vim Makefile"
-alias vimlife="vim ~/Software/Scripts/help-doc/linux-Vim-Life.md"
-alias vimos="vim ~/Software/Scripts/help-doc/OS-learn.md"
 alias vimbus="vim ~/Dropbox/Linux/notes/business.md"
+alias vimos="vimfind os"
+alias vimlife="vimfind vim-life"
+alias vimtext="vimfind text-tips"
+alias vimproblem="vimfind linux-problem"
+alias vimpy="vimfind python"
+alias vimjava="vimfind java"
+alias vimbuild="vimfind build-compile"
+alias vimcv="vimfind cv"        # opencv
+function vimfind(){
+    if [ -f ~/Software/Scripts/help-doc/$1.md ]; then
+       vim ~/Software/Scripts/help-doc/$1.md
+    elif [ -f ~/Documents/Blog/Homepage/Homepage-V5/blog/md/$1.md ]; then
+        echo "find one"
+       vim ~/Documents/Blog/Homepage/Homepage-V5/blog/md/$1.md
+    else
+       echo "-------github---------"
+       ls ~/Software/Scripts/help-doc/
+       echo "-------blog---------"
+       ls ~/Documents/Blog/Homepage/Homepage-V5/blog/md
+       read -p "file not find, change one?  " read_flag
+       vimfind $read_flag
+    fi
+}
 
+function vimbin(){
+    vim $(which $1)
+}
+vifm()
+{
+   if [ -f ~/.vifm/lastdir ]; then
+      rm ~/.vifm/lastdir
+   fi
+   # "command" prevents recursive call
+   command vifm "$@"
+   if [ -f ~/.vifm/lastdir ]; then
+    cd `cat ~/.vifm/lastdir`
+   fi
+}
 alias volumeup="pactl set-sink-volume 1 +10%"
 alias volumedown="pactl set-sink-volume 1 -10%"
-# function vim(){
-    # if [-f $1]
-
-# }
 
 alias makee="make edit"
+alias makeo="make open"
+alias makeh="make help"
 alias maker="make run"
+alias makec="make clean"
+alias maketee="make 2>&1| tee maketee.log"
 alias xpropwm="xprop | grep WM_CLASS"
+
+alias ctagsr="ctags --extra=+f -R ."
 
 # program open in ubuntu
 # alias open="xdg-open"
@@ -229,18 +303,16 @@ function open(){
     # fi
     # cd "$dst"
 # }
+alias ustvpn="/usr/local/pulse/PulseClient.sh -h remote.ust.hk -u xchenbr -r HKUST"
+# alias ustvpncheck="/usr/local/pulse/PulseClient.sh -S"
+alias ustvpncheck="ps -ef |grep 'pulseclient'"
+alias vpn="/usr/local/pulse/PulseClient.sh"
+alias vpnui="/usr/local/pulse/pulseUi"
+alias ustsftp="sftp xchenbr@sftp.student.ust.hk"        # start vpn first
 
-vifm()
-{
-   if [ -f ~/.vifm/lastdir ]; then
-      rm ~/.vifm/lastdir
-   fi
-   # "command" prevents recursive call
-   command vifm "$@"
-   if [ -f ~/.vifm/lastdir ]; then
-    cd `cat ~/.vifm/lastdir`
-   fi
-}
+#cheat-github
+alias cheatls="cheat -l"
+alias cheatedit="cheat -e"
 
 # tar
 alias tarc="tar -cvzf"
@@ -261,6 +333,11 @@ alias py3.5="python3.5"
 alias py2.7="python2.7"
 
 # pdf reader
+alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
+function pdfcut() {
+    pdftk $2 cat $1 output cut-"$1".pdf
+}
+
 #alias pdf="acroread"       #centos
 # alias pdf="evince"
 # function evince() {
@@ -284,6 +361,10 @@ alias xrandrviripad="xrandr --output VIRTUAL1 --mode 808x1080_60.00 --right-of e
 
 alias xrandrmodiphone="xrandr --newmode '752x1334_60.00' 84.85 752 808 888 1024 1334 1335 1338 1381 -HSync +Vsync"
 alias xrandrviriphone="xrandr --output VIRTUAL2 --mode 752x1334_60.00 --left-of eDP1 --output eDP1 --mode 1920x1080 --primary --pos 0x0 --rotate normal"
+
+alias xrandrdellhori="xrandr --output DP1 --rotate normal"
+# alias xrandrdellvert="xrandr --output DP1 --rotate left"
+alias xrandrdellvert="xrandr --output DP1 --rotate right"
 
 # vnc
 alias vncstart="x11vnc -usepw"
@@ -343,6 +424,7 @@ function xinputopentp(){
 
 # ssh
 alias sshpassion="ssh-server passion"
+alias sshvirtualdesktop="ssh xchenbr@acf2013.ece.ust.hk"
 alias sshrostam="ssh-server rostam"
 alias sshmagic="ssh-server magic"
 alias sshyoung="ssh-server young"
@@ -375,6 +457,9 @@ function ssh-server() {
     elif [ "$1" = "cs" ]
     then
         servername="xchenbr@csl2wk10.cse.ust.hk"
+    elif [ "$1" = "cs" ]
+    then
+        servername="xchenbr@acf2013.ece.ust.hk"
     elif [ "$1" = "std" ]
     then
         servername="std01@143.89.131.91"
@@ -427,7 +512,7 @@ function scpxq {
     # then
         # servername="zhehui@rostam.ece.ust.hk"
     # else
-        # servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fanta
+        # servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fantasy
     # fi
     # ssh -X $servername
 # }
@@ -446,7 +531,7 @@ alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
 alias xvnckill="x11vnc -clear-all"
 
-# tmux      --man tmux
+# tmux  --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
 alias tmuxks="tmux kill-session -t "    #kill session
 alias tmuxkw="tmux kill-session -w "    #kill window
@@ -480,21 +565,50 @@ tmuxskall() {
     done
 }
 
+alias xclipwc="xclip -o | wc -w"        # word count
+# if test "$SSH_AUTH_SOCK" ; then         # for tmux
+    # ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+# fi
 
 # synergy
 alias synergysetup="synergy --config ~/_synergy.conf"
 # alias ="synergy --config ~/_synergy.conf"
 # svn
 alias svn="sshcheck; svn"
-alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
+
+# alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
+alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository nsvn" # svn on virtual server
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 # alias svnrefreshdel="svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force"       #delete
-alias svnrefreshdel="svn st | grep '^!' | sed -e 's/!\s\+//' | xargs svn delete --force"       #delete
 # alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
+alias svngrep="svn ls --depth infinity | grep "
+
+function svnrefreshM(){
+    IFS=$'\n'
+    for file in $(svn st | grep '\!M' | sed -e 's/\!M\s\+//')
+    do
+        echo "svn delete" "$file"
+        svn delete $file
+    done
+}
+
+function svnrefreshdel(){
+    IFS=$'\n'
+    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    do
+        echo "svn delete" "$file"
+        svn delete $file
+    done
+}
+
+function svnrefresh(){
+    svn add --force * --auto-props --parents --depth infinity -q
+    svnrefreshdel
+}
 
 function svnsubmit(){
     cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
@@ -505,7 +619,17 @@ function svnsubmit(){
 }
 #files
 
+
 #svn ls
+
+# music ffmpeg
+function ffmpegmp3(){
+    mp3fname=$(echo $1 | sed -r 's/\.\S+/\.mp3/g')
+    echo $mp3fname
+    ffmpeg -i $1 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 $mp3fname
+    # ffmpeg -i $1 -vn -acodec libmp3lame -ac 2 -qscale:a 4 -ar 48000 $mp3fname # variable bitrate
+}
+
 
 # shadowsocks
 alias sockset="sslocal -c /etc/shadowsocks.json "
@@ -514,7 +638,7 @@ alias sockset="sslocal -c /etc/shadowsocks.json "
 alias cddairy="cd ~/Research/Dairy/latex"
 
 #freemind
-alias mindopen="~/Software/freemind/freemind.sh"
+alias mindopen="~/Software/freemind/exec/freemind.sh &"
 
 #wings3d
 alias wings3d="~/Software/Wings3D/wings-2.1.5/wings &"
@@ -559,6 +683,7 @@ function gitpush(){
 
 #ftp
 alias ftpi="ftp ihome.ust.hk"
+alias gitftppush="git ftp push"
 # ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
 
 #nautilus
@@ -603,13 +728,41 @@ function dropboxln(){
 }
 alias mvbak="mv --backup=t"
 
+alias urxvtsource="xrdb -merge ~/.Xresources"
+
+# dot & graphvz, dot circo fdp twopi neato
+alias dotshow="dot -Tx11"
+function dotsave(){
+    dot -Tpng $1 > temp.png
+}
+
+function jpgtrim(){
+for f in *.jpg
+do
+    echo $f
+    convert $file -trim $f
+done
+}
+
+function pdf2jpg(){
+    for f in *.pdf
+    do
+        # echo $f
+        newf=${f/.pdf/.jpg}
+        echo  $f "--->" $newf
+        # convert -density 300 $f $newf     # backgroud will become black
+        convert -density 300 -background white -alpha remove $f $newf
+    done
+}
+
 # grip
 function griphub(){
     grip -b --user="shakir-chen" --quiet $1 localhost:3700
 }
-alias gripquick="grip -b --quiet"
+alias gripquick="grip -b --quiet"           #markdown as github style
 
 #cd Frequent Path
+alias cdtac="cd ~/Dropbox/1_Course/TAC"
 alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
@@ -622,11 +775,32 @@ alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
+alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
+alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
-alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSEM"
-alias dirsx="dirs | xclip"
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
+# alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
+
+function lntemp(){
+    # http://tldp.org/LDP/abs/html/fto.html
+    if [ -h temp ]; then
+        rm temp
+    fi
+    ln -s $1 temp
+}
+
+function dirsx(){
+    DIR=$(dirs | sed -r 's/\s/\\ /')
+    # echo $DIR | xclip
+    printf "$DIR" | xclip
+}
+
+alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
+alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
+alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
+
 
 # autojump
 . /usr/share/autojump/autojump.sh
@@ -642,14 +816,14 @@ function mvtmp(){
 function rm(){
     case $1 in
         "-f") argnum=2
-            mv ${@:2:10} ~/Trash/Force;;
+            mv --backup=t ${@:2:10} ~/Trash/Force;;
         "-rf") argnum=2
-            mv ${@:2:10} ~/Trash/Force;;
+            mv --backup=t ${@:2:10} ~/Trash/Force;;
         "-r") argnum=2
             mv ${@:2:10} ~/Trash/Force;;
         "-s") /bin/rm ${@:2:10} ;;
         *) argnum=1
-            mv ${@:1:10} ~/Trash/Normal;;
+            mv --backup=t ${@:1:10} ~/Trash/Normal;;
     esac
 }
 
@@ -666,6 +840,11 @@ alias lst3="ls -t | head -3"
   # TITLE="\[\e]2;$*\a\]"
   # PS1=${ORIG}${TITLE}
 # }
+
+# wps(writer) wpp(ppt) et(excel)
+alias wps="wps -style gtk"
+alias wpp="wpp -style gtk"
+alias et="et -style gtk"
 
 # flux
 alias flux="./Software/flux/xflux -l 114.1 -g 22.3"
@@ -691,10 +870,21 @@ export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
 
 #wget
-function wgetpdf(){
+function wgetpdf(){         # sometimes, the pdfprefix html will be different, then you need to customize the web address, not just $1$pdf
     PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
-    echo $PDFNAME
-    wget $PDFNAME
+    if [ ! $PDFNAME ]; then
+        PDFNAME=$(curl -s $1 | grep -oP '(?<=")\S+.pdf(?=")')
+        echo $PDFNAME
+        for pdf in $PDFNAME
+        do
+            pdfhttp=$1$pdf
+            echo $pdfhttp
+            wget $pdfhttp
+        done
+    else
+        echo $PDFNAME
+        wget $PDFNAME
+    fi
 }
 
 #scrot

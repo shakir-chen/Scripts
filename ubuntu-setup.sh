@@ -96,6 +96,16 @@ then
    #  $ sudo make install install-doc install-html install-info
 
    echo "============Install vim==============="
+   # ./configure --with-features=huge \
+   #             --enable-multibyte \
+   #             --enable-rubyinterp \
+   #             --enable-pythoninterp \
+   #             --with-python-config-dir=/home/xuanqi/lib/python2.7/conf
+   #             --enable-perlinterp \
+   #             --enable-luainterp \
+   #             --enable-gui=gtk2 --enable-cscope --prefix=/home/xuanqi/
+   # make
+   # make install
    soft-check vim
    echo "============Install tmux==============="
    soft-check tmux
@@ -193,7 +203,7 @@ then
     echo "============Install Sogou==============="
     cd ~/Software/
     if ! [ -d "Sogou" ] ; then
-        mkdir Sogou
+       mkdir Sogou
        sudo apt-get install fcitx
        firefox http://pinyin.sogou.com/linux/?r=pinyin
        echo "Wait a Key enter....... ....."

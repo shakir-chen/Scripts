@@ -298,7 +298,7 @@ xxx && xxx  # && combinator for two commands
 ### 5. deb file install and remove
 ```
 sudo dpkg -i xxx.deb
-sudo dpkg -r xxx
+sudo dpkg -r xxx            # may not exact that name xxx
 ```
 
 
@@ -690,9 +690,44 @@ Ref: <http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-wit
 
 ### 4. Freemind in ubuntu
 install linux binary 2.6MB <http://freemind.sourceforge.net/wiki/index.php/Download>
+
 alias mindopen="~/Software/freemind/freeMind.sh"
 
+wget http://ftp.us.debian.org/debian/pool/main/f/freemind/freemind_0.9.0+dfsg-2_all.deb
+<https://packages.debian.org/wheezy/all/freemind/download/>
+
 Java Virtual Machine Issue; apt-get install openjdk-8-jre
+
+ freemind depends on libjgoodies-forms-java; however:
+  Package libjgoodies-forms-java is not installed.
+ freemind depends on libjibx1.1-java | libjibx-java (>= 1.1); however:
+  Package libjibx1.1-java is not installed.
+  Package libjibx-java is not installed.
+ freemind depends on libjibx1.1-java | libjibx-java (<< 1.2); however:
+  Package libjibx1.1-java is not installed.
+  Package libjibx-java is not installed.
+ freemind depends on simplyhtml (>> 0.13); however:
+  Package simplyhtml is not installed.
+
+Big Issues Now: libjibx1.1 has updated to libjibx1.2 ; but freemind doesn't support libjibx1.2
+Package libjibx1.1-java is not installed.
+
+ant dist    # one common see instruction
+<http://jotm.objectweb.org/current/test/doc/tests/node4.html>
+
+/home/xuanqi/Software/freemind/freemind-mmx/freemind/build.xml:101: Unable to find a javac compiler;
+com.sun.tools.javac.Main is not on the classpath.
+Perhaps JAVA_HOME does not point to the JDK.
+It is currently set to "/usr/lib/jvm/java-8-openjdk-amd64/jre"
+
+<http://stackoverflow.com/questions/8400637/unable-to-find-a-javac-compiler>
+jdk
+```
+sudo apt-get install openjdk-8-jdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bink
+```
+<http://stackoverflow.com/questions/14788345/how-to-install-jdk-on-ubuntu-linux>
 
 ### 5. Git
 Quick Github Repo commit
@@ -768,7 +803,7 @@ sudo apt-get install texlive-latex-extra --no-install-recommends            #for
 Latex error: psboxit.sty not found
 Listing not work
 ```
-mkdir /usr/share/texlive/texmf-dist/tex/latex/psboxit
+mkdir /usr/share/texlive/texmf-dist/tex/latex/psboxit           # the exact name, like unicode-math
 wget -O psboxit.sty https://www.ctan.org/tex-archive/macros/latex209/contrib/misc/psboxit.sty
 sudo mktexlsr #or: sudo texhash
 
@@ -886,6 +921,12 @@ binary                          #if put meets bugs
     server-settings incoming IMAP outlook.office365.com port:993 ssl/tls
                     outgoing smtp outlook.office365.com port:587 starttls
 
+    TAC-settings:
+        eetac@ust.hk password:J*j*y*c*j*s*2014
+        IMAP: cas2013.exchange.ust.hk Port:993 ssl/tls Authentication:normal password
+        SMTP: cas2013.exchange.ust.hk Port:587 STARTTLS  Authentication:normal password
+        web:https://cas2013.exchange.ust.hk
+
 2. Muttators
     + Muttators for Thunderbird = Vimperator for Firefox
     + Muttator => <http://www.vimperator.org/muttator>,download and Thunderbird install it from file
@@ -894,6 +935,13 @@ binary                          #if put meets bugs
         + gt - goto new tabs
         + gi - goto inbox
         + w - watch the structure;
+
+3. Remove:
+    Go to menu: Edit, Account Settings...
+    Select account name on the left
+    Either make any changes here (on the right) or Remove Account from the drop-down menu opened by clicking the Account Actions button at the bottom left
+
+
 
 
 ### 14. Dropbox
@@ -944,6 +992,8 @@ binary                          #if put meets bugs
 <https://help.gnome.org/users/evince/stable/shortcuts.html.en>
 
 ## 16. Sogou Pingyin Installation
+Alternative : google pinyin (sudo apt-get install fcitx-googlepinyin, im-config)
+
 + Language Input Two Ways
     1. ibus
     2. fcitx (recommend)
@@ -1461,7 +1511,6 @@ Linux Version: uname -or ; lsb_release -irc
 grip    # pip install grip
 pandoc # universal type convert
 
-
 ### 42. ipython Jupyter
 pip install jupyter
 cd workdir
@@ -1517,6 +1566,11 @@ sudo apt-get install mailutils      # and settings
 
 ### 48. Github Flavoured Markdown to HTML
 npm install markdown-to-html -g
+```
+github-markdown $mdname -h -s "./css/github.css" > $htmlname     # --flavour 'gfm' has some error
+```
+<https://github.com/cwjohan/markdown-to-html>
+
 
 Errors:
 1. /usr/bin/env: ‘node’: No such file or directory
@@ -1529,6 +1583,13 @@ II. markdown-styles
 <https://github.com/mixu/markdown-styles>
 
 <https://www.chainsawonatireswing.com/2012/02/01/how-to-highlight-code-on-a-webpage-when-youre-using-markdown-to-create-that-webpage/?from=@>
+
+
+math wiki
+<https://github.com/cben/mathdown/wiki/math-in-markdown>
+
+may be true:
+<https://github.com/goessner/mdmath>
 
 ### 49. Caffe Install
 
@@ -1693,6 +1754,82 @@ sudo mkdir /media/usb
 sudo mount -t vfat /dev/sdb1 /media/usb
 sudo umount /media/usb or sudo umount /dev/sdb1
 ```
+
+### 62. Host
+```
+sudo cp ~/Software/Scripts/ip-host/hosts-ipv6 /etc/hosts
+sudo /etc/init.d/ssh restart
+# no inid.d
+service ssh restart         # or restart ssh
+/etc/init.d/sshd $ACTION
+```
+<https://superuser.com/questions/214799/no-etc-init-d-sshd-file-ubuntu-ec2>
+
+### 63. change host
+```
+vim /etc/host/source.list
+```
+### 64. pdf cropper
+online => search pdf cropper            # very slow and inconvinient
+python tool => pypdf2                   # batch processing, but not interactively
+ubuntu tools => briss                   # java <https://onetransistor.blogspot.hk/2016/01/pdf-crop-linux-software.html>, pdf-trim, pdf-crop
+
+### 65. install unrar on centos
+yum install unrar, cannot find unrar
+then download .rpm package and unpack it.
+
+really good rpm websit : rpmfind.net
+<ftp://rpmfind.net/linux/dag/redhat/el7/en/x86_64/dag/RPMS/unrar-5.0.3-1.el7.rf.x86_64.rpm>
+
+ref:
+<http://www.linuxquestions.org/questions/linux-newbie-8/how-to-unrar-on-linux-671981/>
+
+## 66. urxvt blink
+just input like bellow, which is set by xterm not urxvt
+```
+echo -e "\033[5 q"]"
+```
+https://bbs.archlinux.org/viewtopic.php?id=177281
+
+
+urxvt underscore problem
+change the fontsize from 14 to 13
+<https://bbs.archlinux.org/viewtopic.php?id=125749>
+urxvt -fc "xft:Font Awesome"
+urxvt -fc "xft:DejaVu Sans Mono:style=Book:antialias=false:size=8"
+urxvt -fc "xft:Microsoft Yahei:style=Book:antialias=false:size=8"
+
+## 67. Know how much size
+du -sh *
+<http://www.kavoir.com/2009/09/linux-check-how-much-disk-storage-each-directory-takes-up-disk-usage-command-du.html>
+
+## 68. Bluetooth - PC
+```
+bluetoothctl
+
+list
+devices
+trust FC:A8:9A:A3:50:7A
+pair FC:A8:9A:A3:50:7A
+connect FC:A8:9A:A3:50:7A
+```
+
+<https://gist.github.com/nickboldt/a38627408d32fcf7c365>
+
+how to setup a Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
+<https://askubuntu.com/questions/779442/how-to-setup-a-cambridge-silicon-radio-ltd-bluetooth-dongle-hci-mode>
+
+<https://askubuntu.com/questions/763939/bluetoothctl-what-is-a-bluetooth-agent>
+
+## 69. Ctrl+Semicolon(;)
+fictx, clipboard
+an addon in fcitx named Clipboard. To disable it, simply open Fcitx Configuration -> Addon -> Clipboard, then either disable it or change its trigger key. Addon -> Clipboard
+
+urxvt cannot paste long text: use ctrl+alt+v
+
+## 70. Harddriver lifetime
+sudo apt-get install smartmontools
+sudo smartctl --all /dev/sda | grep Power_On_Hours
 
 #### ERROR
 1.TIFF4 depency:

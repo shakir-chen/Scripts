@@ -1,0 +1,10 @@
+bind -n M-H select-pane -L
+bind -n M-L select-pane -R
+bind -n M-K select-pane -U
+bind -n M-J select-pane -D
+
+set -g status-position bottom
+bind-key -n C-t new-window
+
+bind -n C-S-h prev
+bind -n C-S-l next

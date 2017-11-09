@@ -44,15 +44,18 @@
 # export LD_LIBRARY_PATH=/local/home/rafael/softwares/gmp-6.0.0/lib:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=/local/home/rafael/softwares/mpfr-3.1.3/lib:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=/local/home/rafael/softwares/mpc-1.0.2/lib:${LD_LIBRARY_PATH}
+
 # export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib64:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib:${LD_LIBRARY_PATH}
+
+# export LD_LIBRARY_PATH=/usr/lib:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=/local/home/rafael/softwares/llvm/libcxx-3.6.2.src/lib:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=/home/rafael/softwares/llvm/libcpp/lib:${LD_LIBRARY_PATH}
 
-# export PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/bin:${PATH}
-# export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/arm-none-linux-gnueabi/lib:${LD_LIBRARY_PATH}
-# # export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/lib/gcc/arm-none-linux-gnueabi/4.5.1/lib:${LD_LIBRARY_PATH}
-# export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
+export PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/bin:${PATH}
+export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/arm-none-linux-gnueabi/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/lib/gcc/arm-none-linux-gnueabi/4.5.1/lib:${LD_LIBRARY_PATH}
+export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
 
 # added by git Xuanqi
 export PATH=/home/xuanqi/Linux/bin:${PATH}
@@ -235,13 +238,23 @@ alias svnupemp="svn up --set-depth empty"
 alias svnmerge="svn merge svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE"
 alias svncosmic="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful%20Resources/Benchmarks/COSMIC-generation-flow"
 alias svnqemu="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Useful\ Resources/Benchmarks/QEMU-hierarchy Qemu"
-alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade_Memory"
+# alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/Jade_Memory"
+alias svnjade="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/trunk/JADE Jade-trunk"
 alias svnjadesg="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel"
 alias svnjadesgspec="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-sg-SPEC"
 alias svnjadesgproc="svn co svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository/Software\ Release/JADE/branches/JADE-singleAddrModel/processor"
 alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -q" #add
 alias svnrefreshquestion="svn st | grep '^?' | awk '{print $2}' | xargs svn add" #add
-alias svnrefreshdel="svn st | grep '!' | awk '{print $2}' | xargs svn delete --force" #delete
+function svnrefreshdel(){
+    IFS=$'\n'
+    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    do
+        echo "svn delete" "$file"
+        svn delete $file
+    done
+}
+
+
 #exclude, files
 function svnclone() {
     if [[ $1 == "ls" ]]

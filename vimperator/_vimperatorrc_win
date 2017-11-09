@@ -4,7 +4,7 @@ noremap j 10j
 noremap k 10k
 
 "au Fullscreen .* :set guioptions+=s
-source! "C:\\Users\\xchenbr\\_vimperatorrc.local"
+"source! "C:\\Users\\xchenbr\\_vimperatorrc.local"
 set gui=none
 " vim: set ft=vimperator:
 

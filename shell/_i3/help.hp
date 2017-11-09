@@ -25,8 +25,7 @@ G       bottom line
 gf      go to the file
 g]      go to a tag
 
-,,      +w/fx/hjkl : easy-motion plugin
-
+        /*fold*/
 ,zz     call togglefold function and fold all
 zm      fold the function area
 zr      unfold the function area
@@ -36,10 +35,38 @@ zr      unfold the function area
 ,y      copy selected area to clipboard
 "ay     copy to register a
 
+        /*easy-motion*/
+,,      search + hjkl
+,,w     search word and mark first character
+,,fe    search e and mark its location
+
+,n      nerdtree
 ,cc/,cu quick comment
 
-/     search
-\     search result(use CtrlSF)
+        /*surround*/
+ysiw"   Hello => "Hello"
+cs"'    "Hello" => 'Hello'
+ds"     "Hello" => Hello
+
+/       search
+\       search result(use CtrlSF)
+
+,ev     edit .vimrc
+,so     reload(source) .vimrc
+`       move to marked loc
+,sa     select all
+[b      previous buffer
+]b      next buffer
+
+        /*CTags*/ ctags . => set tag=tags;
+p      :tag
+:ts     show tag list
+:tn     next tag in the list
+:tp     previous tag
+:tf     first tag
+:tp     last tag
+:CtrlPTag   search tag file
+
 ===============Firefox====================
 ;I    select a picture
 gf    switch to source code
@@ -79,6 +106,10 @@ Navigation
 ==============Synergy=================
  [  move to laptop
  ]  move to lab-PC
+
+==============urxvt=================
+ ⌥ C copy
+ ⌥ v paste
 
 
 

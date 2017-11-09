@@ -1,0 +1,9 @@
+# search
+word=re.search(r"([A-Za-z]+\s)+",TEXT).group(0)
+
+word=re.search(r"\b"+w+r"\b", TEXT,re.IGNORECASE)
+
+TEXT=re.sub('<li>|</li>','',TEXT)
+
+re.split('; |, |\*|\n',TEXT)
+
