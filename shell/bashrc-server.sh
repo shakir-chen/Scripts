@@ -5,13 +5,13 @@
 
 ############# added by Rafeal ################################################
 
-export LD_LIBRARY_PATH=/opt/gcc-4.6.2/lib64
+# export LD_LIBRARY_PATH=/opt/gcc-4.6.2/lib64
 # NEW EMACS
 
-export PATH=/opt/gcc-4.6.2/bin:${PATH}
-export PATH=/opt/Python-2.7.4/bin:${PATH}
-export PATH=/opt/scons/bin:${PATH}
-export PATH=/opt/swig/bin:${PATH}
+# export PATH=/opt/gcc-4.6.2/bin:${PATH}
+# export PATH=/opt/Python-2.7.4/bin:${PATH}
+# export PATH=/opt/scons/bin:${PATH}
+# export PATH=/opt/swig/bin:${PATH}
 
 # export PATH=/home/rafael/softwares/emacs/bin:${PATH}
 # export PATH=/local/home/rafael/softwares/autoconf/bin:${PATH}
@@ -57,9 +57,12 @@ export PATH=/opt/swig/bin:${PATH}
 # added by git Xuanqi
 export PATH=/home/xuanqi/Linux/bin:${PATH}
 export PATH=/home/xuanqi/Study/Scripts/linux-bin:${PATH}
-export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib:${LD_LIBRARY_PATH}
+export PATH=/home/xuanqi/Study/Scripts/linux-bin:${PATH}
+export PATH=/home/zhifei/App/bin:${PATH}
 export LD_LIBRARY_PATH=/home/xuanqi/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/home/zhifei/App/lib64:${PATH}
+export LD_LIBRARY_PATH=/home/zhifei/App/lib:${PATH}
 
 # Qemu in Passion -xuanqi
 export PKG_CONFIG_PATH=/home/xuanqi/Software/Qemu/dependent_library/lib/pkgconfig/
