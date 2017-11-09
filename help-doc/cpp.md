@@ -73,4 +73,9 @@ namespace utils {
 #include <sstream>
 #include <string>
 ```
+
+2. segmentation fault (pointer points a blank address but is cited later)
+i. array out of bound
+ii. the method is in a class. But the class the renewed so that this class is empty.
+
 <https://stackoverflow.com/questions/16545753/initializer-but-incomplete-type>

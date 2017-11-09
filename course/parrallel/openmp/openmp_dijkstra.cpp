@@ -44,7 +44,7 @@ namespace utils {
     string outputfile; //output file name, default: 'output.txt'
 
     void print_usage() {
-        cout << "Usage:\n" << "\topenmp_dijkstra -n <number of threads> -i <input file>" << endl;
+        cout << "Usage:\n" << "\t openmp_dijkstra -n <number of threads> -i <input file>" << endl;
         exit(0);
     }
 
