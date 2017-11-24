@@ -141,6 +141,7 @@ export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/pulse:${LD_LIBRARY_PATH}
+
 # export LD_LIBRARY_PATH=/usr/local/lib/libglfw3.a:${LD_LIBRARY_PATH}
 export BOOST_ROOT=~/Software/boost/include
 # export GLFW_SOURCE_DIR=/home/xuanqi/Downloads/glfw/glfw-3.2.1
@@ -586,6 +587,7 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 # alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
+alias svncmdefault="svn commit -m 'up-refresh'"
 
 function svnrefreshM(){
     IFS=$'\n'
@@ -1013,10 +1015,11 @@ alias converthoriapd="convert +append"
 export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
 export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
 
+export PKG_CONFIG_PATH=~/Software/zathura/poppler/build:${PKG_CONFIG_PATH}          # poppler pdf, for zathura interation
+
 #opencv path
 export PKG_CONFIG_PATH=/usr/local/opencv/2.4.9/lib/pkgconfig:${PKG_CONFIG_PATH}
 export LD_LIBRARY_PATH=/usr/local/opencv/2.4.9/lib:${LD_LIBRARY_PATH}
-
 
 # export ROS_IP=219.223.173.91
 export ROS_IP=localhost

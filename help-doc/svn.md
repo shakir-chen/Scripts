@@ -188,3 +188,7 @@ svn log -v | less           # find file in history
 "svn rm --keep-local ." ===> this just rm all local file !!!!
 
 
+Tree Conflict Handle
+svn resolve --accept working -R <path>
+<https://stackoverflow.com/questions/12559929/resolving-tree-conflict>
+
