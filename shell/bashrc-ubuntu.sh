@@ -621,6 +621,7 @@ function svnsubmit(){
 
 
 #svn ls
+export LC_CTYPE=en_US.UTF-8
 
 # music ffmpeg
 function ffmpegmp3(){
