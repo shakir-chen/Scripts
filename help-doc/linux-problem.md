@@ -1037,6 +1037,8 @@ Fcitx-> Global Config -> Trigger Input Method: super+space
 <http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
 <http://www.cnblogs.com/youxia/p/linux009.html>
 
+Japanese : Anthy Input
+Pinyin : Google Input
 #### Error:
 1. No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
 
@@ -1821,6 +1823,18 @@ how to setup a Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
 
 <https://askubuntu.com/questions/763939/bluetoothctl-what-is-a-bluetooth-agent>
 
+## 68-1. sony headphone Bluetooth
+```
+sudo apt-get update
+sudo apt-get upgrade    #check input
+sudo apt-get install blueman
+sudo apt-get install pulseaudio
+sudo apt-get install pulseaudio-module-bluetooth
+sudo apt-get install bluez
+blueman => Device => setup => audio sink => next  ...
+```
+<https://github.com/blueman-project/blueman/issues/158>
+
 ## 69. Ctrl+Semicolon(;)
 fictx, clipboard
 an addon in fcitx named Clipboard. To disable it, simply open Fcitx Configuration -> Addon -> Clipboard, then either disable it or change its trigger key. Addon -> Clipboard
@@ -1865,7 +1879,9 @@ sudo smartctl --all /dev/sda | grep Power_On_Hours
 #IV. Hardware Help
 ## 1. Lab Printer Help
 Ubuntu Add Printer:
-Printers -> Add -> Network Printer -> Find Network Printer -> Choose Kyocera FS-2100DN (143.89.135.11) -> Connections( LPD network printer via DNS-SD) -> Forward, Forward -> Ubuntu will choose to use 1st cassete
+Printers -> Add -> Network Printer -> Find Network Printer -> Choose Kyocera FS-2100DN (EEL61, 172.16.241.61) -> Connections( LPD network printer via DNS-SD) -> Forward, Forward -> Ubuntu will choose to use 1st cassete
+
+eems04\eel61 to find the printer. Its IP is 172.16.241.61
 ### Ubuntu Office Print
 IPP Device URI: https://eems04.ee.ust.hk/printers/esl080/.printer
 Make and Model: HP LaserJet 9050 Postscript (recommended)

@@ -259,6 +259,16 @@ on ubuntu create virtual camera:
 
 epoccam (cannot use)
 
+### Compile
++ bytecode : *.pyc ===> uncomple6 can easily read the source code (not safe)
+sudo pip install uncomly6
+<https://github.com/Mysterie/uncompyle2>
+
++ pyinstaller, py2exe
+pyinstaller is really nice
+<http://effbot.org/zone/python-compile.htm>
+
+
 ### 1. Tree
 
 ### Error
@@ -346,4 +356,10 @@ matplotlib.use("AGG")
 
 <https://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server/4935945#4935945>
 
+2. centos install pip: cannot access http server
+```
+yum install openssl openssl-dev -y
+reinstall python3.6
+python3.6 get-pip.py
+```
 

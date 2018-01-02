@@ -24,6 +24,8 @@ gg      first line
 G       bottom line
 gf      go to the file
 g]      go to a tag
+m[w]    set Maker [w]
+;[w]    go to Marker [w]
 
         /*fold*/
 ,zz     call togglefold function and fold all
