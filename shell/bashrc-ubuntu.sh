@@ -141,6 +141,7 @@ export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/pulse:${LD_LIBRARY_PATH}
+
 # export LD_LIBRARY_PATH=/usr/local/lib/libglfw3.a:${LD_LIBRARY_PATH}
 export BOOST_ROOT=~/Software/boost/include
 # export GLFW_SOURCE_DIR=/home/xuanqi/Downloads/glfw/glfw-3.2.1
@@ -206,6 +207,7 @@ alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
 alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
 alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
 alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
+alias gppy="grep -r -i --include \*.py --color=auto"  #grep cpp file
 alias gpp="gp 'print' *.py | grep -v '# print'" #grep print
 
 # ls =======================================================
@@ -334,8 +336,12 @@ alias py2.7="python2.7"
 
 # pdf reader
 alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
-function pdfcut() {
-    pdftk $2 cat $1 output cut-"$1".pdf
+function pdfcut() { 
+    pdftk $2 cat $1 output cut-"$1".pdf 
+}
+# png trim
+function pngtrim() { 
+    convert $1 -trim $1 
 }
 
 #alias pdf="acroread"       #centos
@@ -586,6 +592,7 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 # alias svnrefreshdelinfo="svn st | grep '^!' | awk '{print $2}'"       #delete
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
+alias svncmdefault="svn commit -m 'up-refresh'"
 
 function svnrefreshM(){
     IFS=$'\n'
@@ -623,7 +630,7 @@ function svnsubmit(){
 #svn ls
 export LC_CTYPE=en_US.UTF-8
 
-# music ffmpeg
+# music ffmpeg, mp4 to mp3
 function ffmpegmp3(){
     mp3fname=$(echo $1 | sed -r 's/\.\S+/\.mp3/g')
     echo $mp3fname
@@ -758,7 +765,8 @@ function pdf2jpg(){
 
 # grip
 function griphub(){
-    grip -b --user="shakir-chen" --quiet $1 localhost:3700
+    # grip -b --user="shakir-chen" --quiet $1 localhost:3700
+    grip -b --user="yaoxin-li" --quiet $1 localhost:3700
 }
 alias gripquick="grip -b --quiet"           #markdown as github style
 
@@ -777,6 +785,7 @@ alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
+alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
@@ -1014,10 +1023,11 @@ alias converthoriapd="convert +append"
 export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
 export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
 
+export PKG_CONFIG_PATH=~/Software/zathura/poppler/build:${PKG_CONFIG_PATH}          # poppler pdf, for zathura interation
+
 #opencv path
 export PKG_CONFIG_PATH=/usr/local/opencv/2.4.9/lib/pkgconfig:${PKG_CONFIG_PATH}
 export LD_LIBRARY_PATH=/usr/local/opencv/2.4.9/lib:${LD_LIBRARY_PATH}
-
 
 # export ROS_IP=219.223.173.91
 export ROS_IP=localhost
