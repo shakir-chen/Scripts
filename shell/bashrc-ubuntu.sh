@@ -207,6 +207,7 @@ alias gp5="grep -A 3 -B 1 -r --color=auto" #grep in detail 5 lines
 alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
 alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
 alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
+alias gppy="grep -r -i --include \*.py --color=auto"  #grep cpp file
 alias gpp="gp 'print' *.py | grep -v '# print'" #grep print
 
 # ls =======================================================
@@ -335,8 +336,12 @@ alias py2.7="python2.7"
 
 # pdf reader
 alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
-function pdfcut() {
-    pdftk $2 cat $1 output cut-"$1".pdf
+function pdfcut() { 
+    pdftk $2 cat $1 output cut-"$1".pdf 
+}
+# png trim
+function pngtrim() { 
+    convert $1 -trim $1 
 }
 
 #alias pdf="acroread"       #centos
@@ -624,7 +629,7 @@ function svnsubmit(){
 
 #svn ls
 
-# music ffmpeg
+# music ffmpeg, mp4 to mp3
 function ffmpegmp3(){
     mp3fname=$(echo $1 | sed -r 's/\.\S+/\.mp3/g')
     echo $mp3fname
@@ -759,7 +764,8 @@ function pdf2jpg(){
 
 # grip
 function griphub(){
-    grip -b --user="shakir-chen" --quiet $1 localhost:3700
+    # grip -b --user="shakir-chen" --quiet $1 localhost:3700
+    grip -b --user="yaoxin-li" --quiet $1 localhost:3700
 }
 alias gripquick="grip -b --quiet"           #markdown as github style
 
@@ -778,6 +784,7 @@ alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
+alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"

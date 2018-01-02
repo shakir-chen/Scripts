@@ -295,18 +295,20 @@ void dijkstra(int N, int p, int *mat) {
     }
     //checkpoint
 
+    //=== create thread ====
     for (thread = 0; thread < p ; thread++)
         pthread_create(&thread_handles[thread], NULL,
             Thread_dijkstra, (void*)thread);
 
-    // printf("Main Thread\n");
-
+    //=== join thread ====
     for (thread = 0; thread < p ; thread++)
         pthread_join(thread_handles[thread], NULL);
 
+    //=== destroy ====
     pthread_cond_destroy(&cond_var);
     pthread_barrier_destroy(&barrier);
     pthread_mutex_destroy(&mutex);
+    //=== release memory ====
     free(visit);
     free(pthdata_p);
     free(thread_handles);
