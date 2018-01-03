@@ -351,9 +351,12 @@ function package
 
 matplotlib.use("AGG")
 <https://stackoverflow.com/questions/4930524/how-can-i-set-the-backend-in-matplotlib-in-python>
+
 .config/matplotlib/matplotlibrc
 <http://matplotlib.org/users/customizing.html#the-matplotlibrc-file>
-
+```
+backend : Agg
+```
 <https://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server/4935945#4935945>
 
 2. centos install pip: cannot access http server

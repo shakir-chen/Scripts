@@ -593,6 +593,7 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
 alias svncmdefault="svn commit -m 'up-refresh'"
+alias svnconflict="svn resoolve --accept=working"       # "C" indicate a tree conflict, renamed by another user
 
 function svnrefreshM(){
     IFS=$'\n'
@@ -789,10 +790,16 @@ alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
-# alias cdpaper="~/Dropbox/Linux/Dairy/working_paper/device_modeling"
-alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
+# alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
+function renicepy(){
+    ps -ef | grep $1 | grep python3.5 | grep -v grep
+    pypid=$(ps -ef | grep $1 | grep python3.5 | grep -v grep | awk '{print $2}')
+    echo "renice ps:" $pypid
+    sudo renice -n -5 $pypid
+}
 function lntemp(){
     # http://tldp.org/LDP/abs/html/fto.html
     if [ -h temp ]; then
