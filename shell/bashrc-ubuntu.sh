@@ -577,7 +577,7 @@ alias synergysetup="synergy --config ~/_synergy.conf"
 alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
-alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository nsvn" # svn on virtual server
+alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
@@ -800,6 +800,10 @@ function dirsx(){
 alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
 alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
 alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
+alias wifilsd="nmcli d wifi list" # wifissid
+alias wifilsc="nmcli c" # saved wifi connection
+alias wific="nmcli c up" # + savedwificonn
+alias wifid="nmcli c down" # + savedwificonn
 
 
 # autojump

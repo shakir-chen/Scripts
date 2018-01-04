@@ -822,6 +822,8 @@ Error:
 \usepackage[square,sort,comma,numbers]{natbib}
 \bibliographystyle{plainnat}
 ```
+2. ieee.cls not found
+sudo apt-get install texlive-publishers
 
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
