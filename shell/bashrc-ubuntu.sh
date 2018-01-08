@@ -820,6 +820,10 @@ function dirsx(){
 alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
 alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
 alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
+alias wifilsd="nmcli d wifi list" # wifissid
+alias wifilsc="nmcli c" # saved wifi connection
+alias wific="nmcli c up" # + savedwificonn
+alias wifid="nmcli c down" # + savedwificonn
 
 
 # autojump
