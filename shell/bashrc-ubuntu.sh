@@ -593,7 +593,7 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
 alias svncmdefault="svn commit -m 'up-refresh'"
-alias svnconflict="svn resoolve --accept=working"       # "C" indicate a tree conflict, renamed by another user
+alias svnconflict="svn resolve --accept=working"       # "C" indicate a tree conflict, renamed by another user
 
 function svnrefreshM(){
     IFS=$'\n'
@@ -763,6 +763,9 @@ function pdf2jpg(){
         convert -density 300 -background white -alpha remove $f $newf
     done
 }
+function convertgif(){
+    convert -delay 1 -loop 0 $1 o.gif
+}
 
 # grip
 function griphub(){
@@ -891,6 +894,22 @@ function wgetpdf(){         # sometimes, the pdfprefix html will be different, t
     PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
     if [ ! $PDFNAME ]; then
         PDFNAME=$(curl -s $1 | grep -oP '(?<=")\S+.pdf(?=")')
+        echo $PDFNAME
+        for pdf in $PDFNAME
+        do
+            pdfhttp=$1$pdf
+            echo $pdfhttp
+            wget $pdfhttp
+        done
+    else
+        echo $PDFNAME
+        wget $PDFNAME
+    fi
+}
+function wgetppt(){         # sometimes, the pdfprefix html will be different, then you need to customize the web address, not just $1$pdf
+    PDFNAME=$(curl -s $1 | grep -oP "http://.*.ppt")
+    if [ ! $PDFNAME ]; then
+        PDFNAME=$(curl -s $1 | grep -oP '(?<=")\S+.ppt(?=")')
         echo $PDFNAME
         for pdf in $PDFNAME
         do
