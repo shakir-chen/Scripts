@@ -571,6 +571,7 @@ tmuxskall() {
     done
 }
 
+alias eyescreen="redshift -l 22.3964:114.1095 -t 6500:5000 -b 1.0:0.8 &" # protect eyes, https://www.maketecheasier.com/protect-eyes-redshift-linux/
 alias xclipwc="xclip -o | wc -w"        # word count
 # if test "$SSH_AUTH_SOCK" ; then         # for tmux
     # ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
@@ -675,6 +676,7 @@ alias wmctrlar="wmctrl -r :ACTIVE: -b remove," #window move control active
 alias wmctrls="wmctrl -r :SELECT: -e " #window move control select
 
 #git
+alias gituser="git config --global user.name 'shakir-chen'"
 alias gitcd="cd ~/Software/Scripts && git status"
 alias gits="git status"
 alias gita="git add"
@@ -690,13 +692,18 @@ function gitpush(){
     git push origin master
 }
 
+# crontab, crontab -l, crontab -e
+
 #ftp
+alias ftplab="ftp 143.89.131.95"
 alias ftpi="ftp ihome.ust.hk"
 alias gitftppush="git ftp push"
 # ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
 
 #nautilus
 alias nautilus="nautilus --no-desktop"
+
+alias topsave="top  -n  1 -b > top-output.txt"
 #Franz
 alias franz="~/Software/Franz/Franz &"
 
