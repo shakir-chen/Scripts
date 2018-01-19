@@ -571,6 +571,7 @@ tmuxskall() {
     done
 }
 
+alias eyescreen="redshift -l 22.3964:114.1095 -t 6500:5000 -b 1.0:0.8 &" # protect eyes, https://www.maketecheasier.com/protect-eyes-redshift-linux/
 alias xclipwc="xclip -o | wc -w"        # word count
 # if test "$SSH_AUTH_SOCK" ; then         # for tmux
     # ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
@@ -676,6 +677,7 @@ alias wmctrlar="wmctrl -r :ACTIVE: -b remove," #window move control active
 alias wmctrls="wmctrl -r :SELECT: -e " #window move control select
 
 #git
+alias gituser="git config --global user.name 'shakir-chen'"
 alias gitcd="cd ~/Software/Scripts && git status"
 alias gits="git status"
 alias gita="git add"
@@ -691,13 +693,18 @@ function gitpush(){
     git push origin master
 }
 
+# crontab, crontab -l, crontab -e
+
 #ftp
+alias ftplab="ftp 143.89.131.95"
 alias ftpi="ftp ihome.ust.hk"
 alias gitftppush="git ftp push"
 # ftp > lcd - change local cd; mput upload multiple file; mget download multiple; bin - binary transfer
 
 #nautilus
 alias nautilus="nautilus --no-desktop"
+
+alias topsave="top  -n  1 -b > top-output.txt"
 #Franz
 alias franz="~/Software/Franz/Franz &"
 
@@ -764,6 +771,9 @@ function pdf2jpg(){
         convert -density 300 -background white -alpha remove $f $newf
     done
 }
+function convertgif(){
+    convert -delay 1 -loop 0 $1 o.gif
+}
 
 # grip
 function griphub(){
@@ -818,6 +828,10 @@ function dirsx(){
 alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
 alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
 alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
+alias wifilsd="nmcli d wifi list" # wifissid
+alias wifilsc="nmcli c" # saved wifi connection
+alias wific="nmcli c up" # + savedwificonn
+alias wifid="nmcli c down" # + savedwificonn
 
 
 # autojump
@@ -892,6 +906,22 @@ function wgetpdf(){         # sometimes, the pdfprefix html will be different, t
     PDFNAME=$(curl -s $1 | grep -oP "http://.*.pdf")
     if [ ! $PDFNAME ]; then
         PDFNAME=$(curl -s $1 | grep -oP '(?<=")\S+.pdf(?=")')
+        echo $PDFNAME
+        for pdf in $PDFNAME
+        do
+            pdfhttp=$1$pdf
+            echo $pdfhttp
+            wget $pdfhttp
+        done
+    else
+        echo $PDFNAME
+        wget $PDFNAME
+    fi
+}
+function wgetppt(){         # sometimes, the pdfprefix html will be different, then you need to customize the web address, not just $1$pdf
+    PDFNAME=$(curl -s $1 | grep -oP "http://.*.ppt")
+    if [ ! $PDFNAME ]; then
+        PDFNAME=$(curl -s $1 | grep -oP '(?<=")\S+.ppt(?=")')
         echo $PDFNAME
         for pdf in $PDFNAME
         do

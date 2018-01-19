@@ -822,6 +822,8 @@ Error:
 \usepackage[square,sort,comma,numbers]{natbib}
 \bibliographystyle{plainnat}
 ```
+2. ieee.cls not found
+sudo apt-get install texlive-publishers
 
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
@@ -1844,6 +1846,31 @@ urxvt cannot paste long text: use ctrl+alt+v
 ## 70. Harddriver lifetime
 sudo apt-get install smartmontools
 sudo smartctl --all /dev/sda | grep Power_On_Hours
+
+## 71. Share a file to be viewed on line
+Browse files on a server or network share <https://help.ubuntu.com/stable/ubuntu-help/nautilus-connect.html>
+vsftpd <https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-a-user-s-directory-on-ubuntu-16-04>
+<https://ubuntuforums.org/showthread.php?t=1487996>
+
+enable vsftpd installation: anonymous_enable=yes
+<https://help.ubuntu.com/lts/serverguide/ftp-server.html>
+
+```
+anon_root=/home/you/public
+```
+```
+sudo apt-get install vsftpd
+sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
+
+# check firefox
+sudo ufw status
+sudo systemctl restart vsftpd # restart 
+```
+change username : sudo usermod -l newUsername oldUsername
+                  sudo usermod -d /home/newHomeDir -m newUsername
+delete a user: sudo deluser --remove-home newuser
+
+local share: samba      <https://help.ubuntu.com/lts/serverguide/samba-fileserver.html>
 
 #### ERROR
 1.TIFF4 depency:
