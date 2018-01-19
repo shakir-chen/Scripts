@@ -685,6 +685,7 @@ alias gita="git add"
 alias gitpull="sshcheck; git pull"
 # alias gitpush="git push origin master"
 alias gitcm="git commit -m"
+alias gitcmdef="git commit -m 'up default'"
 alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
