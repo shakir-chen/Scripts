@@ -76,7 +76,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -123,7 +122,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ "$USER" == "shakir" ] ; then
+if [ "$USER" == "shakir" ] ; then           # laptop
     setxkbmap -option caps:ctrl_modifier
 fi
 
@@ -157,12 +156,14 @@ export PYTHON_INCLUDE_DIR=/usr/include/python3.5
 export PYTHON_LIBRARY=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu/libpython3.5.so
 
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:${PYTHONPATH}
-# virtualenv and virtualenvwrapper, used for opencv
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export OPENCV_TEST_DATA_PATH=~/Software/OpenCV/opencv_extra/testdata
 
+# virtualenv and virtualenvwrapper, used for opencv
+if [ "$HOST" == "lab" ] ; then           # laptop
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+    export OPENCV_TEST_DATA_PATH=~/Software/OpenCV/opencv_extra/testdata
+fi
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:${PATH}
 
@@ -397,6 +398,8 @@ function sshadd() {
     # ssh-add .ssh/passion_xuanqi
 }
 
+# use expect: <https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt>
+
 # apt-get
 alias aptget="sudo apt-get install"
 alias aptcache="apt-cache show"
@@ -601,8 +604,9 @@ function svnrefreshM(){
     IFS=$'\n'
     for file in $(svn st | grep '\!M' | sed -e 's/\!M\s\+//')
     do
-        echo "svn delete" "$file"
-        svn delete $file
+        echo "svn revert" "$file"
+        # svn delete $file
+        svn revert $file
     done
 }
 
@@ -684,6 +688,7 @@ alias gita="git add"
 alias gitpull="sshcheck; git pull"
 # alias gitpush="git push origin master"
 alias gitcm="git commit -m"
+alias gitcmdef="git commit -m 'up default'"
 alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
@@ -794,6 +799,7 @@ alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
+alias cdftp="cd /srv/ftp/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
@@ -806,7 +812,7 @@ alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function renicepy(){
-    ps -ef | grep $1 | grep python3.5 | grep -v grep
+    ps -ef | grep $1 | grep python3. | grep -v grep
     pypid=$(ps -ef | grep $1 | grep python3.5 | grep -v grep | awk '{print $2}')
     echo "renice ps:" $pypid
     sudo renice -n -5 $pypid
@@ -835,7 +841,9 @@ alias wifid="nmcli c down" # + savedwificonn
 
 
 # autojump
-. /usr/share/autojump/autojump.sh
+if [ "$HOST" == "lab" ] ; then           # laptop
+    source /usr/share/autojump/autojump.sh
+fi
 # https://www.thinkingmedia.ca/2014/10/how-to-install-autojump-on-ubuntu-14/
 
 # mv tmp

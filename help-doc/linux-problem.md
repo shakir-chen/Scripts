@@ -1873,6 +1873,10 @@ change password: passwd
 
 local share: samba      <https://help.ubuntu.com/lts/serverguide/samba-fileserver.html>
 
+## 72. expect
+<https://www.thegeekstuff.com/2010/10/expect-examples/>
+expect
+
 #### ERROR
 1.TIFF4 depency:
     The only way:
