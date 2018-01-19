@@ -593,14 +593,15 @@ alias svnrefreshadd="svn add --force * --auto-props --parents --depth infinity -
 alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
 alias svncmdefault="svn commit -m 'up-refresh'"
-alias svnconflict="svn resoolve --accept=working"       # "C" indicate a tree conflict, renamed by another user
+alias svnconflict="svn resolve --accept=working"       # "C" indicate a tree conflict, renamed by another user
 
 function svnrefreshM(){
     IFS=$'\n'
     for file in $(svn st | grep '\!M' | sed -e 's/\!M\s\+//')
     do
-        echo "svn delete" "$file"
-        svn delete $file
+        echo "svn revert" "$file"
+        # svn delete $file
+        svn revert $file
     done
 }
 
@@ -795,7 +796,7 @@ alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function renicepy(){
-    ps -ef | grep $1 | grep python3.5 | grep -v grep
+    ps -ef | grep $1 | grep python3. | grep -v grep
     pypid=$(ps -ef | grep $1 | grep python3.5 | grep -v grep | awk '{print $2}')
     echo "renice ps:" $pypid
     sudo renice -n -5 $pypid
