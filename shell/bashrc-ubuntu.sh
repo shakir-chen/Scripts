@@ -397,6 +397,8 @@ function sshadd() {
     # ssh-add .ssh/passion_xuanqi
 }
 
+# use expect: <https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt>
+
 # apt-get
 alias aptget="sudo apt-get install"
 alias aptcache="apt-cache show"
@@ -793,6 +795,7 @@ alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
+alias cdftp="cd /srv/ftp/"
 alias cdcourse="cd ~/Dropbox/1_Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
