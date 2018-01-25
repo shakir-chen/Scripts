@@ -433,6 +433,7 @@ function xinputopentp(){
 
 # ssh
 alias sshpassion="ssh-server passion"
+alias sshfantasy="ssh-server fantasy"
 alias sshvirtualdesktop="ssh xchenbr@acf2013.ece.ust.hk"
 alias sshrostam="ssh-server rostam"
 alias sshmagic="ssh-server magic"

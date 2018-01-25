@@ -1866,11 +1866,12 @@ sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
 
 # check firefox
 sudo ufw status
-sudo systemctl restart vsftpd # restart 
+sudo systemctl restart vsftpd # restart
 ```
 change username : sudo usermod -l newUsername oldUsername
                   sudo usermod -d /home/newHomeDir -m newUsername
 delete a user: sudo deluser --remove-home newuser
+change password: passwd
 
 local share: samba      <https://help.ubuntu.com/lts/serverguide/samba-fileserver.html>
 
