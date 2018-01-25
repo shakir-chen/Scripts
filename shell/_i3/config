@@ -112,6 +112,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
+bindsym $mod+y fullscreen disable; floating enable; resize set 600 400; sticky enable; move window to position 1940 54
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking

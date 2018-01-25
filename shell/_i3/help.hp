@@ -4,8 +4,9 @@
 ⌘ : win(cmd)        ⏎ : enter
 ⌥ : alt(opt)         : space
 ===============i3wm====================
-⌘  g    split h
-⌘  v    split v
+⌘  a    focus parent
+⌘  g    split horizontally
+⌘  v    split vertically
 
 ⌘  s    layout stacking
 ⌘  w    layout tabbed
