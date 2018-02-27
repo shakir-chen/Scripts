@@ -69,6 +69,7 @@ ds"     "Hello" => Hello
 :tf     first tag
 :tp     last tag
 :CtrlPTag   search tag file
+:Tagbar Tagbar
 
 ===============Firefox====================
 ;I    select a picture
