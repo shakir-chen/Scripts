@@ -506,6 +506,11 @@ function scpxq {
    scp $1 xuanqi@$2.ece.ust.hk:$3
 }
 
+function scpxqlabget {
+   scp -r -P 2222 xuanqi@143.89.131.95:~/$1 $2
+}
+
+
 
 # function connect() {
     # if [[ -z "$ORIG" ]]; then
