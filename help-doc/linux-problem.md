@@ -1110,6 +1110,8 @@ i3wm : release
 
 <https://mralphaville.wordpress.com/2014/08/13/i3-window-manager/>
 
+best i3wm introduction:
+<https://abstatic.github.io/2016/07/01/how-i-use-i3wm/>
 ### 19. Zotero
 Follow my own instruction guide.
 Use Dropbox for Syncronization

@@ -358,7 +358,8 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin fi
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
 # alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
-alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
+alias setscreen="xrandr --output DP1 --rotate right --right-of VGA1; xrandr --output VGA1 --primary"
+
 
 alias xrandrinit="xrandr --output VIRTUAL1 --off"
 alias xrandrmodipad="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
@@ -546,10 +547,13 @@ alias vnckill="vncserver kill :"
 alias vncscan="ps -ef | grep Xvnc | grep -v root"          #;or grep -e 'pattern1\|pattern2',and grep -E 'pattern1.*pattern2'
 alias xvnckill="x11vnc -clear-all"
 
+alias dush="du -sh *"       # check all file storage
+alias onedriveresync="onedrive --resync -v"       # check all file storage
+
 # tmux  --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
 alias tmuxks="tmux kill-session -t "    #kill session
-alias tmuxkw="tmux kill-session -w "    #kill window
+alias tmuxkw="tmux kill-window -t "    #kill window
 alias tmuxkp="tmux kill-pane -t "       #kill pane
 alias tmuxls="tmux list-sessions"
 alias tmuxlw="tmux list-windows"
@@ -815,6 +819,18 @@ alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
+
+function killpy(){
+    ps -ef | grep $1 | grep python3.5
+    pypid=$(ps -ef | grep python3.5 | grep -v grep | awk '{print $2}')
+    echo "kill ps:" $pypid
+    for pypid_ii in $pypid
+    do
+        # echo $pypid_ii
+        kill -9 $pypid_ii
+    done
+    # kill -9 $pypid
+}
 
 function renicepy(){
     ps -ef | grep $1 | grep python3. | grep -v grep
