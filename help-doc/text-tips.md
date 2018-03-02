@@ -185,6 +185,9 @@ sed -n 'N,/PATTERN/p' FILE.txt          # from line N, search pattern and print
     \(..\) ==> \1
     ```
 3. Remove Pattern   (sed)
+4. Pattern   (sed)
+svn st | grep '^!' | sed -e 's/!M\?\s\+//'
+\?: M zero or one
 
 4. Only Remain Pattern      (grep, bettern in search)
     ```

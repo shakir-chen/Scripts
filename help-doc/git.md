@@ -22,6 +22,8 @@ Initial Unmodified State
 git     modify      git add/rm      git commit -m       git add
 svn     modify      svn add/rm      svn commit -m       svn add
 
+# check version difference
+svn diff -r 449:345 file
 
 ## Background
 simply copy in time-stampe sequency: Easily to forget the directory

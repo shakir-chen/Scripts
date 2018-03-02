@@ -621,7 +621,7 @@ function svnrefreshM(){
 
 function svnrefreshdel(){
     IFS=$'\n'
-    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    for file in $(svn st | grep '^!' | sed -e 's/!M\?\s\+//')
     do
         echo "svn delete" "$file"
         svn delete $file
@@ -783,11 +783,13 @@ function pdf2jpg(){
         echo  $f "--->" $newf
         # convert -density 300 $f $newf     # backgroud will become black
         convert -density 300 -background white -alpha remove $f $newf
+        # convert -density 150 *.pdf -quality 90 output.png
     done
 }
 function convertgif(){
     convert -delay 1 -loop 0 $1 o.gif
 }
+
 
 # grip
 function griphub(){
