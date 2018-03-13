@@ -146,6 +146,14 @@ Examples
 <https://stackoverflow.com/questions/10917495/matplotlib-imshow-in-3d-plot>
 
 
+2. matplotlib change legend marker width
+```
+labels = ('MR-PNH-1', 'MR-PNH-2', 'MZI-PNV', 'MZI-PIN')
+legend = plt.legend(labels, loc=(-2.2, .9), handlelength=0.7,labelspacing=0.1, fontsize='small')
+for l in legend.get_lines():
+    l.set_alpha(0.7)
+    l.set_linewidth(5)
+```
 ## XI. Matrix
 reverse a list : array[::-1]
 <http://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python>
