@@ -1139,6 +1139,9 @@ in vim, I can excute :r!cite or just zz in normal mode
 
 Ref:MIT <http://libguides.mit.edu/c.php?g=176000&p=1159208>
 
+vim snippets:
++ git clone https://github.com/honza/vim-snippets
+
 ### 20. Visio Alternatives(Only Win)
 + Diagram - yEd , Dia Diagram
 + inkscape - use svg as its native file format            + openclipart(additional clip art graphics)         (how to rotate canvas? --wrong question, ask how to change page orientation instead, File-Document properties )
