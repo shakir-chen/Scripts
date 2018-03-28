@@ -288,6 +288,7 @@ alias ctagsr="ctags --extra=+f -R ."
 # program open in ubuntu
 # alias open="xdg-open"
 alias openfolder="nautilus --browser --no-desktop"
+# gsettings set org.gnome.desktop.background show-desktop-icons false       ## directly way, no-desktop by default
 function open(){
     if [[ -d $1 ]]; then
         echo "This is directory"
@@ -334,15 +335,18 @@ alias ftn="gfortran"
 alias py="python3.5"
 alias py3.5="python3.5"
 alias py2.7="python2.7"
+alias ipythoni="ipython3 -i ~/Software/Scripts/pdb/ipython_init.py"
+
 
 # pdf reader
 alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
-function pdfcut() { 
-    pdftk $2 cat $1 output cut-"$1".pdf 
+# pdfcut in.pdf 7       pdfcut in.pdf 7-end
+function pdfcut() {
+    pdftk "$1" cat "$2" output cut-"$2".pdf 
 }
 # png trim
-function pngtrim() { 
-    convert $1 -trim $1 
+function pngtrim() {
+    convert "$1" -trim "$1"
 }
 
 #alias pdf="acroread"       #centos
@@ -598,6 +602,8 @@ alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
+alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server  Jf7814089jf%
+# groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
 alias svnupemp="svn update --set-depth empty "
@@ -621,7 +627,7 @@ function svnrefreshM(){
 
 function svnrefreshdel(){
     IFS=$'\n'
-    for file in $(svn st | grep '^!' | sed -e 's/!\s\+//')
+    for file in $(svn st | grep '^!' | sed -e 's/!M\?\s\+//')
     do
         echo "svn delete" "$file"
         svn delete $file
@@ -776,6 +782,15 @@ done
 }
 
 function pdf2jpg(){
+    newf=${1/.pdf/.jpg}
+    echo  $1 "--->" $newf
+    # convert -density 300 $f $newf     # backgroud will become black
+    # convert -density 300 -background white -alpha remove $1 $newf
+    convert -density 1000 -background white -alpha remove $1 $newf
+    # convert -density 150 *.pdf -quality 90 output.png
+}
+
+function pdf2jpgall(){
     for f in *.pdf
     do
         # echo $f
@@ -783,11 +798,13 @@ function pdf2jpg(){
         echo  $f "--->" $newf
         # convert -density 300 $f $newf     # backgroud will become black
         convert -density 300 -background white -alpha remove $f $newf
+        # convert -density 150 *.pdf -quality 90 output.png
     done
 }
 function convertgif(){
     convert -delay 1 -loop 0 $1 o.gif
 }
+
 
 # grip
 function griphub(){
@@ -859,6 +876,9 @@ alias wifilsd="nmcli d wifi list" # wifissid
 alias wifilsc="nmcli c" # saved wifi connection
 alias wific="nmcli c up" # + savedwificonn
 alias wifid="nmcli c down" # + savedwificonn
+alias wificdef="nmcli c up eduroam" # + savedwificonn
+# network
+# alias "nm-connection-editor"     # network manager
 
 
 # autojump
