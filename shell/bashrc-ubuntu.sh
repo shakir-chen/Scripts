@@ -395,7 +395,6 @@ function hhkbreset(){
     # xmodmap -e "keycode 105= Control_R"          # control_R => Super_R
     xmodmap -e "keycode 9 = Escape"          # Super_L => Fn
 }
->>>>>>> b02da18767e881127cdecf516f010a8c8591a33b
 
 alias xrandrinit="xrandr --output VIRTUAL1 --off"
 alias xrandrmodipad="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
