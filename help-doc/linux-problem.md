@@ -810,6 +810,8 @@ sudo mktexlsr #or: sudo texhash
 apt-cache search psboxit    # no result
 apt-cache show texlive-latex-extra | grep psboxit    # no result
 ```
+xelatex install: sudo apt-get install texlive-xetex
+
 
 [htpb]: h here, t top, b bottom, p page
 
@@ -858,6 +860,15 @@ sensors
     sudo userdel newuser #example newuser-> silly
     sudo rm -rf /home/newuser
     ```
+```
+            # sudo useradd -m jun -p PASSWORD
+            # sudo usermod -a -G xugroup jun
+            #sudo usermod -g xugroup jun         # xugroup as the primary group
+useradd -g cartoons tom
+cat /etc/group      # determine groups
+cat /etc/password       # determine users
+```
+
 
 ### 11. connectable computer (ssh + ftp)
 #### ssh
