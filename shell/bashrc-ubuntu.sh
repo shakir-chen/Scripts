@@ -169,7 +169,6 @@ export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:${PATH}
 
 export PATH=~/Software/selenium:${PATH}             # selenium driver geckodriver
 
-
 # import sys; sys.path.append('/usr/local/lib/python2.7/site-packages')
 
 #PS1='$ '
@@ -210,6 +209,18 @@ alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
 alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 alias gppy="grep -r -i --include \*.py --color=auto"  #grep cpp file
 alias gpp="gp 'print' *.py | grep -v '# print'" #grep print
+
+function gptype(){
+    grep -r -i --include \*."$1" --color=auto "$2"
+}
+
+# useradd XXX; passwd XXX; usermod -aG GROUP username
+# sudo adduser -G groupName userName
+# view and change group: /etc/group,        or groups
+# view user groups, groups username
+# userdel username      # remove an account
+# sudo usermod -a -G groupName userName
+# view all users: https://askubuntu.com/questions/410244/a-command-to-list-all-users-and-how-to-add-delete-modify-users
 
 # ls =======================================================
 alias l.="ls -d .* --color=tty"
@@ -362,8 +373,7 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin fi
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
 # alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
-alias setscreen="xrandr --output DP1 --rotate right --right-of VGA1; xrandr --output VGA1 --primary"
-
+alias setscreen="xrandr --output DP1 --rotate left --left-of VGA1; xrandr --output VGA1 --primary"
 
 alias xrandrinit="xrandr --output VIRTUAL1 --off"
 alias xrandrmodipad="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
@@ -565,6 +575,7 @@ alias tmuxlp="tmux list-panes"
 alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
+#detach session: C-a d
 
 tmuxsk() {
     cmdarg=${@:2} # all arg, from the second
@@ -596,13 +607,13 @@ alias xclipwc="xclip -o | wc -w"        # word count
 
 # synergy
 alias synergysetup="synergy --config ~/_synergy.conf"
-# alias ="synergy --config ~/_synergy.conf"
+alias synergyclab="synergyc -f 10.89.134.149 &"
 # svn
 alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
-alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server  Jf7814089jf%
+alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
 # groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
 alias svnupimm="svn update --set-depth immediates "
 alias svnupinf="svn update --set-depth infinity "
@@ -634,6 +645,14 @@ function svnrefreshdel(){
     done
 }
 
+function svnrevertdel(){
+    for file in $(svn st | grep 'D' | sed -e 's/D\?\s\+//')
+    do
+        echo "revert_file: " "$file"
+        svn revert $file
+    done
+
+}
 function svnrefresh(){
     svn add --force * --auto-props --parents --depth infinity -q
     svnrefreshdel

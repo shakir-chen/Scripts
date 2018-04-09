@@ -3,6 +3,12 @@
 
 ## I. OS Operation
 
+## package installation
+pip install XXX
+python setup.py install
+
+
+
 ## II. Subprocess
 ```
 from subprocess import call, popen
@@ -370,6 +376,7 @@ backend : Agg
 2. centos install pip: cannot access http server
 ```
 yum install openssl openssl-dev -y
+yum install openssl openssl-devel.x86-64 -y
 reinstall python3.6
 python3.6 get-pip.py
 ```

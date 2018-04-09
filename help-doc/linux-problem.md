@@ -1214,6 +1214,7 @@ I'd like to use Franz, more useful.
 
 ### 23. Netease Cloud Music
 ```
+sudo rpm -ivh xxx.rpm
 sudo dpkg -i xxx.deb
 sudo apt-get -f install     #if meet some error, dpkg -i to install deb package will not install dependency automatically
 ```
@@ -1245,6 +1246,14 @@ dpkg: dependency problems prevent configuration of netease-cloud-music:
  netease-cloud-music depends on libqt5libqgtk2; however:
   Package libqt5libqgtk2 is not installed.
 ```
+```
+teamviewer depends on qtdeclarative5-dialogs-plugin (>= 5.2) | qml-module-qtquick-dialogs (>= 5.2); however:
+    Package qtdeclarative5-dialogs-plugin is not installed.
+    Package qml-module-qtquick-dialogs is not installed.
+```
+teamviewr quicksupport seems not work normally
+
+
 
 ### 24. PDF Tool Introduction
 pdf split - pdftk
