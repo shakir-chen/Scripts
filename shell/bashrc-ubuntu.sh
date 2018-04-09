@@ -370,10 +370,32 @@ function pngtrim() {
 alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin file
 
 #Set Caps to Control Key
+# https://askubuntu.com/questions/296155/how-can-i-remap-keyboard-keys
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
 # alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
-alias setscreen="xrandr --output DP1 --rotate left --left-of VGA1; xrandr --output VGA1 --primary"
+# alias setscreen="xrandr --output DP1 --rotate left --left-of VGA1; xrandr --output VGA1 --primary"
+alias setscreen="xrandr --output DP1 --rotate right --right-of VGA1; xrandr --output VGA1 --primary"
+# hhkb mapping, (last line): Fn, alt, space, alt, win
+# https://wiki.archlinux.org/index.php/xmodmap
+# alias hhkb="xmodmap -e 'keycode 51 = BackSpace'"        #  => backspace
+# alias hhkb2="xmodmap -e 'keycode 49 = Escape'"      # ~ => ESC
+function hhkb(){
+    xmodmap -e "keycode 51 = BackSpace"        # \ => backspace
+    xmodmap -e "keycode 22 = backslash bar"    # backspace => \|
+    xmodmap -e "keycode 49 = Escape"           # ~ => ESC
+    # xmodmap -e "keycode 105= Super_R"          # control_R => Super_R
+    # xmodmap -e "keycode 133= Super_R"          # Super_L => Fn
+    xmodmap -e "keycode 9 = grave asciitilde"          # Ctrl_L => ~`
+}
+function hhkbreset(){
+    xmodmap -e "keycode 51 = backslash bar"        # backspace => \
+    xmodmap -e "keycode 22 = BackSpace"      # backspace => \|
+    xmodmap -e "keycode 49 = grave asciitilde"      # 51 => ~ 
+    # xmodmap -e "keycode 105= Control_R"          # control_R => Super_R
+    xmodmap -e "keycode 9 = Escape"          # Super_L => Fn
+}
+>>>>>>> b02da18767e881127cdecf516f010a8c8591a33b
 
 alias xrandrinit="xrandr --output VIRTUAL1 --off"
 alias xrandrmodipad="xrandr --newmode '808x1080_60.00' 72.45 808 856 944 1080 1080 1081 1084 1118 -HSync +Vsync; xrandr --addmode VIRTUAL1 '808x1080_60.00'"
