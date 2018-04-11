@@ -122,6 +122,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#  if [ "$USER" == "xuanqi" ] ; then           # super L =>
+#    xmodmap -e "keycode 133= Control_L"        # Super L => backspace
+#    xmodmap -e "keycode 37= Super_L"        # Super L => backspace
+# fi
+
 if [ "$USER" == "shakir" ] ; then           # laptop
     setxkbmap -option caps:ctrl_modifier
 fi
@@ -194,8 +199,8 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
-echo -e "\033[5 q"
-# echo -e "\033[6 q"      # not blink
+# echo -e "\033[5 q"
+echo -e "\033[7 q"      # not blink
 
 # grep =======================================================
 #alias grep --color=auto
@@ -373,6 +378,10 @@ alias zotero="~/Software/Zotero/Zotero_linux-x86_64/zotero &"     #make a bin fi
 # https://askubuntu.com/questions/296155/how-can-i-remap-keyboard-keys
 alias setcaps="setxkbmap -option caps:ctrl_modifier"
 alias setcapsnone="setxkbmap -option caps:none" #use for hhkb
+
+alias setwinctrl="setxkbmap -option ctrl:lctrl_meta;setxkbmap -option altwin:meta_win;setxkbmap -option altwin:ctrl_win"
+# alias setwinctrl="setxkbmap -option altwin:ctrl_win"
+
 # alias setscreen="xrandr --output DP2 --rotate left --right-of VGA1; xrandr --output VGA1 --primary"
 # alias setscreen="xrandr --output DP1 --rotate left --left-of VGA1; xrandr --output VGA1 --primary"
 alias setscreen="xrandr --output DP1 --rotate right --right-of VGA1; xrandr --output VGA1 --primary"
@@ -459,11 +468,11 @@ function sshcheck(){
 alias sh="bash"
 # open and close touchpad
 function xinputclosetp(){
-    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    num=$(xinput | grep -i TouchPad | grep -oP 'id=\K\d+')
     xinput --disable $num
 }
 function xinputopentp(){
-    num=$(xinput | grep TouchPad | grep -oP 'id=\K\d+')
+    num=$(xinput | grep -i TouchPad | grep -oP 'id=\K\d+')
     xinput --enable $num
 }
 
