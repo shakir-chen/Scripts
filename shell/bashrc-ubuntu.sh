@@ -882,8 +882,8 @@ alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
-# alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
-alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
+alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/BOSIM/BOSIM-TCAD"
+# alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/BOSIM/BOSIM-TCAD"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
