@@ -1902,6 +1902,9 @@ local share: samba      <https://help.ubuntu.com/lts/serverguide/samba-fileserve
 <https://www.thegeekstuff.com/2010/10/expect-examples/>
 expect
 
+## 73. chinese character error decode
+sudo apt-get install fonts-wqy-zenhei
+
 #### ERROR
 1.TIFF4 depency:
     The only way:
