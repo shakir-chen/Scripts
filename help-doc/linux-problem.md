@@ -1820,6 +1820,7 @@ echo -e "\033[5 q"]"
 ```
 https://bbs.archlinux.org/viewtopic.php?id=177281
 
+sudo apt-get install rxvt-unicode
 
 urxvt underscore problem
 change the fontsize from 14 to 13
@@ -1901,6 +1902,25 @@ local share: samba      <https://help.ubuntu.com/lts/serverguide/samba-fileserve
 ## 72. expect
 <https://www.thegeekstuff.com/2010/10/expect-examples/>
 expect
+
+## 73. install ubuntu in chromebook
+Open Develop Mode
+
+esc-refresh-power
+press Ctrl-D to continue every time
+
+ctrl alt shift and <- and ->
+
+<https://tutorials.ubuntu.com/tutorial/install-ubuntu-on-chromebook#1>
+<https://github.com/dnschneid/crouton/wiki/i3>
+
+
+setxkbmap
+cat /usr/share/X11/xkb/rules/evdev.lst  | grep win
+
+shift between i3 and chromeos
+ctrl, shift, alt + -> and <-    (F1/F2)
+
 
 #### ERROR
 1.TIFF4 depency:

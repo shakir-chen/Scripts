@@ -194,8 +194,8 @@ export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
-echo -e "\033[5 q"
-# echo -e "\033[6 q"      # not blink
+# echo -e "\033[5 q"
+echo -e "\033[6 q"      # not blink, vertical bar, cursor
 
 # grep =======================================================
 #alias grep --color=auto
@@ -874,7 +874,7 @@ alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
-alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM/BOSIM-TCAD"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
