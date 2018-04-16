@@ -49,6 +49,7 @@ URxvt.allow_bold:           false
 URxvt.font:             xft:DejaVu Sans Mono:pixelsize=15,xft:Microsoft Yahei:pixelsize=15
 URxvt.boldFont:         xft:DejaVu Sans Mono:Bold:pixelsize=15,xft:Microsoft Yahei:Bold:pixelsize=15
 
+! URxvt.skipBuiltinGlyphs True
 
 ! Fix font space
 URxvt*letterSpace: -1
