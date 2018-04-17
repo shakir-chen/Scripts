@@ -885,6 +885,7 @@ alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
 alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/BOSIM/BOSIM-TCAD"
+alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
