@@ -418,6 +418,8 @@ alias xrandrviriphone="xrandr --output VIRTUAL2 --mode 752x1334_60.00 --left-of 
 alias xrandrdellhori="xrandr --output DP1 --rotate normal"
 # alias xrandrdellvert="xrandr --output DP1 --rotate left"
 alias xrandrdellvert="xrandr --output DP1 --rotate right"
+# alias xrandrflip="xrandr --output DP1 --rotate right"
+alias xrandrflip="xrandr --output eDP1 --rotate inverted"
 
 # vnc
 alias vncstart="x11vnc -usepw"
@@ -776,7 +778,7 @@ alias nautilus="nautilus --no-desktop"
 
 alias topsave="top  -n  1 -b > top-output.txt"
 #Franz
-alias franz="~/Software/Franz/Franz &"
+alias franz_loc="~/Software/Franz/Franz &"
 
 #Foxit Reader
 alias foxit="~/Linux/opt/foxitsoftware/foxitreader/FoxitReader"
@@ -884,7 +886,8 @@ alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
-alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/BOSIM/BOSIM-TCAD"
+# alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/BOSIM/BOSIM-TCAD"
+alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
