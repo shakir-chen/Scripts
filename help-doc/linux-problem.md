@@ -1903,6 +1903,9 @@ local share: samba      <https://help.ubuntu.com/lts/serverguide/samba-fileserve
 <https://www.thegeekstuff.com/2010/10/expect-examples/>
 expect
 
+## 73. chinese character error decode
+sudo apt-get install fonts-wqy-zenhei
+
 ## 73. install ubuntu in chromebook
 Open Develop Mode
 
@@ -1920,6 +1923,36 @@ cat /usr/share/X11/xkb/rules/evdev.lst  | grep win
 
 shift between i3 and chromeos
 ctrl, shift, alt + -> and <-    (F1/F2)
+
+## 75. urxvt copy and paste
+```
+#script to copy/paste text in URXVT
+#! perl
+sub on_sel_grab {
+    my $query = $_[0]->selection;
+    open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
+    print $pipe $query;
+    close $pipe;
+}
+sub paste {
+    my ($self) = @_;
+    my $content = `/usr/bin/xclip -loop 1 -out -selection clipboard` ;
+    $self->tt_write ($content);
+}
+sub on_user_command {
+    my ($self, $cmd) = @_;
+    if ($cmd eq "clipboard:paste") {
+        $self->paste;
+    }
+}
+
+# Add to your .Xdefaults (or .Xresources) the following lines:
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
+```
+https://coderwall.com/p/z9dtiw/copy-paste-text-in-urxvt-rxvt-unicode-using-keyboard
+
 
 
 #### ERROR
