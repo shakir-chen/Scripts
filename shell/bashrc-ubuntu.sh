@@ -192,8 +192,9 @@ LS_COLORS="no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;
 stty -ixon  # change ctrl-s to search
 
 #LICENSE FILE SET
-export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
+# export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
+export LM_LICENSE_FILE="7852@eesur5.ece.ust.hk"     # modelsim
 
 # Setup Scripts =====
 # source ~/.helprc
@@ -225,7 +226,8 @@ function gptype(){
 # view and change group: /etc/group,        or groups
 # view user groups, groups username
 # userdel username      # remove an account
-# sudo usermod -a -G groupName userName
+# sudo usermod -g groupName userName     # add primary group
+# sudo usermod -a -G groupName userName     # add secondary group
 # view all users: https://askubuntu.com/questions/410244/a-command-to-list-all-users-and-how-to-add-delete-modify-users
 
 # ls =======================================================
@@ -542,6 +544,11 @@ function ssh-server() {
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
+
+function scpmagic(){
+    scp -r $1 xuanqi@magic.ece.ust.hk:~/$2
+}
+
 function scpstd(){
     scp $1 std01@143.89.131.91:~/$2
 }
@@ -783,6 +790,14 @@ alias franz_loc="~/Software/Franz/Franz &"
 #Foxit Reader
 alias foxit="~/Linux/opt/foxitsoftware/foxitreader/FoxitReader"
 
+function uglifyjs_one(){
+    uglifyjs $1 -c toplevel,sequences=false
+}
+function uglifyjs_mangle(){
+    uglifyjs $1 -c -m --mangle-props
+}
+
+
 #Gnome Terminal Title Change
 #PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
@@ -833,12 +848,27 @@ do
 done
 }
 
+function imgresize(){
+# identify XXX.png to see the image scale
+# convert $1 -crop 1007x18+0+10 +repage crop.gif
+for f in *.png
+    do
+        convert $f -crop 1007x18+0+10 +repage $f
+    done
+
+}
+
+function gif2png(){
+    convert -coalesce $1 out%05d.png
+}
+
 function pdf2jpg(){
     newf=${1/.pdf/.jpg}
     echo  $1 "--->" $newf
     # convert -density 300 $f $newf     # backgroud will become black
     # convert -density 300 -background white -alpha remove $1 $newf
-    convert -density 1000 -background white -alpha remove $1 $newf
+    # convert -density 1000 -background white -alpha remove $1 $newf
+    convert -density 500 -background white -alpha remove $1 $newf
     # convert -density 150 *.pdf -quality 90 output.png
 }
 
@@ -856,7 +886,6 @@ function pdf2jpgall(){
 function convertgif(){
     convert -delay 1 -loop 0 $1 o.gif
 }
-
 
 # grip
 function griphub(){
@@ -878,7 +907,7 @@ alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdftp="cd /srv/ftp/"
-alias cdcourse="cd ~/Dropbox/1_Course"
+alias cdcourse="cd ~/Dropbox/Course"
 alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
 alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
@@ -917,14 +946,14 @@ function lntemp(){
 }
 
 function dirsx(){
-    DIR=$(dirs | sed -r 's/\s/\\ /')
+    DIR=$(dirs | sed 's/\s/\\ /g')
     # echo $DIR | xclip
     printf "$DIR" | xclip
 }
 
-alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
-alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
-alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
+alias openjiaming="open ~/Dropbox/Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
+alias openshimin="open ~/Dropbox/Course/Good_Books/Physics_of_Semciondutor.pdf"
+alias openpower="open ~/Dropbox/Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
 alias wifilsd="nmcli d wifi list" # wifissid
 alias wifilsc="nmcli c" # saved wifi connection
 alias wific="nmcli c up" # + savedwificonn
@@ -990,6 +1019,9 @@ alias isecoregen="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/coregen &"
 alias isexps="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/xps &"
 alias isexsdk="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/xsdk &"
 
+
+alias vivadosource="source /opt/Xilinx/Vivado/2018.1/settings64.sh"
+
 # SPEC
 alias cdspec="cd /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt directory
 alias specinstall="./install.sh -d /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt directory
@@ -1002,6 +1034,7 @@ alias xclipscreenshot="xclip -selection clipboard -t image/png -o >"
 export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
+export M4PATH=~/texmf/tex/latex/Circuit_macros
 
 #wget
 function wgetpdf(){         # sometimes, the pdfprefix html will be different, then you need to customize the web address, not just $1$pdf
@@ -1035,7 +1068,7 @@ function wgetppt(){         # sometimes, the pdfprefix html will be different, t
         echo $PDFNAME
         wget $PDFNAME
     fi
-}
+}   # wget a folder: wget -r http
 
 #scrot
 alias scrots="scrot -s"
@@ -1163,7 +1196,7 @@ alias converthoriapd="convert +append"
 export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
 export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
 
-export PKG_CONFIG_PATH=~/Software/zathura/poppler/build:${PKG_CONFIG_PATH}          # poppler pdf, for zathura interation
+export PKG_CONFIG_PATH=~/Software/zathura/poppler/build:${PKG_CONFIG_PATH}          # poppler pdf, for zathura interation; okular for comments reader
 
 #opencv path
 export PKG_CONFIG_PATH=/usr/local/opencv/2.4.9/lib/pkgconfig:${PKG_CONFIG_PATH}

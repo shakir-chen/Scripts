@@ -1953,7 +1953,9 @@ URxvt.perl-ext-common: default,clipboard
 ```
 https://coderwall.com/p/z9dtiw/copy-paste-text-in-urxvt-rxvt-unicode-using-keyboard
 
-
+## 75. modelsim install
+<http://vineeshvs.blogspot.hk/2014/02/installing-and-using-modelsim-in-ubuntu.html>
+~/Software/altera/13.1/modelsim_ae/linux/vsim
 
 #### ERROR
 1.TIFF4 depency:
