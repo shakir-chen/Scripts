@@ -515,6 +515,10 @@ function scpxqlabget {
    scp -r -P 2222 xuanqi@143.89.131.95:~/$1 $2
 }
 
+function scpxqlabput {
+   scp -r -P 2222 $1 xuanqi@143.89.131.95:~/$2
+}
+
 
 
 # function connect() {
@@ -835,6 +839,7 @@ alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
 alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
+alias cdcadence="cd /usr/eelocal/cadence"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
