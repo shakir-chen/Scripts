@@ -490,7 +490,9 @@ function ssh-server() {
     # ssh -XfC -c blowfish-cbc $servername # default cypher as blowfish,fast; -X X forwarding; -f puts ssh session into background; C use compression
 }
 #http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html
-
+function scplab(){
+    scp -P 2222 $1 xuanqi@143.89.131.95:~/
+}
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
