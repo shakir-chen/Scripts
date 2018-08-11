@@ -661,6 +661,7 @@ alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
+alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/Jade-hotspot -m 'Xuanqi private branch with hotspot'"
 alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
 # groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
 alias svnupimm="svn update --set-depth immediates "
