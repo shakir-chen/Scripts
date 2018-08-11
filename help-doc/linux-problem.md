@@ -1268,6 +1268,24 @@ teamviewer depends on qtdeclarative5-dialogs-plugin (>= 5.2) | qml-module-qtquic
 teamviewr quicksupport seems not work normally
 
 
+#### modify DNS and break through the area restriction
+```
+$ sudo vim /etc/hosts
+# 网易云音乐数据传输服务器反代
+# # 参见: https://s.jixun.moe/cloud-music-hosts
+79.137.38.20 music.163.com
+#
+# # 归属地查询服务器反代
+79.137.38.20 ip.ws.126.net
+#
+# # HTTPS DNS 服务器屏蔽
+127.0.0.9 music.httpdns.c.163.com
+```
+ping music.163.com      # get  79.137.38.20, => done
+
+
+
+
 
 ### 24. PDF Tool Introduction
 pdf split - pdftk
@@ -1956,6 +1974,11 @@ https://coderwall.com/p/z9dtiw/copy-paste-text-in-urxvt-rxvt-unicode-using-keybo
 ## 75. modelsim install
 <http://vineeshvs.blogspot.hk/2014/02/installing-and-using-modelsim-in-ubuntu.html>
 ~/Software/altera/13.1/modelsim_ae/linux/vsim
+
+## 77. apt-file find
+apt-file
+<https://ubuntuforums.org/showthread.php?t=1036169>
+
 
 #### ERROR
 1.TIFF4 depency:

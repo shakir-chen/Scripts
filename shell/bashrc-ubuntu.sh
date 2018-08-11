@@ -243,7 +243,7 @@ alias llmb="ll --block-size=M"
 alias lsmem="sudo dmidecode -t 17"
 alias lsmemsize="cat /proc/meminfo"     # free -m, vmstate, top
 
-alias usbmount="sudo mount /dev/sdb1/ /media/usb"
+alias usbmount="sudo mount /dev/sdb1/ /media/usb"       # lsblk
 alias usbumount="sudo umount /dev/sdb1/"
 
 # vim =======================================================
@@ -895,7 +895,7 @@ function griphub(){
 alias gripquick="grip -b --quiet"           #markdown as github style
 
 #cd Frequent Path
-alias cdtac="cd ~/Dropbox/1_Course/TAC"
+alias cdtac="cd ~/Dropbox/Course/TAC"
 alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
@@ -908,7 +908,7 @@ alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdftp="cd /srv/ftp/"
 alias cdcourse="cd ~/Dropbox/Course"
-alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
+alias cdbook="cd ~/Dropbox/Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
 alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
@@ -1028,6 +1028,7 @@ alias specinstall="./install.sh -d /home/xuanqi/Research/Benchmark/SPEC"        
 alias specbuild="runspec --config=Xuanqi-linux64.cfg --action=build --tune=base"
 alias specrun=" runspec --config=Xuanqi-linux64.cfg --size=test --noreportable --tune=base --iterations=1"
 
+# peek : record your screen easily
 #xclip
 alias xclipscreenshot="xclip -selection clipboard -t image/png -o >"
 #wget
@@ -1070,6 +1071,8 @@ function wgetppt(){         # sometimes, the pdfprefix html will be different, t
     fi
 }   # wget a folder: wget -r http
 
+# pdfposter -p1x999a4 testpage-wide.pdf out.pdf
+# pdfposter, long pdf => multiple pages <http://manpages.ubuntu.com/manpages/bionic/en/man1/pdfposter.1.html>
 #scrot
 alias scrots="scrot -s"
 alias importh="import helper.png"
