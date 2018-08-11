@@ -773,6 +773,9 @@ alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
 
+# git diff FILE; git diff --cached FILE; git diff HEAD FILE;
+# https://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged
+
 function gitpush(){
     sshcheck
     git push origin master
