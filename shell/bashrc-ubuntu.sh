@@ -567,17 +567,12 @@ function scpxqlabget() {
    scp -r -P 2222 xuanqi@143.89.131.95:~/$1 $2
 }
 
-<<<<<<< HEAD
 function scpxqlab(){
    scp -r -P 2222 $1 xuanqi@143.89.131.95:~
 }
-=======
 function scpxqlabput {
    scp -r -P 2222 $1 xuanqi@143.89.131.95:~/$2
 }
-
->>>>>>> 68d7de7a8204d565b7ef3bf57472ece6a173dff6
-
 
 # function connect() {
     # if [[ -z "$ORIG" ]]; then
@@ -932,13 +927,10 @@ alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
-<<<<<<< HEAD
-alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
-alias cdcadence="cd /usr/eelocal/cadence"
-=======
+# alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
+# alias cdcadence="cd /usr/eelocal/cadence"
 alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
->>>>>>> e5f0bb8f85ed2857475d1e84a692e446392b21c8
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
