@@ -503,14 +503,17 @@ function scpcs(){
     scp $1 xchenbr@csl2wk10.cse.ust.hk:~/$2
 }
 #ssh functions
-function scpxq {
+function scpxq() {
    scp $1 xuanqi@$2.ece.ust.hk:$3
 }
 
-function scpxqlabget {
+function scpxqlabget() {
    scp -r -P 2222 xuanqi@143.89.131.95:~/$1 $2
 }
 
+function scpxqlab(){
+   scp -r -P 2222 $1 xuanqi@143.89.131.95:~
+}
 
 
 # function connect() {
@@ -541,6 +544,7 @@ alias pwdxclip="echo -n $(pwd) |xclip -selection clipboard"
 # = pwd | xargs echo -n | xclip -selection clipboard
 
 #real vncviewer
+alias vncserver="/bin/vncserver"
 alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
 alias vncgeom="vncserver -geometry 1080x990"
 alias vnckill="vncserver kill :"
@@ -624,7 +628,7 @@ function svnrefreshdel(){
     for file in $(svn st | grep '^!' | sed -e 's/!M\?\s\+//')
     do
         echo "svn delete" "$file"
-        svn delete $file
+        svn delete --force $file
     done
 }
 
@@ -701,6 +705,7 @@ alias gitcmdef="git commit -m 'up default'"
 alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
+alias sourcesynopsys="source /local/eelocal/synopsys/syn-vl2016.03-sp5-5/.bashrc"   # show branch message
 
 function gitpush(){
     sshcheck
