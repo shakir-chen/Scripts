@@ -540,7 +540,9 @@ function ssh-server() {
     # ssh -XfC -c blowfish-cbc $servername # default cypher as blowfish,fast; -X X forwarding; -f puts ssh session into background; C use compression
 }
 #http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html
-
+function scplab(){
+    scp -P 2222 $1 xuanqi@143.89.131.95:~/
+}
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
@@ -563,6 +565,10 @@ function scpxq {
 
 function scpxqlabget {
    scp -r -P 2222 xuanqi@143.89.131.95:~/$1 $2
+}
+
+function scpxqlabput {
+   scp -r -P 2222 $1 xuanqi@143.89.131.95:~/$2
 }
 
 
@@ -915,8 +921,13 @@ alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
+<<<<<<< HEAD
+alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
+alias cdcadence="cd /usr/eelocal/cadence"
+=======
 alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
+>>>>>>> e5f0bb8f85ed2857475d1e84a692e446392b21c8
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
