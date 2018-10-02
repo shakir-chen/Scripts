@@ -192,15 +192,17 @@ LS_COLORS="no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;
 stty -ixon  # change ctrl-s to search
 
 #LICENSE FILE SET
-export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
+# export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
+export LM_LICENSE_FILE="7852@eesur5.ece.ust.hk"     # modelsim
 
 # Setup Scripts =====
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
 
 # echo -e "\033[5 q"
-echo -e "\033[7 q"      # not blink
+echo -e "\033[6 q"      # not blink, vertical bar, cursor
+# echo -e "\033[7 q"      # not blink
 
 # grep =======================================================
 #alias grep --color=auto
@@ -224,7 +226,8 @@ function gptype(){
 # view and change group: /etc/group,        or groups
 # view user groups, groups username
 # userdel username      # remove an account
-# sudo usermod -a -G groupName userName
+# sudo usermod -g groupName userName     # add primary group
+# sudo usermod -a -G groupName userName     # add secondary group
 # view all users: https://askubuntu.com/questions/410244/a-command-to-list-all-users-and-how-to-add-delete-modify-users
 
 # ls =======================================================
@@ -240,7 +243,7 @@ alias llmb="ll --block-size=M"
 alias lsmem="sudo dmidecode -t 17"
 alias lsmemsize="cat /proc/meminfo"     # free -m, vmstate, top
 
-alias usbmount="sudo mount /dev/sdb1/ /media/usb"
+alias usbmount="sudo mount /dev/sdb1/ /media/usb"       # lsblk
 alias usbumount="sudo umount /dev/sdb1/"
 
 # vim =======================================================
@@ -417,6 +420,8 @@ alias xrandrviriphone="xrandr --output VIRTUAL2 --mode 752x1334_60.00 --left-of 
 alias xrandrdellhori="xrandr --output DP1 --rotate normal"
 # alias xrandrdellvert="xrandr --output DP1 --rotate left"
 alias xrandrdellvert="xrandr --output DP1 --rotate right"
+# alias xrandrflip="xrandr --output DP1 --rotate right"
+alias xrandrflip="xrandr --output eDP1 --rotate inverted"
 
 # vnc
 alias vncstart="x11vnc -usepw"
@@ -535,10 +540,17 @@ function ssh-server() {
     # ssh -XfC -c blowfish-cbc $servername # default cypher as blowfish,fast; -X X forwarding; -f puts ssh session into background; C use compression
 }
 #http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html
-
+function scplab(){
+    scp -P 2222 $1 xuanqi@143.89.131.95:~/
+}
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
 }
+
+function scpmagic(){
+    scp -r $1 xuanqi@magic.ece.ust.hk:~/$2
+}
+
 function scpstd(){
     scp $1 std01@143.89.131.91:~/$2
 }
@@ -547,15 +559,20 @@ function scpcs(){
     scp $1 xchenbr@csl2wk10.cse.ust.hk:~/$2
 }
 #ssh functions
-function scpxq {
+function scpxq() {
    scp $1 xuanqi@$2.ece.ust.hk:$3
 }
 
-function scpxqlabget {
+function scpxqlabget() {
    scp -r -P 2222 xuanqi@143.89.131.95:~/$1 $2
 }
 
-
+function scpxqlab(){
+   scp -r -P 2222 $1 xuanqi@143.89.131.95:~
+}
+function scpxqlabput {
+   scp -r -P 2222 $1 xuanqi@143.89.131.95:~/$2
+}
 
 # function connect() {
     # if [[ -z "$ORIG" ]]; then
@@ -585,6 +602,7 @@ alias pwdxclip="echo -n $(pwd) |xclip -selection clipboard"
 # = pwd | xargs echo -n | xclip -selection clipboard
 
 #real vncviewer
+alias vncserver="/bin/vncserver"
 alias vncopen="cd ~/Software/VNCViewer && ./vncviewer"
 alias vncgeom="vncserver -geometry 1080x990"
 alias vnckill="vncserver kill :"
@@ -643,6 +661,7 @@ alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
+alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/Jade-hotspot -m 'Xuanqi private branch with hotspot'"
 alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
 # groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
 alias svnupimm="svn update --set-depth immediates "
@@ -671,7 +690,7 @@ function svnrefreshdel(){
     for file in $(svn st | grep '^!' | sed -e 's/!M\?\s\+//')
     do
         echo "svn delete" "$file"
-        svn delete $file
+        svn delete --force $file
     done
 }
 
@@ -756,6 +775,10 @@ alias gitcmdef="git commit -m 'up default'"
 alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
+alias sourcesynopsys="source /local/eelocal/synopsys/syn-vl2016.03-sp5-5/.bashrc"   # show branch message
+
+# git diff FILE; git diff --cached FILE; git diff HEAD FILE;
+# https://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged
 
 function gitpush(){
     sshcheck
@@ -775,10 +798,18 @@ alias nautilus="nautilus --no-desktop"
 
 alias topsave="top  -n  1 -b > top-output.txt"
 #Franz
-alias franz="~/Software/Franz/Franz &"
+alias franz_loc="~/Software/Franz/Franz &"
 
 #Foxit Reader
 alias foxit="~/Linux/opt/foxitsoftware/foxitreader/FoxitReader"
+
+function uglifyjs_one(){
+    uglifyjs $1 -c toplevel,sequences=false
+}
+function uglifyjs_mangle(){
+    uglifyjs $1 -c -m --mangle-props
+}
+
 
 #Gnome Terminal Title Change
 #PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
@@ -830,12 +861,27 @@ do
 done
 }
 
+function imgresize(){
+# identify XXX.png to see the image scale
+# convert $1 -crop 1007x18+0+10 +repage crop.gif
+for f in *.png
+    do
+        convert $f -crop 1007x18+0+10 +repage $f
+    done
+
+}
+
+function gif2png(){
+    convert -coalesce $1 out%05d.png
+}
+
 function pdf2jpg(){
     newf=${1/.pdf/.jpg}
     echo  $1 "--->" $newf
     # convert -density 300 $f $newf     # backgroud will become black
     # convert -density 300 -background white -alpha remove $1 $newf
-    convert -density 1000 -background white -alpha remove $1 $newf
+    # convert -density 1000 -background white -alpha remove $1 $newf
+    convert -density 500 -background white -alpha remove $1 $newf
     # convert -density 150 *.pdf -quality 90 output.png
 }
 
@@ -854,7 +900,6 @@ function convertgif(){
     convert -delay 1 -loop 0 $1 o.gif
 }
 
-
 # grip
 function griphub(){
     # grip -b --user="shakir-chen" --quiet $1 localhost:3700
@@ -863,7 +908,7 @@ function griphub(){
 alias gripquick="grip -b --quiet"           #markdown as github style
 
 #cd Frequent Path
-alias cdtac="cd ~/Dropbox/1_Course/TAC"
+alias cdtac="cd ~/Dropbox/Course/TAC"
 alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
@@ -875,15 +920,18 @@ alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
 alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
 alias cdftp="cd /srv/ftp/"
-alias cdcourse="cd ~/Dropbox/1_Course"
-alias cdbook="cd ~/Dropbox/1_Course/Good_Books"
+alias cdcourse="cd ~/Dropbox/Course"
+alias cdbook="cd ~/Dropbox/Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
 alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
 alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
-alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
+# alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
+# alias cdcadence="cd /usr/eelocal/cadence"
+alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
+alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
@@ -913,14 +961,14 @@ function lntemp(){
 }
 
 function dirsx(){
-    DIR=$(dirs | sed -r 's/\s/\\ /')
+    DIR=$(dirs | sed 's/\s/\\ /g')
     # echo $DIR | xclip
     printf "$DIR" | xclip
 }
 
-alias openjiaming="open ~/Dropbox/1_Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
-alias openshimin="open ~/Dropbox/1_Course/Good_Books/Physics_of_Semciondutor.pdf"
-alias openpower="open ~/Dropbox/1_Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
+alias openjiaming="open ~/Dropbox/Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
+alias openshimin="open ~/Dropbox/Course/Good_Books/Physics_of_Semciondutor.pdf"
+alias openpower="open ~/Dropbox/Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
 alias wifilsd="nmcli d wifi list" # wifissid
 alias wifilsc="nmcli c" # saved wifi connection
 alias wific="nmcli c up" # + savedwificonn
@@ -986,18 +1034,23 @@ alias isecoregen="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/coregen &"
 alias isexps="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/xps &"
 alias isexsdk="/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/xsdk &"
 
+
+alias vivadosource="source /opt/Xilinx/Vivado/2018.1/settings64.sh"
+
 # SPEC
 alias cdspec="cd /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt directory
 alias specinstall="./install.sh -d /home/xuanqi/Research/Benchmark/SPEC"            #in SPEC mnt directory
 alias specbuild="runspec --config=Xuanqi-linux64.cfg --action=build --tune=base"
 alias specrun=" runspec --config=Xuanqi-linux64.cfg --size=test --noreportable --tune=base --iterations=1"
 
+# peek : record your screen easily
 #xclip
 alias xclipscreenshot="xclip -selection clipboard -t image/png -o >"
 #wget
 export DOWNLOAD_PATH=~/Downloads
 export DAIRY_PATH=~/Dropbox/Linux/Dairy/latex
 export TEMPSAVE_PATH=~/Downloads
+export M4PATH=~/texmf/tex/latex/Circuit_macros
 
 #wget
 function wgetpdf(){         # sometimes, the pdfprefix html will be different, then you need to customize the web address, not just $1$pdf
@@ -1031,8 +1084,10 @@ function wgetppt(){         # sometimes, the pdfprefix html will be different, t
         echo $PDFNAME
         wget $PDFNAME
     fi
-}
+}   # wget a folder: wget -r http
 
+# pdfposter -p1x999a4 testpage-wide.pdf out.pdf
+# pdfposter, long pdf => multiple pages <http://manpages.ubuntu.com/manpages/bionic/en/man1/pdfposter.1.html>
 #scrot
 alias scrots="scrot -s"
 alias importh="import helper.png"
@@ -1159,7 +1214,7 @@ alias converthoriapd="convert +append"
 export ROS_PACKAGE_PATH=~/catkin_ws/src:${ROS_PACKAGE_PATH}
 export LD_LIBRARY_PATH=/opt/ros/kinetic/lib:${LD_LIBRARY_PATH}
 
-export PKG_CONFIG_PATH=~/Software/zathura/poppler/build:${PKG_CONFIG_PATH}          # poppler pdf, for zathura interation
+export PKG_CONFIG_PATH=~/Software/zathura/poppler/build:${PKG_CONFIG_PATH}          # poppler pdf, for zathura interation; okular for comments reader
 
 #opencv path
 export PKG_CONFIG_PATH=/usr/local/opencv/2.4.9/lib/pkgconfig:${PKG_CONFIG_PATH}

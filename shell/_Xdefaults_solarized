@@ -49,6 +49,7 @@ URxvt.allow_bold:           false
 URxvt.font:             xft:DejaVu Sans Mono:pixelsize=15,xft:Microsoft Yahei:pixelsize=15
 URxvt.boldFont:         xft:DejaVu Sans Mono:Bold:pixelsize=15,xft:Microsoft Yahei:Bold:pixelsize=15
 
+! URxvt.skipBuiltinGlyphs True
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -63,13 +64,32 @@ URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 
 ! Cursor
-URxvt.cursorBlink:          false
+URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83
-! URxvt.cursorUnderline:      false
-URxvt.cursorUnderline:      true
+URxvt.cursorUnderline:      false
+! URxvt.cursorUnderline:      true
 
 ! Pointer
+
+! ! Copy and paste with clipboard
+! XTerm*translations: #override \
+! Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+! Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+
 URxvt.pointerBlank:         true
+! URxvt.perl-ext-common: selection_to_clipboard
+! URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+! URxvt.keysym.Control-Shift-C: eval:select_to_clipboard
+! URxvt.keysym.Control-v: perl:clipboard:paste
+! URxvt.keysym.Control-c: perl:clipboard:copy
+! URxvt.keysym.Control-c: perl:clipboard:copy
+!
+! URxvt.keysym.Control-c: perl:clipboard:copy
+URxvt.keysym.Control-v: perl:clipboard:paste
+! URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
+
+! URxvt.keysym.Control-v: echo "hello"
 
 !!Source http://github.com/altercation/solarized
 
@@ -112,4 +132,5 @@ URxvt.pointerBlank:         true
 !! white dark/light
 *color7: #eee8d5
 *color15: #fdf6e3
+
 
