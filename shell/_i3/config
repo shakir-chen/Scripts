@@ -44,8 +44,8 @@ exec --no-startup-id feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/temp &
 # ====================================
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt       # urxvt
+bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec urxvt       # urxvt
 
 # multi-monitor
 bindsym $mod+m         exec xrandr --output HDMI1 --off
