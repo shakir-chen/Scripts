@@ -131,23 +131,21 @@ if [ "$USER" == "shakir" ] ; then           # laptop
     setxkbmap -option caps:ctrl_modifier
 fi
 
-#User Define XuanqiPath
-# added by Anaconda 2.2.0 installer
-#export PATH="/home/rafael/softwares/anaconda/bin:${PATH}"
-#export PATH=/home/rafael/softwares/valgrind/valgrind/bin:${PATH}
-#export LD_LIBRARY_PATH=/home/rafael/softwares/anaconda/lib:${LD_LIBRARY_PATH}
-# added by git Xuanqi
-export PATH=~/Linux/bin:${PATH}
 export PATH=~/Software/Scripts/linux-bin:${PATH}
 export PATH=~/Software/Franz/:${PATH}
-export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/usr/local/pulse:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/pulse:$LD_LIBRARY_PATH
+
+# Rafael Newest gcc & boost
+export PATH=/local/home/rafael/softwares/gcc/bin:${PATH}
+export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib:$LD_LIBRARY_PATH
+export BOOST_ROOT=/home/rafael/softwares/boost/src
+export LD_LIBRARY_PATH=$BOOST_ROOT/lib:$LD_LIBRARY_PATH
 
 # export LD_LIBRARY_PATH=/usr/local/lib/libglfw3.a:${LD_LIBRARY_PATH}
-export BOOST_ROOT=~/Software/boost/include
+# export BOOST_ROOT=~/Software/boost/include
 # export GLFW_SOURCE_DIR=/home/xuanqi/Downloads/glfw/glfw-3.2.1
 
 # cheat add
