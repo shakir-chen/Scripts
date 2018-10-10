@@ -52,10 +52,10 @@
 # export LD_LIBRARY_PATH=/local/home/rafael/softwares/llvm/libcxx-3.6.2.src/lib:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=/home/rafael/softwares/llvm/libcpp/lib:${LD_LIBRARY_PATH}
 
-export PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/bin:${PATH}
-export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/arm-none-linux-gnueabi/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/lib/gcc/arm-none-linux-gnueabi/4.5.1/lib:${LD_LIBRARY_PATH}
-export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
+# export PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/bin:${PATH}
+# export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/arm-none-linux-gnueabi/lib:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/home/rafael/gem5Packages/ARM_cross_compiler/opt/FriendlyARM/toolschain/4.5.1/lib/gcc/arm-none-linux-gnueabi/4.5.1/lib:${LD_LIBRARY_PATH}
+# export PATH=/local/home/rafael/softwares/llvm/build/bin:${PATH}
 
 # added by git Xuanqi
 export PATH=/home/xuanqi/Linux/bin:${PATH}
