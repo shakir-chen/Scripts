@@ -22,6 +22,9 @@ Initial Unmodified State
 git     modify      git add/rm      git commit -m       git add
 svn     modify      svn add/rm      svn commit -m       svn add
 
+# check version difference
+svn diff -r 449:345 file
+
 
 ## Background
 simply copy in time-stampe sequency: Easily to forget the directory
@@ -202,10 +205,14 @@ env > .ssh/environment #dump envronment to .ssh/enviroment:
 '''
 <http://stackoverflow.com/questions/11128464/git-upload-pack-command-not-found>
 
+## Revert to previous version
+```
+svn log -l2         # check previous two information
+svn up -r r10489    # update to previous version
+```
+svn revert tran.pdf     # get back the removed file
 
-
-
-
+meet conflicts, very tough
 
 ##Reference
 Good Summary<https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell>

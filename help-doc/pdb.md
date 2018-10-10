@@ -20,6 +20,9 @@ print final
 ## View
 l(ist)
 p(rint)         # p c => "ccc"
+w(here)         # show 
+
+<https://docs.python.org/3/library/pdb.html>
 
 ## Operation
 n(ext)

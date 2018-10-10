@@ -3,6 +3,12 @@
 
 ## I. OS Operation
 
+## package installation
+pip install XXX
+python setup.py install
+
+
+
 ## II. Subprocess
 ```
 from subprocess import call, popen
@@ -64,6 +70,13 @@ profii=int(prof.loc[prof['name']==retname].index.values) # better to use isnull,
 
 
 <http://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o>
+
+### 3. Perserve Numpy Arrays on disk
+hdf5
+<https://stackoverflow.com/questions/9619199/best-way-to-preserve-numpy-arrays-on-disk>
+
+
+<https://stackoverflow.com/questions/20928136/input-and-output-numpy-arrays-to-h5py>
 
 
 
@@ -139,6 +152,14 @@ Examples
 <https://stackoverflow.com/questions/10917495/matplotlib-imshow-in-3d-plot>
 
 
+2. matplotlib change legend marker width
+```
+labels = ('MR-PNH-1', 'MR-PNH-2', 'MZI-PNV', 'MZI-PIN')
+legend = plt.legend(labels, loc=(-2.2, .9), handlelength=0.7,labelspacing=0.1, fontsize='small')
+for l in legend.get_lines():
+    l.set_alpha(0.7)
+    l.set_linewidth(5)
+```
 ## XI. Matrix
 reverse a list : array[::-1]
 <http://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python>
@@ -252,6 +273,16 @@ on ubuntu create virtual camera:
 
 epoccam (cannot use)
 
+### Compile
++ bytecode : *.pyc ===> uncomple6 can easily read the source code (not safe)
+sudo pip install uncomly6
+<https://github.com/Mysterie/uncompyle2>
+
++ pyinstaller, py2exe
+pyinstaller is really nice
+<http://effbot.org/zone/python-compile.htm>
+
+
 ### 1. Tree
 
 ### Error
@@ -318,3 +349,35 @@ sudo apt-get install python3-tk     # follow the step, don't use pip-install
 
 
 ### yeild
+
+# Math
+## functools.partial
+function package
+
+## scipy.optimize
+
+## scipy.integrate
+
+
+### ERROR =============
+
+1. use matplotlib import pyplot: no _tkinter
+
+matplotlib.use("AGG")
+<https://stackoverflow.com/questions/4930524/how-can-i-set-the-backend-in-matplotlib-in-python>
+
+.config/matplotlib/matplotlibrc
+<http://matplotlib.org/users/customizing.html#the-matplotlibrc-file>
+```
+backend : Agg
+```
+<https://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server/4935945#4935945>
+
+2. centos install pip: cannot access http server
+```
+yum install openssl openssl-dev -y
+yum install openssl openssl-devel.x86-64 -y
+reinstall python3.6
+python3.6 get-pip.py
+```
+

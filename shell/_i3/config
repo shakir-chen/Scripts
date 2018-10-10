@@ -33,16 +33,23 @@ new_window pixel 3
 floating_modifier $mod
 
 # Xuanqi Initial Start ===============
+# exec --no-startup-id feh --bg-fill /home/xuanqi/Downloads/temp2.jpg
 exec --no-startup-id dropbox start
-exec --no-startup-id xrandr --output DP1 --rotate left --right-of VGA1; xrandr --output VGA1 --primary
+exec --no-startup-id blueman-manager
+#exec --no-startup-id xrandr --output DP1 --rotate left --right-of VGA1; xrandr --output VGA1 --primary
+exec --no-startup-id xrandr --output DP1 --rotate left --left-of VGA1; xrandr --output VGA1 --primary
 
 exec --no-startup-id compton &
-exec --no-startup-id feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/chip/intel-chip-wallpaper.jpg &
+# exec --no-startup-id feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/chip/intel-chip-wallpaper.jpg &
+# exec --no-startup-id feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/temp &
+# exec --no-startup-id feh --bg-fill /home/xuanqi/Downloads/temp1.jpg &
+exec --no-startup-id variety &
+
 # ====================================
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt       # urxvt
+bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec urxvt       # urxvt
 
 # multi-monitor
 bindsym $mod+m         exec xrandr --output HDMI1 --off
@@ -112,6 +119,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
+bindsym $mod+y fullscreen disable; floating enable; resize set 600 400; sticky enable; move window to position 1940 54
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -217,9 +225,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym --release $mod+p exec --no-startup-id import /tmp/latest-screenshot.png      # print screen
-bindsym $mod+x exec --no-startup-id feh -x ~/.i3/helper.png
+bindsym $mod+x exec --no-startup-id feh -x ~/.i3/
 # bindsym $mod+x exec ~/.i3/helper.sh #failed
-
 
 # volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 -- +10% && killall -SIGUSR1 i3status

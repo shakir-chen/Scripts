@@ -169,6 +169,13 @@ sed -n 'N,/PATTERN/p' FILE.txt          # from line N, search pattern and print
 3. sed-like => re.sub
     line_temp=re.sub('<li>|</li>','',lines[ii])
 
+4. part of pattern
+(?P=name) A backreference to a named group; it matches whatever text was matched by the earlier group named name.
+(?#...) A comment; the contents of the parentheses are simply ignored.
+(?=...) Matches if ... matches next, but doesn’t consume any of the string. This is called a lookahead assertion. For example, Isaac (?=Asimov) will match 'Isaac ' only if it’s followed by 'Asimov'.
+(?!...) Matches if ... doesn’t match next. This is a negative lookahead assertion. For example, Isaac (?!Asimov) will match 'Isaac ' only if it’s not followed by 'Asimov'.
+(?<=...)>) Matches if the current position in the string is preceded by a match for ... that ends at the current position.
+
 ##Basic Operation
 1. Change Pattern   (sed)
     \zs \ze
@@ -178,6 +185,9 @@ sed -n 'N,/PATTERN/p' FILE.txt          # from line N, search pattern and print
     \(..\) ==> \1
     ```
 3. Remove Pattern   (sed)
+4. Pattern   (sed)
+svn st | grep '^!' | sed -e 's/!M\?\s\+//'
+\?: M zero or one
 
 4. Only Remain Pattern      (grep, bettern in search)
     ```
@@ -242,5 +252,12 @@ perl regex warning: \1 better written as $1 at (eval 1) line 1
     &ldquo;     &rdquo;         # Better
     "
 3. an amersand:&amp (html & means start a character reference)
+
+
+## bash
+<http://tldp.org/LDP/abs/html/string-manipulation.html>
+replacement
+echo ${stringZ/abc/xyz}
+${string:position:length}
 
 

@@ -1,0 +1,14 @@
+import pandas as pd
+
+# write excel
+df = pd.DataFrame(columns=('Name', 'XXX'))
+writer=pd.ExcelWriter('XXX.xlsx')
+
+# open excel
+x1=pd.ExcelFile('XXX.xlsx')
+df=x1.parse("Sheet1")
+
+# check null
+pd.isnull(url)
+
+

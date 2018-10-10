@@ -32,10 +32,10 @@ delete   C-d C-Delete
 toggle_filenames f
 
 # zooming
-zoom_in  C-Up f
-zoom_out C-Down a
+zoom_in  C-Up z  # zoom
+zoom_out C-Down s
 zoom_default d
-zoom_fit s
+zoom_fit a      # a means initial
 
 # I only hit these accidentaly
 save_image

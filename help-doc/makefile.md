@@ -121,3 +121,9 @@ print foo in the end
 <http://makepp.sourceforge.net/1.19/makepp_tutorial.html>
 
 
+# cmake
+mkdir glfw-build
+cd glfw-build
+cmake ../       # glfw-root-file
+
+

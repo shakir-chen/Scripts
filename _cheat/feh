@@ -1,0 +1,60 @@
+feh /opt/images
+        Show all images in /opt/images
+
+feh -r /opt/images
+        Recursively show all images found in /opt/images and
+        subdirectories
+
+feh -rSfilename /opt/images
+        Same as above, but sort by filename. By default, feh will show
+        files in the order it finds them on the hard disk, which is
+        usually somewhat random.
+
+feh -t -Sfilename -E 128 -y 128 -W 1024 /opt/images
+        Show 128x128 pixel thumbnails, limit window width to 1024 pixels.
+
+feh -t -Sfilename -E 128 -y 128 -W 1024 -P -C
+        /usr/share/fonts/truetype/ttf-dejavu/ -e DejaVuSans/8 /opt/images
+        Same as above, but enable thumbnail caching in ~/.thumbnails and
+        use a smaller font.
+
+feh -irFarial/14 -O index.jpg /opt/images
+        Make an index print of /opt/images and all directories below it,
+        using 14 point Arial to write the image info under each
+        thumbnail.  Save the image as index.jpg and don't display it,
+        just exit.  Note that this even works without a running X server
+
+feh --unloadable -r /opt/images
+        Print all unloadable images in /opt/images, recursively
+
+feh -f by_width -S width --reverse --list .
+        Write a list of all images in the directory to by_width, sorted
+        by width (widest images first)
+
+feh -w /opt/images/holidays
+        Open each image in /opt/images/holidays in its own window
+
+feh -FD5 -Sname /opt/images/presentation
+        Show the images in .../presentation, sorted by name, in
+        fullscreen, automatically change to the next image after 5
+        seconds
+
+feh -rSwidth -A "mv %F ~/images/%N" /opt/images
+        View all images in /opt/images and below, sorted by width, move
+        an image to ~/image/image_name when enter is pressed
+
+feh --start-at ./foo.jpg .
+        View all images in the current directory, starting with foo.jpg.
+        All other images are still in the slideshow and can be viewed
+        normally
+
+feh --start-at foo.jpg *
+        Same as above
+
+feh --info "exifgrep '(Model|DateTimeOriginal|FNumber|ISO|Flash)' %F |
+        cut -d . -f 4-" .
+        Show some EXIF information, extracted by exifprobe/exifgrep
+
+feh --action 'rm %F' -rl --max-dim 1000x800
+        Resursively remove all images with dimensions below or equal to
+        1000x800 pixels from the current directory.

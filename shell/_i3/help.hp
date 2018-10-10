@@ -4,8 +4,9 @@
 ⌘ : win(cmd)        ⏎ : enter
 ⌥ : alt(opt)         : space
 ===============i3wm====================
-⌘  g    split h
-⌘  v    split v
+⌘  a    focus parent
+⌘  g    split horizontally
+⌘  v    split vertically
 
 ⌘  s    layout stacking
 ⌘  w    layout tabbed
@@ -24,6 +25,8 @@ gg      first line
 G       bottom line
 gf      go to the file
 g]      go to a tag
+m[w]    set Maker [w]
+;[w]    go to Marker [w]
 
         /*fold*/
 ,zz     call togglefold function and fold all
@@ -66,6 +69,7 @@ ds"     "Hello" => Hello
 :tf     first tag
 :tp     last tag
 :CtrlPTag   search tag file
+:Tagbar Tagbar
 
 ===============Firefox====================
 ;I    select a picture
@@ -97,6 +101,7 @@ Edit
      suspended background process
 
 ⇥    Auto-complete files and folder names
+⌥ L Latin Keyboard
 
 ==============Zathura=================
 Navigation
@@ -106,6 +111,10 @@ Navigation
 ==============Synergy=================
  [  move to laptop
  ]  move to lab-PC
+
+==============urxvt=================
+ ⌥ C copy
+ ⌥ v paste
 
 
 

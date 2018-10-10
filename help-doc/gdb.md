@@ -52,7 +52,6 @@ $print/x array@3        #print all 3 values in hex
 
 Ref <http://stackoverflow.com/questions/427589/inspecting-standard-container-stdmap-contents-with-gdb>
 
-
 # Running Program Backward
 ```
 reverse-next
@@ -71,7 +70,6 @@ using ELK as a dashboard for honeypots
 Output Message  /   Source      /   Asssembly     /     Threads     /       Stack           /       Registers       /       Expressions     /       Memory  / History
 <https://github.com/cyrus-and/gdb-dashboard>
 
-
 # Pass arguments
 ```
 gdb --args myProg.exe arg1 arg2 ...
@@ -80,14 +78,12 @@ gdb myProg.exe
 run arg1 arg2 ...
 ```
 
-
 # Step Start
 ```
 gdb myProg.exe
 run arg1 arg2 ...
 start
 ```
-
 
 # Breakponts
 breakpoint xxx location
@@ -100,3 +96,5 @@ i[nfo] b
 <https://ccrma.stanford.edu/~jos/stkintro/Useful_commands_gdb.html>
 
 use "continue" to breakpoints
+
+disable 1       # breakpoint 1

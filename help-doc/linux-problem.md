@@ -810,6 +810,8 @@ sudo mktexlsr #or: sudo texhash
 apt-cache search psboxit    # no result
 apt-cache show texlive-latex-extra | grep psboxit    # no result
 ```
+xelatex install: sudo apt-get install texlive-xetex
+
 
 [htpb]: h here, t top, b bottom, p page
 
@@ -822,6 +824,8 @@ Error:
 \usepackage[square,sort,comma,numbers]{natbib}
 \bibliographystyle{plainnat}
 ```
+2. ieee.cls not found
+sudo apt-get install texlive-publishers
 
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
@@ -856,6 +860,15 @@ sensors
     sudo userdel newuser #example newuser-> silly
     sudo rm -rf /home/newuser
     ```
+```
+            # sudo useradd -m jun -p PASSWORD
+            # sudo usermod -a -G xugroup jun
+            #sudo usermod -g xugroup jun         # xugroup as the primary group
+useradd -g cartoons tom
+cat /etc/group      # determine groups
+cat /etc/password       # determine users
+```
+
 
 ### 11. connectable computer (ssh + ftp)
 #### ssh
@@ -921,6 +934,12 @@ binary                          #if put meets bugs
     server-settings incoming IMAP outlook.office365.com port:993 ssl/tls
                     outgoing smtp outlook.office365.com port:587 starttls
 
+    TAC-settings:
+        eetac@ust.hk password:J*j*y*c*j*s*2014
+        IMAP: cas2013.exchange.ust.hk Port:993 ssl/tls Authentication:normal password
+        SMTP: cas2013.exchange.ust.hk Port:587 STARTTLS  Authentication:normal password
+        web:https://cas2013.exchange.ust.hk
+
 2. Muttators
     + Muttators for Thunderbird = Vimperator for Firefox
     + Muttator => <http://www.vimperator.org/muttator>,download and Thunderbird install it from file
@@ -929,6 +948,13 @@ binary                          #if put meets bugs
         + gt - goto new tabs
         + gi - goto inbox
         + w - watch the structure;
+
+3. Remove:
+    Go to menu: Edit, Account Settings...
+    Select account name on the left
+    Either make any changes here (on the right) or Remove Account from the drop-down menu opened by clicking the Account Actions button at the bottom left
+
+
 
 
 ### 14. Dropbox
@@ -1024,6 +1050,8 @@ Fcitx-> Global Config -> Trigger Input Method: super+space
 <http://www.pinyinjoe.com/linux/ubuntu-10-chinese-input-pinyin-chewing.htm>
 <http://www.cnblogs.com/youxia/p/linux009.html>
 
+Japanese : Anthy Input
+Pinyin : Google Input
 #### Error:
 1. No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
 
@@ -1093,6 +1121,8 @@ i3wm : release
 
 <https://mralphaville.wordpress.com/2014/08/13/i3-window-manager/>
 
+best i3wm introduction:
+<https://abstatic.github.io/2016/07/01/how-i-use-i3wm/>
 ### 19. Zotero
 Follow my own instruction guide.
 Use Dropbox for Syncronization
@@ -1119,6 +1149,9 @@ nnoremap zz :r!cite<CR>
 in vim, I can excute :r!cite or just zz in normal mode
 
 Ref:MIT <http://libguides.mit.edu/c.php?g=176000&p=1159208>
+
+vim snippets:
++ git clone https://github.com/honza/vim-snippets
 
 ### 20. Visio Alternatives(Only Win)
 + Diagram - yEd , Dia Diagram
@@ -1195,6 +1228,7 @@ I'd like to use Franz, more useful.
 
 ### 23. Netease Cloud Music
 ```
+sudo rpm -ivh xxx.rpm
 sudo dpkg -i xxx.deb
 sudo apt-get -f install     #if meet some error, dpkg -i to install deb package will not install dependency automatically
 ```
@@ -1226,6 +1260,32 @@ dpkg: dependency problems prevent configuration of netease-cloud-music:
  netease-cloud-music depends on libqt5libqgtk2; however:
   Package libqt5libqgtk2 is not installed.
 ```
+```
+teamviewer depends on qtdeclarative5-dialogs-plugin (>= 5.2) | qml-module-qtquick-dialogs (>= 5.2); however:
+    Package qtdeclarative5-dialogs-plugin is not installed.
+    Package qml-module-qtquick-dialogs is not installed.
+```
+teamviewr quicksupport seems not work normally
+
+
+#### modify DNS and break through the area restriction
+```
+$ sudo vim /etc/hosts
+# 网易云音乐数据传输服务器反代
+# # 参见: https://s.jixun.moe/cloud-music-hosts
+79.137.38.20 music.163.com
+#
+# # 归属地查询服务器反代
+79.137.38.20 ip.ws.126.net
+#
+# # HTTPS DNS 服务器屏蔽
+127.0.0.9 music.httpdns.c.163.com
+```
+ping music.163.com      # get  79.137.38.20, => done
+
+
+
+
 
 ### 24. PDF Tool Introduction
 pdf split - pdftk
@@ -1498,7 +1558,6 @@ Linux Version: uname -or ; lsb_release -irc
 grip    # pip install grip
 pandoc # universal type convert
 
-
 ### 42. ipython Jupyter
 pip install jupyter
 cd workdir
@@ -1760,7 +1819,7 @@ vim /etc/host/source.list
 ### 64. pdf cropper
 online => search pdf cropper            # very slow and inconvinient
 python tool => pypdf2                   # batch processing, but not interactively
-ubuntu tools => briss                   # java <https://onetransistor.blogspot.hk/2016/01/pdf-crop-linux-software.html>
+ubuntu tools => briss                   # java <https://onetransistor.blogspot.hk/2016/01/pdf-crop-linux-software.html>, pdf-trim, pdf-crop
 
 ### 65. install unrar on centos
 yum install unrar, cannot find unrar
@@ -1779,6 +1838,7 @@ echo -e "\033[5 q"]"
 ```
 https://bbs.archlinux.org/viewtopic.php?id=177281
 
+sudo apt-get install rxvt-unicode
 
 urxvt underscore problem
 change the fontsize from 14 to 13
@@ -1786,6 +1846,139 @@ change the fontsize from 14 to 13
 urxvt -fc "xft:Font Awesome"
 urxvt -fc "xft:DejaVu Sans Mono:style=Book:antialias=false:size=8"
 urxvt -fc "xft:Microsoft Yahei:style=Book:antialias=false:size=8"
+
+## 67. Know how much size
+du -sh *
+<http://www.kavoir.com/2009/09/linux-check-how-much-disk-storage-each-directory-takes-up-disk-usage-command-du.html>
+
+## 68. Bluetooth - PC
+```
+bluetoothctl
+
+list
+devices
+trust FC:A8:9A:A3:50:7A
+pair FC:A8:9A:A3:50:7A
+connect FC:A8:9A:A3:50:7A
+```
+
+<https://gist.github.com/nickboldt/a38627408d32fcf7c365>
+
+how to setup a Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
+<https://askubuntu.com/questions/779442/how-to-setup-a-cambridge-silicon-radio-ltd-bluetooth-dongle-hci-mode>
+
+<https://askubuntu.com/questions/763939/bluetoothctl-what-is-a-bluetooth-agent>
+
+## 68-1. sony headphone Bluetooth
+```
+sudo apt-get update
+sudo apt-get upgrade    #check input
+sudo apt-get install blueman
+sudo apt-get install pulseaudio
+sudo apt-get install pulseaudio-module-bluetooth
+sudo apt-get install bluez
+blueman => Device => setup => audio sink => next  ...
+```
+<https://github.com/blueman-project/blueman/issues/158>
+
+## 69. Ctrl+Semicolon(;)
+fictx, clipboard
+an addon in fcitx named Clipboard. To disable it, simply open Fcitx Configuration -> Addon -> Clipboard, then either disable it or change its trigger key. Addon -> Clipboard
+
+urxvt cannot paste long text: use ctrl+alt+v
+
+## 70. Harddriver lifetime
+sudo apt-get install smartmontools
+sudo smartctl --all /dev/sda | grep Power_On_Hours
+
+## 71. Share a file to be viewed on line
+Browse files on a server or network share <https://help.ubuntu.com/stable/ubuntu-help/nautilus-connect.html>
+vsftpd <https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-a-user-s-directory-on-ubuntu-16-04>
+<https://ubuntuforums.org/showthread.php?t=1487996>
+
+enable vsftpd installation: anonymous_enable=yes
+<https://help.ubuntu.com/lts/serverguide/ftp-server.html>
+
+```
+anon_root=/home/you/public
+```
+```
+sudo apt-get install vsftpd
+sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
+
+# check firefox
+sudo ufw status
+sudo systemctl restart vsftpd # restart
+```
+change username : sudo usermod -l newUsername oldUsername
+                  sudo usermod -d /home/newHomeDir -m newUsername
+delete a user: sudo deluser --remove-home newuser
+change password: passwd
+
+local share: samba      <https://help.ubuntu.com/lts/serverguide/samba-fileserver.html>
+
+## 72. expect
+<https://www.thegeekstuff.com/2010/10/expect-examples/>
+expect
+
+## 73. chinese character error decode
+sudo apt-get install fonts-wqy-zenhei
+
+## 73. install ubuntu in chromebook
+Open Develop Mode
+
+esc-refresh-power
+press Ctrl-D to continue every time
+
+ctrl alt shift and <- and ->
+
+<https://tutorials.ubuntu.com/tutorial/install-ubuntu-on-chromebook#1>
+<https://github.com/dnschneid/crouton/wiki/i3>
+
+
+setxkbmap
+cat /usr/share/X11/xkb/rules/evdev.lst  | grep win
+
+shift between i3 and chromeos
+ctrl, shift, alt + -> and <-    (F1/F2)
+
+## 75. urxvt copy and paste
+```
+#script to copy/paste text in URXVT
+#! perl
+sub on_sel_grab {
+    my $query = $_[0]->selection;
+    open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
+    print $pipe $query;
+    close $pipe;
+}
+sub paste {
+    my ($self) = @_;
+    my $content = `/usr/bin/xclip -loop 1 -out -selection clipboard` ;
+    $self->tt_write ($content);
+}
+sub on_user_command {
+    my ($self, $cmd) = @_;
+    if ($cmd eq "clipboard:paste") {
+        $self->paste;
+    }
+}
+
+# Add to your .Xdefaults (or .Xresources) the following lines:
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
+```
+https://coderwall.com/p/z9dtiw/copy-paste-text-in-urxvt-rxvt-unicode-using-keyboard
+
+## 75. modelsim install
+<http://vineeshvs.blogspot.hk/2014/02/installing-and-using-modelsim-in-ubuntu.html>
+~/Software/altera/13.1/modelsim_ae/linux/vsim
+
+## 77. apt-file find
+apt-file
+<https://ubuntuforums.org/showthread.php?t=1036169>
+
 
 #### ERROR
 1.TIFF4 depency:
@@ -1821,7 +2014,9 @@ urxvt -fc "xft:Microsoft Yahei:style=Book:antialias=false:size=8"
 #IV. Hardware Help
 ## 1. Lab Printer Help
 Ubuntu Add Printer:
-Printers -> Add -> Network Printer -> Find Network Printer -> Choose Kyocera FS-2100DN (143.89.135.11) -> Connections( LPD network printer via DNS-SD) -> Forward, Forward -> Ubuntu will choose to use 1st cassete
+Printers -> Add -> Network Printer -> Find Network Printer -> Choose Kyocera FS-2100DN (EEL61, 172.16.241.61) -> Connections( LPD network printer via DNS-SD) -> Forward, Forward -> Ubuntu will choose to use 1st cassete
+
+eems04\eel61 to find the printer. Its IP is 172.16.241.61
 ### Ubuntu Office Print
 IPP Device URI: https://eems04.ee.ust.hk/printers/esl080/.printer
 Make and Model: HP LaserJet 9050 Postscript (recommended)
