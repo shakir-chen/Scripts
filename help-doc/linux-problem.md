@@ -1267,6 +1267,21 @@ teamviewer depends on qtdeclarative5-dialogs-plugin (>= 5.2) | qml-module-qtquic
 ```
 teamviewr quicksupport seems not work normally
 
+```
+dpkg: dependency problems prevent configuration of klayout:
+klayout depends on libqt4-designer (>= 4.8.6); however:
+Package libqt4-designer is not installed.
+
+dpkg: error processing package klayout (--install):
+dependency problems - leaving unconfigured
+Processing triggers for desktop-file-utils (0.22-1ubuntu5.2) ...
+Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20180209-0ubuntu1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
+Processing triggers for mime-support (3.59ubuntu1) ...
+jErrors were encountered while processing:
+klayout
+```
 
 #### modify DNS and break through the area restriction
 ```
@@ -2030,5 +2045,11 @@ Cancel a print task: when it comes "load papers in a cassete", press red button 
 #V. Bug
 ## 1. Bash: Bad Substitute Error
 bash xxx.sh instead of sh xxx.sh
+
+# shawdowsocks
+https://sourceforge.net/projects/shadowsocksgui/files/dist/ shadowsocks-gui-0.6.4-linux-x64.tar.xz
+tar xf shadowsocks-gui-0.6.4-linux-x64.tar.xz
+ ./start.sh
+<https://blog.csdn.net/span76/article/details/50666973>
 
 

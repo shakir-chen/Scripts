@@ -339,7 +339,7 @@ alias cheatedit="cheat -e"
 
 # tar
 alias tarc="tar -cvzf"
-alias tarx="tar -xvzf"
+alias tarx="tar -xvzf"      # tar.bz2 use -jxf
 
 # clear
 alias cl="clear"
@@ -1226,4 +1226,16 @@ export ROS_MASTER_URI=http://$ROS_IP:11311/
 
 #gdb
 ulimit -c unlimited
+
+# Luceda
+# added by Miniconda2 installer
+export PATH="/home/shakir/miniconda2/bin:$PATH"
+alias vimluceda="vim ~/lucedanotes.md"
+alias cdluceda="cd ~/Software/luceda"
+alias cdipkiss="cd ~/Software/luceda/ipkiss.eda"
+alias sourceipkiss="source activate ipkiss3"
+alias docluceda="luceda-doc"
+# alias py="python"
+alias vimnote="vim ~/Dropbox/notes_intern.md"
+
 
