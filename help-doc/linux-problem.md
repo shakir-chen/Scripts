@@ -1359,6 +1359,11 @@ No Use here due to install windrvr6 => not support for newest Ubuntu Kernel even
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
 
+### 26.1 change a new ubuntu repo
+vim /etc/apt/sources.list
+sudo apt-get update
+
+
 ### 27. mount and umount
 ```
 fdisk -l

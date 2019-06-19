@@ -194,6 +194,8 @@ stty -ixon  # change ctrl-s to search
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 export LM_LICENSE_FILE="7852@eesur5.ece.ust.hk"     # modelsim
 
+# zip existing.zip --out new.zip -s 50m             => seperate zip to different parts
+
 # Setup Scripts =====
 # source ~/.helprc
 # bash Soft-Open.sh       # Setup Programs
@@ -353,6 +355,8 @@ alias py="python3.5"
 alias py3.5="python3.5"
 alias py2.7="python2.7"
 alias ipythoni="ipython3 -i ~/Software/Scripts/pdb/ipython_init.py"
+
+# alias mp3split="mptsplit input.mp3 [00:00:20-00:00:58] -o output.mp3"
 
 
 # pdf reader
@@ -932,6 +936,9 @@ alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdcadence="cd /usr/eelocal/cadence"
 alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
+
+alias cdsilly="cd ~/Dropbox/silly"
+
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killpy(){
@@ -1230,12 +1237,30 @@ ulimit -c unlimited
 # Luceda
 # added by Miniconda2 installer
 export PATH="/home/shakir/miniconda2/bin:$PATH"
+# # export PATH="/home/shakir/Software/wine/wine-3.21:$PATH"
+export PATH="/usr/local/bin/:$PATH"
 alias vimluceda="vim ~/lucedanotes.md"
 alias cdluceda="cd ~/Software/luceda"
 alias cdipkiss="cd ~/Software/luceda/ipkiss.eda"
 alias sourceipkiss="source activate ipkiss3"
 alias docluceda="luceda-doc"
-# alias py="python"
 alias vimnote="vim ~/Dropbox/notes_intern.md"
+alias cstmount="sudo mount -t iso9660 -o ro,exec cst_linux.iso /mnt"
+alias cstrun="/opt/cst/CST_STUDIO_SUITE_2018/cst_design_environment_gui"
+export WINEARCH="win64"
+# export WINEPATH='/home/shakir/.wine/drive_c/MentorGraphics/Tanner EDA/Tanner Tools v2018.3/x64'
+# export WINEDLLPATH='/home/shakir/.wine/drive_c/MentorGraphics/Tanner EDA/Tanner Tools v2018.3/x64'
+export WINEDLLPATH="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64\\"
+export WINEDLLPATH="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64\\oa\\bin\\x64\\opt:$WINEDLLPATH"
 
+# export WINEPREFIX="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64"
+# export WINEPATH="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64"
 
+# export WINEDLLPATH='C:\MentorGraphics\Tanner EDA\Tanner Tools v2018.3\x64\ledit64.exe'
+alias winetspice="wine ~/.wine/drive_c/MentorGraphics/Tanner\ EDA/Tanner\ Tools\ v2018.3/x64/tspice64.exe"
+alias wineledit="wine ~/.wine/drive_c/MentorGraphics/Tanner\ EDA/Tanner\ Tools\ v2018.3/x64/ledit64.exe"
+
+export TANNER_PATH="/home/shakir/Software/tanner/tanner"
+export PATH="${PATH}:/home/shakir/Software/tanner/tanner/bin"
+
+# export WINE="/usr/local/bin/wine"
