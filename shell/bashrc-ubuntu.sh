@@ -38,6 +38,9 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+# min js to min.js      ==>  uglify *.js >> *.min.js
+
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -101,6 +104,7 @@ alias fehbgfill="feh --bg-fill"
 alias fehscreen="feh --bg-fill ~/Dropbox/Linux/Pictures/wallpaper/chip/intel-chip-wallpaper.jpg"
 alias fehscreencd="cd ~/Dropbox/Linux/Pictures/wallpaper/"
 alias i3lock="i3lock -i ~/Dropbox/Linux/Pictures/wallpaper/nature/lock/3.png"
+# variety:  wallpaper desktop
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -261,6 +265,9 @@ alias vimpy="vimfind python"
 alias vimjava="vimfind java"
 alias vimbuild="vimfind build-compile"
 alias vimcv="vimfind cv"        # opencv
+alias vimsnipptpy="vim ~/.vim/UltiSnips/python.snippets"        # opencv
+alias vimmatplotlibstyle="vim ~/.config/matplotlib/stylelib/xuanqi-seaborn.mplstyle"
+
 function vimfind(){
     if [ -f ~/Software/Scripts/help-doc/$1.md ]; then
        vim ~/Software/Scripts/help-doc/$1.md
@@ -332,6 +339,7 @@ alias ustvpncheck="ps -ef |grep 'pulseclient'"
 alias vpn="/usr/local/pulse/PulseClient.sh"
 alias vpnui="/usr/local/pulse/pulseUi"
 alias ustsftp="sftp xchenbr@sftp.student.ust.hk"        # start vpn first
+alias vpnportopen="sudo firewall-cmd --zone=public --add-port=5900/tcp"     # server vpn opening, 5900-5904
 
 #cheat-github
 alias cheatls="cheat -l"
@@ -360,6 +368,7 @@ alias ipythoni="ipython3 -i ~/Software/Scripts/pdb/ipython_init.py"
 # pdf reader
 alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
 # pdfcut in.pdf 7       pdfcut in.pdf 7-end
+# pdfunite input_list output.pdf                join multiple pdf
 function pdfcut() {
     pdftk "$1" cat "$2" output cut-"$2".pdf 
 }
@@ -517,7 +526,7 @@ function ssh-server() {
     elif [ "$1" = "cs" ]
     then
         servername="xchenbr@csl2wk10.cse.ust.hk"
-    elif [ "$1" = "cs" ]
+    elif [ "$1" = "ece" ]
     then
         servername="xchenbr@acf2013.ece.ust.hk"
     elif [ "$1" = "std" ]
@@ -661,7 +670,8 @@ alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
-alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/Jade-hotspot -m 'Xuanqi private branch with hotspot'"
+alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot' -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
+alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot JADE-hotspot"
 alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
 # groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
 alias svnupimm="svn update --set-depth immediates "
@@ -720,6 +730,11 @@ function svnsubmit(){
 #svn ls
 export LC_CTYPE=en_US.UTF-8
 
+
+# ffmpeg, png to mp4 (gif)
+function ffmpegmp4(){
+    ffmpeg -framerate 4 -i Gen_Ring_64_%04d.png -c:v libx264 -r 30 out.mp4
+}
 # music ffmpeg, mp4 to mp3
 function ffmpegmp3(){
     mp3fname=$(echo $1 | sed -r 's/\.\S+/\.mp3/g')
@@ -896,6 +911,12 @@ function pdf2jpgall(){
         # convert -density 150 *.pdf -quality 90 output.png
     done
 }
+function pdfrotate(){
+    newf=${1/.pdf/}
+    pdftk $1 cat 1-endeast output $newf"_e.pdf"
+    # pdftk $1 cat 1-endwest output $1_w.pdf
+}
+
 function convertgif(){
     convert -delay 1 -loop 0 $1 o.gif
 }
@@ -912,7 +933,7 @@ alias cdtac="cd ~/Dropbox/Course/TAC"
 alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
-alias cdjade="cd ~/Research/Jade"
+alias cdjade="cd ~/Software/JADE-hotspot"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Software/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
@@ -923,6 +944,7 @@ alias cdftp="cd /srv/ftp/"
 alias cdcourse="cd ~/Dropbox/Course"
 alias cdbook="cd ~/Dropbox/Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
+alias cdhotspot="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/hotspot"
 alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
@@ -933,6 +955,17 @@ alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
+
+function killapp(){
+    ps -ef | grep $1
+    apppid=$(ps -ef | grep $1 | grep -v grep | awk '{print $2}')
+    echo "kill ps:" $apppid
+    for apppid_ii in $apppid
+    do
+        # echo $pypid_ii
+        kill -9 $apppid_ii
+    done
+}
 
 function killpy(){
     ps -ef | grep $1 | grep python3.5
@@ -1098,7 +1131,22 @@ alias qmakep="qmake -project -o"
 #convert, image process
 alias convertvertapd="convert -append"
 alias converthoriapd="convert +append"
+alias convertinfo="file"
 
+
+function aspectadj(){
+for f in *.jpg
+do
+    echo $f
+    newf=${f/.jpg/_p.jpg}
+    ./aspectpad -a 1.333 -m p -p white $f $newf
+done
+}
+#kill process
+# function freemem(){
+    # killapp make
+    # killapp jade.exec
+# }
 
 # #help-doc
 # function helpterm() {
@@ -1226,4 +1274,5 @@ export ROS_MASTER_URI=http://$ROS_IP:11311/
 
 #gdb
 ulimit -c unlimited
+
 

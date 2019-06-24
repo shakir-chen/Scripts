@@ -119,6 +119,11 @@ Navigation
 
 
 
+Tagbar      <F9>
+CtrlP       ,p  or ,f
+vim-easymotion  ,,+w jump   ,,+fe find'e' and jump to that position
+Youcompletme    ,gd jump to declaration place
+multiple-cursor ctrl+m begin to select ; ctrl + p  up cease ; ctrl +x skip; esc
 
 
 

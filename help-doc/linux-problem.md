@@ -681,6 +681,10 @@ Ref: <http://stackoverflow.com/questions/50945/can-you-do-a-partial-checkout-wit
 
 <http://beerpla.net/2008/07/23/how-to-check-if-the-local-svn-revision-is-up-to-date/>
 
+lab:jade_workspace]$ svncmdefault 
+svn: E145001: Commit failed (details follow):
+svn: E145001: Node '/home/xuanqi/svn/Discussion/Xuanqi Chen/Tools/hotspot/jade_workspace/hotspot' has unexpectedly changed kind
+
 ### 3. Other tools
 + PDF Reader-> evince
 + Microsoft Office -> Libreoffice
@@ -848,7 +852,7 @@ sudo sensors-detect
 sensors
 ```
 
-### 10. Account in Ubuntu
+### 10. Account in Ubuntu (add a user)
 + Add
 
     ```
@@ -862,7 +866,7 @@ sensors
     ```
 ```
             # sudo useradd -m jun -p PASSWORD
-            # sudo usermod -a -G xugroup jun
+                    # # not right# sudo usermod -a -G xugroup jun
             #sudo usermod -g xugroup jun         # xugroup as the primary group
 useradd -g cartoons tom
 cat /etc/group      # determine groups
@@ -1266,7 +1270,27 @@ teamviewer depends on qtdeclarative5-dialogs-plugin (>= 5.2) | qml-module-qtquic
     Package qml-module-qtquick-dialogs is not installed.
 ```
 teamviewr quicksupport seems not work normally
+```
+Franz
 
+Selecting previously unselected package franz.
+(Reading database ... 1031144 files and directories currently installed.)
+Preparing to unpack franz_5.1.0_amd64.deb ...
+Unpacking franz (5.1.0-1337) ...
+jdpkg: dependency problems prevent configuration of franz:
+franz depends on libappindicator1; however:
+   Package libappindicator1 is not installed.
+
+   dpkg: error processing package franz (--install):
+    dependency problems - leaving unconfigured
+    Processing triggers for desktop-file-utils (0.22-1ubuntu5.2) ...
+    Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20180209-0ubuntu1) ...
+    Rebuilding /usr/share/applications/bamf-2.index...
+    Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
+    Processing triggers for mime-support (3.59ubuntu1) ...
+    Processing triggers for hicolor-icon-theme (0.15-0ubuntu1.1) ...
+    Errors were encountered while processing:
+```
 
 #### modify DNS and break through the area restriction
 ```
@@ -1522,6 +1546,10 @@ firefox accelarator:
 2. right click to create new perference/integer, browser.cache.memory.capacity 100,000 kB
 3. about:cache
 <http://lifehacker.com/5687850/speed-up-firefox-by-moving-your-cache-to-ram-no-ram-disk-required>
+
+Google map crashed in my labtop
+addressbar input about:config ==> webgl.disabled set true
+<https://support.mozilla.org/en-US/kb/upgrade-graphics-drivers-use-hardware-acceleration>
 
 ### 39. Qt Install
 wget http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run

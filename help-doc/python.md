@@ -160,6 +160,37 @@ for l in legend.get_lines():
     l.set_alpha(0.7)
     l.set_linewidth(5)
 ```
+set_visible(False)
+
+fig = plt.figure()
+ax = fig.add_axes([0.0, 0.12, 0.95, 0.85], projection = 'rectilinear')
+ax.set_xlabel("X (mm)", fontsize=labelftsize)
+ax.set_ylabel("Y (mm)", fontsize=labelftsize)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
+3. change cbar
+```
+cbar=fig.colorbar(cp, cax=cax1, orientation='horizontal')
+# # ,extendfrac=None,drawedges=1
+cbar_val= [ii for ii in cbar.values if ii<=vmax]
+cbar_val.append( cbar.values[len(cbar_val)] )
+cbar.values = cbar_val
+cbar.boundaries= cbar.values
+# cbar.set_label(cbar_labelname, labelpad=-40)
+
+cbar.vmax = vmax
+cbar.update_ticks()
+cbar.ax.set_autoscale_on(True)
+cbar.draw_all()  # update bar
+```
+
+4. install fenics
+RuntimeError: Expecting a string or list of strings, not {‘slepc_real’, ‘sz’, ‘mpi’, ‘mpi_cxx’, ‘hdf5’, ‘boost_timer’, ‘m’, ‘boost_filesystem’, ‘z’, ‘dolfin’, ‘petsc_real’, ‘dl’}.
+<https://stackoverflow.com/questions/55282761/error-with-compiler-while-trying-to-run-fenics-example-code>
+pip3.5 install -U pkgconfig
+
+
 ## XI. Matrix
 reverse a list : array[::-1]
 <http://stackoverflow.com/questions/3940128/how-can-i-reverse-a-list-in-python>
@@ -272,6 +303,16 @@ mini-webcam => stream of videos to WLAN
 on ubuntu create virtual camera:
 
 epoccam (cannot use)
+
+
+## XX New multiple lists for different variables
+
+```
+# amp, x, y, sigma_x, sigma_y = 5*[[]]          # wil make amp=x=y=[]
+# amp, x, y, sigma_x, sigma_y = [[None]] *5
+amp, x, y, sigma_x, sigma_y = [[] for i in range(5)]
+```
+
 
 ### Compile
 + bytecode : *.pyc ===> uncomple6 can easily read the source code (not safe)
