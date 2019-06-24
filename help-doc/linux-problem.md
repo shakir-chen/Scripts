@@ -1273,6 +1273,7 @@ teamviewr quicksupport seems not work normally
 ```
 Franz
 
+<<<<<<< HEAD
 Selecting previously unselected package franz.
 (Reading database ... 1031144 files and directories currently installed.)
 Preparing to unpack franz_5.1.0_amd64.deb ...
@@ -1290,6 +1291,22 @@ franz depends on libappindicator1; however:
     Processing triggers for mime-support (3.59ubuntu1) ...
     Processing triggers for hicolor-icon-theme (0.15-0ubuntu1.1) ...
     Errors were encountered while processing:
+=======
+```
+dpkg: dependency problems prevent configuration of klayout:
+klayout depends on libqt4-designer (>= 4.8.6); however:
+Package libqt4-designer is not installed.
+
+dpkg: error processing package klayout (--install):
+dependency problems - leaving unconfigured
+Processing triggers for desktop-file-utils (0.22-1ubuntu5.2) ...
+Processing triggers for bamfdaemon (0.5.3~bzr0+16.04.20180209-0ubuntu1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
+Processing triggers for mime-support (3.59ubuntu1) ...
+jErrors were encountered while processing:
+klayout
+>>>>>>> 349c19d3c48a15c58734986c1330da274c8c4a56
 ```
 
 #### modify DNS and break through the area restriction
@@ -1367,6 +1384,11 @@ No Use here due to install windrvr6 => not support for newest Ubuntu Kernel even
 ### 26. VNC Viewer
 login to the server
 vncviewer 143.89.44.164:3 or vncviewer rostam:3
+
+### 26.1 change a new ubuntu repo
+vim /etc/apt/sources.list
+sudo apt-get update
+
 
 ### 27. mount and umount
 ```
@@ -2058,5 +2080,11 @@ Cancel a print task: when it comes "load papers in a cassete", press red button 
 #V. Bug
 ## 1. Bash: Bad Substitute Error
 bash xxx.sh instead of sh xxx.sh
+
+# shawdowsocks
+https://sourceforge.net/projects/shadowsocksgui/files/dist/ shadowsocks-gui-0.6.4-linux-x64.tar.xz
+tar xf shadowsocks-gui-0.6.4-linux-x64.tar.xz
+ ./start.sh
+<https://blog.csdn.net/span76/article/details/50666973>
 
 

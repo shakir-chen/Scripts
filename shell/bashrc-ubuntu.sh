@@ -135,23 +135,21 @@ if [ "$USER" == "shakir" ] ; then           # laptop
     setxkbmap -option caps:ctrl_modifier
 fi
 
-#User Define XuanqiPath
-# added by Anaconda 2.2.0 installer
-#export PATH="/home/rafael/softwares/anaconda/bin:${PATH}"
-#export PATH=/home/rafael/softwares/valgrind/valgrind/bin:${PATH}
-#export LD_LIBRARY_PATH=/home/rafael/softwares/anaconda/lib:${LD_LIBRARY_PATH}
-# added by git Xuanqi
-export PATH=~/Linux/bin:${PATH}
 export PATH=~/Software/Scripts/linux-bin:${PATH}
 export PATH=~/Software/Franz/:${PATH}
-export LD_LIBRARY_PATH=~/Linux/lib:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=~/Linux/lib64:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH=/usr/local/pulse:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+# export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/pulse:$LD_LIBRARY_PATH
+
+# Rafael Newest gcc & boost
+export PATH=/local/home/rafael/softwares/gcc/bin:${PATH}
+export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib:$LD_LIBRARY_PATH
+export BOOST_ROOT=/home/rafael/softwares/boost/src
+export LD_LIBRARY_PATH=$BOOST_ROOT/lib:$LD_LIBRARY_PATH
 
 # export LD_LIBRARY_PATH=/usr/local/lib/libglfw3.a:${LD_LIBRARY_PATH}
-export BOOST_ROOT=~/Software/boost/include
+# export BOOST_ROOT=~/Software/boost/include
 # export GLFW_SOURCE_DIR=/home/xuanqi/Downloads/glfw/glfw-3.2.1
 
 # cheat add
@@ -199,6 +197,8 @@ stty -ixon  # change ctrl-s to search
 # export XILINXD_LICENSE_FILE="2100@eems05.ece.ust.hk"
 # export LM_LICENSE_FILE="2100@eems05.ece.ust.hk"
 export LM_LICENSE_FILE="7852@eesur5.ece.ust.hk"     # modelsim
+
+# zip existing.zip --out new.zip -s 50m             => seperate zip to different parts
 
 # Setup Scripts =====
 # source ~/.helprc
@@ -347,7 +347,7 @@ alias cheatedit="cheat -e"
 
 # tar
 alias tarc="tar -cvzf"
-alias tarx="tar -xvzf"
+alias tarx="tar -xvzf"      # tar.bz2 use -jxf
 
 # clear
 alias cl="clear"
@@ -363,6 +363,8 @@ alias py="python3.5"
 alias py3.5="python3.5"
 alias py2.7="python2.7"
 alias ipythoni="ipython3 -i ~/Software/Scripts/pdb/ipython_init.py"
+
+# alias mp3split="mptsplit input.mp3 [00:00:20-00:00:58] -o output.mp3"
 
 
 # pdf reader
@@ -670,8 +672,14 @@ alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
+<<<<<<< HEAD
 alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot' -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
 alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot JADE-hotspot"
+=======
+alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'Xuanqi private branch with hotspot'"
+
+alias svnsetjade="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot Jade-hotspot" # svn on virtual server
+>>>>>>> 349c19d3c48a15c58734986c1330da274c8c4a56
 alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
 # groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
 alias svnupimm="svn update --set-depth immediates "
@@ -954,6 +962,9 @@ alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdcadence="cd /usr/eelocal/cadence"
 alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
+
+alias cdsilly="cd ~/Dropbox/silly"
+
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
 
 function killapp(){
@@ -1275,4 +1286,37 @@ export ROS_MASTER_URI=http://$ROS_IP:11311/
 #gdb
 ulimit -c unlimited
 
+<<<<<<< HEAD
 
+=======
+# Luceda
+# added by Miniconda2 installer
+export PATH="/home/shakir/miniconda2/bin:$PATH"
+# # export PATH="/home/shakir/Software/wine/wine-3.21:$PATH"
+export PATH="/usr/local/bin/:$PATH"
+alias vimluceda="vim ~/lucedanotes.md"
+alias cdluceda="cd ~/Software/luceda"
+alias cdipkiss="cd ~/Software/luceda/ipkiss.eda"
+alias sourceipkiss="source activate ipkiss3"
+alias docluceda="luceda-doc"
+alias vimnote="vim ~/Dropbox/notes_intern.md"
+alias cstmount="sudo mount -t iso9660 -o ro,exec cst_linux.iso /mnt"
+alias cstrun="/opt/cst/CST_STUDIO_SUITE_2018/cst_design_environment_gui"
+export WINEARCH="win64"
+# export WINEPATH='/home/shakir/.wine/drive_c/MentorGraphics/Tanner EDA/Tanner Tools v2018.3/x64'
+# export WINEDLLPATH='/home/shakir/.wine/drive_c/MentorGraphics/Tanner EDA/Tanner Tools v2018.3/x64'
+export WINEDLLPATH="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64\\"
+export WINEDLLPATH="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64\\oa\\bin\\x64\\opt:$WINEDLLPATH"
+
+# export WINEPREFIX="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64"
+# export WINEPATH="C:\\MentorGraphics\\Tanner EDA\\Tanner Tools v2018.3\\x64"
+
+# export WINEDLLPATH='C:\MentorGraphics\Tanner EDA\Tanner Tools v2018.3\x64\ledit64.exe'
+alias winetspice="wine ~/.wine/drive_c/MentorGraphics/Tanner\ EDA/Tanner\ Tools\ v2018.3/x64/tspice64.exe"
+alias wineledit="wine ~/.wine/drive_c/MentorGraphics/Tanner\ EDA/Tanner\ Tools\ v2018.3/x64/ledit64.exe"
+
+export TANNER_PATH="/home/shakir/Software/tanner/tanner"
+export PATH="${PATH}:/home/shakir/Software/tanner/tanner/bin"
+
+# export WINE="/usr/local/bin/wine"
+>>>>>>> 349c19d3c48a15c58734986c1330da274c8c4a56
