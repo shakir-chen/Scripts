@@ -672,14 +672,11 @@ alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
-<<<<<<< HEAD
+
 alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot' -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
 alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot JADE-hotspot"
-=======
-alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'Xuanqi private branch with hotspot'"
-
+# alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'Xuanqi private branch with hotspot'"
 alias svnsetjade="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot Jade-hotspot" # svn on virtual server
->>>>>>> 349c19d3c48a15c58734986c1330da274c8c4a56
 alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
 # groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
 alias svnupimm="svn update --set-depth immediates "
@@ -1286,9 +1283,6 @@ export ROS_MASTER_URI=http://$ROS_IP:11311/
 #gdb
 ulimit -c unlimited
 
-<<<<<<< HEAD
-
-=======
 # Luceda
 # added by Miniconda2 installer
 export PATH="/home/shakir/miniconda2/bin:$PATH"
@@ -1319,4 +1313,3 @@ export TANNER_PATH="/home/shakir/Software/tanner/tanner"
 export PATH="${PATH}:/home/shakir/Software/tanner/tanner/bin"
 
 # export WINE="/usr/local/bin/wine"
->>>>>>> 349c19d3c48a15c58734986c1330da274c8c4a56
