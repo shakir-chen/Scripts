@@ -689,6 +689,14 @@ alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
 alias svncmdefault="svn commit -m 'up-refresh'"
 alias svnconflict="svn resolve --accept=working"       # "C" indicate a tree conflict, renamed by another user
+alias svnstatusnoignore="svn status --no-ignore"       # show all unstatus file
+alias svnlsignore="svn proplist -v -R . | grep -A1 ignore" #  svn proplist -v -R [TARGET]
+alias svndelignore="svn propdel svn:ignore -R"
+
+alias svnsetglobalignore="svn propset svn:global-ignores -R"       # show all unstatus file
+# alias svnsetignore="svn propset svn:ignore"       # show all unstatus file
+
+alias vtuview="paraview" #vtu paraview
 
 function svnrefreshM(){
     IFS=$'\n'
