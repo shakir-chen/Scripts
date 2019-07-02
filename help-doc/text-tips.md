@@ -4,20 +4,15 @@ find -name .svn -exec rm -rf {} \;
 find ~/ -type f -name "*.md"
 ```
 
-
 #regex
-
-
 .       any single character
 *       zero or more
 +       one or more times
 <https://www.cyberciti.biz/faq/grep-regular-expressions/>
 
-
 #Search
 
 ## Vim Search
-
 ```
 #delete last word of line
 :%s/\s\+\w\+$//         #\s whitespace; \+ one or more; \w word ; $ end of line
@@ -36,7 +31,6 @@ Vim Search and Copy
 ```
 
 http://vimregex.com/
-
 
 ```
 \(\<\w\+\>\)\_s*\<\1\>
