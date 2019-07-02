@@ -1795,6 +1795,8 @@ sudo apt-get update
 + GNU coding standards
 <http://stackoverflow.com/questions/719057/why-use-build-tools-like-autotools-when-we-can-just-write-our-own-makefiles>
 
+no output:      "make &>/dev/null"
+
 ### 60. Develp Tools (pkg-config, locale)
 1. pkg-config
 pkg-config --list-all | grep ltdl       #shows nothing
@@ -1842,6 +1844,7 @@ Finally, pkg-config (version 0.24 or later), but mine is 0.21
 
 
 2. locale
+
 
 ### 61. Mount USB
 ```

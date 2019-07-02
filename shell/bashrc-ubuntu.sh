@@ -255,7 +255,7 @@ alias vim="vi"
 alias vimplan="vim ~/plan.txt"
 alias vimbashrc="vim ~/.bashrc"
 alias vimhelprc="vim ~/.helprc"
-alias vimmakefile="vim Makefile"
+alias vimmakefile="vim Makefile"                # no ouput:  &>/dev/null
 alias vimbus="vim ~/Dropbox/Linux/notes/business.md"
 alias vimos="vimfind os"
 alias vimlife="vimfind vim-life"
@@ -267,6 +267,8 @@ alias vimbuild="vimfind build-compile"
 alias vimcv="vimfind cv"        # opencv
 alias vimsnipptpy="vim ~/.vim/UltiSnips/python.snippets"        # opencv
 alias vimmatplotlibstyle="vim ~/.config/matplotlib/stylelib/xuanqi-seaborn.mplstyle"
+
+alias makenoout="make &>/dev/null"
 
 function vimfind(){
     if [ -f ~/Software/Scripts/help-doc/$1.md ]; then
