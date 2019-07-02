@@ -210,7 +210,7 @@ echo -e "\033[6 q"      # not blink, vertical bar, cursor
 
 # grep =======================================================
 #alias grep --color=auto
-alias gp="grep -R --exclude-dir=.svn --color=auto" #grep >=2.5.2    R/r: with/without link file
+alias gpnosvn="grep -R --exclude-dir=.svn --exclude='*.o' --color=auto" #grep >=2.5.2    R/r: with/without link file
 alias gp="grep -R "
 alias gp3="grep -A 1 -B 1 -r --color=auto" #grep in detail
 alias gp4="grep -A 2 -B 1 -r --color=auto" #grep in detail 4 lines
@@ -262,11 +262,15 @@ alias vimlife="vimfind vim-life"
 alias vimtext="vimfind text-tips"
 alias vimproblem="vimfind linux-problem"
 alias vimpy="vimfind python"
-alias vimjava="vimfind java"
+# alias vimjava="vimfind java"
+alias vimjade="vim ~/svn/Discussion/Xuanqi\ Chen/Tools/Jade/JADE-Dairy.md"
 alias vimbuild="vimfind build-compile"
 alias vimcv="vimfind cv"        # opencv
 alias vimsnipptpy="vim ~/.vim/UltiSnips/python.snippets"        # opencv
-alias vimmatplotlibstyle="vim ~/.config/matplotlib/stylelib/xuanqi-seaborn.mplstyle"
+alias vimsnipptmd="vim ~/.vim/UltiSnips/mkd.snippets"        # opencv
+alias vimstylempl="vim ~/.config/matplotlib/stylelib/xuanqi-seaborn.mplstyle"
+alias vimi3config="vim ~/.i3/config"
+alias vimzathurarc="vim /etc/zathurarc"
 
 alias makenoout="make &>/dev/null"
 
@@ -310,6 +314,8 @@ alias maker="make run"
 alias makec="make clean"
 alias maketee="make 2>&1| tee maketee.log"
 alias xpropwm="xprop | grep WM_CLASS"
+alias xpropls="xprop -notype -root"         # xwininfo
+
 
 alias ctagsr="ctags --extra=+f -R ."
 
@@ -379,6 +385,13 @@ function pdfcut() {
 # png trim
 function pngtrim() {
     convert "$1" -trim "$1"
+}
+
+function pdfcompress() {
+PDFNAME=$(echo $1 | sed -r "s/\.pdf/_c.pdf/g")
+echo "$1 ==> $PDFNAME"
+# /screen 72dpi, /printer 300dpi, /ebook 150dpi, /default lager
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
 }
 
 #alias pdf="acroread"       #centos
@@ -673,10 +686,13 @@ alias synergyclab="synergyc -f 10.89.134.149 &"
 alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
+export PATH=~/.config/jade:${PATH}             # selenium driver geckodriver
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
 
 alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot' -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
+alias svnbranchjadehotrev_2="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-pow-hotspot' -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
 alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot JADE-hotspot"
+alias svncojadetrunk="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE JADE-trunk"
 # alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'Xuanqi private branch with hotspot'"
 alias svnsetjade="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot Jade-hotspot" # svn on virtual server
 alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
@@ -691,6 +707,14 @@ alias svnrefreshdelinfo="svn st | grep '^!' | sed -e 's/!\s\+//'"       #delete
 alias svngrep="svn ls --depth infinity | grep "
 alias svncmdefault="svn commit -m 'up-refresh'"
 alias svnconflict="svn resolve --accept=working"       # "C" indicate a tree conflict, renamed by another user
+alias svnstatusnoignore="svn status --no-ignore"       # show all unstatus file
+alias svnlsignore="svn proplist -v -R . | grep -A1 ignore" #  svn proplist -v -R [TARGET]
+alias svndelignore="svn propdel svn:ignore -R"
+
+alias svnsetglobalignore="svn propset svn:global-ignores -R"       # show all unstatus file
+# alias svnsetignore="svn propset svn:ignore"       # show all unstatus file
+
+alias vtuview="paraview" #vtu paraview
 
 function svnrefreshM(){
     IFS=$'\n'
@@ -941,6 +965,7 @@ alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Software/JADE-hotspot"
+alias cdjadetrunk="cd ~/svn/Software\ Release/JADE/trunk/JADE"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Software/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
@@ -965,6 +990,9 @@ alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
 alias cdsilly="cd ~/Dropbox/silly"
 
 # alias dirsx="dirs | sed -r 's/\s/\\ /' | xclip"
+
+alias killjade="killapp jade; killapp make; killapp run_examples"
+alias checkmem="ps -o pid,user,%mem,command ax | sort -b -k3 -r | grep xuanqi | less"
 
 function killapp(){
     ps -ef | grep $1
@@ -1137,6 +1165,7 @@ alias importh="import helper.png"
 
 #qmake
 alias qmakep="qmake -project -o"
+alias makejade="./make_example.sh"
 
 #convert, image process
 alias convertvertapd="convert -append"

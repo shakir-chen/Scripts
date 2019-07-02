@@ -2090,4 +2090,8 @@ tar xf shadowsocks-gui-0.6.4-linux-x64.tar.xz
  ./start.sh
 <https://blog.csdn.net/span76/article/details/50666973>
 
+# Paraview
+color scale editor => choose present => viridis
+background (left bottom side) 0
+
 
