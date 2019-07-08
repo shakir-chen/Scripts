@@ -687,11 +687,18 @@ alias svn="sshcheck; svn"
 export PATH=~/.config/jade:${PATH}             # selenium driver geckodriver
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
 
-alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot' -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
-alias svnbranchjadehotrev_2="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-pow-hotspot' -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
-alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot JADE-hotspot"
+export JADE_TRUNK_URL="svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE"
+export JADE_HOTSPOT_URL="svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot"
+
+alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
+alias svnbranchjadehot_new="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot -m 'xuanqi private branch with hotspot_JADE_v5'"        ## better into the branches and copy locally
+alias svnbranchjadehotrev_2="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-pow-hotspot -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
+alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot JADE-v5-hotspot"
 alias svncojadetrunk="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE JADE-trunk"
-# alias svncojadehot="svn copy svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk svn+ssh://xuanqi@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'Xuanqi private branch with hotspot'"
+
+# alias svnmergejadehotfromtrunk="svn merge -r 16845:HEAD $JADE_TRUNK_URL $JADE_HOTSPOT_URL"
+alias svnmergejadehotfromtrunk="svn merge $JADE_TRUNK_URL"
+
 alias svnsetjade="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot Jade-hotspot" # svn on virtual server
 alias sshfeng="ssh jfengah@acf2013.ece.ust.hk" # svn on virtual server Jf7814089jf%
 # groups,       sudo usermod -a -G opticsbdsl jfengah@ust.hk, the name should belong to group opticsbdsl
@@ -708,6 +715,7 @@ alias svnconflict="svn resolve --accept=working"       # "C" indicate a tree con
 alias svnstatusnoignore="svn status --no-ignore"       # show all unstatus file
 alias svnlsignore="svn proplist -v -R . | grep -A1 ignore" #  svn proplist -v -R [TARGET]
 alias svndelignore="svn propdel svn:ignore -R"
+alias svndiffall="svn diff -r PREV:HEAD"
 
 alias svnsetglobalignore="svn propset svn:global-ignores -R"       # show all unstatus file
 # alias svnsetignore="svn propset svn:ignore"       # show all unstatus file
@@ -962,7 +970,7 @@ alias cdtac="cd ~/Dropbox/Course/TAC"
 alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
-alias cdjade="cd ~/Software/JADE-hotspot"
+alias cdjade="cd ~/Software/JADE-v5-hotspot"
 alias cdjadetrunk="cd ~/svn/Software\ Release/JADE/trunk/JADE"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Software/Scripts"
