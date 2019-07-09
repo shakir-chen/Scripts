@@ -1273,7 +1273,6 @@ teamviewr quicksupport seems not work normally
 ```
 Franz
 
-<<<<<<< HEAD
 Selecting previously unselected package franz.
 (Reading database ... 1031144 files and directories currently installed.)
 Preparing to unpack franz_5.1.0_amd64.deb ...
@@ -1291,7 +1290,6 @@ franz depends on libappindicator1; however:
     Processing triggers for mime-support (3.59ubuntu1) ...
     Processing triggers for hicolor-icon-theme (0.15-0ubuntu1.1) ...
     Errors were encountered while processing:
-=======
 ```
 dpkg: dependency problems prevent configuration of klayout:
 klayout depends on libqt4-designer (>= 4.8.6); however:
@@ -1306,7 +1304,6 @@ Processing triggers for gnome-menus (3.13.3-6ubuntu3.1) ...
 Processing triggers for mime-support (3.59ubuntu1) ...
 jErrors were encountered while processing:
 klayout
->>>>>>> 349c19d3c48a15c58734986c1330da274c8c4a56
 ```
 
 #### modify DNS and break through the area restriction
