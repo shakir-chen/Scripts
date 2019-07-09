@@ -145,8 +145,12 @@ export LD_LIBRARY_PATH=/usr/local/pulse:$LD_LIBRARY_PATH
 export PATH=/local/home/rafael/softwares/gcc/bin:${PATH}
 export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/local/home/rafael/softwares/gcc/lib:$LD_LIBRARY_PATH
-export BOOST_ROOT=/home/rafael/softwares/boost/src
-export LD_LIBRARY_PATH=$BOOST_ROOT/lib:$LD_LIBRARY_PATH
+
+# export BOOST_ROOT=/home/rafael/softwares/boost/src
+# export LD_LIBRARY_PATH=$BOOST_ROOT/lib:$LD_LIBRARY_PATH
+export PATH=~/Software/cmake-3.15.0-rc3-Linux-x86_64/bin:${PATH}
+# export LD_LIBRARY_PATH=~/Software/cmake-3.15.0-rc3-Linux-x86_64/bin:${PATH}
+export CMAKE_ROOT="~/Software/cmake-3.15.0-rc3-Linux-x86_64/"
 
 # export LD_LIBRARY_PATH=/usr/local/lib/libglfw3.a:${LD_LIBRARY_PATH}
 # export BOOST_ROOT=~/Software/boost/include
