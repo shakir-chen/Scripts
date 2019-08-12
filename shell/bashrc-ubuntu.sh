@@ -140,6 +140,8 @@ export PATH=~/Software/Franz/:${PATH}
 # export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/pulse:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
 
 # Rafael Newest gcc & boost
 export PATH=/local/home/rafael/softwares/gcc/bin:${PATH}
@@ -223,6 +225,7 @@ alias gph="grep -r -i --include \*.h --color=auto"  #grep header file
 alias gpc="grep -r -i --include \*.c --include \*.C --color=auto"  #grep c file
 alias gpcpp="grep -r -i --include \*.cpp --color=auto"  #grep cpp file
 alias gppy="grep -r -i --include \*.py --color=auto"  #grep cpp file
+alias gpcir="grep -r -i --include \*.cir --color=auto"  #grep cpp file
 alias gpp="gp 'print' *.py | grep -v '# print'" #grep print
 
 function gptype(){
@@ -251,7 +254,7 @@ alias llmb="ll --block-size=M"
 alias lsmem="sudo dmidecode -t 17"
 alias lsmemsize="cat /proc/meminfo"     # free -m, vmstate, top
 
-alias usbmount="sudo mount /dev/sdb1/ /media/usb"       # lsblk
+alias usbmount="sudo mount /dev/sdb1 /media/usb"       # lsblk, fdisk
 alias usbumount="sudo umount /dev/sdb1/"
 
 # vim =======================================================
@@ -360,6 +363,7 @@ alias cheatedit="cheat -e"
 # tar
 alias tarc="tar -cvzf"
 alias tarx="tar -xvzf"      # tar.bz2 use -jxf
+alias tarxbz2="tar -xvjf"      # tar.bz2 use -jxf
 
 # clear
 alias cl="clear"
@@ -381,8 +385,15 @@ alias ipythoni="ipython3 -i ~/Software/Scripts/pdb/ipython_init.py"
 
 # pdf reader
 alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
+alias pdfstamp="java -jar ~/Software/pdfstamp/pdfstamp.jar -u xchenbr.student.ust.hk -i"              # https://github.com/Crossref/pdfstamp
 # pdfcut in.pdf 7       pdfcut in.pdf 7-end
 # pdfunite input_list output.pdf                join multiple pdf
+
+function pdf2jpg_2() {
+PDFNAME=$(echo $1 | sed -r "s/\.pdf//g")
+pdfimages -j
+}
+
 function pdfcut() {
     pdftk "$1" cat "$2" output cut-"$2".pdf 
 }
@@ -391,10 +402,18 @@ function pngtrim() {
     convert "$1" -trim "$1"
 }
 
+function pngtransparency() {
+    convert $1  -threshold 0 threshold_mask.png
+    convert $1  threshold_mask.png \
+        -alpha Off -compose CopyOpacity -composite \
+            threshold.png           # TODO: ???? not work
+}
+
 function pdfcompress() {
 PDFNAME=$(echo $1 | sed -r "s/\.pdf/_c.pdf/g")
 echo "$1 ==> $PDFNAME"
 # /screen 72dpi, /printer 300dpi, /ebook 150dpi, /default lager
+# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
 }
 
@@ -690,7 +709,8 @@ alias synergyclab="synergyc -f 10.89.134.149 &"
 alias svn="sshcheck; svn"
 
 # alias svnset="svn co --depth immediates svn+ssh://xuanqi@young.ece.ust.hk/home/svn_repository svn"       #checkout
-export PATH=~/.config/jade:${PATH}             # selenium driver geckodriver
+export PATH=~/.config/jade:${PATH}              # backup some jade bash
+# export CPATH="/usr/include/hdf5/serial/"
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
 
 export JADE_TRUNK_URL="svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE"
@@ -834,6 +854,16 @@ alias gitco="git checkout"
 alias gitsb="git show-branch"       #show branch message
 alias sourcebashrc="source ~/.bashrc"       #show branch message
 alias sourcesynopsys="source /local/eelocal/synopsys/syn-vl2016.03-sp5-5/.bashrc"   # show branch message
+
+# git pip install
+function pipgitinstall(){
+    GITLOC=$(echo $1 | sed -r 's/https://g')
+    # echo $GITLOC
+    sudo pip install git+https:$GITLOC
+}
+
+
+alias gitpipinstall="sudo pip install git+https://github.com/mph-/lcapy.git"
 
 # git diff FILE; git diff --cached FILE; git diff HEAD FILE;
 # https://stackoverflow.com/questions/1587846/how-do-i-show-the-changes-which-have-been-staged
@@ -988,7 +1018,8 @@ alias cdftp="cd /srv/ftp/"
 alias cdcourse="cd ~/Dropbox/Course"
 alias cdbook="cd ~/Dropbox/Course/Good_Books"
 alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
-alias cdhotspot="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/hotspot"
+# alias cdhotspot="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/hotspot"
+alias cdhotspot="cd ~/Software/JADE-v5-hotspot/utils/hotspot/workspace"
 alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
@@ -998,6 +1029,9 @@ alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdcadence="cd /usr/eelocal/cadence"
 alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
+alias cdpyspice="cd /usr/local/lib/python3.5/dist-packages/PySpice"
+alias cdngspice="cd ~/Dropbox/Linux/Research/ngspice"
+export PySpiceLibraryPath=~/.config/spice/
 
 alias cdsilly="cd ~/Dropbox/silly"
 
@@ -1048,7 +1082,7 @@ function dirsx(){
     # echo $DIR | xclip
     printf "$DIR" | xclip
 }
-
+alias screenset="xrandr --output DP1 --rotate left --left-of VGA1; xrandr --output VGA1 --primary"
 alias openjiaming="open ~/Dropbox/Course/Good_Books/Jia-ming_Liu_PhotonicsDevices.pdf"
 alias openshimin="open ~/Dropbox/Course/Good_Books/Physics_of_Semciondutor.pdf"
 alias openpower="open ~/Dropbox/Course/Good_Books/FundamentalsofPowerSemiconductorDevices.pdf"
@@ -1356,3 +1390,8 @@ export TANNER_PATH="/home/shakir/Software/tanner/tanner"
 export PATH="${PATH}:/home/shakir/Software/tanner/tanner/bin"
 
 # export WINE="/usr/local/bin/wine"
+# xcircuit
+export XCIRCUIT_LIB_DIR=./lib
+export XCIRCUIT_SRC_DIR=./lib/tcl
+
+

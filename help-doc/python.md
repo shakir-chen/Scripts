@@ -399,11 +399,20 @@ function package
 
 ## scipy.integrate
 
+## decorator
+
+@property           # static value
+def value(self):
+    return self._value
+
+@classmethod
+def simple_value(cls, value):           # call self cls
+    return cls(_simple_prefixed_unit, value)
+
 
 ### ERROR =============
 
 1. use matplotlib import pyplot: no _tkinter
-
 matplotlib.use("AGG")
 <https://stackoverflow.com/questions/4930524/how-can-i-set-the-backend-in-matplotlib-in-python>
 
@@ -413,6 +422,10 @@ matplotlib.use("AGG")
 backend : Agg
 ```
 <https://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server/4935945#4935945>
+
+change to Agg
+locate -b matplotlibrc
+
 
 2. centos install pip: cannot access http server
 ```

@@ -27,7 +27,8 @@ gf      go to the file
 g]      go to a tag
 m[w]    set Maker [w]
 ;[w]    go to Marker [w]
-
+⇧ k     illustration
+:autocmd help
         /*fold*/
 ,zz     call togglefold function and fold all
 zm      fold the function area
@@ -70,6 +71,11 @@ ds"     "Hello" => Hello
 :tp     last tag
 :CtrlPTag   search tag file
 :Tagbar Tagbar
+
+:set spell
+]s      find misspelled word after cursor
+[s      find misspelled word before cursor
+z=      list word
 
 ===============Firefox====================
 ;I    select a picture
