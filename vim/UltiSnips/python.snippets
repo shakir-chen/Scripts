@@ -22,7 +22,6 @@ snippet fim "from . import ."
 from ${1} import ${2}
 endsnippet
 
-
 snippet from "from . import ."
 from ${1} import ${2}
 endsnippet
@@ -132,8 +131,8 @@ endsnippet
 
 snippet doc "docstring"
 """
-@Author: ${1:`wklken`}
-@Email: ${2:`wklken@yeah.net`}
+@Author: ${1:`xuanqi`}
+@Email: ${2:`chenxuanqi93@gmail.com`}
 @Date: ${3}
 @Desc: ${4}
 """
@@ -174,3 +173,114 @@ snippet dk "api doc"
         code:
 
 endsnippet
+
+#############
+
+snippet rdtxt "read txt"
+${1:rdfilename}=open("readfile","r")
+lines=${2:$1}.readlines()
+${3:$1}.close()
+endsnippet
+
+snippet wrtxt "write txt"
+${1:wrfilename}=open(filename,'w')
+${2:$1}.write(mystr)
+${3:$1}.close()
+endsnippet
+
+snippet rdexcel "pd excel"
+x1=pd.ExcelFile('${1:excelname}.xlsx')
+df=x1.parse("Sheet1")
+endsnippet
+
+snippet wrexcel "pd excel"
+writer=pd.ExcelWriter('${1:excelname}.xlsx')
+df.to_excel(writer,'Sheet1')
+writer.save()
+endsnippet
+
+snippet rdjson "read json"
+df=pd.read_json("${1}.json", orient='index')
+endsnippet
+
+snippet wrjson "write json"
+${1:pd}.to_json("${2}.json",orient="index")
+endsnippet
+
+
+
+########### xuanqi
+snippet fig "figure"
+fig,ax = plt.subplots(1)
+ax.xaxis.offsetText.set_fontsize(labelftsize)
+ax.tick_params(labelsize=tickftsize)
+
+for kw in ['top', 'right']:
+	ax.spines[kw].set_visible(False)
+
+# don't put tick labels at the top
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.set_xlabel(kwds['labelx'],fontsize=labelftsize+4) #,fontweight='bold'
+ax.set_ylabel(kwds['labely'],fontsize=labelftsize+4)
+endsnippet
+
+snippet pltsave "name"
+plt.savefig('temp.pdf')
+endsnippet
+
+snippet pdb "pdb"
+__import__('pdb').set_trace()
+endsnippet
+
+snippet fontsz "font size"
+labelftsize=18
+tickftsize=18
+endsnippet
+
+snippet exit "sys exit"
+import sys; sys.exit()
+endsnippet
+
+snippet mplsty "matplotlib style"
+import matplotlib as mpl
+try:
+	mpl.style.use('xuanqi-seaborn')
+except:
+	print("matplotlib: use default style")
+endsnippet
+
+snippet init  "import packages"
+import numpy as np
+import matplotlib.pyplot as plt
+endsnippet
+
+
+snippet axmulti "multiple-ax fig"
+fig = plt.figure(figsize=(20,6),facecolor='w')
+ax=[]
+for ii in range(0,${1}):
+	ax.append(fig.add_subplot(131+ii))
+endsnippet
+
+snippet printfloat "printfloat"
+"{:0.2f}.format{}"
+endsnippet
+
+snippet noxticks "remove xtick"
+ax.set_xticks([], [])
+# plt.xticks([], [])
+endsnippet
+
+snippet oscheckfile "check file"
+import os.path
+os.path.isfile($1)
+endsnippet
+
+snippet subplot "subplot"
+fig, (ax1, ax2) = plt.subplots(2, 1)
+ax1.plot( , )
+ax2.plot( , )
+endsnippet
+
+
