@@ -140,12 +140,8 @@ export PATH=~/Software/Franz/:${PATH}
 # export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
 # export LD_LIBRARY_PATH=~/Software/boost/lib/:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/pulse:$LD_LIBRARY_PATH
-<<<<<<< HEAD
-export CPATH=/home/xuanqi/Software/hdf5/hdf5-1.10.5/hdf5/include/:${CPATH}
-=======
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+# export CPATH=/home/xuanqi/Software/hdf5/hdf5-1.10.5/hdf5/include/:${CPATH}
 
->>>>>>> b0299de587e7786929baf0ad1732860213916ac0
 
 # Rafael Newest gcc & boost
 export PATH=/local/home/rafael/softwares/gcc/bin:${PATH}
