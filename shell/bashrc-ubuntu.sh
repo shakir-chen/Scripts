@@ -414,7 +414,7 @@ PDFNAME=$(echo $1 | sed -r "s/\.pdf/_c.pdf/g")
 echo "$1 ==> $PDFNAME"
 # /screen 72dpi, /printer 300dpi, /ebook 150dpi, /default lager
 # gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
-gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
 }
 
 #alias pdf="acroread"       #centos
@@ -582,7 +582,7 @@ function ssh-server() {
     then
         servername="ztianab@hpc2.ust.hk"            #Name + Year+Date, Name First Character Big Case
     else
-        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,iron - other four: chirp fantasy sunlight
+        servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic,iron, fantasy  - other four: chirp sunlight
     fi
 
     ssh -X $servername
@@ -1395,3 +1395,4 @@ export XCIRCUIT_LIB_DIR=./lib
 export XCIRCUIT_SRC_DIR=./lib/tcl
 
 
+# sudo netstat -lnp         # list all ports

@@ -2103,5 +2103,27 @@ background (left bottom side) 0
 # search file package
 dpkg -l | grep hdf5
 ldconfig -g | grep hdf5
+ld -lhdf5 --verbose
+
+
+# hdf5
+CentOS install:
+
+```
+yum install hdf5
+bashrc:CPATH=/home/xuanqi/Software/hdf5/hdf5-1.10.5/hdf5/include:$(CPATH)
+yum repolist -v
+```
+
+
+```
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo vim yum.repos.d/epel.repo
+enabled=1
+sudo yum update
+yum install hdf5
+```
+<https://fedoraproject.org/wiki/EPEL>
+
 
 
