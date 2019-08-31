@@ -23,9 +23,24 @@
 " Initial Plugin 加载插件
 "==========================================
 "Xuanqi add
+nnoremap ss :make<CR>
 nnoremap zz :r!cite<CR>
 nnoremap <F7> :set background=light<CR>
 set tags=tags;
+set spellfile=~/.vim/spell/en.utf-8.add
+
+augroup lexical
+    autocmd!
+    autocmd FileType markdown,mkd,tex call lexical#init()
+    autocmd FileType textile call lexical#init()
+    autocmd FileType text call lexical#init({ 'spell': 0 })
+augroup END
+
+let g:lexical#spell = 1
+let g:lexical#spelllang = ['en_us','en_ca',]
+let g:lexical#thesaurus = ['~/.vim/spell/thesaurus/moby_thesaurus.txt',]
+let g:lexical#spellfile = ['~/.vim/spell/en.utf-8.add',]
+"Xuanqi add end ======================
 
 
 function! AddColumn()
@@ -598,6 +613,17 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,scheme,mkd autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" fix pep8 style ==> xuanqi
+fun! <SID>Pep8Fix()
+    let l = line(".")
+    let c = col(".")
+    " %s/\([*\/+\-]\)\(\d\)/ \1 \2/gc
+    " %s/\([*\/+\-]\)\((\)/ \1 \2/gc
+    %s/\([,:]\)\(\S\)/\1 \2/gc
+    %s/\(\S\)\([*\/+\-]\)\(\S\)/\1 \2 \3/gc
+    call cursor(l, c)
+endfun
+nnoremap fix :call <SID>Pep8Fix()<cr>
 
 " 定义函数AutoSetFileHead，自动插入文件头
 autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"

@@ -127,3 +127,13 @@ cd glfw-build
 cmake ../       # glfw-root-file
 
 
+# ifeq
+```
+ifeq ("$(CONTROL_FILE)", "no_control.c")            ===>  output 1
+# ifeq ($(CONTROL_FILE)", "no_control.c")           ===>  output 3  watchout ""
+CTRLITER=1
+else
+CTRLITER=3
+endif
+```
+

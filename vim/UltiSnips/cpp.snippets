@@ -27,3 +27,26 @@ ms_wall = ((end_wall_time_t.tv_sec - start_wall_time_t.tv_sec) * 1000 * 1000
 std::cerr << "Time(ms): " << ms_wall << endl;
 
 endsnippet
+
+snippet cout
+std::cout << "$1" << std::endl;		//xuanqi:cout
+endsnippet
+
+snippet includelib "include necssary lib"
+# include "stdio.h" //xuanqi
+endsnippet
+
+snippet writefile "write into files"
+ofstream myfile;
+std::string file_name;
+
+file_name = "temp.file";
+myfile.open(file_name, std::ios_base::app);    //test first, later use generic.flp, x86.flp
+assert (myfile.is_open());
+
+myfile << $1 << "\t";
+// myfile << endl;
+myfile.close();
+endsnippet
+
+

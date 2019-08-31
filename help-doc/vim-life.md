@@ -96,6 +96,17 @@ Ctags usage
 vim + Ctags + Ctrlp     :CtrlPTag
 all save in tags
 
+vim add plug vim.bundles
++   Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
+==> :PlugInstall
+
+spell check: lexical spell
+<https://linuxhint.com/vim_spell_check/>
+
+zg      add to spell
+zug     undo zg
+set spellfile="~/.vim/spell/vim.bundles"
+<https://superuser.com/questions/133208/how-to-make-vim-spellcheck-remember-a-new-word>
 
 ## II. Firefox - vimperator
 ctrl+i: external editor; save and copy all the message back to the blank

@@ -32,7 +32,7 @@ mdname=XXX.md
 htmlname=$(mdname:.md=.html)
 all:
 	@echo "Generate" $(htmlname) "......"
-	pandoc md/${mdname} -t html -s -o ${htmlname} --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --css pandoc.css
+	pandoc md/${mdname} --columns=1000 -t html -s -o ${htmlname} --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --css pandoc.css
 	firefox ${htmlname}
 edit:
 	vim md/${mdname}
@@ -53,4 +53,54 @@ htmlfiles=$(patsubst md/%.md, %.html, $(mdfiles))
 
 rebuild:$(htmlfiles)
 	echo "compile all"
+endsnippet
+
+snippet inittex
+FILE=XXX.tex
+pdfname=$(mdname:.tex=.pdf)
+all:
+	pdflatex $(FILE)
+edit:
+	vim ${mdname}
+open:
+	zathura ${pdfname} &
+
+clean:
+	rm ${pdfname}
+endsnippet
+
+snippet initc
+CXX=g++
+CXXFLAG= -std=c++11 # -fopenmp # C compiler flags
+CXXPP= #-DPRED -DDEBUG		#-DPRED # CXX Preprocessor
+INCLUDE_DIRS=-I "/usr/include/hdf5/serial/"
+LDFLAGS= 					# Linker flags, e.g. -L<lib dir> if you have libraries in a nonstandard directory <lib dir>
+LIBS= -lhdf5	 			# Libraries to pass to the linker, e.g. -l<library>
+
+A_TARGET=XXX
+# $^: source file; $@: object file
+A_FILES := $(wildcard *.cpp) $(wildcard *.c)
+A_OBJS := $(sort $(patsubst %.c, %.o, $(patsubst %.cpp, %.o, $(A_FILES))))
+
+all: $(A_TARGET)
+
+# $(A_TARGET): %.o
+$(A_TARGET): $(A_OBJS)
+	$(CXX) $(CXXFLAG) $^ -o $@ $(LDFLAGS) $(LIBS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAG) $(CXXPP) -c $< -o $@ $(INCLUDE_DIRS)
+
+# $<: source file; $@: object file
+%: %.cpp
+	$(CXX) $(CXXFLAG) $(CXXPP) -o $@ $<
+
+# run:
+
+clean:
+	rm $(A_TARGET) *.o
+
+edit:
+	vim $(A_TARGET).cpp
+
 endsnippet

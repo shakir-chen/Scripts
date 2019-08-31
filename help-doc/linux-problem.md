@@ -478,11 +478,11 @@ Problem: vim exit will show "Thanks for flying vim"
 let &titleold=substitute(getcwd(), $HOME, "~", "")  #in vim, add in the .vimrc
 ```
 PlugIn Deep Study
-Tagbar      <F9>
-CtrlP       ,p  or ,f
-vim-easymotion  ,,+w jump   ,,+fe find'e' and jump to that position
-Youcompletme    ,gd jump to declaration place
-multiple-cursor ctrl+m begin to select ; ctrl + p  up cease ; ctrl +x skip; esc
+Tagbar                  <F9>
+CtrlP                   ,p  or ,f
+vim-easymotion          ,,+w jump   ,,+fe find'e' and jump to that position
+Youcompleteme           ,gd jump to declaration place
+multiple-cursor         ctrl+m begin to select ; ctrl + p  up cease ; ctrl +x skip; esc
 
 <http://www.wklken.me/posts/2013/06/11/linux-my-vim.html#_6>
 
@@ -1727,6 +1727,14 @@ sudo apt-get install libcr-dev mpich2 mpich-doc     #install mpich
 sudo apt-get install meep-mpich2 h5utils                   #meep
 ```
 
+install h5df
+sudo apt-get install libhdf5-10
+sudo apt-get install libhdf5-serial-dev
+sudo apt-get install libhdf5-dev
+sudo apt-get install libhdf5-cpp-11
+find /usr -iname "*hdf5.h*"
+<https://stackoverflow.com/questions/37007495/caffe-didnt-see-hdf5-h-when-compiling>
+
 ### 57. change process priority
 niceness or nice value: -20 to 19
 ```
@@ -2090,5 +2098,10 @@ tar xf shadowsocks-gui-0.6.4-linux-x64.tar.xz
 # Paraview
 color scale editor => choose present => viridis
 background (left bottom side) 0
+
+
+# search file package
+dpkg -l | grep hdf5
+ldconfig -g | grep hdf5
 
 
