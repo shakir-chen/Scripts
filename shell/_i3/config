@@ -274,7 +274,6 @@ for_window [class="Tk" instance="tk"] floating enable
 for_window [class="Display-im6" instance="display-im6"] floating enable         # image magick
 
 bindsym $mod+Shift+a [class=Firefox] move container to workspace $WS3; [class=Gnome-terminal] move container to workspace $WS1; [class="netease-cloud-music|Franz"] move to workspace $WS5; [class="Zathura|feh"] move to workspace $WS2; [class="Goldendict"] move to workspace $WS3; workspace "1.term" focus
-
 bindsym $mod+Shift+b [workspace="2.paper|3.www|4.media|5.misc|6.mail|8.mail"] move workspace to output DP1; [workspace="1.term|7.code"] move workspace to output DP2; workspace "1.term" focus
 
 # mode "remap" {

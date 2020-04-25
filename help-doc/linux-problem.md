@@ -831,6 +831,10 @@ Error:
 2. ieee.cls not found
 sudo apt-get install texlive-publishers
 
+3. titlesec missing section number
+update titlesec package
+<https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15>
+
 ### 8. tmux
 navigate in terminal(tmux): ctrl-b + [ or ctrl-b+pageup/pagedown
 
@@ -1905,6 +1909,28 @@ urxvt -fc "xft:Font Awesome"
 urxvt -fc "xft:DejaVu Sans Mono:style=Book:antialias=false:size=8"
 urxvt -fc "xft:Microsoft Yahei:style=Book:antialias=false:size=8"
 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! fontspec error: "font-not-found"
+!
+! The font "FontAwesome" cannot be found.
+!
+! See the fontspec documentation for further information.
+!
+! For immediate help type H <return>.
+!...............................................
+
+Solve: download fontawesome.otf
+
+
+! The font "Arial" cannot be found.
+```
+sudo apt-get install ttf-mscorefonts-installer
+sudo fc-cache
+fc-match Arial
+```
+
 ## 67. Know how much size
 du -sh *
 <http://www.kavoir.com/2009/09/linux-check-how-much-disk-storage-each-directory-takes-up-disk-usage-command-du.html>
@@ -2125,5 +2151,6 @@ yum install hdf5
 ```
 <https://fedoraproject.org/wiki/EPEL>
 
-
+iron : no _bz2 module????
+fantasy: compile not correct
 

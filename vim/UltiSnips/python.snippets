@@ -255,12 +255,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 endsnippet
 
-
 snippet axmulti "multiple-ax fig"
 fig = plt.figure(figsize=(20,6),facecolor='w')
 ax=[]
 for ii in range(0,${1}):
 	ax.append(fig.add_subplot(131+ii))
+endsnippet
+
+snippet figsize "figsize"
+# figure = plt.figure(1, (20, 10))
+fig = plt.figure(figsize=(20,6),facecolor='w')
+ax = fig.add_subplot(111)
 endsnippet
 
 snippet printfloat "printfloat"

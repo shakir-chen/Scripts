@@ -57,16 +57,16 @@ endsnippet
 
 snippet inittex
 FILE=XXX.tex
-pdfname=$(mdname:.tex=.pdf)
+pdfname=$(FILE:.tex=.pdf)
 all:
 	pdflatex $(FILE)
 edit:
-	vim ${mdname}
+	vim ${FILE}
 open:
 	zathura ${pdfname} &
 
 clean:
-	rm ${pdfname}
+	rm ${pdfname} *.aux *.out *.log
 endsnippet
 
 snippet initc

@@ -321,9 +321,9 @@ alias makeh="make help"
 alias maker="make run"
 alias makec="make clean"
 alias maketee="make 2>&1| tee maketee.log"
-alias xpropwm="xprop | grep WM_CLASS"
+alias xpropwm="xprop | grep WM_CLASS"       # i3wm: determine the property
 alias xpropls="xprop -notype -root"         # xwininfo
-
+alias i3tree="~/Software/i3tree/i3tree"         # xwininfo
 
 alias ctagsr="ctags --extra=+f -R ."
 
@@ -414,8 +414,8 @@ function pdfcompress() {
 PDFNAME=$(echo $1 | sed -r "s/\.pdf/_c.pdf/g")
 echo "$1 ==> $PDFNAME"
 # /screen 72dpi, /printer 300dpi, /ebook 150dpi, /default lager
-# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
-gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
+# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
 }
 
 #alias pdf="acroread"       #centos
@@ -531,20 +531,22 @@ function xinputopentp(){
     xinput --enable $num
 }
 
-# ssh
-alias sshpassion="ssh-server passion"
-alias sshfantasy="ssh-server fantasy"
+# ssh: recommend Passion, Rostam, Young
+alias sshpassion="ssh-server passion"   # work, but may have error
+alias sshfantasy="ssh-server fantasy"   # not
 alias sshvirtualdesktop="ssh xchenbr@acf2013.ece.ust.hk"
-alias sshrostam="ssh-server rostam"
-alias sshmagic="ssh-server magic"
-alias sshyoung="ssh-server young"
-alias sshiron="ssh-server iron"
+alias sshrostam="ssh-server rostam"     #not
+alias sshmagic="ssh-server magic"       # not
+alias sshyoung="ssh-server young"       # good
+alias sshiron="ssh-server iron"         # not
 alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
 alias sshcs="ssh-server cs"
 alias sshdaisy="ssh-server daisy "
 alias sshfei="ssh-server fei"
 alias sshhpc="ssh-server hpc"
+alias sshyaoxin="ssh cecilia6@graham.computecanada.ca"
+alias sshyaoxin2="ssh cecilia6@cedar.computecanada.ca"
 
 function sshcopyid(){
     cd ~/.ssh
@@ -639,7 +641,7 @@ function scpxqlabput {
     # then
         # servername="zhehui@rostam.ece.ust.hk"
     # else
-        # servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fantasy
+        # servername="xuanqi@"$1".ece.ust.hk"         #passion,rostam,young,magic - other four: chirp iron fantasy ---- iron, matplotlib-bz2; fantasy=cannot run
     # fi
     # ssh -X $servername
 # }
@@ -674,6 +676,9 @@ alias tmuxsh="tmux splitw -h"           #split horizontally
 alias tmuxsv="tmux splitw -v"           #split vertically
 alias tmuxa="tmux attach-session -t "               #attach to the first one
 #detach session: C-a d
+
+alias lsofsynergy="sudo lsof -i -P -n | grep LISTEN"
+
 
 tmuxsk() {
     cmdarg=${@:2} # all arg, from the second
@@ -720,8 +725,10 @@ export JADE_HOTSPOT_URL="svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_re
 alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
 alias svnbranchjadehot_new="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot -m 'xuanqi private branch with hotspot_JADE_v5'"        ## better into the branches and copy locally
 alias svnbranchjadehotrev_2="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-pow-hotspot -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
+alias svnbranchjadecamon="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-CAMON -m 'xuanqi private branch with camon_JADE_v5'"        ## better into the branches and copy locally
 alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot JADE-v5-hotspot"
 alias svncojadetrunk="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE JADE-trunk"
+alias svncojadecamon="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-CAMON JADE-v5-CAMON"
 
 # alias svnmergejadehotfromtrunk="svn merge -r 16845:HEAD $JADE_TRUNK_URL $JADE_HOTSPOT_URL"
 alias svnmergejadehotfromtrunk="svn merge $JADE_TRUNK_URL"
@@ -747,6 +754,7 @@ alias svndiffall="svn diff -r PREV:HEAD"
 alias svnsetglobalignore="svn propset svn:global-ignores -R"       # show all unstatus file
 # alias svnsetignore="svn propset svn:ignore"       # show all unstatus file
 
+# install SuperRLU : sudo yum install SuperLU-devel.x86_64, updatedb (locate update database)
 alias vtuview="paraview" #vtu paraview
 
 function svnrefreshM(){
@@ -813,6 +821,8 @@ alias sockset="sslocal -c /etc/shadowsocks.json "
 
 # cd
 alias cddairy="cd ~/Research/Dairy/latex"
+alias cdjob="cd ~/Documents/job-hunting"
+
 
 #freemind
 alias mindopen="~/Software/freemind/exec/freemind.sh &"
@@ -944,10 +954,10 @@ function dotsave(){
 
 function jpgtrim(){
 for f in *.jpg
-do
-    echo $f
-    convert $file -trim $f
-done
+    do
+        echo $f
+        convert $f -trim $f
+    done
 }
 
 function imgresize(){
@@ -970,7 +980,7 @@ function pdf2jpg(){
     # convert -density 300 $f $newf     # backgroud will become black
     # convert -density 300 -background white -alpha remove $1 $newf
     # convert -density 1000 -background white -alpha remove $1 $newf
-    convert -density 500 -background white -alpha remove $1 $newf
+    convert -density 1000 -background white -alpha remove $1 $newf
     # convert -density 150 *.pdf -quality 90 output.png
 }
 
@@ -981,10 +991,47 @@ function pdf2jpgall(){
         newf=${f/.pdf/.jpg}
         echo  $f "--->" $newf
         # convert -density 300 $f $newf     # backgroud will become black
-        convert -density 300 -background white -alpha remove $f $newf
+        convert -density 300 -background white -alpha remove $f jpg/$newf
         # convert -density 150 *.pdf -quality 90 output.png
     done
 }
+
+function png2greyall(){
+    for f in *.png
+    do
+        newf=${f/.png/_bw.png}
+        echo  $f "--->" $newf
+        convert $f -colorspace Gray bw_1/$newf
+    done
+}
+
+
+function jpg2greyall(){
+    for f in *.jpg
+    do
+        # echo $f
+        newf=${f/.jpg/_bw.jpg}
+        echo  $f "--->" $newf
+        convert $f -colorspace Gray bw_1/$newf
+        # convert $f -monochrome bw/$newf
+        # convert $f -separate bw_3/$newf
+        # convert -density 150 *.pdf -quality 90 output.png
+    done
+}
+
+function rmcore(){
+    corename=$(find -name core)
+    for coreii in $corename
+    do
+        du -sh $coreii
+        read -p "delete $coreii? [y/n]" inputkey
+        if [[ $inputkey == "y" ]]; then
+            echo "rm '$coreii'"
+            rm $coreii
+        fi
+    done
+}
+
 function pdfrotate(){
     newf=${1/.pdf/}
     pdftk $1 cat 1-endeast output $newf"_e.pdf"
@@ -1032,6 +1079,7 @@ alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
 alias cdpyspice="cd /usr/local/lib/python3.5/dist-packages/PySpice"
 alias cdngspice="cd ~/Dropbox/Linux/Research/ngspice"
+alias cdresume="cd ~/Documents/Resume"
 export PySpiceLibraryPath=~/.config/spice/
 
 alias cdsilly="cd ~/Dropbox/silly"
@@ -1043,7 +1091,11 @@ alias checkmem="ps -o pid,user,%mem,command ax | sort -b -k3 -r | grep xuanqi | 
 
 function killapp(){
     ps -ef | grep $1
-    apppid=$(ps -ef | grep $1 | grep -v grep | awk '{print $2}')
+    if [[ "$1" == "grep" ]]; then
+        apppid=$(ps -ef | grep $1 | awk '{print $2}')
+    else
+        apppid=$(ps -ef | grep $1 | grep -v grep | awk '{print $2}')
+    fi
     echo "kill ps:" $apppid
     for apppid_ii in $apppid
     do

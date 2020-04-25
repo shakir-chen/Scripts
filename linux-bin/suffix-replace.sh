@@ -4,12 +4,12 @@
 typename=$1
 # echo $typename
 
-for name in *.txt
+for name in *.pdf
 do
     # echo $name
     ii=$(expr index $name ".")
     # echo $ii
-    ii=$(($ii-1))
+    ii=$(($ii-4))
     # echo $ii
     # len=$(expr length $name)
     # echo $len
@@ -20,8 +20,7 @@ do
     # echo $truename
     # typename=${name:ii:len}
     # echo $typename
-    recname=$truename.$typename
+    recname=$truename"mc".$typename
     echo mv $name $recname
     mv $name $recname
 done
-
