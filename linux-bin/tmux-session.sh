@@ -3,6 +3,7 @@
 # Acknowledge: mislav dotfile .tmux-session
 # https://github.com/mislav/dotfiles/blob
 # achieve persist and restore the state & position of panes.
+# issue: https://superuser.com/questions/440015/restore-tmux-session-after-reboot
 set -e
 
 dump() {
