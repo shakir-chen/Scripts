@@ -1,5 +1,57 @@
 #Python
 
+## leetcode interview
+package: collections
+         tuple
+         dict.values()
+         set
+         eval
+learn the builtin function
+python lambda function
+
+keytuple = min(x.items(), key=lambda item:item[1])
+popitem vs. pop
+collections.OrderedDict !!! remember
+    dict: ChainMap, Counter, OrderedDict, defaultdict, UserDict
+    list: dequeue, UserList
+    tuple: namedtuple
+    str: Userstring
+    <https://docs.python.org/3/library/collections.html>
+
+Remember: list and dict function
+
+self.merge(*map(self.sortList, (head, slow)))
+equals
+self.merge(self.sortList(head),self.sortList(slow))
+
+map(func, *iterables)       ==> return all, func processes iterables
+filter(func, iterable)      ==> filtering False, func is a filter
+
+# builtin
+1. min max round abs sum pow sorted reversed divmod
+2. range enumerate iter zip slice map any all len
+    a[start:stop:step] ==> a[slice(start,stop,step)]
+3. tuple dict list bool int complex float str oct bin hex ascii chr ord format type globals locals
+4. super callable staticmethod classmethod filter property next repr dir object vars set setattr delattr hasattr getattr frozenset isinstance issubclass hash
+5. open input breakpoint print __import__ help id compile exec eval bytes bytearray memoryview
+
+4. class
+```
+callable: __call__()
+repr: __repr__()
+dir: __dir__()
+dict: __dict__()
+hash: __hash__()
+iter: __iter__()
+next: __next__()
+classmethod: @classmethod
+property: @property
+```
+
+sorted(iterable, key=None, reverse=False)
+
+collections module
+<https://docs.python.org/3/library/stdtypes.html>
 
 ## I. OS Operation
 

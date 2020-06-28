@@ -379,11 +379,10 @@ alias ftn="gfortran"
 alias py="python3.5"
 alias py3.5="python3.5"
 alias py2.7="python2.7"
-alias ipythoni="ipython3 -i ~/Software/Scripts/pdb/ipython_init.py"
+# alias ipythoni="ipython3 -i ~/Software/Scripts/pdb/ipython_init.py"   # add to ~/.ipython/startup/XXX.py
+alias ipython="ipython3"
 
 # alias mp3split="mptsplit input.mp3 [00:00:20-00:00:58] -o output.mp3"
-
-
 # pdf reader
 alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
 alias pdfstamp="java -jar ~/Software/pdfstamp/pdfstamp.jar -u xchenbr.student.ust.hk -i"              # https://github.com/Crossref/pdfstamp
@@ -533,12 +532,12 @@ function xinputopentp(){
 
 # ssh: recommend Passion, Rostam, Young
 alias sshpassion="ssh-server passion"   # work, but may have error
-alias sshfantasy="ssh-server fantasy"   # not
+alias sshfantasy="ssh-server fantasy"   # work
 alias sshvirtualdesktop="ssh xchenbr@acf2013.ece.ust.hk"
-alias sshrostam="ssh-server rostam"     #not
-alias sshmagic="ssh-server magic"       # not
+alias sshrostam="ssh-server rostam"     # good
+alias sshmagic="ssh-server magic"       # good
 alias sshyoung="ssh-server young"       # good
-alias sshiron="ssh-server iron"         # not
+alias sshiron="ssh-server iron"         # not work
 alias sshlab="ssh-server lab"
 alias sshstd="ssh-server std"
 alias sshcs="ssh-server cs"
@@ -597,6 +596,12 @@ function scplab(){
 }
 function scppassion(){
     scp $1 xuanqi@passion.ece.ust.hk:~/$2
+}
+function scprostam(){
+    scp $1 xuanqi@rostam.ece.ust.hk:~/$2
+}
+function scpfantasy(){
+    scp $1 xuanqi@fantasy.ece.ust.hk:~/$2
 }
 
 function scpmagic(){
@@ -667,6 +672,8 @@ alias onedriveresync="onedrive --resync -v"       # check all file storage
 # tmux  --man tmux
 alias tmuxsource="tmux start-server \; source-file ~/.tmux.conf"
 alias tmuxks="tmux kill-session -t "    #kill session
+alias tmuxev="tmux select-layout even-vertical"    #kill session
+alias tmuxeh="tmux select-layout even-horizontal"    #kill session
 alias tmuxkw="tmux kill-window -t "    #kill window
 alias tmuxkp="tmux kill-pane -t "       #kill pane
 alias tmuxls="tmux list-sessions"
@@ -1075,7 +1082,8 @@ alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
 # alias cdcadence="cd /usr/eelocal/cadence"
-alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
+# alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
+alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Strategy/paper"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
 alias cdpyspice="cd /usr/local/lib/python3.5/dist-packages/PySpice"
 alias cdngspice="cd ~/Dropbox/Linux/Research/ngspice"

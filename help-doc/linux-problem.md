@@ -2141,16 +2141,18 @@ bashrc:CPATH=/home/xuanqi/Software/hdf5/hdf5-1.10.5/hdf5/include:$(CPATH)
 yum repolist -v
 ```
 
-
+recommend this one
 ```
 yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo vim yum.repos.d/epel.repo
 enabled=1
 sudo yum update
 yum install hdf5
+yum install hdf5-devel
 ```
 <https://fedoraproject.org/wiki/EPEL>
 
 iron : no _bz2 module????
 fantasy: compile not correct
+rostam, not possible to compile
 
