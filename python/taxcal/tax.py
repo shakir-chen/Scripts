@@ -93,7 +93,8 @@ def hktax(amount, paytype="month"):
 
 if __name__ == '__main__':
     # tax = cheinatax(58000)
-    salary = 40000
+    # salary = 40000
+    salary = 100000
     income = salary * (12 + 4)
     tax, rate = chinatax(income, "year")
 
@@ -102,5 +103,7 @@ if __name__ == '__main__':
     print("China \n income:{:.1f}w, net-income: {:.1f}w \n tax: {:.1f}w, rate: {:.1f}%".format(income / 1E4, (income - tax) / 1E4, tax / 1E4, rate * 100))
     print("security:{:.1f}w, company:{:.1f}w".format(fee / 1E4, fee_company / 1E4))
 
+    salary = 58000
+    income = salary * (12 + 4)
     tax, rate = hktax(income, "year")
     print("HK \n income:{:.1f}w, net-income: {:.1f}w \n tax: {:.1f}w, rate: {:.1f}%".format(income / 1E4, (income - tax) / 1E4, tax / 1E4, rate * 100))

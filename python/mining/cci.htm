@@ -1,0 +1,1935 @@
+
+<script src="http://www1.centadata.com/cci/update_counter.asp"></script>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="keywords" content="中原, 中原地產, 地產代理, 地產, 香港, 房地產, 代理, 中原成交, 成交資料, 住宅, 樓市成交, 成交數據, 樓盤, 成交, 地圖, 放盤, 筍盤, 物業, 物業資料, 呎, 呎價,			成交價, 香港, 九龍, 新界, 屋苑, 一手, 二手, 新樓, 舊樓, 鄰近物業, 樓宇買賣合約, 上手成交, 成交價, 樓齡, 註冊日期, 樓價走勢圖, 地產市場, 大廈, 街名門牌, 登記備忘錄, 最新叫價, CCI, CCL, 指數, Index,			Centa City,property hk, 寶翠園, 帝后華庭, 雍景臺,地利根德閣,帝景園,嘉富麗苑,會展中心會景閣,禮頓山,比華利山,嘉雲臺,光明臺,城市花園,和富中心,港運城,南豐新村,康怡花園,太古城,鯉景灣,逸濤灣,杏花村,藍灣			半島,碧瑤灣,置富花園, 香港仔中心,海怡半島,陽明山莊,美孚新村,泓景臺,昇悅居,維港灣,景灣,帝海灣,又一居,漾日居,擎天半島,黃埔新村,黃埔花園,海逸豪園,德福花園,得寶花園,淘大花園,麗港城,匯景花園,維景灣			畔,新寶城,東港城,新都城,沙田中心,河畔花園,富豪花園,沙田第一城,帝堡城,銀禧花園,駿景園,聽濤雅苑,海花園,新港城,馬鞍山中心,雅典居,新峰花園,大埔中心,太湖花園,牽晴間,花都廣場,粉嶺中心,上水中心,華景山莊			,綠楊新村,愉景新城,海濱花園,荃威花園,麗城花園,麗都花園,浪翠園,香港黃金海岸,邁亞美海灣,海翠花園,新屯門中心,大興花園,Yoho Town,新元朗中心,嘉湖山莊,美景花園,翠怡花園,青怡花園,盈翠半島,映灣園"><meta name="description" content="中原城市指數 (CCI)香港地產價格指數。投資者和樓宇買家需要一些指標去掌握香港地產市場價格的變動。中原城市指數的創制就是要提供這樣的資訊，以作為一種反映香港地產市場變動趨勢的參考指標。"><style type="text/css">input.b   
+{ vertical-align: middle; background: #EEEEFF; color: #6060A0; font-size: 12px; font-family: Georgia; font-weight: bold; border: #A0A0C0 solid 1px; cursor: pointer; margin-bottom: 5px }
+
+body
+{
+    background-color: #999999;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333333;
+}
+
+a
+{
+    color: #0066CC;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+.header
+{
+    background-color: #FFFFFF;
+}
+
+table #header_line
+{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #CCCCCC;
+}
+
+.header_link
+{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+div.prop_photo
+{
+    margin: 2px;
+    border: 1px solid #CCCCCC;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+
+div.prop_photo img
+{
+    display: inline;
+    margin: 1px;
+}
+
+#prop_title span
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.prop_price
+{
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: #D7191C;
+}
+
+#prop_price_new
+{
+    background-color: #FFEFE5;
+}
+
+.prop_price_text
+{
+    margin-left: 10px;
+    line-height: 25px;
+}
+
+.price_percentage
+{
+    color: #669933;
+}
+
+#price_line
+{
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: #FFFFFF;
+    background-image: url('../Images/price_line.gif');
+    background-position: center;
+    background-repeat: repeat-y;
+}
+
+.price_red
+{
+    font-size: 26px;
+    font-weight: bold;
+    color: #D7191C;
+}
+
+.price_orange
+{
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF6600;
+}
+
+.text_grey
+{
+    color: #666666;
+}
+
+.search_result
+{
+    border: 1px solid #CCCCCC;
+    border-top-style: none;
+}
+
+#prop_search
+{
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #999999;
+    background-color: #F0F0F0;
+}
+
+.search_result_header
+{
+    background-color: #999999;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}
+
+.search_result_text
+{
+    text-align: center;
+    border: 1px solid #999999;
+    border-top-style: none;
+    border-right-style: none;
+    padding: 4px;
+}
+
+.result_bg_orange
+{
+    background-color: #FFEFE5;
+    padding: 4px;
+    border: 0px;
+    width: 100%;
+}
+
+#table_border_right
+{
+    border-right: 1px solid #999999;
+}
+
+.result_header_bg_darkgrey
+{
+    background-color: #666666;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}
+
+.result_header_bg_orange
+{
+    background-color: #FF6600;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}
+
+.more_link
+{
+    text-align: right;
+}
+
+.footer
+{
+    background-color: #F5F5F2;
+    line-height: 20px;
+    padding: 5px 29px;
+}
+
+.footer span
+{
+    color: #000000;
+    margin-left: -4px;
+}
+
+.main_td
+{
+    border: 1px solid #CCCCCC;
+}</style>
+<title>中原城市指數</title>
+</head><body background="images/background.gif">
+<table border="0" cellspacing="0" width="800" id="AutoNumber1" height="6" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" align="center" ><tr>
+<style type="text/css">input.b   { vertical-align: middle; background: #EEEEFF; color: #6060A0; font-size: 12px; font-family: Georgia; font-weight: bold; border: #A0A0C0 solid 1px; cursor: pointer; margin-bottom: 5px }</style>
+<table style="border-collapse: collapse" id="AutoNumber6" border="0" bordercolor="#111111" cellpadding="0" cellspacing="0" height="13" width="800" align="center">
+<tr><td bordercolor="#FFFFFF" height="13" width="25%">
+<img src="images/logo.gif" border="0" width="120" height="48"></td>
+<td height="13" width="63%" align="center">
+<img src="images/centacityindex-logo.gif" border="0" width="300" height="37"></td>
+<td height="13" width="12%" align="right">
+<p ><font size="2">
+<a href="cci_e.htm"><img src="images/english.gif" align="left" border="0" width="70" height="22"></a><br>
+<br></font></td></tr></table>
+<br></td></tr></table>
+
+<table border="0" cellspacing="0" width="800" id="AutoNumber1" height="6" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" align="center">
+<tr>
+<td vAlign="middle" align="left" width="30%">&nbsp;<span vAlign="left"><a href="#tblCCIEstateInfo"><img src="images/ccl.gif" title="建築/實用面積雙走勢圖" border="0" vAlign="middle" /></a></span></td>
+<td vAlign="middle" align="left" width="22%">&nbsp;<font size="3"><b>
+<a href="http://202.72.14.52/p2/cci/SearchHistory.aspx" target="_blank">
+查詢過往數據資料</a></b></font></td>
+<td vAlign="middle" align="middle" width="19%">&nbsp;<font size="3"><b><a href="notes_c.htm" target="_blank">中原城市指數簡介</a></b></font></td>
+<td vAlign="middle" align="middle" width="14%">
+<a href="CCL-p1.html" target="_blank">
+<font size="3"><b>分區簡介</b></font></a></td>
+<td vAlign="middle" align="middle" width="15%">
+<span vAlign="middle"><a href="CCUI.html" target="_blank">
+<img src="images/new_area.gif" title="按面積分類簡介" border="0" /></a></span></td>
+</td>
+</tr>
+
+<style>
+        .title {
+            font-weight: bold;
+            font-size: large;
+            font-family: Microsoft YaHei;
+        }
+        .subtitle {
+            color: #666666;
+            font-family: Microsoft YaHei;
+        }
+        .button {
+            background-color: red;
+            float: right;
+            padding: 10px;
+            text-align: center;
+            width: 90px;
+            margin-right: 10px;
+            font-family: Microsoft YaHei;
+        }
+        .link {
+            text-decoration: none;
+            color: white;
+        }
+        .imgcol {
+            width: 10%;
+        }
+        .imgcol > img {
+            width: 180;
+            height: 100;
+        }
+        .textcol {
+            width: 70%;
+        }
+        .tables {
+            width: 100%; 
+            padding: 15px;
+        }
+        .item {   
+            margin: 30px 0 30px 0;
+            border-left: 3px solid #b30000;
+        }
+    </style>
+
+
+
+<!-- centachannel -->
+<tr><td colspan='5' style='margin:10px;'>
+
+
+ <div class='item'>
+        <table class='tables'>
+            <tbody>
+                <tr>
+                    <td class='imgcol'>
+                        <img src='http://www.centachannel.com/CentaChannelAPI/api/File/Photo?vdoID=6413f4f4-9f6a-4c0d-9ab6-3d54ea7d54e9&width=180&height=100'>
+                    </td>
+                    <td class='textcol'>
+                        <div class='title'>樓市C見#11 持BNO可移英 港人大逃亡？</div>
+                        <div class='subtitle'>2020年7月</div>
+                        <div class='button'><a href='http://www.centachannel.com/Home/Detail?videoID=6413f4f4-9f6a-4c0d-9ab6-3d54ea7d54e9' class='link'>立即觀看</a></div>
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+
+</td></tr>
+<!-- end of centachannel --><tr>
+<td colspan="5">
+<b>( 1997年7月指數為100點 )</b></td>
+</tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="800" id="AutoNumber1" align="center" bgcolor="#ffdbdb">
+<tr><br>
+<td width="300" colspan="2"><font size="5"><b>中原城市領先指數 CCL</b></font>&nbsp;</td><td width="500">
+<font size="3"><b>每周五公佈 – 最新2020/07/17公佈</b>，反映<b>2020/07/06</b>至<b>2020/07/12</b>(預計簽署正式買賣合約時段)的二手私人住宅樓價。一般在簽署臨時買賣合約後14日內簽署正式買賣合約。</font></td>
+</td>
+</tr>
+</table>
+
+<table border="0" cellspacing="0" width="800" id="AutoNumber1" height="6" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" align="center">
+<tr><td width="800" valign="top" height="1">
+<table border="0" cellpadding="1" cellspacing="1" height="55" width="100%" align="center">
+<tr><td bgcolor="red" height="16" nowrap="nowrap" width="378">
+<td align="center" bgcolor="red" height="16" nowrap="nowrap" width="165">
+<font color="#ffffff" size="3">本週公佈</font></td>
+<td align="center" bgcolor="red" height="16" nowrap="nowrap" width="129">
+<font color="#ffffff" size="3">與上週比較</font></td>
+<td align="center" bgcolor="red" height="16" nowrap="nowrap" width="97">
+<font color="#ffffff" size="3">與上月比較</font></td>
+</tr><tr><td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="378">
+<font color="blue" size="3"><b>[中原城市領先指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="165">
+<font color="black" size="3"><center>
+<p>180.81</p></center></font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" width="129">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue">1.04 % </font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" width="97">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue">0.04 % </font></td>
+</tr><tr><td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="378">
+<font color="blue" size="3"><b>[中原城市(大型單位)領先指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="165">
+<font color="black" size="3"><center>
+<p>178.11</p></center></font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="129">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue">1.12 % </font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="97">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue">2.59 % </font></td>
+</tr><tr><td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="378">
+<font color="blue" size="3"><b>[中原城市(中小型單位)領先指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="165">
+<font color="black" size="3"><center>
+<p>181.33</p></center></font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="129">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue">1.02 % </font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="97">&nbsp;
+<img src="images/down.gif" width="10" height="8"><font color="red">0.41 % </font></td>
+</tr><tr><td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="378">
+<font color="blue" size="3"><b>[中原城市大型屋苑領先指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="165">
+<font color="black" size="3"><center>
+<p>183.65</p></center></font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="129">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue">1.11 % </font></td>
+<td align="center" bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="97">&nbsp;
+<img src="images/down.gif" width="10" height="8"><font color="red">0.58 % </font></td>
+</tr></table></td></tr></table>
+<br>
+
+<table border="0" cellspacing="0" width="800" id="AutoNumber1" height="6" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" align="center">
+<tr><td width="800" valign="top" height="1">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5" height="234" align="center">
+<tr><td width="48%" valign="top" height="231"><font color="#800080" size="3"><b>
+<br>[中原城市分區領先指數]<br>*只包括大型屋苑<br></b></font><table style="border-collapse: collapse;" id="AutoNumber4" border="1" bordercolor="#111111" cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="25%">　</td><td width="25%"><font size="3">本週公佈</font></td>
+<td width="25%"><font size="3">上週比較</font></td><td width="25%"><font size="3">上月比較</font></td>
+</tr><tr><td width="25%"><font color="blue" size="3">港島</font></td>
+<td width="25%"><font color="black" size="3">189.93</font></td>
+<td width="25%"><font size="3">
+<img src="images/up.gif" width="10" height="8"></font><font color="blue" size="3">2.6 % </font></td>
+<td width="25%"><font size="3">
+<img src="images/up.gif" width="10" height="8"></font><font color="blue" size="3">0.92 % </font></td>
+</tr><tr><td width="25%"><font color="blue" size="3">九龍</font></td>
+<td width="25%"><font color="black" size="3">180.55</font></td>
+<td width="25%"><font size="3">
+<img src="images/up.gif" width="10" height="8"></font><font color="blue" size="3">0.93 % </font></td>
+<td width="25%"><font size="3">
+<img src="images/down.gif" width="10" height="8"></font><font color="red" size="3">1.19  % </font></td>
+</tr><tr><td width="25%"><font color="blue" size="3">新界(東)</font></td>
+<td width="25%"><font color="black" size="3">191.73</font></td><td width="25%"><font size="3">
+<img src="images/up.gif" width="10" height="8"></font><font color="blue" size="3">0.64 % </font></td>
+<td width="25%"><font size="3"><img src="images/down.gif" width="10" height="8"></font><font color="red" size="3">1.02 % </font></td>
+</tr><tr><td width="25%"><font color="blue" size="3">新界(西)</font></td>
+<td width="25%"><font color="black" size="3">164.59</font></td>
+<td width="25%"><img src="images/down.gif" width="10" height="8"><font color="red" size="3">0.01 %</font></td>
+<td width="25%"><font size="3">
+<img src="images/down.gif" width="10" height="8"></font><font color="red" size="3">1.1 %</font></td>
+</tr></table><p>　</p><p>　</td><td width="52%" height="231">
+<form id="form1" method="get" runat="server"><TABLE id=Table1 cellSpacing=1 cellPadding=1 width=300 border=0><TR><TD align=center valign=bottom><input type="checkbox" name="C5" value="ON" id="C5" onclick="checkAllButton1(this)"  checked>全港整體<input type="checkbox" name="C1" value="ON" id="C1" onclick="checkAllButton1(this)">港島 <input type="checkbox" name="C2" value="ON" id="C2" onclick="checkAllButton1(this)">九龍<input type="checkbox" name="C3" value="ON" id="C3" onclick="checkAllButton1(this)">新界東 <input type="checkbox" name="C4" value="ON" id="C4" onclick="checkAllButton1(this)">新界西     <input type="button" name="submit1" id="submit1" value="比較" class="b" onclick="callAJAX();" return="true;"> <input type="reset" value="重設" name="Bw2" ID="Reset1" class="b" onclick="swapImage();"><tr><TD align=left valign=bottom>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="2">附加: 6個月移動平均線<input type="checkbox" name="C180" value="ON" id="C180" onclick="checkAllButton1(this);"><SELECT name="dropDown180" id="dropDown180" onclick="checkButton1();"><OPTION selected>全港</OPTION><OPTION>港島</OPTION><OPTION>九龍</OPTION><OPTION>新界(東)</OPTION><OPTION>新界(西)</OPTION></SELECT></font><font size="2">&nbsp;12個月移動平均線<input type="checkbox" name="C365" value="ON" id="C365" onclick="checkAllButton1(this);"><SELECT name="dropDown365" id="dropDown365" onclick="checkButton2();"><OPTION selected>全港</OPTION><OPTION>港島</OPTION><OPTION>九龍</OPTION><OPTION>新界(東)</OPTION><OPTION>新界(西)</OPTION></SELECT></font></td></tr></TD></TR></form><TD><img src="images/ccli_chart.png" border="0" width="500" height="250" id="IMG1"></td></TD></TR></TABLE></tr><tr><td width="48%" height="3"></td><td width="52%" height="3">
+</td>
+</tr></table></td></tr></table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="800" id="AutoNumber1" align="center" bgcolor="#ffdbdb">
+<tr><br><br>
+<td width="300" colspan="2"><font size="5"><b>中原城市指數 CCI</b></font>&nbsp;</td><td width="500">
+<font color="#111111" size="3"><b>每月公佈 – 最新2020/07/18公佈</b>，反映<b>2020年
+05月
+</b>(簽署正式買賣合約時段)的二手私人住宅樓價。一般在簽署臨時買賣合約後14日內簽署正式買賣。</font></td>
+</td>
+</tr>
+</table>
+
+<table border="0" cellspacing="0" width="800" id="AutoNumber1" height="6" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" align="center">
+<tr><td width="800" valign="top" height="1">
+<table border="0" cellpadding="1" cellspacing="1" height="74" width="100%" align="center">
+<tr><td bgcolor="red" height="16" nowrap="nowrap" width="458">
+<td align="center" bgcolor="red" height="16" nowrap="nowrap" width="196">
+<font color="white" size="3">本月公佈</font></td>
+<td align="center" bgcolor="red" height="16" nowrap="nowrap" width="105">
+<font color="white" size="3">與上月比較</font></td>
+</tr><tr><td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="458">
+<font color="blue" size="3"><b>[中原城市指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="196">
+<font color="black"><center>
+<p>175.82</p></center></font></td>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="105"><center>
+<p>&nbsp;<img src="images/up.gif" width="10" height="8"><font color="blue">2.03 % </font></p>
+</center></td></tr><tr>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="458">
+<font color="blue" size="3"><b>[中原城市(大型單位)指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="196">
+<font color="black"><center>
+<p>170.72</p></center></font></td>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="105"><center>
+<p>&nbsp;<img src="images/up.gif" width="10" height="8"><font color="blue">0.90 % </font></p>
+</center></td></tr><tr>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="458">
+<font color="blue" size="3"><b>[中原城市(中小型單位)指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="196">
+<font color="black"><center>
+<p>176.79</p></center></font></td>
+<td bgcolor="#ffdbdb" height="14" nowrap="nowrap" width="105"><center>
+<p>&nbsp;<img src="images/up.gif" width="10" height="8"><font color="blue">2.23 % </font></p>
+</center></td></tr><tr>
+<td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="458">
+<font color="blue" size="3"><b>[中原城市大型屋苑指數]</b></font></td>
+<td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="196">
+<font color="black"><center><p>182.16</p>
+</center></font></td>
+<td bgcolor="#ffdbdb" height="1" nowrap="nowrap" width="105"><center>
+<p>&nbsp;<img src="images/up.gif" width="10" height="8"><font color="blue">2.29 % </font></p>
+</center></td></tr></table></td></tr></table>
+<br>
+
+<table border="0" cellspacing="0" width="800" id="AutoNumber1" height="6" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" align="center">
+<tr>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="800" id="AutoNumber6" height="234" align="center" valign="top">
+<tr><td width="100%" height="250"><b><font color="#800080" size="3">
+[中原城市分區指數]<br>*只包括大型屋苑<br></b></font>
+<table style="border-collapse: collapse;" id="AutoNumber5" border="1" bordercolor="#111111" cellpadding="0" cellspacing="0" width="268">
+<tr><td width="31%">　</td>
+<td width="33%"><font size="3">本月公佈</font></td>
+<td width="55%"><font size="3">上月比較</font></td>
+</tr><tr><td width="31%"><font color="blue" size="3">港島</font></td>
+<td width="33%"><font color="black" size="3">189.13</font></td>
+<td width="55%">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue" size="3">1.87 % </font></td>
+</tr><tr><td width="31%"><font color="blue" size="3">九龍</font></td>
+<td width="33%"><font color="black" size="3">175.26</font></td>
+<td width="55%">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue" size="3">1.57 % </font></td>
+</tr><tr><td width="31%"><font color="blue" size="3">新界(東)</font></td>
+<td width="33%"><font color="black" size="3">184.4</font></td>
+<td width="55%">&nbsp;
+<img src="images/up.gif" width="10" height="8"><font color="blue" size="3">2.68 % </font></td>
+</tr><tr><td width="31%"><font color="blue" size="3">新界(西)</font></td>
+<td width="33%"><font color="black" size="3">169.38</font></td>
+<td width="55%">&nbsp;
+<img src="images/up.gif" height="8" width="10"><font color="blue" size="3">3.6 %</font></td>
+</tr></table><td width="50%" height="250">
+<form id="form2" method="get" runat="server"><TABLE id=Table1 cellSpacing=1 cellPadding=1 width=300 border=0><TR><TD align=center><input type="checkbox" name="Bo" value="ON" id="Bo" onclick="checkAllButton2(this);"  checked>全港整體<input type="checkbox" name="Bo1" value="ON" id="Bo1" onclick="checkAllButton2(this)">港島 <input type="checkbox" name="Bo2" value="ON" id="Bo2" onclick="checkAllButton2(this)">九龍 <input type="checkbox" name="Bo3" value="ON" id="Bo3" onclick="checkAllButton2(this)">新界東 <input type="checkbox" name="Bo4" value="ON" id="Bo4" onclick="checkAllButton2(this)">新界西  <input type="button" name="submit2" id="submit2" value="比較" class="b" onclick="callAJAX2();" return="true;"> <input type="reset" value="重設" name="CS" ID="Reset2" class="b" onclick="swapImage2();"><tr><TD align=left valign=bottom>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="Bo180" value="ON" id="Bo180" onclick="checkAllButton2(this);"><SELECT name="bodropDown180" id="bodropDown180" onclick="checkButton3();"><OPTION selected>全港 - 6個月移動平均線</OPTION><OPTION>港島 - 6個月移動平均線</OPTION><OPTION>九龍 - 6個月移動平均線</OPTION><OPTION>新界(東) - 6個月移動平均線</OPTION><OPTION>新界(西) - 6個月移動平均線</OPTION></SELECT><input type="checkbox" name="Bo365" value="ON" id="Bo365" onclick="checkAllButton2(this);"><SELECT name="bodropDown365" id="bodropDown365" onclick="checkButton4();"><OPTION selected>全港 - 12個月移動平均線</OPTION><OPTION>港島 - 12個月移動平均線</OPTION><OPTION>九龍 - 12個月移動平均線</OPTION><OPTION>新界(東) - 12個月移動平均線</OPTION><OPTION>新界(西) - 12個月移動平均線</OPTION></SELECT></td></tr></TD></TR></form><BR><TD><IMG id="IMG2" name="IMG2" src="images/cci_chart.png" border="0" width="500" height="250"></td></P></TD></TR></TABLE></tr></table><p></p></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="800" id="AutoNumber1" height="6" style="border-collapse: collapse" bordercolor="#111111" align="center">
+<tr>
+<table id="tblCCIEstateInfo" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="800" id="AutoNumber6" height="3" align="center">
+<tr>
+<td width="100%" height="1">&nbsp;<table border="0" cellpadding="0" cellspacing="0" height="157" width="800">
+<tr>
+<td bgcolor="#999999" height="13" width="40%"><center>
+<p><font color="white" size="3">成份屋苑</font></p>
+</center></td>
+<td bgcolor="#999999" height="13" width="20%"><center>
+<p><font color="white" size="3">本週調整呎價<br>(以建築面積計)</font></p>
+</center></td>
+<td bgcolor="#FF6600" height="13" width="20%"><center>
+<p><font color="white" size="3">*本週調整呎價<br>(以實用面積計)</font></p>
+</center></td>
+<!--<td bgcolor="#999999"><center><font coor=white size=3>與上月比較</font></center></td>-->
+<td bgcolor="#999999" height="13" width="20%"><center>
+<p><font color="white" size="3">與上月比較</font></p>
+</center></td>
+</tr>
+<tr>
+<td class="main_td" colspan="4" align="left" bgcolor="#e6e6e6" height="18" width="754">
+<font color="blue" size="3"><b>[港島]</b></font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000001" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000001" target="_top">
+<font color="blue">寶翠園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,448.62</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24,887.68</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.04 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000005" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000005" target="_top">
+<font color="blue">翰林軒</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,363.04</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21,800.56</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.40 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000010" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000010" target="_top">
+<font color="blue">泓都</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,542.3</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23,477.47</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.16 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000015" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000015" target="_top">
+<font color="blue">嘉輝花園</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,097.19</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,662.44</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.10 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000020" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000020" target="_top">
+<font color="blue">學士臺</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,213.98</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,992.12</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.13 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000100" target="_top">
+<font color="blue">帝后華庭</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,523.15</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,303.99</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.03 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000150" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000150" target="_top">
+<font color="blue">聚賢居</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,274.49</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26,253.46</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+4.44 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000200" target="_top">
+<font color="blue">雍景臺</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,534.83</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21,322.15</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.53 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000300" target="_top">
+<font color="blue">地利根德閣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25,443.89</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32,225.32</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.53 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000400" target="_top">
+<font color="blue">帝景園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32,135.31</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 41,057.18</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.74 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000500" target="_top">
+<font color="blue">嘉富麗苑</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29,520.12</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 35,353.66</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.53 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000550" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000550" target="_top">
+<font color="blue">嘉薈軒</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,569.17</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,091.2</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.79 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000600" target="_top">
+<font color="blue">會展中心 會景閣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,316.63</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23,473.2</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.73 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000650" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000650" target="_top">
+<font color="blue">尚翹峰</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,844.19</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21,370.96</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+6.81 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000700" target="_top">
+<font color="blue">禮頓山</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 34,516.01</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45,132.84</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.73 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000800" target="_top">
+<font color="blue">比華利山</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,107.95</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27,111.57</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.32 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=000900" target="_top">
+<font color="blue">嘉雲臺</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29,100.82</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36,599.84</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.73 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001000" target="_top">
+<font color="blue">光明臺</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,720.53</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20,735.7</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.03 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001100" target="_top">
+<font color="blue">城市花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,221.06</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,295.51</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.79 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001200" target="_top">
+<font color="blue">和富中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,544.48</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,002.06</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+6.39 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001250" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001250" target="_top">
+<font color="blue">賽西湖大廈</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,853.89</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25,883.13</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+4.71 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001300" target="_top">
+<font color="blue">港運城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,649.43</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,711</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.79 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001400" target="_top">
+<font color="blue">南豐新村</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,286.55</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,337.77</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+5.37 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001500" target="_top">
+<font color="blue">康怡花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,060.41</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,531.07</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.36 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001600" target="_top">
+<font color="blue">太古城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,617.72</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20,178.62</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.49 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001700" target="_top">
+<font color="blue">鯉景灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,781.5</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,133.46</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.09 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001750" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001750" target="_top">
+<font color="blue">嘉亨灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,561.06</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25,532.6</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+13.78 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001800" target="_top">
+<font color="blue">逸濤灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,746.49</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23,448.36</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.50 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=001900" target="_top">
+<font color="blue">杏花村</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,725.91</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,548.21</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+5.81 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002000" target="_top">
+<font color="blue">藍灣半島</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,436.66</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,300.06</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.90 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002100" target="_top">
+<font color="blue">碧瑤灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,378.98</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,395.08</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+1.08 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002150" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002150" target="_top">
+<font color="blue">貝沙灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,695.67</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29,756.26</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+10.39 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002200" target="_top">
+<font color="blue">置富花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,698.63</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,106.19</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.77 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002300" target="_top">
+<font color="blue">香港仔中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,512.96</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,175.14</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.92 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002400" target="_top">
+<font color="blue">海怡半島</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,756.48</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,214.76</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.55 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002450" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002450" target="_top">
+<font color="blue">深灣軒</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,870.77</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,668.06</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+7.50 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002500" target="_top">
+<font color="blue">陽明山莊</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23,238.71</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29,050.24</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+11.32 %</font></td>
+</tr>
+<tr>
+<td class="main_td" colspan="4" align="left" bgcolor="#e6e6e6" height="18" width="754">
+<font color="blue" size="3"><b>[九龍]</b></font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002600" target="_top">
+<font color="blue">美孚新村</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,213.64</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,720.59</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+4.96 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002650" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002650" target="_top">
+<font color="blue">曼克頓山</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,311.31</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,671.18</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.45 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002700" target="_top">
+<font color="blue">泓景臺</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,056.88</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,916.35</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.99 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002800" target="_top">
+<font color="blue">昇悅居</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,179.23</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,640.4</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.27 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002825" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002825" target="_top">
+<font color="blue">宇晴軒</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,185.51</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,377.34</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.28 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002850" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002850" target="_top">
+<font color="blue">港灣豪庭</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,190.03</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,869.44</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.98 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002870" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002870" target="_top">
+<font color="blue">君匯港</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,647.94</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21,583.45</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.98 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002900" target="_top">
+<font color="blue">維港灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,531.53</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22,151.12</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+4.43 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002950" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=002950" target="_top">
+<font color="blue">帝峰皇殿</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20,455.79</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26,890.48</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.76 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003000" target="_top">
+<font color="blue">栢景灣 / 帝栢海灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,905.97</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24,160.59</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.93 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003050" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003050" target="_top">
+<font color="blue">畢架山一號</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21,773.34</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28,718.77</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.31 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003100" target="_top">
+<font color="blue">又一居</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,580.27</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21,973.43</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.81 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003150" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003150" target="_top">
+<font color="blue">君頤峰</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,669.36</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24,619.54</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+7.18 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003200" target="_top">
+<font color="blue">漾日居</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,189.42</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24,470.36</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.38 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003300" target="_top">
+<font color="blue">擎天半島</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21,172.85</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28,036.66</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.38 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003310" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003310" target="_top">
+<font color="blue">凱旋門</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 28,264.13</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37,566.61</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.68 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003350" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003350" target="_top">
+<font color="blue">港景峰</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,437.43</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25,915.08</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.45 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003400" target="_top">
+<font color="blue">黃埔新村</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,081.92</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,542.38</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.58 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003500" target="_top">
+<font color="blue">黃埔花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,147.08</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,235.85</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+6.11 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003600" target="_top">
+<font color="blue">海逸豪園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,223.79</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,730.73</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+1.35 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003615" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003615" target="_top">
+<font color="blue">半山壹號</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,654.5</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,138.6</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.31 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003630" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003630" target="_top">
+<font color="blue">翔龍灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,435.37</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,509.37</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.03 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003650" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003650" target="_top">
+<font color="blue">傲雲峰</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,070.71</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,749.58</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.36 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003670" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003670" target="_top">
+<font color="blue">譽．港灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,249.78</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20,997.62</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.34 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003690" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003690" target="_top">
+<font color="blue">星河明居</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,020.66</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19,036.67</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.59 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003700" target="_top">
+<font color="blue">德福花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,697.35</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,465.57</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.40 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003800" target="_top">
+<font color="blue">得寶花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,722.81</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,388.29</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.03 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=003900" target="_top">
+<font color="blue">淘大花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,439.25</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,113.59</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+1.01 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004000" target="_top">
+<font color="blue">麗港城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,853.05</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,797.57</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.82 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004100" target="_top">
+<font color="blue">匯景花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,020.81</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,568.32</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.86 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004200" target="_top">
+<font color="blue">維景灣畔</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,742.29</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,237.52</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.19 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004250" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004250" target="_top">
+<font color="blue">將軍澳中心/將軍澳豪庭</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,242.52</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,944.84</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.43 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004300" target="_top">
+<font color="blue">新寶城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,895.47</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,496.96</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+6.28 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004400" target="_top">
+<font color="blue">東港城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,171.75</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,516.28</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.73 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004500" target="_top">
+<font color="blue">新都城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,434.32</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,234.61</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.51 %</font></td>
+</tr>
+<tr>
+<td class="main_td" colspan="4" align="left" bgcolor="#e6e6e6" height="18" width="754">
+<font color="blue" size="3"><b>[新界(東)]</b></font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004550" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004550" target="_top">
+<font color="blue">名城</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,967.15</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,131.04</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.19 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004600" target="_top">
+<font color="blue">沙田中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,819.94</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,598.5</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.08 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004700" target="_top">
+<font color="blue">河畔花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,537.57</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,475.13</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.57 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004800" target="_top">
+<font color="blue">富豪花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,993.74</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,522.92</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+1.17 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=004900" target="_top">
+<font color="blue">沙田第一城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,786</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,337.29</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.22 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005000" target="_top">
+<font color="blue">帝堡城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,972.63</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,103.79</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.39 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005050" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005050" target="_top">
+<font color="blue">御龍山</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,797.81</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17,782.76</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+5.89 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005100" target="_top">
+<font color="blue">銀禧花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,140.82</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,401.05</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.39 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005200" target="_top">
+<font color="blue">駿景園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,348</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,474.68</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.27 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005250" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005250" target="_top">
+<font color="blue">海典灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,143.1</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,907.22</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.39 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005300" target="_top">
+<font color="blue">聽濤雅苑</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,377.69</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,865.62</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.68 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005400" target="_top">
+<font color="blue">海栢花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,628.98</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,318.54</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.99 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005500" target="_top">
+<font color="blue">新港城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,301.58</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,203.98</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+6.34 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005600" target="_top">
+<font color="blue">馬鞍山中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,187.04</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,384.03</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.96 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005700" target="_top">
+<font color="blue">雅典居</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,313.46</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,863.35</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+4.08 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005720" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005720" target="_top">
+<font color="blue">翠擁華庭</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,567.57</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,318.51</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.10 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005800" target="_top">
+<font color="blue">新峰花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,257.16</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,598.48</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.39 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=005900" target="_top">
+<font color="blue">大埔中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,726.02</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,630.48</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.67 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006000" target="_top">
+<font color="blue">太湖花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,056.6</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,795.54</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+5.45 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006100" target="_top">
+<font color="blue">牽晴間</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,420.8</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,244.7</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.90 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006200" target="_top">
+<font color="blue">花都廣場</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,492.93</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,954.53</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.70 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006300" target="_top">
+<font color="blue">粉嶺中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,181.03</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,085.96</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.87 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006330" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006330" target="_top">
+<font color="blue">帝庭軒/御庭軒</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,905.8</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,672.71</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.47 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006350" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006350" target="_top">
+<font color="blue">御皇庭</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,125.09</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,005.49</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.39 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006400" target="_top">
+<font color="blue">上水中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,470.13</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,016.75</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.65 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006450" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006450" target="_top">
+<font color="blue">皇府山</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,612.98</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,723.31</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.52 %</font></td>
+</tr>
+<tr>
+<td class="main_td" colspan="4" align="left" bgcolor="#e6e6e6" height="18" width="754">
+<font color="blue" size="3"><b>[新界(西)]</b></font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006500" target="_top">
+<font color="blue">華景山莊</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,773.46</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,879.06</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.45 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006600" target="_top">
+<font color="blue">綠楊新村</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,161.44</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,326.46</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+4.41 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006700" target="_top">
+<font color="blue">愉景新城</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,171</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,162.55</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+5.06 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006750" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006750" target="_top">
+<font color="blue">爵悅庭</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,297.19</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,695.25</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.52 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006800" target="_top">
+<font color="blue">海濱花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,177.91</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,513.09</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+6.99 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=006900" target="_top">
+<font color="blue">荃威花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,797.7</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,156.13</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+1.99 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007000" target="_top">
+<font color="blue">麗城花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,707.33</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,734.63</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.63 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007050" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007050" target="_top">
+<font color="blue">碧堤半島</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,901.56</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,977.71</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.57 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007100" target="_top">
+<font color="blue">麗都花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,657.18</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,508.4</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.55 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007200" target="_top">
+<font color="blue">浪翠園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,283.76</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,567.03</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+2.52 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007300" target="_top">
+<font color="blue">香港黃金海岸</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,572.32</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,140.2</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+4.49 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007400" target="_top">
+<font color="blue">邁亞美海灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,822.91</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,520.11</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+5.94 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007500" target="_top">
+<font color="blue">海翠花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,085.99</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,935.65</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.33 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007600" target="_top">
+<font color="blue">新屯門中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,042.22</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,099.37</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.08 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007650" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007650" target="_top">
+<font color="blue">屯門市廣場</font></a></font>&nbsp;<img src="images/cci2016_C.gif"></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,256.34</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,038.75</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.51 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007700" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007700" target="_top">
+<font color="blue">大興花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,078.32</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,694.54</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+4.38 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007750" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007750" target="_top">
+<font color="blue">豫豐花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,687.41</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,687.73</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.27 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007770" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007770" target="_top">
+<font color="blue">蝶翠峰</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,473.2</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,297.09</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.19 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007800" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007800" target="_top">
+<font color="blue">Yoho Town</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,357.88</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,229.13</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+3.74 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007900" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007900" target="_top">
+<font color="blue">新元朗中心</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,904.52</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13,251.01</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.41 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007950" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=007950" target="_top">
+<font color="blue">采葉庭</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,061.99</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,969.5</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+0.33 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008000" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008000" target="_top">
+<font color="blue">嘉湖山莊</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,118.1</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,486.63</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+3.36 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008050" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008050" target="_top">
+<font color="blue">栢慧豪園/豪廷</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,996.73</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,889.91</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.56 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008100" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008100" target="_top">
+<font color="blue">美景花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10,136.94</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,829.67</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+0.72 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008200" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008200" target="_top">
+<font color="blue">翠怡花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,724.45</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15,179.38</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.28 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008300" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008300" target="_top">
+<font color="blue">青怡花園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,999.17</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,857.4</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+1.99 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008400" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008400" target="_top">
+<font color="blue">盈翠半島</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,696.73</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 18,464.5</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/up.gif"><font color="blue"> 
+1.17 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008500" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008500" target="_top">
+<font color="blue">映灣園</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8,314.25</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11,147.99</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+2.10 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008510" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008510" target="_top">
+<font color="blue">藍天海岸</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,257.19</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,313.76</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+8.04 %</font></td>
+</tr>
+<tr>
+<td class="main_td" align="left" bgcolor="#ffffff" height="30" width="315">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008600" target="_top">
+<img src="images/cci_icon_forhouse.gif" title="看實用面積呎價對比走勢圖" border="0" onmouseover="this.src='images/cci_icon_forhouse_over.jpg'" onmouseout="this.src='images/cci_icon_forhouse.gif'"></img></a><font size="3">
+<a href="http://hk.centadata.com/ccichart/estate_info.aspx?id=008600" target="_top">
+<font color="blue">珀麗灣</font></a></font></td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,671.67</td>
+<td class="main_td" align="left" bgcolor="#ffefe5" width="265">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12,565.52</td>
+<td class="main_td" align="left" bgcolor="#ffffff" width="208">&nbsp;&nbsp;&nbsp; &nbsp;<img src="images/down.gif"><font color="red"> 
+1.96 %</font></td>
+</tr>
+<tr><td colspan="4"><br></td></tr><tr><td colspan="4">* 根據各屋苑之實用率計算</td></tr></table>
+<p>　</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="800" id="AutoNumber3" align="center">
+<hr>
+<tr>
+<td width="100%"><font color="#808080" size="2">
+以上統計數據是以市場最新成交資料製作而成，只供閣下作參考用途。<br>若因錯漏而引致任何不便或損失， 中原網頁及中原地產概不負責。<br>
+<br>(持牌地產代理公司牌照號碼 C-000227) </font></td>
+</tr></table>
+</table>
+
+<SCRIPT LANGUAGE="JavaScript">var IMG1 = document.getElementById('IMG1');function swapImage() { IMG1.src = "images/ccli_chart.png";}function callAJAX(){IMG1.src = "images/loading_bule.gif";var c5 = document.getElementById('C5');var c1 = document.getElementById('C1');var c2 = document.getElementById('C2');var c3 = document.getElementById('C3');var c4 = document.getElementById('C4');var c180 = document.getElementById('C180');var c365 = document.getElementById('C365');var cdropDown180 = document.getElementById('dropDown180');var cdropDown365 = document.getElementById('dropDown365');var n1 = 0;if (c1.checked) {n1 = 1};var n2 = 0;if (c2.checked) {n2 = 1};var n3 = 0;if (c3.checked) {n3 = 1};var n4 = 0;if (c4.checked) {n4 = 1};var n5 = 0;if (c5.checked) {n5 = 1};var n180 = 0;if (c180.checked) {n180 = 1};var n365 = 0;if (c365.checked) {n365 = 1};var n180_index = 0;n180_index = cdropDown180.selectedIndex;var n365_index = 0;n365_index = cdropDown365.selectedIndex;var tempStr = "hk=" + n1 + "&kln=" + n2 + "&nte=" + n3 + "&ntw=" + n4 + "&main=" + n5 + "&n180=" + n180 + "&n365=" + n365 + "&n180_index=" + n180_index + "&n365_index=" + n365_index;var ajax = null;var frameElement;if(ajax && ajax.readyState!=0){ajax.abort();}ajax=createAJAX();if (ajax != null){link = "charting.aspx?" + tempStr;ajax.open("GET",link,true);ajax.onreadystatechange=function(){if(ajax.readyState==4 && ajax.responseText){eval(ajax.responseText);}}};ajax.send(null);}function createAJAX(){var AJAX=null;try	{AJAX=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{AJAX=new ActiveXObject("Microsoft.XMLHTTP");}catch(oc){AJAX=null;}}if(!AJAX && typeof(XMLHttpRequest) != "undefined"){AJAX=new XMLHttpRequest();}return AJAX;}</SCRIPT><SCRIPT LANGUAGE="JavaScript">function checkButton1(){var myButton1a = document.getElementById('C1');var myButton1b = document.getElementById('C2');var myButton1c = document.getElementById('C3');var myButton1d = document.getElementById('C4');var myButton1e = document.getElementById('C5');var myButton1f = document.getElementById('C180');var myButton1g = document.getElementById('C365');var myButtonCounter = 0;if (myButton1a.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1b.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1c.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1d.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1e.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1g.checked) {myButtonCounter = myButtonCounter + 1};if (myButtonCounter >= 3){alert('對不起，最多三條對比線。');}else{myButton1f.checked = true;}}function checkButton2(){var myButton1a = document.getElementById('C1');var myButton1b = document.getElementById('C2');var myButton1c = document.getElementById('C3');var myButton1d = document.getElementById('C4');var myButton1e = document.getElementById('C5');var myButton1f = document.getElementById('C180');var myButton1g = document.getElementById('C365');var myButtonCounter = 0;if (myButton1a.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1b.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1c.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1d.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1e.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1f.checked) {myButtonCounter = myButtonCounter + 1};if (myButtonCounter >= 3){alert('對不起，最多三條對比線。');}else{myButton1g.checked = true;}}function checkButton3(){var myButton2a = document.getElementById('Bo');var myButton2b = document.getElementById('Bo1');var myButton2c = document.getElementById('Bo2');var myButton2d = document.getElementById('Bo3');var myButton2e = document.getElementById('Bo4');var myButton2f = document.getElementById('Bo180');var myButton2g = document.getElementById('Bo365');var myButtonCounter = 0;if (myButton2a.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2b.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2c.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2d.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2e.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2g.checked) {myButtonCounter = myButtonCounter + 1};if (myButtonCounter >= 3){alert('對不起，最多三條對比線。');}else{myButton2f.checked = true;}}function checkButton4(){var myButton2a = document.getElementById('Bo');var myButton2b = document.getElementById('Bo1');var myButton2c = document.getElementById('Bo2');var myButton2d = document.getElementById('Bo3');var myButton2e = document.getElementById('Bo4');var myButton2f = document.getElementById('Bo180');var myButton2g = document.getElementById('Bo365');var myButtonCounter = 0;if (myButton2a.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2b.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2c.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2d.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2e.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2f.checked) {myButtonCounter = myButtonCounter + 1};if (myButtonCounter >= 3){alert('對不起，最多三條對比線。');}else{myButton2g.checked = true;}}function checkAllButton1(myObj){var myButton1a = document.getElementById('C1');var myButton1b = document.getElementById('C2');var myButton1c = document.getElementById('C3');var myButton1d = document.getElementById('C4');var myButton1e = document.getElementById('C5');var myButton1f = document.getElementById('C180');var myButton1g = document.getElementById('C365');var myButtonCounter = 0;if (myButton1a.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1b.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1c.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1d.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1e.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1f.checked) {myButtonCounter = myButtonCounter + 1};if (myButton1g.checked) {myButtonCounter = myButtonCounter + 1};if (myButtonCounter > 3){myObj.checked = false; alert('對不起，最多三條對比線。');}}function checkAllButton2(myObj){var myButton2a = document.getElementById('Bo');var myButton2b = document.getElementById('Bo1');var myButton2c = document.getElementById('Bo2');var myButton2d = document.getElementById('Bo3');var myButton2e = document.getElementById('Bo4');var myButton2f = document.getElementById('Bo180');var myButton2g = document.getElementById('Bo365');var myButtonCounter = 0;if (myButton2a.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2b.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2c.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2d.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2e.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2f.checked) {myButtonCounter = myButtonCounter + 1};if (myButton2g.checked) {myButtonCounter = myButtonCounter + 1};if (myButtonCounter > 3){myObj.checked = false; alert('對不起，最多三條對比線。');};}</SCRIPT><SCRIPT LANGUAGE="JavaScript">function swapImage2() {IMG2.src = "images/cci_chart.png";}function callAJAX2(){IMG2.src = "images/loading_bule.gif";var c5 = document.getElementById('Bo');var c1 = document.getElementById('Bo1');var c2 = document.getElementById('Bo2');var c3 = document.getElementById('Bo3');var c4 = document.getElementById('Bo4');var c180 = document.getElementById('Bo180');var c365 = document.getElementById('Bo365');var cdropDown180 = document.getElementById('bodropDown180');var cdropDown365 = document.getElementById('bodropDown365');var n1 = 0;if (c1.checked)n1 = 1;var n2 = 0;if (c2.checked)n2 =1;var n3 =0;if (c3.checked )n3 =1;var n4 =0;if (c4.checked )n4 =1;var n5 = 0;if (c5.checked) {n5 = 1};var n180 = 0;if (c180.checked) {n180 = 1};var n365 = 0;if (c365.checked) {n365 = 1};var n180_index = 0;n180_index = cdropDown180.selectedIndex;var n365_index = 0;n365_index = cdropDown365.selectedIndex;var tempStr = "hk=" + n1 + "&kln=" + n2 + "&nte=" + n3 + "&ntw=" + n4+ "&main=" + n5 + "&n180=" + n180 + "&n365=" + n365 + "&n180_index=" + n180_index + "&n365_index=" + n365_index;var ajax = null;var frameElement;var W = 0;if(ajax && ajax.readyState!=0){ajax.abort();}ajax=createAJAX2();if (ajax != null){link = "cci_charting.aspx?" + tempStr;ajax.open("GET",link,true);ajax.onreadystatechange=function(){if(ajax.readyState==4 && ajax.responseText){eval(ajax.responseText);}}};ajax.send(null);}function createAJAX2(){var AJAX=null;try	{AJAX=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{AJAX=new ActiveXObject("Microsoft.XMLHTTP");}catch(oc){AJAX=null;}}if(!AJAX && typeof(XMLHttpRequest) != "undefined"){AJAX=new XMLHttpRequest();}return AJAX;}</SCRIPT></body></html>

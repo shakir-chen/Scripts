@@ -869,14 +869,17 @@ sensors
     sudo rm -rf /home/newuser
     ```
 ```
-            # sudo useradd -m jun -p PASSWORD
-                    # # not right# sudo usermod -a -G xugroup jun
-            #sudo usermod -g xugroup jun         # xugroup as the primary group
-useradd -g cartoons tom
-cat /etc/group      # determine groups
-cat /etc/password       # determine users
-```
+    # sudo useradd -m jun -p PASSWORD
+        # # not right# sudo usermod -a -G xugroup jun
+    # sudo usermod -g xugroup jun         # xugroup as the primary group
+    # sudo usermod -g grp_eexu@ee.ust.hk jun         # xugroup as the primary group
 
+useradd -g opticsbdsl yfuat@ust.hk     # may fail just yfuat
+cat /etc/group      # determine groups, directly change in this folder
+cat /etc/password       # determine users
+id xchenbr      # determine the group
+getent passwd xchenbr       # xchenbr may not be contained in /etc/passwd
+```
 
 ### 11. connectable computer (ssh + ftp)
 #### ssh
@@ -890,8 +893,8 @@ vim sshd_config
     Banner /etc/issue.net
 
 sudo iptables -L
-
 ```
+
 
 ```
 sudo apt-get install openssh-server
@@ -918,7 +921,6 @@ sudo service ssh restart    #restart
     ifconfig : inet addr:       # Get IP Address
 
     ssh username@localhost -p 2222  # silly sillyisafatpig
-
 
 #### Personal Homepage - ftp
 ```
@@ -961,9 +963,6 @@ binary                          #if put meets bugs
     Go to menu: Edit, Account Settings...
     Select account name on the left
     Either make any changes here (on the right) or Remove Account from the drop-down menu opened by clicking the Account Actions button at the bottom left
-
-
-
 
 ### 14. Dropbox
 <https://www.dropbox.com/install>

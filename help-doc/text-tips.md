@@ -133,6 +133,10 @@ sed -n '/PATTERN/!p' FILE.txt           # exclude a pattern ; p means print
 sed -n 'N,/PATTERN/p' FILE.txt          # from line N, search pattern and print
 <http://www.yourownlinux.com/2015/04/sed-command-in-linux-print-lines-in-file.html>
 
+5. exclude (not include) some characters
+    ```
+    grep -v "unwanted_word" file | grep XXXXXXXX
+    ```
 
 ## python
 1. split with multiple delimiters

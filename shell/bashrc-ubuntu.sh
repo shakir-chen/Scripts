@@ -383,11 +383,12 @@ alias py2.7="python2.7"
 alias ipython="ipython3"
 
 # alias mp3split="mptsplit input.mp3 [00:00:20-00:00:58] -o output.mp3"
-# pdf reader
-alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
-alias pdfstamp="java -jar ~/Software/pdfstamp/pdfstamp.jar -u xchenbr.student.ust.hk -i"              # https://github.com/Crossref/pdfstamp
+# pdf viewer: evince, mupdf, okular(polish), zathura(view)
+# pdfseperate (page seperation), pdftk (many functions), pdfunit (unit pages)
 # pdfcut in.pdf 7       pdfcut in.pdf 7-end
 # pdfunite input_list output.pdf                join multiple pdf
+alias pdfcrop="java -jar ~/Software/briss/briss-0.9/briss-0.9.jar"       #centos, trim
+alias pdfstamp="java -jar ~/Software/pdfstamp/pdfstamp.jar -u xchenbr.student.ust.hk -i"              # https://github.com/Crossref/pdfstamp
 
 function pdf2jpg_2() {
 PDFNAME=$(echo $1 | sed -r "s/\.pdf//g")
@@ -413,8 +414,8 @@ function pdfcompress() {
 PDFNAME=$(echo $1 | sed -r "s/\.pdf/_c.pdf/g")
 echo "$1 ==> $PDFNAME"
 # /screen 72dpi, /printer 300dpi, /ebook 150dpi, /default lager
-gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
-# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
+# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$PDFNAME $1
 }
 
 #alias pdf="acroread"       #centos
@@ -534,6 +535,7 @@ function xinputopentp(){
 alias sshpassion="ssh-server passion"   # work, but may have error
 alias sshfantasy="ssh-server fantasy"   # work
 alias sshvirtualdesktop="ssh xchenbr@acf2013.ece.ust.hk"
+alias sshvirtualdesktop_jun="ssh jfengah@acf2013.ece.ust.hk" #Jf7814089jf%
 alias sshrostam="ssh-server rostam"     # good
 alias sshmagic="ssh-server magic"       # good
 alias sshyoung="ssh-server young"       # good
@@ -725,6 +727,7 @@ alias svn="sshcheck; svn"
 export PATH=~/.config/jade:${PATH}              # backup some jade bash
 # export CPATH="/usr/include/hdf5/serial/"
 alias svnset="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
+alias svnset_clicu="svn co --depth immediates svn+ssh://clicu@acf2013.ece.ust.hk/home/ust.hk/svn_repository svn" # svn on virtual server
 
 export JADE_TRUNK_URL="svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE"
 export JADE_HOTSPOT_URL="svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot"
@@ -732,10 +735,12 @@ export JADE_HOTSPOT_URL="svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_re
 alias svnbranchjadehot="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-hotspot -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
 alias svnbranchjadehot_new="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot -m 'xuanqi private branch with hotspot_JADE_v5'"        ## better into the branches and copy locally
 alias svnbranchjadehotrev_2="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-pow-hotspot -m 'xuanqi private branch with hotspot'"        ## better into the branches and copy locally
-alias svnbranchjadecamon="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-CAMON -m 'xuanqi private branch with camon_JADE_v5'"        ## better into the branches and copy locally
+alias svnbranchjademerge="svn copy svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE_v5_xqmerge -m 'xuanqi branch for merge'"        ## better into the branches and copy locally
 alias svncojadehot="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-hotspot JADE-v5-hotspot"
 alias svncojadetrunk="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/trunk/JADE JADE-trunk"
 alias svncojadecamon="svn co --depth immediates svn+ssh://xchenbr@acf2013.ece.ust.hk/home/ust.hk/svn_repository/Software\ Release/JADE/branches/JADE-v5-CAMON JADE-v5-CAMON"
+
+alias svnmergefrombranch="svn merge --reintegrate ^/Software\ Release/JADE/branches/JADE_v5_xqmerge"        # @ trunk
 
 # alias svnmergejadehotfromtrunk="svn merge -r 16845:HEAD $JADE_TRUNK_URL $JADE_HOTSPOT_URL"
 alias svnmergejadehotfromtrunk="svn merge $JADE_TRUNK_URL"
@@ -959,6 +964,7 @@ function dotsave(){
     dot -Tpng $1 > temp.png
 }
 
+# online: photopea, pixlr, offline, krita (with convert), gimp
 function jpgtrim(){
 for f in *.jpg
     do
@@ -986,8 +992,8 @@ function pdf2jpg(){
     echo  $1 "--->" $newf
     # convert -density 300 $f $newf     # backgroud will become black
     # convert -density 300 -background white -alpha remove $1 $newf
-    # convert -density 1000 -background white -alpha remove $1 $newf
     convert -density 1000 -background white -alpha remove $1 $newf
+    # convert -density 500 -background white -alpha remove $1 $newf
     # convert -density 150 *.pdf -quality 90 output.png
 }
 
@@ -1062,6 +1068,7 @@ alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Software/JADE-v5-hotspot"
+alias cdjademanuel="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/Jade/manual"
 alias cdjadetrunk="cd ~/svn/Software\ Release/JADE/trunk/JADE"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Software/Scripts"
