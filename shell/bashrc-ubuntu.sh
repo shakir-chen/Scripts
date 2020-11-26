@@ -271,7 +271,7 @@ alias vimtext="vimfind text-tips"
 alias vimproblem="vimfind linux-problem"
 alias vimpy="vimfind python"
 # alias vimjava="vimfind java"
-alias vimjade="vim ~/svn/Discussion/Xuanqi\ Chen/Tools/Jade/JADE-Dairy.md"
+alias vimjade="vim ~/svn/Discussion/Dr.\ Xuanqi\ Chen/Tools/Jade/JADE-Dairy.md"
 alias vimbuild="vimfind build-compile"
 alias vimcv="vimfind cv"        # opencv
 alias vimsnipptpy="vim ~/.vim/UltiSnips/python.snippets"        # opencv
@@ -802,8 +802,8 @@ function svnrefresh(){
 }
 
 function svnsubmit(){
-    cp -r $1 ~/Research/svn/Discussion/Xuanqi\ Chen/
-    cd ~/Research/svn/Discussion/Xuanqi\ Chen/
+    cp -r $1 ~/Research/svn/Discussion/Dr.\ Xuanqi\ Chen/
+    cd ~/Research/svn/Discussion/Dr.\ Xuanqi\ Chen/
     svn add $1
     svn commit -m "Submit $1 Refresh"
     svn update
@@ -991,8 +991,8 @@ function pdf2jpg(){
     newf=${1/.pdf/.jpg}
     echo  $1 "--->" $newf
     # convert -density 300 $f $newf     # backgroud will become black
-    # convert -density 300 -background white -alpha remove $1 $newf
-    convert -density 1000 -background white -alpha remove $1 $newf
+    convert -density 500 -background white -alpha remove $1 $newf
+    # convert -density 1000 -background white -alpha remove $1 $newf
     # convert -density 500 -background white -alpha remove $1 $newf
     # convert -density 150 *.pdf -quality 90 output.png
 }
@@ -1004,7 +1004,8 @@ function pdf2jpgall(){
         newf=${f/.pdf/.jpg}
         echo  $f "--->" $newf
         # convert -density 300 $f $newf     # backgroud will become black
-        convert -density 300 -background white -alpha remove $f jpg/$newf
+        # convert -density 300 -background white -alpha remove $f jpg/$newf
+        convert -density 500 -background white -alpha remove $f $newf
         # convert -density 150 *.pdf -quality 90 output.png
     done
 }
@@ -1068,29 +1069,29 @@ alias cdcosmic="cd ~/Benchmark/COSMIC-generation-flow"
 alias cdsnap="cd ~/Research/Benchmark/APEX/SNAP/WorkSpace"
 alias cdqemu="cd ~/Software/Qemu"
 alias cdjade="cd ~/Software/JADE-v5-hotspot"
-alias cdjademanuel="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/Jade/manual"
+alias cdjademanuel="cd ~/svn/Discussion/Dr.\ Xuanqi\ Chen/Tools/Jade/manual"
 alias cdjadetrunk="cd ~/svn/Software\ Release/JADE/trunk/JADE"
 alias cdspec="cd ~/Research/Benchmark/SPEC"
 alias cdgit="cd ~/Software/Scripts"
 alias cddairy="cd ~/Dropbox/Linux/Dairy/latex"
 alias cdblog="cd ~/Documents/Blog/"
 alias cdoeil="cd ~/Research/OEIL/OEIL-c/OEILv4.0-cpp/"
-alias cdsvn="cd ~/svn/Discussion/Xuanqi\ Chen/"
+alias cdsvn="cd ~/svn/Discussion/Dr.\ Xuanqi\ Chen/"
 alias cdftp="cd /srv/ftp/"
 alias cdcourse="cd ~/Dropbox/Course"
 alias cdbook="cd ~/Dropbox/Course/Good_Books"
-alias cdbosim="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/BOSIM/source"
+alias cdbosim="cd ~/svn/Discussion/Dr.\ Xuanqi\ Chen/Tools/BOSIM/source"
 # alias cdhotspot="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/hotspot"
 alias cdhotspot="cd ~/Software/JADE-v5-hotspot/utils/hotspot/workspace"
-alias cdtool="cd ~/svn/Discussion/Xuanqi\ Chen/Tools/"
+alias cdtool="cd ~/svn/Discussion/Dr.\ Xuanqi\ Chen/Tools/"
 alias cdzotero="cd ~/.mozilla/firefox/iezs8krl.default/zotero"
 alias cdfdtd="cd ~/Research/FDTD/"
-alias cdft="cd ~/svn/Discussion/Xuanqi\ Chen/FT2000"
+alias cdft="cd ~/svn/Discussion/Dr.\ Xuanqi\ Chen/FT2000"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM"
 # alias cdpaper="cd ~/svn/Discussion/Xuanqi\ Chen/Paper/BOSIM-TCAD"
 # alias cdcadence="cd /usr/eelocal/cadence"
-# alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Tuning"
-alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/Strategy/paper"
+# alias cdpaper="cd ~/svn/Working\ papers/Xuanqi\ Chen/IFT"
+alias cdpaper="cd ~/svn/Working\ papers/Dr.\ Xuanqi\ Chen/BAT/paper"
 alias cdlatex="cd /usr/share/texlive/texmf-dist/tex/latex/"
 alias cdpyspice="cd /usr/local/lib/python3.5/dist-packages/PySpice"
 alias cdngspice="cd ~/Dropbox/Linux/Research/ngspice"

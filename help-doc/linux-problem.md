@@ -2155,3 +2155,10 @@ iron : no _bz2 module????
 fantasy: compile not correct
 rostam, not possible to compile
 
+
+# McPat
+# 1. fatal error: sys/cdefs.h: No such file or directory|
+sudo apt-get install libc6-dev-amd64
+# 2. Missing include “bits/c++config.h” when cross compiling 64 bit program on 32 bit in Ubuntu
+sudo apt-get install gcc-multilib g++-multilib
+
